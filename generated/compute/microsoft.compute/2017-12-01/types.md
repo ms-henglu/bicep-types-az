@@ -88,6 +88,180 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/virtualMachineScaleSets/virtualmachines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function capture (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineCaptureParameters](#virtualmachinecaptureparameters)
+* **Output**: [VirtualMachineCaptureResult](#virtualmachinecaptureresult)
+
+## Function convertToManagedDisks (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function deallocate (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function delete (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function forceRecoveryServiceFabricPlatformUpdateDomainWalk (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Output**: [RecoveryWalkResponse](#recoverywalkresponse)
+
+## Function generalize (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function getRequestRateByInterval (Microsoft.Compute/locations/logAnalytics@2017-12-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2017-12-01
+* **Input**: [RequestRateByIntervalInput](#requestratebyintervalinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function getThrottledRequests (Microsoft.Compute/locations/logAnalytics@2017-12-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2017-12-01
+* **Input**: [ThrottledRequestsInput](#throttledrequestsinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function manualupgrade (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function osRollingUpgrade (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function performMaintenance (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function powerOff (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function redeploy (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function restart (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function runCommand (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.Compute/virtualMachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2017-12-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2017-12-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2017-12-01
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
 ## AvailabilitySetProperties
 ### Properties
 * **platformFaultDomainCount**: int: Fault Domain count.
@@ -631,4 +805,364 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualMachineCaptureParameters
+### Properties
+* **destinationContainerName**: string (Required, WriteOnly): The destination container name.
+* **overwriteVhds**: bool (Required, WriteOnly): Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+* **vhdPrefix**: string (Required, WriteOnly): The captured virtual hard disk's name prefix.
+
+## VirtualMachineCaptureResult
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **properties**: [VirtualMachineCaptureResultProperties](#virtualmachinecaptureresultproperties) (ReadOnly): Compute-specific operation properties, including output
+
+## VirtualMachineCaptureResultProperties
+### Properties
+* **output**: any (ReadOnly): Any object
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## ApiError
+### Properties
+* **code**: string (ReadOnly): The error code.
+* **details**: [ApiErrorBase](#apierrorbase)[] (ReadOnly): The Api error details
+* **innererror**: [InnerError](#innererror) (ReadOnly): Inner error details.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The target of the particular error.
+
+## ApiErrorBase
+### Properties
+* **code**: string (ReadOnly): The error code.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The target of the particular error.
+
+## InnerError
+### Properties
+* **errordetail**: string (ReadOnly): The internal error message or exception dump.
+* **exceptiontype**: string (ReadOnly): The exception type.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceRequiredIDs
+### Properties
+* **instanceIds**: string[] (Required, WriteOnly): The virtual machine scale set instance ids.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## RecoveryWalkResponse
+### Properties
+* **nextPlatformUpdateDomain**: int (ReadOnly): The next update domain that needs to be walked. Null means walk spanning all update domains has been completed
+* **walkPerformed**: bool (ReadOnly): Whether the recovery walk was performed
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## RequestRateByIntervalInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **intervalLength**: 'FiveMins' | 'SixtyMins' | 'ThirtyMins' | 'ThreeMins' (Required, WriteOnly): Interval value in minutes used to create LogAnalytics call rate logs.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## LogAnalyticsOutput
+### Properties
+* **output**: string (ReadOnly): Output file Uri path to blob container.
+
+## ThrottledRequestsInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceRequiredIDs
+### Properties
+* **instanceIds**: string[] (Required, WriteOnly): The virtual machine scale set instance ids.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required, WriteOnly): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[] (WriteOnly): The run command parameters.
+* **script**: string[] (WriteOnly): Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandInputParameter
+### Properties
+* **name**: string (Required, WriteOnly): The run command parameter name.
+* **value**: string (Required, WriteOnly): The run command parameter value.
+
+## RunCommandResult
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **properties**: [RunCommandResultProperties](#runcommandresultproperties) (ReadOnly): Compute-specific operation properties, including output
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## RunCommandResultProperties
+### Properties
+* **output**: any (ReadOnly): Any object
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[] (WriteOnly): The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
+
+## OperationStatusResponse
+### Properties
+* **endTime**: string (ReadOnly): End time of the operation
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **name**: string (ReadOnly): Operation ID
+* **startTime**: string (ReadOnly): Start time of the operation
+* **status**: string (ReadOnly): Operation status
 

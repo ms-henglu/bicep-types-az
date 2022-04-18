@@ -229,6 +229,53 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/virtualMachineScaleSets/virtualMachines/extensions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2019-07-01)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2019-07-01
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2019-07-01)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2019-07-01
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function capture (Microsoft.Compute/virtualMachines@2019-07-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2019-07-01
+* **Input**: [VirtualMachineCaptureParameters](#virtualmachinecaptureparameters)
+* **Output**: [VirtualMachineCaptureResult](#virtualmachinecaptureresult)
+
+## Function forceRecoveryServiceFabricPlatformUpdateDomainWalk (Microsoft.Compute/virtualMachineScaleSets@2019-07-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2019-07-01
+* **Output**: [RecoveryWalkResponse](#recoverywalkresponse)
+
+## Function getRequestRateByInterval (Microsoft.Compute/locations/logAnalytics@2019-07-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2019-07-01
+* **Input**: [RequestRateByIntervalInput](#requestratebyintervalinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function getThrottledRequests (Microsoft.Compute/locations/logAnalytics@2019-07-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2019-07-01
+* **Input**: [ThrottledRequestsInput](#throttledrequestsinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachines@2019-07-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2019-07-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2019-07-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2019-07-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
 ## AvailabilitySetProperties
 ### Properties
 * **platformFaultDomainCount**: int: Fault Domain count.
@@ -1236,4 +1283,97 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+
+## VirtualMachineCaptureParameters
+### Properties
+* **destinationContainerName**: string (Required, WriteOnly): The destination container name.
+* **overwriteVhds**: bool (Required, WriteOnly): Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+* **vhdPrefix**: string (Required, WriteOnly): The captured virtual hard disk's name prefix.
+
+## VirtualMachineCaptureResult
+### Properties
+* **$schema**: string (ReadOnly): the schema of the captured virtual machine
+* **contentVersion**: string (ReadOnly): the version of the content
+* **id**: string (ReadOnly): Resource Id
+* **parameters**: any (ReadOnly): Any object
+* **resources**: any[] (ReadOnly): a list of resource items of the captured virtual machine
+
+## RecoveryWalkResponse
+### Properties
+* **nextPlatformUpdateDomain**: int (ReadOnly): The next update domain that needs to be walked. Null means walk spanning all update domains has been completed
+* **walkPerformed**: bool (ReadOnly): Whether the recovery walk was performed
+
+## RequestRateByIntervalInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **intervalLength**: 'FiveMins' | 'SixtyMins' | 'ThirtyMins' | 'ThreeMins' (Required, WriteOnly): Interval value in minutes used to create LogAnalytics call rate logs.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+
+## LogAnalyticsOutput
+### Properties
+* **output**: string (ReadOnly): Output file Uri path to blob container.
+
+## ThrottledRequestsInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required, WriteOnly): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[] (WriteOnly): The run command parameters.
+* **script**: string[] (WriteOnly): Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandInputParameter
+### Properties
+* **name**: string (Required, WriteOnly): The run command parameter name.
+* **value**: string (Required, WriteOnly): The run command parameter value.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[] (ReadOnly): Run command operation response.
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required, WriteOnly): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[] (WriteOnly): The run command parameters.
+* **script**: string[] (WriteOnly): Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[] (ReadOnly): Run command operation response.
 

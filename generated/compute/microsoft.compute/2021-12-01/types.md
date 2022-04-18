@@ -63,6 +63,24 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2021-12-01)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2021-12-01
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2021-12-01)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2021-12-01
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints@2021-12-01)
+* **Resource**: Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints
+* **ApiVersion**: 2021-12-01
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
 ## ExtendedLocation
 ### Properties
 * **name**: string: The name of the extended location.
@@ -295,4 +313,37 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+* **getSecureVMGuestStateSAS**: bool (WriteOnly): Set this flag to true to get additional SAS for VM guest state
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+* **getSecureVMGuestStateSAS**: bool (WriteOnly): Set this flag to true to get additional SAS for VM guest state
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+* **getSecureVMGuestStateSAS**: bool (WriteOnly): Set this flag to true to get additional SAS for VM guest state
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
 

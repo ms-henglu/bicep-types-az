@@ -166,6 +166,61 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/virtualMachineScaleSets/virtualMachines/runCommands' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function assessPatches (Microsoft.Compute/virtualMachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2020-06-01
+* **Output**: [VirtualMachineAssessPatchesResult](#virtualmachineassesspatchesresult)
+
+## Function capture (Microsoft.Compute/virtualMachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2020-06-01
+* **Input**: [VirtualMachineCaptureParameters](#virtualmachinecaptureparameters)
+* **Output**: [VirtualMachineCaptureResult](#virtualmachinecaptureresult)
+
+## Function forceRecoveryServiceFabricPlatformUpdateDomainWalk (Microsoft.Compute/virtualMachineScaleSets@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2020-06-01
+* **Output**: [RecoveryWalkResponse](#recoverywalkresponse)
+
+## Function generateKeyPair (Microsoft.Compute/sshPublicKeys@2020-06-01)
+* **Resource**: Microsoft.Compute/sshPublicKeys
+* **ApiVersion**: 2020-06-01
+* **Output**: [SshPublicKeyGenerateKeyPairResult](#sshpublickeygeneratekeypairresult)
+
+## Function getRequestRateByInterval (Microsoft.Compute/locations/logAnalytics@2020-06-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2020-06-01
+* **Input**: [RequestRateByIntervalInput](#requestratebyintervalinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function getThrottledRequests (Microsoft.Compute/locations/logAnalytics@2020-06-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2020-06-01
+* **Input**: [ThrottledRequestsInput](#throttledrequestsinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2020-06-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2020-06-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2020-06-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2020-06-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2020-06-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
 ## AvailabilitySetProperties
 ### Properties
 * **platformFaultDomainCount**: int: Fault Domain count.
@@ -1027,4 +1082,118 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualMachineAssessPatchesResult
+### Properties
+* **assessmentActivityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **criticalAndSecurityPatchCount**: int (ReadOnly): The number of critical or security patches that have been detected as available and not yet installed.
+* **error**: [ApiError](#apierror) (ReadOnly): Api error.
+* **otherPatchCount**: int (ReadOnly): The number of all available patches excluding critical and security.
+* **patches**: [VirtualMachineSoftwarePatchProperties](#virtualmachinesoftwarepatchproperties)[] (ReadOnly): The list of patches that have been detected as available for installation.
+* **rebootPending**: bool (ReadOnly): The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", or "CompletedWithWarnings."
+
+## VirtualMachineSoftwarePatchProperties
+### Properties
+* **activityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **assessmentState**: 'Available' | 'Excluded' | 'Failed' | 'Installed' | 'NotSelected' | 'Pending' (ReadOnly): Describes the outcome of an install operation for a given patch.
+* **classifications**: string[] (ReadOnly): The classification(s) of the patch as provided by the patch publisher.
+* **kbid**: string (ReadOnly): The KBID of the patch. Only applies to Windows patches.
+* **lastModifiedDateTime**: string (ReadOnly): The UTC timestamp of the last update to this patch record.
+* **name**: string (ReadOnly): The friendly name of the patch.
+* **patchId**: string (ReadOnly): A unique identifier for the patch.
+* **publishedDate**: string (ReadOnly): The UTC timestamp when the repository published this patch.
+* **rebootBehavior**: 'AlwaysRequiresReboot' | 'CanRequestReboot' | 'NeverReboots' (ReadOnly): Describes the reboot requirements of the patch.
+* **version**: string (ReadOnly): The version number of the patch. This property applies only to Linux patches.
+
+## VirtualMachineCaptureParameters
+### Properties
+* **destinationContainerName**: string (Required, WriteOnly): The destination container name.
+* **overwriteVhds**: bool (Required, WriteOnly): Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+* **vhdPrefix**: string (Required, WriteOnly): The captured virtual hard disk's name prefix.
+
+## VirtualMachineCaptureResult
+### Properties
+* **$schema**: string (ReadOnly): the schema of the captured virtual machine
+* **contentVersion**: string (ReadOnly): the version of the content
+* **id**: string (ReadOnly): Resource Id
+* **parameters**: any (ReadOnly): Any object
+* **resources**: any[] (ReadOnly): a list of resource items of the captured virtual machine
+
+## RecoveryWalkResponse
+### Properties
+* **nextPlatformUpdateDomain**: int (ReadOnly): The next update domain that needs to be walked. Null means walk spanning all update domains has been completed
+* **walkPerformed**: bool (ReadOnly): Whether the recovery walk was performed
+
+## SshPublicKeyGenerateKeyPairResult
+### Properties
+* **id**: string (ReadOnly): The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}
+* **privateKey**: string (ReadOnly): Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
+* **publicKey**: string (ReadOnly): Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
+
+## RequestRateByIntervalInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByClientApplicationId**: bool (WriteOnly): Group query result by Client Application ID.
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool (WriteOnly): Group query result by User Agent.
+* **intervalLength**: 'FiveMins' | 'SixtyMins' | 'ThirtyMins' | 'ThreeMins' (Required, WriteOnly): Interval value in minutes used to create LogAnalytics call rate logs.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+
+## LogAnalyticsOutput
+### Properties
+* **output**: string (ReadOnly): Output file Uri path to blob container.
+
+## ThrottledRequestsInput
+### Properties
+* **blobContainerSasUri**: string (Required, WriteOnly): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required, WriteOnly): From time of the query
+* **groupByClientApplicationId**: bool (WriteOnly): Group query result by Client Application ID.
+* **groupByOperationName**: bool (WriteOnly): Group query result by Operation Name.
+* **groupByResourceName**: bool (WriteOnly): Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool (WriteOnly): Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool (WriteOnly): Group query result by User Agent.
+* **toTime**: string (Required, WriteOnly): To time of the query
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalytics output properties
+
+## RetrieveBootDiagnosticsDataResult
+### Properties
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob URI.
+
+## RetrieveBootDiagnosticsDataResult
+### Properties
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob URI.
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required, WriteOnly): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[] (WriteOnly): The run command parameters.
+* **script**: string[] (WriteOnly): Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[] (ReadOnly): Run command operation response.
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required, WriteOnly): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[] (WriteOnly): The run command parameters.
+* **script**: string[] (WriteOnly): Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[] (ReadOnly): Run command operation response.
 

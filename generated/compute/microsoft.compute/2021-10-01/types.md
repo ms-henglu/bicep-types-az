@@ -55,6 +55,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/galleries/images/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function share (Microsoft.Compute/galleries@2021-10-01)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2021-10-01
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
 ## GalleryProperties
 ### Properties
 * **description**: string: The description of this Shared Image Gallery resource. This property is updatable.
@@ -301,4 +307,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[] (WriteOnly): A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' (Required, WriteOnly): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[] (WriteOnly): A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' (Required, WriteOnly): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
 

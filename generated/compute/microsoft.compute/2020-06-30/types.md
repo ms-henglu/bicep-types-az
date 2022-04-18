@@ -51,6 +51,18 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2020-06-30)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2020-06-30
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2020-06-30)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2020-06-30
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
 ## DiskAccessProperties
 ### Properties
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): A readonly collection of private endpoint connections created on the disk. Currently only one endpoint connection is supported.
@@ -213,4 +225,22 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' (Required, WriteOnly)
+* **durationInSeconds**: int (Required, WriteOnly): Time duration in seconds until the SAS access expires.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
 
