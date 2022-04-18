@@ -203,7 +203,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
 
         const { routingScope: actionRoutingScope } = parseResult.value;
         const actionName = actionRoutingScope.substr(actionRoutingScope.lastIndexOf('/') + 1);
-        return actionName.toLowerCase().startsWith('list');
+        return actionName.toLowerCase();
       })[0];
       if (postListRequest) {
         postListOperationsByPath[postListRequest.path.toLowerCase()] = operation;
