@@ -15,7 +15,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Location of the resource
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ConfigurationAssignmentProperties](#configurationassignmentproperties): Properties for configuration assignment
+* **properties**: [ConfigurationAssignmentProperties](#configurationassignmentproperties): Properties of the configuration assignment
 * **type**: 'Microsoft.Maintenance/configurationAssignments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Maintenance/maintenanceConfigurations@2020-04-01
@@ -25,7 +25,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Gets or sets location of the resource
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [MaintenanceConfigurationProperties](#maintenanceconfigurationproperties): Properties for maintenance configuration
+* **properties**: [MaintenanceConfigurationProperties](#maintenanceconfigurationproperties): Gets or sets properties of the resource
 * **tags**: [MaintenanceConfigurationTags](#maintenanceconfigurationtags): Gets or sets tags of the resource
 * **type**: 'Microsoft.Maintenance/maintenanceConfigurations' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -37,7 +37,7 @@
 ## MaintenanceConfigurationProperties
 ### Properties
 * **extensionProperties**: [MaintenanceConfigurationPropertiesExtensionProperties](#maintenanceconfigurationpropertiesextensionproperties): Gets or sets extensionProperties of the maintenanceConfiguration. This is for future use only and would be a set of key value pairs for additional information e.g. whether to follow SDP etc.
-* **maintenanceScope**: 'All' | 'Host' | 'InResource' | 'Resource': Gets or sets maintenanceScope of the configuration. It represent the impact area of the maintenance
+* **maintenanceScope**: 'All' | 'Host' | 'InResource' | 'Resource' | string: Gets or sets maintenanceScope of the configuration. It represent the impact area of the maintenance
 * **namespace**: string: Gets or sets namespace of the resource e.g. Microsoft.Maintenance or Microsoft.Sql
 
 ## MaintenanceConfigurationPropertiesExtensionProperties

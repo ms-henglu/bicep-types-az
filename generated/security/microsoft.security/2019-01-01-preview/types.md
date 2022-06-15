@@ -36,7 +36,7 @@
 * **kind**: string: Kind of the resource
 * **location**: string: Location where the resource is stored
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AutomationProperties](#automationproperties): A set of properties that defines the behavior of the automation configuration. To learn more about the supported security events data models schemas - please visit https://aka.ms/ASCAutomationSchemas.
+* **properties**: [AutomationProperties](#automationproperties): Security automation data
 * **tags**: [Tags](#tags): A list of key value pairs that describe the resource.
 * **type**: 'Microsoft.Security/automations' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -48,78 +48,17 @@
 * **lastModifiedUtc**: string (ReadOnly): The last time this rule was modified
 * **reason**: string (Required): The reason for dismissing the alert
 * **state**: 'Disabled' | 'Enabled' | 'Expired' (Required): Possible states of the rule
-* **suppressionAlertsScope**: [SuppressionAlertsScope](#suppressionalertsscope)
-
-## SuppressionAlertsScope
-### Properties
-* **allOf**: [ScopeElement](#scopeelement)[] (Required): All the conditions inside need to be true in order to suppress the alert
-
-## ScopeElement
-### Properties
-* **field**: string: The alert entity type to suppress by.
-### Additional Properties
-* **Additional Properties Type**: any
-
-## SecurityAssessmentMetadataProperties
-### Properties
-* **assessmentType**: 'BuiltIn' | 'CustomPolicy' | 'CustomerManaged' (Required): BuiltIn if the assessment based on built-in Azure Policy definition, Custom if the assessment based on custom Azure Policy definition
-* **categories**: 'Compute' | 'Data' | 'IdentityAndAccess' | 'IoT' | 'Networking'[]: Array of categories
-* **description**: string: Human readable description of the assessment
-* **displayName**: string (Required): User friendly display name of the assessment
-* **implementationEffort**: 'High' | 'Low' | 'Moderate': The implementation effort required to remediate this assessment
-* **policyDefinitionId**: string (ReadOnly): Azure resource ID of the policy definition that turns this assessment calculation on
-* **preview**: bool: True if this assessment is in preview release status
-* **remediationDescription**: string: Human readable description of what you should do to mitigate this security issue
-* **severity**: 'High' | 'Low' | 'Medium' (Required): The sub-assessment severity level
-* **threats**: 'accountBreach' | 'dataExfiltration' | 'dataSpillage' | 'denialOfService' | 'elevationOfPrivilege' | 'maliciousInsider' | 'missingCoverage' | 'threatResistance'[]: Array of threats
-* **userImpact**: 'High' | 'Low' | 'Moderate': The user impact of the assessment
-
-## SecurityAssessmentProperties
-### Properties
-* **additionalData**: [SecurityAssessmentPropertiesAdditionalData](#securityassessmentpropertiesadditionaldata): Additional data regarding the assessment
-* **displayName**: string (ReadOnly): User friendly display name of the assessment
-* **links**: [AssessmentLinks](#assessmentlinks) (ReadOnly): Links relevant to the assessment
-* **resourceDetails**: [ResourceDetails](#resourcedetails) (Required): Details of the resource that was assessed
-* **status**: [AssessmentStatus](#assessmentstatus) (Required): The result of the assessment
-
-## SecurityAssessmentPropertiesAdditionalData
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **suppressionAlertsScope**: [SuppressionAlertsScope](#suppressionalertsscope): The suppression conditions
 
 ## AssessmentLinks
 ### Properties
 * **azurePortalUri**: string (ReadOnly): Link to assessment in Azure Portal
 
-## ResourceDetails
-* **Discriminator**: source
-
-### Base Properties
-### AzureResourceDetails
-#### Properties
-* **id**: string (ReadOnly): Azure resource Id of the assessed resource
-* **source**: 'Azure' (Required): The platform where the assessed resource resides
-
-### OnPremiseSqlResourceDetails
-#### Properties
-* **databaseName**: string (Required): The Sql database name installed on the machine
-* **serverName**: string (Required): The Sql server name installed on the machine
-* **source**: 'OnPremiseSql' (Required): The platform where the assessed resource resides
-
-
 ## AssessmentStatus
 ### Properties
 * **cause**: string: Programmatic code for the cause of the assessment status
-* **code**: 'Healthy' | 'NotApplicable' | 'Unhealthy' (Required): Programmatic code for the status of the assessment
+* **code**: 'Healthy' | 'NotApplicable' | 'Unhealthy' | string (Required): Programmatic code for the status of the assessment
 * **description**: string: Human readable description of the assessment status
-
-## AutomationProperties
-### Properties
-* **actions**: [AutomationAction](#automationaction)[]: A collection of the actions which are triggered if all the configured rules evaluations, within at least one rule set, are true.
-* **description**: string: The security automation description.
-* **isEnabled**: bool: Indicates whether the security automation is enabled.
-* **scopes**: [AutomationScope](#automationscope)[]: A collection of scopes on which the security automations logic is applied. Supported scopes are the subscription itself or a resource group under that subscription. The automation will only apply on defined scopes.
-* **sources**: [AutomationSource](#automationsource)[]: A collection of the source event types which evaluate the security automation set of rules.
 
 ## AutomationAction
 * **Discriminator**: actionType
@@ -144,6 +83,18 @@
 * **workspaceResourceId**: string: The fully qualified Log Analytics Workspace Azure Resource ID.
 
 
+## AutomationProperties
+### Properties
+* **actions**: [AutomationAction](#automationaction)[]: A collection of the actions which are triggered if all the configured rules evaluations, within at least one rule set, are true.
+* **description**: string: The security automation description.
+* **isEnabled**: bool: Indicates whether the security automation is enabled.
+* **scopes**: [AutomationScope](#automationscope)[]: A collection of scopes on which the security automations logic is applied. Supported scopes are the subscription itself or a resource group under that subscription. The automation will only apply on defined scopes.
+* **sources**: [AutomationSource](#automationsource)[]: A collection of the source event types which evaluate the security automation set of rules.
+
+## AutomationRuleSet
+### Properties
+* **rules**: [AutomationTriggeringRule](#automationtriggeringrule)[]
+
 ## AutomationScope
 ### Properties
 * **description**: string: The resources scope description.
@@ -151,19 +102,68 @@
 
 ## AutomationSource
 ### Properties
-* **eventSource**: 'Alerts' | 'Assessments' | 'AssessmentsSnapshot' | 'RegulatoryComplianceAssessment' | 'RegulatoryComplianceAssessmentSnapshot' | 'SecureScoreControls' | 'SecureScoreControlsSnapshot' | 'SecureScores' | 'SecureScoresSnapshot' | 'SubAssessments' | 'SubAssessmentsSnapshot': A valid event source type.
+* **eventSource**: 'Alerts' | 'Assessments' | 'AssessmentsSnapshot' | 'RegulatoryComplianceAssessment' | 'RegulatoryComplianceAssessmentSnapshot' | 'SecureScoreControls' | 'SecureScoreControlsSnapshot' | 'SecureScores' | 'SecureScoresSnapshot' | 'SubAssessments' | 'SubAssessmentsSnapshot' | string: A valid event source type.
 * **ruleSets**: [AutomationRuleSet](#automationruleset)[]: A set of rules which evaluate upon event interception. A logical disjunction is applied between defined rule sets (logical 'or').
-
-## AutomationRuleSet
-### Properties
-* **rules**: [AutomationTriggeringRule](#automationtriggeringrule)[]: Array of AutomationTriggeringRule
 
 ## AutomationTriggeringRule
 ### Properties
 * **expectedValue**: string: The expected value.
-* **operator**: 'Contains' | 'EndsWith' | 'Equals' | 'GreaterThan' | 'GreaterThanOrEqualTo' | 'LesserThan' | 'LesserThanOrEqualTo' | 'NotEquals' | 'StartsWith': A valid comparer operator to use. A case-insensitive comparison will be applied for String PropertyType.
+* **operator**: 'Contains' | 'EndsWith' | 'Equals' | 'GreaterThan' | 'GreaterThanOrEqualTo' | 'LesserThan' | 'LesserThanOrEqualTo' | 'NotEquals' | 'StartsWith' | string: A valid comparer operator to use. A case-insensitive comparison will be applied for String PropertyType.
 * **propertyJPath**: string: The JPath of the entity model property that should be checked.
-* **propertyType**: 'Boolean' | 'Integer' | 'Number' | 'String': The data type of the compared operands (string, integer, floating point number or a boolean [true/false]]
+* **propertyType**: 'Boolean' | 'Integer' | 'Number' | 'String' | string: The data type of the compared operands (string, integer, floating point number or a boolean [true/false]]
+
+## ResourceDetails
+* **Discriminator**: source
+
+### Base Properties
+### AzureResourceDetails
+#### Properties
+* **id**: string (ReadOnly): Azure resource Id of the assessed resource
+* **source**: 'Azure' (Required): The platform where the assessed resource resides
+
+### OnPremiseSqlResourceDetails
+#### Properties
+* **databaseName**: string (Required): The Sql database name installed on the machine
+* **serverName**: string (Required): The Sql server name installed on the machine
+* **source**: 'OnPremiseSql' (Required): The platform where the assessed resource resides
+
+
+## ScopeElement
+### Properties
+* **field**: string: The alert entity type to suppress by.
+### Additional Properties
+* **Additional Properties Type**: any
+
+## SecurityAssessmentMetadataProperties
+### Properties
+* **assessmentType**: 'BuiltIn' | 'CustomPolicy' | 'CustomerManaged' | string (Required): BuiltIn if the assessment based on built-in Azure Policy definition, Custom if the assessment based on custom Azure Policy definition
+* **categories**: 'Compute' | 'Data' | 'IdentityAndAccess' | 'IoT' | 'Networking' | string[]
+* **description**: string: Human readable description of the assessment
+* **displayName**: string (Required): User friendly display name of the assessment
+* **implementationEffort**: 'High' | 'Low' | 'Moderate' | string: The implementation effort required to remediate this assessment
+* **policyDefinitionId**: string (ReadOnly): Azure resource ID of the policy definition that turns this assessment calculation on
+* **preview**: bool: True if this assessment is in preview release status
+* **remediationDescription**: string: Human readable description of what you should do to mitigate this security issue
+* **severity**: 'High' | 'Low' | 'Medium' | string (Required): The severity level of the assessment
+* **threats**: 'accountBreach' | 'dataExfiltration' | 'dataSpillage' | 'denialOfService' | 'elevationOfPrivilege' | 'maliciousInsider' | 'missingCoverage' | 'threatResistance' | string[]
+* **userImpact**: 'High' | 'Low' | 'Moderate' | string: The user impact of the assessment
+
+## SecurityAssessmentProperties
+### Properties
+* **additionalData**: [SecurityAssessmentPropertiesAdditionalData](#securityassessmentpropertiesadditionaldata): Additional data regarding the assessment
+* **displayName**: string (ReadOnly): User friendly display name of the assessment
+* **links**: [AssessmentLinks](#assessmentlinks) (ReadOnly): Links relevant to the assessment
+* **resourceDetails**: [ResourceDetails](#resourcedetails) (Required): Details of the resource that was assessed
+* **status**: [AssessmentStatus](#assessmentstatus) (Required): The result of the assessment
+
+## SecurityAssessmentPropertiesAdditionalData
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## SuppressionAlertsScope
+### Properties
+* **allOf**: [ScopeElement](#scopeelement)[] (Required): All the conditions inside need to be true in order to suppress the alert
 
 ## Tags
 ### Properties

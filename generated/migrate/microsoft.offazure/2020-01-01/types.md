@@ -8,7 +8,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Azure location in which Sites is created.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [SiteProperties](#siteproperties): Class for site properties.
+* **properties**: [SiteProperties](#siteproperties): Nested properties of Hyper-V site.
 * **tags**: [HyperVSiteTags](#hypervsitetags): Dictionary of <string>
 * **type**: 'Microsoft.OffAzure/HyperVSites' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -18,7 +18,7 @@
 * **apiVersion**: '2020-01-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [HyperVClusterProperties](#hypervclusterproperties): Class for cluster properties.
+* **properties**: [HyperVClusterProperties](#hypervclusterproperties): Nested properties of the cluster.
 * **type**: 'Microsoft.OffAzure/HyperVSites/clusters' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.OffAzure/HyperVSites/hosts@2020-01-01
@@ -27,7 +27,7 @@
 * **apiVersion**: '2020-01-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [HyperVHostProperties](#hypervhostproperties): Class for host properties.
+* **properties**: [HyperVHostProperties](#hypervhostproperties): Nested properties.
 * **type**: 'Microsoft.OffAzure/HyperVSites/hosts' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.OffAzure/VMwareSites@2020-01-01
@@ -38,7 +38,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Azure location in which Sites is created.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [SiteProperties](#siteproperties): Class for site properties.
+* **properties**: [SiteProperties](#siteproperties): Nested properties of VMWare site.
 * **tags**: [VMwareSiteTags](#vmwaresitetags): Dictionary of <string>
 * **type**: 'Microsoft.OffAzure/VMwareSites' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -48,49 +48,8 @@
 * **apiVersion**: '2020-01-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [VCenterProperties](#vcenterproperties): Class for vCenter properties.
+* **properties**: [VCenterProperties](#vcenterproperties): vCenter nested properties.
 * **type**: 'Microsoft.OffAzure/VMwareSites/vCenters' (ReadOnly, DeployTimeConstant): The resource type
-
-## SiteProperties
-### Properties
-* **agentDetails**: [SiteAgentProperties](#siteagentproperties): Class for site agent properties.
-* **applianceName**: string: Appliance Name.
-* **discoverySolutionId**: string: ARM ID of migration hub solution for SDS.
-* **serviceEndpoint**: string (ReadOnly): Service endpoint.
-* **servicePrincipalIdentityDetails**: [SiteSpnProperties](#sitespnproperties): Class for site properties.
-
-## SiteAgentProperties
-### Properties
-* **id**: string (ReadOnly): ID of the agent.
-* **keyVaultId**: string: Key vault ARM Id.
-* **keyVaultUri**: string: Key vault URI.
-* **lastHeartBeatUtc**: string (ReadOnly): Last heartbeat time of the agent in UTC.
-* **version**: string (ReadOnly): Version of the agent.
-
-## SiteSpnProperties
-### Properties
-* **aadAuthority**: string: AAD Authority URL which was used to request the token for the service principal.
-* **applicationId**: string: Application/client Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.
-* **audience**: string: Intended audience for the service principal.
-* **objectId**: string: Object Id of the service principal with which the on-premise management/data plane components would communicate with our Azure services.
-* **rawCertData**: string: Raw certificate data for building certificate expiry flows.
-* **tenantId**: string: Tenant Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.
-
-## HyperVSiteTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## HyperVClusterProperties
-### Properties
-* **createdTimestamp**: string (ReadOnly): Timestamp marking Hyper-V cluster creation.
-* **errors**: [HealthErrorDetails](#healtherrordetails)[] (ReadOnly): Errors for Hyper-V clusters.
-* **fqdn**: string: FQDN/IPAddress of the Hyper-V cluster.
-* **functionalLevel**: int (ReadOnly): Functional level of the Hyper-V cluster.
-* **hostFqdnList**: string[]: List of hosts (FQDN) currently being tracked by the cluster.
-* **runAsAccountId**: string: Run as account ID of the Hyper-V cluster.
-* **status**: string (ReadOnly): Status of the Hyper-V cluster.
-* **updatedTimestamp**: string (ReadOnly): Timestamp marking last updated on the Hyper-V cluster.
 
 ## HealthErrorDetails
 ### Properties
@@ -109,6 +68,17 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## HyperVClusterProperties
+### Properties
+* **createdTimestamp**: string (ReadOnly): Timestamp marking Hyper-V cluster creation.
+* **errors**: [HealthErrorDetails](#healtherrordetails)[] (ReadOnly): Errors for Hyper-V clusters.
+* **fqdn**: string: FQDN/IPAddress of the Hyper-V cluster.
+* **functionalLevel**: int (ReadOnly): Functional level of the Hyper-V cluster.
+* **hostFqdnList**: string[]: List of hosts (FQDN) currently being tracked by the cluster.
+* **runAsAccountId**: string: Run as account ID of the Hyper-V cluster.
+* **status**: string (ReadOnly): Status of the Hyper-V cluster.
+* **updatedTimestamp**: string (ReadOnly): Timestamp marking last updated on the Hyper-V cluster.
+
 ## HyperVHostProperties
 ### Properties
 * **createdTimestamp**: string (ReadOnly): Timestamp marking Hyper-V host creation.
@@ -118,10 +88,35 @@
 * **updatedTimestamp**: string (ReadOnly): Timestamp marking last updated on the Hyper-V host.
 * **version**: string (ReadOnly): Version of the Hyper-V host.
 
-## VMwareSiteTags
+## HyperVSiteTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SiteAgentProperties
+### Properties
+* **id**: string (ReadOnly): ID of the agent.
+* **keyVaultId**: string: Key vault ARM Id.
+* **keyVaultUri**: string: Key vault URI.
+* **lastHeartBeatUtc**: string (ReadOnly): Last heartbeat time of the agent in UTC.
+* **version**: string (ReadOnly): Version of the agent.
+
+## SiteProperties
+### Properties
+* **agentDetails**: [SiteAgentProperties](#siteagentproperties): On-premises agent details.
+* **applianceName**: string: Appliance Name.
+* **discoverySolutionId**: string: ARM ID of migration hub solution for SDS.
+* **serviceEndpoint**: string (ReadOnly): Service endpoint.
+* **servicePrincipalIdentityDetails**: [SiteSpnProperties](#sitespnproperties): Service principal identity details used by agent for communication to the service.
+
+## SiteSpnProperties
+### Properties
+* **aadAuthority**: string: AAD Authority URL which was used to request the token for the service principal.
+* **applicationId**: string: Application/client Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.
+* **audience**: string: Intended audience for the service principal.
+* **objectId**: string: Object Id of the service principal with which the on-premise management/data plane components would communicate with our Azure services.
+* **rawCertData**: string: Raw certificate data for building certificate expiry flows.
+* **tenantId**: string: Tenant Id for the service principal with which the on-premise management/data plane components would communicate with our Azure services.
 
 ## VCenterProperties
 ### Properties
@@ -134,4 +129,9 @@
 * **runAsAccountId**: string: Run as account ID of the vCenter.
 * **updatedTimestamp**: string (ReadOnly): Timestamp marking last updated on the vCenter.
 * **version**: string (ReadOnly): Version of the vCenter.
+
+## VMwareSiteTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 

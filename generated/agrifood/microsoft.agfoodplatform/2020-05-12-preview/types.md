@@ -23,25 +23,6 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.AgFoodPlatform/farmBeats/extensions' (ReadOnly, DeployTimeConstant): The resource type
 
-## FarmBeatsProperties
-### Properties
-* **instanceUri**: string (ReadOnly): Uri of the FarmBeats instance.
-* **provisioningState**: 'Failed' | 'Succeeded' (ReadOnly): FarmBeats instance provisioning state.
-
-## SystemData
-### Properties
-* **createdAt**: string (ReadOnly): The timestamp of resource creation (UTC).
-* **createdBy**: string (ReadOnly): The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that created the resource.
-* **lastModifiedAt**: string (ReadOnly): The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string (ReadOnly): The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that created the resource.
-
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## ExtensionProperties
 ### Properties
 * **extensionApiDocsLink**: string (ReadOnly): Extension api docs link.
@@ -49,4 +30,23 @@
 * **extensionCategory**: string (ReadOnly): Extension category. e.g. weather/sensor/satellite.
 * **extensionId**: string (ReadOnly): Extension Id.
 * **installedExtensionVersion**: string (ReadOnly): Installed extension version.
+
+## FarmBeatsProperties
+### Properties
+* **instanceUri**: string (ReadOnly): Uri of the FarmBeats instance.
+* **provisioningState**: 'Failed' | 'Succeeded' | string (ReadOnly): FarmBeats instance provisioning state.
+
+## SystemData
+### Properties
+* **createdAt**: string (ReadOnly): The timestamp of resource creation (UTC).
+* **createdBy**: string (ReadOnly): The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that created the resource.
+* **lastModifiedAt**: string (ReadOnly): The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string (ReadOnly): The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 

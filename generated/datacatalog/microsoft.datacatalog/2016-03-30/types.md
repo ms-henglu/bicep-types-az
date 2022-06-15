@@ -8,7 +8,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ADCCatalogProperties](#adccatalogproperties): Properties of the data catalog.
+* **properties**: [ADCCatalogProperties](#adccatalogproperties): Azure Data Catalog properties.
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.DataCatalog/catalogs' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -16,7 +16,7 @@
 ### Properties
 * **admins**: [Principals](#principals)[]: Azure data catalog admin list.
 * **enableAutomaticUnitAdjustment**: bool: Automatic unit adjustment enabled or not.
-* **sku**: 'Free' | 'Standard': Azure data catalog SKU.
+* **sku**: 'Free' | 'Standard' | string: Azure data catalog SKU.
 * **successfullyProvisioned**: bool: Azure data catalog provision status.
 * **units**: int: Azure data catalog units.
 * **users**: [Principals](#principals)[]: Azure data catalog user list.

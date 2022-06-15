@@ -7,21 +7,9 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: The location of the resource. Since Azure Activity Log Alerts is a global service, the location of the rules should always be 'global'.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AlertRuleProperties](#alertruleproperties): An Azure Activity Log Alert rule.
+* **properties**: [AlertRuleProperties](#alertruleproperties): The Activity Log Alert rule properties of the resource.
 * **tags**: [AzureResourceTags](#azureresourcetags): The tags of the resource.
 * **type**: 'Microsoft.Insights/activityLogAlerts' (ReadOnly, DeployTimeConstant): The resource type
-
-## AlertRuleProperties
-### Properties
-* **actions**: [ActionList](#actionlist) (Required): A list of Activity Log Alert rule actions.
-* **condition**: [AlertRuleAllOfCondition](#alertruleallofcondition) (Required): An Activity Log Alert rule condition that is met when all its member conditions are met.
-* **description**: string: A description of this Activity Log Alert rule.
-* **enabled**: bool: Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert rule is not enabled, then none of its actions will be activated.
-* **scopes**: string[] (Required): A list of resource IDs that will be used as prefixes. The alert will only apply to Activity Log events with resource IDs that fall under one of these prefixes. This list must include at least one item.
-
-## ActionList
-### Properties
-* **actionGroups**: [ActionGroup](#actiongroup)[]: The list of the Action Groups.
 
 ## ActionGroup
 ### Properties
@@ -32,6 +20,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ActionList
+### Properties
+* **actionGroups**: [ActionGroup](#actiongroup)[]: The list of the Action Groups.
 
 ## AlertRuleAllOfCondition
 ### Properties
@@ -51,6 +43,14 @@ The possible values for this field are (case-insensitive): 'resourceId', 'catego
 * **equals**: string: The value of the event's field will be compared to this value (case-insensitive) to determine if the condition is met.
 * **field**: string: The name of the Activity Log event's field that this condition will examine.
 The possible values for this field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup', 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties'.
+
+## AlertRuleProperties
+### Properties
+* **actions**: [ActionList](#actionlist) (Required): The actions that will activate when the condition is met.
+* **condition**: [AlertRuleAllOfCondition](#alertruleallofcondition) (Required): The condition that will cause this alert to activate.
+* **description**: string: A description of this Activity Log Alert rule.
+* **enabled**: bool: Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert rule is not enabled, then none of its actions will be activated.
+* **scopes**: string[] (Required): A list of resource IDs that will be used as prefixes. The alert will only apply to Activity Log events with resource IDs that fall under one of these prefixes. This list must include at least one item.
 
 ## AzureResourceTags
 ### Properties

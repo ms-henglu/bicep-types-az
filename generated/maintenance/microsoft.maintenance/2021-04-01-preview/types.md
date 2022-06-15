@@ -15,8 +15,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Location of the resource
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ConfigurationAssignmentProperties](#configurationassignmentproperties): Properties for configuration assignment
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [ConfigurationAssignmentProperties](#configurationassignmentproperties): Properties of the configuration assignment
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Maintenance/configurationAssignments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Maintenance/maintenanceConfigurations@2021-04-01-preview
@@ -26,8 +26,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Gets or sets location of the resource
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [MaintenanceConfigurationProperties](#maintenanceconfigurationproperties): Properties for maintenance configuration
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [MaintenanceConfigurationProperties](#maintenanceconfigurationproperties): Gets or sets properties of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [MaintenanceConfigurationTags](#maintenanceconfigurationtags): Gets or sets tags of the resource
 * **type**: 'Microsoft.Maintenance/maintenanceConfigurations' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -36,57 +36,18 @@
 * **maintenanceConfigurationId**: string: The maintenance configuration Id
 * **resourceId**: string: The unique resourceId
 
-## SystemData
-### Properties
-* **createdAt**: string: The timestamp of resource creation (UTC).
-* **createdBy**: string: The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string: The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-
-## MaintenanceConfigurationProperties
-### Properties
-* **extensionProperties**: [MaintenanceConfigurationPropertiesExtensionProperties](#maintenanceconfigurationpropertiesextensionproperties): Gets or sets extensionProperties of the maintenanceConfiguration
-* **installPatches**: [InputPatchConfiguration](#inputpatchconfiguration): Input configuration for a patch run
-* **maintenanceScope**: 'Extension' | 'Host' | 'InGuestPatch' | 'OSImage' | 'SQLDB' | 'SQLManagedInstance': Gets or sets maintenanceScope of the configuration
-* **maintenanceWindow**: [MaintenanceWindow](#maintenancewindow): Definition of a MaintenanceWindow
-* **namespace**: string: Gets or sets namespace of the resource
-* **visibility**: 'Custom' | 'Public': Gets or sets the visibility of the configuration. The default value is 'Custom'
-
-## MaintenanceConfigurationPropertiesExtensionProperties
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## InputPatchConfiguration
-### Properties
-* **linuxParameters**: [InputLinuxParameters](#inputlinuxparameters): Input properties for patching a Linux machine.
-* **rebootSetting**: 'AlwaysReboot' | 'NeverReboot' | 'RebootIfRequired': Possible reboot preference as defined by the user based on which it would be decided to reboot the machine or not after the patch operation is completed.
-* **tasks**: [SoftwareUpdateConfigurationTasks](#softwareupdateconfigurationtasks): Task properties of the software update configuration.
-* **windowsParameters**: [InputWindowsParameters](#inputwindowsparameters): Input properties for patching a Windows machine.
-
 ## InputLinuxParameters
 ### Properties
 * **classificationsToInclude**: string[]: Classification category of patches to be patched
 * **packageNameMasksToExclude**: string[]: Package names to be excluded for patching.
 * **packageNameMasksToInclude**: string[]: Package names to be included for patching.
 
-## SoftwareUpdateConfigurationTasks
+## InputPatchConfiguration
 ### Properties
-* **postTasks**: [TaskProperties](#taskproperties)[]: List of post tasks. e.g. [{'source' :'runbook', 'taskScope': 'Resource', 'parameters': { 'arg1': 'value1'}}]
-* **preTasks**: [TaskProperties](#taskproperties)[]: List of pre tasks. e.g. [{'source' :'runbook', 'taskScope': 'Global', 'parameters': { 'arg1': 'value1'}}]
-
-## TaskProperties
-### Properties
-* **parameters**: [TaskPropertiesParameters](#taskpropertiesparameters): Gets or sets the parameters of the task.
-* **source**: string: Gets or sets the name of the runbook.
-* **taskScope**: 'Global' | 'Resource': Global Task execute once when schedule trigger. Resource task execute for each VM.
-
-## TaskPropertiesParameters
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **linuxParameters**: [InputLinuxParameters](#inputlinuxparameters): Input parameters specific to patching Linux machine. For Windows machines, do not pass this property.
+* **rebootSetting**: 'AlwaysReboot' | 'NeverReboot' | 'RebootIfRequired' | string: Possible reboot preference as defined by the user based on which it would be decided to reboot the machine or not after the patch operation is completed.
+* **tasks**: [SoftwareUpdateConfigurationTasks](#softwareupdateconfigurationtasks): Tasks information for the Software update configuration.
+* **windowsParameters**: [InputWindowsParameters](#inputwindowsparameters): Input parameters specific to patching a Windows machine. For Linux machines, do not pass this property.
 
 ## InputWindowsParameters
 ### Properties
@@ -94,6 +55,25 @@
 * **excludeKbsRequiringReboot**: bool: Exclude patches which need reboot
 * **kbNumbersToExclude**: string[]: Windows KBID to be excluded for patching.
 * **kbNumbersToInclude**: string[]: Windows KBID to be included for patching.
+
+## MaintenanceConfigurationProperties
+### Properties
+* **extensionProperties**: [MaintenanceConfigurationPropertiesExtensionProperties](#maintenanceconfigurationpropertiesextensionproperties): Gets or sets extensionProperties of the maintenanceConfiguration
+* **installPatches**: [InputPatchConfiguration](#inputpatchconfiguration): The input parameters to be passed to the patch run operation.
+* **maintenanceScope**: 'Extension' | 'Host' | 'InGuestPatch' | 'OSImage' | 'SQLDB' | 'SQLManagedInstance' | string: Gets or sets maintenanceScope of the configuration
+* **maintenanceWindow**: [MaintenanceWindow](#maintenancewindow): Definition of a MaintenanceWindow
+* **namespace**: string: Gets or sets namespace of the resource
+* **visibility**: 'Custom' | 'Public' | string: Gets or sets the visibility of the configuration. The default value is 'Custom'
+
+## MaintenanceConfigurationPropertiesExtensionProperties
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## MaintenanceConfigurationTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## MaintenanceWindow
 ### Properties
@@ -103,7 +83,27 @@
 * **startDateTime**: string: Effective start date of the maintenance window in YYYY-MM-DD hh:mm format. The start date can be set to either the current date or future date. The window will be created in the time zone provided and adjusted to daylight savings according to that time zone.
 * **timeZone**: string: Name of the timezone. List of timezones can be obtained by executing [System.TimeZoneInfo]::GetSystemTimeZones() in PowerShell. Example: Pacific Standard Time, UTC, W. Europe Standard Time, Korea Standard Time, Cen. Australia Standard Time.
 
-## MaintenanceConfigurationTags
+## SoftwareUpdateConfigurationTasks
+### Properties
+* **postTasks**: [TaskProperties](#taskproperties)[]: List of post tasks. e.g. [{'source' :'runbook', 'taskScope': 'Resource', 'parameters': { 'arg1': 'value1'}}]
+* **preTasks**: [TaskProperties](#taskproperties)[]: List of pre tasks. e.g. [{'source' :'runbook', 'taskScope': 'Global', 'parameters': { 'arg1': 'value1'}}]
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TaskProperties
+### Properties
+* **parameters**: [TaskPropertiesParameters](#taskpropertiesparameters): Gets or sets the parameters of the task.
+* **source**: string: Gets or sets the name of the runbook.
+* **taskScope**: 'Global' | 'Resource' | string: Global Task execute once when schedule trigger. Resource task execute for each VM.
+
+## TaskPropertiesParameters
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string

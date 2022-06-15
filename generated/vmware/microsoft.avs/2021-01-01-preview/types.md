@@ -8,7 +8,7 @@
 * **location**: string: Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateCloudProperties](#privatecloudproperties): The properties of a private cloud resource
-* **sku**: [Sku](#sku) (Required): The resource model definition representing SKU
+* **sku**: [Sku](#sku) (Required): The private cloud SKU
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.AVS/privateClouds' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -18,7 +18,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AddonProperties](#addonproperties): The properties of an addon that may be updated
+* **properties**: [AddonProperties](#addonproperties): The properties of an addon resource
 * **type**: 'Microsoft.AVS/privateClouds/addons' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/authorizations@2021-01-01-preview
@@ -36,8 +36,8 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ClusterProperties](#clusterproperties): The properties of a cluster
-* **sku**: [Sku](#sku) (Required): The resource model definition representing SKU
+* **properties**: [ClusterProperties](#clusterproperties): The properties of a cluster resource
+* **sku**: [Sku](#sku) (Required): The cluster SKU
 * **type**: 'Microsoft.AVS/privateClouds/clusters' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/clusters/datastores@2021-01-01-preview
@@ -46,7 +46,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DatastoreProperties](#datastoreproperties): The properties of a datastore
+* **properties**: [DatastoreProperties](#datastoreproperties): The properties of a datastore resource
 * **type**: 'Microsoft.AVS/privateClouds/clusters/datastores' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/globalReachConnections@2021-01-01-preview
@@ -55,7 +55,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [GlobalReachConnectionProperties](#globalreachconnectionproperties): The properties of a global reach connection
+* **properties**: [GlobalReachConnectionProperties](#globalreachconnectionproperties): The properties of a global reach connection resource
 * **type**: 'Microsoft.AVS/privateClouds/globalReachConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/hcxEnterpriseSites@2021-01-01-preview
@@ -64,7 +64,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [HcxEnterpriseSiteProperties](#hcxenterprisesiteproperties) (ReadOnly): The properties of an HCX Enterprise Site
+* **properties**: [HcxEnterpriseSiteProperties](#hcxenterprisesiteproperties) (ReadOnly): The properties of an HCX Enterprise Site resource
 * **type**: 'Microsoft.AVS/privateClouds/hcxEnterpriseSites' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations@2021-01-01-preview
@@ -73,7 +73,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkDhcpEntity](#workloadnetworkdhcpentity): Base class for WorkloadNetworkDhcpServer and WorkloadNetworkDhcpRelay to inherit from
+* **properties**: [WorkloadNetworkDhcpEntity](#workloadnetworkdhcpentity): DHCP properties.
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/dnsServices@2021-01-01-preview
@@ -82,7 +82,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkDnsServiceProperties](#workloadnetworkdnsserviceproperties): NSX DNS Service Properties
+* **properties**: [WorkloadNetworkDnsServiceProperties](#workloadnetworkdnsserviceproperties): DNS Service properties
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/dnsServices' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/dnsZones@2021-01-01-preview
@@ -91,7 +91,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkDnsZoneProperties](#workloadnetworkdnszoneproperties): NSX DNS Zone Properties
+* **properties**: [WorkloadNetworkDnsZoneProperties](#workloadnetworkdnszoneproperties): DNS Zone properties
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/dnsZones' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles@2021-01-01-preview
@@ -100,7 +100,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkPortMirroringProperties](#workloadnetworkportmirroringproperties): NSX Port Mirroring Properties
+* **properties**: [WorkloadNetworkPortMirroringProperties](#workloadnetworkportmirroringproperties): Port Mirroring Properties.
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/segments@2021-01-01-preview
@@ -109,7 +109,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkSegmentProperties](#workloadnetworksegmentproperties): NSX Segment Properties
+* **properties**: [WorkloadNetworkSegmentProperties](#workloadnetworksegmentproperties): The properties of a Workload Segment proxy resource.
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/segments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AVS/privateClouds/workloadNetworks/vmGroups@2021-01-01-preview
@@ -118,7 +118,7 @@
 * **apiVersion**: '2021-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkloadNetworkVMGroupProperties](#workloadnetworkvmgroupproperties): NSX VM Group Properties
+* **properties**: [WorkloadNetworkVMGroupProperties](#workloadnetworkvmgroupproperties): VM Group properties.
 * **type**: 'Microsoft.AVS/privateClouds/workloadNetworks/vmGroups' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Function listAdminCredentials (Microsoft.AVS/privateClouds@2021-01-01-preview)
@@ -126,22 +126,18 @@
 * **ApiVersion**: 2021-01-01-preview
 * **Output**: [AdminCredentials](#admincredentials)
 
-## PrivateCloudProperties
+## AddonProperties
 ### Properties
-* **circuit**: [Circuit](#circuit): An ExpressRoute Circuit
-* **endpoints**: [Endpoints](#endpoints) (ReadOnly): Endpoint addresses
-* **identitySources**: [IdentitySource](#identitysource)[]: vCenter Single Sign On Identity Sources
-* **internet**: 'Disabled' | 'Enabled': Connectivity to internet is enabled or disabled
-* **managementCluster**: [ManagementCluster](#managementcluster): The properties of a management cluster
-* **managementNetwork**: string (ReadOnly): Network used to access vCenter Server and NSX-T Manager
-* **networkBlock**: string (Required): The block of addresses should be unique across VNet in your subscription as well as on-premise. Make sure the CIDR format is conformed to (A.B.C.D/X) where A,B,C,D are between 0 and 255, and X is between 0 and 22
-* **nsxtCertificateThumbprint**: string (ReadOnly): Thumbprint of the NSX-T Manager SSL certificate
-* **nsxtPassword**: string: Optionally, set the NSX-T Manager password when the private cloud is created
-* **provisioningNetwork**: string (ReadOnly): Used for virtual machine cold migration, cloning, and snapshot migration
-* **provisioningState**: 'Building' | 'Cancelled' | 'Deleting' | 'Failed' | 'Pending' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
-* **vcenterCertificateThumbprint**: string (ReadOnly): Thumbprint of the vCenter Server SSL certificate
-* **vcenterPassword**: string: Optionally, set the vCenter admin password when the private cloud is created
-* **vmotionNetwork**: string (ReadOnly): Used for live migration of virtual machines
+* **addonType**: 'SRM' | 'VR' | string: The type of private cloud addon
+* **licenseKey**: string: The SRM license
+* **provisioningState**: 'Building' | 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the addon provisioning
+
+## AdminCredentials
+### Properties
+* **nsxtPassword**: string (ReadOnly): NSX-T Manager password
+* **nsxtUsername**: string (ReadOnly): NSX-T Manager username
+* **vcenterPassword**: string (ReadOnly): vCenter admin password
+* **vcenterUsername**: string (ReadOnly): vCenter admin username
 
 ## Circuit
 ### Properties
@@ -150,11 +146,48 @@
 * **primarySubnet**: string (ReadOnly): CIDR of primary subnet
 * **secondarySubnet**: string (ReadOnly): CIDR of secondary subnet
 
+## ClusterProperties
+### Properties
+* **clusterId**: int (ReadOnly): The identity
+* **clusterSize**: int: The cluster size
+* **hosts**: string[] (ReadOnly): The hosts
+* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the cluster provisioning
+
+## DatastoreProperties
+### Properties
+* **diskPoolVolume**: [DiskPoolVolume](#diskpoolvolume): An iSCSI volume
+* **netAppVolume**: [NetAppVolume](#netappvolume): An Azure NetApp Files volume
+* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the datastore provisioning
+
+## DiskPoolVolume
+### Properties
+* **endpoints**: string[]: iSCSI provider target IP address list
+* **lunName**: string: Name of the LUN to be used
+
 ## Endpoints
 ### Properties
 * **hcxCloudManager**: string (ReadOnly): Endpoint for the HCX Cloud Manager
 * **nsxtManager**: string (ReadOnly): Endpoint for the NSX-T Data Center manager
 * **vcsa**: string (ReadOnly): Endpoint for Virtual Center Server Appliance
+
+## ExpressRouteAuthorizationProperties
+### Properties
+* **expressRouteAuthorizationId**: string (ReadOnly): The ID of the ExpressRoute Circuit Authorization
+* **expressRouteAuthorizationKey**: string (ReadOnly): The key of the ExpressRoute Circuit Authorization
+* **provisioningState**: 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the  ExpressRoute Circuit Authorization provisioning
+
+## GlobalReachConnectionProperties
+### Properties
+* **addressPrefix**: string (ReadOnly): The network used for global reach carved out from the original network block provided for the private cloud
+* **authorizationKey**: string: Authorization key from the peer express route used for the global reach connection
+* **circuitConnectionStatus**: 'Connected' | 'Connecting' | 'Disconnected' | string (ReadOnly): The connection status of the global reach connection
+* **peerExpressRouteCircuit**: string: Identifier of the ExpressRoute Circuit to peer with in the global reach connection
+* **provisioningState**: 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the  ExpressRoute Circuit Authorization provisioning
+
+## HcxEnterpriseSiteProperties
+### Properties
+* **activationKey**: string (ReadOnly): The activation key
+* **status**: 'Available' | 'Consumed' | 'Deactivated' | 'Deleted' | string (ReadOnly): The status of the HCX Enterprise Site
 
 ## IdentitySource
 ### Properties
@@ -166,7 +199,7 @@
 * **password**: string: The password of the Active Directory user with a minimum of read-only access to Base DN for users and groups.
 * **primaryServer**: string: Primary server URL
 * **secondaryServer**: string: Secondary server URL
-* **ssl**: 'Disabled' | 'Enabled': Protect LDAP communication using SSL certificate (LDAPS)
+* **ssl**: 'Disabled' | 'Enabled' | string: Protect LDAP communication using SSL certificate (LDAPS)
 * **username**: string: The ID of an Active Directory user with a minimum of read-only access to Base DN for users and group
 
 ## ManagementCluster
@@ -174,71 +207,45 @@
 * **clusterId**: int (ReadOnly): The identity
 * **clusterSize**: int: The cluster size
 * **hosts**: string[] (ReadOnly): The hosts
-* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the cluster provisioning
-
-## Sku
-### Properties
-* **name**: string (Required): The name of the SKU.
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AddonProperties
-### Properties
-* **addonType**: 'SRM' | 'VR': The type of private cloud addon
-* **licenseKey**: string: The SRM license
-* **provisioningState**: 'Building' | 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the addon provisioning
-
-## ExpressRouteAuthorizationProperties
-### Properties
-* **expressRouteAuthorizationId**: string (ReadOnly): The ID of the ExpressRoute Circuit Authorization
-* **expressRouteAuthorizationKey**: string (ReadOnly): The key of the ExpressRoute Circuit Authorization
-* **provisioningState**: 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the  ExpressRoute Circuit Authorization provisioning
-
-## ClusterProperties
-### Properties
-* **clusterId**: int (ReadOnly): The identity
-* **clusterSize**: int: The cluster size
-* **hosts**: string[] (ReadOnly): The hosts
-* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the cluster provisioning
-
-## DatastoreProperties
-### Properties
-* **diskPoolVolume**: [DiskPoolVolume](#diskpoolvolume): An iSCSI volume from Microsoft.StoragePool provider
-* **netAppVolume**: [NetAppVolume](#netappvolume): An Azure NetApp Files volume from Microsoft.NetApp provider
-* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the datastore provisioning
-
-## DiskPoolVolume
-### Properties
-* **endpoints**: string[]: iSCSI provider target IP address list
-* **lunName**: string: Name of the LUN to be used
+* **provisioningState**: 'Cancelled' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The state of the cluster provisioning
 
 ## NetAppVolume
 ### Properties
 * **nfsFilePath**: string: File path through which the NFS volume is exposed by the provider
 * **nfsProviderIp**: string: IP address of the NFS provider
 
-## GlobalReachConnectionProperties
+## PrivateCloudProperties
 ### Properties
-* **addressPrefix**: string (ReadOnly): The network used for global reach carved out from the original network block provided for the private cloud
-* **authorizationKey**: string: Authorization key from the peer express route used for the global reach connection
-* **circuitConnectionStatus**: 'Connected' | 'Connecting' | 'Disconnected' (ReadOnly): The connection status of the global reach connection
-* **peerExpressRouteCircuit**: string: Identifier of the ExpressRoute Circuit to peer with in the global reach connection
-* **provisioningState**: 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The state of the  ExpressRoute Circuit Authorization provisioning
+* **circuit**: [Circuit](#circuit): An ExpressRoute Circuit
+* **endpoints**: [Endpoints](#endpoints) (ReadOnly): The endpoints
+* **identitySources**: [IdentitySource](#identitysource)[]: vCenter Single Sign On Identity Sources
+* **internet**: 'Disabled' | 'Enabled' | string: Connectivity to internet is enabled or disabled
+* **managementCluster**: [ManagementCluster](#managementcluster): The default cluster used for management
+* **managementNetwork**: string (ReadOnly): Network used to access vCenter Server and NSX-T Manager
+* **networkBlock**: string (Required): The block of addresses should be unique across VNet in your subscription as well as on-premise. Make sure the CIDR format is conformed to (A.B.C.D/X) where A,B,C,D are between 0 and 255, and X is between 0 and 22
+* **nsxtCertificateThumbprint**: string (ReadOnly): Thumbprint of the NSX-T Manager SSL certificate
+* **nsxtPassword**: string: Optionally, set the NSX-T Manager password when the private cloud is created
+* **provisioningNetwork**: string (ReadOnly): Used for virtual machine cold migration, cloning, and snapshot migration
+* **provisioningState**: 'Building' | 'Cancelled' | 'Deleting' | 'Failed' | 'Pending' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
+* **vcenterCertificateThumbprint**: string (ReadOnly): Thumbprint of the vCenter Server SSL certificate
+* **vcenterPassword**: string: Optionally, set the vCenter admin password when the private cloud is created
+* **vmotionNetwork**: string (ReadOnly): Used for live migration of virtual machines
 
-## HcxEnterpriseSiteProperties
+## ResourceTags
 ### Properties
-* **activationKey**: string (ReadOnly): The activation key
-* **status**: 'Available' | 'Consumed' | 'Deactivated' | 'Deleted' (ReadOnly): The status of the HCX Enterprise Site
+### Additional Properties
+* **Additional Properties Type**: string
+
+## Sku
+### Properties
+* **name**: string (Required): The name of the SKU.
 
 ## WorkloadNetworkDhcpEntity
 * **Discriminator**: dhcpType
 
 ### Base Properties
 * **displayName**: string: Display name of the DHCP entity.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
 * **segments**: string[] (ReadOnly): NSX Segments consuming DHCP.
 ### WorkloadNetworkDhcpRelay
@@ -259,10 +266,10 @@
 * **displayName**: string: Display name of the DNS Service.
 * **dnsServiceIp**: string: DNS service IP of the DNS Service.
 * **fqdnZones**: string[]: FQDN zones of the DNS Service.
-* **logLevel**: 'DEBUG' | 'ERROR' | 'FATAL' | 'INFO' | 'WARNING': DNS Service log level.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **logLevel**: 'DEBUG' | 'ERROR' | 'FATAL' | 'INFO' | 'WARNING' | string: DNS Service log level.
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
-* **status**: 'FAILURE' | 'SUCCESS' (ReadOnly): DNS Service status.
+* **status**: 'FAILURE' | 'SUCCESS' | string (ReadOnly): DNS Service status.
 
 ## WorkloadNetworkDnsZoneProperties
 ### Properties
@@ -270,33 +277,33 @@
 * **dnsServerIps**: string[]: DNS Server IP array of the DNS Zone.
 * **dnsServices**: int: Number of DNS Services using the DNS zone.
 * **domain**: string[]: Domain names of the DNS Zone.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
 * **sourceIp**: string: Source IP of the DNS Zone.
 
 ## WorkloadNetworkPortMirroringProperties
 ### Properties
 * **destination**: string: Destination VM Group.
-* **direction**: 'INGRESS, EGRESS, BIDIRECTIONAL': Direction of port mirroring profile.
+* **direction**: 'INGRESS, EGRESS, BIDIRECTIONAL' | string: Direction of port mirroring profile.
 * **displayName**: string: Display name of the port mirroring profile.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
 * **source**: string: Source VM Group.
-* **status**: 'SUCCESS, FAILURE' (ReadOnly): Port Mirroring Status.
+* **status**: 'SUCCESS, FAILURE' | string (ReadOnly): Port Mirroring Status.
+
+## WorkloadNetworkSegmentPortVif
+### Properties
+* **portName**: string: Name of port or VIF attached to segment.
 
 ## WorkloadNetworkSegmentProperties
 ### Properties
 * **connectedGateway**: string: Gateway which to connect segment to.
 * **displayName**: string: Display name of the segment.
 * **portVif**: [WorkloadNetworkSegmentPortVif](#workloadnetworksegmentportvif)[] (ReadOnly): Port Vif which segment is associated with.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
-* **status**: 'SUCCESS, FAILURE' (ReadOnly): Segment status.
-* **subnet**: [WorkloadNetworkSegmentSubnet](#workloadnetworksegmentsubnet): Subnet configuration for segment
-
-## WorkloadNetworkSegmentPortVif
-### Properties
-* **portName**: string: Name of port or VIF attached to segment.
+* **status**: 'SUCCESS, FAILURE' | string (ReadOnly): Segment status.
+* **subnet**: [WorkloadNetworkSegmentSubnet](#workloadnetworksegmentsubnet): Subnet which to connect segment to.
 
 ## WorkloadNetworkSegmentSubnet
 ### Properties
@@ -307,14 +314,7 @@
 ### Properties
 * **displayName**: string: Display name of the VM group.
 * **members**: string[]: Virtual machine members of this group.
-* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state
+* **provisioningState**: 'Building' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state
 * **revision**: int: NSX revision number.
-* **status**: 'SUCCESS, FAILURE' (ReadOnly): VM Group status.
-
-## AdminCredentials
-### Properties
-* **nsxtPassword**: string (ReadOnly): NSX-T Manager password
-* **nsxtUsername**: string (ReadOnly): NSX-T Manager username
-* **vcenterPassword**: string (ReadOnly): vCenter admin password
-* **vcenterUsername**: string (ReadOnly): vCenter admin username
+* **status**: 'SUCCESS, FAILURE' | string (ReadOnly): VM Group status.
 

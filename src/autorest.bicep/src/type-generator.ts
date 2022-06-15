@@ -54,13 +54,13 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
 
       const propertyDefinition = parseType(putProperty?.schema, getProperty?.schema);
       if (propertyDefinition) {
-        const description = (putProperty?.schema ?? getProperty?.schema)?.language.default?.description;
+        const description = getPropertyDescription(putProperty, getProperty);
         const flags = parsePropertyFlags(putProperty, getProperty);
         resourceProperties[propertyName] = createObjectProperty(propertyDefinition, flags, description);
       }
     }
 
-    if (putSchema?.discriminator || getSchema?.discriminator) {
+    if (putSchema?.discriminator) {
       const discriminatedObjectType = factory.lookupType(resourceDefinition) as DiscriminatedObjectType;
 
       handlePolymorphicType(discriminatedObjectType, putSchema, getSchema);
@@ -77,14 +77,14 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
           return null;
         }
       }
-        
+
       const polymorphicBodies: Dictionary<TypeReference> = {};
       for (const definition of definitions) {
         const bodyType = processResourceBody(fullyQualifiedType, definition);
         if (!bodyType || !definition.descriptor.constantName) {
           return null;
         }
-        
+
         polymorphicBodies[definition.descriptor.constantName] = bodyType;
       }
 
@@ -230,6 +230,13 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
     }
   }
 
+  function getPropertyDescription(putProperty: Property | undefined, getProperty: Property | undefined) {
+    const propertyDescription = (putProperty ?? getProperty)?.language.default?.description;
+    const typeDescription = (putProperty?.schema ?? getProperty?.schema)?.language.default?.description;
+
+    return propertyDescription ?? typeDescription;
+  }
+
   function flattenDiscriminatorSubTypes(schema: ObjectSchema | undefined) {
     if (!schema || !schema.discriminator) {
       return {};
@@ -266,7 +273,7 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
     const getSubTypes = flattenDiscriminatorSubTypes(getSchema);
 
     for (const subTypeName of uniq([...keys(putSubTypes), ...keys(getSubTypes)])) {
-      yield { 
+      yield {
         subTypeName,
         putSubType: putSubTypes[subTypeName],
         getSubType: getSubTypes[subTypeName],
@@ -426,7 +433,7 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
       // so construct the type on-the-fly, and don't cache it globally
       return namedDefinitions[definitionName];
     }
-    
+
     let additionalProperties: TypeReference | undefined;
     if (includeBaseProperties) {
       const putParentDictionary = (putSchema?.parents?.all || []).filter(x => x instanceof DictionarySchema).map(x => x as DictionarySchema)[0];
@@ -447,7 +454,7 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
     for (const { propertyName, putProperty, getProperty } of getObjectTypeProperties(putSchema, getSchema, includeBaseProperties)) {
       const propertyDefinition = parseType(putProperty?.schema, getProperty?.schema);
       if (propertyDefinition) {
-        const description = (putProperty?.schema ?? getProperty?.schema)?.language.default?.description;
+        const description = getPropertyDescription(putProperty, getProperty);
         const flags = parsePropertyFlags(putProperty, getProperty);
         definitionProperties[propertyName] = createObjectProperty(propertyDefinition, flags, description);
       }
@@ -474,6 +481,10 @@ export function generateTypes(host: AutorestExtensionHost, definition: ProviderD
     for (const enumValue of combinedSchema.choices) {
       const stringLiteralType = factory.addType(new StringLiteralType(enumValue.value.toString()));
       enumTypes.push(stringLiteralType);
+    }
+
+    if (combinedSchema.type === SchemaType.Choice) {
+      enumTypes.push(factory.lookupBuiltInType(BuiltInTypeKind.String));
     }
 
     if (enumTypes.length === 1) {

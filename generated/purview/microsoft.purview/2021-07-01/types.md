@@ -5,10 +5,10 @@
 ### Properties
 * **apiVersion**: '2021-07-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [Identity](#identity): The Managed Identity of the resource
+* **identity**: [Identity](#identity): Identity Info on the tracked resource
 * **location**: string: Gets or sets the location.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AccountProperties](#accountproperties): The account properties
+* **properties**: [AccountProperties](#accountproperties): Gets or sets the properties.
 * **sku**: [AccountSku](#accountsku) (ReadOnly): Gets or sets the Sku.
 * **systemData**: [TrackedResourceSystemData](#trackedresourcesystemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Tags on the azure resource.
@@ -20,7 +20,7 @@
 * **apiVersion**: '2021-07-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): A private endpoint connection properties class.
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): The connection identifier.
 * **type**: 'Microsoft.Purview/accounts/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Function listkeys (Microsoft.Purview/accounts@2021-07-01)
@@ -28,26 +28,15 @@
 * **ApiVersion**: 2021-07-01
 * **Output**: [AccessKeys](#accesskeys)
 
-## Identity
+## AccessKeys
 ### Properties
-* **principalId**: string (ReadOnly): Service principal object Id
-* **tenantId**: string (ReadOnly): Tenant Id
-* **type**: 'None' | 'SystemAssigned' | 'UserAssigned': Identity Type
-* **userAssignedIdentities**: [IdentityUserAssignedIdentities](#identityuserassignedidentities): User Assigned Identities
-
-## IdentityUserAssignedIdentities
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
-
-## UserAssignedIdentity
-### Properties
-* **clientId**: string (ReadOnly): Gets or Sets Client ID
-* **principalId**: string (ReadOnly): Gets or Sets Principal ID
+* **atlasKafkaPrimaryEndpoint**: string (ReadOnly): Gets or sets the primary connection string.
+* **atlasKafkaSecondaryEndpoint**: string (ReadOnly): Gets or sets the secondary connection string.
 
 ## AccountProperties
 ### Properties
-* **cloudConnectors**: [CloudConnectors](#cloudconnectors): External Cloud Service connectors
+* **cloudConnectors**: [CloudConnectors](#cloudconnectors): Cloud connectors.
+External cloud identifier used as part of scanning configuration.
 * **createdAt**: string (ReadOnly): Gets the time at which the entity was created.
 * **createdBy**: string (ReadOnly): Gets the creator of the entity.
 * **createdByObjectId**: string (ReadOnly): Gets the creators of the entity's object id.
@@ -56,13 +45,8 @@
 * **managedResourceGroupName**: string: Gets or sets the managed resource group name
 * **managedResources**: [AccountPropertiesManagedResources](#accountpropertiesmanagedresources) (ReadOnly): Gets the resource identifiers of the managed resources.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): Gets the private endpoint connections information.
-* **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'SoftDeleted' | 'SoftDeleting' | 'Succeeded' | 'Unknown' (ReadOnly): Gets or sets the state of the provisioning.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'NotSpecified': Gets or sets the public network access.
-
-## CloudConnectors
-### Properties
-* **awsExternalId**: string (ReadOnly): AWS external identifier.
-Configured in AWS to allow use of the role arn used for scanning
+* **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'SoftDeleted' | 'SoftDeleting' | 'Succeeded' | 'Unknown' | string (ReadOnly): Gets or sets the state of the provisioning.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'NotSpecified' | string: Gets or sets the public network access.
 
 ## AccountPropertiesEndpoints
 ### Properties
@@ -76,50 +60,67 @@ Configured in AWS to allow use of the role arn used for scanning
 * **resourceGroup**: string (ReadOnly): Gets the managed resource group resource identifier. This resource group will host resource dependencies for the account.
 * **storageAccount**: string (ReadOnly): Gets the managed storage account resource identifier.
 
-## PrivateEndpointConnection
+## AccountSku
 ### Properties
-* **id**: string (ReadOnly): Gets or sets the identifier.
-* **name**: string (ReadOnly): Gets or sets the name.
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): A private endpoint connection properties class.
-* **type**: string (ReadOnly): Gets or sets the type.
+* **capacity**: int: Gets or sets the sku capacity.
+* **name**: 'Standard' | string: Gets or sets the sku name.
 
-## PrivateEndpointConnectionProperties
+## CloudConnectors
 ### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): A private endpoint class.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): The private link service connection state.
-* **provisioningState**: string (ReadOnly): The provisioning state.
+* **awsExternalId**: string (ReadOnly): AWS external identifier.
+Configured in AWS to allow use of the role arn used for scanning
+
+## Identity
+### Properties
+* **principalId**: string (ReadOnly): Service principal object Id
+* **tenantId**: string (ReadOnly): Tenant Id
+* **type**: 'None' | 'SystemAssigned' | 'UserAssigned' | string: Identity Type
+* **userAssignedIdentities**: [IdentityUserAssignedIdentities](#identityuserassignedidentities): User Assigned Identities
+
+## IdentityUserAssignedIdentities
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
 ## PrivateEndpoint
 ### Properties
 * **id**: string: The private endpoint identifier.
 
+## PrivateEndpointConnection
+### Properties
+* **id**: string (ReadOnly): Gets or sets the identifier.
+* **name**: string (ReadOnly): Gets or sets the name.
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): The connection identifier.
+* **type**: string (ReadOnly): Gets or sets the type.
+
+## PrivateEndpointConnectionProperties
+### Properties
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The private endpoint information.
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): The private link service connection state.
+* **provisioningState**: string (ReadOnly): The provisioning state.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **actionsRequired**: string: The required actions.
 * **description**: string: The description.
-* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | 'Unknown': The status.
-
-## AccountSku
-### Properties
-* **capacity**: int: Gets or sets the sku capacity.
-* **name**: 'Standard': Gets or sets the sku name.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | 'Unknown' | string: The status.
 
 ## TrackedResourceSystemData
 ### Properties
 * **createdAt**: string (ReadOnly): The timestamp of resource creation (UTC).
 * **createdBy**: string (ReadOnly): The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that created the resource.
 * **lastModifiedAt**: string (ReadOnly): The timestamp of the last modification the resource (UTC).
 * **lastModifiedBy**: string (ReadOnly): The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that last modified the resource.
 
 ## TrackedResourceTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## AccessKeys
+## UserAssignedIdentity
 ### Properties
-* **atlasKafkaPrimaryEndpoint**: string (ReadOnly): Gets or sets the primary connection string.
-* **atlasKafkaSecondaryEndpoint**: string (ReadOnly): Gets or sets the secondary connection string.
+* **clientId**: string (ReadOnly): Gets or Sets Client ID
+* **principalId**: string (ReadOnly): Gets or Sets Principal ID
 

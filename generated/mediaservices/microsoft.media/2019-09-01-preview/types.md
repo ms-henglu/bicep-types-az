@@ -16,7 +16,7 @@
 * **lastModified**: string (ReadOnly): Date the Media Graph was last modified
 * **sinks**: [MediaGraphSink](#mediagraphsink)[] (Required): Media Graph sinks
 * **sources**: [MediaGraphSource](#mediagraphsource)[] (Required): Media Graph sources
-* **state**: 'Running' | 'Starting' | 'Stopped' | 'Stopping' (ReadOnly): Media Graph state
+* **state**: 'Running' | 'Starting' | 'Stopped' | 'Stopping' | string (ReadOnly): Media Graph state
 
 ## MediaGraphSink
 * **Discriminator**: @odata.type
@@ -38,7 +38,7 @@
 ### MediaGraphRtspSource
 #### Properties
 * **@odata.type**: '#Microsoft.Media.MediaGraphRtspSource' (Required): The discriminator for derived types.
-* **credentials**: [MediaGraphUserCredentials](#mediagraphusercredentials): Credentials to authenticate to Media Graph sources
+* **credentials**: [MediaGraphUserCredentials](#mediagraphusercredentials): RTSP Credentials
 * **rtspUrl**: string (Required): RTSP URL
 
 

@@ -13,15 +13,11 @@
 
 ## ActivityLogAlert
 ### Properties
-* **actions**: [ActivityLogAlertActionList](#activitylogalertactionlist) (Required): A list of activity log alert actions.
-* **condition**: [ActivityLogAlertAllOfCondition](#activitylogalertallofcondition) (Required): An Activity Log alert condition that is met when all its member conditions are met.
+* **actions**: [ActivityLogAlertActionList](#activitylogalertactionlist) (Required): The actions that will activate when the condition is met.
+* **condition**: [ActivityLogAlertAllOfCondition](#activitylogalertallofcondition) (Required): The condition that will cause this alert to activate.
 * **description**: string: A description of this activity log alert.
 * **enabled**: bool: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
 * **scopes**: string[] (Required): A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
-
-## ActivityLogAlertActionList
-### Properties
-* **actionGroups**: [ActivityLogAlertActionGroup](#activitylogalertactiongroup)[]: The list of activity log alerts.
 
 ## ActivityLogAlertActionGroup
 ### Properties
@@ -32,6 +28,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ActivityLogAlertActionList
+### Properties
+* **actionGroups**: [ActivityLogAlertActionGroup](#activitylogalertactiongroup)[]: The list of activity log alerts.
 
 ## ActivityLogAlertAllOfCondition
 ### Properties

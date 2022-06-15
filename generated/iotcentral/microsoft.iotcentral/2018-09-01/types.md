@@ -7,8 +7,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The resource location.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AppProperties](#appproperties): The properties of an IoT Central application.
-* **sku**: [AppSkuInfo](#appskuinfo) (Required): Information about the SKU of the IoT Central application.
+* **properties**: [AppProperties](#appproperties): The common properties of an IoT Central application.
+* **sku**: [AppSkuInfo](#appskuinfo) (Required): A valid instance SKU.
 * **tags**: [ResourceTags](#resourcetags): The resource tags.
 * **type**: 'Microsoft.IoTCentral/iotApps' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -21,7 +21,7 @@
 
 ## AppSkuInfo
 ### Properties
-* **name**: 'F1' | 'S1' | 'ST0' | 'ST1' | 'ST2' (Required): The name of the SKU.
+* **name**: 'F1' | 'S1' | 'ST0' | 'ST1' | 'ST2' | string (Required): The name of the SKU.
 
 ## ResourceTags
 ### Properties

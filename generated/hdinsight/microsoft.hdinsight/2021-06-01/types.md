@@ -6,7 +6,7 @@
 * **apiVersion**: '2021-06-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **etag**: string (ReadOnly): The ETag for the resource
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [ClusterIdentity](#clusteridentity): Identity for the cluster.
+* **identity**: [ClusterIdentity](#clusteridentity): The identity of the cluster, if configured.
 * **location**: string: The location of the cluster.
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ClusterCreateProperties](#clustercreateproperties): The cluster create parameters.
@@ -22,7 +22,7 @@
 * **etag**: string: The ETag for the application
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ApplicationProperties](#applicationproperties): The HDInsight cluster application GET response.
+* **properties**: [ApplicationProperties](#applicationproperties): The properties of the application.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **tags**: [ApplicationTags](#applicationtags): The tags for the application.
 * **type**: 'Microsoft.HDInsight/clusters/applications' (ReadOnly, DeployTimeConstant): The resource type
@@ -42,90 +42,47 @@
 * **ApiVersion**: 2021-06-01
 * **Output**: [HostInfo](#hostinfo)[]
 
-## ClusterIdentity
+## ApplicationGetEndpoint
 ### Properties
-* **principalId**: string (ReadOnly): The principal id of cluster identity. This property will only be provided for a system assigned identity.
-* **tenantId**: string (ReadOnly): The tenant id associated with the cluster. This property will only be provided for a system assigned identity.
-* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned': The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
-* **userAssignedIdentities**: [ClusterIdentityUserAssignedIdentities](#clusteridentityuserassignedidentities): The list of user identities associated with the cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+* **destinationPort**: int: The destination port to connect to.
+* **location**: string: The location of the endpoint.
+* **privateIPAddress**: string: The private ip address of the endpoint.
+* **publicPort**: int: The public port to connect to.
 
-## ClusterIdentityUserAssignedIdentities
+## ApplicationGetHttpsEndpoint
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
+* **accessModes**: string[]: The list of access modes for the application.
+* **destinationPort**: int: The destination port to connect to.
+* **disableGatewayAuth**: bool: The value indicates whether to disable GatewayAuth.
+* **location**: string (ReadOnly): The location of the endpoint.
+* **privateIPAddress**: string: The private ip address of the endpoint.
+* **publicPort**: int (ReadOnly): The public port to connect to.
+* **subDomainSuffix**: string (WriteOnly): The subdomain suffix of the application.
 
-## UserAssignedIdentity
+## ApplicationProperties
 ### Properties
-* **clientId**: string (ReadOnly): The client id of user assigned identity.
-* **principalId**: string (ReadOnly): The principal id of user assigned identity.
-* **tenantId**: string: The tenant id of user assigned identity.
-
-## ClusterCreateProperties
-### Properties
-* **clusterDefinition**: [ClusterDefinition](#clusterdefinition): The cluster definition.
-* **clusterHdpVersion**: string (ReadOnly): The hdp version of the cluster.
-* **clusterId**: string (ReadOnly): The cluster id.
-* **clusterState**: string (ReadOnly): The state of the cluster.
-* **clusterVersion**: string: The version of the cluster.
-* **computeIsolationProperties**: [ComputeIsolationProperties](#computeisolationproperties): The compute isolation properties.
-* **computeProfile**: [ComputeProfile](#computeprofile): Describes the compute profile.
-* **connectivityEndpoints**: [ConnectivityEndpoint](#connectivityendpoint)[] (ReadOnly): The list of connectivity endpoints.
-* **createdDate**: string (ReadOnly): The date on which the cluster was created.
-* **diskEncryptionProperties**: [DiskEncryptionProperties](#diskencryptionproperties): The disk encryption properties
-* **encryptionInTransitProperties**: [EncryptionInTransitProperties](#encryptionintransitproperties): The encryption-in-transit properties.
-* **errors**: [Errors](#errors)[] (ReadOnly): The list of errors.
-* **excludedServicesConfig**: [ExcludedServicesConfig](#excludedservicesconfig) (ReadOnly): The configuration that services will be excluded when creating cluster.
-* **kafkaRestProperties**: [KafkaRestProperties](#kafkarestproperties): The kafka rest proxy configuration which contains AAD security group information.
-* **minSupportedTlsVersion**: string: The minimal supported tls version.
-* **networkProperties**: [NetworkProperties](#networkproperties): The network properties.
-* **osType**: 'Linux' | 'Windows': The type of operating system.
-* **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): The list of private endpoint connections.
+* **applicationState**: string (ReadOnly): The application state.
+* **applicationType**: string: The application type.
+* **computeProfile**: [ComputeProfile](#computeprofile): The list of roles in the cluster.
+* **createdDate**: string (ReadOnly): The application create date time.
+* **errors**: [Errors](#errors)[]: The list of errors.
+* **httpsEndpoints**: [ApplicationGetHttpsEndpoint](#applicationgethttpsendpoint)[]: The list of application HTTPS endpoints.
+* **installScriptActions**: [RuntimeScriptAction](#runtimescriptaction)[]: The list of install script actions.
+* **marketplaceIdentifier**: string (ReadOnly): The marketplace identifier.
 * **privateLinkConfigurations**: [PrivateLinkConfiguration](#privatelinkconfiguration)[]: The private link configurations.
-* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): The provisioning state, which only appears in the response.
-* **quotaInfo**: [QuotaInfo](#quotainfo) (ReadOnly): The quota properties for the cluster.
-* **securityProfile**: [SecurityProfile](#securityprofile): The security profile which contains Ssh public key for the HDInsight cluster.
-* **storageProfile**: [StorageProfile](#storageprofile): The storage profile.
-* **tier**: 'Premium' | 'Standard': The cluster tier.
+* **provisioningState**: string (ReadOnly): The provisioning state of the application.
+* **sshEndpoints**: [ApplicationGetEndpoint](#applicationgetendpoint)[]: The list of application SSH endpoints.
+* **uninstallScriptActions**: [RuntimeScriptAction](#runtimescriptaction)[]: The list of uninstall script actions.
 
-## ClusterDefinition
-### Properties
-* **blueprint**: string: The link to the blueprint.
-* **componentVersion**: [ClusterDefinitionComponentVersion](#clusterdefinitioncomponentversion): The versions of different services in the cluster.
-* **configurations**: any: Any object
-* **kind**: string: The type of cluster.
-
-## ClusterDefinitionComponentVersion
+## ApplicationTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## ComputeIsolationProperties
-### Properties
-* **enableComputeIsolation**: bool: The flag indicates whether enable compute isolation or not.
-* **hostSku**: string: The host sku.
-
-## ComputeProfile
-### Properties
-* **roles**: [Role](#role)[]: The list of roles in the cluster.
-
-## Role
-### Properties
-* **autoscale**: [Autoscale](#autoscale): The autoscale request parameters
-* **dataDisksGroups**: [DataDisksGroups](#datadisksgroups)[]: The data disks groups for the role.
-* **encryptDataDisks**: bool: Indicates whether encrypt the data disks.
-* **hardwareProfile**: [HardwareProfile](#hardwareprofile): The hardware profile.
-* **minInstanceCount**: int: The minimum instance count of the cluster.
-* **name**: string: The name of the role.
-* **osProfile**: [OsProfile](#osprofile): The Linux operation systems profile.
-* **scriptActions**: [ScriptAction](#scriptaction)[]: The list of script actions on the role.
-* **targetInstanceCount**: int: The instance count of the cluster.
-* **virtualNetworkProfile**: [VirtualNetworkProfile](#virtualnetworkprofile): The virtual network properties.
-* **VMGroupName**: string: The name of the virtual machine group.
-
 ## Autoscale
 ### Properties
-* **capacity**: [AutoscaleCapacity](#autoscalecapacity): The load-based autoscale request parameters
-* **recurrence**: [AutoscaleRecurrence](#autoscalerecurrence): Schedule-based autoscale request parameters
+* **capacity**: [AutoscaleCapacity](#autoscalecapacity): Parameters for load-based autoscale
+* **recurrence**: [AutoscaleRecurrence](#autoscalerecurrence): Parameters for schedule-based autoscale
 
 ## AutoscaleCapacity
 ### Properties
@@ -139,8 +96,8 @@
 
 ## AutoscaleSchedule
 ### Properties
-* **days**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday'[]: Days of the week for a schedule-based autoscale rule
-* **timeAndCapacity**: [AutoscaleTimeAndCapacity](#autoscaletimeandcapacity): Time and capacity request parameters
+* **days**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday' | string[]: Days of the week for a schedule-based autoscale rule
+* **timeAndCapacity**: [AutoscaleTimeAndCapacity](#autoscaletimeandcapacity): Time and capacity for a schedule-based autoscale rule
 
 ## AutoscaleTimeAndCapacity
 ### Properties
@@ -148,44 +105,75 @@
 * **minInstanceCount**: int: The minimum instance count of the cluster
 * **time**: string: 24-hour time in the form xx:xx
 
-## DataDisksGroups
+## ClientGroupInfo
 ### Properties
-* **diskSizeGB**: int (ReadOnly): ReadOnly. The DiskSize in GB. Do not set this value.
-* **disksPerNode**: int: The number of disks per node.
-* **storageAccountType**: string (ReadOnly): ReadOnly. The storage account type. Do not set this value.
+* **groupId**: string: The AAD security group id.
+* **groupName**: string: The AAD security group name.
 
-## HardwareProfile
+## ClusterCreateParametersExtendedTags
 ### Properties
-* **vmSize**: string: The size of the VM
+### Additional Properties
+* **Additional Properties Type**: string
 
-## OsProfile
+## ClusterCreateProperties
 ### Properties
-* **linuxOperatingSystemProfile**: [LinuxOperatingSystemProfile](#linuxoperatingsystemprofile): The ssh username, password, and ssh public key.
+* **clusterDefinition**: [ClusterDefinition](#clusterdefinition): The cluster definition.
+* **clusterHdpVersion**: string (ReadOnly): The hdp version of the cluster.
+* **clusterId**: string (ReadOnly): The cluster id.
+* **clusterState**: string (ReadOnly): The state of the cluster.
+* **clusterVersion**: string: The version of the cluster.
+* **computeIsolationProperties**: [ComputeIsolationProperties](#computeisolationproperties): The compute isolation properties.
+* **computeProfile**: [ComputeProfile](#computeprofile): The compute profile.
+* **connectivityEndpoints**: [ConnectivityEndpoint](#connectivityendpoint)[] (ReadOnly): The list of connectivity endpoints.
+* **createdDate**: string (ReadOnly): The date on which the cluster was created.
+* **diskEncryptionProperties**: [DiskEncryptionProperties](#diskencryptionproperties): The disk encryption properties.
+* **encryptionInTransitProperties**: [EncryptionInTransitProperties](#encryptionintransitproperties): The encryption-in-transit properties.
+* **errors**: [Errors](#errors)[] (ReadOnly): The list of errors.
+* **excludedServicesConfig**: [ExcludedServicesConfig](#excludedservicesconfig) (ReadOnly): The excluded services config.
+* **kafkaRestProperties**: [KafkaRestProperties](#kafkarestproperties): The cluster kafka rest proxy configuration.
+* **minSupportedTlsVersion**: string: The minimal supported tls version.
+* **networkProperties**: [NetworkProperties](#networkproperties): The network properties.
+* **osType**: 'Linux' | 'Windows' | string: The type of operating system.
+* **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): The list of private endpoint connections.
+* **privateLinkConfigurations**: [PrivateLinkConfiguration](#privatelinkconfiguration)[]: The private link configurations.
+* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The provisioning state, which only appears in the response.
+* **quotaInfo**: [QuotaInfo](#quotainfo) (ReadOnly): The quota information.
+* **securityProfile**: [SecurityProfile](#securityprofile): The security profile.
+* **storageProfile**: [StorageProfile](#storageprofile): The storage profile.
+* **tier**: 'Premium' | 'Standard' | string: The cluster tier.
 
-## LinuxOperatingSystemProfile
+## ClusterDefinition
 ### Properties
-* **password**: string: The password.
-* **sshProfile**: [SshProfile](#sshprofile): The list of SSH public keys.
-* **username**: string: The username.
+* **blueprint**: string: The link to the blueprint.
+* **componentVersion**: [ClusterDefinitionComponentVersion](#clusterdefinitioncomponentversion): The versions of different services in the cluster.
+* **configurations**: any: The cluster configurations.
+* **kind**: string: The type of cluster.
 
-## SshProfile
+## ClusterDefinitionComponentVersion
 ### Properties
-* **publicKeys**: [SshPublicKey](#sshpublickey)[]: The list of SSH public keys.
+### Additional Properties
+* **Additional Properties Type**: string
 
-## SshPublicKey
+## ClusterIdentity
 ### Properties
-* **certificateData**: string: The certificate for SSH.
+* **principalId**: string (ReadOnly): The principal id of cluster identity. This property will only be provided for a system assigned identity.
+* **tenantId**: string (ReadOnly): The tenant id associated with the cluster. This property will only be provided for a system assigned identity.
+* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string: The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
+* **userAssignedIdentities**: [ClusterIdentityUserAssignedIdentities](#clusteridentityuserassignedidentities): The list of user identities associated with the cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
-## ScriptAction
+## ClusterIdentityUserAssignedIdentities
 ### Properties
-* **name**: string (Required): The name of the script action.
-* **parameters**: string (Required): The parameters for the script provided.
-* **uri**: string (Required): The URI to the script.
+### Additional Properties
+* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
-## VirtualNetworkProfile
+## ComputeIsolationProperties
 ### Properties
-* **id**: string: The ID of the virtual network.
-* **subnet**: string: The name of the subnet.
+* **enableComputeIsolation**: bool: The flag indicates whether enable compute isolation or not.
+* **hostSku**: string: The host sku.
+
+## ComputeProfile
+### Properties
+* **roles**: [Role](#role)[]: The list of roles in the cluster.
 
 ## ConnectivityEndpoint
 ### Properties
@@ -195,9 +183,15 @@
 * **privateIPAddress**: string (ReadOnly): The private ip address of the endpoint.
 * **protocol**: string (ReadOnly): The protocol of the endpoint.
 
+## DataDisksGroups
+### Properties
+* **diskSizeGB**: int (ReadOnly): ReadOnly. The DiskSize in GB. Do not set this value.
+* **disksPerNode**: int: The number of disks per node.
+* **storageAccountType**: string (ReadOnly): ReadOnly. The storage account type. Do not set this value.
+
 ## DiskEncryptionProperties
 ### Properties
-* **encryptionAlgorithm**: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5': Algorithm identifier for encryption, default RSA-OAEP.
+* **encryptionAlgorithm**: 'RSA-OAEP' | 'RSA-OAEP-256' | 'RSA1_5' | string: Algorithm identifier for encryption, default RSA-OAEP.
 * **encryptionAtHost**: bool: Indicates whether or not resource disk encryption is enabled.
 * **keyName**: string: Key name that is used for enabling disk encryption.
 * **keyVersion**: string: Specific key version that is used for enabling disk encryption.
@@ -218,72 +212,15 @@
 * **excludedServicesConfigId**: string (ReadOnly): The config id of excluded services.
 * **excludedServicesList**: string (ReadOnly): The list of excluded services.
 
-## KafkaRestProperties
+## HardwareProfile
 ### Properties
-* **clientGroupInfo**: [ClientGroupInfo](#clientgroupinfo): The information of AAD security group.
-* **configurationOverride**: [KafkaRestPropertiesConfigurationOverride](#kafkarestpropertiesconfigurationoverride): The configurations that need to be overriden.
+* **vmSize**: string: The size of the VM
 
-## ClientGroupInfo
+## HostInfo
 ### Properties
-* **groupId**: string: The AAD security group id.
-* **groupName**: string: The AAD security group name.
-
-## KafkaRestPropertiesConfigurationOverride
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## NetworkProperties
-### Properties
-* **privateLink**: 'Disabled' | 'Enabled': Indicates whether or not private link is enabled.
-* **resourceProviderConnection**: 'Inbound' | 'Outbound': The direction for the resource provider connection.
-
-## PrivateEndpointConnection
-### Properties
-* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
-* **name**: string (ReadOnly): The name of the resource
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties) (ReadOnly): The private endpoint connection properties.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
-* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
-
-## PrivateEndpointConnectionProperties
-### Properties
-* **linkIdentifier**: string (ReadOnly): The link identifier.
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The private endpoint.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): The private link service connection state.
-* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state, which only appears in the response.
-
-## PrivateEndpoint
-### Properties
-* **id**: string (ReadOnly): The private endpoint id.
-
-## PrivateLinkServiceConnectionState
-### Properties
-* **actionsRequired**: string (ReadOnly): Whether there is further actions.
-* **description**: string (ReadOnly): The optional description of the status.
-* **status**: 'Approved' | 'Pending' | 'Rejected' | 'Removed' (ReadOnly): The concrete private link service connection.
-
-## SystemData
-### Properties
-* **createdAt**: string (ReadOnly): The timestamp of resource creation (UTC).
-* **createdBy**: string (ReadOnly): The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that created the resource.
-* **lastModifiedAt**: string (ReadOnly): The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string (ReadOnly): The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity that created the resource.
-
-## PrivateLinkConfiguration
-### Properties
-* **id**: string (ReadOnly): The private link configuration id.
-* **name**: string (Required): The name of private link configuration.
-* **properties**: [PrivateLinkConfigurationProperties](#privatelinkconfigurationproperties) (Required): The private link configuration properties.
-* **type**: string (ReadOnly): The type of the private link configuration.
-
-## PrivateLinkConfigurationProperties
-### Properties
-* **groupId**: string (Required): The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
-* **ipConfigurations**: [IPConfiguration](#ipconfiguration)[] (Required): The IP configurations for the private link service.
-* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): The private link configuration provisioning state, which only appears in the response.
+* **effectiveDiskEncryptionKeyUrl**: string (ReadOnly): The effective disk encryption key URL used by the host
+* **fqdn**: string (ReadOnly): The Fully Qualified Domain Name of host
+* **name**: string (ReadOnly): The host name
 
 ## IPConfiguration
 ### Properties
@@ -296,23 +233,114 @@
 ### Properties
 * **primary**: bool: Indicates whether this IP configuration is primary for the corresponding NIC.
 * **privateIPAddress**: string: The IP address.
-* **privateIPAllocationMethod**: 'dynamic' | 'static': The method that private IP address is allocated.
-* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): The private link configuration provisioning state, which only appears in the response.
-* **subnet**: [ResourceId](#resourceid): The azure resource id.
+* **privateIPAllocationMethod**: 'dynamic' | 'static' | string: The method that private IP address is allocated.
+* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The private link configuration provisioning state, which only appears in the response.
+* **subnet**: [ResourceId](#resourceid): The subnet resource id.
 
-## ResourceId
+## KafkaRestProperties
 ### Properties
-* **id**: string: The azure resource id.
+* **clientGroupInfo**: [ClientGroupInfo](#clientgroupinfo): The information of AAD security group.
+* **configurationOverride**: [KafkaRestPropertiesConfigurationOverride](#kafkarestpropertiesconfigurationoverride): The configurations that need to be overriden.
+
+## KafkaRestPropertiesConfigurationOverride
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## LinuxOperatingSystemProfile
+### Properties
+* **password**: string: The password.
+* **sshProfile**: [SshProfile](#sshprofile): The SSH profile.
+* **username**: string: The username.
+
+## NetworkProperties
+### Properties
+* **privateLink**: 'Disabled' | 'Enabled' | string: Indicates whether or not private link is enabled.
+* **resourceProviderConnection**: 'Inbound' | 'Outbound' | string: The direction for the resource provider connection.
+
+## OsProfile
+### Properties
+* **linuxOperatingSystemProfile**: [LinuxOperatingSystemProfile](#linuxoperatingsystemprofile): The Linux OS profile.
+
+## PrivateEndpoint
+### Properties
+* **id**: string (ReadOnly): The private endpoint id.
+
+## PrivateEndpointConnection
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties) (ReadOnly): The private endpoint connection properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## PrivateEndpointConnectionProperties
+### Properties
+* **linkIdentifier**: string (ReadOnly): The link identifier.
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The private endpoint of the private endpoint connection
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): The private link service connection state.
+* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
+
+## PrivateLinkConfiguration
+### Properties
+* **id**: string (ReadOnly): The private link configuration id.
+* **name**: string (Required): The name of private link configuration.
+* **properties**: [PrivateLinkConfigurationProperties](#privatelinkconfigurationproperties) (Required): The private link configuration properties.
+* **type**: string (ReadOnly): The type of the private link configuration.
+
+## PrivateLinkConfigurationProperties
+### Properties
+* **groupId**: string (Required): The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+* **ipConfigurations**: [IPConfiguration](#ipconfiguration)[] (Required): The IP configurations for the private link service.
+* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The private link configuration provisioning state, which only appears in the response.
+
+## PrivateLinkServiceConnectionState
+### Properties
+* **actionsRequired**: string (ReadOnly): Whether there is further actions.
+* **description**: string (ReadOnly): The optional description of the status.
+* **status**: 'Approved' | 'Pending' | 'Rejected' | 'Removed' | string (ReadOnly): The concrete private link service connection.
 
 ## QuotaInfo
 ### Properties
 * **coresUsed**: int (ReadOnly): The cores used by the cluster.
 
+## ResourceId
+### Properties
+* **id**: string: The azure resource id.
+
+## Role
+### Properties
+* **autoscale**: [Autoscale](#autoscale): The autoscale configurations.
+* **dataDisksGroups**: [DataDisksGroups](#datadisksgroups)[]: The data disks groups for the role.
+* **encryptDataDisks**: bool: Indicates whether encrypt the data disks.
+* **hardwareProfile**: [HardwareProfile](#hardwareprofile): The hardware profile.
+* **minInstanceCount**: int: The minimum instance count of the cluster.
+* **name**: string: The name of the role.
+* **osProfile**: [OsProfile](#osprofile): The operating system profile.
+* **scriptActions**: [ScriptAction](#scriptaction)[]: The list of script actions on the role.
+* **targetInstanceCount**: int: The instance count of the cluster.
+* **virtualNetworkProfile**: [VirtualNetworkProfile](#virtualnetworkprofile): The virtual network profile.
+* **VMGroupName**: string: The name of the virtual machine group.
+
+## RuntimeScriptAction
+### Properties
+* **applicationName**: string (ReadOnly): The application name of the script action, if any.
+* **name**: string (Required): The name of the script action.
+* **parameters**: string (WriteOnly): The parameters for the script
+* **roles**: string[] (Required): The list of roles where script will be executed.
+* **uri**: string (Required): The URI to the script.
+
+## ScriptAction
+### Properties
+* **name**: string (Required): The name of the script action.
+* **parameters**: string (Required): The parameters for the script provided.
+* **uri**: string (Required): The URI to the script.
+
 ## SecurityProfile
 ### Properties
 * **aaddsResourceId**: string: The resource ID of the user's Azure Active Directory Domain Service.
 * **clusterUsersGroupDNs**: string[]: Optional. The Distinguished Names for cluster user groups
-* **directoryType**: 'ActiveDirectory': The directory type.
+* **directoryType**: 'ActiveDirectory' | string: The directory type.
 * **domain**: string: The organization's active directory domain.
 * **domainUsername**: string: The domain user account that will have admin privileges on the cluster.
 * **domainUserPassword**: string: The domain admin password.
@@ -320,9 +348,13 @@
 * **msiResourceId**: string: User assigned identity that has permissions to read and create cluster-related artifacts in the user's AADDS.
 * **organizationalUnitDN**: string: The organizational unit within the Active Directory to place the cluster and service accounts.
 
-## StorageProfile
+## SshProfile
 ### Properties
-* **storageaccounts**: [StorageAccount](#storageaccount)[]: The list of storage accounts in the cluster.
+* **publicKeys**: [SshPublicKey](#sshpublickey)[]: The list of SSH public keys.
+
+## SshPublicKey
+### Properties
+* **certificateData**: string: The certificate for SSH.
 
 ## StorageAccount
 ### Properties
@@ -336,59 +368,27 @@
 * **resourceId**: string: The resource ID of storage account, only to be specified for Azure Data Lake Storage Gen 2.
 * **saskey**: string: The shared access signature key.
 
-## ClusterCreateParametersExtendedTags
+## StorageProfile
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **storageaccounts**: [StorageAccount](#storageaccount)[]: The list of storage accounts in the cluster.
 
-## ApplicationProperties
+## SystemData
 ### Properties
-* **applicationState**: string (ReadOnly): The application state.
-* **applicationType**: string: The application type.
-* **computeProfile**: [ComputeProfile](#computeprofile): Describes the compute profile.
-* **createdDate**: string (ReadOnly): The application create date time.
-* **errors**: [Errors](#errors)[]: The list of errors.
-* **httpsEndpoints**: [ApplicationGetHttpsEndpoint](#applicationgethttpsendpoint)[]: The list of application HTTPS endpoints.
-* **installScriptActions**: [RuntimeScriptAction](#runtimescriptaction)[]: The list of install script actions.
-* **marketplaceIdentifier**: string (ReadOnly): The marketplace identifier.
-* **privateLinkConfigurations**: [PrivateLinkConfiguration](#privatelinkconfiguration)[]: The private link configurations.
-* **provisioningState**: string (ReadOnly): The provisioning state of the application.
-* **sshEndpoints**: [ApplicationGetEndpoint](#applicationgetendpoint)[]: The list of application SSH endpoints.
-* **uninstallScriptActions**: [RuntimeScriptAction](#runtimescriptaction)[]: The list of uninstall script actions.
+* **createdAt**: string (ReadOnly): The timestamp of resource creation (UTC).
+* **createdBy**: string (ReadOnly): The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that created the resource.
+* **lastModifiedAt**: string (ReadOnly): The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string (ReadOnly): The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that last modified the resource.
 
-## ApplicationGetHttpsEndpoint
+## UserAssignedIdentity
 ### Properties
-* **accessModes**: string[]: The list of access modes for the application.
-* **destinationPort**: int: The destination port to connect to.
-* **disableGatewayAuth**: bool: The value indicates whether to disable GatewayAuth.
-* **location**: string (ReadOnly): The location of the endpoint.
-* **privateIPAddress**: string: The private ip address of the endpoint.
-* **publicPort**: int (ReadOnly): The public port to connect to.
-* **subDomainSuffix**: string (WriteOnly): The subdomain suffix of the application.
+* **clientId**: string (ReadOnly): The client id of user assigned identity.
+* **principalId**: string (ReadOnly): The principal id of user assigned identity.
+* **tenantId**: string: The tenant id of user assigned identity.
 
-## RuntimeScriptAction
+## VirtualNetworkProfile
 ### Properties
-* **applicationName**: string (ReadOnly): The application name of the script action, if any.
-* **name**: string (Required): The name of the script action.
-* **parameters**: string (WriteOnly): The parameters for the script
-* **roles**: string[] (Required): The list of roles where script will be executed.
-* **uri**: string (Required): The URI to the script.
-
-## ApplicationGetEndpoint
-### Properties
-* **destinationPort**: int: The destination port to connect to.
-* **location**: string: The location of the endpoint.
-* **privateIPAddress**: string: The private ip address of the endpoint.
-* **publicPort**: int: The public port to connect to.
-
-## ApplicationTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## HostInfo
-### Properties
-* **effectiveDiskEncryptionKeyUrl**: string (ReadOnly): The effective disk encryption key URL used by the host
-* **fqdn**: string (ReadOnly): The Fully Qualified Domain Name of host
-* **name**: string (ReadOnly): The host name
+* **id**: string: The ID of the virtual network.
+* **subnet**: string: The name of the subnet.
 

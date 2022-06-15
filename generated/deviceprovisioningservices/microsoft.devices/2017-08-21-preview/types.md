@@ -34,43 +34,6 @@
 * **ApiVersion**: 2017-08-21-preview
 * **Output**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)
 
-## IotDpsPropertiesDescription
-### Properties
-* **allocationPolicy**: 'GeoLatency' | 'Hashed' | 'Static': Allocation policy to be used by this provisioning service.
-* **authorizationPolicies**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[]: Array of SharedAccessSignatureAuthorizationRule_AccessRightsDescription_
-* **deviceProvisioningHostName**: string (ReadOnly): Device endpoint for this provisioning service.
-* **idScope**: string (ReadOnly): Unique identifier of this provisioning service.
-* **iotHubs**: [IotHubDefinitionDescription](#iothubdefinitiondescription)[]: List of IoT hubs associated with this provisioning service.
-* **provisioningState**: string: The ARM provisioning state of the provisioning service.
-* **serviceOperationsHostName**: string (ReadOnly): Service endpoint for provisioning service.
-* **state**: 'Activating' | 'ActivationFailed' | 'Active' | 'Deleted' | 'Deleting' | 'DeletionFailed' | 'FailingOver' | 'FailoverFailed' | 'Resuming' | 'Suspended' | 'Suspending' | 'Transitioning': Current state of the provisioning service.
-
-## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
-### Properties
-* **keyName**: string (Required): Name of the key.
-* **primaryKey**: string: Primary SAS key value.
-* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' (Required): Rights that this key has.
-* **secondaryKey**: string: Secondary SAS key value.
-
-## IotHubDefinitionDescription
-### Properties
-* **allocationWeight**: int
-* **applyAllocationPolicy**: bool
-* **connectionString**: string (Required): Connection string og the IoT hub.
-* **location**: string (Required): ARM region of the IoT hub.
-* **name**: string (ReadOnly): Host name of the IoT hub.
-
-## IotDpsSkuInfo
-### Properties
-* **capacity**: int: The number of services of the selected tier allowed in the subscription.
-* **name**: 'S1'
-* **tier**: string (ReadOnly): Pricing tier of the provisioning service.
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## CertificateProperties
 ### Properties
 * **created**: string (ReadOnly): The certificate's creation date and time.
@@ -80,15 +43,52 @@
 * **thumbprint**: string (ReadOnly): The certificate's thumbprint.
 * **updated**: string (ReadOnly): The certificate's last update date and time.
 
-## SharedAccessSignatureAuthorizationRuleListResult
+## IotDpsPropertiesDescription
 ### Properties
-* **nextLink**: string (ReadOnly)
-* **value**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[] (ReadOnly): Array of SharedAccessSignatureAuthorizationRule_AccessRightsDescription_
+* **allocationPolicy**: 'GeoLatency' | 'Hashed' | 'Static' | string: Allocation policy to be used by this provisioning service.
+* **authorizationPolicies**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[]
+* **deviceProvisioningHostName**: string (ReadOnly): Device endpoint for this provisioning service.
+* **idScope**: string (ReadOnly): Unique identifier of this provisioning service.
+* **iotHubs**: [IotHubDefinitionDescription](#iothubdefinitiondescription)[]: List of IoT hubs associated with this provisioning service.
+* **provisioningState**: string: The ARM provisioning state of the provisioning service.
+* **serviceOperationsHostName**: string (ReadOnly): Service endpoint for provisioning service.
+* **state**: 'Activating' | 'ActivationFailed' | 'Active' | 'Deleted' | 'Deleting' | 'DeletionFailed' | 'FailingOver' | 'FailoverFailed' | 'Resuming' | 'Suspended' | 'Suspending' | 'Transitioning' | string: Current state of the provisioning service.
+
+## IotDpsSkuInfo
+### Properties
+* **capacity**: int: The number of services of the selected tier allowed in the subscription.
+* **name**: 'S1' | string
+* **tier**: string (ReadOnly): Pricing tier of the provisioning service.
+
+## IotHubDefinitionDescription
+### Properties
+* **allocationWeight**: int
+* **applyAllocationPolicy**: bool
+* **connectionString**: string (Required): Connection string og the IoT hub.
+* **location**: string (Required): ARM region of the IoT hub.
+* **name**: string (ReadOnly): Host name of the IoT hub.
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
 ### Properties
 * **keyName**: string (Required): Name of the key.
 * **primaryKey**: string: Primary SAS key value.
-* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' (Required): Rights that this key has.
+* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' | string (Required): Rights that this key has.
 * **secondaryKey**: string: Secondary SAS key value.
+
+## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
+### Properties
+* **keyName**: string (Required): Name of the key.
+* **primaryKey**: string: Primary SAS key value.
+* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' | string (Required): Rights that this key has.
+* **secondaryKey**: string: Secondary SAS key value.
+
+## SharedAccessSignatureAuthorizationRuleListResult
+### Properties
+* **nextLink**: string (ReadOnly)
+* **value**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[] (ReadOnly)
 

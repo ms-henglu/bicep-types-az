@@ -8,8 +8,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The resource location.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [IotDpsPropertiesDescription](#iotdpspropertiesdescription) (Required): the service specific properties of a provisioning service, including keys, linked iot hubs, current state, and system generated properties such as hostname and idScope
-* **sku**: [IotDpsSkuInfo](#iotdpsskuinfo) (Required): List of possible provisioning service SKUs.
+* **properties**: [IotDpsPropertiesDescription](#iotdpspropertiesdescription) (Required): Service specific properties for a provisioning service
+* **sku**: [IotDpsSkuInfo](#iotdpsskuinfo) (Required): Sku info for a provisioning Service.
 * **tags**: [ResourceTags](#resourcetags): The resource tags.
 * **type**: 'Microsoft.Devices/provisioningServices' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -22,7 +22,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **isVerified**: bool (WriteOnly): True indicates that the certificate will be created in verified state and proof of possession will not be required.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [CertificateProperties](#certificateproperties) (ReadOnly): The description of an X509 CA Certificate.
+* **properties**: [CertificateProperties](#certificateproperties) (ReadOnly): properties of a certificate
 * **type**: 'Microsoft.Devices/provisioningServices/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Devices/provisioningServices/privateEndpointConnections@2020-03-01
@@ -44,9 +44,19 @@
 * **ApiVersion**: 2020-03-01
 * **Output**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)
 
+## CertificateProperties
+### Properties
+* **certificate**: any (ReadOnly): base-64 representation of X509 certificate .cer file or just .pem file content.
+* **created**: string (ReadOnly): The certificate's creation date and time.
+* **expiry**: string (ReadOnly): The certificate's expiration date and time.
+* **isVerified**: bool (ReadOnly): Determines whether certificate has been verified.
+* **subject**: string (ReadOnly): The certificate's subject name.
+* **thumbprint**: string (ReadOnly): The certificate's thumbprint.
+* **updated**: string (ReadOnly): The certificate's last update date and time.
+
 ## IotDpsPropertiesDescription
 ### Properties
-* **allocationPolicy**: 'GeoLatency' | 'Hashed' | 'Static': Allocation policy to be used by this provisioning service.
+* **allocationPolicy**: 'GeoLatency' | 'Hashed' | 'Static' | string: Allocation policy to be used by this provisioning service.
 * **authorizationPolicies**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[]: List of authorization keys for a provisioning service.
 * **deviceProvisioningHostName**: string (ReadOnly): Device endpoint for this provisioning service.
 * **idScope**: string (ReadOnly): Unique identifier of this provisioning service.
@@ -54,16 +64,15 @@
 * **ipFilterRules**: [IpFilterRule](#ipfilterrule)[]: The IP filter rules.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[]: Private endpoint connections created on this IotHub
 * **provisioningState**: string: The ARM provisioning state of the provisioning service.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled': Whether requests from Public Network are allowed
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether requests from Public Network are allowed
 * **serviceOperationsHostName**: string (ReadOnly): Service endpoint for provisioning service.
-* **state**: 'Activating' | 'ActivationFailed' | 'Active' | 'Deleted' | 'Deleting' | 'DeletionFailed' | 'FailingOver' | 'FailoverFailed' | 'Resuming' | 'Suspended' | 'Suspending' | 'Transitioning': Current state of the provisioning service.
+* **state**: 'Activating' | 'ActivationFailed' | 'Active' | 'Deleted' | 'Deleting' | 'DeletionFailed' | 'FailingOver' | 'FailoverFailed' | 'Resuming' | 'Suspended' | 'Suspending' | 'Transitioning' | string: Current state of the provisioning service.
 
-## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
+## IotDpsSkuInfo
 ### Properties
-* **keyName**: string (Required): Name of the key.
-* **primaryKey**: string: Primary SAS key value.
-* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' (Required): Rights that this key has.
-* **secondaryKey**: string: Secondary SAS key value.
+* **capacity**: int: The number of units to provision
+* **name**: 'S1' | string: Sku name.
+* **tier**: string (ReadOnly): Pricing tier name of the provisioning service.
 
 ## IotHubDefinitionDescription
 ### Properties
@@ -80,6 +89,10 @@
 * **ipMask**: string (Required): A string that contains the IP address range in CIDR notation for the rule.
 * **target**: 'all' | 'deviceApi' | 'serviceApi': Target for requests captured by this rule.
 
+## PrivateEndpoint
+### Properties
+* **id**: string (ReadOnly): The resource identifier.
+
 ## PrivateEndpointConnection
 ### Properties
 * **id**: string (ReadOnly): The resource identifier.
@@ -92,46 +105,33 @@
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The private endpoint property of a private endpoint connection
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (Required): The current state of a private endpoint connection
 
-## PrivateEndpoint
-### Properties
-* **id**: string (ReadOnly): The resource identifier.
-
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **actionsRequired**: string: Actions required for a private endpoint connection
 * **description**: string (Required): The description for the current state of a private endpoint connection
-* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' (Required): The status of a private endpoint connection
-
-## IotDpsSkuInfo
-### Properties
-* **capacity**: int: The number of units to provision
-* **name**: 'S1': Sku name.
-* **tier**: string (ReadOnly): Pricing tier name of the provisioning service.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string (Required): The status of a private endpoint connection
 
 ## ResourceTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## CertificateProperties
+## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
 ### Properties
-* **certificate**: any (ReadOnly): base-64 representation of X509 certificate .cer file or just .pem file content.
-* **created**: string (ReadOnly): The certificate's creation date and time.
-* **expiry**: string (ReadOnly): The certificate's expiration date and time.
-* **isVerified**: bool (ReadOnly): Determines whether certificate has been verified.
-* **subject**: string (ReadOnly): The certificate's subject name.
-* **thumbprint**: string (ReadOnly): The certificate's thumbprint.
-* **updated**: string (ReadOnly): The certificate's last update date and time.
-
-## SharedAccessSignatureAuthorizationRuleListResult
-### Properties
-* **nextLink**: string (ReadOnly): The next link.
-* **value**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[] (ReadOnly): The list of shared access policies.
+* **keyName**: string (Required): Name of the key.
+* **primaryKey**: string: Primary SAS key value.
+* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' | string (Required): Rights that this key has.
+* **secondaryKey**: string: Secondary SAS key value.
 
 ## SharedAccessSignatureAuthorizationRuleAccessRightsDescription
 ### Properties
 * **keyName**: string (Required): Name of the key.
 * **primaryKey**: string: Primary SAS key value.
-* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' (Required): Rights that this key has.
+* **rights**: 'DeviceConnect' | 'EnrollmentRead' | 'EnrollmentWrite' | 'RegistrationStatusRead' | 'RegistrationStatusWrite' | 'ServiceConfig' | string (Required): Rights that this key has.
 * **secondaryKey**: string: Secondary SAS key value.
+
+## SharedAccessSignatureAuthorizationRuleListResult
+### Properties
+* **nextLink**: string (ReadOnly): The next link.
+* **value**: [SharedAccessSignatureAuthorizationRuleAccessRightsDescription](#sharedaccesssignatureauthorizationruleaccessrightsdescription)[] (ReadOnly): The list of shared access policies.
 

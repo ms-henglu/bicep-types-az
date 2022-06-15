@@ -7,9 +7,9 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): Azure region
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DedicatedCloudNodeProperties](#dedicatedcloudnodeproperties): Properties of dedicated cloud node
-* **sku**: [Sku](#sku): The purchase SKU for CloudSimple paid resources
-* **tags**: [Tags](#tags): Tags model
+* **properties**: [DedicatedCloudNodeProperties](#dedicatedcloudnodeproperties): Dedicated Cloud Nodes properties
+* **sku**: [Sku](#sku): Dedicated Cloud Nodes SKU
+* **tags**: [Tags](#tags): Dedicated Cloud Nodes tags
 * **type**: 'Microsoft.VMwareCloudSimple/dedicatedCloudNodes' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.VMwareCloudSimple/dedicatedCloudServices@2019-04-01
@@ -19,8 +19,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): Azure region
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DedicatedCloudServiceProperties](#dedicatedcloudserviceproperties): Properties of dedicated cloud service
-* **tags**: [Tags](#tags): Tags model
+* **properties**: [DedicatedCloudServiceProperties](#dedicatedcloudserviceproperties): The properties of Dedicated Node Service
+* **tags**: [Tags](#tags): The list of tags
 * **type**: 'Microsoft.VMwareCloudSimple/dedicatedCloudServices' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.VMwareCloudSimple/virtualMachines@2019-04-01
@@ -30,8 +30,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): Azure region
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [VirtualMachineProperties](#virtualmachineproperties): Properties of virtual machine
-* **tags**: [Tags](#tags): Tags model
+* **properties**: [VirtualMachineProperties](#virtualmachineproperties): Virtual machine properties
+* **tags**: [Tags](#tags): The list of tags
 * **type**: 'Microsoft.VMwareCloudSimple/virtualMachines' (ReadOnly, DeployTimeConstant): The resource type
 
 ## DedicatedCloudNodeProperties
@@ -47,14 +47,47 @@
 * **privateCloudName**: string (ReadOnly): Resource Pool Name
 * **provisioningState**: string (ReadOnly): The provisioning status of the resource
 * **purchaseId**: string (Required): purchase id
-* **skuDescription**: [SkuDescription](#skudescription): The purchase SKU for CloudSimple paid resources
+* **skuDescription**: [SkuDescription](#skudescription): Dedicated Cloud Nodes SKU's description
 * **status**: 'unused' | 'used' (ReadOnly): Node status, indicates is private cloud set up on this node or not
 * **vmwareClusterName**: string (ReadOnly): VMWare Cluster Name
 
-## SkuDescription
+## DedicatedCloudServiceProperties
 ### Properties
-* **id**: string (Required): SKU's id
-* **name**: string (Required): SKU's name
+* **gatewaySubnet**: string (Required): gateway Subnet for the account. It will collect the subnet address and always treat it as /28
+* **isAccountOnboarded**: 'notOnBoarded' | 'onBoarded' | 'onBoarding' | 'onBoardingFailed' (ReadOnly): indicates whether account onboarded or not in a given region
+* **nodes**: int (ReadOnly): total nodes purchased
+* **serviceURL**: string (ReadOnly): link to a service management web portal
+
+## GuestOSCustomization
+### Properties
+* **dnsServers**: string[]: List of dns servers to use
+* **hostName**: string: Virtual Machine hostname
+* **password**: string: Password for login
+* **policyId**: string: id of customization policy
+* **username**: string: Username for login
+
+## GuestOsnicCustomization
+### Properties
+* **allocation**: 'dynamic' | 'static' | string: IP address allocation method
+* **dnsServers**: string[]: List of dns servers to use
+* **gateway**: string[]: Gateway addresses assigned to nic
+* **ipAddress**: string: Static ip address for nic
+* **mask**: string: Network mask for nic
+* **primaryWinsServer**: string: primary WINS server for Windows
+* **secondaryWinsServer**: string: secondary WINS server for Windows
+
+## ResourcePool
+### Properties
+* **id**: string (Required): resource pool id (privateCloudId:vsphereId)
+* **location**: string (ReadOnly): Azure region
+* **name**: string (ReadOnly): {ResourcePoolName}
+* **privateCloudId**: string (ReadOnly): The Private Cloud Id
+* **properties**: [ResourcePoolProperties](#resourcepoolproperties): Resource pool properties
+* **type**: string (ReadOnly): {resourceProviderNamespace}/{resourceType}
+
+## ResourcePoolProperties
+### Properties
+* **fullName**: string (ReadOnly): Hierarchical resource pool name
 
 ## Sku
 ### Properties
@@ -64,28 +97,46 @@
 * **name**: string (Required): The name of the SKU for VMWare CloudSimple Node
 * **tier**: string: The tier of the SKU
 
-## Tags
+## SkuDescription
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## DedicatedCloudServiceProperties
-### Properties
-* **gatewaySubnet**: string (Required): gateway Subnet for the account. It will collect the subnet address and always treat it as /28
-* **isAccountOnboarded**: 'notOnBoarded' | 'onBoarded' | 'onBoarding' | 'onBoardingFailed' (ReadOnly): indicates whether account onboarded or not in a given region
-* **nodes**: int (ReadOnly): total nodes purchased
-* **serviceURL**: string (ReadOnly): link to a service management web portal
+* **id**: string (Required): SKU's id
+* **name**: string (Required): SKU's name
 
 ## Tags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## Tags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## Tags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## VirtualDisk
+### Properties
+* **controllerId**: string (Required): Disk's Controller id
+* **independenceMode**: 'independent_nonpersistent' | 'independent_persistent' | 'persistent' (Required): Disk's independence mode type
+* **totalSize**: int (Required): Disk's total size
+* **virtualDiskId**: string: Disk's id
+* **virtualDiskName**: string (ReadOnly): Disk's display name
+
+## VirtualDiskController
+### Properties
+* **id**: string (ReadOnly): Controller's id
+* **name**: string (ReadOnly): The display name of Controller
+* **subType**: string (ReadOnly): dik controller subtype (VMWARE_PARAVIRTUAL, BUS_PARALLEL, LSI_PARALLEL, LSI_SAS)
+* **type**: string (ReadOnly): disk controller type (SCSI)
 
 ## VirtualMachineProperties
 ### Properties
 * **amountOfRam**: int (Required): The amount of memory
 * **controllers**: [VirtualDiskController](#virtualdiskcontroller)[] (ReadOnly): The list of Virtual Disks' Controllers
-* **customization**: [GuestOSCustomization](#guestoscustomization): Guest OS Customization properties
+* **customization**: [GuestOSCustomization](#guestoscustomization): Virtual machine properties
 * **disks**: [VirtualDisk](#virtualdisk)[]: The list of Virtual Disks
 * **dnsname**: string (ReadOnly): The DNS name of Virtual Machine in VCenter
 * **exposeToGuestVM**: bool: Expose Guest OS or not
@@ -98,7 +149,7 @@
 * **privateCloudId**: string (Required): Private Cloud Id
 * **provisioningState**: string (ReadOnly): The provisioning status of the resource
 * **publicIP**: string (ReadOnly): The public ip of Virtual Machine
-* **resourcePool**: [ResourcePool](#resourcepool): Resource pool model
+* **resourcePool**: [ResourcePool](#resourcepool): Virtual Machines Resource Pool
 * **status**: 'deallocating' | 'deleting' | 'poweredoff' | 'running' | 'suspended' | 'updating' (ReadOnly): The status of Virtual machine
 * **templateId**: string: Virtual Machine Template Id
 * **username**: string: Username for login. Deprecated - use customization property
@@ -106,78 +157,27 @@
 * **vmwaretools**: string (ReadOnly): VMware tools version
 * **vSphereNetworks**: string[]: The list of Virtual VSphere Networks
 
-## VirtualDiskController
-### Properties
-* **id**: string (ReadOnly): Controller's id
-* **name**: string (ReadOnly): The display name of Controller
-* **subType**: string (ReadOnly): dik controller subtype (VMWARE_PARAVIRTUAL, BUS_PARALLEL, LSI_PARALLEL, LSI_SAS)
-* **type**: string (ReadOnly): disk controller type (SCSI)
-
-## GuestOSCustomization
-### Properties
-* **dnsServers**: string[]: List of dns servers to use
-* **hostName**: string: Virtual Machine hostname
-* **password**: string: Password for login
-* **policyId**: string: id of customization policy
-* **username**: string: Username for login
-
-## VirtualDisk
-### Properties
-* **controllerId**: string (Required): Disk's Controller id
-* **independenceMode**: 'independent_nonpersistent' | 'independent_persistent' | 'persistent' (Required): Disk's independence mode type
-* **totalSize**: int (Required): Disk's total size
-* **virtualDiskId**: string: Disk's id
-* **virtualDiskName**: string (ReadOnly): Disk's display name
-
-## VirtualNic
-### Properties
-* **customization**: [GuestOsnicCustomization](#guestosniccustomization): Guest OS nic customization
-* **ipAddresses**: string[]: NIC ip address
-* **macAddress**: string: NIC MAC address
-* **network**: [VirtualNetwork](#virtualnetwork) (Required): Virtual network model
-* **nicType**: 'E1000' | 'E1000E' | 'PCNET32' | 'VMXNET' | 'VMXNET2' | 'VMXNET3' (Required): NIC type
-* **powerOnBoot**: bool: Is NIC powered on/off on boot
-* **virtualNicId**: string: NIC id
-* **virtualNicName**: string (ReadOnly): NIC name
-
-## GuestOsnicCustomization
-### Properties
-* **allocation**: 'dynamic' | 'static': IP address allocation method
-* **dnsServers**: string[]: List of dns servers to use
-* **gateway**: string[]: Gateway addresses assigned to nic
-* **ipAddress**: string
-* **mask**: string
-* **primaryWinsServer**: string
-* **secondaryWinsServer**: string
-
 ## VirtualNetwork
 ### Properties
 * **assignable**: bool (ReadOnly): can be used in vm creation/deletion
 * **id**: string (Required): virtual network id (privateCloudId:vsphereId)
 * **location**: string (ReadOnly): Azure region
 * **name**: string (ReadOnly): {VirtualNetworkName}
-* **properties**: [VirtualNetworkProperties](#virtualnetworkproperties): Properties of virtual network
+* **properties**: [VirtualNetworkProperties](#virtualnetworkproperties): Virtual Network properties
 * **type**: string (ReadOnly): {resourceProviderNamespace}/{resourceType}
 
 ## VirtualNetworkProperties
 ### Properties
 * **privateCloudId**: string (ReadOnly): The Private Cloud id
 
-## ResourcePool
+## VirtualNic
 ### Properties
-* **id**: string (Required): resource pool id (privateCloudId:vsphereId)
-* **location**: string (ReadOnly): Azure region
-* **name**: string (ReadOnly): {ResourcePoolName}
-* **privateCloudId**: string (ReadOnly): The Private Cloud Id
-* **properties**: [ResourcePoolProperties](#resourcepoolproperties): Properties of resource pool
-* **type**: string (ReadOnly): {resourceProviderNamespace}/{resourceType}
-
-## ResourcePoolProperties
-### Properties
-* **fullName**: string (ReadOnly): Hierarchical resource pool name
-
-## Tags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **customization**: [GuestOsnicCustomization](#guestosniccustomization): guest OS customization for nic
+* **ipAddresses**: string[]: NIC ip address
+* **macAddress**: string: NIC MAC address
+* **network**: [VirtualNetwork](#virtualnetwork) (Required): Virtual Network
+* **nicType**: 'E1000' | 'E1000E' | 'PCNET32' | 'VMXNET' | 'VMXNET2' | 'VMXNET3' (Required): NIC type
+* **powerOnBoot**: bool: Is NIC powered on/off on boot
+* **virtualNicId**: string: NIC id
+* **virtualNicName**: string (ReadOnly): NIC name
 

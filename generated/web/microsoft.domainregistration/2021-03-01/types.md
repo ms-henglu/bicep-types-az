@@ -28,43 +28,18 @@
 * **Input**: [TopLevelDomainAgreementOption](#topleveldomainagreementoption)
 * **Output**: [TldLegalAgreementCollection](#tldlegalagreementcollection)
 
-## DomainProperties
+## Address
 ### Properties
-* **authCode**: string
-* **autoRenew**: bool: <code>true</code> if the domain should be automatically renewed; otherwise, <code>false</code>.
-* **consent**: [DomainPurchaseConsent](#domainpurchaseconsent) (Required, WriteOnly): Domain purchase consent object, representing acceptance of applicable legal agreements.
-* **contactAdmin**: [Contact](#contact) (Required, WriteOnly): Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information is made publicly available through the Whois 
-directories as per ICANN requirements.
-* **contactBilling**: [Contact](#contact) (Required, WriteOnly): Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information is made publicly available through the Whois 
-directories as per ICANN requirements.
-* **contactRegistrant**: [Contact](#contact) (Required, WriteOnly): Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information is made publicly available through the Whois 
-directories as per ICANN requirements.
-* **contactTech**: [Contact](#contact) (Required, WriteOnly): Contact information for domain registration. If 'Domain Privacy' option is not selected then the contact information is made publicly available through the Whois 
-directories as per ICANN requirements.
-* **createdTime**: string (ReadOnly): Domain creation timestamp.
-* **dnsType**: 'AzureDns' | 'DefaultDomainRegistrarDns': Current DNS type
-* **dnsZoneId**: string: Azure DNS Zone to use
-* **domainNotRenewableReasons**: 'ExpirationNotInRenewalTimeRange' | 'RegistrationStatusNotSupportedForRenewal' | 'SubscriptionNotActive'[] (ReadOnly): Reasons why domain is not renewable.
-* **expirationTime**: string (ReadOnly): Domain expiration timestamp.
-* **lastRenewedTime**: string (ReadOnly): Timestamp when the domain was renewed last time.
-* **managedHostNames**: [HostName](#hostname)[] (ReadOnly): All hostnames derived from the domain and assigned to Azure resources.
-* **nameServers**: string[] (ReadOnly): Name servers.
-* **privacy**: bool: <code>true</code> if domain privacy is enabled for this domain; otherwise, <code>false</code>.
-* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): Domain provisioning state.
-* **readyForDnsRecordManagement**: bool (ReadOnly): <code>true</code> if Azure can assign this domain to App Service apps; otherwise, <code>false</code>. This value will be <code>true</code> if domain registration status is active and 
- it is hosted on name servers Azure has programmatic access to.
-* **registrationStatus**: 'Active' | 'Awaiting' | 'Cancelled' | 'Confiscated' | 'Disabled' | 'Excluded' | 'Expired' | 'Failed' | 'Held' | 'JsonConverterFailed' | 'Locked' | 'Parked' | 'Pending' | 'Reserved' | 'Reverted' | 'Suspended' | 'Transferred' | 'Unknown' | 'Unlocked' | 'Unparked' | 'Updated' (ReadOnly): Domain registration status.
-* **targetDnsType**: 'AzureDns' | 'DefaultDomainRegistrarDns': Current DNS type
-
-## DomainPurchaseConsent
-### Properties
-* **agreedAt**: string: Timestamp when the agreements were accepted.
-* **agreedBy**: string: Client IP address.
-* **agreementKeys**: string[]: List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> resource.
+* **address1**: string (Required): First line of an Address.
+* **address2**: string: The second line of the Address. Optional.
+* **city**: string (Required): The city for the address.
+* **country**: string (Required): The country for the address.
+* **postalCode**: string (Required): The postal code for the address.
+* **state**: string (Required): The state or province for the address.
 
 ## Contact
 ### Properties
-* **addressMailing**: [Address](#address): Address information for domain registration.
+* **addressMailing**: [Address](#address): Mailing address.
 * **email**: string (Required): Email address.
 * **fax**: string: Fax number.
 * **jobTitle**: string: Job title.
@@ -74,14 +49,39 @@ directories as per ICANN requirements.
 * **organization**: string: Organization contact belongs to.
 * **phone**: string (Required): Phone number.
 
-## Address
+## DomainOwnershipIdentifierProperties
 ### Properties
-* **address1**: string (Required): First line of an Address.
-* **address2**: string: The second line of the Address. Optional.
-* **city**: string (Required): The city for the address.
-* **country**: string (Required): The country for the address.
-* **postalCode**: string (Required): The postal code for the address.
-* **state**: string (Required): The state or province for the address.
+* **ownershipId**: string: Ownership Id.
+
+## DomainProperties
+### Properties
+* **authCode**: string
+* **autoRenew**: bool: <code>true</code> if the domain should be automatically renewed; otherwise, <code>false</code>.
+* **consent**: [DomainPurchaseConsent](#domainpurchaseconsent) (Required, WriteOnly): Legal agreement consent.
+* **contactAdmin**: [Contact](#contact) (Required, WriteOnly): Administrative contact.
+* **contactBilling**: [Contact](#contact) (Required, WriteOnly): Billing contact.
+* **contactRegistrant**: [Contact](#contact) (Required, WriteOnly): Registrant contact.
+* **contactTech**: [Contact](#contact) (Required, WriteOnly): Technical contact.
+* **createdTime**: string (ReadOnly): Domain creation timestamp.
+* **dnsType**: 'AzureDns' | 'DefaultDomainRegistrarDns': Current DNS type
+* **dnsZoneId**: string: Azure DNS Zone to use
+* **domainNotRenewableReasons**: 'ExpirationNotInRenewalTimeRange' | 'RegistrationStatusNotSupportedForRenewal' | 'SubscriptionNotActive' | string[] (ReadOnly): Reasons why domain is not renewable.
+* **expirationTime**: string (ReadOnly): Domain expiration timestamp.
+* **lastRenewedTime**: string (ReadOnly): Timestamp when the domain was renewed last time.
+* **managedHostNames**: [HostName](#hostname)[] (ReadOnly): All hostnames derived from the domain and assigned to Azure resources.
+* **nameServers**: string[] (ReadOnly): Name servers.
+* **privacy**: bool: <code>true</code> if domain privacy is enabled for this domain; otherwise, <code>false</code>.
+* **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' (ReadOnly): Domain provisioning state.
+* **readyForDnsRecordManagement**: bool (ReadOnly): <code>true</code> if Azure can assign this domain to App Service apps; otherwise, <code>false</code>. This value will be <code>true</code> if domain registration status is active and 
+ it is hosted on name servers Azure has programmatic access to.
+* **registrationStatus**: 'Active' | 'Awaiting' | 'Cancelled' | 'Confiscated' | 'Disabled' | 'Excluded' | 'Expired' | 'Failed' | 'Held' | 'JsonConverterFailed' | 'Locked' | 'Parked' | 'Pending' | 'Reserved' | 'Reverted' | 'Suspended' | 'Transferred' | 'Unknown' | 'Unlocked' | 'Unparked' | 'Updated' (ReadOnly): Domain registration status.
+* **targetDnsType**: 'AzureDns' | 'DefaultDomainRegistrarDns': Target DNS type (would be used for migration)
+
+## DomainPurchaseConsent
+### Properties
+* **agreedAt**: string: Timestamp when the agreements were accepted.
+* **agreedBy**: string: Client IP address.
+* **agreementKeys**: string[]: List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under <code>TopLevelDomain</code> resource.
 
 ## HostName
 ### Properties
@@ -97,24 +97,20 @@ directories as per ICANN requirements.
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## DomainOwnershipIdentifierProperties
-### Properties
-* **ownershipId**: string: Ownership Id.
-
-## TopLevelDomainAgreementOption
-### Properties
-* **forTransfer**: bool (WriteOnly): If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise, <code>false</code>.
-* **includePrivacy**: bool (WriteOnly): If <code>true</code>, then the list of agreements will include agreements for domain privacy as well; otherwise, <code>false</code>.
-
-## TldLegalAgreementCollection
-### Properties
-* **nextLink**: string (ReadOnly): Link to next page of resources.
-* **value**: [TldLegalAgreement](#tldlegalagreement)[] (ReadOnly): Collection of resources.
-
 ## TldLegalAgreement
 ### Properties
 * **agreementKey**: string (ReadOnly): Unique identifier for the agreement.
 * **content**: string (ReadOnly): Agreement details.
 * **title**: string (ReadOnly): Agreement title.
 * **url**: string (ReadOnly): URL where a copy of the agreement details is hosted.
+
+## TldLegalAgreementCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [TldLegalAgreement](#tldlegalagreement)[] (ReadOnly): Collection of resources.
+
+## TopLevelDomainAgreementOption
+### Properties
+* **forTransfer**: bool (WriteOnly): If <code>true</code>, then the list of agreements will include agreements for domain transfer as well; otherwise, <code>false</code>.
+* **includePrivacy**: bool (WriteOnly): If <code>true</code>, then the list of agreements will include agreements for domain privacy as well; otherwise, <code>false</code>.
 

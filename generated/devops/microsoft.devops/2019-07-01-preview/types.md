@@ -7,33 +7,13 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Resource Location
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PipelineProperties](#pipelineproperties) (Required): Custom properties of a Pipeline.
+* **properties**: [PipelineProperties](#pipelineproperties) (Required): Custom properties of the Pipeline.
 * **tags**: [ResourceTags](#resourcetags): Resource Tags
 * **type**: 'Microsoft.DevOps/pipelines' (ReadOnly, DeployTimeConstant): The resource type
 
-## PipelineProperties
-### Properties
-* **bootstrapConfiguration**: [BootstrapConfiguration](#bootstrapconfiguration) (Required): Configuration used to bootstrap a Pipeline.
-* **organization**: [OrganizationReference](#organizationreference) (Required): Reference to an Azure DevOps Organization.
-* **pipelineId**: int (ReadOnly): Unique identifier of the Azure Pipeline within the Azure DevOps Project.
-* **project**: [ProjectReference](#projectreference) (Required): Reference to an Azure DevOps Project.
-
-## BootstrapConfiguration
-### Properties
-* **repository**: [CodeRepository](#coderepository): Repository containing the source code for a pipeline.
-* **template**: [PipelineTemplate](#pipelinetemplate) (Required): Template used to bootstrap the pipeline.
-
-## CodeRepository
-### Properties
-* **authorization**: [Authorization](#authorization): Authorization info used to access a resource (like code repository).
-* **defaultBranch**: string (Required): Default branch used to configure Continuous Integration (CI) in the pipeline.
-* **id**: string (Required): Unique immutable identifier of the code repository.
-* **properties**: [CodeRepositoryProperties](#coderepositoryproperties): Repository-specific properties.
-* **repositoryType**: 'gitHub' | 'vstsGit' (Required): Type of code repository.
-
 ## Authorization
 ### Properties
-* **authorizationType**: 'personalAccessToken' (Required): Type of authorization.
+* **authorizationType**: 'personalAccessToken' | string (Required): Type of authorization.
 * **parameters**: [AuthorizationParameters](#authorizationparameters): Authorization parameters corresponding to the authorization type.
 
 ## AuthorizationParameters
@@ -41,10 +21,35 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## BootstrapConfiguration
+### Properties
+* **repository**: [CodeRepository](#coderepository): Repository containing the source code for the pipeline.
+* **template**: [PipelineTemplate](#pipelinetemplate) (Required): Template used to bootstrap the pipeline.
+
+## CodeRepository
+### Properties
+* **authorization**: [Authorization](#authorization): Authorization info to access the code repository.
+* **defaultBranch**: string (Required): Default branch used to configure Continuous Integration (CI) in the pipeline.
+* **id**: string (Required): Unique immutable identifier of the code repository.
+* **properties**: [CodeRepositoryProperties](#coderepositoryproperties): Repository-specific properties.
+* **repositoryType**: 'gitHub' | 'vstsGit' | string (Required): Type of code repository.
+
 ## CodeRepositoryProperties
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## OrganizationReference
+### Properties
+* **id**: string (ReadOnly): Unique immutable identifier for the Azure DevOps Organization.
+* **name**: string (Required): Name of the Azure DevOps Organization.
+
+## PipelineProperties
+### Properties
+* **bootstrapConfiguration**: [BootstrapConfiguration](#bootstrapconfiguration) (Required): Configuration used to bootstrap the Pipeline.
+* **organization**: [OrganizationReference](#organizationreference) (Required): Reference to the Azure DevOps Organization containing the Pipeline.
+* **pipelineId**: int (ReadOnly): Unique identifier of the Azure Pipeline within the Azure DevOps Project.
+* **project**: [ProjectReference](#projectreference) (Required): Reference to the Azure DevOps Project containing the Pipeline.
 
 ## PipelineTemplate
 ### Properties
@@ -55,11 +60,6 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
-
-## OrganizationReference
-### Properties
-* **id**: string (ReadOnly): Unique immutable identifier for the Azure DevOps Organization.
-* **name**: string (Required): Name of the Azure DevOps Organization.
 
 ## ProjectReference
 ### Properties

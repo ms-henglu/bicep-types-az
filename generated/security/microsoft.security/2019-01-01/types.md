@@ -16,12 +16,12 @@
 ### Base Properties
 * **apiVersion**: '2019-01-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: 'MCAS' | 'WDATP' (Required, DeployTimeConstant): The resource name
+* **name**: 'MCAS' | 'WDATP' | string (Required, DeployTimeConstant): The resource name
 * **type**: 'Microsoft.Security/settings' (ReadOnly, DeployTimeConstant): The resource type
 ### DataExportSettings
 #### Properties
 * **kind**: 'DataExportSettings' (Required): the kind of the settings string (DataExportSettings)
-* **properties**: [DataExportSettingProperties](#dataexportsettingproperties): The data export setting properties
+* **properties**: [DataExportSettingProperties](#dataexportsettingproperties): Data export setting data
 
 
 ## AdvancedThreatProtectionProperties

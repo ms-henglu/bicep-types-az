@@ -5,11 +5,11 @@
 ### Properties
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [VideoAnalyzerIdentity](#videoanalyzeridentity): The managed identity for the Video Analyzer resource.
+* **identity**: [VideoAnalyzerIdentity](#videoanalyzeridentity): The set of managed identities associated with the Video Analyzer resource.
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [VideoAnalyzerProperties](#videoanalyzerproperties)
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [VideoAnalyzerProperties](#videoanalyzerproperties): The properties of the Video Analyzer account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system data of the Video Analyzer account.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Media/videoAnalyzers' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -19,8 +19,8 @@
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [AccessPolicyProperties](#accesspolicyproperties): Application level properties for the access policy resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [AccessPolicyProperties](#accesspolicyproperties): The resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/videoAnalyzers/accessPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Media/videoAnalyzers/edgeModules@2021-05-01-preview
@@ -29,8 +29,8 @@
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [EdgeModuleProperties](#edgemoduleproperties): Application level properties for the edge module resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [EdgeModuleProperties](#edgemoduleproperties): The resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/videoAnalyzers/edgeModules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Media/videoAnalyzers/videos@2021-05-01-preview
@@ -39,8 +39,8 @@
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [VideoProperties](#videoproperties): Application level properties for the video resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [VideoProperties](#videoproperties): The resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/videoAnalyzers/videos' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Function listProvisioningToken (Microsoft.Media/videoAnalyzers/edgeModules@2021-05-01-preview)
@@ -54,72 +54,17 @@
 * **ApiVersion**: 2021-05-01-preview
 * **Output**: [VideoStreamingToken](#videostreamingtoken)
 
-## VideoAnalyzerIdentity
+## AccessPolicyProperties
 ### Properties
-* **type**: string (Required): The identity type.
-* **userAssignedIdentities**: [UserAssignedManagedIdentities](#userassignedmanagedidentities): The User Assigned Managed Identities.
-
-## UserAssignedManagedIdentities
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedManagedIdentity](#userassignedmanagedidentity)
-
-## UserAssignedManagedIdentity
-### Properties
-* **clientId**: string (ReadOnly): The client ID.
-* **principalId**: string (ReadOnly): The principal ID.
-
-## VideoAnalyzerProperties
-### Properties
-* **encryption**: [AccountEncryption](#accountencryption): Defines how the Video Analyzer account is (optionally) encrypted.
-* **endpoints**: [Endpoint](#endpoint)[] (ReadOnly): The list of endpoints associated with this resource.
-* **storageAccounts**: [StorageAccount](#storageaccount)[]: The storage accounts for this resource.
+* **authentication**: [AuthenticationBase](#authenticationbase): Authentication method to be used when validating client API access.
+* **role**: 'Reader' | string: Defines the access level granted by this policy.
 
 ## AccountEncryption
 ### Properties
-* **identity**: [ResourceIdentity](#resourceidentity): The user assigned managed identity to use when accessing a resource.
-* **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties): The details for accessing the encryption keys in Key Vault.
+* **identity**: [ResourceIdentity](#resourceidentity): The Key Vault identity.
+* **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties): The properties of the key used to encrypt the account.
 * **status**: string (ReadOnly): The current status of the Key Vault mapping.
-* **type**: 'CustomerKey' | 'SystemKey' (Required): The type of key used to encrypt the Account Key.
-
-## ResourceIdentity
-### Properties
-* **userAssignedIdentity**: string (Required): The user assigned managed identity's resource identifier to use when accessing a resource.
-
-## KeyVaultProperties
-### Properties
-* **currentKeyIdentifier**: string (ReadOnly): The current key used to encrypt Video Analyzer account, including the key version.
-* **keyIdentifier**: string (Required): The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
-
-## Endpoint
-### Properties
-* **endpointUrl**: string: The URL of the endpoint.
-* **type**: 'ClientApi' (Required): The type of the endpoint.
-
-## StorageAccount
-### Properties
-* **id**: string: The ID of the storage account resource. Video Analyzer relies on tables, queues, and blobs. The primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage).
-* **identity**: [ResourceIdentity](#resourceidentity): The user assigned managed identity to use when accessing a resource.
-* **status**: string (ReadOnly): The current status of the storage account mapping.
-
-## SystemData
-### Properties
-* **createdAt**: string: The timestamp of resource creation (UTC).
-* **createdBy**: string: The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string: The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AccessPolicyProperties
-### Properties
-* **authentication**: [AuthenticationBase](#authenticationbase): Base class for access policies authentication methods.
-* **role**: 'Reader': Defines the access level granted by this policy.
+* **type**: 'CustomerKey' | 'SystemKey' | string (Required): The type of key used to encrypt the Account Key.
 
 ## AuthenticationBase
 * **Discriminator**: @type
@@ -134,6 +79,48 @@
 * **keys**: [TokenKey](#tokenkey)[]: List of keys which can be used to validate access tokens. Having multiple keys allow for seamless key rotation of the token signing key. Token signature must match exactly one key.
 
 
+## EdgeModuleProperties
+### Properties
+* **edgeModuleId**: string (ReadOnly): Internal ID generated for the instance of the Video Analyzer edge module.
+
+## EdgeModuleProvisioningToken
+### Properties
+* **expirationDate**: string (ReadOnly): The expiration date of the registration token. The Azure Video Analyzer IoT edge module must be initialized and connected to the Internet prior to the token expiration date.
+* **token**: string (ReadOnly): The token blob to be provided to the Azure Video Analyzer IoT edge module through the Azure IoT Edge module twin properties.
+
+## Endpoint
+### Properties
+* **endpointUrl**: string: The URL of the endpoint.
+* **type**: 'ClientApi' | string (Required): The type of the endpoint.
+
+## KeyVaultProperties
+### Properties
+* **currentKeyIdentifier**: string (ReadOnly): The current key used to encrypt Video Analyzer account, including the key version.
+* **keyIdentifier**: string (Required): The URL of the Key Vault key used to encrypt the account. The key may either be versioned (for example https://vault/keys/mykey/version1) or reference a key without a version (for example https://vault/keys/mykey).
+
+## ListProvisioningTokenInput
+### Properties
+* **expirationDate**: string (Required, WriteOnly): The desired expiration date of the registration token. The Azure Video Analyzer IoT edge module must be initialized and connected to the Internet prior to the token expiration date.
+
+## ResourceIdentity
+### Properties
+* **userAssignedIdentity**: string (Required): The user assigned managed identity's resource identifier to use when accessing a resource.
+
+## StorageAccount
+### Properties
+* **id**: string: The ID of the storage account resource. Video Analyzer relies on tables, queues, and blobs. The primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage).
+* **identity**: [ResourceIdentity](#resourceidentity): A managed identity that Video Analyzer will use to access the storage account.
+* **status**: string (ReadOnly): The current status of the storage account mapping.
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
 ## TokenClaim
 ### Properties
 * **name**: string (Required): Name of the claim which must be present on the token.
@@ -147,30 +134,43 @@
 ### EccTokenKey
 #### Properties
 * **@type**: '#Microsoft.VideoAnalyzer.EccTokenKey' (Required): The discriminator for derived types.
-* **alg**: 'ES256' | 'ES384' | 'ES512' (Required): Elliptical curve algorithm to be used: ES256, ES384 or ES512.
+* **alg**: 'ES256' | 'ES384' | 'ES512' | string (Required): Elliptical curve algorithm to be used: ES256, ES384 or ES512.
 * **x**: string (Required): X coordinate.
 * **y**: string (Required): Y coordinate.
 
 ### RsaTokenKey
 #### Properties
 * **@type**: '#Microsoft.VideoAnalyzer.RsaTokenKey' (Required): The discriminator for derived types.
-* **alg**: 'RS256' | 'RS384' | 'RS512' (Required): RSA algorithm to be used: RS256, RS384 or RS512.
+* **alg**: 'RS256' | 'RS384' | 'RS512' | string (Required): RSA algorithm to be used: RS256, RS384 or RS512.
 * **e**: string (Required): RSA public key exponent.
 * **n**: string (Required): RSA public key modulus.
 
 
-## EdgeModuleProperties
+## TrackedResourceTags
 ### Properties
-* **edgeModuleId**: string (ReadOnly): Internal ID generated for the instance of the Video Analyzer edge module.
+### Additional Properties
+* **Additional Properties Type**: string
 
-## VideoProperties
+## UserAssignedManagedIdentities
 ### Properties
-* **description**: string: Optional video description provided by the user. Value can be up to 2048 characters long.
-* **flags**: [VideoFlags](#videoflags) (ReadOnly): Video flags contain information about the available video actions and its dynamic properties based on the current video state.
-* **mediaInfo**: [VideoMediaInfo](#videomediainfo) (ReadOnly): Contains information about the video and audio content.
-* **streaming**: [VideoStreaming](#videostreaming) (ReadOnly): Video streaming holds information about video streaming URLs.
-* **title**: string: Optional video title provided by the user. Value can be up to 256 characters long.
-* **type**: 'Archive' (ReadOnly): Type of the video archive. Different archive formats provide different capabilities.
+### Additional Properties
+* **Additional Properties Type**: [UserAssignedManagedIdentity](#userassignedmanagedidentity)
+
+## UserAssignedManagedIdentity
+### Properties
+* **clientId**: string (ReadOnly): The client ID.
+* **principalId**: string (ReadOnly): The principal ID.
+
+## VideoAnalyzerIdentity
+### Properties
+* **type**: string (Required): The identity type.
+* **userAssignedIdentities**: [UserAssignedManagedIdentities](#userassignedmanagedidentities): The User Assigned Managed Identities.
+
+## VideoAnalyzerProperties
+### Properties
+* **encryption**: [AccountEncryption](#accountencryption): The account encryption properties.
+* **endpoints**: [Endpoint](#endpoint)[] (ReadOnly): The list of endpoints associated with this resource.
+* **storageAccounts**: [StorageAccount](#storageaccount)[]: The storage accounts for this resource.
 
 ## VideoFlags
 ### Properties
@@ -182,6 +182,15 @@
 ### Properties
 * **segmentLength**: string (ReadOnly): Video segment length indicates the length of individual video files (segments) which are persisted to storage. Smaller segments provide lower archive playback latency but generate larger volume of storage transactions. Larger segments reduce the amount of storage transactions while increasing the archive playback latency. Value must be specified in ISO8601 duration format (i.e. "PT30S" equals 30 seconds) and can vary between 30 seconds to 5 minutes, in 30 seconds increments.
 
+## VideoProperties
+### Properties
+* **description**: string: Optional video description provided by the user. Value can be up to 2048 characters long.
+* **flags**: [VideoFlags](#videoflags) (ReadOnly): Video flags contain information about the available video actions and its dynamic properties based on the current video state.
+* **mediaInfo**: [VideoMediaInfo](#videomediainfo) (ReadOnly): Contains information about the video and audio content.
+* **streaming**: [VideoStreaming](#videostreaming) (ReadOnly): Video streaming holds information about video streaming URLs.
+* **title**: string: Optional video title provided by the user. Value can be up to 256 characters long.
+* **type**: 'Archive' | string (ReadOnly): Type of the video archive. Different archive formats provide different capabilities.
+
 ## VideoStreaming
 ### Properties
 * **archiveBaseUrl**: string: Video streaming base URL for the video archive. When present, archived video can be played through the Azure Video Analyzer player. Alternatively, this URL can be used with compatible DASH or HLS players by appending the following to the base URL:
@@ -191,15 +200,6 @@
   - DASH CMAF: /manifest(format=mpd-time-cmaf)
 
 Moreover, an ongoing video recording can be played in "live mode" with latencies which are approximately double of the chosen video segment length.
-
-## ListProvisioningTokenInput
-### Properties
-* **expirationDate**: string (Required, WriteOnly): The desired expiration date of the registration token. The Azure Video Analyzer IoT edge module must be initialized and connected to the Internet prior to the token expiration date.
-
-## EdgeModuleProvisioningToken
-### Properties
-* **expirationDate**: string (ReadOnly): The expiration date of the registration token. The Azure Video Analyzer IoT edge module must be initialized and connected to the Internet prior to the token expiration date.
-* **token**: string (ReadOnly): The token blob to be provided to the Azure Video Analyzer IoT edge module through the Azure IoT Edge module twin properties.
 
 ## VideoStreamingToken
 ### Properties

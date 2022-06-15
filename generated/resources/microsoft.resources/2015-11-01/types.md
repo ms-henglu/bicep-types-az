@@ -6,7 +6,7 @@
 * **apiVersion**: '2015-11-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DeploymentProperties](#deploymentproperties): Deployment properties.
+* **properties**: [DeploymentProperties](#deploymentproperties): Gets or sets the deployment properties.
 * **type**: 'Microsoft.Resources/deployments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Resources/resourceGroups@2015-11-01
@@ -20,19 +20,11 @@
 * **tags**: [ResourceGroupTags](#resourcegrouptags): Gets or sets the tags attached to the resource group.
 * **type**: 'Microsoft.Resources/resourceGroups' (ReadOnly, DeployTimeConstant): The resource type
 
-## DeploymentProperties
+## BasicDependency
 ### Properties
-* **correlationId**: string (ReadOnly): Gets or sets the correlation ID of the deployment.
-* **dependencies**: [Dependency](#dependency)[] (ReadOnly): Gets the list of deployment dependencies.
-* **mode**: 'Complete' | 'Incremental': Gets or sets the deployment mode.
-* **outputs**: any (ReadOnly): Any object
-* **parameters**: any: Any object
-* **parametersLink**: [ParametersLink](#parameterslink): Entity representing the reference to the deployment parameters.
-* **providers**: [Provider](#provider)[] (ReadOnly): Gets the list of resource providers needed for the deployment.
-* **provisioningState**: string (ReadOnly): Gets or sets the state of the provisioning.
-* **template**: any: Any object
-* **templateLink**: [TemplateLink](#templatelink): Entity representing the reference to the template.
-* **timestamp**: string (ReadOnly): Gets or sets the timestamp of the template deployment.
+* **id**: string (ReadOnly): Gets or sets the ID of the dependency.
+* **resourceName**: string (ReadOnly): Gets or sets the dependency resource name.
+* **resourceType**: string (ReadOnly): Gets or sets the dependency resource type.
 
 ## Dependency
 ### Properties
@@ -41,11 +33,33 @@
 * **resourceName**: string (ReadOnly): Gets or sets the dependency resource name.
 * **resourceType**: string (ReadOnly): Gets or sets the dependency resource type.
 
-## BasicDependency
+## DeploymentProperties
 ### Properties
-* **id**: string (ReadOnly): Gets or sets the ID of the dependency.
-* **resourceName**: string (ReadOnly): Gets or sets the dependency resource name.
-* **resourceType**: string (ReadOnly): Gets or sets the dependency resource type.
+* **correlationId**: string (ReadOnly): Gets or sets the correlation ID of the deployment.
+* **dependencies**: [Dependency](#dependency)[] (ReadOnly): Gets the list of deployment dependencies.
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): The deployment error.
+* **mode**: 'Complete' | 'Incremental': Gets or sets the deployment mode.
+* **outputs**: any (ReadOnly): Gets or sets key/value pairs that represent deployment output.
+* **parameters**: any: Deployment parameters. Use only one of Parameters or ParametersLink.
+* **parametersLink**: [ParametersLink](#parameterslink): Gets or sets the URI referencing the parameters. Use only one of Parameters or ParametersLink.
+* **providers**: [Provider](#provider)[] (ReadOnly): Gets the list of resource providers needed for the deployment.
+* **provisioningState**: string (ReadOnly): Gets or sets the state of the provisioning.
+* **template**: any: Gets or sets the template content. Use only one of Template or TemplateLink.
+* **templateLink**: [TemplateLink](#templatelink): Gets or sets the URI referencing the template. Use only one of Template or TemplateLink.
+* **timestamp**: string (ReadOnly): Gets or sets the timestamp of the template deployment.
+
+## ErrorAdditionalInfo
+### Properties
+* **info**: any (ReadOnly): The additional info.
+* **type**: string (ReadOnly): The additional info type.
+
+## ErrorResponse
+### Properties
+* **additionalInfo**: [ErrorAdditionalInfo](#erroradditionalinfo)[] (ReadOnly): The error additional info.
+* **code**: string (ReadOnly): The error code.
+* **details**: [ErrorResponse](#errorresponse)[] (ReadOnly): The error details.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The error target.
 
 ## ParametersLink
 ### Properties
@@ -71,11 +85,6 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## TemplateLink
-### Properties
-* **contentVersion**: string: If included it must match the ContentVersion in the template.
-* **uri**: string (Required): URI referencing the template.
-
 ## ResourceGroupProperties
 ### Properties
 * **provisioningState**: string (ReadOnly): Gets resource group provisioning state.
@@ -84,4 +93,9 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TemplateLink
+### Properties
+* **contentVersion**: string: If included it must match the ContentVersion in the template.
+* **uri**: string (Required): URI referencing the template.
 

@@ -26,6 +26,22 @@
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **type**: 'Microsoft.Management/managementGroups/subscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
+## CreateManagementGroupChildInfo
+### Properties
+* **children**: [CreateManagementGroupChildInfo](#createmanagementgroupchildinfo)[] (ReadOnly): The list of children.
+* **displayName**: string (ReadOnly): The friendly name of the child resource.
+* **id**: string (ReadOnly): The fully qualified ID for the child resource (management group or subscription).  For example, /providers/Microsoft.Management/managementGroups/0000000-0000-0000-0000-000000000000
+* **name**: string (ReadOnly): The name of the child entity.
+* **roles**: string[] (ReadOnly): The roles definitions associated with the management group.
+* **type**: '/subscriptions' | 'Microsoft.Management/managementGroups' | string (ReadOnly): The fully qualified resource type which includes provider namespace (e.g. Microsoft.Management/managementGroups)
+
+## CreateManagementGroupDetails
+### Properties
+* **parent**: [CreateParentGroupInfo](#createparentgroupinfo): (Optional) The ID of the parent management group used during creation.
+* **updatedBy**: string (ReadOnly): The identity of the principal or process that updated the object.
+* **updatedTime**: string (ReadOnly): The date and time when this object was last updated.
+* **version**: int (ReadOnly): The version number of the object.
+
 ## CreateManagementGroupProperties
 ### Properties
 * **children**: [CreateManagementGroupChildInfo](#createmanagementgroupchildinfo)[] (ReadOnly): The list of children.
@@ -35,21 +51,11 @@
 * **roles**: string[] (ReadOnly): The roles definitions associated with the management group.
 * **tenantId**: string (ReadOnly): The AAD Tenant ID associated with the management group. For example, 00000000-0000-0000-0000-000000000000
 
-## CreateManagementGroupChildInfo
+## CreateOrUpdateSettingsProperties
 ### Properties
-* **children**: [CreateManagementGroupChildInfo](#createmanagementgroupchildinfo)[] (ReadOnly): The list of children.
-* **displayName**: string (ReadOnly): The friendly name of the child resource.
-* **id**: string (ReadOnly): The fully qualified ID for the child resource (management group or subscription).  For example, /providers/Microsoft.Management/managementGroups/0000000-0000-0000-0000-000000000000
-* **name**: string (ReadOnly): The name of the child entity.
-* **roles**: string[] (ReadOnly): The roles definitions associated with the management group.
-* **type**: '/subscriptions' | 'Microsoft.Management/managementGroups' (ReadOnly): The type of child resource.
-
-## CreateManagementGroupDetails
-### Properties
-* **parent**: [CreateParentGroupInfo](#createparentgroupinfo): (Optional) The ID of the parent management group used during creation.
-* **updatedBy**: string (ReadOnly): The identity of the principal or process that updated the object.
-* **updatedTime**: string (ReadOnly): The date and time when this object was last updated.
-* **version**: int (ReadOnly): The version number of the object.
+* **defaultManagementGroup**: string: Settings that sets the default Management Group under which new subscriptions get added in this tenant. For example, /providers/Microsoft.Management/managementGroups/defaultGroup
+* **requireAuthorizationForGroupCreation**: bool: Indicates whether RBAC access is required upon group creation under the root Management Group. If set to true, user will require Microsoft.Management/managementGroups/write action on the root Management Group scope in order to create new Groups directly under the root. This will prevent new users from creating new Management Groups, unless they are given access.
+* **tenantId**: string (ReadOnly): The AAD Tenant ID associated with the hierarchy settings. For example, 00000000-0000-0000-0000-000000000000
 
 ## CreateParentGroupInfo
 ### Properties
@@ -61,10 +67,4 @@
 ### Properties
 * **displayName**: string (ReadOnly): The friendly name of the group.
 * **name**: string (ReadOnly): The name of the group.
-
-## CreateOrUpdateSettingsProperties
-### Properties
-* **defaultManagementGroup**: string: Settings that sets the default Management Group under which new subscriptions get added in this tenant. For example, /providers/Microsoft.Management/managementGroups/defaultGroup
-* **requireAuthorizationForGroupCreation**: bool: Indicates whether RBAC access is required upon group creation under the root Management Group. If set to true, user will require Microsoft.Management/managementGroups/write action on the root Management Group scope in order to create new Groups directly under the root. This will prevent new users from creating new Management Groups, unless they are given access.
-* **tenantId**: string (ReadOnly): The AAD Tenant ID associated with the hierarchy settings. For example, 00000000-0000-0000-0000-000000000000
 

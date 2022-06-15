@@ -38,7 +38,7 @@
 * **expirationDate**: string (ReadOnly): Certificate expiration date.
 * **friendlyName**: string (ReadOnly): Friendly name of the certificate.
 * **geoRegion**: string (ReadOnly): Region of the certificate.
-* **hostingEnvironmentProfile**: [HostingEnvironmentProfile](#hostingenvironmentprofile) (ReadOnly): Specification for an App Service Environment to use for this resource.
+* **hostingEnvironmentProfile**: [HostingEnvironmentProfile](#hostingenvironmentprofile) (ReadOnly): Specification for the App Service Environment to use for the certificate.
 * **hostNames**: string[]: Host names the certificate applies to.
 * **issueDate**: string (ReadOnly): Certificate issue Date.
 * **issuer**: string (ReadOnly): Certificate issuer.
@@ -66,14 +66,6 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## UserProperties
-### Properties
-* **name**: string: Username
-* **publishingPassword**: string: Password used for publishing.
-* **publishingPasswordHash**: string: Password hash used for publishing.
-* **publishingPasswordHashSalt**: string: Password hash salt used for publishing.
-* **publishingUserName**: string (Required): Username used for publishing.
-
 ## SourceControlProperties
 ### Properties
 * **expirationTime**: string: OAuth token expiration.
@@ -81,4 +73,12 @@
 * **refreshToken**: string: OAuth refresh token.
 * **token**: string: OAuth access token.
 * **tokenSecret**: string: OAuth access token secret.
+
+## UserProperties
+### Properties
+* **name**: string: Username
+* **publishingPassword**: string: Password used for publishing.
+* **publishingPasswordHash**: string: Password hash used for publishing.
+* **publishingPasswordHashSalt**: string: Password hash salt used for publishing.
+* **publishingUserName**: string (Required): Username used for publishing.
 

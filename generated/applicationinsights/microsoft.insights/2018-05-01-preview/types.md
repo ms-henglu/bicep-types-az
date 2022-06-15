@@ -34,39 +34,6 @@
 * **tags**: [WebtestsResourceTags](#webtestsresourcetags): Resource tags
 * **type**: 'Microsoft.Insights/webtests' (ReadOnly, DeployTimeConstant): The resource type
 
-## ApplicationInsightsComponentProperties
-### Properties
-* **AppId**: string (ReadOnly): Application Insights Unique ID for your Application.
-* **Application_Type**: 'other' | 'web' (Required): Type of application being monitored.
-* **ApplicationId**: string (ReadOnly): The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
-* **ConnectionString**: string (ReadOnly): Application Insights component connection string.
-* **CreationDate**: string (ReadOnly): Creation Date for the Application Insights component, in ISO 8601 format.
-* **DisableIpMasking**: bool: Disable IP masking.
-* **Flow_Type**: 'Bluefield': Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
-* **HockeyAppId**: string: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
-* **HockeyAppToken**: string (ReadOnly): Token used to authenticate communications with between Application Insights and HockeyApp.
-* **ImmediatePurgeDataOn30Days**: bool: Purge data immediately after 30 days.
-* **IngestionMode**: 'ApplicationInsights' | 'ApplicationInsightsWithDiagnosticSettings' | 'LogAnalytics': Indicates the flow of the ingestion.
-* **InstrumentationKey**: string (ReadOnly): Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.
-* **PrivateLinkScopedResources**: [PrivateLinkScopedResource](#privatelinkscopedresource)[] (ReadOnly): List of linked private link scope resources.
-* **provisioningState**: string (ReadOnly): Current state of this component: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
-* **publicNetworkAccessForIngestion**: 'Disabled' | 'Enabled': The network access type for operating on the Application Insights Component. By default it is Enabled
-* **publicNetworkAccessForQuery**: 'Disabled' | 'Enabled': The network access type for operating on the Application Insights Component. By default it is Enabled
-* **Request_Source**: 'rest': Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
-* **RetentionInDays**: int: Retention period in days.
-* **SamplingPercentage**: int: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
-* **TenantId**: string (ReadOnly): Azure Tenant Id.
-
-## PrivateLinkScopedResource
-### Properties
-* **ResourceId**: string: The full resource Id of the private link scope resource.
-* **ScopeId**: string: The private link scope unique Identifier.
-
-## ComponentsResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## ApplicationInsightsComponentProactiveDetectionConfigurationProperties
 ### Properties
 * **CustomEmails**: string[]: Custom email addresses for this rule notifications
@@ -86,6 +53,48 @@
 * **IsInPreview**: bool: A flag indicating whether the rule is in preview
 * **Name**: string: The rule name
 * **SupportsEmailNotifications**: bool: A flag indicating whether email notifications are supported for detections for this rule
+
+## ApplicationInsightsComponentProperties
+### Properties
+* **AppId**: string (ReadOnly): Application Insights Unique ID for your Application.
+* **Application_Type**: 'other' | 'web' | string (Required): Type of application being monitored.
+* **ApplicationId**: string (ReadOnly): The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
+* **ConnectionString**: string (ReadOnly): Application Insights component connection string.
+* **CreationDate**: string (ReadOnly): Creation Date for the Application Insights component, in ISO 8601 format.
+* **DisableIpMasking**: bool: Disable IP masking.
+* **Flow_Type**: 'Bluefield' | string: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+* **HockeyAppId**: string: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
+* **HockeyAppToken**: string (ReadOnly): Token used to authenticate communications with between Application Insights and HockeyApp.
+* **ImmediatePurgeDataOn30Days**: bool: Purge data immediately after 30 days.
+* **IngestionMode**: 'ApplicationInsights' | 'ApplicationInsightsWithDiagnosticSettings' | 'LogAnalytics' | string: Indicates the flow of the ingestion.
+* **InstrumentationKey**: string (ReadOnly): Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.
+* **PrivateLinkScopedResources**: [PrivateLinkScopedResource](#privatelinkscopedresource)[] (ReadOnly): List of linked private link scope resources.
+* **provisioningState**: string (ReadOnly): Current state of this component: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+* **publicNetworkAccessForIngestion**: 'Disabled' | 'Enabled' | string: The network access type for accessing Application Insights ingestion.
+* **publicNetworkAccessForQuery**: 'Disabled' | 'Enabled' | string: The network access type for accessing Application Insights query.
+* **Request_Source**: 'rest' | string: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
+* **RetentionInDays**: int: Retention period in days.
+* **SamplingPercentage**: int: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
+* **TenantId**: string (ReadOnly): Azure Tenant Id.
+
+## ComponentsResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## HeaderField
+### Properties
+* **key**: string: The name of the header.
+* **value**: string: The value of the header.
+
+## PrivateLinkScopedResource
+### Properties
+* **ResourceId**: string: The full resource Id of the private link scope resource.
+* **ScopeId**: string: The private link scope unique Identifier.
+
+## WebTestGeolocation
+### Properties
+* **Id**: string: Location ID for the WebTest to run from.
 
 ## WebTestProperties
 ### Properties
@@ -107,10 +116,6 @@
 ### Properties
 * **WebTest**: string: The XML specification of a WebTest to run against an application.
 
-## WebTestGeolocation
-### Properties
-* **Id**: string: Location ID for the WebTest to run from.
-
 ## WebTestPropertiesRequest
 ### Properties
 * **FollowRedirects**: bool: Follow redirects for this web test.
@@ -119,11 +124,6 @@
 * **ParseDependentRequests**: bool: Parse Dependent request for this WebTest.
 * **RequestBody**: string: Base64 encoded string body to send with this web test.
 * **RequestUrl**: string: Url location to test.
-
-## HeaderField
-### Properties
-* **key**: string: The name of the header.
-* **value**: string: The value of the header.
 
 ## WebTestPropertiesValidationRules
 ### Properties

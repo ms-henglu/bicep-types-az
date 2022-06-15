@@ -55,49 +55,19 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/galleries/images/versions' (ReadOnly, DeployTimeConstant): The resource type
 
-## GalleryProperties
+## DataDiskImageEncryption
 ### Properties
-* **description**: string: The description of this Shared Image Gallery resource. This property is updatable.
-* **identifier**: [GalleryIdentifier](#galleryidentifier): Describes the gallery unique name.
-* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state, which only appears in the response.
-* **sharingProfile**: [SharingProfile](#sharingprofile): Profile for gallery sharing to subscription or tenant
-* **sharingStatus**: [SharingStatus](#sharingstatus) (ReadOnly): Sharing status of current gallery.
-* **softDeletePolicy**: [SoftDeletePolicy](#softdeletepolicy): Contains information about the soft deletion policy of the gallery.
+* **diskEncryptionSetId**: string: A relative URI containing the resource ID of the disk encryption set.
+* **lun**: int (Required): This property specifies the logical unit number of the data disk. This value is used to identify data disks within the Virtual Machine and therefore must be unique for each data disk attached to the Virtual Machine.
 
-## GalleryIdentifier
+## Disallowed
 ### Properties
-* **uniqueName**: string (ReadOnly): The unique name of the Shared Image Gallery. This name is generated automatically by Azure.
+* **diskTypes**: string[]: A list of disk types.
 
-## SharingProfile
+## EncryptionImages
 ### Properties
-* **communityGalleryInfo**: any: Anything
-* **groups**: [SharingProfileGroup](#sharingprofilegroup)[] (ReadOnly): A list of sharing profile groups.
-* **permissions**: 'Groups' | 'Private': This property allows you to specify the permission of sharing gallery. <br><br> Possible values are: <br><br> **Private** <br><br> **Groups**
-
-## SharingProfileGroup
-### Properties
-* **ids**: string[]: A list of subscription/tenant ids the gallery is aimed to be shared to.
-* **type**: 'AADTenants' | 'Community' | 'Subscriptions': This property allows you to specify the type of sharing group. <br><br> Possible values are: <br><br> **Subscriptions** <br><br> **AADTenants** <br><br> **Community**
-
-## SharingStatus
-### Properties
-* **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' (ReadOnly): The sharing state of the gallery, which only appears in the response.
-* **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
-
-## RegionalSharingStatus
-### Properties
-* **details**: string: Details of gallery regional sharing failure.
-* **region**: string: Region name
-* **state**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' (ReadOnly): The sharing state of the gallery, which only appears in the response.
-
-## SoftDeletePolicy
-### Properties
-* **isSoftDeleteEnabled**: bool: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **dataDiskImages**: [DataDiskImageEncryption](#datadiskimageencryption)[]: A list of encryption specifications for data disk images.
+* **osDiskImage**: [OSDiskImageEncryption](#osdiskimageencryption): Contains encryption settings for an OS disk image.
 
 ## GalleryApplicationProperties
 ### Properties
@@ -108,14 +78,9 @@
 * **releaseNoteUri**: string: The release note uri.
 * **supportedOSType**: 'Linux' | 'Windows' (Required): This property allows you to specify the supported type of the OS that application is built for. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
 
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## GalleryApplicationVersionProperties
 ### Properties
-* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state, which only appears in the response.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
 * **publishingProfile**: [GalleryApplicationVersionPublishingProfile](#galleryapplicationversionpublishingprofile) (Required): The publishing profile of a gallery image version.
 * **replicationStatus**: [ReplicationStatus](#replicationstatus) (ReadOnly): This is the replication status of the gallery image version.
 
@@ -127,101 +92,32 @@
 * **manageActions**: [UserArtifactManage](#userartifactmanage)
 * **publishedDate**: string (ReadOnly): The timestamp for when the gallery image version is published.
 * **replicaCount**: int: The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
-* **replicationMode**: 'Full' | 'Shallow': Optional parameter which specifies the mode to be used for replication. This property is not updatable.
+* **replicationMode**: 'Full' | 'Shallow' | string: Optional parameter which specifies the mode to be used for replication. This property is not updatable.
 * **source**: [UserArtifactSource](#userartifactsource) (Required): The source image from which the Image Version is going to be created.
-* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS': Specifies the storage account type to be used to store the image. This property is not updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
 * **targetExtendedLocations**: [GalleryTargetExtendedLocation](#gallerytargetextendedlocation)[]: The target extended locations where the Image Version is going to be replicated to. This property is updatable.
 * **targetRegions**: [TargetRegion](#targetregion)[]: The target regions where the Image Version is going to be replicated to. This property is updatable.
 
-## UserArtifactManage
+## GalleryArtifactVersionSource
 ### Properties
-* **install**: string (Required): Required. The path and arguments to install the gallery application. This is limited to 4096 characters.
-* **remove**: string (Required): Required. The path and arguments to remove the gallery application. This is limited to 4096 characters.
-* **update**: string: Optional. The path and arguments to update the gallery application. If not present, then update operation will invoke remove command on the previous version and install command on the current version of the gallery application. This is limited to 4096 characters.
+* **id**: string: The id of the gallery artifact version source. Can specify a disk uri, snapshot uri, user image or storage account resource.
+* **uri**: string: The uri of the gallery artifact version source. Currently used to specify vhd/blob source.
 
-## UserArtifactSource
+## GalleryDataDiskImage
 ### Properties
-* **defaultConfigurationLink**: string: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
-* **mediaLink**: string (Required): Required. The mediaLink of the artifact, must be a readable storage page blob.
-
-## GalleryTargetExtendedLocation
-### Properties
-* **encryption**: [EncryptionImages](#encryptionimages): Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
-* **extendedLocation**: [GalleryExtendedLocation](#galleryextendedlocation): The name of the extended location.
-* **extendedLocationReplicaCount**: int: The number of replicas of the Image Version to be created per extended location. This property is updatable.
-* **name**: string: The name of the region.
-* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS': Specifies the storage account type to be used to store the image. This property is not updatable.
-
-## EncryptionImages
-### Properties
-* **dataDiskImages**: [DataDiskImageEncryption](#datadiskimageencryption)[]: A list of encryption specifications for data disk images.
-* **osDiskImage**: [OSDiskImageEncryption](#osdiskimageencryption): Contains encryption settings for an OS disk image.
-
-## DataDiskImageEncryption
-### Properties
-* **diskEncryptionSetId**: string: A relative URI containing the resource ID of the disk encryption set.
+* **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite': The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite'
 * **lun**: int (Required): This property specifies the logical unit number of the data disk. This value is used to identify data disks within the Virtual Machine and therefore must be unique for each data disk attached to the Virtual Machine.
-
-## OSDiskImageEncryption
-### Properties
-* **diskEncryptionSetId**: string: A relative URI containing the resource ID of the disk encryption set.
-* **securityProfile**: [OSDiskImageSecurityProfile](#osdiskimagesecurityprofile): Contains security profile for an OS disk image.
-
-## OSDiskImageSecurityProfile
-### Properties
-* **confidentialVMEncryptionType**: 'EncryptedVMGuestStateOnlyWithPmk' | 'EncryptedWithCmk' | 'EncryptedWithPmk': confidential VM encryption types
-* **secureVMDiskEncryptionSetId**: string: secure VM disk encryption set id
+* **sizeInGB**: int (ReadOnly): This property indicates the size of the VHD to be created.
+* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
 
 ## GalleryExtendedLocation
 ### Properties
 * **name**: string
-* **type**: 'EdgeZone' | 'Unknown': It is type of the extended location.
+* **type**: 'EdgeZone' | 'Unknown' | string: It is type of the extended location.
 
-## TargetRegion
+## GalleryIdentifier
 ### Properties
-* **encryption**: [EncryptionImages](#encryptionimages): Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
-* **name**: string (Required): The name of the region.
-* **regionalReplicaCount**: int: The number of replicas of the Image Version to be created per region. This property is updatable.
-* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS': Specifies the storage account type to be used to store the image. This property is not updatable.
-
-## ReplicationStatus
-### Properties
-* **aggregatedState**: 'Completed' | 'Failed' | 'InProgress' | 'Unknown' (ReadOnly): This is the aggregated replication status based on all the regional replication status flags.
-* **summary**: [RegionalReplicationStatus](#regionalreplicationstatus)[] (ReadOnly): This is a summary of replication status for each region.
-
-## RegionalReplicationStatus
-### Properties
-* **details**: string (ReadOnly): The details of the replication status.
-* **progress**: int (ReadOnly): It indicates progress of the replication job.
-* **region**: string (ReadOnly): The region to which the gallery image version is being replicated to.
-* **state**: 'Completed' | 'Failed' | 'Replicating' | 'Unknown' (ReadOnly): This is the regional replication state.
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## GalleryImageProperties
-### Properties
-* **architecture**: 'Arm64' | 'x64': The architecture of the image. Applicable to OS disks only.
-* **description**: string: The description of this gallery image definition resource. This property is updatable.
-* **disallowed**: [Disallowed](#disallowed): Describes the disallowed disk types.
-* **endOfLifeDate**: string: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
-* **eula**: string: The Eula agreement for the gallery image definition.
-* **features**: [GalleryImageFeature](#galleryimagefeature)[]: A list of gallery image features.
-* **hyperVGeneration**: 'V1' | 'V2': The hypervisor generation of the Virtual Machine. Applicable to OS disks only.
-* **identifier**: [GalleryImageIdentifier](#galleryimageidentifier) (Required): This is the gallery image definition identifier.
-* **osState**: 'Generalized' | 'Specialized' (Required): This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
-* **osType**: 'Linux' | 'Windows' (Required): This property allows you to specify the supported type of the OS that application is built for. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
-* **privacyStatementUri**: string: The privacy statement uri.
-* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state, which only appears in the response.
-* **purchasePlan**: [ImagePurchasePlan](#imagepurchaseplan): Describes the gallery image definition purchase plan. This is used by marketplace images.
-* **recommended**: [RecommendedMachineConfiguration](#recommendedmachineconfiguration): The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
-* **releaseNoteUri**: string: The release note uri.
-
-## Disallowed
-### Properties
-* **diskTypes**: string[]: A list of disk types.
+* **uniqueName**: string (ReadOnly): The unique name of the Shared Image Gallery. This name is generated automatically by Azure.
 
 ## GalleryImageFeature
 ### Properties
@@ -234,16 +130,109 @@
 * **publisher**: string (Required): The name of the gallery image definition publisher.
 * **sku**: string (Required): The name of the gallery image definition SKU.
 
+## GalleryImageProperties
+### Properties
+* **architecture**: 'Arm64' | 'x64' | string: The architecture of the image. Applicable to OS disks only.
+* **description**: string: The description of this gallery image definition resource. This property is updatable.
+* **disallowed**: [Disallowed](#disallowed): Describes the disallowed disk types.
+* **endOfLifeDate**: string: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
+* **eula**: string: The Eula agreement for the gallery image definition.
+* **features**: [GalleryImageFeature](#galleryimagefeature)[]: A list of gallery image features.
+* **hyperVGeneration**: 'V1' | 'V2' | string: The hypervisor generation of the Virtual Machine. Applicable to OS disks only.
+* **identifier**: [GalleryImageIdentifier](#galleryimageidentifier) (Required): This is the gallery image definition identifier.
+* **osState**: 'Generalized' | 'Specialized' (Required): This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+* **osType**: 'Linux' | 'Windows' (Required): This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
+* **privacyStatementUri**: string: The privacy statement uri.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
+* **purchasePlan**: [ImagePurchasePlan](#imagepurchaseplan): Describes the gallery image definition purchase plan. This is used by marketplace images.
+* **recommended**: [RecommendedMachineConfiguration](#recommendedmachineconfiguration): The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
+* **releaseNoteUri**: string: The release note uri.
+
+## GalleryImageVersionProperties
+### Properties
+* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
+* **publishingProfile**: [GalleryImageVersionPublishingProfile](#galleryimageversionpublishingprofile): The publishing profile of a gallery image Version.
+* **replicationStatus**: [ReplicationStatus](#replicationstatus) (ReadOnly): This is the replication status of the gallery image version.
+* **storageProfile**: [GalleryImageVersionStorageProfile](#galleryimageversionstorageprofile) (Required): This is the storage profile of a Gallery Image Version.
+
+## GalleryImageVersionPublishingProfile
+### Properties
+* **endOfLifeDate**: string: The end of life date of the gallery image version. This property can be used for decommissioning purposes. This property is updatable.
+* **excludeFromLatest**: bool: If set to true, Virtual Machines deployed from the latest version of the Image Definition won't use this Image Version.
+* **publishedDate**: string (ReadOnly): The timestamp for when the gallery image version is published.
+* **replicaCount**: int: The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
+* **replicationMode**: 'Full' | 'Shallow' | string: Optional parameter which specifies the mode to be used for replication. This property is not updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+* **targetExtendedLocations**: [GalleryTargetExtendedLocation](#gallerytargetextendedlocation)[]: The target extended locations where the Image Version is going to be replicated to. This property is updatable.
+* **targetRegions**: [TargetRegion](#targetregion)[]: The target regions where the Image Version is going to be replicated to. This property is updatable.
+
+## GalleryImageVersionStorageProfile
+### Properties
+* **dataDiskImages**: [GalleryDataDiskImage](#gallerydatadiskimage)[]: A list of data disk images.
+* **osDiskImage**: [GalleryOSDiskImage](#galleryosdiskimage): This is the OS disk image.
+* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
+
+## GalleryOSDiskImage
+### Properties
+* **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite': The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite'
+* **sizeInGB**: int (ReadOnly): This property indicates the size of the VHD to be created.
+* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
+
+## GalleryProperties
+### Properties
+* **description**: string: The description of this Shared Image Gallery resource. This property is updatable.
+* **identifier**: [GalleryIdentifier](#galleryidentifier): Describes the gallery unique name.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
+* **sharingProfile**: [SharingProfile](#sharingprofile): Profile for gallery sharing to subscription or tenant
+* **sharingStatus**: [SharingStatus](#sharingstatus) (ReadOnly): Sharing status of current gallery.
+* **softDeletePolicy**: [SoftDeletePolicy](#softdeletepolicy): Contains information about the soft deletion policy of the gallery.
+
+## GalleryTargetExtendedLocation
+### Properties
+* **encryption**: [EncryptionImages](#encryptionimages): Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
+* **extendedLocation**: [GalleryExtendedLocation](#galleryextendedlocation): The name of the extended location.
+* **extendedLocationReplicaCount**: int: The number of replicas of the Image Version to be created per extended location. This property is updatable.
+* **name**: string: The name of the region.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+
 ## ImagePurchasePlan
 ### Properties
 * **name**: string: The plan ID.
 * **product**: string: The product ID.
 * **publisher**: string: The publisher ID.
 
+## OSDiskImageEncryption
+### Properties
+* **diskEncryptionSetId**: string: A relative URI containing the resource ID of the disk encryption set.
+* **securityProfile**: [OSDiskImageSecurityProfile](#osdiskimagesecurityprofile): This property specifies the security profile of an OS disk image.
+
+## OSDiskImageSecurityProfile
+### Properties
+* **confidentialVMEncryptionType**: 'EncryptedVMGuestStateOnlyWithPmk' | 'EncryptedWithCmk' | 'EncryptedWithPmk' | string: confidential VM encryption types
+* **secureVMDiskEncryptionSetId**: string: secure VM disk encryption set id
+
 ## RecommendedMachineConfiguration
 ### Properties
 * **memory**: [ResourceRange](#resourcerange): Describes the resource range.
 * **vCPUs**: [ResourceRange](#resourcerange): Describes the resource range.
+
+## RegionalReplicationStatus
+### Properties
+* **details**: string (ReadOnly): The details of the replication status.
+* **progress**: int (ReadOnly): It indicates progress of the replication job.
+* **region**: string (ReadOnly): The region to which the gallery image version is being replicated to.
+* **state**: 'Completed' | 'Failed' | 'Replicating' | 'Unknown' | string (ReadOnly): This is the regional replication state.
+
+## RegionalSharingStatus
+### Properties
+* **details**: string: Details of gallery regional sharing failure.
+* **region**: string: Region name
+* **state**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Gallery sharing state in current region
+
+## ReplicationStatus
+### Properties
+* **aggregatedState**: 'Completed' | 'Failed' | 'InProgress' | 'Unknown' | string (ReadOnly): This is the aggregated replication status based on all the regional replication status flags.
+* **summary**: [RegionalReplicationStatus](#regionalreplicationstatus)[] (ReadOnly): This is a summary of replication status for each region.
 
 ## ResourceRange
 ### Properties
@@ -255,50 +244,61 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## GalleryImageVersionProperties
+## ResourceTags
 ### Properties
-* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state, which only appears in the response.
-* **publishingProfile**: [GalleryImageVersionPublishingProfile](#galleryimageversionpublishingprofile): The publishing profile of a gallery image Version.
-* **replicationStatus**: [ReplicationStatus](#replicationstatus) (ReadOnly): This is the replication status of the gallery image version.
-* **storageProfile**: [GalleryImageVersionStorageProfile](#galleryimageversionstorageprofile) (Required): This is the storage profile of a Gallery Image Version.
-
-## GalleryImageVersionPublishingProfile
-### Properties
-* **endOfLifeDate**: string: The end of life date of the gallery image version. This property can be used for decommissioning purposes. This property is updatable.
-* **excludeFromLatest**: bool: If set to true, Virtual Machines deployed from the latest version of the Image Definition won't use this Image Version.
-* **publishedDate**: string (ReadOnly): The timestamp for when the gallery image version is published.
-* **replicaCount**: int: The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
-* **replicationMode**: 'Full' | 'Shallow': Optional parameter which specifies the mode to be used for replication. This property is not updatable.
-* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS': Specifies the storage account type to be used to store the image. This property is not updatable.
-* **targetExtendedLocations**: [GalleryTargetExtendedLocation](#gallerytargetextendedlocation)[]: The target extended locations where the Image Version is going to be replicated to. This property is updatable.
-* **targetRegions**: [TargetRegion](#targetregion)[]: The target regions where the Image Version is going to be replicated to. This property is updatable.
-
-## GalleryImageVersionStorageProfile
-### Properties
-* **dataDiskImages**: [GalleryDataDiskImage](#gallerydatadiskimage)[]: A list of data disk images.
-* **osDiskImage**: [GalleryOSDiskImage](#galleryosdiskimage): This is the OS disk image.
-* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
-
-## GalleryDataDiskImage
-### Properties
-* **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite': The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite'
-* **lun**: int (Required): This property specifies the logical unit number of the data disk. This value is used to identify data disks within the Virtual Machine and therefore must be unique for each data disk attached to the Virtual Machine.
-* **sizeInGB**: int (ReadOnly): This property indicates the size of the VHD to be created.
-* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
-
-## GalleryArtifactVersionSource
-### Properties
-* **id**: string: The id of the gallery artifact version source. Can specify a disk uri, snapshot uri, user image or storage account resource.
-* **uri**: string: The uri of the gallery artifact version source. Currently used to specify vhd/blob source.
-
-## GalleryOSDiskImage
-### Properties
-* **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite': The host caching of the disk. Valid values are 'None', 'ReadOnly', and 'ReadWrite'
-* **sizeInGB**: int (ReadOnly): This property indicates the size of the VHD to be created.
-* **source**: [GalleryArtifactVersionSource](#galleryartifactversionsource): The gallery artifact version source.
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## SharingProfile
+### Properties
+* **communityGalleryInfo**: any: Information of community gallery if current gallery is shared to community.
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[] (ReadOnly): A list of sharing profile groups.
+* **permissions**: 'Groups' | 'Private' | string: This property allows you to specify the permission of sharing gallery. <br><br> Possible values are: <br><br> **Private** <br><br> **Groups**
+
+## SharingProfileGroup
+### Properties
+* **ids**: string[]: A list of subscription/tenant ids the gallery is aimed to be shared to.
+* **type**: 'AADTenants' | 'Community' | 'Subscriptions' | string: This property allows you to specify the type of sharing group. <br><br> Possible values are: <br><br> **Subscriptions** <br><br> **AADTenants** <br><br> **Community**
+
+## SharingStatus
+### Properties
+* **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Aggregated sharing state of current gallery.
+* **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
+
+## SoftDeletePolicy
+### Properties
+* **isSoftDeleteEnabled**: bool: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
+
+## TargetRegion
+### Properties
+* **encryption**: [EncryptionImages](#encryptionimages): Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
+* **name**: string (Required): The name of the region.
+* **regionalReplicaCount**: int: The number of replicas of the Image Version to be created per region. This property is updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+
+## UserArtifactManage
+### Properties
+* **install**: string (Required): Required. The path and arguments to install the gallery application. This is limited to 4096 characters.
+* **remove**: string (Required): Required. The path and arguments to remove the gallery application. This is limited to 4096 characters.
+* **update**: string: Optional. The path and arguments to update the gallery application. If not present, then update operation will invoke remove command on the previous version and install command on the current version of the gallery application. This is limited to 4096 characters.
+
+## UserArtifactSource
+### Properties
+* **defaultConfigurationLink**: string: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
+* **mediaLink**: string (Required): Required. The mediaLink of the artifact, must be a readable storage page blob.
 

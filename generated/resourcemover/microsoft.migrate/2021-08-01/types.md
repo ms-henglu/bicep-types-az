@@ -24,22 +24,94 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Migrate/moveCollections/moveResources' (ReadOnly, DeployTimeConstant): The resource type
 
+## AutomaticResolutionProperties
+### Properties
+* **moveResourceId**: string: Gets the MoveResource ARM ID of
+the dependent resource if the resolution type is Automatic.
+
+## AvailabilitySetResourceSettingsTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## Identity
 ### Properties
 * **principalId**: string: Gets or sets the principal id.
 * **tenantId**: string: Gets or sets the tenant id.
-* **type**: 'None' | 'SystemAssigned' | 'UserAssigned': The type of identity used for the resource mover service.
+* **type**: 'None' | 'SystemAssigned' | 'UserAssigned' | string: The type of identity used for the resource mover service.
+
+## JobStatus
+### Properties
+* **jobName**: 'InitialSync' | string (ReadOnly): Defines the job name.
+* **jobProgress**: string (ReadOnly): Gets or sets the monitoring job percentage.
+
+## LBBackendAddressPoolResourceSettings
+### Properties
+* **name**: string: Gets or sets the backend address pool name.
+
+## LBFrontendIPConfigurationResourceSettings
+### Properties
+* **name**: string: Gets or sets the frontend IP configuration name.
+* **privateIpAddress**: string: Gets or sets the IP address of the Load Balancer.This is only specified if a specific
+private IP address shall be allocated from the subnet specified in subnetRef.
+* **privateIpAllocationMethod**: string: Gets or sets PrivateIP allocation method (Static/Dynamic).
+* **subnet**: [SubnetReference](#subnetreference): Defines reference to subnet.
+* **zones**: string: Gets or sets the csv list of zones.
+
+## LoadBalancerBackendAddressPoolReference
+### Properties
+* **name**: string: Gets the name of the proxy resource on the target side.
+* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
+
+## LoadBalancerNatRuleReference
+### Properties
+* **name**: string: Gets the name of the proxy resource on the target side.
+* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
+
+## LoadBalancerResourceSettingsTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ManualResolutionProperties
+### Properties
+* **targetId**: string: Gets or sets the target resource ARM ID of the dependent resource if the resource type is Manual.
 
 ## MoveCollectionProperties
 ### Properties
 * **errors**: [MoveCollectionPropertiesErrors](#movecollectionpropertieserrors) (ReadOnly): Defines the move collection errors.
-* **provisioningState**: 'Creating' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): Defines the provisioning states.
+* **provisioningState**: 'Creating' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Defines the provisioning states.
 * **sourceRegion**: string (Required): Gets or sets the source region.
 * **targetRegion**: string (Required): Gets or sets the target region.
 
 ## MoveCollectionPropertiesErrors
 ### Properties
-* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): An error response from the Azure Migrate service.
+* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): The move resource error body.
+
+## MoveCollectionTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## MoveResourceDependency
+### Properties
+* **automaticResolution**: [AutomaticResolutionProperties](#automaticresolutionproperties): Defines the properties for automatic resolution.
+* **dependencyType**: 'RequiredForMove' | 'RequiredForPrepare' | string: Defines the dependency type.
+* **id**: string: Gets the source ARM ID of the dependent resource.
+* **isOptional**: string: Gets or sets a value indicating whether the dependency is optional.
+* **manualResolution**: [ManualResolutionProperties](#manualresolutionproperties): Defines the properties for manual resolution.
+* **resolutionStatus**: string: Gets the dependency resolution status.
+* **resolutionType**: 'Automatic' | 'Manual' | string: Defines the resolution type.
+
+## MoveResourceDependencyOverride
+### Properties
+* **id**: string: Gets or sets the ARM ID of the dependent resource.
+* **targetId**: string: Gets or sets the resource ARM id of either the MoveResource or the resource ARM ID of
+the dependent resource.
+
+## MoveResourceError
+### Properties
+* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): The move resource error body.
 
 ## MoveResourceErrorBody
 ### Properties
@@ -47,20 +119,6 @@
 * **details**: [MoveResourceErrorBody](#moveresourceerrorbody)[] (ReadOnly): A list of additional details about the error.
 * **message**: string (ReadOnly): A message describing the error, intended to be suitable for display in a user interface.
 * **target**: string (ReadOnly): The target of the particular error. For example, the name of the property in error.
-
-## SystemData
-### Properties
-* **createdAt**: string: The timestamp of resource creation (UTC).
-* **createdBy**: string: The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string: The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-
-## MoveCollectionTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
 
 ## MoveResourceProperties
 ### Properties
@@ -70,55 +128,79 @@
 * **existingTargetId**: string: Gets or sets the existing target ARM Id of the resource.
 * **isResolveRequired**: bool (ReadOnly): Gets a value indicating whether the resolve action is required over the move collection.
 * **moveStatus**: [MoveResourcePropertiesMoveStatus](#moveresourcepropertiesmovestatus) (ReadOnly): Defines the move resource status.
-* **provisioningState**: 'Creating' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): Defines the provisioning states.
+* **provisioningState**: 'Creating' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Defines the provisioning states.
 * **resourceSettings**: [ResourceSettings](#resourcesettings): Gets or sets the resource settings.
 * **sourceId**: string (Required): Gets or sets the Source ARM Id of the resource.
-* **sourceResourceSettings**: [ResourceSettings](#resourcesettings) (ReadOnly): Gets or sets the resource settings.
+* **sourceResourceSettings**: [ResourceSettings](#resourcesettings) (ReadOnly): Gets or sets the source resource settings.
 * **targetId**: string (ReadOnly): Gets or sets the Target ARM Id of the resource.
-
-## MoveResourceDependency
-### Properties
-* **automaticResolution**: [AutomaticResolutionProperties](#automaticresolutionproperties): Defines the properties for automatic resolution.
-* **dependencyType**: 'RequiredForMove' | 'RequiredForPrepare': Defines the dependency type.
-* **id**: string: Gets the source ARM ID of the dependent resource.
-* **isOptional**: string: Gets or sets a value indicating whether the dependency is optional.
-* **manualResolution**: [ManualResolutionProperties](#manualresolutionproperties): Defines the properties for manual resolution.
-* **resolutionStatus**: string: Gets the dependency resolution status.
-* **resolutionType**: 'Automatic' | 'Manual': Defines the resolution type.
-
-## AutomaticResolutionProperties
-### Properties
-* **moveResourceId**: string: Gets the MoveResource ARM ID of
-the dependent resource if the resolution type is Automatic.
-
-## ManualResolutionProperties
-### Properties
-* **targetId**: string: Gets or sets the target resource ARM ID of the dependent resource if the resource type is Manual.
-
-## MoveResourceDependencyOverride
-### Properties
-* **id**: string: Gets or sets the ARM ID of the dependent resource.
-* **targetId**: string: Gets or sets the resource ARM id of either the MoveResource or the resource ARM ID of
-the dependent resource.
 
 ## MoveResourcePropertiesErrors
 ### Properties
-* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): An error response from the Azure Migrate service.
+* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): The move resource error body.
 
 ## MoveResourcePropertiesMoveStatus
 ### Properties
 * **errors**: [MoveResourceError](#moveresourceerror): An error response from the azure resource mover service.
 * **jobStatus**: [JobStatus](#jobstatus): Defines the job status.
-* **moveState**: 'AssignmentPending' | 'CommitFailed' | 'CommitInProgress' | 'CommitPending' | 'Committed' | 'DeleteSourcePending' | 'DiscardFailed' | 'DiscardInProgress' | 'MoveFailed' | 'MoveInProgress' | 'MovePending' | 'PrepareFailed' | 'PrepareInProgress' | 'PreparePending' | 'ResourceMoveCompleted' (ReadOnly): Defines the MoveResource states.
+* **moveState**: 'AssignmentPending' | 'CommitFailed' | 'CommitInProgress' | 'CommitPending' | 'Committed' | 'DeleteSourcePending' | 'DiscardFailed' | 'DiscardInProgress' | 'MoveFailed' | 'MoveInProgress' | 'MovePending' | 'PrepareFailed' | 'PrepareInProgress' | 'PreparePending' | 'ResourceMoveCompleted' | string (ReadOnly): Defines the MoveResource states.
 
-## MoveResourceError
+## NetworkInterfaceResourceSettingsTags
 ### Properties
-* **properties**: [MoveResourceErrorBody](#moveresourceerrorbody): An error response from the Azure Migrate service.
+### Additional Properties
+* **Additional Properties Type**: string
 
-## JobStatus
+## NetworkSecurityGroupResourceSettingsTags
 ### Properties
-* **jobName**: 'InitialSync' (ReadOnly): Defines the job name.
-* **jobProgress**: string (ReadOnly): Gets or sets the monitoring job percentage.
+### Additional Properties
+* **Additional Properties Type**: string
+
+## NicIpConfigurationResourceSettings
+### Properties
+* **loadBalancerBackendAddressPools**: [LoadBalancerBackendAddressPoolReference](#loadbalancerbackendaddresspoolreference)[]: Gets or sets the references of the load balancer backend address pools.
+* **loadBalancerNatRules**: [LoadBalancerNatRuleReference](#loadbalancernatrulereference)[]: Gets or sets the references of the load balancer NAT rules.
+* **name**: string: Gets or sets the IP configuration name.
+* **primary**: bool: Gets or sets a value indicating whether this IP configuration is the primary.
+* **privateIpAddress**: string: Gets or sets the private IP address of the network interface IP Configuration.
+* **privateIpAllocationMethod**: string: Gets or sets the private IP address allocation method.
+* **publicIp**: [PublicIpReference](#publicipreference): Defines reference to a public IP.
+* **subnet**: [SubnetReference](#subnetreference): Defines reference to subnet.
+
+## NsgReference
+### Properties
+* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
+
+## NsgSecurityRule
+### Properties
+* **access**: string: Gets or sets whether network traffic is allowed or denied.
+Possible values are “Allow” and “Deny”.
+* **description**: string: Gets or sets a description for this rule. Restricted to 140 chars.
+* **destinationAddressPrefix**: string: Gets or sets destination address prefix. CIDR or source IP range.
+ A “*” can also be used to match all source IPs. Default tags such
+as ‘VirtualNetwork’, ‘AzureLoadBalancer’ and ‘Internet’ can also be used.
+* **destinationPortRange**: string: Gets or sets Destination Port or Range. Integer or range between
+0 and 65535. A “*” can also be used to match all ports.
+* **direction**: string: Gets or sets the direction of the rule.InBound or Outbound. The
+direction specifies if rule will be evaluated on incoming or outgoing traffic.
+* **name**: string: Gets or sets the Security rule name.
+* **priority**: int: Gets or sets the priority of the rule. The value can be between
+100 and 4096. The priority number must be unique for each rule in the collection.
+The lower the priority number, the higher the priority of the rule.
+* **protocol**: string: Gets or sets Network protocol this rule applies to. Can be Tcp, Udp or All(*).
+* **sourceAddressPrefix**: string: Gets or sets source address prefix. CIDR or source IP range. A
+“*” can also be used to match all source IPs.  Default tags such as ‘VirtualNetwork’,
+‘AzureLoadBalancer’ and ‘Internet’ can also be used. If this is an ingress
+rule, specifies where network traffic originates from.
+* **sourcePortRange**: string: Gets or sets Source Port or Range. Integer or range between 0 and
+65535. A “*” can also be used to match all ports.
+
+## PublicIPAddressResourceSettingsTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## PublicIpReference
+### Properties
+* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
 
 ## ResourceSettings
 * **Discriminator**: resourceType
@@ -141,7 +223,7 @@ the dependent resource.
 * **resourceType**: 'Microsoft.Compute/virtualMachines' (Required): The resource type. For example, the value can be Microsoft.Compute/virtualMachines.
 * **tags**: [VirtualMachineResourceSettingsTags](#virtualmachineresourcesettingstags): Gets or sets the Resource tags.
 * **targetAvailabilitySetId**: string: Gets or sets the target availability set id for virtual machines not in an availability set at source.
-* **targetAvailabilityZone**: '1' | '2' | '3' | 'NA': Gets or sets the target availability zone.
+* **targetAvailabilityZone**: '1' | '2' | '3' | 'NA' | string: Gets or sets the target availability zone.
 * **targetVmSize**: string: Gets or sets the target virtual machine size.
 * **userManagedIdentities**: string[]: Gets or sets user-managed identities
 
@@ -201,130 +283,18 @@ DDOS protection should be switched on.
 #### Properties
 * **resourceType**: 'Microsoft.Sql/servers/databases' (Required): The resource type. For example, the value can be Microsoft.Compute/virtualMachines.
 * **tags**: [SqlDatabaseResourceSettingsTags](#sqldatabaseresourcesettingstags): Gets or sets the Resource tags.
-* **zoneRedundant**: 'Disable' | 'Enable': Defines the zone redundant resource setting.
+* **zoneRedundant**: 'Disable' | 'Enable' | string: Defines the zone redundant resource setting.
 
 ### SqlElasticPoolResourceSettings
 #### Properties
 * **resourceType**: 'Microsoft.Sql/servers/elasticPools' (Required): The resource type. For example, the value can be Microsoft.Compute/virtualMachines.
 * **tags**: [SqlElasticPoolResourceSettingsTags](#sqlelasticpoolresourcesettingstags): Gets or sets the Resource tags.
-* **zoneRedundant**: 'Disable' | 'Enable': Defines the zone redundant resource setting.
+* **zoneRedundant**: 'Disable' | 'Enable' | string: Defines the zone redundant resource setting.
 
 ### ResourceGroupResourceSettings
 #### Properties
 * **resourceType**: 'resourceGroups' (Required): The resource type. For example, the value can be Microsoft.Compute/virtualMachines.
 
-
-## AvailabilitySetResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## VirtualMachineResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## LBBackendAddressPoolResourceSettings
-### Properties
-* **name**: string: Gets or sets the backend address pool name.
-
-## LBFrontendIPConfigurationResourceSettings
-### Properties
-* **name**: string: Gets or sets the frontend IP configuration name.
-* **privateIpAddress**: string: Gets or sets the IP address of the Load Balancer.This is only specified if a specific
-private IP address shall be allocated from the subnet specified in subnetRef.
-* **privateIpAllocationMethod**: string: Gets or sets PrivateIP allocation method (Static/Dynamic).
-* **subnet**: [SubnetReference](#subnetreference): Defines reference to subnet.
-* **zones**: string: Gets or sets the csv list of zones.
-
-## SubnetReference
-### Properties
-* **name**: string: Gets the name of the proxy resource on the target side.
-* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
-
-## LoadBalancerResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## NicIpConfigurationResourceSettings
-### Properties
-* **loadBalancerBackendAddressPools**: [LoadBalancerBackendAddressPoolReference](#loadbalancerbackendaddresspoolreference)[]: Gets or sets the references of the load balancer backend address pools.
-* **loadBalancerNatRules**: [LoadBalancerNatRuleReference](#loadbalancernatrulereference)[]: Gets or sets the references of the load balancer NAT rules.
-* **name**: string: Gets or sets the IP configuration name.
-* **primary**: bool: Gets or sets a value indicating whether this IP configuration is the primary.
-* **privateIpAddress**: string: Gets or sets the private IP address of the network interface IP Configuration.
-* **privateIpAllocationMethod**: string: Gets or sets the private IP address allocation method.
-* **publicIp**: [PublicIpReference](#publicipreference): Defines reference to a public IP.
-* **subnet**: [SubnetReference](#subnetreference): Defines reference to subnet.
-
-## LoadBalancerBackendAddressPoolReference
-### Properties
-* **name**: string: Gets the name of the proxy resource on the target side.
-* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
-
-## LoadBalancerNatRuleReference
-### Properties
-* **name**: string: Gets the name of the proxy resource on the target side.
-* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
-
-## PublicIpReference
-### Properties
-* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
-
-## NetworkInterfaceResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## NsgSecurityRule
-### Properties
-* **access**: string: Gets or sets whether network traffic is allowed or denied.
-Possible values are “Allow” and “Deny”.
-* **description**: string: Gets or sets a description for this rule. Restricted to 140 chars.
-* **destinationAddressPrefix**: string: Gets or sets destination address prefix. CIDR or source IP range.
- A “*” can also be used to match all source IPs. Default tags such
-as ‘VirtualNetwork’, ‘AzureLoadBalancer’ and ‘Internet’ can also be used.
-* **destinationPortRange**: string: Gets or sets Destination Port or Range. Integer or range between
-0 and 65535. A “*” can also be used to match all ports.
-* **direction**: string: Gets or sets the direction of the rule.InBound or Outbound. The
-direction specifies if rule will be evaluated on incoming or outgoing traffic.
-* **name**: string: Gets or sets the Security rule name.
-* **priority**: int: Gets or sets the priority of the rule. The value can be between
-100 and 4096. The priority number must be unique for each rule in the collection.
-The lower the priority number, the higher the priority of the rule.
-* **protocol**: string: Gets or sets Network protocol this rule applies to. Can be Tcp, Udp or All(*).
-* **sourceAddressPrefix**: string: Gets or sets source address prefix. CIDR or source IP range. A
-“*” can also be used to match all source IPs.  Default tags such as ‘VirtualNetwork’,
-‘AzureLoadBalancer’ and ‘Internet’ can also be used. If this is an ingress
-rule, specifies where network traffic originates from.
-* **sourcePortRange**: string: Gets or sets Source Port or Range. Integer or range between 0 and
-65535. A “*” can also be used to match all ports.
-
-## NetworkSecurityGroupResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## PublicIPAddressResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## SubnetResourceSettings
-### Properties
-* **addressPrefix**: string: Gets or sets address prefix for the subnet.
-* **name**: string: Gets or sets the Subnet name.
-* **networkSecurityGroup**: [NsgReference](#nsgreference): Defines reference to NSG.
-
-## NsgReference
-### Properties
-* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
-
-## VirtualNetworkResourceSettingsTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
 
 ## SqlDatabaseResourceSettingsTags
 ### Properties
@@ -332,6 +302,36 @@ rule, specifies where network traffic originates from.
 * **Additional Properties Type**: string
 
 ## SqlElasticPoolResourceSettingsTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## SubnetReference
+### Properties
+* **name**: string: Gets the name of the proxy resource on the target side.
+* **sourceArmResourceId**: string (Required): Gets the ARM resource ID of the tracked resource being referenced.
+
+## SubnetResourceSettings
+### Properties
+* **addressPrefix**: string: Gets or sets address prefix for the subnet.
+* **name**: string: Gets or sets the Subnet name.
+* **networkSecurityGroup**: [NsgReference](#nsgreference): Defines reference to NSG.
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## VirtualMachineResourceSettingsTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## VirtualNetworkResourceSettingsTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string

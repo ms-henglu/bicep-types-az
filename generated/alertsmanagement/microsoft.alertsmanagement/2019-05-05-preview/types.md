@@ -7,7 +7,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ActionRuleProperties](#actionruleproperties): Action rule properties defining scope, conditions, suppression logic for action rule
+* **properties**: [ActionRuleProperties](#actionruleproperties): action rule properties
 * **tags**: [ManagedResourceTags](#managedresourcetags): Resource tags
 * **type**: 'Microsoft.AlertsManagement/actionRules' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -15,14 +15,14 @@
 * **Discriminator**: type
 
 ### Base Properties
-* **conditions**: [Conditions](#conditions): Conditions in alert instance to be matched for a given action rule. Default value is all. Multiple values could be provided with comma separation.
+* **conditions**: [Conditions](#conditions): conditions on which alerts will be filtered
 * **createdAt**: string (ReadOnly): Creation time of action rule. Date-Time in ISO-8601 format.
 * **createdBy**: string (ReadOnly): Created by user name.
 * **description**: string: Description of action rule
 * **lastModifiedAt**: string (ReadOnly): Last updated time of action rule. Date-Time in ISO-8601 format.
 * **lastModifiedBy**: string (ReadOnly): Last modified by user name.
-* **scope**: [Scope](#scope): Target scope for a given action rule. By default scope will be the subscription. User can also provide list of resource groups or list of resources from the scope subscription as well.
-* **status**: 'Disabled' | 'Enabled': Indicates if the given action rule is enabled or disabled
+* **scope**: [Scope](#scope): scope on which action rule will apply
+* **status**: 'Disabled' | 'Enabled' | string: Indicates if the given action rule is enabled or disabled
 ### ActionGroup
 #### Properties
 * **actionGroupId**: string (Required): Action group to trigger if action rule matches
@@ -34,34 +34,39 @@
 
 ### Suppression
 #### Properties
-* **suppressionConfig**: [SuppressionConfig](#suppressionconfig) (Required): Suppression logic for a given action rule
+* **suppressionConfig**: [SuppressionConfig](#suppressionconfig) (Required): suppression configuration for the action rule
 * **type**: 'Suppression' (Required): Indicates type of action rule
 
 
-## Conditions
-### Properties
-* **alertContext**: [Condition](#condition): condition to trigger an action rule
-* **alertRuleId**: [Condition](#condition): condition to trigger an action rule
-* **description**: [Condition](#condition): condition to trigger an action rule
-* **monitorCondition**: [Condition](#condition): condition to trigger an action rule
-* **monitorService**: [Condition](#condition): condition to trigger an action rule
-* **severity**: [Condition](#condition): condition to trigger an action rule
-* **targetResourceType**: [Condition](#condition): condition to trigger an action rule
-
 ## Condition
 ### Properties
-* **operator**: 'Contains' | 'DoesNotContain' | 'Equals' | 'NotEquals': operator for a given condition
+* **operator**: 'Contains' | 'DoesNotContain' | 'Equals' | 'NotEquals' | string: operator for a given condition
 * **values**: string[]: list of values to match for a given condition.
+
+## Conditions
+### Properties
+* **alertContext**: [Condition](#condition): filter alerts by alert context (payload)
+* **alertRuleId**: [Condition](#condition): filter alerts by alert rule id
+* **description**: [Condition](#condition): filter alerts by alert rule description
+* **monitorCondition**: [Condition](#condition): filter alerts by monitor condition
+* **monitorService**: [Condition](#condition): filter alerts by monitor service
+* **severity**: [Condition](#condition): filter alerts by severity
+* **targetResourceType**: [Condition](#condition): filter alerts by target resource type
+
+## ManagedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## Scope
 ### Properties
-* **scopeType**: 'Resource' | 'ResourceGroup' | 'Subscription': type of target scope
+* **scopeType**: 'Resource' | 'ResourceGroup' | 'Subscription' | string: type of target scope
 * **values**: string[]: list of ARM IDs of the given scope type which will be the target of the given action rule.
 
 ## SuppressionConfig
 ### Properties
-* **recurrenceType**: 'Always' | 'Daily' | 'Monthly' | 'Once' | 'Weekly' (Required): Specifies when the suppression should be applied
-* **schedule**: [SuppressionSchedule](#suppressionschedule): Schedule for a given suppression configuration.
+* **recurrenceType**: 'Always' | 'Daily' | 'Monthly' | 'Once' | 'Weekly' | string (Required): Specifies when the suppression should be applied
+* **schedule**: [SuppressionSchedule](#suppressionschedule): suppression schedule configuration
 
 ## SuppressionSchedule
 ### Properties
@@ -70,9 +75,4 @@
 * **recurrenceValues**: int[]: Specifies the values for recurrence pattern
 * **startDate**: string: Start date for suppression
 * **startTime**: string: Start time for suppression
-
-## ManagedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
 

@@ -8,7 +8,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DomainServiceProperties](#domainserviceproperties): Properties of the Domain Service.
+* **properties**: [DomainServiceProperties](#domainserviceproperties): Domain service properties
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.AAD/domainServices' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -22,10 +22,24 @@
 * **location**: string (ReadOnly): Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **password**: string (WriteOnly): The account password
-* **properties**: [OuContainerProperties](#oucontainerproperties) (ReadOnly): Properties of the OuContainer.
+* **properties**: [OuContainerProperties](#oucontainerproperties) (ReadOnly): OuContainer properties
 * **spn**: string (WriteOnly): The account spn
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): Resource tags
 * **type**: 'Microsoft.Aad/domainServices/ouContainer' (ReadOnly, DeployTimeConstant): The resource type
+
+## ContainerAccount
+### Properties
+* **accountName**: string (ReadOnly): The account name
+* **password**: string (ReadOnly): The account password
+* **spn**: string (ReadOnly): The account spn
+
+## DomainSecuritySettings
+### Properties
+* **ntlmV1**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not NtlmV1 is enabled or disabled.
+* **syncKerberosPasswords**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not SyncKerberosPasswords is enabled or disabled.
+* **syncNtlmPasswords**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not SyncNtlmPasswords is enabled or disabled.
+* **syncOnPremPasswords**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not SyncOnPremPasswords is enabled or disabled.
+* **tlsV1**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not TlsV1 is enabled or disabled.
 
 ## DomainServiceProperties
 ### Properties
@@ -33,16 +47,16 @@
 * **domainConfigurationType**: string: Domain Configuration Type
 * **domainControllerIpAddress**: string[] (ReadOnly): List of Domain Controller IP Address
 * **domainName**: string: The name of the Azure domain that the user would like to deploy Domain Services to.
-* **domainSecuritySettings**: [DomainSecuritySettings](#domainsecuritysettings): Domain Security Settings
-* **filteredSync**: 'Disabled' | 'Enabled': Enabled or Disabled flag to turn on Group-based filtered sync
+* **domainSecuritySettings**: [DomainSecuritySettings](#domainsecuritysettings): DomainSecurity Settings
+* **filteredSync**: 'Disabled' | 'Enabled' | string: Enabled or Disabled flag to turn on Group-based filtered sync
 * **healthAlerts**: [HealthAlert](#healthalert)[] (ReadOnly): List of Domain Health Alerts
 * **healthLastEvaluated**: string (ReadOnly): Last domain evaluation run DateTime
 * **healthMonitors**: [HealthMonitor](#healthmonitor)[] (ReadOnly): List of Domain Health Monitors
 * **ldapsSettings**: [LdapsSettings](#ldapssettings): Secure LDAP Settings
 * **migrationProperties**: [MigrationProperties](#migrationproperties) (ReadOnly): Migration Properties
-* **notificationSettings**: [NotificationSettings](#notificationsettings): Settings for notification
+* **notificationSettings**: [NotificationSettings](#notificationsettings): Notification Settings
 * **provisioningState**: string (ReadOnly): the current deployment or provisioning state, which only appears in the response.
-* **resourceForestSettings**: [ResourceForestSettings](#resourceforestsettings): Settings for Resource Forest
+* **resourceForestSettings**: [ResourceForestSettings](#resourceforestsettings): Resource Forest Settings
 * **serviceStatus**: string (ReadOnly): Status of Domain Service instance
 * **sku**: string: Sku Type
 * **subnetId**: string: The name of the virtual network that Domain Services will be deployed on. The id of the subnet that Domain Services will be deployed on. /virtualNetwork/vnetName/subnets/subnetName.
@@ -50,13 +64,13 @@
 * **version**: int (ReadOnly): Data Model Version
 * **vnetSiteId**: string (ReadOnly): Virtual network site id
 
-## DomainSecuritySettings
+## ForestTrust
 ### Properties
-* **ntlmV1**: 'Disabled' | 'Enabled': A flag to determine whether or not NtlmV1 is enabled or disabled.
-* **syncKerberosPasswords**: 'Disabled' | 'Enabled': A flag to determine whether or not SyncKerberosPasswords is enabled or disabled.
-* **syncNtlmPasswords**: 'Disabled' | 'Enabled': A flag to determine whether or not SyncNtlmPasswords is enabled or disabled.
-* **syncOnPremPasswords**: 'Disabled' | 'Enabled': A flag to determine whether or not SyncOnPremPasswords is enabled or disabled.
-* **tlsV1**: 'Disabled' | 'Enabled': A flag to determine whether or not TlsV1 is enabled or disabled.
+* **friendlyName**: string: Friendly Name
+* **remoteDnsIps**: string: Remote Dns ips
+* **trustDirection**: string: Trust Direction
+* **trustedDomainFqdn**: string: Trusted Domain FQDN
+* **trustPassword**: string: Trust Password
 
 ## HealthAlert
 ### Properties
@@ -78,12 +92,17 @@
 ### Properties
 * **certificateNotAfter**: string (ReadOnly): NotAfter DateTime of configure ldaps certificate.
 * **certificateThumbprint**: string (ReadOnly): Thumbprint of configure ldaps certificate.
-* **externalAccess**: 'Disabled' | 'Enabled': A flag to determine whether or not Secure LDAP access over the internet is enabled or disabled.
+* **externalAccess**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not Secure LDAP access over the internet is enabled or disabled.
 * **externalAccessIpAddress**: string (ReadOnly): External access ip address.
-* **ldaps**: 'Disabled' | 'Enabled': A flag to determine whether or not Secure LDAP is enabled or disabled.
+* **ldaps**: 'Disabled' | 'Enabled' | string: A flag to determine whether or not Secure LDAP is enabled or disabled.
 * **pfxCertificate**: string: The certificate required to configure Secure LDAP. The parameter passed here should be a base64encoded representation of the certificate pfx file.
 * **pfxCertificatePassword**: string: The password to decrypt the provided Secure LDAP certificate pfx file.
 * **publicCertificate**: string (ReadOnly): Public certificate used to configure secure ldap.
+
+## MigrationProgress
+### Properties
+* **completionPercentage**: int: Completion Percentage
+* **progressMessage**: string: Progress Message
 
 ## MigrationProperties
 ### Properties
@@ -91,34 +110,11 @@
 * **oldSubnetId**: string (ReadOnly): Old Subnet Id
 * **oldVnetSiteId**: string (ReadOnly): Old Vnet Site Id
 
-## MigrationProgress
-### Properties
-* **completionPercentage**: int: Completion Percentage
-* **progressMessage**: string: Progress Message
-
 ## NotificationSettings
 ### Properties
 * **additionalRecipients**: string[]: The list of additional recipients
-* **notifyDcAdmins**: 'Disabled' | 'Enabled': Should domain controller admins be notified
-* **notifyGlobalAdmins**: 'Disabled' | 'Enabled': Should global admins be notified
-
-## ResourceForestSettings
-### Properties
-* **resourceForest**: string: Resource Forest
-* **settings**: [ForestTrust](#foresttrust)[]: List of settings for Resource Forest
-
-## ForestTrust
-### Properties
-* **friendlyName**: string: Friendly Name
-* **remoteDnsIps**: string: Remote Dns ips
-* **trustDirection**: string: Trust Direction
-* **trustedDomainFqdn**: string: Trusted Domain FQDN
-* **trustPassword**: string: Trust Password
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **notifyDcAdmins**: 'Disabled' | 'Enabled' | string: Should domain controller admins be notified
+* **notifyGlobalAdmins**: 'Disabled' | 'Enabled' | string: Should global admins be notified
 
 ## OuContainerProperties
 ### Properties
@@ -131,11 +127,15 @@
 * **serviceStatus**: string (ReadOnly): Status of OuContainer instance
 * **tenantId**: string (ReadOnly): Azure Active Directory tenant id
 
-## ContainerAccount
+## ResourceForestSettings
 ### Properties
-* **accountName**: string (ReadOnly): The account name
-* **password**: string (ReadOnly): The account password
-* **spn**: string (ReadOnly): The account spn
+* **resourceForest**: string: Resource Forest
+* **settings**: [ForestTrust](#foresttrust)[]: List of settings for Resource Forest
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties

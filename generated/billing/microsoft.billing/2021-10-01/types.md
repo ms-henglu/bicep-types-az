@@ -9,9 +9,14 @@
 * **properties**: [BillingSubscriptionAliasProperties](#billingsubscriptionaliasproperties): Billing subscription alias properties.
 * **type**: 'Microsoft.Billing/billingAccounts/billingSubscriptionAliases' (ReadOnly, DeployTimeConstant): The resource type
 
+## Amount
+### Properties
+* **currency**: string (ReadOnly): The currency for the amount value.
+* **value**: int (ReadOnly): Amount value.
+
 ## BillingSubscriptionAliasProperties
 ### Properties
-* **autoRenew**: 'Off' | 'On': Indicates whether auto renewal is turned on or off for a subscription.
+* **autoRenew**: 'Off' | 'On' | string: Indicates whether auto renewal is turned on or off for a subscription.
 * **beneficiaryTenantId**: string: The provisioning tenant of the subscription.
 * **billingFrequency**: string: The billing frequency of the subscription in the ISO8601 format. Example: P1M, P3M, P1Y
 * **billingPolicies**: [BillingSubscriptionPropertiesBillingPolicies](#billingsubscriptionpropertiesbillingpolicies) (ReadOnly): Dictionary of billing policies associated with the subscription.
@@ -29,20 +34,20 @@
 * **invoiceSectionDisplayName**: string (ReadOnly): The display name of the invoice section to which the subscription is billed. The field is applicable only for Microsoft Partner Agreement billing accounts.
 * **invoiceSectionId**: string: The ID of the invoice section to which the subscription is billed. The field is applicable only for Microsoft Partner Agreement billing accounts.
 * **invoiceSectionName**: string (ReadOnly): The name of the invoice section to which the subscription is billed. The field is applicable only for Microsoft Partner Agreement billing accounts.
-* **lastMonthCharges**: [Amount](#amount) (ReadOnly): The amount.
-* **monthToDateCharges**: [Amount](#amount) (ReadOnly): The amount.
-* **nextBillingCycleDetails**: [NextBillingCycleDetails](#nextbillingcycledetails) (ReadOnly): The next billing cycle details of the subscription.
+* **lastMonthCharges**: [Amount](#amount) (ReadOnly): The last month's charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
+* **monthToDateCharges**: [Amount](#amount) (ReadOnly): The current month to date charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
+* **nextBillingCycleDetails**: [NextBillingCycleDetails](#nextbillingcycledetails) (ReadOnly): Next billing cycle details of the subscription.
 * **offerId**: string (ReadOnly): The offer ID for the subscription. This field is only available for the Microsoft Online Services Program billing accounts.
 * **productCategory**: string (ReadOnly): The category of the product for which the subscription is purchased. Possible values include: AzureSupport, Hardware, ReservationOrder, SaaS, SavingsPlanOrder, Software, UsageBased, Other
 * **productType**: string (ReadOnly): The type of the product for which the subscription is purchased
 * **productTypeId**: string: The ID of the product for which the subscription is purchased
 * **purchaseDate**: string (ReadOnly): The purchase date of the subscription in UTC time.
 * **quantity**: int: The number of licenses purchased for the subscription
-* **renewalTermDetails**: [RenewalTermDetails](#renewaltermdetails) (ReadOnly): The term details of the subscription at renewal.
-* **reseller**: [Reseller](#reseller) (ReadOnly): Details of the reseller.
+* **renewalTermDetails**: [RenewalTermDetails](#renewaltermdetails) (ReadOnly): The term details of the subscription at the next renewal.
+* **reseller**: [Reseller](#reseller) (ReadOnly): The reseller for which the subscription is created. The field is available for Microsoft Partner Agreement billing accounts.
 * **skuDescription**: string (ReadOnly): The SKU description of the product for which the subscription is purchased. This field is only available for Microsoft Customer Agreement billing accounts.
 * **skuId**: string: The SKU ID of the product for which the subscription is purchased. This field is only available for Microsoft Customer Agreement billing accounts.
-* **status**: 'Active' | 'AutoRenew' | 'Cancelled' | 'Deleted' | 'Disabled' | 'Expired' | 'Expiring' | 'Suspended' | 'Unknown' | 'Warned' (ReadOnly): The status of the subscription. This field is not available for Enterprise Agreement billing accounts.
+* **status**: 'Active' | 'AutoRenew' | 'Cancelled' | 'Deleted' | 'Disabled' | 'Expired' | 'Expiring' | 'Suspended' | 'Unknown' | 'Warned' | string (ReadOnly): The status of the subscription. This field is not available for Enterprise Agreement billing accounts.
 * **subscriptionId**: string (ReadOnly): The ID of the usage-based subscription. This field is only available for usage-based subscriptions of Microsoft Customer Agreement billing accounts.
 * **suspensionReasons**: string[] (ReadOnly): The suspension reason for the subscription. This field is not available for Enterprise Agreement billing accounts.
 * **termDuration**: string: The duration for which you can use the subscription. Example P1Y and P1M
@@ -57,12 +62,7 @@
 ## EnrollmentAccountSubscriptionDetails
 ### Properties
 * **enrollmentAccountStartDate**: string (ReadOnly): The enrollment Account and the subscription association start date. This field is available only for the Enterprise Agreement billing accounts.
-* **subscriptionEnrollmentAccountStatus**: 'Active' | 'Cancelled' | 'Deleted' | 'Expired' | 'TransferredOut' | 'Transferring' (ReadOnly): The current enrollment account status of the subscription. This field is available only for the Enterprise Agreement billing accounts.
-
-## Amount
-### Properties
-* **currency**: string (ReadOnly): The currency for the amount value.
-* **value**: int (ReadOnly): Amount value.
+* **subscriptionEnrollmentAccountStatus**: 'Active' | 'Cancelled' | 'Deleted' | 'Expired' | 'TransferredOut' | 'Transferring' | string (ReadOnly): The current enrollment account status of the subscription. This field is available only for the Enterprise Agreement billing accounts.
 
 ## NextBillingCycleDetails
 ### Properties

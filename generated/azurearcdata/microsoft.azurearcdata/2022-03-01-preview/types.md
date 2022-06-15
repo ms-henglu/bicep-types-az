@@ -4,12 +4,12 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2022-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **extendedLocation**: [ExtendedLocation](#extendedlocation): The complex type of the extended location.
+* **extendedLocation**: [ExtendedLocation](#extendedlocation): The extendedLocation of the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [DataControllerProperties](#datacontrollerproperties) (Required): The data controller properties.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [DataControllerProperties](#datacontrollerproperties) (Required): The data controller's properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureArcData/dataControllers' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -19,21 +19,21 @@
 * **apiVersion**: '2022-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ActiveDirectoryConnectorProperties](#activedirectoryconnectorproperties) (Required): The properties of an Active Directory connector resource
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [ActiveDirectoryConnectorProperties](#activedirectoryconnectorproperties) (Required): null
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.AzureArcData/postgresInstances@2022-03-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2022-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **extendedLocation**: [ExtendedLocation](#extendedlocation): The complex type of the extended location.
+* **extendedLocation**: [ExtendedLocation](#extendedlocation): The extendedLocation of the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PostgresInstanceProperties](#postgresinstanceproperties) (Required): Postgres Instance properties.
-* **sku**: [PostgresInstanceSku](#postgresinstancesku): The resource model definition representing SKU for Azure Database for PostgresSQL - Azure Arc
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [PostgresInstanceProperties](#postgresinstanceproperties) (Required): null
+* **sku**: [PostgresInstanceSku](#postgresinstancesku): Resource sku.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureArcData/postgresInstances' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -41,13 +41,13 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2022-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **extendedLocation**: [ExtendedLocation](#extendedlocation): The complex type of the extended location.
+* **extendedLocation**: [ExtendedLocation](#extendedlocation): The extendedLocation of the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [SqlManagedInstanceProperties](#sqlmanagedinstanceproperties) (Required): Properties of sqlManagedInstance.
-* **sku**: [SqlManagedInstanceSku](#sqlmanagedinstancesku): The resource model definition representing SKU for Azure Managed Instance - Azure Arc
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [SqlManagedInstanceProperties](#sqlmanagedinstanceproperties) (Required): null
+* **sku**: [SqlManagedInstanceSku](#sqlmanagedinstancesku): Resource sku.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureArcData/sqlManagedInstances' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -58,100 +58,10 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [SqlServerInstanceProperties](#sqlserverinstanceproperties): Properties of SqlServerInstance.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **properties**: [SqlServerInstanceProperties](#sqlserverinstanceproperties): null
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureArcData/sqlServerInstances' (ReadOnly, DeployTimeConstant): The resource type
-
-## ExtendedLocation
-### Properties
-* **name**: string: The name of the extended location.
-* **type**: 'CustomLocation': The type of extendedLocation.
-
-## DataControllerProperties
-### Properties
-* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for basic login authentication.
-* **clusterId**: string: If a CustomLocation is provided, this contains the ARM id of the connected cluster the custom location belongs to.
-* **extensionId**: string: If a CustomLocation is provided, this contains the ARM id of the extension the custom location belongs to.
-* **infrastructure**: 'alibaba' | 'aws' | 'azure' | 'gcp' | 'onpremises' | 'other': The infrastructure the data controller is running on.
-* **k8sRaw**: any: Any object
-* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
-* **logAnalyticsWorkspaceConfig**: [LogAnalyticsWorkspaceConfig](#loganalyticsworkspaceconfig): Log analytics workspace id and primary key
-* **logsDashboardCredential**: [BasicLoginInformation](#basiclogininformation): Username and password for basic login authentication.
-* **metricsDashboardCredential**: [BasicLoginInformation](#basiclogininformation): Username and password for basic login authentication.
-* **onPremiseProperty**: [OnPremiseProperty](#onpremiseproperty): Properties from the Kubernetes data controller
-* **provisioningState**: string (ReadOnly): The provisioning state of the Arc Data Controller resource.
-* **uploadServicePrincipal**: [UploadServicePrincipal](#uploadserviceprincipal): Service principal for uploading billing, metrics and logs.
-* **uploadWatermark**: [UploadWatermark](#uploadwatermark): Properties on upload watermark.  Mostly timestamp for each upload data type
-
-## BasicLoginInformation
-### Properties
-* **password**: string (WriteOnly): Login password.
-* **username**: string: Login username.
-
-## LogAnalyticsWorkspaceConfig
-### Properties
-* **primaryKey**: string (WriteOnly): Primary key of the workspace
-* **workspaceId**: string: Azure Log Analytics workspace ID
-
-## OnPremiseProperty
-### Properties
-* **id**: string (Required): A globally unique ID identifying the associated Kubernetes cluster
-* **publicSigningKey**: string (Required): Certificate that contains the Kubernetes cluster public key used to verify signing
-* **signingCertificateThumbprint**: string: Unique thumbprint returned to customer to verify the certificate being uploaded
-
-## UploadServicePrincipal
-### Properties
-* **authority**: string: Authority for the service principal. Example: https://login.microsoftonline.com/
-* **clientId**: string: Client ID of the service principal for uploading data.
-* **clientSecret**: string (WriteOnly): Secret of the service principal
-* **tenantId**: string: Tenant ID of the service principal.
-
-## UploadWatermark
-### Properties
-* **logs**: string: Last uploaded date for logs from kubernetes cluster. Defaults to current date time
-* **metrics**: string: Last uploaded date for metrics from kubernetes cluster. Defaults to current date time
-* **usages**: string: Last uploaded date for usages from kubernetes cluster. Defaults to current date time
-
-## SystemData
-### Properties
-* **createdAt**: string: The timestamp of resource creation (UTC).
-* **createdBy**: string: The identity that created the resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string: The identity that last modified the resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User': The type of identity that created the resource.
-
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## ActiveDirectoryConnectorProperties
-### Properties
-* **provisioningState**: string (ReadOnly): The provisioning state of the Active Directory connector resource.
-* **spec**: [ActiveDirectoryConnectorSpec](#activedirectoryconnectorspec) (Required): The specifications of the AD Kubernetes resource.
-* **status**: [ActiveDirectoryConnectorStatus](#activedirectoryconnectorstatus): The status of the Kubernetes custom resource.
-
-## ActiveDirectoryConnectorSpec
-### Properties
-* **activeDirectory**: [ActiveDirectoryConnectorDomainDetails](#activedirectoryconnectordomaindetails) (Required): Active Directory domain details
-* **dns**: [ActiveDirectoryConnectorDNSDetails](#activedirectoryconnectordnsdetails) (Required): DNS server details
-
-## ActiveDirectoryConnectorDomainDetails
-### Properties
-* **domainControllers**: [ActiveDirectoryDomainControllers](#activedirectorydomaincontrollers) (Required): Details about the Active Directory domain controllers associated with this AD connector instance
-* **netbiosDomainName**: string: NETBIOS name of the Active Directory domain.
-* **realm**: string (Required): Name (uppercase) of the Active Directory domain that this AD connector will be associated with.
-
-## ActiveDirectoryDomainControllers
-### Properties
-* **primaryDomainController**: [ActiveDirectoryDomainController](#activedirectorydomaincontroller): Information about a domain controller in the AD domain.
-* **secondaryDomainControllers**: [ActiveDirectoryDomainController](#activedirectorydomaincontroller)[]: Information about the secondary domain controllers in the AD domain.
-
-## ActiveDirectoryDomainController
-### Properties
-* **hostname**: string (Required): Fully-qualified domain name of a domain controller in the AD domain.
 
 ## ActiveDirectoryConnectorDNSDetails
 ### Properties
@@ -159,6 +69,26 @@
 * **nameserverIPAddresses**: string[] (Required): List of Active Directory DNS server IP addresses.
 * **preferK8sDnsForPtrLookups**: bool: Flag indicating whether to prefer Kubernetes DNS server response over AD DNS server response for IP address lookups.
 * **replicas**: int: Replica count for DNS proxy service. Default value is 1.
+
+## ActiveDirectoryConnectorDomainDetails
+### Properties
+* **domainControllers**: [ActiveDirectoryDomainControllers](#activedirectorydomaincontrollers) (Required): null
+* **netbiosDomainName**: string: NETBIOS name of the Active Directory domain.
+* **ouDistinguishedName**: string: The distinguished name of the Active Directory Organizational Unit.
+* **realm**: string (Required): Name (uppercase) of the Active Directory domain that this AD connector will be associated with.
+* **serviceAccountProvisioning**: 'automatic' | 'manual' | string: The service account provisioning mode for this Active Directory connector.
+
+## ActiveDirectoryConnectorProperties
+### Properties
+* **domainServiceAccountLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for domain service account authentication.
+* **provisioningState**: string (ReadOnly): The provisioning state of the Active Directory connector resource.
+* **spec**: [ActiveDirectoryConnectorSpec](#activedirectoryconnectorspec) (Required): null
+* **status**: [ActiveDirectoryConnectorStatus](#activedirectoryconnectorstatus): null
+
+## ActiveDirectoryConnectorSpec
+### Properties
+* **activeDirectory**: [ActiveDirectoryConnectorDomainDetails](#activedirectoryconnectordomaindetails) (Required): null
+* **dns**: [ActiveDirectoryConnectorDNSDetails](#activedirectoryconnectordnsdetails) (Required): null
 
 ## ActiveDirectoryConnectorStatus
 ### Properties
@@ -168,76 +98,44 @@
 ### Additional Properties
 * **Additional Properties Type**: any
 
-## PostgresInstanceProperties
+## ActiveDirectoryDomainController
 ### Properties
-* **admin**: string: The instance admin
-* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for basic login authentication.
-* **dataControllerId**: string: The data controller id
-* **k8sRaw**: any: Any object
-* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
-* **provisioningState**: string (ReadOnly): The provisioning state of the Azure Arc-enabled PostgreSQL instance.
+* **hostname**: string (Required): Fully-qualified domain name of a domain controller in the AD domain.
 
-## PostgresInstanceSku
+## ActiveDirectoryDomainControllers
 ### Properties
-* **capacity**: int: If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted.
-* **dev**: bool: Whether dev/test is enabled. When the dev field is set to true, the resource is used for dev/test purpose.
-* **family**: string: If the service has different generations of hardware, for the same SKU, then that can be captured here.
-* **name**: string (Required): The name of the SKU.  It is typically a letter+number code
-* **size**: string: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code.
-* **tier**: 'Hyperscale': This field is required to be implemented by the Resource Provider if the service has more than one tier.
-
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## SqlManagedInstanceProperties
-### Properties
-* **activeDirectoryInformation**: [ActiveDirectoryInformation](#activedirectoryinformation): Active Directory information that related to the resource.
-* **admin**: string: The instance admin user
-* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for basic login authentication.
-* **clusterId**: string: If a CustomLocation is provided, this contains the ARM id of the connected cluster the custom location belongs to.
-* **dataControllerId**: string: null
-* **endTime**: string: The instance end time
-* **extensionId**: string: If a CustomLocation is provided, this contains the ARM id of the extension the custom location belongs to.
-* **k8sRaw**: [SqlManagedInstanceK8SRaw](#sqlmanagedinstancek8sraw): The raw kubernetes information.
-* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
-* **licenseType**: 'BasePrice' | 'DisasterRecovery' | 'LicenseIncluded': The license type to apply for this managed instance.
-* **provisioningState**: string (ReadOnly): The provisioning state of the Arc-enabled SQL Managed Instance resource.
-* **startTime**: string: The instance start time
+* **primaryDomainController**: [ActiveDirectoryDomainController](#activedirectorydomaincontroller): Information about the Primary Domain Controller (PDC) in the AD domain.
+* **secondaryDomainControllers**: [ActiveDirectoryDomainController](#activedirectorydomaincontroller)[]: null
 
 ## ActiveDirectoryInformation
 ### Properties
-* **keytabInformation**: [KeytabInformation](#keytabinformation): Keytab used for authenticate with Active Directory.
+* **keytabInformation**: [KeytabInformation](#keytabinformation): Keytab information that is used for the Sql Managed Instance when Active Directory authentication is used.
 
-## KeytabInformation
+## BasicLoginInformation
 ### Properties
-* **keytab**: string (WriteOnly): A base64-encoded keytab.
+* **password**: string (WriteOnly): Login password.
+* **username**: string: Login username.
 
-## SqlManagedInstanceK8SRaw
+## DataControllerProperties
 ### Properties
-* **spec**: [SqlManagedInstanceK8SSpec](#sqlmanagedinstancek8sspec): The kubernetes spec information.
-### Additional Properties
-* **Additional Properties Type**: any
+* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Deprecated. Azure Arc Data Services data controller no longer expose any endpoint. All traffic are exposed through Kubernetes native API.
+* **clusterId**: string: If a CustomLocation is provided, this contains the ARM id of the connected cluster the custom location belongs to.
+* **extensionId**: string: If a CustomLocation is provided, this contains the ARM id of the extension the custom location belongs to.
+* **infrastructure**: 'alibaba' | 'aws' | 'azure' | 'gcp' | 'onpremises' | 'other': The infrastructure the data controller is running on.
+* **k8sRaw**: any: The raw kubernetes information
+* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
+* **logAnalyticsWorkspaceConfig**: [LogAnalyticsWorkspaceConfig](#loganalyticsworkspaceconfig): Log analytics workspace id and primary key
+* **logsDashboardCredential**: [BasicLoginInformation](#basiclogininformation): Login credential for logs dashboard on the Kubernetes cluster.
+* **metricsDashboardCredential**: [BasicLoginInformation](#basiclogininformation): Login credential for metrics dashboard on the Kubernetes cluster.
+* **onPremiseProperty**: [OnPremiseProperty](#onpremiseproperty): Properties from the Kubernetes data controller
+* **provisioningState**: string (ReadOnly): The provisioning state of the Arc Data Controller resource.
+* **uploadServicePrincipal**: [UploadServicePrincipal](#uploadserviceprincipal): Deprecated. Service principal is deprecated in favor of Arc Kubernetes service extension managed identity.
+* **uploadWatermark**: [UploadWatermark](#uploadwatermark): Properties on upload watermark.  Mostly timestamp for each upload data type
 
-## SqlManagedInstanceK8SSpec
+## ExtendedLocation
 ### Properties
-* **replicas**: int: This option specifies the number of SQL Managed Instance replicas that will be deployed in your Kubernetes cluster for high availability purposes. If sku.tier is BusinessCritical, allowed values are '2' or '3' with default of '3'. If sku.tier is GeneralPurpose, replicas must be '1'.
-* **scheduling**: [K8SScheduling](#k8sscheduling): The kubernetes scheduling information.
-### Additional Properties
-* **Additional Properties Type**: any
-
-## K8SScheduling
-### Properties
-* **default**: [K8SSchedulingOptions](#k8sschedulingoptions): The kubernetes scheduling options. It describes restrictions used to help Kubernetes select appropriate nodes to host the database service
-### Additional Properties
-* **Additional Properties Type**: any
-
-## K8SSchedulingOptions
-### Properties
-* **resources**: [K8SResourceRequirements](#k8sresourcerequirements): The kubernetes resource limits and requests used to restrict or reserve resource usage.
-### Additional Properties
-* **Additional Properties Type**: any
+* **name**: string: The name of the extended location.
+* **type**: 'CustomLocation' | string: The type of the extended location.
 
 ## K8SResourceRequirements
 ### Properties
@@ -256,6 +154,79 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## K8SScheduling
+### Properties
+* **default**: [K8SSchedulingOptions](#k8sschedulingoptions): The kubernetes scheduling options. It describes restrictions used to help Kubernetes select appropriate nodes to host the database service
+### Additional Properties
+* **Additional Properties Type**: any
+
+## K8SSchedulingOptions
+### Properties
+* **resources**: [K8SResourceRequirements](#k8sresourcerequirements): The kubernetes resource limits and requests used to restrict or reserve resource usage.
+### Additional Properties
+* **Additional Properties Type**: any
+
+## KeytabInformation
+### Properties
+* **keytab**: string (WriteOnly): A base64-encoded keytab.
+
+## LogAnalyticsWorkspaceConfig
+### Properties
+* **primaryKey**: string (WriteOnly): Primary key of the workspace
+* **workspaceId**: string: Azure Log Analytics workspace ID
+
+## OnPremiseProperty
+### Properties
+* **id**: string (Required): A globally unique ID identifying the associated Kubernetes cluster
+* **publicSigningKey**: string (Required): Certificate that contains the Kubernetes cluster public key used to verify signing
+* **signingCertificateThumbprint**: string: Unique thumbprint returned to customer to verify the certificate being uploaded
+
+## PostgresInstanceProperties
+### Properties
+* **admin**: string: The instance admin
+* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for basic authentication.
+* **dataControllerId**: string: The data controller id
+* **k8sRaw**: any: The raw kubernetes information
+* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
+* **provisioningState**: string (ReadOnly): The provisioning state of the Azure Arc-enabled PostgreSQL instance.
+
+## PostgresInstanceSku
+### Properties
+* **capacity**: int: If the SKU supports scale out/in then the capacity integer should be included. If scale out/in is not possible for the resource this may be omitted.
+* **dev**: bool: Whether dev/test is enabled. When the dev field is set to true, the resource is used for dev/test purpose.
+* **family**: string: If the service has different generations of hardware, for the same SKU, then that can be captured here.
+* **name**: string (Required): The name of the SKU.  It is typically a letter+number code
+* **size**: string: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code.
+* **tier**: 'Hyperscale': This field is required to be implemented by the Resource Provider if the service has more than one tier.
+
+## SqlManagedInstanceK8SRaw
+### Properties
+* **spec**: [SqlManagedInstanceK8SSpec](#sqlmanagedinstancek8sspec): The kubernetes spec information.
+### Additional Properties
+* **Additional Properties Type**: any
+
+## SqlManagedInstanceK8SSpec
+### Properties
+* **replicas**: int: This option specifies the number of SQL Managed Instance replicas that will be deployed in your Kubernetes cluster for high availability purposes. If sku.tier is BusinessCritical, allowed values are '2' or '3' with default of '3'. If sku.tier is GeneralPurpose, replicas must be '1'.
+* **scheduling**: [K8SScheduling](#k8sscheduling): The kubernetes scheduling information.
+### Additional Properties
+* **Additional Properties Type**: any
+
+## SqlManagedInstanceProperties
+### Properties
+* **activeDirectoryInformation**: [ActiveDirectoryInformation](#activedirectoryinformation): Active Directory information related to this SQL Managed Instance.
+* **admin**: string: The instance admin user
+* **basicLoginInformation**: [BasicLoginInformation](#basiclogininformation): Username and password for basic authentication.
+* **clusterId**: string: If a CustomLocation is provided, this contains the ARM id of the connected cluster the custom location belongs to.
+* **dataControllerId**: string: null
+* **endTime**: string: The instance end time
+* **extensionId**: string: If a CustomLocation is provided, this contains the ARM id of the extension the custom location belongs to.
+* **k8sRaw**: [SqlManagedInstanceK8SRaw](#sqlmanagedinstancek8sraw): The raw kubernetes information
+* **lastUploadedDate**: string: Last uploaded date from Kubernetes cluster. Defaults to current date time
+* **licenseType**: 'BasePrice' | 'DisasterRecovery' | 'LicenseIncluded' | string: The license type to apply for this managed instance.
+* **provisioningState**: string (ReadOnly): The provisioning state of the Arc-enabled SQL Managed Instance resource.
+* **startTime**: string: The instance start time
+
 ## SqlManagedInstanceSku
 ### Properties
 * **capacity**: int: The SKU capacity
@@ -265,35 +236,66 @@
 * **size**: string: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code.
 * **tier**: 'BusinessCritical' | 'GeneralPurpose': The pricing tier for the instance.
 
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## SqlServerInstanceProperties
 ### Properties
-* **azureDefenderStatus**: 'Protected' | 'Unknown' | 'Unprotected': Status of Azure Defender.
+* **azureDefenderStatus**: 'Protected' | 'Unknown' | 'Unprotected' | string: Status of Azure Defender.
 * **azureDefenderStatusLastUpdated**: string: Timestamp of last Azure Defender status update.
 * **collation**: string: SQL Server collation.
 * **containerResourceId**: string (Required): ARM Resource id of the container resource (Azure Arc for Servers).
 * **createTime**: string (ReadOnly): The time when the resource was created.
 * **currentVersion**: string: SQL Server current version.
-* **edition**: 'Developer' | 'Enterprise' | 'Evaluation' | 'Express' | 'Standard' | 'Web': SQL Server edition.
-* **esuExpirationDate**: string: Timestamp of ESU Expiration.
-* **hostType**: 'AWS Virtual Machine' | 'GCP Virtual Machine' | 'Other' | 'Physical Server' | 'Virtual Machine': Type of host for Azure Arc SQL Server
+* **edition**: 'Developer' | 'Enterprise' | 'Evaluation' | 'Express' | 'Standard' | 'Web' | string: SQL Server edition.
+* **hostType**: 'AWS Virtual Machine' | 'GCP Virtual Machine' | 'Other' | 'Physical Server' | 'Virtual Machine' | string: Type of host for Azure Arc SQL Server
 * **instanceName**: string: SQL Server instance name.
-* **licenseType**: 'Free' | 'HADR' | 'Paid' | 'Undefined': SQL Server license type.
+* **licenseType**: 'Free' | 'HADR' | 'Paid' | 'Undefined' | string: SQL Server license type.
 * **patchLevel**: string: SQL Server update level.
 * **productId**: string: SQL Server product ID.
 * **provisioningState**: string (ReadOnly): The provisioning state of the Arc-enabled SQL Server resource.
-* **status**: 'Connected' | 'Disconnected' | 'Registered' | 'Unknown' (Required): The cloud connectivity status.
+* **status**: 'Connected' | 'Disconnected' | 'Registered' | 'Unknown' | string (Required): The cloud connectivity status.
 * **tcpDynamicPorts**: string: Dynamic TCP ports used by SQL Server.
 * **tcpStaticPorts**: string: Static TCP ports used by SQL Server.
 * **vCore**: string: The number of logical processors used by the SQL Server instance.
-* **version**: 'SQL Server 2012' | 'SQL Server 2014' | 'SQL Server 2016' | 'SQL Server 2017' | 'SQL Server 2019' | 'SQL Server 2022' | 'Unknown': SQL Server version.
+* **version**: 'SQL Server 2012' | 'SQL Server 2014' | 'SQL Server 2016' | 'SQL Server 2017' | 'SQL Server 2019' | 'SQL Server 2022' | 'Unknown' | string: SQL Server version.
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 
 ## TrackedResourceTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## UploadServicePrincipal
+### Properties
+* **authority**: string: Authority for the service principal. Example: https://login.microsoftonline.com/
+* **clientId**: string: Client ID of the service principal for uploading data.
+* **clientSecret**: string (WriteOnly): Secret of the service principal
+* **tenantId**: string: Tenant ID of the service principal.
+
+## UploadWatermark
+### Properties
+* **logs**: string: Last uploaded date for logs from kubernetes cluster. Defaults to current date time
+* **metrics**: string: Last uploaded date for metrics from kubernetes cluster. Defaults to current date time
+* **usages**: string: Last uploaded date for usages from kubernetes cluster. Defaults to current date time
 

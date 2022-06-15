@@ -7,7 +7,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [RedisCreateProperties](#rediscreateproperties) (Required): Properties supplied to Create Redis operation.
+* **properties**: [RedisCreateProperties](#rediscreateproperties) (Required): Redis cache properties.
 * **tags**: [RedisCreateParametersTags](#rediscreateparameterstags): Resource tags.
 * **type**: 'Microsoft.Cache/redis' (ReadOnly, DeployTimeConstant): The resource type
 * **zones**: string[]: A list of availability zones denoting where the resource needs to come from.
@@ -18,7 +18,7 @@
 * **apiVersion**: '2020-06-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [RedisFirewallRuleProperties](#redisfirewallruleproperties) (Required): Specifies a range of IP addresses permitted to connect to the cache
+* **properties**: [RedisFirewallRuleProperties](#redisfirewallruleproperties) (Required): Properties required to create a firewall rule .
 * **type**: 'Microsoft.Cache/redis/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/linkedServers@2020-06-01
@@ -27,7 +27,7 @@
 * **apiVersion**: '2020-06-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [RedisLinkedServerCreateProperties](#redislinkedservercreateproperties) (Required): Create properties for a linked server
+* **properties**: [RedisLinkedServerCreateProperties](#redislinkedservercreateproperties) (Required): Properties required to create a linked server.
 * **type**: 'Microsoft.Cache/redis/linkedServers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/patchSchedules@2020-06-01
@@ -35,7 +35,7 @@
 ### Properties
 * **apiVersion**: '2020-06-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: 'default' (Required, DeployTimeConstant): The resource name
+* **name**: 'default' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [ScheduleEntries](#scheduleentries) (Required): List of patch schedules for a Redis cache.
 * **type**: 'Microsoft.Cache/redis/patchSchedules' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -45,7 +45,7 @@
 * **apiVersion**: '2020-06-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Properties of the PrivateEndpointConnectProperties.
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **type**: 'Microsoft.Cache/redis/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Function listKeys (Microsoft.Cache/redis@2020-06-01)
@@ -53,67 +53,38 @@
 * **ApiVersion**: 2020-06-01
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
 
-## RedisCreateProperties
+## PrivateEndpoint
 ### Properties
-* **accessKeys**: [RedisAccessKeys](#redisaccesskeys) (ReadOnly): Redis cache access keys.
-* **enableNonSslPort**: bool: Specifies whether the non-ssl Redis server port (6379) is enabled.
-* **hostName**: string (ReadOnly): Redis host name.
-* **instances**: [RedisInstanceDetails](#redisinstancedetails)[] (ReadOnly): List of the Redis instances associated with the cache
-* **linkedServers**: [RedisLinkedServer](#redislinkedserver)[] (ReadOnly): List of the linked servers associated with the cache
-* **minimumTlsVersion**: '1.0' | '1.1' | '1.2': Optional: requires clients to use a specified TLS version (or higher) to connect (e,g, '1.0', '1.1', '1.2')
-* **port**: int (ReadOnly): Redis non-SSL port.
-* **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connection associated with the specified redis cache
-* **provisioningState**: 'Creating' | 'Deleting' | 'Disabled' | 'Failed' | 'Linking' | 'Provisioning' | 'RecoveringScaleFailure' | 'Scaling' | 'Succeeded' | 'Unlinking' | 'Unprovisioning' | 'Updating' (ReadOnly): Redis instance provisioning status.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled': Whether or not public endpoint access is allowed for this cache.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'. If 'Disabled', private endpoints are the exclusive access method. Default value is 'Enabled'
-* **redisConfiguration**: [RedisCommonPropertiesRedisConfiguration](#rediscommonpropertiesredisconfiguration): All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta,maxmemory-policy,notify-keyspace-events,maxmemory-samples,slowlog-log-slower-than,slowlog-max-len,list-max-ziplist-entries,list-max-ziplist-value,hash-max-ziplist-entries,hash-max-ziplist-value,set-max-intset-entries,zset-max-ziplist-entries,zset-max-ziplist-value etc.
-* **redisVersion**: string (ReadOnly): Redis version.
-* **replicasPerMaster**: int: The number of replicas to be created per master.
-* **shardCount**: int: The number of shards to be created on a Premium Cluster Cache.
-* **sku**: [Sku](#sku) (Required): SKU parameters supplied to the create Redis operation.
-* **sslPort**: int (ReadOnly): Redis SSL port.
-* **staticIP**: string: Static IP address. Optionally, may be specified when deploying a Redis cache inside an existing Azure Virtual Network; auto assigned by default.
-* **subnetId**: string: The full resource ID of a subnet in a virtual network to deploy the Redis cache in. Example format: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/Microsoft.{Network|ClassicNetwork}/VirtualNetworks/vnet1/subnets/subnet1
-* **tenantSettings**: [RedisCommonPropertiesTenantSettings](#rediscommonpropertiestenantsettings): A dictionary of tenant settings
+* **id**: string (ReadOnly): The ARM identifier for Private Endpoint
+
+## PrivateEndpointConnection
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties) (ReadOnly): Resource properties.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## PrivateEndpointConnectionProperties
+### Properties
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The resource of private end point.
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): A collection of information about the state of the connection between service consumer and provider.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | string (ReadOnly): The provisioning state of the private endpoint connection resource.
+
+## PrivateLinkServiceConnectionState
+### Properties
+* **actionsRequired**: string (ReadOnly): A message indicating if changes on the service provider require any updates on the consumer.
+* **description**: string (ReadOnly): The reason for approval/rejection of the connection.
+* **status**: 'Approved' | 'Pending' | 'Rejected' | string (ReadOnly): Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
 
 ## RedisAccessKeys
 ### Properties
 * **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate with Redis cache.
 * **secondaryKey**: string (ReadOnly): The current secondary key that clients can use to authenticate with Redis cache.
 
-## RedisInstanceDetails
+## RedisAccessKeys
 ### Properties
-* **isMaster**: bool (ReadOnly): Specifies whether the instance is a master node.
-* **nonSslPort**: int (ReadOnly): If enableNonSslPort is true, provides Redis instance Non-SSL port.
-* **shardId**: int (ReadOnly): If clustering is enabled, the Shard ID of Redis Instance
-* **sslPort**: int (ReadOnly): Redis instance SSL port.
-* **zone**: string (ReadOnly): If the Cache uses availability zones, specifies availability zone where this instance is located.
-
-## RedisLinkedServer
-### Properties
-* **id**: string (ReadOnly): Linked server Id.
-
-## PrivateEndpointConnection
-### Properties
-* **id**: string (ReadOnly): Resource ID.
-* **name**: string (ReadOnly): Resource name.
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties) (ReadOnly): Properties of the PrivateEndpointConnectProperties.
-* **type**: string (ReadOnly): Resource type.
-
-## PrivateEndpointConnectionProperties
-### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The Private Endpoint resource.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): A collection of information about the state of the connection between service consumer and provider.
-* **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly): The current provisioning state.
-
-## PrivateEndpoint
-### Properties
-* **id**: string (ReadOnly): The ARM identifier for Private Endpoint
-
-## PrivateLinkServiceConnectionState
-### Properties
-* **actionsRequired**: string (ReadOnly): A message indicating if changes on the service provider require any updates on the consumer.
-* **description**: string (ReadOnly): The reason for approval/rejection of the connection.
-* **status**: 'Approved' | 'Pending' | 'Rejected' (ReadOnly): The private endpoint connection status.
+* **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate with Redis cache.
+* **secondaryKey**: string (ReadOnly): The current secondary key that clients can use to authenticate with Redis cache.
 
 ## RedisCommonPropertiesRedisConfiguration
 ### Properties
@@ -131,12 +102,6 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## Sku
-### Properties
-* **capacity**: int (Required): The size of the Redis cache to deploy. Valid values: for C (Basic/Standard) family (0, 1, 2, 3, 4, 5, 6), for P (Premium) family (1, 2, 3, 4).
-* **family**: 'C' | 'P' (Required): The SKU family to use. Valid values: (C, P). (C = Basic/Standard, P = Premium).
-* **name**: 'Basic' | 'Premium' | 'Standard' (Required): The type of Redis cache to deploy. Valid values: (Basic, Standard, Premium)
-
 ## RedisCommonPropertiesTenantSettings
 ### Properties
 ### Additional Properties
@@ -147,10 +112,44 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## RedisCreateProperties
+### Properties
+* **accessKeys**: [RedisAccessKeys](#redisaccesskeys) (ReadOnly): The keys of the Redis cache - not set if this object is not the response to Create or Update redis cache
+* **enableNonSslPort**: bool: Specifies whether the non-ssl Redis server port (6379) is enabled.
+* **hostName**: string (ReadOnly): Redis host name.
+* **instances**: [RedisInstanceDetails](#redisinstancedetails)[] (ReadOnly): List of the Redis instances associated with the cache
+* **linkedServers**: [RedisLinkedServer](#redislinkedserver)[] (ReadOnly): List of the linked servers associated with the cache
+* **minimumTlsVersion**: '1.0' | '1.1' | '1.2' | string: Optional: requires clients to use a specified TLS version (or higher) to connect (e,g, '1.0', '1.1', '1.2')
+* **port**: int (ReadOnly): Redis non-SSL port.
+* **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connection associated with the specified redis cache
+* **provisioningState**: 'Creating' | 'Deleting' | 'Disabled' | 'Failed' | 'Linking' | 'Provisioning' | 'RecoveringScaleFailure' | 'Scaling' | 'Succeeded' | 'Unlinking' | 'Unprovisioning' | 'Updating' | string (ReadOnly): Redis instance provisioning status.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this cache.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'. If 'Disabled', private endpoints are the exclusive access method. Default value is 'Enabled'
+* **redisConfiguration**: [RedisCommonPropertiesRedisConfiguration](#rediscommonpropertiesredisconfiguration): All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta,maxmemory-policy,notify-keyspace-events,maxmemory-samples,slowlog-log-slower-than,slowlog-max-len,list-max-ziplist-entries,list-max-ziplist-value,hash-max-ziplist-entries,hash-max-ziplist-value,set-max-intset-entries,zset-max-ziplist-entries,zset-max-ziplist-value etc.
+* **redisVersion**: string (ReadOnly): Redis version.
+* **replicasPerMaster**: int: The number of replicas to be created per master.
+* **shardCount**: int: The number of shards to be created on a Premium Cluster Cache.
+* **sku**: [Sku](#sku) (Required): The SKU of the Redis cache to deploy.
+* **sslPort**: int (ReadOnly): Redis SSL port.
+* **staticIP**: string: Static IP address. Optionally, may be specified when deploying a Redis cache inside an existing Azure Virtual Network; auto assigned by default.
+* **subnetId**: string: The full resource ID of a subnet in a virtual network to deploy the Redis cache in. Example format: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/Microsoft.{Network|ClassicNetwork}/VirtualNetworks/vnet1/subnets/subnet1
+* **tenantSettings**: [RedisCommonPropertiesTenantSettings](#rediscommonpropertiestenantsettings): A dictionary of tenant settings
+
 ## RedisFirewallRuleProperties
 ### Properties
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
+
+## RedisInstanceDetails
+### Properties
+* **isMaster**: bool (ReadOnly): Specifies whether the instance is a master node.
+* **nonSslPort**: int (ReadOnly): If enableNonSslPort is true, provides Redis instance Non-SSL port.
+* **shardId**: int (ReadOnly): If clustering is enabled, the Shard ID of Redis Instance
+* **sslPort**: int (ReadOnly): Redis instance SSL port.
+* **zone**: string (ReadOnly): If the Cache uses availability zones, specifies availability zone where this instance is located.
+
+## RedisLinkedServer
+### Properties
+* **id**: string (ReadOnly): Linked server Id.
 
 ## RedisLinkedServerCreateProperties
 ### Properties
@@ -169,8 +168,9 @@
 * **maintenanceWindow**: string: ISO8601 timespan specifying how much time cache patching can take.
 * **startHourUtc**: int (Required): Start hour after which cache patching can start.
 
-## RedisAccessKeys
+## Sku
 ### Properties
-* **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate with Redis cache.
-* **secondaryKey**: string (ReadOnly): The current secondary key that clients can use to authenticate with Redis cache.
+* **capacity**: int (Required): The size of the Redis cache to deploy. Valid values: for C (Basic/Standard) family (0, 1, 2, 3, 4, 5, 6), for P (Premium) family (1, 2, 3, 4).
+* **family**: 'C' | 'P' | string (Required): The SKU family to use. Valid values: (C, P). (C = Basic/Standard, P = Premium).
+* **name**: 'Basic' | 'Premium' | 'Standard' | string (Required): The type of Redis cache to deploy. Valid values: (Basic, Standard, Premium)
 

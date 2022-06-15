@@ -9,9 +9,17 @@
 * **properties**: [SubscriptionFeatureRegistrationProperties](#subscriptionfeatureregistrationproperties)
 * **type**: 'Microsoft.Features/featureProviders/subscriptionFeatureRegistrations' (ReadOnly, DeployTimeConstant): The resource type
 
+## AuthorizationProfile
+### Properties
+* **approvedTime**: string (ReadOnly): The approved time
+* **approver**: string (ReadOnly): The approver
+* **requestedTime**: string (ReadOnly): The requested time
+* **requester**: string (ReadOnly): The requester
+* **requesterObjectId**: string (ReadOnly): The requester object id
+
 ## SubscriptionFeatureRegistrationProperties
 ### Properties
-* **approvalType**: 'ApprovalRequired' | 'AutoApproval' | 'NotSpecified' (ReadOnly): The feature approval type.
+* **approvalType**: 'ApprovalRequired' | 'AutoApproval' | 'NotSpecified' | string (ReadOnly): The feature approval type.
 * **authorizationProfile**: [AuthorizationProfile](#authorizationprofile): Authorization Profile
 * **description**: string: The feature description.
 * **displayName**: string (ReadOnly): The featureDisplayName.
@@ -22,17 +30,9 @@
 * **registrationDate**: string (ReadOnly): The feature registration date.
 * **releaseDate**: string (ReadOnly): The feature release date.
 * **shouldFeatureDisplayInPortal**: bool: Indicates whether feature should be displayed in Portal.
-* **state**: 'NotRegistered' | 'NotSpecified' | 'Pending' | 'Registered' | 'Registering' | 'Unregistered' | 'Unregistering': The state.
+* **state**: 'NotRegistered' | 'NotSpecified' | 'Pending' | 'Registered' | 'Registering' | 'Unregistered' | 'Unregistering' | string: The state.
 * **subscriptionId**: string (ReadOnly): The subscriptionId.
 * **tenantId**: string (ReadOnly): The tenantId.
-
-## AuthorizationProfile
-### Properties
-* **approvedTime**: string (ReadOnly): The approved time
-* **approver**: string (ReadOnly): The approver
-* **requestedTime**: string (ReadOnly): The requested time
-* **requester**: string (ReadOnly): The requester
-* **requesterObjectId**: string (ReadOnly): The requester object id
 
 ## SubscriptionFeatureRegistrationPropertiesMetadata
 ### Properties

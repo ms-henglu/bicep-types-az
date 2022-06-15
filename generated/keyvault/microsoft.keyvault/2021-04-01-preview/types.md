@@ -7,7 +7,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: The supported Azure location where the managed HSM Pool should be created.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ManagedHsmProperties](#managedhsmproperties): Properties of the managed HSM Pool
+* **properties**: [ManagedHsmProperties](#managedhsmproperties): Properties of the managed HSM
 * **sku**: [ManagedHsmSku](#managedhsmsku): SKU details
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the key vault resource.
 * **tags**: [ManagedHsmResourceTags](#managedhsmresourcetags): Resource tags
@@ -21,7 +21,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: The supported Azure location where the managed HSM Pool should be created.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [MhsmPrivateEndpointConnectionProperties](#mhsmprivateendpointconnectionproperties): Properties of the private endpoint connection resource.
+* **properties**: [MhsmPrivateEndpointConnectionProperties](#mhsmprivateendpointconnectionproperties): Resource properties.
 * **sku**: [ManagedHsmSku](#managedhsmsku): SKU details
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the key vault resource.
 * **tags**: [ManagedHsmResourceTags](#managedhsmresourcetags): Resource tags
@@ -35,7 +35,7 @@
 * **location**: string (Required): The supported Azure location where the key vault should be created.
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [VaultProperties](#vaultproperties) (Required): Properties of the vault
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the key vault resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): System metadata for the key vault.
 * **tags**: [VaultCreateOrUpdateParametersTags](#vaultcreateorupdateparameterstags): The tags that will be assigned to the key vault.
 * **type**: 'Microsoft.KeyVault/vaults' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -46,7 +46,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (ReadOnly): The resource type of the access policy.
 * **name**: 'add' | 'remove' | 'replace' (Required, DeployTimeConstant): The resource name
-* **properties**: [VaultAccessPolicyProperties](#vaultaccesspolicyproperties) (Required): Properties of the vault access policy
+* **properties**: [VaultAccessPolicyProperties](#vaultaccesspolicyproperties) (Required): Properties of the access policy
 * **type**: 'Microsoft.KeyVault/vaults/accessPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.KeyVault/vaults/keys@2021-04-01-preview
@@ -56,7 +56,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (ReadOnly): Azure location of the key vault resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [KeyProperties](#keyproperties) (Required): The properties of the key.
+* **properties**: [KeyProperties](#keyproperties) (Required): The properties of the key to be created.
 * **tags**: [KeyCreateParametersTags](#keycreateparameterstags): The tags that will be assigned to the key.
 * **type**: 'Microsoft.KeyVault/vaults/keys' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -68,7 +68,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (ReadOnly): Azure location of the key vault resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Properties of the private endpoint connection resource.
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): Tags assigned to the key vault resource.
 * **type**: 'Microsoft.KeyVault/vaults/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -83,70 +83,72 @@
 * **tags**: [SecretCreateOrUpdateParametersTags](#secretcreateorupdateparameterstags): The tags that will be assigned to the secret.
 * **type**: 'Microsoft.KeyVault/vaults/secrets' (ReadOnly, DeployTimeConstant): The resource type
 
+## AccessPolicyEntry
+### Properties
+* **applicationId**: string: Application ID of the client making request on behalf of a principal
+* **objectId**: string (Required): The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
+* **permissions**: [Permissions](#permissions) (Required): Permissions the identity has for keys, secrets and certificates.
+* **tenantId**: string (Required): The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
+
+## Action
+### Properties
+* **type**: 'notify' | 'rotate': The type of action.
+
+## IPRule
+### Properties
+* **value**: string (Required): An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
+
+## KeyAttributes
+### Properties
+* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
+* **enabled**: bool: Determines whether or not the object is enabled.
+* **exp**: int: Expiry date in seconds since 1970-01-01T00:00:00Z.
+* **nbf**: int: Not before date in seconds since 1970-01-01T00:00:00Z.
+* **recoveryLevel**: 'Purgeable' | 'Recoverable' | 'Recoverable+ProtectedSubscription' | 'Recoverable+Purgeable' | string (ReadOnly): The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the retention interval.
+* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
+
+## KeyCreateParametersTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## KeyProperties
+### Properties
+* **attributes**: [KeyAttributes](#keyattributes): The attributes of the key.
+* **curveName**: 'P-256' | 'P-256K' | 'P-384' | 'P-521' | string: The elliptic curve name. For valid values, see JsonWebKeyCurveName.
+* **keyOps**: 'decrypt' | 'encrypt' | 'import' | 'sign' | 'unwrapKey' | 'verify' | 'wrapKey' | string[]
+* **keySize**: int: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
+* **keyUri**: string (ReadOnly): The URI to retrieve the current version of the key.
+* **keyUriWithVersion**: string (ReadOnly): The URI to retrieve the specific version of the key.
+* **kty**: 'EC' | 'EC-HSM' | 'RSA' | 'RSA-HSM' | string: The type of the key. For valid values, see JsonWebKeyType.
+* **rotationPolicy**: [RotationPolicy](#rotationpolicy): Key rotation policy in response. It will be used for both output and input. Omitted if empty
+
+## KeyRotationPolicyAttributes
+### Properties
+* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
+* **expiryTime**: string: The expiration time for the new key version. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
+* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
+
+## LifetimeAction
+### Properties
+* **action**: [Action](#action): The action of key rotation policy lifetimeAction.
+* **trigger**: [Trigger](#trigger): The trigger of key rotation policy lifetimeAction.
+
 ## ManagedHsmProperties
 ### Properties
-* **createMode**: 'default' | 'recover': The vault's create mode to indicate whether the vault need to be recovered or not.
+* **createMode**: 'default' | 'recover': The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
 * **enablePurgeProtection**: bool: Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this functionality is irreversible.
 * **enableSoftDelete**: bool: Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. If it's not set to any value(true or false) when creating new managed HSM pool, it will be set to true by default. Once set to true, it cannot be reverted to false.
 * **hsmUri**: string (ReadOnly): The URI of the managed hsm pool for performing operations on keys.
 * **initialAdminObjectIds**: string[]: Array of initial administrators object ids for this managed hsm pool.
-* **networkAcls**: [MhsmNetworkRuleSet](#mhsmnetworkruleset): A set of rules governing the network accessibility of a managed hsm pool.
+* **networkAcls**: [MhsmNetworkRuleSet](#mhsmnetworkruleset): Rules governing the accessibility of the key vault from specific network locations.
 * **privateEndpointConnections**: [MhsmPrivateEndpointConnectionItem](#mhsmprivateendpointconnectionitem)[] (ReadOnly): List of private endpoint connections associated with the managed hsm pool.
-* **provisioningState**: 'Activated' | 'Deleting' | 'Failed' | 'Provisioning' | 'Restoring' | 'SecurityDomainRestore' | 'Succeeded' | 'Updating' (ReadOnly): Provisioning state.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled': Control permission for data plane traffic coming from public networks while private endpoint is enabled.
+* **provisioningState**: 'Activated' | 'Deleting' | 'Failed' | 'Provisioning' | 'Restoring' | 'SecurityDomainRestore' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Control permission for data plane traffic coming from public networks while private endpoint is enabled.
 * **scheduledPurgeDate**: string (ReadOnly): The scheduled purge date in UTC.
 * **softDeleteRetentionInDays**: int: softDelete data retention days. It accepts >=7 and <=90.
 * **statusMessage**: string (ReadOnly): Resource Status Message.
 * **tenantId**: string: The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
-
-## MhsmNetworkRuleSet
-### Properties
-* **bypass**: 'AzureServices' | 'None': Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
-* **defaultAction**: 'Allow' | 'Deny': The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
-* **ipRules**: [MhsmipRule](#mhsmiprule)[]: The list of IP address rules.
-* **virtualNetworkRules**: [MhsmVirtualNetworkRule](#mhsmvirtualnetworkrule)[]: The list of virtual network rules.
-
-## MhsmipRule
-### Properties
-* **value**: string (Required): An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
-
-## MhsmVirtualNetworkRule
-### Properties
-* **id**: string (Required): Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
-
-## MhsmPrivateEndpointConnectionItem
-### Properties
-* **properties**: [MhsmPrivateEndpointConnectionProperties](#mhsmprivateendpointconnectionproperties): Properties of the private endpoint connection resource.
-
-## MhsmPrivateEndpointConnectionProperties
-### Properties
-* **privateEndpoint**: [MhsmPrivateEndpoint](#mhsmprivateendpoint): Private endpoint object properties.
-* **privateLinkServiceConnectionState**: [MhsmPrivateLinkServiceConnectionState](#mhsmprivatelinkserviceconnectionstate): An object that represents the approval state of the private link connection.
-* **provisioningState**: 'Creating' | 'Deleting' | 'Disconnected' | 'Failed' | 'Succeeded' | 'Updating': The current provisioning state.
-
-## MhsmPrivateEndpoint
-### Properties
-* **id**: string (ReadOnly): Full identifier of the private endpoint resource.
-
-## MhsmPrivateLinkServiceConnectionState
-### Properties
-* **actionsRequired**: 'None': A message indicating if changes on the service provider require any updates on the consumer.
-* **description**: string: The reason for approval or rejection.
-* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected': The private endpoint connection status.
-
-## ManagedHsmSku
-### Properties
-* **family**: 'B' (Required): SKU Family of the managed HSM Pool
-* **name**: 'Custom_B32' | 'Standard_B1' (Required): SKU of the managed HSM Pool
-
-## SystemData
-### Properties
-* **createdAt**: string (ReadOnly): The timestamp of the key vault resource creation (UTC).
-* **createdBy**: string (ReadOnly): The identity that created the key vault resource.
-* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity.
-* **lastModifiedAt**: string (ReadOnly): The timestamp of the key vault resource last modification (UTC).
-* **lastModifiedBy**: string (ReadOnly): The identity that last modified the key vault resource.
-* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' (ReadOnly): The type of identity.
 
 ## ManagedHsmResourceTags
 ### Properties
@@ -154,6 +156,141 @@
 * **Additional Properties Type**: string
 
 ## ManagedHsmResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ManagedHsmSku
+### Properties
+* **family**: 'B' | string (Required): SKU Family of the managed HSM Pool
+* **name**: 'Custom_B32' | 'Standard_B1' (Required): SKU of the managed HSM Pool
+
+## MhsmipRule
+### Properties
+* **value**: string (Required): An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
+
+## MhsmNetworkRuleSet
+### Properties
+* **bypass**: 'AzureServices' | 'None' | string: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
+* **defaultAction**: 'Allow' | 'Deny' | string: The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
+* **ipRules**: [MhsmipRule](#mhsmiprule)[]: The list of IP address rules.
+* **virtualNetworkRules**: [MhsmVirtualNetworkRule](#mhsmvirtualnetworkrule)[]: The list of virtual network rules.
+
+## MhsmPrivateEndpoint
+### Properties
+* **id**: string (ReadOnly): Full identifier of the private endpoint resource.
+
+## MhsmPrivateEndpointConnectionItem
+### Properties
+* **properties**: [MhsmPrivateEndpointConnectionProperties](#mhsmprivateendpointconnectionproperties): Private endpoint connection properties.
+
+## MhsmPrivateEndpointConnectionProperties
+### Properties
+* **privateEndpoint**: [MhsmPrivateEndpoint](#mhsmprivateendpoint): Properties of the private endpoint object.
+* **privateLinkServiceConnectionState**: [MhsmPrivateLinkServiceConnectionState](#mhsmprivatelinkserviceconnectionstate): Approval state of the private link connection.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Disconnected' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the private endpoint connection.
+
+## MhsmPrivateLinkServiceConnectionState
+### Properties
+* **actionsRequired**: 'None' | string: A message indicating if changes on the service provider require any updates on the consumer.
+* **description**: string: The reason for approval or rejection.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been approved, rejected or removed by the key vault owner.
+
+## MhsmVirtualNetworkRule
+### Properties
+* **id**: string (Required): Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
+
+## NetworkRuleSet
+### Properties
+* **bypass**: 'AzureServices' | 'None' | string: Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
+* **defaultAction**: 'Allow' | 'Deny' | string: The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
+* **ipRules**: [IPRule](#iprule)[]: The list of IP address rules.
+* **virtualNetworkRules**: [VirtualNetworkRule](#virtualnetworkrule)[]: The list of virtual network rules.
+
+## Permissions
+### Properties
+* **certificates**: 'backup' | 'create' | 'delete' | 'deleteissuers' | 'get' | 'getissuers' | 'import' | 'list' | 'listissuers' | 'managecontacts' | 'manageissuers' | 'purge' | 'recover' | 'restore' | 'setissuers' | 'update' | string[]: Permissions to certificates
+* **keys**: 'backup' | 'create' | 'decrypt' | 'delete' | 'encrypt' | 'get' | 'import' | 'list' | 'purge' | 'recover' | 'release' | 'restore' | 'sign' | 'unwrapKey' | 'update' | 'verify' | 'wrapKey' | string[]: Permissions to keys
+* **secrets**: 'backup' | 'delete' | 'get' | 'list' | 'purge' | 'recover' | 'restore' | 'set' | string[]: Permissions to secrets
+* **storage**: 'backup' | 'delete' | 'deletesas' | 'get' | 'getsas' | 'list' | 'listsas' | 'purge' | 'recover' | 'regeneratekey' | 'restore' | 'set' | 'setsas' | 'update' | string[]: Permissions to storage accounts
+
+## PrivateEndpoint
+### Properties
+* **id**: string (ReadOnly): Full identifier of the private endpoint resource.
+
+## PrivateEndpointConnectionItem
+### Properties
+* **etag**: string: Modified whenever there is a change in the state of private endpoint connection.
+* **id**: string: Id of private endpoint connection.
+* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Private endpoint connection properties.
+
+## PrivateEndpointConnectionProperties
+### Properties
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): Properties of the private endpoint object.
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): Approval state of the private link connection.
+* **provisioningState**: 'Creating' | 'Deleting' | 'Disconnected' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the private endpoint connection.
+
+## PrivateLinkServiceConnectionState
+### Properties
+* **actionsRequired**: 'None' | string: A message indicating if changes on the service provider require any updates on the consumer.
+* **description**: string: The reason for approval or rejection.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been approved, rejected or removed by the key vault owner.
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RotationPolicy
+### Properties
+* **attributes**: [KeyRotationPolicyAttributes](#keyrotationpolicyattributes): The attributes of key rotation policy.
+* **lifetimeActions**: [LifetimeAction](#lifetimeaction)[]: The lifetimeActions for key rotation action.
+
+## SecretAttributes
+### Properties
+* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
+* **enabled**: bool: Determines whether the object is enabled.
+* **exp**: int: Expiry date in seconds since 1970-01-01T00:00:00Z.
+* **nbf**: int: Not before date in seconds since 1970-01-01T00:00:00Z.
+* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
+
+## SecretCreateOrUpdateParametersTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## SecretProperties
+### Properties
+* **attributes**: [SecretAttributes](#secretattributes): The attributes of the secret.
+* **contentType**: string: The content type of the secret.
+* **secretUri**: string (ReadOnly): The URI to retrieve the current version of the secret.
+* **secretUriWithVersion**: string (ReadOnly): The URI to retrieve the specific version of the secret.
+* **value**: string: The value of the secret. NOTE: 'value' will never be returned from the service, as APIs using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+
+## Sku
+### Properties
+* **family**: 'A' | string (Required): SKU family name
+* **name**: 'premium' | 'standard' (Required): SKU name to specify whether the key vault is a standard vault or a premium vault.
+
+## SystemData
+### Properties
+* **createdAt**: string (ReadOnly): The timestamp of the key vault resource creation (UTC).
+* **createdBy**: string (ReadOnly): The identity that created the key vault resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that created the key vault resource.
+* **lastModifiedAt**: string (ReadOnly): The timestamp of the key vault resource last modification (UTC).
+* **lastModifiedBy**: string (ReadOnly): The identity that last modified the key vault resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string (ReadOnly): The type of identity that last modified the key vault resource.
+
+## Trigger
+### Properties
+* **timeAfterCreate**: string: The time duration after key creation to rotate the key. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
+* **timeBeforeExpiry**: string: The time duration before key expiring to rotate the key. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
+
+## VaultAccessPolicyProperties
+### Properties
+* **accessPolicies**: [AccessPolicyEntry](#accesspolicyentry)[] (Required): An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
+
+## VaultCreateOrUpdateParametersTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
@@ -169,153 +306,16 @@
 * **enableRbacAuthorization**: bool: Property that controls how data actions are authorized. When true, the key vault will use Role Based Access Control (RBAC) for authorization of data actions, and the access policies specified in vault properties will be  ignored. When false, the key vault will use the access policies specified in vault properties, and any policy stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default value of false. Note that management actions are always authorized with RBAC.
 * **enableSoftDelete**: bool: Property to specify whether the 'soft delete' functionality is enabled for this key vault. If it's not set to any value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot be reverted to false.
 * **hsmPoolResourceId**: string (ReadOnly): The resource id of HSM Pool.
-* **networkAcls**: [NetworkRuleSet](#networkruleset): A set of rules governing the network accessibility of a vault.
+* **networkAcls**: [NetworkRuleSet](#networkruleset): Rules governing the accessibility of the key vault from specific network locations.
 * **privateEndpointConnections**: [PrivateEndpointConnectionItem](#privateendpointconnectionitem)[] (ReadOnly): List of private endpoint connections associated with the key vault.
-* **provisioningState**: 'RegisteringDns' | 'Succeeded': Provisioning state of the vault.
+* **provisioningState**: 'RegisteringDns' | 'Succeeded' | string: Provisioning state of the vault.
 * **sku**: [Sku](#sku) (Required): SKU details
 * **softDeleteRetentionInDays**: int: softDelete data retention days. It accepts >=7 and <=90.
 * **tenantId**: string (Required): The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
 * **vaultUri**: string: The URI of the vault for performing operations on keys and secrets.
 
-## AccessPolicyEntry
-### Properties
-* **applicationId**: string: Application ID of the client making request on behalf of a principal
-* **objectId**: string (Required): The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
-* **permissions**: [Permissions](#permissions) (Required): Permissions the identity has for keys, secrets, certificates and storage.
-* **tenantId**: string (Required): The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
-
-## Permissions
-### Properties
-* **certificates**: 'backup' | 'create' | 'delete' | 'deleteissuers' | 'get' | 'getissuers' | 'import' | 'list' | 'listissuers' | 'managecontacts' | 'manageissuers' | 'purge' | 'recover' | 'restore' | 'setissuers' | 'update'[]: Permissions to certificates
-* **keys**: 'backup' | 'create' | 'decrypt' | 'delete' | 'encrypt' | 'get' | 'import' | 'list' | 'purge' | 'recover' | 'release' | 'restore' | 'sign' | 'unwrapKey' | 'update' | 'verify' | 'wrapKey'[]: Permissions to keys
-* **secrets**: 'backup' | 'delete' | 'get' | 'list' | 'purge' | 'recover' | 'restore' | 'set'[]: Permissions to secrets
-* **storage**: 'backup' | 'delete' | 'deletesas' | 'get' | 'getsas' | 'list' | 'listsas' | 'purge' | 'recover' | 'regeneratekey' | 'restore' | 'set' | 'setsas' | 'update'[]: Permissions to storage accounts
-
-## NetworkRuleSet
-### Properties
-* **bypass**: 'AzureServices' | 'None': Tells what traffic can bypass network rules. This can be 'AzureServices' or 'None'.  If not specified the default is 'AzureServices'.
-* **defaultAction**: 'Allow' | 'Deny': The default action when no rule from ipRules and from virtualNetworkRules match. This is only used after the bypass property has been evaluated.
-* **ipRules**: [IPRule](#iprule)[]: The list of IP address rules.
-* **virtualNetworkRules**: [VirtualNetworkRule](#virtualnetworkrule)[]: The list of virtual network rules.
-
-## IPRule
-### Properties
-* **value**: string (Required): An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
-
 ## VirtualNetworkRule
 ### Properties
 * **id**: string (Required): Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
 * **ignoreMissingVnetServiceEndpoint**: bool: Property to specify whether NRP will ignore the check if parent subnet has serviceEndpoints configured.
-
-## PrivateEndpointConnectionItem
-### Properties
-* **etag**: string: Modified whenever there is a change in the state of private endpoint connection.
-* **id**: string: Id of private endpoint connection.
-* **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Properties of the private endpoint connection resource.
-
-## PrivateEndpointConnectionProperties
-### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): Private endpoint object properties.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): An object that represents the approval state of the private link connection.
-* **provisioningState**: 'Creating' | 'Deleting' | 'Disconnected' | 'Failed' | 'Succeeded' | 'Updating': The current provisioning state.
-
-## PrivateEndpoint
-### Properties
-* **id**: string (ReadOnly): Full identifier of the private endpoint resource.
-
-## PrivateLinkServiceConnectionState
-### Properties
-* **actionsRequired**: 'None': A message indicating if changes on the service provider require any updates on the consumer.
-* **description**: string: The reason for approval or rejection.
-* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected': The private endpoint connection status.
-
-## Sku
-### Properties
-* **family**: 'A' (Required): SKU family name
-* **name**: 'premium' | 'standard' (Required): SKU name to specify whether the key vault is a standard vault or a premium vault.
-
-## VaultCreateOrUpdateParametersTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## VaultAccessPolicyProperties
-### Properties
-* **accessPolicies**: [AccessPolicyEntry](#accesspolicyentry)[] (Required): An array of 0 to 16 identities that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
-
-## KeyProperties
-### Properties
-* **attributes**: [KeyAttributes](#keyattributes): The object attributes managed by the Azure Key Vault service.
-* **curveName**: 'P-256' | 'P-256K' | 'P-384' | 'P-521': The elliptic curve name. For valid values, see JsonWebKeyCurveName.
-* **keyOps**: 'decrypt' | 'encrypt' | 'import' | 'sign' | 'unwrapKey' | 'verify' | 'wrapKey'[]: Array of JsonWebKeyOperation
-* **keySize**: int: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-* **keyUri**: string (ReadOnly): The URI to retrieve the current version of the key.
-* **keyUriWithVersion**: string (ReadOnly): The URI to retrieve the specific version of the key.
-* **kty**: 'EC' | 'EC-HSM' | 'RSA' | 'RSA-HSM': The type of the key. For valid values, see JsonWebKeyType.
-* **rotationPolicy**: [RotationPolicy](#rotationpolicy)
-
-## KeyAttributes
-### Properties
-* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
-* **enabled**: bool: Determines whether or not the object is enabled.
-* **exp**: int: Expiry date in seconds since 1970-01-01T00:00:00Z.
-* **nbf**: int: Not before date in seconds since 1970-01-01T00:00:00Z.
-* **recoveryLevel**: 'Purgeable' | 'Recoverable' | 'Recoverable+ProtectedSubscription' | 'Recoverable+Purgeable' (ReadOnly): The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the retention interval.
-* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
-
-## RotationPolicy
-### Properties
-* **attributes**: [KeyRotationPolicyAttributes](#keyrotationpolicyattributes)
-* **lifetimeActions**: [LifetimeAction](#lifetimeaction)[]: The lifetimeActions for key rotation action.
-
-## KeyRotationPolicyAttributes
-### Properties
-* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
-* **expiryTime**: string: The expiration time for the new key version. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
-* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
-
-## LifetimeAction
-### Properties
-* **action**: [Action](#action)
-* **trigger**: [Trigger](#trigger)
-
-## Action
-### Properties
-* **type**: 'notify' | 'rotate': The type of action.
-
-## Trigger
-### Properties
-* **timeAfterCreate**: string: The time duration after key creation to rotate the key. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
-* **timeBeforeExpiry**: string: The time duration before key expiring to rotate the key. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
-
-## KeyCreateParametersTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## SecretProperties
-### Properties
-* **attributes**: [SecretAttributes](#secretattributes): The secret management attributes.
-* **contentType**: string: The content type of the secret.
-* **secretUri**: string (ReadOnly): The URI to retrieve the current version of the secret.
-* **secretUriWithVersion**: string (ReadOnly): The URI to retrieve the specific version of the secret.
-* **value**: string: The value of the secret. NOTE: 'value' will never be returned from the service, as APIs using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
-
-## SecretAttributes
-### Properties
-* **created**: int (ReadOnly): Creation time in seconds since 1970-01-01T00:00:00Z.
-* **enabled**: bool: Determines whether the object is enabled.
-* **exp**: int: Expiry date in seconds since 1970-01-01T00:00:00Z.
-* **nbf**: int: Not before date in seconds since 1970-01-01T00:00:00Z.
-* **updated**: int (ReadOnly): Last updated time in seconds since 1970-01-01T00:00:00Z.
-
-## SecretCreateOrUpdateParametersTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
 

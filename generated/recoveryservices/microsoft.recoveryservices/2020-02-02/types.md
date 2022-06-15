@@ -33,38 +33,6 @@
 * **properties**: [VaultExtendedInfo](#vaultextendedinfo): Vault extended information.
 * **type**: 'Microsoft.RecoveryServices/vaults/extendedInformation' (ReadOnly, DeployTimeConstant): The resource type
 
-## IdentityData
-### Properties
-* **principalId**: string (ReadOnly): The principal ID of resource identity.
-* **tenantId**: string (ReadOnly): The tenant ID of resource.
-* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' (Required): The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
-* **userAssignedIdentities**: [IdentityDataUserAssignedIdentities](#identitydatauserassignedidentities): The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
-
-## IdentityDataUserAssignedIdentities
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserIdentity](#useridentity)
-
-## UserIdentity
-### Properties
-* **clientId**: string (ReadOnly): The client ID of the user-assigned identity.
-* **principalId**: string (ReadOnly): The principal ID of the user-assigned identity.
-
-## VaultProperties
-### Properties
-* **encryption**: [VaultPropertiesEncryption](#vaultpropertiesencryption): Customer Managed Key details of the resource.
-* **privateEndpointConnections**: [PrivateEndpointConnectionVaultProperties](#privateendpointconnectionvaultproperties)[] (ReadOnly): List of private endpoint connection.
-* **privateEndpointStateForBackup**: 'Enabled' | 'None' (ReadOnly): Private endpoint state for backup.
-* **privateEndpointStateForSiteRecovery**: 'Enabled' | 'None' (ReadOnly): Private endpoint state for backup.
-* **provisioningState**: string (ReadOnly): Provisioning State.
-* **upgradeDetails**: [UpgradeDetails](#upgradedetails): Details for upgrading vault.
-
-## VaultPropertiesEncryption
-### Properties
-* **infrastructureEncryption**: 'Disabled' | 'Enabled': Enabling/Disabling the Double Encryption state
-* **kekIdentity**: [CmkKekIdentity](#cmkkekidentity): The details of the identity used for CMK
-* **keyVaultProperties**: [CmkKeyVaultProperties](#cmkkeyvaultproperties): The properties of the Key Vault which hosts CMK
-
 ## CmkKekIdentity
 ### Properties
 * **userAssignedIdentity**: string: The user assigned identity to be used to grant permissions in case the type of identity used is UserAssigned
@@ -74,26 +42,52 @@
 ### Properties
 * **keyUri**: string: The key uri of the Customer Managed Key
 
-## PrivateEndpointConnectionVaultProperties
+## IdentityData
 ### Properties
-* **id**: string (ReadOnly): Format of id subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.[Service]/{resource}/{resourceName}/privateEndpointConnections/{connectionName}.
-* **properties**: [PrivateEndpointConnection](#privateendpointconnection) (ReadOnly): Private Endpoint Connection Response Properties.
+* **principalId**: string (ReadOnly): The principal ID of resource identity.
+* **tenantId**: string (ReadOnly): The tenant ID of resource.
+* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string (Required): The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
+* **userAssignedIdentities**: [IdentityDataUserAssignedIdentities](#identitydatauserassignedidentities): The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
-## PrivateEndpointConnection
+## IdentityDataUserAssignedIdentities
 ### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The Private Endpoint network resource that is linked to the Private Endpoint connection.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): Gets or sets private link service connection state.
-* **provisioningState**: 'Deleting' | 'Failed' | 'Pending' | 'Succeeded' (ReadOnly): Gets or sets provisioning state of the private endpoint connection.
+### Additional Properties
+* **Additional Properties Type**: [UserIdentity](#useridentity)
 
 ## PrivateEndpoint
 ### Properties
 * **id**: string (ReadOnly): Gets or sets id.
 
+## PrivateEndpointConnection
+### Properties
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The Private Endpoint network resource that is linked to the Private Endpoint connection.
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (ReadOnly): Gets or sets private link service connection state.
+* **provisioningState**: 'Deleting' | 'Failed' | 'Pending' | 'Succeeded' | string (ReadOnly): Gets or sets provisioning state of the private endpoint connection.
+
+## PrivateEndpointConnectionVaultProperties
+### Properties
+* **id**: string (ReadOnly): Format of id subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.[Service]/{resource}/{resourceName}/privateEndpointConnections/{connectionName}.
+* **properties**: [PrivateEndpointConnection](#privateendpointconnection) (ReadOnly): Private Endpoint Connection Response Properties.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **actionsRequired**: string (ReadOnly): Gets or sets actions required.
 * **description**: string (ReadOnly): Gets or sets description.
-* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' (ReadOnly): Gets or sets the status.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string (ReadOnly): Gets or sets the status.
+
+## RawCertificateData
+### Properties
+* **authType**: 'AAD' | 'ACS' | 'AccessControlService' | 'AzureActiveDirectory' | 'Invalid' | string: Specifies the authentication type.
+* **certificate**: any: The base64 encoded certificate raw data string
+
+## Sku
+### Properties
+* **name**: 'RS0' | 'Standard' | string (Required): The Sku name.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## UpgradeDetails
 ### Properties
@@ -103,23 +97,14 @@
 * **operationId**: string (ReadOnly): ID of the vault upgrade operation.
 * **previousResourceId**: string (ReadOnly): Resource ID of the vault before the upgrade.
 * **startTimeUtc**: string (ReadOnly): UTC time at which the upgrade operation has started.
-* **status**: 'Failed' | 'InProgress' | 'Unknown' | 'Upgraded' (ReadOnly): Status of the vault upgrade operation.
-* **triggerType**: 'ForcedUpgrade' | 'UserTriggered' (ReadOnly): The way the vault upgrade was triggered.
+* **status**: 'Failed' | 'InProgress' | 'Unknown' | 'Upgraded' | string (ReadOnly): Status of the vault upgrade operation.
+* **triggerType**: 'ForcedUpgrade' | 'UserTriggered' | string (ReadOnly): The way the vault upgrade was triggered.
 * **upgradedResourceId**: string (ReadOnly): Resource ID of the upgraded vault.
 
-## Sku
+## UserIdentity
 ### Properties
-* **name**: 'RS0' | 'Standard' (Required): The Sku name.
-
-## TrackedResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## RawCertificateData
-### Properties
-* **authType**: 'AAD' | 'ACS' | 'AccessControlService' | 'AzureActiveDirectory' | 'Invalid': Specifies the authentication type.
-* **certificate**: any: The base64 encoded certificate raw data string
+* **clientId**: string (ReadOnly): The client ID of the user-assigned identity.
+* **principalId**: string (ReadOnly): The principal ID of the user-assigned identity.
 
 ## VaultExtendedInfo
 ### Properties
@@ -127,4 +112,19 @@
 * **encryptionKey**: string: Encryption key.
 * **encryptionKeyThumbprint**: string: Encryption key thumbprint.
 * **integrityKey**: string: Integrity key.
+
+## VaultProperties
+### Properties
+* **encryption**: [VaultPropertiesEncryption](#vaultpropertiesencryption): Customer Managed Key details of the resource.
+* **privateEndpointConnections**: [PrivateEndpointConnectionVaultProperties](#privateendpointconnectionvaultproperties)[] (ReadOnly): List of private endpoint connection.
+* **privateEndpointStateForBackup**: 'Enabled' | 'None' | string (ReadOnly): Private endpoint state for backup.
+* **privateEndpointStateForSiteRecovery**: 'Enabled' | 'None' | string (ReadOnly): Private endpoint state for site recovery.
+* **provisioningState**: string (ReadOnly): Provisioning State.
+* **upgradeDetails**: [UpgradeDetails](#upgradedetails): Details for upgrading vault.
+
+## VaultPropertiesEncryption
+### Properties
+* **infrastructureEncryption**: 'Disabled' | 'Enabled' | string: Enabling/Disabling the Double Encryption state
+* **kekIdentity**: [CmkKekIdentity](#cmkkekidentity): The details of the identity used for CMK
+* **keyVaultProperties**: [CmkKeyVaultProperties](#cmkkeyvaultproperties): The properties of the Key Vault which hosts CMK
 

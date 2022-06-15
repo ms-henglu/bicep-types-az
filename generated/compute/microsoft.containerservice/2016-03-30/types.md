@@ -11,45 +11,22 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.ContainerService/containerServices' (ReadOnly, DeployTimeConstant): The resource type
 
-## ContainerServiceProperties
-### Properties
-* **agentPoolProfiles**: [ContainerServiceAgentPoolProfile](#containerserviceagentpoolprofile)[] (Required): Properties of the agent pool.
-* **diagnosticsProfile**: [ContainerServiceDiagnosticsProfile](#containerservicediagnosticsprofile)
-* **linuxProfile**: [ContainerServiceLinuxProfile](#containerservicelinuxprofile) (Required): Profile for Linux VMs in the container service cluster.
-* **masterProfile**: [ContainerServiceMasterProfile](#containerservicemasterprofile) (Required): Profile for the container service master.
-* **orchestratorProfile**: [ContainerServiceOrchestratorProfile](#containerserviceorchestratorprofile): Profile for the container service orchestrator.
-* **provisioningState**: string (ReadOnly): the current deployment or provisioning state, which only appears in the response.
-* **windowsProfile**: [ContainerServiceWindowsProfile](#containerservicewindowsprofile): Profile for Windows VMs in the container service cluster.
-
 ## ContainerServiceAgentPoolProfile
 ### Properties
 * **count**: int: Number of agents (VMs) to host docker containers. Allowed values must be in the range of 1 to 100 (inclusive). The default value is 1.
 * **dnsPrefix**: string (Required): DNS prefix to be used to create the FQDN for the agent pool.
 * **fqdn**: string (ReadOnly): FQDN for the agent pool.
 * **name**: string (Required): Unique name of the agent pool profile in the context of the subscription and resource group.
-* **vmSize**: 'Standard_A0' | 'Standard_A1' | 'Standard_A10' | 'Standard_A11' | 'Standard_A2' | 'Standard_A3' | 'Standard_A4' | 'Standard_A5' | 'Standard_A6' | 'Standard_A7' | 'Standard_A8' | 'Standard_A9' | 'Standard_D1' | 'Standard_D11' | 'Standard_D11_v2' | 'Standard_D12' | 'Standard_D12_v2' | 'Standard_D13' | 'Standard_D13_v2' | 'Standard_D14' | 'Standard_D14_v2' | 'Standard_D1_v2' | 'Standard_D2' | 'Standard_D2_v2' | 'Standard_D3' | 'Standard_D3_v2' | 'Standard_D4' | 'Standard_D4_v2' | 'Standard_D5_v2' | 'Standard_DS1' | 'Standard_DS11' | 'Standard_DS12' | 'Standard_DS13' | 'Standard_DS14' | 'Standard_DS2' | 'Standard_DS3' | 'Standard_DS4' | 'Standard_G1' | 'Standard_G2' | 'Standard_G3' | 'Standard_G4' | 'Standard_G5' | 'Standard_GS1' | 'Standard_GS2' | 'Standard_GS3' | 'Standard_GS4' | 'Standard_GS5' (Required): Size of agent VMs.
+* **vmSize**: 'Standard_A0' | 'Standard_A1' | 'Standard_A10' | 'Standard_A11' | 'Standard_A2' | 'Standard_A3' | 'Standard_A4' | 'Standard_A5' | 'Standard_A6' | 'Standard_A7' | 'Standard_A8' | 'Standard_A9' | 'Standard_D1' | 'Standard_D11' | 'Standard_D11_v2' | 'Standard_D12' | 'Standard_D12_v2' | 'Standard_D13' | 'Standard_D13_v2' | 'Standard_D14' | 'Standard_D14_v2' | 'Standard_D1_v2' | 'Standard_D2' | 'Standard_D2_v2' | 'Standard_D3' | 'Standard_D3_v2' | 'Standard_D4' | 'Standard_D4_v2' | 'Standard_D5_v2' | 'Standard_DS1' | 'Standard_DS11' | 'Standard_DS12' | 'Standard_DS13' | 'Standard_DS14' | 'Standard_DS2' | 'Standard_DS3' | 'Standard_DS4' | 'Standard_G1' | 'Standard_G2' | 'Standard_G3' | 'Standard_G4' | 'Standard_G5' | 'Standard_GS1' | 'Standard_GS2' | 'Standard_GS3' | 'Standard_GS4' | 'Standard_GS5' | string (Required): Size of agent VMs.
 
 ## ContainerServiceDiagnosticsProfile
 ### Properties
-* **vmDiagnostics**: [ContainerServiceVMDiagnostics](#containerservicevmdiagnostics) (Required): Profile for diagnostics on the container service VMs.
-
-## ContainerServiceVMDiagnostics
-### Properties
-* **enabled**: bool (Required): Whether the VM diagnostic agent is provisioned on the VM.
-* **storageUri**: string (ReadOnly): The URI of the storage account where diagnostics are stored.
+* **vmDiagnostics**: [ContainerServiceVMDiagnostics](#containerservicevmdiagnostics) (Required): Profile for the container service VM diagnostic agent.
 
 ## ContainerServiceLinuxProfile
 ### Properties
 * **adminUsername**: string (Required): The administrator username to use for all Linux VMs
-* **ssh**: [ContainerServiceSshConfiguration](#containerservicesshconfiguration) (Required): SSH configuration for Linux-based VMs running on Azure.
-
-## ContainerServiceSshConfiguration
-### Properties
-* **publicKeys**: [ContainerServiceSshPublicKey](#containerservicesshpublickey)[] (Required): the list of SSH public keys used to authenticate with Linux-based VMs.
-
-## ContainerServiceSshPublicKey
-### Properties
-* **keyData**: string (Required): Certificate public key used to authenticate with VMs through SSH. The certificate must be in PEM format with or without headers.
+* **ssh**: [ContainerServiceSshConfiguration](#containerservicesshconfiguration) (Required): The ssh key configuration for Linux VMs.
 
 ## ContainerServiceMasterProfile
 ### Properties
@@ -60,6 +37,29 @@
 ## ContainerServiceOrchestratorProfile
 ### Properties
 * **orchestratorType**: 'DCOS' | 'Swarm' (Required): The orchestrator to use to manage container service cluster resources. Valid values are Swarm, DCOS, and Custom.
+
+## ContainerServiceProperties
+### Properties
+* **agentPoolProfiles**: [ContainerServiceAgentPoolProfile](#containerserviceagentpoolprofile)[] (Required): Properties of the agent pool.
+* **diagnosticsProfile**: [ContainerServiceDiagnosticsProfile](#containerservicediagnosticsprofile): Properties of the diagnostic agent.
+* **linuxProfile**: [ContainerServiceLinuxProfile](#containerservicelinuxprofile) (Required): Properties of Linux VMs.
+* **masterProfile**: [ContainerServiceMasterProfile](#containerservicemasterprofile) (Required): Properties of master agents.
+* **orchestratorProfile**: [ContainerServiceOrchestratorProfile](#containerserviceorchestratorprofile): Properties of the orchestrator.
+* **provisioningState**: string (ReadOnly): the current deployment or provisioning state, which only appears in the response.
+* **windowsProfile**: [ContainerServiceWindowsProfile](#containerservicewindowsprofile): Properties of Windows VMs.
+
+## ContainerServiceSshConfiguration
+### Properties
+* **publicKeys**: [ContainerServiceSshPublicKey](#containerservicesshpublickey)[] (Required): the list of SSH public keys used to authenticate with Linux-based VMs.
+
+## ContainerServiceSshPublicKey
+### Properties
+* **keyData**: string (Required): Certificate public key used to authenticate with VMs through SSH. The certificate must be in PEM format with or without headers.
+
+## ContainerServiceVMDiagnostics
+### Properties
+* **enabled**: bool (Required): Whether the VM diagnostic agent is provisioned on the VM.
+* **storageUri**: string (ReadOnly): The URI of the storage account where diagnostics are stored.
 
 ## ContainerServiceWindowsProfile
 ### Properties

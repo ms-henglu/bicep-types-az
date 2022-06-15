@@ -6,8 +6,8 @@
 * **apiVersion**: '2018-08-31-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **etag**: string (ReadOnly): For optimistic concurrency control.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: 'default' (Required, DeployTimeConstant): The resource name
-* **properties**: [NotificationSettingProperties](#notificationsettingproperties) (ReadOnly): Model for properties of a NotificationSetting.
+* **name**: 'default' | string (Required, DeployTimeConstant): The resource name
+* **properties**: [NotificationSettingProperties](#notificationsettingproperties) (ReadOnly): Properties of Notification Settings
 * **type**: 'Microsoft.WorkloadMonitor/notificationSettings' (ReadOnly, DeployTimeConstant): The resource type
 
 ## NotificationSettingProperties

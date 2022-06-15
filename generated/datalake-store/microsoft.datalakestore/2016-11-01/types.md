@@ -5,10 +5,10 @@
 ### Properties
 * **apiVersion**: '2016-11-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [EncryptionIdentity](#encryptionidentity): The encryption identity properties.
+* **identity**: [EncryptionIdentity](#encryptionidentity): The Key Vault encryption identity, if any.
 * **location**: string (Required): The resource location.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [CreateDataLakeStoreAccountProperties](#createdatalakestoreaccountproperties)
+* **properties**: [CreateDataLakeStoreAccountProperties](#createdatalakestoreaccountproperties): The Data Lake Store account properties to use for creating.
 * **tags**: [CreateDataLakeStoreAccountParametersTags](#createdatalakestoreaccountparameterstags): The resource tags.
 * **type**: 'Microsoft.DataLakeStore/accounts' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -39,19 +39,18 @@
 * **properties**: [CreateOrUpdateVirtualNetworkRuleProperties](#createorupdatevirtualnetworkruleproperties) (Required): The virtual network rule properties to use when creating a new virtual network rule.
 * **type**: 'Microsoft.DataLakeStore/accounts/virtualNetworkRules' (ReadOnly, DeployTimeConstant): The resource type
 
-## EncryptionIdentity
+## CreateDataLakeStoreAccountParametersTags
 ### Properties
-* **principalId**: string (ReadOnly): The principal identifier associated with the encryption.
-* **tenantId**: string (ReadOnly): The tenant identifier associated with the encryption.
-* **type**: 'SystemAssigned' (Required): The type of encryption being used. Currently the only supported type is 'SystemAssigned'.
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## CreateDataLakeStoreAccountProperties
 ### Properties
 * **accountId**: string (ReadOnly): The unique identifier associated with this Data Lake Store account.
 * **creationTime**: string (ReadOnly): The account creation time.
-* **currentTier**: 'Commitment_100TB' | 'Commitment_10TB' | 'Commitment_1PB' | 'Commitment_1TB' | 'Commitment_500TB' | 'Commitment_5PB' | 'Consumption' (ReadOnly): The commitment tier to use for next month.
+* **currentTier**: 'Commitment_100TB' | 'Commitment_10TB' | 'Commitment_1PB' | 'Commitment_1TB' | 'Commitment_500TB' | 'Commitment_5PB' | 'Consumption' (ReadOnly): The commitment tier in use for the current month.
 * **defaultGroup**: string: The default owner group for all new folders and files created in the Data Lake Store account.
-* **encryptionConfig**: [EncryptionConfig](#encryptionconfig): The encryption configuration for the account.
+* **encryptionConfig**: [EncryptionConfig](#encryptionconfig): The Key Vault encryption configuration.
 * **encryptionProvisioningState**: 'Creating' | 'Succeeded' (ReadOnly): The current state of encryption provisioning for this Data Lake Store account.
 * **encryptionState**: 'Disabled' | 'Enabled': The current state of encryption for this Data Lake Store account.
 * **endpoint**: string (ReadOnly): The full CName endpoint for this account.
@@ -66,17 +65,6 @@
 * **trustedIdProviderState**: 'Disabled' | 'Enabled': The current state of the trusted identity provider feature for this Data Lake Store account.
 * **virtualNetworkRules**: [CreateVirtualNetworkRuleWithAccountParameters](#createvirtualnetworkrulewithaccountparameters)[]: The list of virtual network rules associated with this Data Lake Store account.
 
-## EncryptionConfig
-### Properties
-* **keyVaultMetaInfo**: [KeyVaultMetaInfo](#keyvaultmetainfo): Metadata information used by account encryption.
-* **type**: 'ServiceManaged' | 'UserManaged' (Required): The type of encryption configuration being used. Currently the only supported types are 'UserManaged' and 'ServiceManaged'.
-
-## KeyVaultMetaInfo
-### Properties
-* **encryptionKeyName**: string (Required): The name of the user managed encryption key.
-* **encryptionKeyVersion**: string (Required): The version of the user managed encryption key.
-* **keyVaultResourceId**: string (Required): The resource identifier for the user managed Key Vault being used to encrypt.
-
 ## CreateFirewallRuleWithAccountParameters
 ### Properties
 * **id**: string (ReadOnly): The resource identifier.
@@ -89,16 +77,20 @@
 * **endIpAddress**: string (Required): The end IP address for the firewall rule. This can be either ipv4 or ipv6. Start and End should be in the same protocol.
 * **startIpAddress**: string (Required): The start IP address for the firewall rule. This can be either ipv4 or ipv6. Start and End should be in the same protocol.
 
+## CreateOrUpdateTrustedIdProviderProperties
+### Properties
+* **idProvider**: string (Required): The URL of this trusted identity provider.
+
+## CreateOrUpdateVirtualNetworkRuleProperties
+### Properties
+* **subnetId**: string (Required): The resource identifier for the subnet.
+
 ## CreateTrustedIdProviderWithAccountParameters
 ### Properties
 * **id**: string (ReadOnly): The resource identifier.
 * **name**: string (Required): The unique name of the trusted identity provider to create.
 * **properties**: [CreateOrUpdateTrustedIdProviderProperties](#createorupdatetrustedidproviderproperties) (Required): The trusted identity provider properties to use when creating a new trusted identity provider.
 * **type**: string (ReadOnly): The resource type.
-
-## CreateOrUpdateTrustedIdProviderProperties
-### Properties
-* **idProvider**: string (Required): The URL of this trusted identity provider.
 
 ## CreateVirtualNetworkRuleWithAccountParameters
 ### Properties
@@ -107,12 +99,20 @@
 * **properties**: [CreateOrUpdateVirtualNetworkRuleProperties](#createorupdatevirtualnetworkruleproperties) (Required): The virtual network rule properties to use when creating a new virtual network rule.
 * **type**: string (ReadOnly): The resource type.
 
-## CreateOrUpdateVirtualNetworkRuleProperties
+## EncryptionConfig
 ### Properties
-* **subnetId**: string (Required): The resource identifier for the subnet.
+* **keyVaultMetaInfo**: [KeyVaultMetaInfo](#keyvaultmetainfo): The Key Vault information for connecting to user managed encryption keys.
+* **type**: 'ServiceManaged' | 'UserManaged' (Required): The type of encryption configuration being used. Currently the only supported types are 'UserManaged' and 'ServiceManaged'.
 
-## CreateDataLakeStoreAccountParametersTags
+## EncryptionIdentity
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **principalId**: string (ReadOnly): The principal identifier associated with the encryption.
+* **tenantId**: string (ReadOnly): The tenant identifier associated with the encryption.
+* **type**: 'SystemAssigned' (Required): The type of encryption being used. Currently the only supported type is 'SystemAssigned'.
+
+## KeyVaultMetaInfo
+### Properties
+* **encryptionKeyName**: string (Required): The name of the user managed encryption key.
+* **encryptionKeyVersion**: string (Required): The version of the user managed encryption key.
+* **keyVaultResourceId**: string (Required): The resource identifier for the user managed Key Vault being used to encrypt.
 

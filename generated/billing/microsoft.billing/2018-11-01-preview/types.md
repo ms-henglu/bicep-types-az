@@ -6,7 +6,7 @@
 * **apiVersion**: '2018-11-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [BillingProfileProperties](#billingprofileproperties): The properties of the billing profile.
+* **properties**: [BillingProfileProperties](#billingprofileproperties): A billing profile.
 * **type**: 'Microsoft.Billing/billingAccounts/billingProfiles' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Billing/billingAccounts/billingProfiles/policies@2018-11-01-preview
@@ -24,7 +24,7 @@
 * **apiVersion**: '2018-11-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [InvoiceSectionProperties](#invoicesectionproperties): The properties of an InvoiceSection.
+* **properties**: [InvoiceSectionProperties](#invoicesectionproperties): The InvoiceSection.
 * **type**: 'Microsoft.Billing/billingAccounts/invoiceSections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Billing/billingAccounts/lineOfCredit@2018-11-01-preview
@@ -33,20 +33,8 @@
 * **apiVersion**: '2018-11-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'default' (Required, DeployTimeConstant): The resource name
-* **properties**: [LineOfCreditProperties](#lineofcreditproperties): The properties of the line of credit.
+* **properties**: [LineOfCreditProperties](#lineofcreditproperties): A line of credit.
 * **type**: 'Microsoft.Billing/billingAccounts/lineOfCredit' (ReadOnly, DeployTimeConstant): The resource type
-
-## BillingProfileProperties
-### Properties
-* **address**: [Address](#address): Address details.
-* **currency**: string (ReadOnly): The currency associated with the billing profile.
-* **displayName**: string: The billing profile name.
-* **enabledAzureSKUs**: [EnabledAzureSKUs](#enabledazureskus)[]: Information about the product.
-* **invoiceDay**: int (ReadOnly): Invoice day.
-* **invoiceEmailOptIn**: bool (ReadOnly): If the billing profile is opted in to receive invoices via email.
-* **invoiceSections**: [InvoiceSection](#invoicesection)[]: The invoice sections associated to the billing profile.
-* **isClassic**: bool (ReadOnly): Is OMS bootstrapped billing profile.
-* **poNumber**: string: Purchase order number.
 
 ## Address
 ### Properties
@@ -61,6 +49,30 @@
 * **postalCode**: string: Address Postal Code.
 * **region**: string: Address Region.
 
+## Amount
+### Properties
+* **currency**: string (ReadOnly): The currency for the amount value.
+* **value**: int: Amount value.
+
+## BillingProfile
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [BillingProfileProperties](#billingprofileproperties): A billing profile.
+* **type**: string (ReadOnly): Resource type.
+
+## BillingProfileProperties
+### Properties
+* **address**: [Address](#address): Billing address.
+* **currency**: string (ReadOnly): The currency associated with the billing profile.
+* **displayName**: string: The billing profile name.
+* **enabledAzureSKUs**: [EnabledAzureSKUs](#enabledazureskus)[]: Information about the product.
+* **invoiceDay**: int (ReadOnly): Invoice day.
+* **invoiceEmailOptIn**: bool (ReadOnly): If the billing profile is opted in to receive invoices via email.
+* **invoiceSections**: [InvoiceSection](#invoicesection)[]: The invoice sections associated to the billing profile.
+* **isClassic**: bool (ReadOnly): Is OMS bootstrapped billing profile.
+* **poNumber**: string: Purchase order number.
+
 ## EnabledAzureSKUs
 ### Properties
 * **skuDescription**: string (ReadOnly): The sku description.
@@ -70,7 +82,7 @@
 ### Properties
 * **id**: string (ReadOnly): Resource Id.
 * **name**: string (ReadOnly): Resource name.
-* **properties**: [InvoiceSectionProperties](#invoicesectionproperties): The properties of an InvoiceSection.
+* **properties**: [InvoiceSectionProperties](#invoicesectionproperties): The InvoiceSection.
 * **type**: string (ReadOnly): Resource type.
 
 ## InvoiceSectionProperties
@@ -78,28 +90,16 @@
 * **billingProfiles**: [BillingProfile](#billingprofile)[]: The billing profiles associated to the billing account.
 * **displayName**: string: The name of the InvoiceSection.
 
-## BillingProfile
+## LineOfCreditProperties
 ### Properties
-* **id**: string (ReadOnly): Resource Id.
-* **name**: string (ReadOnly): Resource name.
-* **properties**: [BillingProfileProperties](#billingprofileproperties): The properties of the billing profile.
-* **type**: string (ReadOnly): Resource type.
+* **creditLimit**: [Amount](#amount): The current credit limit.
+* **reason**: string (ReadOnly): The reason for the line of credit status when not approved.
+* **remainingBalance**: [Amount](#amount) (ReadOnly): Remaining balance.
+* **status**: 'Approved' | 'Rejected' | string: The line of credit status.
 
 ## PolicyProperties
 ### Properties
 * **marketplacePurchasesAllowed**: bool: The marketplacePurchasesAllowed flag.
 * **reservationPurchasesAllowed**: bool: The reservationPurchasesAllowed flag.
 * **subscriptionOwnerCanViewCharges**: bool: The subscriptionOwnerCanViewCharges flag.
-
-## LineOfCreditProperties
-### Properties
-* **creditLimit**: [Amount](#amount): The Amount.
-* **reason**: string (ReadOnly): The reason for the line of credit status when not approved.
-* **remainingBalance**: [Amount](#amount) (ReadOnly): The Amount.
-* **status**: 'Approved' | 'Rejected': The line of credit status.
-
-## Amount
-### Properties
-* **currency**: string (ReadOnly): The currency for the amount value.
-* **value**: int: Amount value.
 

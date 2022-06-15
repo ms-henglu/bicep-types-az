@@ -7,7 +7,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The location of the resource. This cannot be changed after the resource is created.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [WorkspaceProperties](#workspaceproperties): The properties of a machine learning workspace.
+* **properties**: [WorkspaceProperties](#workspaceproperties): The properties of the machine learning workspace.
 * **tags**: [ResourceTags](#resourcetags): The tags of the resource.
 * **type**: 'Microsoft.MachineLearning/workspaces' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -15,6 +15,16 @@
 * **Resource**: Microsoft.MachineLearning/workspaces
 * **ApiVersion**: 2016-04-01
 * **Output**: [WorkspaceKeysResponse](#workspacekeysresponse)
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## WorkspaceKeysResponse
+### Properties
+* **primaryToken**: string (ReadOnly): Primary authorization key for this workspace.
+* **secondaryToken**: string (ReadOnly): Secondary authorization key for this workspace.
 
 ## WorkspaceProperties
 ### Properties
@@ -26,14 +36,4 @@
 * **workspaceId**: string (ReadOnly): The immutable id associated with this workspace.
 * **workspaceState**: 'Deleted' | 'Disabled' | 'Enabled' | 'Migrated' | 'Registered' | 'Unregistered' | 'Updated' (ReadOnly): The current state of workspace resource.
 * **workspaceType**: 'Anonymous' | 'Free' | 'PaidPremium' | 'PaidStandard' | 'Production' (ReadOnly): The type of this workspace.
-
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## WorkspaceKeysResponse
-### Properties
-* **primaryToken**: string (ReadOnly): Primary authorization key for this workspace.
-* **secondaryToken**: string (ReadOnly): Secondary authorization key for this workspace.
 

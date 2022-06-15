@@ -28,11 +28,6 @@
 * **timeCreated**: string (ReadOnly): Creation Date for the Log Analytics QueryPack, in ISO 8601 format.
 * **timeModified**: string (ReadOnly): Last modified date of the Log Analytics QueryPack, in ISO 8601 format.
 
-## QueryPacksResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## LogAnalyticsQueryPackQueryProperties
 ### Properties
 * **author**: string (ReadOnly): Object Id of user creating the query.
@@ -40,7 +35,7 @@
 * **description**: string: Description of the query.
 * **displayName**: string (Required): Unique display name for your query within the Query Pack.
 * **id**: string (ReadOnly): The unique ID of your application. This field cannot be changed.
-* **properties**: any: Any object
+* **properties**: any: Additional properties that can be set for the query.
 * **related**: [LogAnalyticsQueryPackQueryPropertiesRelated](#loganalyticsquerypackquerypropertiesrelated): The related metadata items for the function.
 * **tags**: [LogAnalyticsQueryPackQueryPropertiesTags](#loganalyticsquerypackquerypropertiestags): Tags associated with the query.
 * **timeCreated**: string (ReadOnly): Creation Date for the Log Analytics Query, in ISO 8601 format.
@@ -57,12 +52,17 @@
 ### Additional Properties
 * **Additional Properties Type**: string[]
 
+## QueryPacksResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## SystemData
 ### Properties
 * **createdAt**: string: The timestamp of resource creation (UTC)
 * **createdBy**: string: An identifier for the identity that created the resource
-* **createdByType**: 'application' | 'key' | 'managedIdentity' | 'user': The type of identity that creates/modifies resources
+* **createdByType**: 'application' | 'key' | 'managedIdentity' | 'user' | string: The type of identity that created the resource
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: An identifier for the identity that last modified the resource
-* **lastModifiedByType**: 'application' | 'key' | 'managedIdentity' | 'user': The type of identity that creates/modifies resources
+* **lastModifiedByType**: 'application' | 'key' | 'managedIdentity' | 'user' | string: The type of identity that last modified the resource
 

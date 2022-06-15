@@ -5,12 +5,19 @@
 ### Properties
 * **apiVersion**: '2019-03-18-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [Identity](#identity): Managed Identity.
+* **identity**: [Identity](#identity): Hybrid Compute Machine Managed Identity
 * **location**: string (Required): Resource location
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [MachineProperties](#machineproperties): Describes the properties of a hybrid machine.
+* **properties**: [MachineProperties](#machineproperties): Hybrid Compute Machine properties
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.HybridCompute/machines' (ReadOnly, DeployTimeConstant): The resource type
+
+## ErrorDetail
+### Properties
+* **code**: string (Required): The error's code.
+* **details**: [ErrorDetail](#errordetail)[]: Additional error details.
+* **message**: string (Required): A human readable error message.
+* **target**: string: Indicates which property in the request is responsible for the error.
 
 ## Identity
 ### Properties
@@ -33,13 +40,6 @@
 * **provisioningState**: string (ReadOnly): The provisioning state, which only appears in the response.
 * **status**: 'Connected' | 'Disconnected' | 'Error' (ReadOnly): The status of the hybrid machine agent.
 * **vmId**: string (ReadOnly): Specifies the hybrid machine unique ID.
-
-## ErrorDetail
-### Properties
-* **code**: string (Required): The error's code.
-* **details**: [ErrorDetail](#errordetail)[]: Additional error details.
-* **message**: string (Required): A human readable error message.
-* **target**: string: Indicates which property in the request is responsible for the error.
 
 ## OSProfile
 ### Properties
