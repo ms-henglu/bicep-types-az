@@ -16,6 +16,17 @@
 * **ApiVersion**: 2015-08-01
 * **Output**: [RedisListKeysResult](#redislistkeysresult)
 
+## Function regenerateKey (Microsoft.Cache/Redis@2015-08-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2015-08-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisListKeysResult](#redislistkeysresult)
+
+## RedisListKeysResult
+### Properties
+* **primaryKey**: string: The current primary key that clients can use to authenticate with Redis cache.
+* **secondaryKey**: string: The current secondary key that clients can use to authenticate with Redis cache.
+
 ## RedisListKeysResult
 ### Properties
 * **primaryKey**: string: The current primary key that clients can use to authenticate with Redis cache.
@@ -46,6 +57,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): Which Redis access key to reset.
 
 ## ResourceTags
 ### Properties

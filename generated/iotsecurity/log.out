@@ -32,5 +32,11 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 info    | Resource type microsoft.iotsecurity/onpremisesensors under path '/subscriptions/{subscriptionId}/providers/Microsoft.IoTSecurity/onPremiseSensors/{onPremiseSensorName}' has no body defined.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
-info    | autorest.bicep took 10ms
-info    | Autorest completed in 4.72s. 2 files generated.
+warning | Skipping resource action downloadManagerActivation under path '/subscriptions/{subscriptionId}/providers/Microsoft.IoTSecurity/defenderSettings/default/downloadManagerActivation': failed to find a response schema
+warning | Skipping resource action downloadActivation under path '/{scope}/providers/Microsoft.IoTSecurity/sensors/{sensorName}/downloadActivation': failed to find a response schema
+warning | Skipping resource action downloadResetPassword under path '/{scope}/providers/Microsoft.IoTSecurity/sensors/{sensorName}/downloadResetPassword': failed to find a response schema
+warning | Skipping resource action triggerTiPackageUpdate under path '/{scope}/providers/Microsoft.IoTSecurity/sensors/{sensorName}/triggerTiPackageUpdate': failed to find a response schema
+warning | Skipping resource action downloadActivation under path '/subscriptions/{subscriptionId}/providers/Microsoft.IoTSecurity/onPremiseSensors/{onPremiseSensorName}/downloadActivation': failed to find a response schema
+warning | Skipping resource action downloadResetPassword under path '/subscriptions/{subscriptionId}/providers/Microsoft.IoTSecurity/onPremiseSensors/{onPremiseSensorName}/downloadResetPassword': failed to find a response schema
+info    | autorest.bicep took 14ms
+info    | Autorest completed in 4.77s. 2 files generated.

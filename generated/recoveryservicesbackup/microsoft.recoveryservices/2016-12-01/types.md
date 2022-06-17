@@ -24,6 +24,11 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/backupstorageconfig' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backupSecurityPIN (Microsoft.RecoveryServices/vaults@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2016-12-01
+* **Output**: [TokenInformation](#tokeninformation)
+
 ## BackupResourceConfig
 ### Properties
 * **storageModelType**: 'GeoRedundant' | 'Invalid' | 'LocallyRedundant' | string: Storage type
@@ -157,4 +162,10 @@ Backup is VMAppContainer
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TokenInformation
+### Properties
+* **expiryTimeInUtcTicks**: int: Expiry time of token.
+* **securityPIN**: string: Security PIN
+* **token**: string: Token value.
 

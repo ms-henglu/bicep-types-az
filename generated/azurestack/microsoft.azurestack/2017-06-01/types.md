@@ -22,10 +22,44 @@
 * **properties**: [CustomerSubscriptionProperties](#customersubscriptionproperties): Customer subscription properties.
 * **type**: 'Microsoft.AzureStack/registrations/customerSubscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getactivationkey (Microsoft.AzureStack/registrations@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations
+* **ApiVersion**: 2017-06-01
+* **Output**: [ActivationKeyResult](#activationkeyresult)
+
+## Function getProduct (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [DeviceConfiguration](#deviceconfiguration)
+* **Output**: [Product](#product)
+
+## Function getProducts (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [DeviceConfiguration](#deviceconfiguration)
+* **Output**: [ProductList](#productlist)
+
 ## Function listDetails (Microsoft.AzureStack/registrations/products@2017-06-01)
 * **Resource**: Microsoft.AzureStack/registrations/products
 * **ApiVersion**: 2017-06-01
 * **Output**: [ExtendedProduct](#extendedproduct)
+
+## Function uploadProductLog (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [MarketplaceProductLogUpdate](#marketplaceproductlogupdate)
+* **Output**: [ProductLog](#productlog)
+
+## ActivationKeyResult
+### Properties
+* **activationKey**: string: Azure Stack activation key.
+
+## Compatibility
+### Properties
+* **description**: string: Full error message if any compatibility issues are found
+* **isCompatible**: bool: Tells if product is compatible with current device
+* **issues**: 'ADFSIdentitySystemRequired' | 'AzureADIdentitySystemRequired' | 'CapacityBillingModelRequired' | 'ConnectionToAzureRequired' | 'ConnectionToInternetRequired' | 'DevelopmentBillingModelRequired' | 'DisconnectedEnvironmentRequired' | 'HigherDeviceVersionRequired' | 'LowerDeviceVersionRequired' | 'PayAsYouGoBillingModelRequired' | string[]: List of all issues found
+* **message**: string: Short error message if any compatibility issues are found
 
 ## CustomerSubscriptionProperties
 ### Properties
@@ -35,6 +69,16 @@
 ### Properties
 * **lun**: int (ReadOnly): The LUN.
 * **sourceBlobSasUri**: string (ReadOnly): SAS key for source blob.
+
+## DeviceConfiguration
+### Properties
+* **deviceVersion**: string (ReadOnly): Version of the device.
+* **identitySystem**: 'ADFS' | 'AzureAD' | string (ReadOnly): Identity system of the device.
+
+## DeviceConfiguration
+### Properties
+* **deviceVersion**: string (ReadOnly): Version of the device.
+* **identitySystem**: 'ADFS' | 'AzureAD' | string (ReadOnly): Identity system of the device.
 
 ## ExtendedProduct
 ### Properties
@@ -54,10 +98,82 @@
 * **vmOsType**: 'Linux' | 'None' | 'Windows' | string (ReadOnly): Specifies operating system used by the product.
 * **vmScaleSetEnabled**: bool (ReadOnly): Indicates if virtual machine Scale Set is enabled in the specified product.
 
+## IconUris
+### Properties
+* **hero**: string: URI to hero icon.
+* **large**: string: URI to large icon.
+* **medium**: string: URI to medium icon.
+* **small**: string: URI to small icon.
+* **wide**: string: URI to wide icon.
+
+## MarketplaceProductLogUpdate
+### Properties
+* **details**: string (ReadOnly): Error details related to operation.
+* **error**: string (ReadOnly): Error related to the operation.
+* **operation**: string (ReadOnly): Operation to log.
+* **status**: string (ReadOnly): Operation status to log.
+
 ## OsDiskImage
 ### Properties
 * **operatingSystem**: 'Linux' | 'None' | 'Windows' | string (ReadOnly): OS operating system type.
 * **sourceBlobSasUri**: string (ReadOnly): SAS key for source blob.
+
+## Product
+### Properties
+* **etag**: string: The entity tag used for optimistic concurrency when modifying the resource.
+* **id**: string (ReadOnly): ID of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [ProductNestedProperties](#productnestedproperties): Properties of the product resource.
+* **type**: string (ReadOnly): Type of Resource.
+
+## ProductLink
+### Properties
+* **displayName**: string: The description of the link.
+* **uri**: string: The URI corresponding to the link.
+
+## ProductList
+### Properties
+* **nextLink**: string: URI to the next page.
+* **value**: [Product](#product)[]: List of products.
+
+## ProductLog
+### Properties
+* **details**: string (ReadOnly): Operation error details.
+* **endDate**: string (ReadOnly): Operation end datetime.
+* **error**: string (ReadOnly): Operation error data.
+* **id**: string (ReadOnly): Log ID.
+* **operation**: string (ReadOnly): Logged operation.
+* **productId**: string (ReadOnly): Logged product ID.
+* **registrationName**: string (ReadOnly): Logged registration name.
+* **resourceGroupName**: string (ReadOnly): Logged resource group name.
+* **startDate**: string (ReadOnly): Operation start datetime.
+* **status**: string (ReadOnly): Operation status.
+* **subscriptionId**: string (ReadOnly): Logged subscription ID.
+
+## ProductNestedProperties
+### Properties
+* **billingPartNumber**: string: The part number used for billing purposes.
+* **compatibility**: [Compatibility](#compatibility): Product compatibility with current device.
+* **description**: string: The description of the product.
+* **displayName**: string: The display name of the product.
+* **galleryItemIdentity**: string: The identifier of the gallery item corresponding to the product.
+* **iconUris**: [IconUris](#iconuris): Additional links available for this product.
+* **legalTerms**: string: The legal terms.
+* **links**: [ProductLink](#productlink)[]: Additional links available for this product.
+* **offer**: string: The offer representing the product.
+* **offerVersion**: string: The version of the product offer.
+* **payloadLength**: int: The length of product content.
+* **privacyPolicy**: string: The privacy policy.
+* **productKind**: string: The kind of the product (virtualMachine or virtualMachineExtension)
+* **productProperties**: [ProductProperties](#productproperties): Additional properties for the product.
+* **publisherDisplayName**: string: The user-friendly name of the product publisher.
+* **publisherIdentifier**: string: Publisher identifier.
+* **sku**: string: The product SKU.
+* **vmExtensionType**: string: The type of the Virtual Machine Extension.
+
+## ProductProperties
+### Properties
+* **version**: string: The version.
 
 ## RegistrationParameterPropertiesOrRegistrationProperties
 ### Properties

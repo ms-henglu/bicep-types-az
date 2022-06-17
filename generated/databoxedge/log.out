@@ -30,7 +30,14 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 19ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action deviceCapacityCheck under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/deviceCapacityCheck': failed to find a response schema
+warning | Skipping resource action triggerSupportPackage under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 23ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2022-03-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -60,7 +67,14 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 14ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action deviceCapacityCheck under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/deviceCapacityCheck': failed to find a response schema
+warning | Skipping resource action triggerSupportPackage under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 20ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2021-06-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -90,7 +104,13 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 10ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action triggerSupportPackage under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 15ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2021-06-01-preview"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -120,7 +140,13 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 15ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action triggerSupportPackage under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 16ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2021-02-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -150,7 +176,13 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 10ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action triggerSupportPackage under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/triggerSupportPackage': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 11ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2021-02-01-preview"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -184,7 +216,12 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 9ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 11ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2020-12-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -218,7 +255,12 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 33ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 8ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2020-09-01-preview"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -252,7 +294,12 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 6ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 16ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2020-09-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -286,7 +333,12 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MECRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 17ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 10ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2020-05-01-preview"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -305,7 +357,12 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'IoTRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 4ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
+info    | autorest.bicep took 11ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2019-08-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -324,6 +381,11 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'IoTRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/storageAccounts/{storageAccountName}/containers/{containerName}/refresh': failed to find a response schema
 info    | autorest.bicep took 6ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2019-07-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
@@ -343,7 +405,11 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'IoTRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 4ms
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+info    | autorest.bicep took 6ms
 info    | Processing batch task - {"tag":"microsoft.databoxedge-2019-03-01"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -362,5 +428,9 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'IoTRole' has a propert
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'id' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'name' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'PeriodicTimerEventTrigger' has a property 'type' that is already declared the parent schema 'ARMBaseModel' but isn't significantly different. The property has been removed from PeriodicTimerEventTrigger
-info    | autorest.bicep took 4ms
-info    | Autorest completed in 54.46s. 26 files generated.
+warning | Skipping resource action downloadUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/downloadUpdates': failed to find a response schema
+warning | Skipping resource action installUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/installUpdates': failed to find a response schema
+warning | Skipping resource action scanForUpdates under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/scanForUpdates': failed to find a response schema
+warning | Skipping resource action refresh under path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBoxEdge/dataBoxEdgeDevices/{deviceName}/shares/{name}/refresh': failed to find a response schema
+info    | autorest.bicep took 6ms
+info    | Autorest completed in 55.15s. 26 files generated.

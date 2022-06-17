@@ -10,6 +10,16 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.MarketplaceOrdering/offerTypes/publishers/offers/plans/agreements' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.MarketplaceOrdering/agreements/offers/plans@2021-01-01)
+* **Resource**: Microsoft.MarketplaceOrdering/agreements/offers/plans
+* **ApiVersion**: 2021-01-01
+* **Output**: [AgreementTerms](#agreementterms)
+
+## Function sign (Microsoft.MarketplaceOrdering/agreements/offers/plans@2021-01-01)
+* **Resource**: Microsoft.MarketplaceOrdering/agreements/offers/plans
+* **ApiVersion**: 2021-01-01
+* **Output**: [AgreementTerms](#agreementterms)
+
 ## AgreementProperties
 ### Properties
 * **accepted**: bool: If any version of the terms have been accepted, otherwise false.
@@ -21,6 +31,22 @@
 * **publisher**: string: Publisher identifier string of image being deployed.
 * **retrieveDatetime**: string: Date and time in UTC of when the terms were accepted. This is empty if Accepted is false.
 * **signature**: string: Terms signature.
+
+## AgreementTerms
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [AgreementProperties](#agreementproperties): Represents the properties of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
+* **type**: string (ReadOnly): Resource type.
+
+## AgreementTerms
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [AgreementProperties](#agreementproperties): Represents the properties of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
+* **type**: string (ReadOnly): Resource type.
 
 ## SystemData
 ### Properties

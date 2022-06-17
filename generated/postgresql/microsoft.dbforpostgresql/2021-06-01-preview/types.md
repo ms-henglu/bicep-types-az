@@ -43,6 +43,17 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforPostgreSQL/locations@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function resetQueryPerformanceInsightData (Microsoft.DBforPostgreSQL/flexibleServers@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2021-06-01-preview
+* **Output**: [QueryPerformanceInsightResetDataResult](#queryperformanceinsightresetdataresult)
+
 ## Backup
 ### Properties
 * **backupRetentionDays**: int: Backup retention days for the server.
@@ -68,6 +79,11 @@
 * **charset**: string: The charset of the database.
 * **collation**: string: The collation of the database.
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
+
 ## FirewallRuleProperties
 ### Properties
 * **endIpAddress**: string (Required): The end IP address of the server firewall rule. Must be IPv4 format.
@@ -91,6 +107,11 @@
 * **delegatedSubnetResourceId**: string: delegated subnet arm resource id.
 * **privateDnsZoneArmResourceId**: string: private dns zone arm resource id.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string (ReadOnly): public network access is enabled or not
+
+## QueryPerformanceInsightResetDataResult
+### Properties
+* **message**: string: result operation message.
+* **status**: 'Failed' | 'Succeeded' | string: Indicates result of the operation.
 
 ## ServerProperties
 ### Properties
@@ -132,4 +153,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
 

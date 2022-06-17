@@ -76,6 +76,30 @@
 * **ApiVersion**: 2020-03-01
 * **Output**: [ClusterJobListResult](#clusterjoblistresult)
 
+## Function retrieveDefaultDefinition (Microsoft.StreamAnalytics/streamingjobs/functions@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/functions
+* **ApiVersion**: 2020-03-01
+* **Input**: [FunctionRetrieveDefaultDefinitionParameters](#functionretrievedefaultdefinitionparameters)
+* **Output**: [Function](#function)
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/inputs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/inputs
+* **ApiVersion**: 2020-03-01
+* **Input**: [Input](#input)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/outputs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/outputs
+* **ApiVersion**: 2020-03-01
+* **Input**: [Output](#output)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/functions@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/functions
+* **ApiVersion**: 2020-03-01
+* **Input**: [Function](#function)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
 ## AzureDataLakeStoreOutputDataSourceProperties
 ### Properties
 * **accountName**: string: The name of the Azure Data Lake Store account. Required on PUT (CreateOrReplace) requests.
@@ -103,6 +127,11 @@
 * **endpoint**: string: The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs
 * **inputs**: [AzureMachineLearningWebServiceInputs](#azuremachinelearningwebserviceinputs): The inputs for the Azure Machine Learning web service endpoint.
 * **outputs**: [AzureMachineLearningWebServiceOutputColumn](#azuremachinelearningwebserviceoutputcolumn)[]: A list of outputs from the Azure Machine Learning web service endpoint execution.
+
+## AzureMachineLearningWebServiceFunctionBindingRetrievalProperties
+### Properties
+* **executeEndpoint**: string: The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs
+* **udfType**: 'Scalar': The function type.
 
 ## AzureMachineLearningWebServiceInputColumn
 ### Properties
@@ -245,6 +274,11 @@
 * **documentId**: string: The name of the field in output events used to specify the primary key which insert or update operations are based on.
 * **partitionKey**: string: The name of the field in output events used to specify the key for partitioning output across collections. If 'collectionNamePattern' contains the {partition} token, this property is required to be specified.
 
+## ErrorResponse
+### Properties
+* **code**: string (ReadOnly): Error code associated with the error that occurred.
+* **message**: string (ReadOnly): Describes the error in detail.
+
 ## EventHubOutputDataSourceProperties
 ### Properties
 * **authenticationMode**: 'ConnectionString' | 'Msi' | 'UserToken' | string: Authentication Mode.
@@ -263,6 +297,20 @@
 * **serviceBusNamespace**: string: The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc. Required on PUT (CreateOrReplace) requests.
 * **sharedAccessPolicyKey**: string: The shared access policy key for the specified shared access policy. Required on PUT (CreateOrReplace) requests.
 * **sharedAccessPolicyName**: string: The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc. Required on PUT (CreateOrReplace) requests.
+
+## Function
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [FunctionProperties](#functionproperties): The properties that are associated with a function.
+* **type**: string (ReadOnly): Resource type
+
+## Function
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [FunctionProperties](#functionproperties): The properties that are associated with a function.
+* **type**: string (ReadOnly): Resource type
 
 ## Function
 ### Properties
@@ -316,11 +364,33 @@
 * **type**: 'Scalar' (Required): Indicates the type of function.
 
 
+## FunctionRetrieveDefaultDefinitionParameters
+* **Discriminator**: bindingType
+
+### Base Properties
+### AzureMachineLearningWebServiceFunctionRetrieveDefaultDefinitionParameters
+#### Properties
+* **bindingRetrievalProperties**: [AzureMachineLearningWebServiceFunctionBindingRetrievalProperties](#azuremachinelearningwebservicefunctionbindingretrievalproperties): The binding retrieval properties associated with an Azure Machine learning web service.
+* **bindingType**: 'Microsoft.MachineLearning/WebService' (Required): Indicates the function binding type.
+
+### JavaScriptFunctionRetrieveDefaultDefinitionParameters
+#### Properties
+* **bindingRetrievalProperties**: [JavaScriptFunctionBindingRetrievalProperties](#javascriptfunctionbindingretrievalproperties): The binding retrieval properties associated with a JavaScript function.
+* **bindingType**: 'Microsoft.StreamAnalytics/JavascriptUdf' (Required): Indicates the function binding type.
+
+
 ## Identity
 ### Properties
 * **principalId**: string: The identity principal ID
 * **tenantId**: string: The identity tenantId
 * **type**: string: The identity type
+
+## Input
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [InputProperties](#inputproperties): The properties that are associated with an input. Required on PUT (CreateOrReplace) requests.
+* **type**: string (ReadOnly): Resource type
 
 ## Input
 ### Properties
@@ -361,6 +431,11 @@
 ### Properties
 * **script**: string: The JavaScript code containing a single function definition. For example: 'function (x, y) { return x + y; }'
 
+## JavaScriptFunctionBindingRetrievalProperties
+### Properties
+* **script**: string: The JavaScript code containing a single function definition. For example: 'function (x, y) { return x + y; }'.
+* **udfType**: 'Scalar': The function type.
+
 ## JobStorageAccount
 ### Properties
 * **accountKey**: string: The account key for the Azure Storage account. Required on PUT (CreateOrReplace) requests.
@@ -371,6 +446,13 @@
 ### Properties
 * **encoding**: 'UTF8' | string: Specifies the encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. Required on PUT (CreateOrReplace) requests.
 * **format**: 'Array' | 'LineSeparated' | string: This property only applies to JSON serialization of outputs only. It is not applicable to inputs. This property specifies the format of the JSON the output will be written in. The currently supported values are 'lineSeparated' indicating the output will be formatted by having each JSON object separated by a new line and 'array' indicating the output will be formatted as an array of JSON objects. Default value is 'lineSeparated' if left null.
+
+## Output
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [OutputProperties](#outputproperties): The properties that are associated with an output. Required on PUT (CreateOrReplace) requests.
+* **type**: string (ReadOnly): Resource type
 
 ## Output
 ### Properties
@@ -500,6 +582,21 @@
 * **properties**: [BlobReferenceInputDataSourceProperties](#blobreferenceinputdatasourceproperties): The properties that are associated with a blob input containing reference data. Required on PUT (CreateOrReplace) requests.
 * **type**: 'Microsoft.Storage/Blob' (Required): Indicates the type of input data source containing reference data. Required on PUT (CreateOrReplace) requests.
 
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
 
 ## Serialization
 * **Discriminator**: type

@@ -117,6 +117,32 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2020-09-30)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2020-09-30
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2020-09-30)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2020-09-30
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function share (Microsoft.Compute/galleries@2020-09-30)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2020-09-30
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+
 ## CreationData
 ### Properties
 * **createOption**: 'Attach' | 'Copy' | 'Empty' | 'FromImage' | 'Import' | 'Restore' | 'Upload' | string (Required): This enumerates the possible sources of a disk's creation.
@@ -319,6 +345,16 @@
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Migrating' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state, which only appears in the response.
 * **sharingProfile**: [SharingProfile](#sharingprofile): Profile for gallery sharing to subscription or tenant
 
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required)
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required)
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+
 ## ImageDiskReference
 ### Properties
 * **id**: string (Required): A relative uri containing either a Platform Image Repository or user image reference.
@@ -459,6 +495,16 @@
 ### Properties
 * **ids**: string[]: A list of subscription/tenant ids the gallery is aimed to be shared to.
 * **type**: 'AADTenants' | 'Subscriptions' | string: This property allows you to specify the type of sharing group. <br><br> Possible values are: <br><br> **Subscriptions** <br><br> **AADTenants**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
 
 ## SnapshotProperties
 ### Properties

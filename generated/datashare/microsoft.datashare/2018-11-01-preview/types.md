@@ -199,6 +199,12 @@
 * **properties**: [ScheduledTriggerProperties](#scheduledtriggerproperties) (Required): Properties of scheduled synchronization
 
 
+## Function cancelSynchronization (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
+* **Output**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
+
 ## Function listSourceShareSynchronizationSettings (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
 * **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
 * **ApiVersion**: 2018-11-01-preview
@@ -225,6 +231,28 @@
 * **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
 * **ApiVersion**: 2018-11-01-preview
 * **Output**: [ShareSubscriptionSynchronizationList](#sharesubscriptionsynchronizationlist)
+
+## Function reinstate (Microsoft.DataShare/accounts/shares/providerShareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shares/providerShareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Output**: [ProviderShareSubscription](#providersharesubscription)
+
+## Function rejectInvitation (Microsoft.DataShare/locations@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/locations
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [ConsumerInvitation](#consumerinvitation)
+* **Output**: [ConsumerInvitation](#consumerinvitation)
+
+## Function revoke (Microsoft.DataShare/accounts/shares/providerShareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shares/providerShareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Output**: [ProviderShareSubscription](#providersharesubscription)
+
+## Function synchronize (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [Synchronize](#synchronize)
+* **Output**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
 
 ## AccountProperties
 ### Properties
@@ -368,6 +396,37 @@
 * **storageAccountName**: string (Required): Storage account name of the source data set
 * **subscriptionId**: string (Required): Subscription id of storage account
 
+## ConsumerInvitation
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ConsumerInvitationProperties](#consumerinvitationproperties) (Required): Properties on the account
+* **type**: string (ReadOnly): Type of the azure resource
+
+## ConsumerInvitation
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ConsumerInvitationProperties](#consumerinvitationproperties) (Required): Properties on the account
+* **type**: string (ReadOnly): Type of the azure resource
+
+## ConsumerInvitationProperties
+### Properties
+* **dataSetCount**: int (ReadOnly): Number of data sets in a share
+* **description**: string (ReadOnly): Description shared when the invitation was created
+* **invitationId**: string (Required): Unique id of the invitation.
+* **invitationStatus**: 'Accepted' | 'Pending' | 'Rejected' | 'Withdrawn' | string (ReadOnly): The status of the invitation.
+* **location**: string (ReadOnly): invitation location
+* **providerEmail**: string (ReadOnly): Email of the provider who created the resource
+* **providerName**: string (ReadOnly): Name of the provider who created the resource
+* **providerTenantName**: string (ReadOnly): Tenant name of the provider who created the resource
+* **respondedAt**: string (ReadOnly): The time the recipient responded to the invitation.
+* **sentAt**: string (ReadOnly): Gets the time at which the invitation was sent.
+* **shareName**: string (ReadOnly): Gets the source share Name.
+* **termsOfUse**: string (ReadOnly): Terms of use shared when the invitation was created
+* **userEmail**: string (ReadOnly): Email of the user who created the resource
+* **userName**: string (ReadOnly): Name of the user who created the resource
+
 ## DefaultDtoTags
 ### Properties
 ### Additional Properties
@@ -423,6 +482,32 @@ invitations to specific users or applications in an AD tenant.
 * **location**: string (ReadOnly): Location of the kusto cluster.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Succeeded' | string (ReadOnly): Provisioning state of the kusto database data set.
 
+## ProviderShareSubscription
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ProviderShareSubscriptionProperties](#providersharesubscriptionproperties): properties of providerShareSubscription
+* **type**: string (ReadOnly): Type of the azure resource
+
+## ProviderShareSubscription
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ProviderShareSubscriptionProperties](#providersharesubscriptionproperties): properties of providerShareSubscription
+* **type**: string (ReadOnly): Type of the azure resource
+
+## ProviderShareSubscriptionProperties
+### Properties
+* **consumerEmail**: string (ReadOnly): Email of the consumer who created the share subscription
+* **consumerName**: string (ReadOnly): Name of the consumer who created the share subscription
+* **consumerTenantName**: string (ReadOnly): Tenant name of the consumer who created the share subscription
+* **createdAt**: string (ReadOnly): created at
+* **providerEmail**: string (ReadOnly): Email of the provider who created the share
+* **providerName**: string (ReadOnly): Name of the provider who created the share
+* **sharedAt**: string (ReadOnly): Shared at
+* **shareSubscriptionObjectId**: string (ReadOnly): share Subscription Object Id
+* **shareSubscriptionStatus**: 'Active' | 'Revoked' | 'Revoking' | 'SourceDeleted' | string (ReadOnly): Gets the status of share subscription
+
 ## ScheduledSourceShareSynchronizationSettingProperties
 ### Properties
 * **recurrenceInterval**: 'Day' | 'Hour' | string: Recurrence Interval
@@ -471,6 +556,36 @@ invitations to specific users or applications in an AD tenant.
 * **shareTerms**: string (ReadOnly): Terms of a share
 * **userEmail**: string (ReadOnly): Email of the user who created the resource
 * **userName**: string (ReadOnly): Name of the user who created the resource
+
+## ShareSubscriptionSynchronization
+### Properties
+* **durationMs**: int (ReadOnly): Synchronization duration
+* **endTime**: string (ReadOnly): End time of synchronization
+* **message**: string (ReadOnly): message of Synchronization
+* **startTime**: string (ReadOnly): start time of synchronization
+* **status**: string (ReadOnly): Raw Status
+* **synchronizationId**: string (Required): Synchronization id
+* **synchronizationMode**: 'FullSync' | 'Incremental' | string (ReadOnly): Synchronization Mode
+
+## ShareSubscriptionSynchronization
+### Properties
+* **durationMs**: int (ReadOnly): Synchronization duration
+* **endTime**: string (ReadOnly): End time of synchronization
+* **message**: string (ReadOnly): message of Synchronization
+* **startTime**: string (ReadOnly): start time of synchronization
+* **status**: string (ReadOnly): Raw Status
+* **synchronizationId**: string (Required): Synchronization id
+* **synchronizationMode**: 'FullSync' | 'Incremental' | string (ReadOnly): Synchronization Mode
+
+## ShareSubscriptionSynchronization
+### Properties
+* **durationMs**: int (ReadOnly): Synchronization duration
+* **endTime**: string (ReadOnly): End time of synchronization
+* **message**: string (ReadOnly): message of Synchronization
+* **startTime**: string (ReadOnly): start time of synchronization
+* **status**: string (ReadOnly): Raw Status
+* **synchronizationId**: string (Required): Synchronization id
+* **synchronizationMode**: 'FullSync' | 'Incremental' | string (ReadOnly): Synchronization Mode
 
 ## ShareSubscriptionSynchronization
 ### Properties
@@ -583,4 +698,8 @@ invitations to specific users or applications in an AD tenant.
 ### Properties
 * **nextLink**: string: The Url of next result page.
 * **value**: [SynchronizationDetails](#synchronizationdetails)[] (Required): Collection of items of type DataTransferObjects.
+
+## Synchronize
+### Properties
+* **synchronizationMode**: 'FullSync' | 'Incremental' | string: Mode of synchronization used in triggers and snapshot sync. Incremental by default
 

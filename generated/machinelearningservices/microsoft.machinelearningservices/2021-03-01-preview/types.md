@@ -217,6 +217,18 @@
 * **tags**: [PrivateEndpointConnectionTags](#privateendpointconnectiontags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.MachineLearningServices/workspaces/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function exportLabels (Microsoft.MachineLearningServices/workspaces/labelingJobs@2021-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/labelingJobs
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [ExportSummary](#exportsummary)
+* **Output**: [ExportSummary](#exportsummary)
+
+## Function getLogs (Microsoft.MachineLearningServices/workspaces/onlineEndpoints/deployments@2021-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/onlineEndpoints/deployments
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [DeploymentLogsRequest](#deploymentlogsrequest)
+* **Output**: [DeploymentLogs](#deploymentlogs)
+
 ## Function listKeys (Microsoft.MachineLearningServices/workspaces@2021-03-01-preview)
 * **Resource**: Microsoft.MachineLearningServices/workspaces
 * **ApiVersion**: 2021-03-01-preview
@@ -261,6 +273,22 @@
 * **Resource**: Microsoft.MachineLearningServices/workspaces
 * **ApiVersion**: 2021-03-01-preview
 * **Output**: [ListStorageAccountKeysResult](#liststorageaccountkeysresult)
+
+## Function prepareNotebook (Microsoft.MachineLearningServices/workspaces@2021-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2021-03-01-preview
+* **Output**: [NotebookResourceInfo](#notebookresourceinfo)
+
+## Function token (Microsoft.MachineLearningServices/workspaces/onlineEndpoints@2021-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/onlineEndpoints
+* **ApiVersion**: 2021-03-01-preview
+* **Output**: [EndpointAuthToken](#endpointauthtoken)
+
+## Function updateQuotas (Microsoft.MachineLearningServices/locations@2021-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/locations
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [QuotaUpdateParameters](#quotaupdateparameters)
+* **Output**: [UpdateWorkspaceQuotasResult](#updateworkspacequotasresult)
 
 ## AccountKeyDatastoreSecrets
 ### Properties
@@ -864,6 +892,15 @@ https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-conta
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## DeploymentLogs
+### Properties
+* **content**: string: The retrieved online deployment logs.
+
+## DeploymentLogsRequest
+### Properties
+* **containerType**: 'InferenceServer' | 'StorageInitializer' | string: The type of container to retrieve logs from.
+* **tail**: int: The maximum number of lines to tail.
+
 ## DistributionConfiguration
 * **Discriminator**: distributionType
 
@@ -953,6 +990,13 @@ The path is relative to the asset path which must contain a single Blob URI valu
 * **primaryKey**: string: The primary key.
 * **secondaryKey**: string: The secondary key.
 
+## EndpointAuthToken
+### Properties
+* **accessToken**: string: Access token.
+* **expiryTimeUtc**: int: Access token expiry time (UTC).
+* **refreshAfterTimeUtc**: int: Refresh access token after time (UTC).
+* **tokenType**: string: Access token type.
+
 ## EnvironmentContainer
 ### Properties
 * **description**: string: The asset description text.
@@ -1008,6 +1052,58 @@ The path is relative to the asset path which must contain a single Blob URI valu
 ## ErrorResponse
 ### Properties
 * **error**: [ErrorDetail](#errordetail): The error object.
+
+## ExportSummary
+* **Discriminator**: format
+
+### Base Properties
+* **endTimeUtc**: string (ReadOnly): The time when the export was completed.
+* **exportedRowCount**: int (ReadOnly): The total number of labeled datapoints exported.
+* **labelingJobId**: string (ReadOnly): Name and identifier of the job containing exported labels.
+* **startTimeUtc**: string (ReadOnly): The time when the export was requested.
+### CocoExportSummary
+#### Properties
+* **containerName**: string (ReadOnly): The container name to which the labels will be exported.
+* **format**: 'Coco' (Required): [Required] The format of exported labels, also as the discriminator.
+* **snapshotPath**: string (ReadOnly): The output path where the labels will be exported.
+
+### CsvExportSummary
+#### Properties
+* **containerName**: string (ReadOnly): The container name to which the labels will be exported.
+* **format**: 'CSV' (Required): [Required] The format of exported labels, also as the discriminator.
+* **snapshotPath**: string (ReadOnly): The output path where the labels will be exported.
+
+### DatasetExportSummary
+#### Properties
+* **format**: 'Dataset' (Required): [Required] The format of exported labels, also as the discriminator.
+* **labeledAssetName**: string (ReadOnly): The unique name of the labeled data asset.
+
+
+## ExportSummary
+* **Discriminator**: format
+
+### Base Properties
+* **endTimeUtc**: string (ReadOnly): The time when the export was completed.
+* **exportedRowCount**: int (ReadOnly): The total number of labeled datapoints exported.
+* **labelingJobId**: string (ReadOnly): Name and identifier of the job containing exported labels.
+* **startTimeUtc**: string (ReadOnly): The time when the export was requested.
+### CocoExportSummary
+#### Properties
+* **containerName**: string (ReadOnly): The container name to which the labels will be exported.
+* **format**: 'Coco' (Required): [Required] The format of exported labels, also as the discriminator.
+* **snapshotPath**: string (ReadOnly): The output path where the labels will be exported.
+
+### CsvExportSummary
+#### Properties
+* **containerName**: string (ReadOnly): The container name to which the labels will be exported.
+* **format**: 'CSV' (Required): [Required] The format of exported labels, also as the discriminator.
+* **snapshotPath**: string (ReadOnly): The output path where the labels will be exported.
+
+### DatasetExportSummary
+#### Properties
+* **format**: 'Dataset' (Required): [Required] The format of exported labels, also as the discriminator.
+* **labeledAssetName**: string (ReadOnly): The unique name of the labeled data asset.
+
 
 ## FlavorData
 ### Properties
@@ -1349,6 +1445,12 @@ For local jobs, a job endpoint will have an endpoint value of FileStreamObject.
 * **notebookPreparationError**: [NotebookPreparationError](#notebookpreparationerror): The error that occurs when preparing notebook.
 * **resourceId**: string: the data plane resourceId that used to initialize notebook component
 
+## NotebookResourceInfo
+### Properties
+* **fqdn**: string
+* **notebookPreparationError**: [NotebookPreparationError](#notebookpreparationerror): The error that occurs when preparing notebook.
+* **resourceId**: string: the data plane resourceId that used to initialize notebook component
+
 ## Objective
 ### Properties
 * **goal**: 'Maximize' | 'Minimize' | string (Required): [Required] Defines supported metric goals for hyperparameter tuning
@@ -1508,6 +1610,18 @@ optional
 * **incrementalDatasetLastRefreshTime**: string (ReadOnly): The time of last successful incremental dataset refresh in UTC.
 * **skippedDatapointCount**: int (ReadOnly): The skipped datapoint count.
 * **totalDatapointCount**: int (ReadOnly): The total datapoint count.
+
+## QuotaBaseProperties
+### Properties
+* **id**: string: Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **type**: string: Specifies the resource type.
+* **unit**: 'Count' | string: An enum describing the unit of quota measurement.
+
+## QuotaUpdateParameters
+### Properties
+* **location**: string: Region of workspace quota to be updated.
+* **value**: [QuotaBaseProperties](#quotabaseproperties)[]: The list for update quota.
 
 ## Recurrence
 ### Properties
@@ -1690,6 +1804,19 @@ Only supports duration with precision as low as Seconds.
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [OutputDataBinding](#outputdatabinding)
+
+## UpdateWorkspaceQuotas
+### Properties
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **status**: 'Failure' | 'InvalidQuotaBelowClusterMinimum' | 'InvalidQuotaExceedsSubscriptionLimit' | 'InvalidVMFamilyName' | 'OperationNotEnabledForRegion' | 'OperationNotSupportedForSku' | 'Success' | 'Undefined' | string: Status of update workspace quota.
+* **type**: string (ReadOnly): Specifies the resource type.
+* **unit**: 'Count' | string (ReadOnly): An enum describing the unit of quota measurement.
+
+## UpdateWorkspaceQuotasResult
+### Properties
+* **nextLink**: string (ReadOnly): The URI to fetch the next page of workspace quota update result. Call ListNext() with this to fetch the next page of Workspace Quota update result.
+* **value**: [UpdateWorkspaceQuotas](#updateworkspacequotas)[] (ReadOnly): The list of workspace quota update result.
 
 ## UserAccountCredentials
 ### Properties

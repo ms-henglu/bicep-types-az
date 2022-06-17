@@ -14,6 +14,7 @@ warning | PreCheck/SchemaMissingType | The schema 'ServicesResource' with an und
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2022-05-15/healthcare-apis.json:2521:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 info    | autorest.bicep took 14ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2022-01-31-preview"} .
@@ -26,6 +27,7 @@ warning | PreCheck/SchemaMissingType | The schema 'ServicesResource' with an und
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/preview/2022-01-31-preview/healthcare-apis.json:2546:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 info    | autorest.bicep took 6ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2021-11-01"} .
@@ -38,6 +40,7 @@ warning | PreCheck/SchemaMissingType | The schema 'ServicesResource' with an und
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2021-11-01/healthcare-apis.json:2521:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 info    | autorest.bicep took 5ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2021-06-01-preview"} .
@@ -58,6 +61,7 @@ warning | PreCheck/SchemaMissingType | The schema 'PrivateLinkResourceListResult
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/preview/2021-06-01-preview/healthcare-apis.json:2452:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 info    | autorest.bicep took 4ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2021-01-11"} .
@@ -80,6 +84,7 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
 warning | Modeler/MissingType | The schema 'OperationResultsDescription-properties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2021-01-11/healthcare-apis.json#/components/schemas/OperationResultsDescription-properties
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 info    | autorest.bicep took 4ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2020-03-30"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
@@ -93,6 +98,7 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
 warning | Modeler/MissingType | The schema 'OperationResultsDescription-properties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2020-03-30/healthcare-apis.json#/components/schemas/OperationResultsDescription-properties
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 info    | autorest.bicep took 1ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2020-03-15"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
@@ -106,7 +112,8 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
 warning | Modeler/MissingType | The schema 'OperationResultsDescription-properties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2020-03-15/healthcare-apis.json#/components/schemas/OperationResultsDescription-properties
-info    | autorest.bicep took 1ms
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
+info    | autorest.bicep took 2ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2019-09-16"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
 info    |    Loading AutoRest extension '@autorest/modelerfour' (*->4.23.6)
@@ -119,6 +126,7 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
 warning | Modeler/MissingType | The schema 'OperationResultsDescription-properties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/stable/2019-09-16/healthcare-apis.json#/components/schemas/OperationResultsDescription-properties
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
 info    | autorest.bicep took 1ms
 info    | Processing batch task - {"tag":"microsoft.healthcareapis-2018-08-20-preview"} .
 info    |    Loading local AutoRest extension '@autorest/bicep' (/home/runner/work/bicep-types-az/bicep-types-az/src/autorest.bicep)
@@ -132,5 +140,6 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SecurityDefinedSpecAndConfig | OpenAPI spec has a security definition but autorest security config is defined. Security config from autorest will be used.
 warning | Modeler/MissingType | The schema 'OperationResultsDescription-properties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/healthcareapis/resource-manager/Microsoft.HealthcareApis/preview/2018-08-20-preview/healthcare-apis.json#/components/schemas/OperationResultsDescription-properties
-info    | autorest.bicep took 1ms
-info    | Autorest completed in 18.13s. 18 files generated.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.HealthcareApis/checkNameAvailability': Unable to find type segments
+info    | autorest.bicep took 2ms
+info    | Autorest completed in 18.46s. 18 files generated.

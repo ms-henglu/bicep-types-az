@@ -58,6 +58,11 @@
 * **properties**: [MAMPolicyAppOrGroupIdProperties](#mampolicyapporgroupidproperties): Android Policy request body for Intune MAM.
 * **type**: 'Microsoft.Intune/locations/iosPolicies/groups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function wipe (Microsoft.Intune/locations/users/devices@2015-01-14-preview)
+* **Resource**: Microsoft.Intune/locations/users/devices
+* **ApiVersion**: 2015-01-14-preview
+* **Output**: [WipeDeviceOperationResult](#wipedeviceoperationresult)
+
 ## AndroidMAMPolicyProperties
 ### Properties
 * **accessRecheckOfflineTimeout**: string
@@ -117,4 +122,22 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## WipeDeviceOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **location**: string: Resource Location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [WipeDeviceOperationResultProperties](#wipedeviceoperationresultproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource Tags
+* **type**: string (ReadOnly): Resource type
+
+## WipeDeviceOperationResultProperties
+### Properties
+* **value**: string (Required)
 

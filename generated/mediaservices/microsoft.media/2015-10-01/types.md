@@ -16,6 +16,12 @@
 * **ApiVersion**: 2015-10-01
 * **Output**: [ServiceKeys](#servicekeys)
 
+## Function regenerateKey (Microsoft.Media/mediaservices@2015-10-01)
+* **Resource**: Microsoft.Media/mediaservices
+* **ApiVersion**: 2015-10-01
+* **Input**: [RegenerateKeyInput](#regeneratekeyinput)
+* **Output**: [RegenerateKeyOutput](#regeneratekeyoutput)
+
 ## ApiEndpoint
 ### Properties
 * **endpoint**: string: The Media Services REST endpoint.
@@ -25,6 +31,14 @@
 ### Properties
 * **apiEndpoints**: [ApiEndpoint](#apiendpoint)[] (ReadOnly): Read-only property that lists the Media Services REST API endpoints for this resource. If supplied on a PUT or PATCH, the value will be ignored.
 * **storageAccounts**: [StorageAccount](#storageaccount)[]: The storage accounts for this resource.
+
+## RegenerateKeyInput
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The keyType indicating which key you want to regenerate, Primary or Secondary.
+
+## RegenerateKeyOutput
+### Properties
+* **key**: string: The new value of either the primary or secondary key.
 
 ## ResourceTags
 ### Properties

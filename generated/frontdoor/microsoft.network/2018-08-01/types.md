@@ -23,6 +23,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/FrontDoorWebApplicationFirewallPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function validateCustomDomain (Microsoft.Network/frontDoors@2018-08-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2018-08-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## AzureManagedOverrideRuleGroup
 ### Properties
 * **action**: 'Allow' | 'Block' | 'Log' | string (Required): Type of Actions
@@ -218,6 +224,16 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource ID.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
 
 ## WebApplicationFirewallPolicyPropertiesFormat
 ### Properties

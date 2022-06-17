@@ -25,6 +25,12 @@
 * **ApiVersion**: 2015-02-01-preview
 * **Output**: [WorkflowSecretKeys](#workflowsecretkeys)
 
+## Function regenerate (Microsoft.Logic/workflows/accessKeys@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows/accessKeys
+* **ApiVersion**: 2015-02-01-preview
+* **Input**: [RegenerateSecretKeyParameters](#regeneratesecretkeyparameters)
+* **Output**: [WorkflowSecretKeys](#workflowsecretkeys)
+
 ## ContentHash
 ### Properties
 * **algorithm**: string: Gets or sets the algorithm.
@@ -37,6 +43,10 @@
 * **contentVersion**: string: Gets or sets the content version.
 * **metadata**: any: Gets or sets the metadata.
 * **uri**: string: Gets or sets the content link URI.
+
+## RegenerateSecretKeyParameters
+### Properties
+* **keyType**: 'NotSpecified' | 'Primary' | 'Secondary': Gets or sets the key type.
 
 ## ResourceReference
 ### Properties
@@ -83,6 +93,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [WorkflowParameter](#workflowparameter)
+
+## WorkflowSecretKeys
+### Properties
+* **primarySecretKey**: string (ReadOnly): Gets the primary secret key.
+* **secondarySecretKey**: string (ReadOnly): Gets the secondary secret key.
 
 ## WorkflowSecretKeys
 ### Properties

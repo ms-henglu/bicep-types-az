@@ -72,6 +72,23 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backupSecurityPIN (Microsoft.RecoveryServices/vaults@2021-01-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2021-01-01
+* **Output**: [TokenInformation](#tokeninformation)
+
+## Function backupValidateOperation (Microsoft.RecoveryServices/vaults@2021-01-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2021-01-01
+* **Input**: [ValidateOperationRequest](#validateoperationrequest)
+* **Output**: [ValidateOperationsResponse](#validateoperationsresponse)
+
+## Function recoveryPointsRecommendedForMove (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-01-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems
+* **ApiVersion**: 2021-01-01
+* **Input**: [ListRecoveryPointsRecommendedForMoveRequest](#listrecoverypointsrecommendedformoverequest)
+* **Output**: [RecoveryPointResourceList](#recoverypointresourcelist)
+
 ## AzureFileshareProtectedItemExtendedInfo
 ### Properties
 * **oldestRecoveryPoint**: string: The oldest backup copy available for this item in the service.
@@ -107,6 +124,12 @@
 * **storageType**: 'GeoRedundant' | 'Invalid' | 'LocallyRedundant' | 'ReadAccessGeoZoneRedundant' | 'ZoneRedundant' | string: Storage type.
 * **storageTypeState**: 'Invalid' | 'Locked' | 'Unlocked' | string: Locked or Unlocked. Once a machine is registered against a resource, the storageTypeState is always Locked.
 
+## BEKDetails
+### Properties
+* **secretData**: string: BEK data.
+* **secretUrl**: string: Secret is BEK.
+* **secretVaultId**: string: ID of the Key Vault where this Secret is stored.
+
 ## ContainerIdentityInfo
 ### Properties
 * **aadTenantId**: string: Protection container identity - AAD Tenant
@@ -127,6 +150,11 @@
 ### Properties
 * **date**: int: Date of the month
 * **isLast**: bool: Whether Date is last date of month
+
+## DiskInformation
+### Properties
+* **lun**: int
+* **name**: string
 
 ## DPMProtectedItemExtendedInfo
 ### Properties
@@ -150,6 +178,12 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ErrorDetail
+### Properties
+* **code**: string (ReadOnly): Error code.
+* **message**: string (ReadOnly): Error Message related to the Code.
+* **recommendations**: string[] (ReadOnly): List of recommendation strings.
+
 ## GenericContainerExtendedInfo
 ### Properties
 * **containerIdentityInfo**: [ContainerIdentityInfo](#containeridentityinfo): Container identity information
@@ -166,15 +200,37 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## IaasVMRecoveryPointMoveReadinessInfo
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [RecoveryPointMoveReadinessInfo](#recoverypointmovereadinessinfo)
+
 ## InstantRPAdditionalDetails
 ### Properties
 * **azureBackupRGNamePrefix**: string
 * **azureBackupRGNameSuffix**: string
 
+## KEKDetails
+### Properties
+* **keyBackupData**: string: KEK data.
+* **keyUrl**: string: Key is KEK.
+* **keyVaultId**: string: Key Vault ID where this Key is stored.
+
+## KeyAndSecretDetails
+### Properties
+* **bekDetails**: [BEKDetails](#bekdetails): BEK is bitlocker encryption key.
+* **encryptionMechanism**: string: Encryption mechanism: None/ SinglePass/ DoublePass
+* **kekDetails**: [KEKDetails](#kekdetails): KEK is encryption key for BEK.
+
 ## KPIResourceHealthDetails
 ### Properties
 * **resourceHealthDetails**: [ResourceHealthDetails](#resourcehealthdetails)[]: Resource Health Status
 * **resourceHealthStatus**: 'Healthy' | 'Invalid' | 'PersistentDegraded' | 'PersistentUnhealthy' | 'TransientDegraded' | 'TransientUnhealthy' | string: Resource Health Status
+
+## ListRecoveryPointsRecommendedForMoveRequest
+### Properties
+* **excludedRPList**: string[]: List of Recovery Points excluded from Move
+* **objectType**: string: Gets the class type.
 
 ## MabContainerExtendedInfo
 ### Properties
@@ -204,6 +260,11 @@
 * **retentionScheduleFormatType**: 'Daily' | 'Invalid' | 'Weekly' | string: Retention schedule format type for monthly retention policy.
 * **retentionScheduleWeekly**: [WeeklyRetentionFormat](#weeklyretentionformat): Weekly retention format for monthly retention policy.
 * **retentionTimes**: string[]: Retention times of retention policy.
+
+## PointInTimeRange
+### Properties
+* **endTime**: string: End time of the time range for log recovery.
+* **startTime**: string: Start time of the time range for log recovery.
 
 ## PrivateEndpoint
 ### Properties
@@ -440,12 +501,108 @@ Backup is VMAppContainer
 * **schedulePolicy**: [SchedulePolicy](#schedulepolicy): Backup schedule of backup policy.
 
 
+## RecoveryPoint
+* **Discriminator**: objectType
+
+### Base Properties
+### AzureFileShareRecoveryPoint
+#### Properties
+* **fileShareSnapshotUri**: string: Contains Url to the snapshot of fileshare, if applicable
+* **objectType**: 'AzureFileShareRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointSizeInGB**: int: Contains recovery point size
+* **recoveryPointTime**: string: Time at which this backup copy was created.
+* **recoveryPointType**: string: Type of the backup copy. Specifies whether it is a crash consistent backup or app consistent.
+
+### AzureWorkloadSAPHanaPointInTimeRecoveryPoint
+#### Properties
+* **objectType**: 'AzureWorkloadSAPHanaPointInTimeRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+
+### AzureWorkloadSAPHanaRecoveryPoint
+#### Properties
+* **objectType**: 'AzureWorkloadSAPHanaRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+
+### AzureWorkloadSQLPointInTimeRecoveryPoint
+#### Properties
+* **objectType**: 'AzureWorkloadSQLPointInTimeRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **timeRanges**: [PointInTimeRange](#pointintimerange)[]: List of log ranges
+
+### GenericRecoveryPoint
+#### Properties
+* **friendlyName**: string: Friendly name of the backup copy.
+* **objectType**: 'GenericRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointAdditionalInfo**: string: Additional information associated with this backup copy.
+* **recoveryPointTime**: string: Time at which this backup copy was created.
+* **recoveryPointType**: string: Type of the backup copy.
+
+### IaasVMRecoveryPoint
+#### Properties
+* **isInstantIlrSessionActive**: bool: Is the session to recover items from this backup copy still active.
+* **isManagedVirtualMachine**: bool: Whether VM is with Managed Disks
+* **isSourceVMEncrypted**: bool: Identifies whether the VM was encrypted when the backup copy is created.
+* **keyAndSecret**: [KeyAndSecretDetails](#keyandsecretdetails): Required details for recovering an encrypted VM. Applicable only when IsSourceVMEncrypted is true.
+* **objectType**: 'IaasVMRecoveryPoint' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **originalStorageAccountOption**: bool: Original Storage Account Option
+* **osType**: string: OS type
+* **recoveryPointAdditionalInfo**: string: Additional information associated with this backup copy.
+* **recoveryPointDiskConfiguration**: [RecoveryPointDiskConfiguration](#recoverypointdiskconfiguration): Disk configuration
+* **recoveryPointMoveReadinessInfo**: [IaasVMRecoveryPointMoveReadinessInfo](#iaasvmrecoverypointmovereadinessinfo): Eligibility of RP to be moved to another tier
+* **recoveryPointTierDetails**: [RecoveryPointTierInformation](#recoverypointtierinformation)[]: Recovery point tier information.
+* **recoveryPointTime**: string: Time at which this backup copy was created.
+* **recoveryPointType**: string: Type of the backup copy.
+* **sourceVMStorageType**: string: Storage type of the VM whose backup copy is created.
+* **virtualMachineSize**: string: Virtual Machine Size
+* **zones**: string[]: Identifies the zone of the VM at the time of backup. Applicable only for zone-pinned Vms
+
+
+## RecoveryPointDiskConfiguration
+### Properties
+* **excludedDiskList**: [DiskInformation](#diskinformation)[]: Information of disks excluded from backup
+* **includedDiskList**: [DiskInformation](#diskinformation)[]: Information of disks included in backup
+* **numberOfDisksAttachedToVm**: int: Number of disks attached to the VM
+* **numberOfDisksIncludedInBackup**: int: Number of disks included in backup
+
+## RecoveryPointMoveReadinessInfo
+### Properties
+* **additionalInfo**: string
+* **isReadyForMove**: bool
+
+## RecoveryPointResource
+### Properties
+* **eTag**: string: Optional ETag.
+* **id**: string (ReadOnly): Resource Id represents the complete path to the resource.
+* **location**: string: Resource location.
+* **name**: string (ReadOnly): Resource name associated with the resource.
+* **properties**: [RecoveryPoint](#recoverypoint): RecoveryPointResource properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
+
+## RecoveryPointResourceList
+### Properties
+* **nextLink**: string: The uri to fetch the next page of resources. Call ListNext() fetches next page of resources.
+* **value**: [RecoveryPointResource](#recoverypointresource)[]: List of resources.
+
+## RecoveryPointTierInformation
+### Properties
+* **extendedInfo**: [RecoveryPointTierInformationExtendedInfo](#recoverypointtierinformationextendedinfo): Recovery point tier status.
+* **status**: 'Deleted' | 'Disabled' | 'Invalid' | 'Rehydrated' | 'Valid': Recovery point tier status.
+* **type**: 'ArchivedRP' | 'HardenedRP' | 'InstantRP' | 'Invalid': Recovery point tier type.
+
+## RecoveryPointTierInformationExtendedInfo
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ResourceHealthDetails
 ### Properties
 * **code**: int (ReadOnly): Health Code
 * **message**: string (ReadOnly): Health Message
 * **recommendations**: string[] (ReadOnly): Health Recommended Actions
 * **title**: string (ReadOnly): Health Title
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties
@@ -535,6 +692,29 @@ will be deprecated once clients upgrade to consider this flag.
 * **policyType**: 'CopyOnlyFull' | 'Differential' | 'Full' | 'Incremental' | 'Invalid' | 'Log' | string: Type of backup policy type
 * **retentionPolicy**: [RetentionPolicy](#retentionpolicy): Retention policy with the details on backup copy retention ranges.
 * **schedulePolicy**: [SchedulePolicy](#schedulepolicy): Backup schedule specified as part of backup policy.
+
+## TokenInformation
+### Properties
+* **expiryTimeInUtcTicks**: int: Expiry time of token.
+* **securityPIN**: string: Security PIN
+* **token**: string: Token value.
+
+## ValidateOperationRequest
+* **Discriminator**: objectType
+
+### Base Properties
+### ValidateIaasVMRestoreOperationRequest
+#### Properties
+* **objectType**: 'ValidateIaasVMRestoreOperationRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+
+
+## ValidateOperationResponse
+### Properties
+* **validationResults**: [ErrorDetail](#errordetail)[]: Gets the validation result
+
+## ValidateOperationsResponse
+### Properties
+* **validateOperationResponse**: [ValidateOperationResponse](#validateoperationresponse): Base class for validate operation response.
 
 ## WeeklyRetentionFormat
 ### Properties

@@ -43,6 +43,12 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/videoAnalyzers/videos' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Media/locations@2021-05-01-preview)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2021-05-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listProvisioningToken (Microsoft.Media/videoAnalyzers/edgeModules@2021-05-01-preview)
 * **Resource**: Microsoft.Media/videoAnalyzers/edgeModules
 * **ApiVersion**: 2021-05-01-preview
@@ -78,6 +84,17 @@
 * **issuers**: string[]: List of expected token issuers. Token issuer is valid if it matches at least one of the given values.
 * **keys**: [TokenKey](#tokenkey)[]: List of keys which can be used to validate access tokens. Having multiple keys allow for seamless key rotation of the token signing key. Token signature must match exactly one key.
 
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## EdgeModuleProperties
 ### Properties

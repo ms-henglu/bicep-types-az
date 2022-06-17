@@ -12,6 +12,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Web/connections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function confirmConsentCode (Microsoft.Web/connections@2015-08-01-preview)
+* **Resource**: Microsoft.Web/connections
+* **ApiVersion**: 2015-08-01-preview
+* **Input**: [ConfirmConsentCodeInput](#confirmconsentcodeinput)
+* **Output**: [Connection](#connection)
+
 ## Function listConnectionKeys (Microsoft.Web/connections@2015-08-01-preview)
 * **Resource**: Microsoft.Web/connections
 * **ApiVersion**: 2015-08-01-preview
@@ -113,6 +119,33 @@
 ### Properties
 * **hostingEnvironmentServiceUrls**: [HostingEnvironmentServiceDescriptions](#hostingenvironmentservicedescriptions)[]: Service Urls per Hosting environment
 * **serviceUrl**: string: Url from which the swagger payload will be fetched
+
+## ConfirmConsentCodeInput
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [ConfirmConsentCodeInputProperties](#confirmconsentcodeinputproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## ConfirmConsentCodeInputProperties
+### Properties
+* **code**: string: Code that was returned during consent flow
+* **objectId**: string: AAD object ID. This is userId
+* **principalType**: 'ActiveDirectory' | 'Connection' | 'MicrosoftAccount': Principal type
+* **tenantId**: string: Tenant Id
+
+## Connection
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [ConnectionProperties](#connectionproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
 
 ## ConnectionError
 ### Properties
@@ -317,6 +350,16 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [CustomLoginSettingValue](#customloginsettingvalue)
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties

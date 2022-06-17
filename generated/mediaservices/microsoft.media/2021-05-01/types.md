@@ -22,6 +22,12 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **type**: 'Microsoft.Media/mediaservices/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Media/locations@2021-05-01)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2021-05-01
+* **Input**: [CheckNameAvailabilityInput](#checknameavailabilityinput)
+* **Output**: [EntityNameAvailabilityCheckOutput](#entitynameavailabilitycheckoutput)
+
 ## Function listEdgePolicies (Microsoft.Media/mediaservices@2021-05-01)
 * **Resource**: Microsoft.Media/mediaservices
 * **ApiVersion**: 2021-05-01
@@ -37,6 +43,11 @@
 ### Properties
 * **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties): The properties of the key used to encrypt the account.
 * **type**: 'CustomerKey' | 'SystemKey' | string (Required): The type of key used to encrypt the Account Key.
+
+## CheckNameAvailabilityInput
+### Properties
+* **name**: string: The account name.
+* **type**: string: The account type. For a Media Services account, this should be 'MediaServices'.
 
 ## EdgePolicies
 ### Properties
@@ -54,6 +65,12 @@
 * **name**: string: Name of the Event Hub where usage will be reported.
 * **namespace**: string: Namespace of the Event Hub where usage will be reported.
 * **token**: string: SAS token needed to interact with Event Hub.
+
+## EntityNameAvailabilityCheckOutput
+### Properties
+* **message**: string: Specifies the detailed reason if the name is not available.
+* **nameAvailable**: bool (Required): Specifies if the name is available.
+* **reason**: string: Specifies the reason if the name is not available.
 
 ## KeyDelivery
 ### Properties

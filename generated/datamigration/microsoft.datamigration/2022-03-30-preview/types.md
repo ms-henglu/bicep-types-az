@@ -83,6 +83,45 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Dictionary of <string>
 * **type**: 'Microsoft.DataMigration/sqlMigrationServices' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.DataMigration/services/projects/tasks@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services/projects/tasks
+* **ApiVersion**: 2022-03-30-preview
+* **Output**: [ProjectTask](#projecttask)
+
+## Function cancel (Microsoft.DataMigration/services/serviceTasks@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services/serviceTasks
+* **ApiVersion**: 2022-03-30-preview
+* **Output**: [ProjectTask](#projecttask)
+
+## Function checkNameAvailability (Microsoft.DataMigration/services@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services
+* **ApiVersion**: 2022-03-30-preview
+* **Input**: [NameAvailabilityRequest](#nameavailabilityrequest)
+* **Output**: [NameAvailabilityResponse](#nameavailabilityresponse)
+
+## Function checkNameAvailability (Microsoft.DataMigration/locations@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/locations
+* **ApiVersion**: 2022-03-30-preview
+* **Input**: [NameAvailabilityRequest](#nameavailabilityrequest)
+* **Output**: [NameAvailabilityResponse](#nameavailabilityresponse)
+
+## Function checkStatus (Microsoft.DataMigration/services@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services
+* **ApiVersion**: 2022-03-30-preview
+* **Output**: [DataMigrationServiceStatusResponse](#datamigrationservicestatusresponse)
+
+## Function command (Microsoft.DataMigration/services/projects/tasks@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services/projects/tasks
+* **ApiVersion**: 2022-03-30-preview
+* **Input**: [CommandProperties](#commandproperties)
+* **Output**: [CommandProperties](#commandproperties)
+
+## Function deleteNode (Microsoft.DataMigration/sqlMigrationServices@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/sqlMigrationServices
+* **ApiVersion**: 2022-03-30-preview
+* **Input**: [DeleteNode](#deletenode)
+* **Output**: [DeleteNode](#deletenode)
+
 ## Function listAuthKeys (Microsoft.DataMigration/sqlMigrationServices@2022-03-30-preview)
 * **Resource**: Microsoft.DataMigration/sqlMigrationServices
 * **ApiVersion**: 2022-03-30-preview
@@ -92,6 +131,22 @@
 * **Resource**: Microsoft.DataMigration/sqlMigrationServices
 * **ApiVersion**: 2022-03-30-preview
 * **Output**: [IntegrationRuntimeMonitoringData](#integrationruntimemonitoringdata)
+
+## Function read (Microsoft.DataMigration/services/projects/files@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services/projects/files
+* **ApiVersion**: 2022-03-30-preview
+* **Output**: [FileStorageInfo](#filestorageinfo)
+
+## Function readwrite (Microsoft.DataMigration/services/projects/files@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/services/projects/files
+* **ApiVersion**: 2022-03-30-preview
+* **Output**: [FileStorageInfo](#filestorageinfo)
+
+## Function regenerateAuthKeys (Microsoft.DataMigration/sqlMigrationServices@2022-03-30-preview)
+* **Resource**: Microsoft.DataMigration/sqlMigrationServices
+* **ApiVersion**: 2022-03-30-preview
+* **Input**: [RegenAuthKeys](#regenauthkeys)
+* **Output**: [RegenAuthKeys](#regenauthkeys)
 
 ## AuthenticationKeys
 ### Properties
@@ -136,6 +191,76 @@
 ### Properties
 * **installedDriver**: [OracleOCIDriverInfo](#oracleocidriverinfo): Information about the installed driver if found and valid.
 * **validationErrors**: [ReportableException](#reportableexception)[] (ReadOnly): Validation errors
+
+## CommandProperties
+* **Discriminator**: commandType
+
+### Base Properties
+* **errors**: [ODataError](#odataerror)[] (ReadOnly): Array of errors. This is ignored if submitted.
+* **state**: 'Accepted' | 'Failed' | 'Running' | 'Succeeded' | 'Unknown' | string (ReadOnly): The state of the command. This is ignored if submitted.
+### MongoDbCancelCommand
+#### Properties
+* **commandType**: 'cancel' (Required): Command type.
+* **input**: [MongoDbCommandInput](#mongodbcommandinput): Command input
+
+### MongoDbFinishCommand
+#### Properties
+* **commandType**: 'finish' (Required): Command type.
+* **input**: [MongoDbFinishCommandInput](#mongodbfinishcommandinput): Command input
+
+### MigrateMISyncCompleteCommandProperties
+#### Properties
+* **commandType**: 'Migrate.SqlServer.AzureDbSqlMi.Complete' (Required): Command type.
+* **input**: [MigrateMISyncCompleteCommandInput](#migratemisynccompletecommandinput): Command input
+* **output**: [MigrateMISyncCompleteCommandOutput](#migratemisynccompletecommandoutput) (ReadOnly): Command output. This is ignored if submitted.
+
+### MigrateSyncCompleteCommandProperties
+#### Properties
+* **commandId**: string: Command id
+* **commandType**: 'Migrate.Sync.Complete.Database' (Required): Command type.
+* **input**: [MigrateSyncCompleteCommandInput](#migratesynccompletecommandinput): Command input
+* **output**: [MigrateSyncCompleteCommandOutput](#migratesynccompletecommandoutput) (ReadOnly): Command output. This is ignored if submitted.
+
+### MongoDbRestartCommand
+#### Properties
+* **commandType**: 'restart' (Required): Command type.
+* **input**: [MongoDbCommandInput](#mongodbcommandinput): Command input
+
+
+## CommandProperties
+* **Discriminator**: commandType
+
+### Base Properties
+* **errors**: [ODataError](#odataerror)[] (ReadOnly): Array of errors. This is ignored if submitted.
+* **state**: 'Accepted' | 'Failed' | 'Running' | 'Succeeded' | 'Unknown' | string (ReadOnly): The state of the command. This is ignored if submitted.
+### MongoDbCancelCommand
+#### Properties
+* **commandType**: 'cancel' (Required): Command type.
+* **input**: [MongoDbCommandInput](#mongodbcommandinput): Command input
+
+### MongoDbFinishCommand
+#### Properties
+* **commandType**: 'finish' (Required): Command type.
+* **input**: [MongoDbFinishCommandInput](#mongodbfinishcommandinput): Command input
+
+### MigrateMISyncCompleteCommandProperties
+#### Properties
+* **commandType**: 'Migrate.SqlServer.AzureDbSqlMi.Complete' (Required): Command type.
+* **input**: [MigrateMISyncCompleteCommandInput](#migratemisynccompletecommandinput): Command input
+* **output**: [MigrateMISyncCompleteCommandOutput](#migratemisynccompletecommandoutput) (ReadOnly): Command output. This is ignored if submitted.
+
+### MigrateSyncCompleteCommandProperties
+#### Properties
+* **commandId**: string: Command id
+* **commandType**: 'Migrate.Sync.Complete.Database' (Required): Command type.
+* **input**: [MigrateSyncCompleteCommandInput](#migratesynccompletecommandinput): Command input
+* **output**: [MigrateSyncCompleteCommandOutput](#migratesynccompletecommandoutput) (ReadOnly): Command output. This is ignored if submitted.
+
+### MongoDbRestartCommand
+#### Properties
+* **commandType**: 'restart' (Required): Command type.
+* **input**: [MongoDbCommandInput](#mongodbcommandinput): Command input
+
 
 ## CommandProperties
 * **Discriminator**: commandType
@@ -504,6 +629,24 @@
 * **virtualNicId**: string: The ID of the Microsoft.Network/networkInterfaces resource which the service have
 * **virtualSubnetId**: string: The ID of the Microsoft.Network/virtualNetworks/subnets resource to which the service should be joined
 
+## DataMigrationServiceStatusResponse
+### Properties
+* **agentConfiguration**: any: Agent Configuration
+* **agentVersion**: string: The DMS instance agent version
+* **status**: string: The machine-readable status, such as 'Initializing', 'Offline', 'Online', 'Deploying', 'Deleting', 'Stopped', 'Stopping', 'Starting', 'FailedToStart', 'FailedToStop' or 'Failed'
+* **supportedTaskTypes**: string[]: The list of supported task types
+* **vmSize**: string: The services virtual machine size, such as 'Standard_D2_v2'
+
+## DeleteNode
+### Properties
+* **integrationRuntimeName**: string: The name of integration runtime.
+* **nodeName**: string: The name of node to delete.
+
+## DeleteNode
+### Properties
+* **integrationRuntimeName**: string: The name of integration runtime.
+* **nodeName**: string: The name of node to delete.
+
 ## ErrorInfo
 ### Properties
 * **code**: string (ReadOnly): Error code.
@@ -514,6 +657,21 @@
 * **password**: string: Password credential used to connect to the share location.
 * **path**: string (Required): The folder path for this share.
 * **userName**: string: User name credential to connect to the share location
+
+## FileStorageInfo
+### Properties
+* **headers**: [FileStorageInfoHeaders](#filestorageinfoheaders): Dictionary of <string>
+* **uri**: string: A URI that can be used to access the file content.
+
+## FileStorageInfo
+### Properties
+* **headers**: [FileStorageInfoHeaders](#filestorageinfoheaders): Dictionary of <string>
+* **uri**: string: A URI that can be used to access the file content.
+
+## FileStorageInfoHeaders
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## GetTdeCertificatesSqlTaskInput
 ### Properties
@@ -1734,6 +1892,28 @@
 * **type**: string (Required): Type of connection info
 * **userName**: string: User name
 
+## NameAvailabilityRequest
+### Properties
+* **name**: string: The proposed resource name
+* **type**: string: The resource type chain (e.g. virtualMachines/extensions)
+
+## NameAvailabilityRequest
+### Properties
+* **name**: string: The proposed resource name
+* **type**: string: The resource type chain (e.g. virtualMachines/extensions)
+
+## NameAvailabilityResponse
+### Properties
+* **message**: string: The localized reason why the name is not available, if nameAvailable is false
+* **nameAvailable**: bool: If true, the name is valid and available. If false, 'reason' describes why not.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the name is not available, if nameAvailable is false
+
+## NameAvailabilityResponse
+### Properties
+* **message**: string: The localized reason why the name is not available, if nameAvailable is false
+* **nameAvailable**: bool: If true, the name is valid and available. If false, 'reason' describes why not.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the name is not available, if nameAvailable is false
+
 ## NodeMonitoringData
 ### Properties
 * **additionalProperties**: [NodeMonitoringDataAdditionalProperties](#nodemonitoringdataadditionalproperties) (ReadOnly): Unmatched properties from the message are deserialized in this collection.
@@ -1816,6 +1996,24 @@
 * **sourcePlatform**: 'MongoDb' | 'MySQL' | 'PostgreSql' | 'SQL' | 'Unknown' | string (Required): Source platform for the project
 * **targetConnectionInfo**: [ConnectionInfo](#connectioninfo): Information for connecting to target
 * **targetPlatform**: 'AzureDbForMySql' | 'AzureDbForPostgreSql' | 'MongoDb' | 'SQLDB' | 'SQLMI' | 'Unknown' | string (Required): Target platform for the project
+
+## ProjectTask
+### Properties
+* **etag**: string: HTTP strong entity tag value. This is ignored if submitted.
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ProjectTaskProperties](#projecttaskproperties): Custom task properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **type**: string (ReadOnly): Resource type.
+
+## ProjectTask
+### Properties
+* **etag**: string: HTTP strong entity tag value. This is ignored if submitted.
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ProjectTaskProperties](#projecttaskproperties): Custom task properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **type**: string (ReadOnly): Resource type.
 
 ## ProjectTaskProperties
 * **Discriminator**: taskType
@@ -2077,6 +2275,18 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RegenAuthKeys
+### Properties
+* **authKey1**: string: The first authentication key.
+* **authKey2**: string: The second authentication key.
+* **keyName**: string: The name of authentication key to generate.
+
+## RegenAuthKeys
+### Properties
+* **authKey1**: string: The first authentication key.
+* **authKey2**: string: The second authentication key.
+* **keyName**: string: The name of authentication key to generate.
 
 ## ReportableException
 ### Properties

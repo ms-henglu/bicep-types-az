@@ -20,6 +20,16 @@
 * **properties**: [BuildStepProperties](#buildstepproperties): The properties of a build step.
 * **type**: 'Microsoft.ContainerRegistry/registries/buildTasks/steps' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getBuildSourceUploadUrl (Microsoft.ContainerRegistry/registries@2018-02-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2018-02-01-preview
+* **Output**: [SourceUploadDefinition](#sourceuploaddefinition)
+
+## Function getLogLink (Microsoft.ContainerRegistry/registries/builds@2018-02-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries/builds
+* **ApiVersion**: 2018-02-01-preview
+* **Output**: [BuildGetLogResult](#buildgetlogresult)
+
 ## Function listBuildArguments (Microsoft.ContainerRegistry/registries/buildTasks/steps@2018-02-01-preview)
 * **Resource**: Microsoft.ContainerRegistry/registries/buildTasks/steps
 * **ApiVersion**: 2018-02-01-preview
@@ -30,6 +40,12 @@
 * **ApiVersion**: 2018-02-01-preview
 * **Output**: [SourceRepositoryProperties](#sourcerepositoryproperties)
 
+## Function queueBuild (Microsoft.ContainerRegistry/registries@2018-02-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2018-02-01-preview
+* **Input**: [QueueBuildRequest](#queuebuildrequest)
+* **Output**: [Build](#build)
+
 ## BaseImageDependency
 ### Properties
 * **digest**: string: The sha256-based digest of the image manifest.
@@ -37,6 +53,13 @@
 * **repository**: string: The repository name.
 * **tag**: string: The tag name.
 * **type**: 'BuildTime' | 'RunTime' | string: The type of the base image dependency.
+
+## Build
+### Properties
+* **id**: string (ReadOnly): The resource ID.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [BuildProperties](#buildproperties): The properties of a build.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## BuildArgument
 ### Properties
@@ -49,6 +72,27 @@
 ### Properties
 * **nextLink**: string: The URI that can be used to request the next set of paged results.
 * **value**: [BuildArgument](#buildargument)[]: The collection value.
+
+## BuildGetLogResult
+### Properties
+* **logLink**: string: The link to logs for a azure container registry build.
+
+## BuildProperties
+### Properties
+* **buildId**: string: The unique identifier for the build.
+* **buildTask**: string: The build task with which the build was started.
+* **buildType**: 'AutoBuild' | 'QuickBuild' | string: The type of build.
+* **createTime**: string: The time the build was created.
+* **finishTime**: string: The time the build finished.
+* **gitCommitTrigger**: [GitCommitTrigger](#gitcommittrigger): The git commit trigger that caused the build.
+* **imageUpdateTrigger**: [ImageUpdateTrigger](#imageupdatetrigger): The image update trigger that caused the build.
+* **isArchiveEnabled**: bool: The value that indicates whether archiving is enabled or not.
+* **lastUpdatedTime**: string: The last updated time for the build.
+* **outputImages**: [ImageDescriptor](#imagedescriptor)[]: The list of all images that were generated from the build.
+* **platform**: [PlatformProperties](#platformproperties): The platform properties against which the build will happen.
+* **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: The provisioning state of a build.
+* **startTime**: string: The time the build started.
+* **status**: 'Canceled' | 'Error' | 'Failed' | 'Queued' | 'Running' | 'Started' | 'Succeeded' | 'Timeout' | string: The current status of the build.
 
 ## BuildStepProperties
 * **Discriminator**: type
@@ -79,10 +123,54 @@
 * **status**: 'Disabled' | 'Enabled' | string: The current status of build task.
 * **timeout**: int: Build timeout in seconds.
 
+## GitCommitTrigger
+### Properties
+* **branchName**: string: The branch name in the repository.
+* **commitId**: string: The unique ID that identifies a commit.
+* **id**: string: The unique ID of the trigger.
+* **providerType**: string: The source control provider type.
+* **repositoryUrl**: string: The repository URL.
+
+## ImageDescriptor
+### Properties
+* **digest**: string: The sha256-based digest of the image manifest.
+* **registry**: string: The registry login server.
+* **repository**: string: The repository name.
+* **tag**: string: The tag name.
+
+## ImageUpdateTrigger
+### Properties
+* **id**: string: The unique ID of the trigger.
+* **images**: [ImageDescriptor](#imagedescriptor)[]: The list of image updates that caused the build.
+* **timestamp**: string: The timestamp when the image update happened.
+
 ## PlatformProperties
 ### Properties
 * **cpu**: int: The CPU configuration in terms of number of cores required for the build.
 * **osType**: 'Linux' | 'Windows' | string (Required): The operating system type required for the build.
+
+## QueueBuildRequest
+* **Discriminator**: type
+
+### Base Properties
+### BuildTaskBuildRequest
+#### Properties
+* **buildTaskName**: string (Required): The name of build task against which build has to be queued.
+* **type**: 'BuildTask' (Required): The type of the build request.
+
+### QuickBuildRequest
+#### Properties
+* **buildArguments**: [BuildArgument](#buildargument)[]: The collection of build arguments to be used.
+* **dockerFilePath**: string (Required): The Docker file path relative to the source location.
+* **imageNames**: string[]: The fully qualified image names including the repository and tag.
+* **isPushEnabled**: bool: The value of this property indicates whether the image built should be pushed to the registry or not.
+* **noCache**: bool: The value of this property indicates whether the image cache is enabled or not.
+* **platform**: [PlatformProperties](#platformproperties) (Required): The platform properties against which the build will happen.
+* **sourceLocation**: string (Required): The URL(absolute or relative) of the source that needs to be built. For Docker build, it can be an URL to a tar or github repository as supported by Docker.
+If it is relative URL, the relative path should be obtained from calling getSourceUploadUrl API.
+* **timeout**: int: Build timeout in seconds.
+* **type**: 'QuickBuild' (Required): The type of the build request.
+
 
 ## ResourceTags
 ### Properties
@@ -110,4 +198,9 @@
 * **repositoryUrl**: string (Required): The full URL to the source code repository
 * **sourceControlAuthProperties**: [SourceControlAuthInfo](#sourcecontrolauthinfo): The authorization properties for accessing the source code repository.
 * **sourceControlType**: 'Github' | 'VisualStudioTeamService' | string (Required): The type of source control service.
+
+## SourceUploadDefinition
+### Properties
+* **relativePath**: string: The relative path to the source. This is used to submit the subsequent queue build request.
+* **uploadUrl**: string: The URL where the client can upload the source.
 

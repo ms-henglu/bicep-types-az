@@ -124,6 +124,16 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/transforms/jobs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getEncryptionKey (Microsoft.Media/mediaServices/assets@2021-11-01)
+* **Resource**: Microsoft.Media/mediaServices/assets
+* **ApiVersion**: 2021-11-01
+* **Output**: [StorageEncryptedAssetDecryptionData](#storageencryptedassetdecryptiondata)
+
+## Function getPolicyPropertiesWithSecrets (Microsoft.Media/mediaServices/contentKeyPolicies@2021-11-01)
+* **Resource**: Microsoft.Media/mediaServices/contentKeyPolicies
+* **ApiVersion**: 2021-11-01
+* **Output**: [ContentKeyPolicyProperties](#contentkeypolicyproperties)
+
 ## Function listContainerSas (Microsoft.Media/mediaServices/assets@2021-11-01)
 * **Resource**: Microsoft.Media/mediaServices/assets
 * **ApiVersion**: 2021-11-01
@@ -163,6 +173,12 @@
 ## AssetContainerSas
 ### Properties
 * **assetContainerSasUrls**: string[]: The list of Asset container SAS URLs.
+
+## AssetFileEncryptionMetadata
+### Properties
+* **assetFileId**: string (Required): The Asset File Id.
+* **assetFileName**: string: The Asset File name.
+* **initializationVector**: string: The Asset File initialization vector.
 
 ## AssetProperties
 ### Properties
@@ -369,6 +385,14 @@
 * **scmsRestriction**: int: Configures the Serial Copy Management System (SCMS) in the license. Must be between 0 and 3 inclusive.
 * **uncompressedDigitalAudioOpl**: int: Specifies the output protection level for uncompressed digital audio.
 * **uncompressedDigitalVideoOpl**: int: Specifies the output protection level for uncompressed digital video.
+
+## ContentKeyPolicyProperties
+### Properties
+* **created**: string (ReadOnly): The creation date of the Policy
+* **description**: string: A description for the Policy.
+* **lastModified**: string (ReadOnly): The last modified date of the Policy
+* **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
+* **policyId**: string (ReadOnly): The legacy Policy ID.
 
 ## ContentKeyPolicyProperties
 ### Properties
@@ -873,6 +897,11 @@
 * **left**: string: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
 * **top**: string: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
 * **width**: string: The width of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+
+## StorageEncryptedAssetDecryptionData
+### Properties
+* **assetFileEncryptionMetadata**: [AssetFileEncryptionMetadata](#assetfileencryptionmetadata)[]: Asset File encryption metadata.
+* **key**: any: The Asset File storage encryption key.
 
 ## StreamingEndpointAccessControl
 ### Properties

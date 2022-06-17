@@ -178,6 +178,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/networkSecurityPerimeters/resourceAssociations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMembers (Microsoft.Network/networkSecurityPerimeters/profiles@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/profiles
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [CheckMembers](#checkmembers)
+* **Output**: [CheckMembers](#checkmembers)
+
 ## Function listActiveConnectivityConfigurations (Microsoft.Network/networkManagers@2021-02-01-preview)
 * **Resource**: Microsoft.Network/networkManagers
 * **ApiVersion**: 2021-02-01-preview
@@ -225,6 +231,18 @@
 * **ApiVersion**: 2021-02-01-preview
 * **Input**: [QueryRequestOptions](#queryrequestoptions)
 * **Output**: [NetworkManagerEffectiveSecurityAdminRulesListResult](#networkmanagereffectivesecurityadminruleslistresult)
+
+## Function queryNetworkSecurityPerimeter (Microsoft.Network/locations@2021-02-01-preview)
+* **Resource**: Microsoft.Network/locations
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [QueryNSPReqRes](#querynspreqres)
+* **Output**: [QueryNSPReqRes](#querynspreqres)
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/profiles/accessRules@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/profiles/accessRules
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: any
+* **Output**: any
 
 ## ActiveBaseSecurityAdminRule
 * **Discriminator**: kind
@@ -330,6 +348,14 @@
 * **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the resource.
 * **sourcePortRanges**: string[]: The source port ranges.
 * **sources**: [AddressPrefixItem](#addressprefixitem)[]: The CIDR or source IP ranges.
+
+## CheckMembers
+### Properties
+* **memberDestinations**: [MemberDestination](#memberdestination)[]
+
+## CheckMembers
+### Properties
+* **memberDestinations**: [MemberDestination](#memberdestination)[]
 
 ## ConfigurationGroup
 ### Properties
@@ -440,6 +466,12 @@
 * **resourceId**: string: Resource Id.
 * **resourceType**: string: Resource Type.
 
+## MemberDestination
+### Properties
+* **isMember**: 'no' | 'yes' | string (ReadOnly): yes/no, if it is member or not.
+* **privateLinkResourceId**: string: Private link resource Id.
+* **profile**: string (ReadOnly): Network security perimeter profile.
+
 ## NetworkGroupProperties
 ### Properties
 * **conditionalMembership**: string: Network group conditional filter.
@@ -527,6 +559,19 @@
 * **id**: string: NSP id in the ARM id format.
 * **location**: string (ReadOnly): Location of the NSP supplied.
 * **perimeterGuid**: string (ReadOnly): Resource guid of the NSP supplied.
+
+## QueryNSPObj
+### Properties
+* **id**: string (ReadOnly): Id of NSP.
+* **perimeterGuid**: string: Perimeter guid of NSP.
+
+## QueryNSPReqRes
+### Properties
+* **networkSecurityPerimeters**: [QueryNSPObj](#querynspobj)[]
+
+## QueryNSPReqRes
+### Properties
+* **networkSecurityPerimeters**: [QueryNSPObj](#querynspobj)[]
 
 ## QueryRequestOptions
 ### Properties

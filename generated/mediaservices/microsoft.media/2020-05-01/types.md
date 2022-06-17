@@ -135,6 +135,22 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/transforms/jobs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Media/locations@2020-05-01)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2020-05-01
+* **Input**: [CheckNameAvailabilityInput](#checknameavailabilityinput)
+* **Output**: [EntityNameAvailabilityCheckOutput](#entitynameavailabilitycheckoutput)
+
+## Function getEncryptionKey (Microsoft.Media/mediaServices/assets@2020-05-01)
+* **Resource**: Microsoft.Media/mediaServices/assets
+* **ApiVersion**: 2020-05-01
+* **Output**: [StorageEncryptedAssetDecryptionData](#storageencryptedassetdecryptiondata)
+
+## Function getPolicyPropertiesWithSecrets (Microsoft.Media/mediaServices/contentKeyPolicies@2020-05-01)
+* **Resource**: Microsoft.Media/mediaServices/contentKeyPolicies
+* **ApiVersion**: 2020-05-01
+* **Output**: [ContentKeyPolicyProperties](#contentkeypolicyproperties)
+
 ## Function listContainerSas (Microsoft.Media/mediaServices/assets@2020-05-01)
 * **Resource**: Microsoft.Media/mediaServices/assets
 * **ApiVersion**: 2020-05-01
@@ -181,6 +197,12 @@
 ### Properties
 * **assetContainerSasUrls**: string[]: The list of Asset container SAS URLs.
 
+## AssetFileEncryptionMetadata
+### Properties
+* **assetFileId**: string (Required): The Asset File Id.
+* **assetFileName**: string: The Asset File name.
+* **initializationVector**: string: The Asset File initialization vector.
+
 ## AssetProperties
 ### Properties
 * **alternateId**: string: The alternate ID of the Asset.
@@ -213,6 +235,11 @@
 ### Properties
 * **playReady**: [StreamingPolicyPlayReadyConfiguration](#streamingpolicyplayreadyconfiguration): PlayReady configurations
 * **widevine**: [StreamingPolicyWidevineConfiguration](#streamingpolicywidevineconfiguration): Widevine configurations
+
+## CheckNameAvailabilityInput
+### Properties
+* **name**: string: The account name.
+* **type**: string: The account type. For a Media Services account, this should be 'MediaServices'.
 
 ## ClipTime
 * **Discriminator**: @odata.type
@@ -389,6 +416,14 @@
 * **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
 * **policyId**: string (ReadOnly): The legacy Policy ID.
 
+## ContentKeyPolicyProperties
+### Properties
+* **created**: string (ReadOnly): The creation date of the Policy
+* **description**: string: A description for the Policy.
+* **lastModified**: string (ReadOnly): The last modified date of the Policy
+* **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
+* **policyId**: string (ReadOnly): The legacy Policy ID.
+
 ## ContentKeyPolicyRestriction
 * **Discriminator**: @odata.type
 
@@ -477,6 +512,12 @@
 * **download**: bool (Required): Enable Download protocol or not
 * **hls**: bool (Required): Enable HLS protocol or not
 * **smoothStreaming**: bool (Required): Enable SmoothStreaming protocol or not
+
+## EntityNameAvailabilityCheckOutput
+### Properties
+* **message**: string: Specifies the detailed reason if the name is not available.
+* **nameAvailable**: bool (Required): Specifies if the name is available.
+* **reason**: string: Specifies the reason if the name is not available.
 
 ## EnvelopeEncryption
 ### Properties
@@ -927,6 +968,11 @@
 ### Properties
 * **id**: string: The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
 * **type**: 'Primary' | 'Secondary' | string (Required): The type of the storage account.
+
+## StorageEncryptedAssetDecryptionData
+### Properties
+* **assetFileEncryptionMetadata**: [AssetFileEncryptionMetadata](#assetfileencryptionmetadata)[]: Asset File encryption metadata.
+* **key**: any: The Asset File storage encryption key.
 
 ## StreamingEndpointAccessControl
 ### Properties

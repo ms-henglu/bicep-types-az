@@ -72,6 +72,17 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backupSecurityPIN (Microsoft.RecoveryServices/vaults@2020-10-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2020-10-01
+* **Output**: [TokenInformation](#tokeninformation)
+
+## Function backupValidateOperation (Microsoft.RecoveryServices/vaults@2020-10-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2020-10-01
+* **Input**: [ValidateOperationRequest](#validateoperationrequest)
+* **Output**: [ValidateOperationsResponse](#validateoperationsresponse)
+
 ## AzureFileshareProtectedItemExtendedInfo
 ### Properties
 * **oldestRecoveryPoint**: string: The oldest backup copy available for this item in the service.
@@ -149,6 +160,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ErrorDetail
+### Properties
+* **code**: string (ReadOnly): Error code.
+* **message**: string (ReadOnly): Error Message related to the Code.
+* **recommendations**: string[] (ReadOnly): List of recommendation strings.
 
 ## GenericContainerExtendedInfo
 ### Properties
@@ -535,6 +552,29 @@ will be deprecated once clients upgrade to consider this flag.
 * **policyType**: 'CopyOnlyFull' | 'Differential' | 'Full' | 'Incremental' | 'Invalid' | 'Log' | string: Type of backup policy type
 * **retentionPolicy**: [RetentionPolicy](#retentionpolicy): Retention policy with the details on backup copy retention ranges.
 * **schedulePolicy**: [SchedulePolicy](#schedulepolicy): Backup schedule specified as part of backup policy.
+
+## TokenInformation
+### Properties
+* **expiryTimeInUtcTicks**: int: Expiry time of token.
+* **securityPIN**: string: Security PIN
+* **token**: string: Token value.
+
+## ValidateOperationRequest
+* **Discriminator**: objectType
+
+### Base Properties
+### ValidateIaasVMRestoreOperationRequest
+#### Properties
+* **objectType**: 'ValidateIaasVMRestoreOperationRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+
+
+## ValidateOperationResponse
+### Properties
+* **validationResults**: [ErrorDetail](#errordetail)[]: Gets the validation result
+
+## ValidateOperationsResponse
+### Properties
+* **validateOperationResponse**: [ValidateOperationResponse](#validateoperationresponse): Base class for validate operation response.
 
 ## WeeklyRetentionFormat
 ### Properties

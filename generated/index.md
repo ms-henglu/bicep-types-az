@@ -4461,9 +4461,11 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgriddomains2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgriddomains2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgriddomains2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgriddomains2022-06-15)
 
 ### microsoft.eventgrid/domains/eventsubscriptions
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgriddomainseventsubscriptions2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgriddomainseventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/domains/privateendpointconnections
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgriddomainsprivateendpointconnections2020-04-01-preview)
@@ -4472,6 +4474,7 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgriddomainsprivateendpointconnections2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgriddomainsprivateendpointconnections2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgriddomainsprivateendpointconnections2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgriddomainsprivateendpointconnections2022-06-15)
 
 ### microsoft.eventgrid/domains/topics
 * [2019-02-01-preview](eventgrid/microsoft.eventgrid/2019-02-01-preview/types.md#resource-microsofteventgriddomainstopics2019-02-01-preview)
@@ -4483,9 +4486,11 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgriddomainstopics2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgriddomainstopics2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgriddomainstopics2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgriddomainstopics2022-06-15)
 
 ### microsoft.eventgrid/domains/topics/eventsubscriptions
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgriddomainstopicseventsubscriptions2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgriddomainstopicseventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/eventsubscriptions
 * [2017-06-15-preview](eventgrid/microsoft.eventgrid/2017-06-15-preview/types.md#resource-microsofteventgrideventsubscriptions2017-06-15-preview)
@@ -4503,9 +4508,11 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgrideventsubscriptions2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgrideventsubscriptions2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgrideventsubscriptions2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgrideventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/partnerconfigurations
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnerconfigurations2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnerconfigurations2022-06-15)
 
 ### microsoft.eventgrid/partnerdestinations
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnerdestinations2021-10-15-preview)
@@ -4515,9 +4522,11 @@
 * [2020-10-15-preview](eventgrid/microsoft.eventgrid/2020-10-15-preview/types.md#resource-microsofteventgridpartnernamespaces2020-10-15-preview)
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridpartnernamespaces2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnernamespaces2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnernamespaces2022-06-15)
 
 ### microsoft.eventgrid/partnernamespaces/channels
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnernamespaceschannels2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnernamespaceschannels2022-06-15)
 
 ### microsoft.eventgrid/partnernamespaces/eventchannels
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridpartnernamespaceseventchannels2020-04-01-preview)
@@ -4528,21 +4537,25 @@
 ### microsoft.eventgrid/partnernamespaces/privateendpointconnections
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridpartnernamespacesprivateendpointconnections2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnernamespacesprivateendpointconnections2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnernamespacesprivateendpointconnections2022-06-15)
 
 ### microsoft.eventgrid/partnerregistrations
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridpartnerregistrations2020-04-01-preview)
 * [2020-10-15-preview](eventgrid/microsoft.eventgrid/2020-10-15-preview/types.md#resource-microsofteventgridpartnerregistrations2020-10-15-preview)
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridpartnerregistrations2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnerregistrations2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnerregistrations2022-06-15)
 
 ### microsoft.eventgrid/partnertopics
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnertopics2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnertopics2022-06-15)
 
 ### microsoft.eventgrid/partnertopics/eventsubscriptions
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridpartnertopicseventsubscriptions2020-04-01-preview)
 * [2020-10-15-preview](eventgrid/microsoft.eventgrid/2020-10-15-preview/types.md#resource-microsofteventgridpartnertopicseventsubscriptions2020-10-15-preview)
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridpartnertopicseventsubscriptions2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridpartnertopicseventsubscriptions2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridpartnertopicseventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/systemtopics
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridsystemtopics2020-04-01-preview)
@@ -4550,6 +4563,7 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridsystemtopics2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridsystemtopics2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgridsystemtopics2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridsystemtopics2022-06-15)
 
 ### microsoft.eventgrid/systemtopics/eventsubscriptions
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridsystemtopicseventsubscriptions2020-04-01-preview)
@@ -4557,6 +4571,7 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridsystemtopicseventsubscriptions2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridsystemtopicseventsubscriptions2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgridsystemtopicseventsubscriptions2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridsystemtopicseventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/topics
 * [2017-06-15-preview](eventgrid/microsoft.eventgrid/2017-06-15-preview/types.md#resource-microsofteventgridtopics2017-06-15-preview)
@@ -4574,9 +4589,11 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridtopics2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridtopics2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgridtopics2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridtopics2022-06-15)
 
 ### microsoft.eventgrid/topics/eventsubscriptions
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridtopicseventsubscriptions2021-10-15-preview)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridtopicseventsubscriptions2022-06-15)
 
 ### microsoft.eventgrid/topics/privateendpointconnections
 * [2020-04-01-preview](eventgrid/microsoft.eventgrid/2020-04-01-preview/types.md#resource-microsofteventgridtopicsprivateendpointconnections2020-04-01-preview)
@@ -4585,6 +4602,7 @@
 * [2021-06-01-preview](eventgrid/microsoft.eventgrid/2021-06-01-preview/types.md#resource-microsofteventgridtopicsprivateendpointconnections2021-06-01-preview)
 * [2021-10-15-preview](eventgrid/microsoft.eventgrid/2021-10-15-preview/types.md#resource-microsofteventgridtopicsprivateendpointconnections2021-10-15-preview)
 * [2021-12-01](eventgrid/microsoft.eventgrid/2021-12-01/types.md#resource-microsofteventgridtopicsprivateendpointconnections2021-12-01)
+* [2022-06-15](eventgrid/microsoft.eventgrid/2022-06-15/types.md#resource-microsofteventgridtopicsprivateendpointconnections2022-06-15)
 
 ## microsoft.eventhub
 ### microsoft.eventhub/clusters
@@ -4701,6 +4719,7 @@
 * [2022-02-15](fluidrelay/microsoft.fluidrelay/2022-02-15/types.md#resource-microsoftfluidrelayfluidrelayservers2022-02-15)
 * [2022-04-21](fluidrelay/microsoft.fluidrelay/2022-04-21/types.md#resource-microsoftfluidrelayfluidrelayservers2022-04-21)
 * [2022-05-11](fluidrelay/microsoft.fluidrelay/2022-05-11/types.md#resource-microsoftfluidrelayfluidrelayservers2022-05-11)
+* [2022-05-26](fluidrelay/microsoft.fluidrelay/2022-05-26/types.md#resource-microsoftfluidrelayfluidrelayservers2022-05-26)
 
 ## microsoft.guestconfiguration
 ### microsoft.guestconfiguration/guestconfigurationassignments
@@ -5168,11 +5187,13 @@
 * [2022-01-01-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-01-01-preview/types.md#resource-microsoftkubernetesconfigurationextensions2022-01-01-preview)
 * [2022-03-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-03-01/types.md#resource-microsoftkubernetesconfigurationextensions2022-03-01)
 * [2022-04-02-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-04-02-preview/types.md#resource-microsoftkubernetesconfigurationextensions2022-04-02-preview)
+* [2022-07-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-07-01/types.md#resource-microsoftkubernetesconfigurationextensions2022-07-01)
 
 ### microsoft.kubernetesconfiguration/fluxconfigurations
 * [2021-11-01-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2021-11-01-preview/types.md#resource-microsoftkubernetesconfigurationfluxconfigurations2021-11-01-preview)
 * [2022-01-01-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-01-01-preview/types.md#resource-microsoftkubernetesconfigurationfluxconfigurations2022-01-01-preview)
 * [2022-03-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-03-01/types.md#resource-microsoftkubernetesconfigurationfluxconfigurations2022-03-01)
+* [2022-07-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-07-01/types.md#resource-microsoftkubernetesconfigurationfluxconfigurations2022-07-01)
 
 ### microsoft.kubernetesconfiguration/privatelinkscopes
 * [2022-04-02-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-04-02-preview/types.md#resource-microsoftkubernetesconfigurationprivatelinkscopes2022-04-02-preview)
@@ -5189,6 +5210,7 @@
 * [2021-11-01-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2021-11-01-preview/types.md#resource-microsoftkubernetesconfigurationsourcecontrolconfigurations2021-11-01-preview)
 * [2022-01-01-preview](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-01-01-preview/types.md#resource-microsoftkubernetesconfigurationsourcecontrolconfigurations2022-01-01-preview)
 * [2022-03-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-03-01/types.md#resource-microsoftkubernetesconfigurationsourcecontrolconfigurations2022-03-01)
+* [2022-07-01](kubernetesconfiguration/microsoft.kubernetesconfiguration/2022-07-01/types.md#resource-microsoftkubernetesconfigurationsourcecontrolconfigurations2022-07-01)
 
 ## microsoft.kusto
 ### microsoft.kusto/clusters
@@ -6960,6 +6982,7 @@
 * [2019-10-01](frontdoor/microsoft.network/2019-10-01/types.md#resource-microsoftnetworkfrontdoorwebapplicationfirewallpolicies2019-10-01)
 * [2020-04-01](frontdoor/microsoft.network/2020-04-01/types.md#resource-microsoftnetworkfrontdoorwebapplicationfirewallpolicies2020-04-01)
 * [2020-11-01](frontdoor/microsoft.network/2020-11-01/types.md#resource-microsoftnetworkfrontdoorwebapplicationfirewallpolicies2020-11-01)
+* [2022-05-01](frontdoor/microsoft.network/2022-05-01/types.md#resource-microsoftnetworkfrontdoorwebapplicationfirewallpolicies2022-05-01)
 
 ### microsoft.network/interfaceendpoints
 * [2018-08-01](network/microsoft.network/2018-08-01/types.md#resource-microsoftnetworkinterfaceendpoints2018-08-01)
@@ -9523,6 +9546,9 @@
 * [2020-01-01](security/microsoft.security/2020-01-01/types.md#resource-microsoftsecurityassessments2020-01-01)
 * [2021-06-01](security/microsoft.security/2021-06-01/types.md#resource-microsoftsecurityassessments2021-06-01)
 
+### microsoft.security/assessments/governanceassignments
+* [2022-01-01-preview](security/microsoft.security/2022-01-01-preview/types.md#resource-microsoftsecurityassessmentsgovernanceassignments2022-01-01-preview)
+
 ### microsoft.security/assignments
 * [2021-08-01-preview](security/microsoft.security/2021-08-01-preview/types.md#resource-microsoftsecurityassignments2021-08-01-preview)
 
@@ -9544,6 +9570,9 @@
 ### microsoft.security/devicesecuritygroups
 * [2017-08-01-preview](security/microsoft.security/2017-08-01-preview/types.md#resource-microsoftsecuritydevicesecuritygroups2017-08-01-preview)
 * [2019-08-01](security/microsoft.security/2019-08-01/types.md#resource-microsoftsecuritydevicesecuritygroups2019-08-01)
+
+### microsoft.security/governancerules
+* [2022-01-01-preview](security/microsoft.security/2022-01-01-preview/types.md#resource-microsoftsecuritygovernancerules2022-01-01-preview)
 
 ### microsoft.security/informationprotectionpolicies
 * [2017-08-01-preview](security/microsoft.security/2017-08-01-preview/types.md#resource-microsoftsecurityinformationprotectionpolicies2017-08-01-preview)
@@ -11577,15 +11606,19 @@
 ## microsoft.testbase
 ### microsoft.testbase/testbaseaccounts
 * [2020-12-16-preview](testbase/microsoft.testbase/2020-12-16-preview/types.md#resource-microsofttestbasetestbaseaccounts2020-12-16-preview)
+* [2022-04-01-preview](testbase/microsoft.testbase/2022-04-01-preview/types.md#resource-microsofttestbasetestbaseaccounts2022-04-01-preview)
 
 ### microsoft.testbase/testbaseaccounts/customerevents
 * [2020-12-16-preview](testbase/microsoft.testbase/2020-12-16-preview/types.md#resource-microsofttestbasetestbaseaccountscustomerevents2020-12-16-preview)
+* [2022-04-01-preview](testbase/microsoft.testbase/2022-04-01-preview/types.md#resource-microsofttestbasetestbaseaccountscustomerevents2022-04-01-preview)
 
 ### microsoft.testbase/testbaseaccounts/packages
 * [2020-12-16-preview](testbase/microsoft.testbase/2020-12-16-preview/types.md#resource-microsofttestbasetestbaseaccountspackages2020-12-16-preview)
+* [2022-04-01-preview](testbase/microsoft.testbase/2022-04-01-preview/types.md#resource-microsofttestbasetestbaseaccountspackages2022-04-01-preview)
 
 ### microsoft.testbase/testbaseaccounts/packages/favoriteprocesses
 * [2020-12-16-preview](testbase/microsoft.testbase/2020-12-16-preview/types.md#resource-microsofttestbasetestbaseaccountspackagesfavoriteprocesses2020-12-16-preview)
+* [2022-04-01-preview](testbase/microsoft.testbase/2022-04-01-preview/types.md#resource-microsofttestbasetestbaseaccountspackagesfavoriteprocesses2022-04-01-preview)
 
 ## microsoft.timeseriesinsights
 ### microsoft.timeseriesinsights/environments

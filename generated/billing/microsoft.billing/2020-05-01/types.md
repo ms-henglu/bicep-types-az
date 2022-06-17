@@ -45,10 +45,56 @@
 * **properties**: [CustomerPolicyProperties](#customerpolicyproperties): The properties of a customer's policy.
 * **type**: 'Microsoft.Billing/billingAccounts/customers/policies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function download (Microsoft.Billing/billingAccounts/invoices@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/invoices
+* **ApiVersion**: 2020-05-01
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function download (Microsoft.Billing/billingAccounts/billingSubscriptions/invoices@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions/invoices
+* **ApiVersion**: 2020-05-01
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadDocuments (Microsoft.Billing/billingAccounts@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2020-05-01
+* **Input**: string[]
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadDocuments (Microsoft.Billing/billingAccounts/billingSubscriptions@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2020-05-01
+* **Input**: string[]
+* **Output**: [DownloadUrl](#downloadurl)
+
 ## Function listInvoiceSectionsWithCreateSubscriptionPermission (Microsoft.Billing/billingAccounts@2020-05-01)
 * **Resource**: Microsoft.Billing/billingAccounts
 * **ApiVersion**: 2020-05-01
 * **Output**: [InvoiceSectionListWithCreateSubPermissionResult](#invoicesectionlistwithcreatesubpermissionresult)
+
+## Function move (Microsoft.Billing/billingAccounts/billingSubscriptions@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2020-05-01
+* **Input**: [TransferBillingSubscriptionRequestProperties](#transferbillingsubscriptionrequestproperties)
+* **Output**: [BillingSubscription](#billingsubscription)
+
+## Function move (Microsoft.Billing/billingAccounts/products@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/products
+* **ApiVersion**: 2020-05-01
+* **Input**: [TransferProductRequestProperties](#transferproductrequestproperties)
+* **Output**: [Product](#product)
+
+## Function validateMoveEligibility (Microsoft.Billing/billingAccounts/billingSubscriptions@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2020-05-01
+* **Input**: [TransferBillingSubscriptionRequestProperties](#transferbillingsubscriptionrequestproperties)
+* **Output**: [ValidateSubscriptionTransferEligibilityResult](#validatesubscriptiontransfereligibilityresult)
+
+## Function validateMoveEligibility (Microsoft.Billing/billingAccounts/products@2020-05-01)
+* **Resource**: Microsoft.Billing/billingAccounts/products
+* **ApiVersion**: 2020-05-01
+* **Input**: [TransferProductRequestProperties](#transferproductrequestproperties)
+* **Output**: [ValidateProductTransferEligibilityResult](#validateproducttransfereligibilityresult)
 
 ## AddressDetails
 ### Properties
@@ -66,6 +112,11 @@
 * **phoneNumber**: string: Phone number.
 * **postalCode**: string: Postal code.
 * **region**: string: Address region.
+
+## Amount
+### Properties
+* **currency**: string (ReadOnly): The currency for the amount value.
+* **value**: int: Amount value.
 
 ## AzurePlan
 ### Properties
@@ -97,9 +148,55 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## BillingSubscription
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [BillingSubscriptionProperties](#billingsubscriptionproperties): The billing properties of a subscription.
+* **type**: string (ReadOnly): Resource type.
+
+## BillingSubscriptionProperties
+### Properties
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile to which the subscription is billed.
+* **billingProfileId**: string (ReadOnly): The ID of the billing profile to which the subscription is billed.
+* **costCenter**: string: The cost center applied to the subscription.
+* **customerDisplayName**: string (ReadOnly): The name of the customer for whom the subscription was created. The field is applicable only for Microsoft Partner Agreement billing account.
+* **customerId**: string (ReadOnly): The ID of the customer for whom the subscription was created. The field is applicable only for Microsoft Partner Agreement billing account.
+* **displayName**: string (ReadOnly): The name of the subscription.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section to which the subscription is billed.
+* **invoiceSectionId**: string (ReadOnly): The ID of the invoice section to which the subscription is billed.
+* **lastMonthCharges**: [Amount](#amount) (ReadOnly): The last month charges.
+* **monthToDateCharges**: [Amount](#amount) (ReadOnly): The current month to date charges.
+* **reseller**: [Reseller](#reseller) (ReadOnly): Reseller for this subscription.
+* **skuDescription**: string (ReadOnly): The sku description of the Azure plan for the subscription.
+* **skuId**: string: The sku ID of the Azure plan for the subscription.
+* **subscriptionBillingStatus**: 'Abandoned' | 'Active' | 'Deleted' | 'Inactive' | 'Warning' | string: The current billing status of the subscription.
+* **subscriptionId**: string (ReadOnly): The ID of the subscription.
+* **suspensionReasons**: string[] (ReadOnly): The suspension reason for a subscription. Applies only to subscriptions in Microsoft Online Services Program billing accounts.
+
 ## CustomerPolicyProperties
 ### Properties
 * **viewCharges**: 'Allowed' | 'NotAllowed' | string: The policy that controls whether the users in customer's organization can view charges at pay-as-you-go prices.
+
+## DownloadUrl
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF file.
+
+## DownloadUrl
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF file.
+
+## DownloadUrl
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF file.
+
+## DownloadUrl
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF file.
 
 ## IndirectRelationshipInfo
 ### Properties
@@ -168,4 +265,79 @@
 * **marketplacePurchases**: 'AllAllowed' | 'NotAllowed' | 'OnlyFreeAllowed' | string: The policy that controls whether Azure marketplace purchases are allowed for a billing profile.
 * **reservationPurchases**: 'Allowed' | 'NotAllowed' | string: The policy that controls whether Azure reservation purchases are allowed for a billing profile.
 * **viewCharges**: 'Allowed' | 'NotAllowed' | string: The policy that controls whether users with Azure RBAC access to a subscription can view its charges.
+
+## Product
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ProductProperties](#productproperties): The properties of a product.
+* **type**: string (ReadOnly): Resource type.
+
+## ProductProperties
+### Properties
+* **autoRenew**: 'Off' | 'On' | string: Indicates whether auto renewal is turned on or off for a product.
+* **availabilityId**: string (ReadOnly): The availability of the product.
+* **billingFrequency**: 'Monthly' | 'OneTime' | 'UsageBased' | string: The frequency at which the product will be billed.
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile to which the product is billed.
+* **billingProfileId**: string (ReadOnly): The ID of the billing profile to which the product is billed.
+* **customerDisplayName**: string (ReadOnly): The name of the customer for whom the product was purchased. The field is applicable only for Microsoft Partner Agreement billing account.
+* **customerId**: string (ReadOnly): The ID of the customer for whom the product was purchased. The field is applicable only for Microsoft Partner Agreement billing account.
+* **displayName**: string (ReadOnly): The display name of the product.
+* **endDate**: string (ReadOnly): The date when the product will be renewed or canceled.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section to which the product is billed.
+* **invoiceSectionId**: string (ReadOnly): The ID of the invoice section to which the product is billed.
+* **lastCharge**: [Amount](#amount) (ReadOnly): The last month charges.
+* **lastChargeDate**: string (ReadOnly): The date of the last charge.
+* **productType**: string (ReadOnly): The description of the type of product.
+* **productTypeId**: string (ReadOnly): The ID of the type of product.
+* **purchaseDate**: string (ReadOnly): The date when the product was purchased.
+* **quantity**: int (ReadOnly): The quantity purchased for the product.
+* **reseller**: [Reseller](#reseller) (ReadOnly): Reseller for this product.
+* **skuDescription**: string (ReadOnly): The sku description of the product.
+* **skuId**: string (ReadOnly): The sku ID of the product.
+* **status**: 'Active' | 'AutoRenew' | 'Cancelled' | 'Disabled' | 'Expired' | 'Expiring' | 'Inactive' | 'PastDue' | string: The current status of the product.
+* **tenantId**: string (ReadOnly): The id of the tenant in which the product is used.
+
+## Reseller
+### Properties
+* **description**: string (ReadOnly): The name of the reseller.
+* **resellerId**: string (ReadOnly): The MPN ID of the reseller.
+
+## TransferBillingSubscriptionRequestProperties
+### Properties
+* **destinationInvoiceSectionId**: string (Required): The destination invoice section id.
+
+## TransferBillingSubscriptionRequestProperties
+### Properties
+* **destinationInvoiceSectionId**: string (Required): The destination invoice section id.
+
+## TransferProductRequestProperties
+### Properties
+* **destinationInvoiceSectionId**: string: The destination invoice section id.
+
+## TransferProductRequestProperties
+### Properties
+* **destinationInvoiceSectionId**: string: The destination invoice section id.
+
+## ValidateProductTransferEligibilityError
+### Properties
+* **code**: 'CrossBillingAccountNotAllowed' | 'DestinationBillingProfilePastDue' | 'InsufficientPermissionOnDestination' | 'InsufficientPermissionOnSource' | 'InvalidSource' | 'NotAvailableForDestinationMarket' | 'OneTimePurchaseProductTransferNotAllowed' | 'ProductNotActive' | 'ProductTypeNotSupported' | string: Error code for the product transfer validation.
+* **details**: string: Detailed error message explaining the error.
+* **message**: string: The error message.
+
+## ValidateProductTransferEligibilityResult
+### Properties
+* **errorDetails**: [ValidateProductTransferEligibilityError](#validateproducttransfereligibilityerror): Validation error details.
+* **isMoveEligible**: bool (ReadOnly): Specifies whether the transfer is eligible or not.
+
+## ValidateSubscriptionTransferEligibilityError
+### Properties
+* **code**: 'BillingAccountInactive' | 'CrossBillingAccountNotAllowed' | 'DestinationBillingProfileInactive' | 'DestinationBillingProfileNotFound' | 'DestinationBillingProfilePastDue' | 'DestinationInvoiceSectionInactive' | 'DestinationInvoiceSectionNotFound' | 'InsufficientPermissionOnDestination' | 'InsufficientPermissionOnSource' | 'InvalidDestination' | 'InvalidSource' | 'MarketplaceNotEnabledOnDestination' | 'NotAvailableForDestinationMarket' | 'ProductInactive' | 'ProductNotFound' | 'ProductTypeNotSupported' | 'SourceBillingProfilePastDue' | 'SourceInvoiceSectionInactive' | 'SubscriptionNotActive' | 'SubscriptionTypeNotSupported' | string: Error code for the product transfer validation.
+* **details**: string: Detailed error message explaining the error.
+* **message**: string: The error message.
+
+## ValidateSubscriptionTransferEligibilityResult
+### Properties
+* **errorDetails**: [ValidateSubscriptionTransferEligibilityError](#validatesubscriptiontransfereligibilityerror): Validation error details.
+* **isMoveEligible**: bool (ReadOnly): Specifies whether the subscription is eligible to be transferred.
 

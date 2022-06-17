@@ -34,9 +34,26 @@
 * **properties**: [VaultExtendedInfo](#vaultextendedinfo): Vault extended information.
 * **type**: 'Microsoft.RecoveryServices/vaults/extendedInformation' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.RecoveryServices/locations@2022-04-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2022-04-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
 ## AzureMonitorAlertSettings
 ### Properties
 * **alertsForAllJobFailures**: 'Disabled' | 'Enabled' | string
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string: Resource name for which availability needs to be checked
+* **type**: string: Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string
+* **nameAvailable**: bool
+* **reason**: string
 
 ## ClassicAlertSettings
 ### Properties

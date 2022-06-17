@@ -12,6 +12,12 @@
 * **tags**: [ResourceTags](#resourcetags): Key-value pairs of additional resource provisioning properties.
 * **type**: 'Microsoft.AnalysisServices/servers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.AnalysisServices/locations@2016-05-16)
+* **Resource**: Microsoft.AnalysisServices/locations
+* **ApiVersion**: 2016-05-16
+* **Input**: [CheckServerNameAvailabilityParameters](#checkservernameavailabilityparameters)
+* **Output**: [CheckServerNameAvailabilityResult](#checkservernameavailabilityresult)
+
 ## AnalysisServicesServerProperties
 ### Properties
 * **asAdministrators**: [ServerAdministrators](#serveradministrators): A collection of AS server administrators
@@ -21,6 +27,17 @@
 * **serverFullName**: string (ReadOnly): The full name of the Analysis Services resource.
 * **serverMonitorMode**: int: The server monitor mode for AS server
 * **state**: 'Deleting' | 'Failed' | 'Paused' | 'Pausing' | 'Preparing' | 'Provisioning' | 'Resuming' | 'Scaling' | 'Succeeded' | 'Suspended' | 'Suspending' | 'Updating' | string (ReadOnly): The current state of Analysis Services resource. The state is to indicate more states outside of resource provisioning.
+
+## CheckServerNameAvailabilityParameters
+### Properties
+* **name**: string: Name for checking availability.
+* **type**: string: The resource type of azure analysis services.
+
+## CheckServerNameAvailabilityResult
+### Properties
+* **message**: string: The detailed message of the request unavailability.
+* **nameAvailable**: bool: Indicator of available of the server name.
+* **reason**: string: The reason of unavailability.
 
 ## ResourceSku
 ### Properties

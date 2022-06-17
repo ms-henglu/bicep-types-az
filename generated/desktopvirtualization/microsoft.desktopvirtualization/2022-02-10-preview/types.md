@@ -112,6 +112,17 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function expandMsixImage (Microsoft.DesktopVirtualization/hostPools@2022-02-10-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2022-02-10-preview
+* **Input**: [MsixImageURI](#msiximageuri)
+* **Output**: [ExpandMsixImageList](#expandmsiximagelist)
+
+## Function retrieveRegistrationToken (Microsoft.DesktopVirtualization/hostPools@2022-02-10-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2022-02-10-preview
+* **Output**: [RegistrationInfo](#registrationinfo)
+
 ## AgentUpdateProperties
 ### Properties
 * **maintenanceWindows**: [MaintenanceWindowProperties](#maintenancewindowproperties)[]: The maintenance windows (day and time) for updating the agent components. At least 1 window must be specified. Optionally, a 2nd window can be specified.
@@ -146,6 +157,34 @@
 * **msixPackageFamilyName**: string: Specifies the package family name for MSIX applications
 * **objectId**: string (ReadOnly): ObjectId of Application. (internal use)
 * **showInPortal**: bool: Specifies whether to show the RemoteApp program in the RD Web Access server.
+
+## ExpandMsixImage
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ExpandMsixImageProperties](#expandmsiximageproperties): Detailed properties for ExpandMsixImage
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ExpandMsixImageList
+### Properties
+* **nextLink**: string (ReadOnly): Link to the next page of results.
+* **value**: [ExpandMsixImage](#expandmsiximage)[]: List of MSIX package properties from give MSIX Image.
+
+## ExpandMsixImageProperties
+### Properties
+* **displayName**: string: User friendly Name to be displayed in the portal.
+* **imagePath**: string: VHD/CIM image path on Network Share.
+* **isActive**: bool: Make this version of the package the active one across the hostpool.
+* **isRegularRegistration**: bool: Specifies how to register Package in feed.
+* **lastUpdated**: string: Date Package was last updated, found in the appxmanifest.xml.
+* **packageAlias**: string: Alias of MSIX Package.
+* **packageApplications**: [MsixPackageApplications](#msixpackageapplications)[]: List of package applications.
+* **packageDependencies**: [MsixPackageDependencies](#msixpackagedependencies)[]: List of package dependencies.
+* **packageFamilyName**: string: Package Family Name from appxmanifest.xml. Contains Package Name and Publisher name.
+* **packageFullName**: string: Package Full Name from appxmanifest.xml.
+* **packageName**: string: Package Name from appxmanifest.xml.
+* **packageRelativePath**: string: Relative Path to the package inside the image.
+* **version**: string: Package Version found in the appxmanifest.xml.
 
 ## HostPoolProperties
 ### Properties
@@ -183,6 +222,10 @@
 ### Properties
 * **migrationPath**: string: The path to the legacy object to migrate.
 * **operation**: 'Complete' | 'Hide' | 'Revoke' | 'Start' | 'Unhide' | string: The type of operation for migration.
+
+## MsixImageURI
+### Properties
+* **uri**: string: URI to Image
 
 ## MsixPackageApplications
 ### Properties
@@ -236,6 +279,12 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegistrationInfo
+### Properties
+* **expirationTime**: string: Expiration time of registration token.
+* **registrationTokenOperation**: 'Delete' | 'None' | 'Update' | string: The type of resetting the token.
+* **token**: string: The registration token base64 encoded string.
 
 ## RegistrationInfo
 ### Properties

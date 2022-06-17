@@ -36,6 +36,18 @@
 * **tags**: [TagsDictionary](#tagsdictionary): Resource tags
 * **type**: 'Microsoft.Web/customApis' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function confirmConsentCode (Microsoft.Web/connections@2016-06-01)
+* **Resource**: Microsoft.Web/connections
+* **ApiVersion**: 2016-06-01
+* **Input**: [ConfirmConsentCodeDefinition](#confirmconsentcodedefinition)
+* **Output**: [ConfirmConsentCodeDefinition](#confirmconsentcodedefinition)
+
+## Function extractApiDefinitionFromWsdl (Microsoft.Web/locations@2016-06-01)
+* **Resource**: Microsoft.Web/locations
+* **ApiVersion**: 2016-06-01
+* **Input**: [WsdlDefinition](#wsdldefinition)
+* **Output**: any
+
 ## Function listConsentLinks (Microsoft.Web/connections@2016-06-01)
 * **Resource**: Microsoft.Web/connections
 * **ApiVersion**: 2016-06-01
@@ -120,6 +132,18 @@
 ### Properties
 * **modifiedSwaggerUrl**: string: The modified swagger URL
 * **originalSwaggerUrl**: string: The original swagger URL
+
+## ConfirmConsentCodeDefinition
+### Properties
+* **code**: string: Code that was returned during consent flow
+* **objectId**: string: AAD object ID. This is userId
+* **tenantId**: string: Tenant Id
+
+## ConfirmConsentCodeDefinition
+### Properties
+* **code**: string: Code that was returned during consent flow
+* **objectId**: string: AAD object ID. This is userId
+* **tenantId**: string: Tenant Id
 
 ## ConnectionError
 ### Properties
@@ -225,6 +249,13 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## WsdlDefinition
+### Properties
+* **content**: string: The WSDL content
+* **importMethod**: 'NotSpecified' | 'SoapPassThrough' | 'SoapToRest' | string: The WSDL import method
+* **service**: [WsdlService](#wsdlservice): The service with name and endpoint names
+* **url**: string: The WSDL URL
 
 ## WsdlDefinition
 ### Properties

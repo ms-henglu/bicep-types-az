@@ -46,6 +46,39 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource
 * **type**: 'Microsoft.TestBase/testBaseAccounts/packages/favoriteProcesses' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkPackageNameAvailability (Microsoft.TestBase/testBaseAccounts@2020-12-16-preview)
+* **Resource**: Microsoft.TestBase/testBaseAccounts
+* **ApiVersion**: 2020-12-16-preview
+* **Input**: [PackageCheckNameAvailabilityParameters](#packagechecknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function getDownloadUrl (Microsoft.TestBase/testBaseAccounts/packages@2020-12-16-preview)
+* **Resource**: Microsoft.TestBase/testBaseAccounts/packages
+* **ApiVersion**: 2020-12-16-preview
+* **Output**: [DownloadURLResponse](#downloadurlresponse)
+
+## Function getDownloadUrl (Microsoft.TestBase/testBaseAccounts/packages/testResults@2020-12-16-preview)
+* **Resource**: Microsoft.TestBase/testBaseAccounts/packages/testResults
+* **ApiVersion**: 2020-12-16-preview
+* **Output**: [DownloadURLResponse](#downloadurlresponse)
+
+## Function getFileUploadUrl (Microsoft.TestBase/testBaseAccounts@2020-12-16-preview)
+* **Resource**: Microsoft.TestBase/testBaseAccounts
+* **ApiVersion**: 2020-12-16-preview
+* **Input**: [GetFileUploadURLParameters](#getfileuploadurlparameters)
+* **Output**: [FileUploadURLResponse](#fileuploadurlresponse)
+
+## Function getVideoDownloadUrl (Microsoft.TestBase/testBaseAccounts/packages/testResults@2020-12-16-preview)
+* **Resource**: Microsoft.TestBase/testBaseAccounts/packages/testResults
+* **ApiVersion**: 2020-12-16-preview
+* **Output**: [DownloadURLResponse](#downloadurlresponse)
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): The detailed info regarding the reason associated with the name. Required if nameAvailable == false.
+* **nameAvailable**: bool: Value indicating the availability of the name: true if the name is available; otherwise, false.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason for unavailability of a name. Required if nameAvailable == false.
+
 ## Command
 ### Properties
 * **action**: 'Close' | 'Custom' | 'Install' | 'Launch' | 'Uninstall' | string (Required): The action of the command.
@@ -68,9 +101,33 @@
 ### Properties
 * **distributionGroups**: string[]: The list of distribution groups.
 
+## DownloadURLResponse
+### Properties
+* **downloadUrl**: string (ReadOnly): The download URL.
+* **expirationTime**: string (ReadOnly): Expiry date of the download URL.
+
+## DownloadURLResponse
+### Properties
+* **downloadUrl**: string (ReadOnly): The download URL.
+* **expirationTime**: string (ReadOnly): Expiry date of the download URL.
+
+## DownloadURLResponse
+### Properties
+* **downloadUrl**: string (ReadOnly): The download URL.
+* **expirationTime**: string (ReadOnly): Expiry date of the download URL.
+
 ## FavoriteProcessProperties
 ### Properties
 * **actualProcessName**: string (Required): The actual name of the favorite process. It will be equal to resource name except for the scenario that the process name contains characters that are not allowed in the resource name.
+
+## FileUploadURLResponse
+### Properties
+* **blobPath**: string (ReadOnly): The blob path of the uploaded package. It will be used as the 'blobPath' property of PackageResource.
+* **uploadUrl**: string (ReadOnly): The URL used for uploading the package.
+
+## GetFileUploadURLParameters
+### Properties
+* **blobName**: string: The custom file name of the uploaded blob.
 
 ## NotificationEventReceiver
 ### Properties
@@ -82,6 +139,13 @@
 * **distributionGroupListReceiverValue**: [DistributionGroupListReceiverValue](#distributiongrouplistreceivervalue): The user object receiver value.
 * **subscriptionReceiverValue**: [SubscriptionReceiverValue](#subscriptionreceivervalue): The user object receiver value.
 * **userObjectReceiverValue**: [UserObjectReceiverValue](#userobjectreceivervalue): The user object receiver value.
+
+## PackageCheckNameAvailabilityParameters
+### Properties
+* **applicationName**: string (Required): Application name to verify.
+* **name**: string (Required): Resource name to verify.
+* **type**: string (Required): fully qualified resource type which includes provider namespace.
+* **version**: string (Required): Version name to verify.
 
 ## PackageProperties
 ### Properties

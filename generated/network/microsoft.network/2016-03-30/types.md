@@ -183,6 +183,12 @@
 * **properties**: [SubnetPropertiesFormat](#subnetpropertiesformat)
 * **type**: 'Microsoft.Network/virtualNetworks/subnets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reset (Microsoft.Network/virtualNetworkGateways@2016-03-30)
+* **Resource**: Microsoft.Network/virtualNetworkGateways
+* **ApiVersion**: 2016-03-30
+* **Input**: [VirtualNetworkGateway](#virtualnetworkgateway)
+* **Output**: [VirtualNetworkGateway](#virtualnetworkgateway)
+
 ## AddressSpace
 ### Properties
 * **addressPrefixes**: string[]: Gets or sets List of address blocks reserved for this virtual network in CIDR notation
@@ -871,6 +877,26 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource Id
+
+## VirtualNetworkGateway
+### Properties
+* **etag**: string: Gets a unique read-only string that changes whenever the resource is updated
+* **id**: string: Resource Id
+* **location**: string: Resource location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [VirtualNetworkGatewayPropertiesFormat](#virtualnetworkgatewaypropertiesformat): VirtualNetworkGateway properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string (ReadOnly): Resource type
+
+## VirtualNetworkGateway
+### Properties
+* **etag**: string: Gets a unique read-only string that changes whenever the resource is updated
+* **id**: string: Resource Id
+* **location**: string: Resource location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [VirtualNetworkGatewayPropertiesFormat](#virtualnetworkgatewaypropertiesformat): VirtualNetworkGateway properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string (ReadOnly): Resource type
 
 ## VirtualNetworkGateway
 ### Properties

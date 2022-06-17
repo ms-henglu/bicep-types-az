@@ -39,10 +39,27 @@
 * **properties**: [ScheduleEntries](#scheduleentries) (Required): List of patch schedules for a Redis cache.
 * **type**: 'Microsoft.Cache/Redis/patchSchedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function forceReboot (Microsoft.Cache/Redis@2017-02-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2017-02-01
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+* **Output**: [RedisForceRebootResponse](#redisforcerebootresponse)
+
 ## Function listKeys (Microsoft.Cache/Redis@2017-02-01)
 * **Resource**: Microsoft.Cache/Redis
 * **ApiVersion**: 2017-02-01
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## Function regenerateKey (Microsoft.Cache/Redis@2017-02-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2017-02-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## RedisAccessKeys
+### Properties
+* **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate with Redis cache.
+* **secondaryKey**: string (ReadOnly): The current secondary key that clients can use to authenticate with Redis cache.
 
 ## RedisAccessKeys
 ### Properties
@@ -76,6 +93,10 @@
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
 
+## RedisForceRebootResponse
+### Properties
+* **Message**: string (ReadOnly): Status message
+
 ## RedisLinkedServer
 ### Properties
 * **id**: string (ReadOnly): Linked server Id.
@@ -100,6 +121,15 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RedisRebootParameters
+### Properties
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' | string (Required): Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shard to be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The Redis access key to regenerate.
 
 ## ScheduleEntries
 ### Properties

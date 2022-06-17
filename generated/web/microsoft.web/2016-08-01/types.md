@@ -495,6 +495,28 @@
 * **properties**: [VnetGatewayProperties](#vnetgatewayproperties): VnetGateway resource specific properties
 * **type**: 'Microsoft.Web/sites/virtualNetworkConnections/gateways' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backup (Microsoft.Web/sites@2016-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2016-08-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function backup (Microsoft.Web/sites/slots@2016-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2016-08-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function iscloneable (Microsoft.Web/sites@2016-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2016-08-01
+* **Output**: [SiteCloneability](#sitecloneability)
+
+## Function iscloneable (Microsoft.Web/sites/slots@2016-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2016-08-01
+* **Output**: [SiteCloneability](#sitecloneability)
+
 ## Function list (Microsoft.Web/sites/backups@2016-08-01)
 * **Resource**: Microsoft.Web/sites/backups
 * **ApiVersion**: 2016-08-01
@@ -546,6 +568,36 @@
 * **Resource**: Microsoft.Web/sites/slots
 * **ApiVersion**: 2016-08-01
 * **Output**: [FunctionSecrets](#functionsecrets)
+
+## Function migratemysql (Microsoft.Web/sites@2016-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2016-08-01
+* **Input**: [MigrateMySqlRequest](#migratemysqlrequest)
+* **Output**: [Operation](#operation)
+
+## Function restore (Microsoft.Web/sites/backups@2016-08-01)
+* **Resource**: Microsoft.Web/sites/backups
+* **ApiVersion**: 2016-08-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreResponse](#restoreresponse)
+
+## Function restore (Microsoft.Web/sites/slots/backups@2016-08-01)
+* **Resource**: Microsoft.Web/sites/slots/backups
+* **ApiVersion**: 2016-08-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreResponse](#restoreresponse)
+
+## Function slotsdiffs (Microsoft.Web/sites@2016-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2016-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
+
+## Function slotsdiffs (Microsoft.Web/sites/slots@2016-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2016-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
 
 ## ApiDefinitionInfo
 ### Properties
@@ -618,6 +670,22 @@ Remove blobs older than X days.
 * **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
 * **type**: string (ReadOnly): Resource type.
 
+## BackupItem
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## BackupItem
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
 ## BackupItemProperties
 ### Properties
 * **blobName**: string (ReadOnly): Name of the blob which contains data for this backup.
@@ -634,6 +702,22 @@ Remove blobs older than X days.
 * **status**: 'Created' | 'DeleteFailed' | 'DeleteInProgress' | 'Deleted' | 'Failed' | 'InProgress' | 'PartiallySucceeded' | 'Skipped' | 'Succeeded' | 'TimedOut' (ReadOnly): Backup status.
 * **storageAccountUrl**: string (ReadOnly): SAS URL for the storage account container which contains this backup.
 * **websiteSizeInBytes**: int (ReadOnly): Size of the original web app which has been backed up.
+
+## BackupRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupRequestProperties](#backuprequestproperties): BackupRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## BackupRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupRequestProperties](#backuprequestproperties): BackupRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
 
 ## BackupRequest
 ### Properties
@@ -719,6 +803,16 @@ together to use the same snapshot.
 * **allowedOrigins**: string[]: Gets or sets the list of origins that should be allowed to make cross-origin
 calls (for example: http://example.com:12345). Use "*" to allow all.
 
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
 ## DatabaseBackupSetting
 ### Properties
 * **connectionString**: string: Contains a connection string to a database which is being backed up or restored. If the restore should happen to a new database, the database name inside is the new one.
@@ -743,6 +837,15 @@ This is used during restore with overwrite connection strings options.
 ## EnabledConfig
 ### Properties
 * **enabled**: bool: True if configuration is enabled, false if it is disabled and null if configuration is not set.
+
+## ErrorEntity
+### Properties
+* **code**: string: Basic error code.
+* **extendedCode**: string: Type of error.
+* **innerErrors**: [ErrorEntity](#errorentity)[]: Inner errors.
+* **message**: string: Any details of the error.
+* **messageTemplate**: string: Message template.
+* **parameters**: string[]: Parameters for the template.
 
 ## Experiments
 ### Properties
@@ -903,6 +1006,19 @@ normally, use the POST /listKeys API instead.
 * **tenantId**: string (ReadOnly): Tenant of managed service identity.
 * **type**: 'SystemAssigned' | string: Type of managed service identity.
 
+## MigrateMySqlRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [MigrateMySqlRequestProperties](#migratemysqlrequestproperties): MigrateMySqlRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## MigrateMySqlRequestProperties
+### Properties
+* **connectionString**: string (Required): Connection string to the remote MySQL database.
+* **migrationType**: 'LocalToRemote' | 'RemoteToLocal' (Required): The type of migration operation to be done
+
 ## MSDeployCoreOrMSDeployStatusProperties
 ### Properties
 * **appOffline**: bool (WriteOnly): Sets the AppOffline rule while the MSDeploy operation executes.
@@ -931,6 +1047,17 @@ Setting is <code>false</code> by default.
 ### Properties
 * **name**: string: Pair name.
 * **value**: string: Pair value.
+
+## Operation
+### Properties
+* **createdTime**: string: Time when operation has started.
+* **errors**: [ErrorEntity](#errorentity)[]: Any errors associate with the operation.
+* **expirationTime**: string: Time when operation will expire.
+* **geoMasterOperationId**: string: Applicable only for stamp operation ids.
+* **id**: string: Operation ID.
+* **modifiedTime**: string: Time when operation has been updated.
+* **name**: string: Operation name.
+* **status**: 'Created' | 'Failed' | 'InProgress' | 'Succeeded' | 'TimedOut': The current status of the operation.
 
 ## PremierAddOnProperties
 ### Properties
@@ -1021,6 +1148,22 @@ Custom decision algorithm can be provided in TiPCallback site extension which UR
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
 ## RestoreRequestProperties
 ### Properties
 * **adjustConnectionStrings**: bool: <code>true</code> if SiteConfig.ConnectionStrings should be set in new app; otherwise, <code>false</code>.
@@ -1035,6 +1178,26 @@ the app's object when it is being restored, but that might fail due to conflicts
 * **overwrite**: bool (Required): <code>true</code> if the restore operation can overwrite target app; otherwise, <code>false</code>. <code>true</code> is needed if trying to restore over an existing app.
 * **siteName**: string: Name of an app.
 * **storageAccountUrl**: string (Required): SAS URL to the container.
+
+## RestoreResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreResponseProperties](#restoreresponseproperties): RestoreResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreResponseProperties](#restoreresponseproperties): RestoreResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreResponseProperties
+### Properties
+* **operationId**: string (ReadOnly): When server starts the restore process, it will return an operation ID identifying that particular restore operation.
 
 ## SiteAuthSettingsProperties
 ### Properties
@@ -1102,6 +1265,27 @@ Twitter Sign-In documentation: https://dev.twitter.com/web/sign-in
 This setting is required for enabling Twitter Sign-In.
 Twitter Sign-In documentation: https://dev.twitter.com/web/sign-in
 * **unauthenticatedClientAction**: 'AllowAnonymous' | 'RedirectToLoginPage': The action to take when an unauthenticated client attempts to access the app.
+
+## SiteCloneability
+### Properties
+* **blockingCharacteristics**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of blocking application characteristics.
+* **blockingFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that prevent cloning.
+* **result**: 'Cloneable' | 'NotCloneable' | 'PartiallyCloneable': Name of app.
+* **unsupportedFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
+but the features in this list will not be set up on cloned app.
+
+## SiteCloneability
+### Properties
+* **blockingCharacteristics**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of blocking application characteristics.
+* **blockingFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that prevent cloning.
+* **result**: 'Cloneable' | 'NotCloneable' | 'PartiallyCloneable': Name of app.
+* **unsupportedFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
+but the features in this list will not be set up on cloned app.
+
+## SiteCloneabilityCriterion
+### Properties
+* **description**: string: Description of criterion.
+* **name**: string: Name of criterion.
 
 ## SiteConfig
 ### Properties
@@ -1245,6 +1429,34 @@ This only applies to Functions container.
 ### Properties
 * **appSettingNames**: string[]: List of application settings names.
 * **connectionStringNames**: string[]: List of connection string names.
+
+## SlotDifference
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [SlotDifferenceProperties](#slotdifferenceproperties): SlotDifference resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## SlotDifferenceCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [SlotDifference](#slotdifference)[] (Required): Collection of resources.
+
+## SlotDifferenceCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [SlotDifference](#slotdifference)[] (Required): Collection of resources.
+
+## SlotDifferenceProperties
+### Properties
+* **description**: string (ReadOnly): Description of the setting difference.
+* **diffRule**: string (ReadOnly): Rule that describes how to process the setting difference during a slot swap.
+* **settingName**: string (ReadOnly): Name of the setting.
+* **settingType**: string (ReadOnly): The type of the setting: General, AppSetting or ConnectionString.
+* **type**: string (ReadOnly): Type of the difference: Information, Warning or Error.
+* **valueInCurrentSlot**: string (ReadOnly): Value of the setting in the current slot.
+* **valueInTargetSlot**: string (ReadOnly): Value of the setting in the target slot.
 
 ## SlotSwapStatus
 ### Properties

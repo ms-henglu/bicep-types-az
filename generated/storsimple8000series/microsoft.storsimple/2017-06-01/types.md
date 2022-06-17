@@ -134,6 +134,16 @@
 * **ApiVersion**: 2017-06-01
 * **Output**: [SymmetricEncryptedSecret](#symmetricencryptedsecret)
 
+## Function publicEncryptionKey (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+* **Output**: [PublicKey](#publickey)
+
+## Function regenerateActivationKey (Microsoft.StorSimple/managers@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2017-06-01
+* **Output**: [Key](#key)
+
 ## AccessControlRecordProperties
 ### Properties
 * **initiatorName**: string (Required): The iSCSI initiator name (IQN).
@@ -219,6 +229,10 @@
 ### Properties
 * **activationKey**: string (Required): The activation key for the device.
 
+## Key
+### Properties
+* **activationKey**: string (Required): The activation key for the device.
+
 ## ListFailoverTargetsRequest
 ### Properties
 * **volumeContainers**: string[]: The list of path IDs of the volume containers that needs to be failed-over, for which we want to fetch the eligible targets.
@@ -245,6 +259,10 @@
 ## ManagerSku
 ### Properties
 * **name**: 'Standard' (Required): Refers to the sku name which should be "Standard"
+
+## PublicKey
+### Properties
+* **key**: string (Required): The key.
 
 ## ResourceTags
 ### Properties

@@ -54,6 +54,11 @@
 * **properties**: [PublishedBlueprintProperties](#publishedblueprintproperties) (Required): Detailed properties for published blueprint.
 * **type**: 'Microsoft.Blueprint/blueprints/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function whoIsBlueprint (Microsoft.Blueprint/blueprintAssignments@2018-11-01-preview)
+* **Resource**: Microsoft.Blueprint/blueprintAssignments
+* **ApiVersion**: 2018-11-01-preview
+* **Output**: [WhoIsBlueprintContract](#whoisblueprintcontract)
+
 ## AssignmentLockSettings
 ### Properties
 * **excludedActions**: string[]: List of management operations that are excluded from blueprint locks. Up to 200 actions are permitted. If the lock mode is set to 'AllResourcesReadOnly', then the following actions are automatically appended to 'excludedActions': '*/read', 'Microsoft.Network/virtualNetworks/subnets/join/action' and 'Microsoft.Authorization/locks/delete'. If the lock mode is set to 'AllResourcesDoNotDelete', then the following actions are automatically appended to 'excludedActions': 'Microsoft.Authorization/locks/delete'. Duplicate actions will get removed.
@@ -234,4 +239,8 @@
 ### Properties
 * **clientId**: string: Client App Id associated with this identity.
 * **principalId**: string: Azure Active Directory principal ID associated with this Identity.
+
+## WhoIsBlueprintContract
+### Properties
+* **objectId**: string: AAD object Id of the Azure Blueprints service principal in the tenant.
 

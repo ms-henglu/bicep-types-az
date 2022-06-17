@@ -122,6 +122,11 @@
 * **properties**: [StorageDomainProperties](#storagedomainproperties) (Required): The properties.
 * **type**: 'Microsoft.StorSimple/managers/storageDomains' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getEncryptionKey (Microsoft.StorSimple/managers@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2016-10-01
+* **Output**: [SymmetricEncryptedSecret](#symmetricencryptedsecret)
+
 ## AccessControlRecordProperties
 ### Properties
 * **initiatorName**: string (Required): The Iscsi initiator name (IQN)
@@ -231,6 +236,12 @@
 * **encryptionKey**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret): The encryption key used to encrypt the data. This is a user secret.
 * **encryptionStatus**: 'Disabled' | 'Enabled' (Required): The encryption status "Enabled | Disabled".
 * **storageAccountCredentialIds**: string[] (Required): The storage account credentials.
+
+## SymmetricEncryptedSecret
+### Properties
+* **encryptionAlgorithm**: 'AES256' | 'None' | 'RSAES_PKCS1_v_1_5' (Required): Algorithm used to encrypt "Value"
+* **value**: string (Required): The value of the secret itself. If the secret is in plaintext or null then EncryptionAlgorithm will be none
+* **valueCertificateThumbprint**: string: Thumbprint cert that was used to encrypt "Value"
 
 ## Time
 ### Properties

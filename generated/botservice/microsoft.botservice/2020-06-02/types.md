@@ -52,12 +52,30 @@
 * **ApiVersion**: 2020-06-02
 * **Output**: [ConnectionSetting](#connectionsetting)
 
+## Function regeneratekeys (Microsoft.BotService/botServices/channels@2020-06-02)
+* **Resource**: Microsoft.BotService/botServices/channels
+* **ApiVersion**: 2020-06-02
+* **Input**: [SiteInfo](#siteinfo)
+* **Output**: [BotChannel](#botchannel)
+
 ## AlexaChannelProperties
 ### Properties
 * **alexaSkillId**: string (Required): The Alexa skill Id
 * **isEnabled**: bool (Required): Whether this channel is enabled for the bot
 * **serviceEndpointUri**: string (ReadOnly): Full Uri used to configured the skill in Alexa
 * **urlFragment**: string (ReadOnly): Url fragment used in part of the Uri configured in Alexa
+
+## BotChannel
+### Properties
+* **etag**: string: Entity Tag
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **kind**: 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
+* **location**: string: Specifies the location of the resource.
+* **name**: string (ReadOnly): Specifies the name of the resource.
+* **properties**: [Channel](#channel): The set of properties specific to bot channel resource
+* **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
+* **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
+* **type**: string (ReadOnly): Specifies the type of the resource.
 
 ## BotChannel
 ### Properties
@@ -279,6 +297,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SiteInfo
+### Properties
+* **key**: 'key1' | 'key2' (Required): Determines which key is to be regenerated
+* **siteName**: string (Required): The site name
 
 ## Sku
 ### Properties

@@ -47,6 +47,16 @@
 * **properties**: [ServerEndpointProperties](#serverendpointproperties): Server Endpoint properties.
 * **type**: 'Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function postbackup (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2017-06-05-preview)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2017-06-05-preview
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [PostBackupResponse](#postbackupresponse)
+
+## BackupRequest
+### Properties
+* **azureFileShare**: string: Azure File Share.
+
 ## CloudEndpointProperties
 ### Properties
 * **backupEnabled**: bool (ReadOnly): Backup Enabled
@@ -59,6 +69,14 @@
 * **storageAccountResourceId**: string: Storage Account Resource Id
 * **storageAccountShareName**: string: Storage Account Share name
 * **storageAccountTenantId**: string: Storage Account Tenant Id
+
+## PostBackupResponse
+### Properties
+* **backupMetadata**: [PostBackupResponseProperties](#postbackupresponseproperties): Post Backup Response Properties
+
+## PostBackupResponseProperties
+### Properties
+* **cloudEndpointName**: string (ReadOnly): cloud endpoint Name.
 
 ## RegisteredServerProperties
 ### Properties

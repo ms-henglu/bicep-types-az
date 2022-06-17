@@ -32,6 +32,22 @@
 * **properties**: [AssessmentProperties](#assessmentproperties) (Required): Properties of the assessment.
 * **type**: 'Microsoft.Migrate/projects/groups/assessments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Migrate/locations@2018-02-02)
+* **Resource**: Microsoft.Migrate/locations
+* **ApiVersion**: 2018-02-02
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function downloadUrl (Microsoft.Migrate/projects/groups/assessments@2018-02-02)
+* **Resource**: Microsoft.Migrate/projects/groups/assessments
+* **ApiVersion**: 2018-02-02
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function keys (Microsoft.Migrate/projects@2018-02-02)
+* **Resource**: Microsoft.Migrate/projects
+* **ApiVersion**: 2018-02-02
+* **Output**: [ProjectKey](#projectkey)
+
 ## AssessmentProperties
 ### Properties
 * **azureHybridUseBenefit**: 'No' | 'Unknown' | 'Yes' | string (Required): AHUB discount on windows virtual machines.
@@ -56,12 +72,33 @@
 * **timeRange**: 'Day' | 'Month' | 'Week' | string (Required): Time range of performance data used to recommend a size.
 * **updatedTimestamp**: string (ReadOnly): Time when this project was last updated. Date-Time represented in ISO-8601 format.
 
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability
+* **type**: 'Microsoft.Migrate/projects' (Required): The resource type. Must be set to Microsoft.Migrate/projects
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): Gets an error message explaining the Reason value in more detail.
+* **nameAvailable**: bool (ReadOnly): Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or invalid and cannot be used.
+* **reason**: 'AlreadyExists' | 'Available' | 'Invalid' (ReadOnly): Gets the reason that a project name could not be used. The Reason element is only returned if NameAvailable is false.
+
+## DownloadUrl
+### Properties
+* **assessmentReportUrl**: string (ReadOnly): Hyperlink to download report.
+* **expirationTime**: string (ReadOnly): Expiry date of download url.
+
 ## GroupProperties
 ### Properties
 * **assessments**: string[] (ReadOnly): List of References to Assessments created on this group.
 * **createdTimestamp**: string (ReadOnly): Time when this project was created. Date-Time represented in ISO-8601 format.
 * **machines**: string[] (Required): List of machine names that are part of this group.
 * **updatedTimestamp**: string (ReadOnly): Time when this project was last updated. Date-Time represented in ISO-8601 format.
+
+## ProjectKey
+### Properties
+* **workspaceId**: string (ReadOnly): ID of Migration Project.
+* **workspaceKey**: string (ReadOnly): Key of Migration Project.
 
 ## ProjectProperties
 ### Properties

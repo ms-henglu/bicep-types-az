@@ -36,6 +36,12 @@
 * **properties**: [RoleManagementPolicyAssignmentProperties](#rolemanagementpolicyassignmentproperties): Role management policy properties.
 * **type**: 'Microsoft.Authorization/roleManagementPolicyAssignments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function validate (Microsoft.Authorization/roleAssignments@2020-10-01-preview)
+* **Resource**: Microsoft.Authorization/roleAssignments
+* **ApiVersion**: 2020-10-01-preview
+* **Input**: [RoleAssignmentCreateParameters](#roleassignmentcreateparameters)
+* **Output**: [ValidationResponse](#validationresponse)
+
 ## ExpandedProperties
 ### Properties
 * **principal**: [ExpandedPropertiesPrincipal](#expandedpropertiesprincipal): Details of the principal
@@ -91,6 +97,10 @@
 * **email**: string: Email of principal
 * **id**: string: The id of the principal made changes
 * **type**: string: Type of principal such as user , group etc
+
+## RoleAssignmentCreateParameters
+### Properties
+* **properties**: [RoleAssignmentProperties](#roleassignmentproperties) (Required): Role assignment properties.
 
 ## RoleAssignmentProperties
 ### Properties
@@ -186,4 +196,14 @@
 * **policyId**: string: The policy id role management policy assignment.
 * **roleDefinitionId**: string: The role definition of management policy assignment.
 * **scope**: string: The role management policy scope.
+
+## ValidationResponse
+### Properties
+* **errorInfo**: [ValidationResponseErrorInfo](#validationresponseerrorinfo): Failed validation result details
+* **isValid**: bool (ReadOnly): Whether or not validation succeeded
+
+## ValidationResponseErrorInfo
+### Properties
+* **code**: string (ReadOnly): Error code indicating why validation failed
+* **message**: string (ReadOnly): Message indicating why validation failed
 

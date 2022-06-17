@@ -145,9 +145,76 @@
 * **tags**: [WorkbookResourceTags](#workbookresourcetags): Resource tags
 * **type**: 'microsoft.insights/workbooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function ApiKeys (Microsoft.Insights/components@2015-05-01)
+* **Resource**: Microsoft.Insights/components
+* **ApiVersion**: 2015-05-01
+* **Input**: [APIKeyRequest](#apikeyrequest)
+* **Output**: [ApplicationInsightsComponentAPIKey](#applicationinsightscomponentapikey)
+
+## Function exportconfiguration (Microsoft.Insights/components@2015-05-01)
+* **Resource**: Microsoft.Insights/components
+* **ApiVersion**: 2015-05-01
+* **Input**: [ApplicationInsightsComponentExportRequest](#applicationinsightscomponentexportrequest)
+* **Output**: [ApplicationInsightsComponentExportConfiguration](#applicationinsightscomponentexportconfiguration)[]
+
+## Function WorkItemConfigs (Microsoft.Insights/components@2015-05-01)
+* **Resource**: Microsoft.Insights/components
+* **ApiVersion**: 2015-05-01
+* **Input**: [WorkItemCreateConfiguration](#workitemcreateconfiguration)
+* **Output**: [WorkItemConfiguration](#workitemconfiguration)
+
+## APIKeyRequest
+### Properties
+* **linkedReadProperties**: string[]: The read access rights of this API Key.
+* **linkedWriteProperties**: string[]: The write access rights of this API Key.
+* **name**: string: The name of the API Key.
+
 ## ApplicationInsightsComponentAnalyticsItemProperties
 ### Properties
 * **functionAlias**: string: A function alias, used when the type of the item is Function
+
+## ApplicationInsightsComponentAPIKey
+### Properties
+* **apiKey**: string (ReadOnly): The API key value. It will be only return once when the API Key was created.
+* **createdDate**: string: The create date of this API key.
+* **id**: string (ReadOnly): The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is created.
+* **linkedReadProperties**: string[]: The read access rights of this API Key.
+* **linkedWriteProperties**: string[]: The write access rights of this API Key.
+* **name**: string: The name of the API key.
+
+## ApplicationInsightsComponentExportConfiguration
+### Properties
+* **ApplicationName**: string (ReadOnly): The name of the Application Insights component.
+* **ContainerName**: string (ReadOnly): The name of the destination storage container.
+* **DestinationAccountId**: string (ReadOnly): The name of destination account.
+* **DestinationStorageLocationId**: string (ReadOnly): The destination account location ID.
+* **DestinationStorageSubscriptionId**: string (ReadOnly): The destination storage account subscription ID.
+* **DestinationType**: string (ReadOnly): The destination type.
+* **ExportId**: string (ReadOnly): The unique ID of the export configuration inside an Application Insights component. It is auto generated when the Continuous Export configuration is created.
+* **ExportStatus**: string (ReadOnly): This indicates current Continuous Export configuration status. The possible values are 'Preparing', 'Success', 'Failure'.
+* **InstrumentationKey**: string (ReadOnly): The instrumentation key of the Application Insights component.
+* **IsUserEnabled**: string (ReadOnly): This will be 'true' if the Continuous Export configuration is enabled, otherwise it will be 'false'.
+* **LastGapTime**: string (ReadOnly): The last time the Continuous Export configuration started failing.
+* **LastSuccessTime**: string (ReadOnly): The last time data was successfully delivered to the destination storage container for this Continuous Export configuration.
+* **LastUserUpdate**: string (ReadOnly): Last time the Continuous Export configuration was updated.
+* **NotificationQueueEnabled**: string: Deprecated
+* **PermanentErrorReason**: string (ReadOnly): This is the reason the Continuous Export configuration started failing. It can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
+* **RecordTypes**: string: This comma separated list of document types that will be exported. The possible values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+* **ResourceGroup**: string (ReadOnly): The resource group of the Application Insights component.
+* **StorageName**: string (ReadOnly): The name of the destination storage account.
+* **SubscriptionId**: string (ReadOnly): The subscription of the Application Insights component.
+
+## ApplicationInsightsComponentExportRequest
+### Properties
+* **DestinationAccountId**: string: The name of destination storage account.
+* **DestinationAddress**: string: The SAS URL for the destination storage container. It must grant write permission.
+* **DestinationStorageLocationId**: string: The location ID of the destination storage container.
+* **DestinationStorageSubscriptionId**: string: The subscription ID of the destination storage container.
+* **DestinationType**: string: The Continuous Export destination type. This has to be 'Blob'.
+* **IsEnabled**: string: Set to 'true' to create a Continuous Export configuration as enabled, otherwise set it to 'false'.
+* **NotificationQueueEnabled**: string: Deprecated
+* **NotificationQueueUri**: string: Deprecated
+* **RecordTypes**: string: The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
 
 ## ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions
 ### Properties
@@ -248,6 +315,26 @@
 * **workbookId**: string (Required): Internally assigned unique id of the workbook definition.
 
 ## WorkbookResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## WorkItemConfiguration
+### Properties
+* **ConfigDisplayName**: string: Configuration friendly name
+* **ConfigProperties**: string: Serialized JSON object for detailed properties
+* **ConnectorId**: string: Connector identifier where work item is created
+* **Id**: string: Unique Id for work item
+* **IsDefault**: bool: Boolean value indicating whether configuration is default
+
+## WorkItemCreateConfiguration
+### Properties
+* **ConnectorDataConfiguration**: string: Serialized JSON object for detailed properties
+* **ConnectorId**: string: Unique connector id
+* **ValidateOnly**: bool: Boolean indicating validate only
+* **WorkItemProperties**: [WorkItemCreateConfigurationWorkItemProperties](#workitemcreateconfigurationworkitemproperties): Custom work item properties
+
+## WorkItemCreateConfigurationWorkItemProperties
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string

@@ -42,6 +42,12 @@
 * **ApiVersion**: 2015-12-01
 * **Output**: [BatchAccountKeys](#batchaccountkeys)
 
+## Function regenerateKeys (Microsoft.Batch/batchAccounts@2015-12-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2015-12-01
+* **Input**: [BatchAccountRegenerateKeyParameters](#batchaccountregeneratekeyparameters)
+* **Output**: [BatchAccountKeys](#batchaccountkeys)
+
 ## ApplicationPackage
 ### Properties
 * **format**: string: The format of the application package, if the package is active.
@@ -75,4 +81,13 @@
 ### Properties
 * **primary**: string: The primary key associated with the account.
 * **secondary**: string: The secondary key associated with the account.
+
+## BatchAccountKeys
+### Properties
+* **primary**: string: The primary key associated with the account.
+* **secondary**: string: The secondary key associated with the account.
+
+## BatchAccountRegenerateKeyParameters
+### Properties
+* **keyName**: 'Primary' | 'Secondary' (Required): The type of account key to regenerate.
 
