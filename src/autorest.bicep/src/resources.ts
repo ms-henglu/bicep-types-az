@@ -330,6 +330,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
 
       const listData = getPostSchema(listOperation);
       if (!listData) {
+        logWarning(`Skipping '${JSON.stringify(listOperation)}'`)
         continue;
       }
 
@@ -415,7 +416,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     }
 
     return {
-      response: (validResponses[0].protocol.http as HttpResponse),
+      response: validResponses[0].protocol.http as HttpResponse,
     };
   }
 
@@ -468,16 +469,18 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     const response = getResponseSchema(operation);
     const request = getRequestSchema(operation, validRequests);
 
-    if (!request || !response) {
+    // operation can have no response schema
+    if (!request) {
+      logWarning(`skip at getPostSchema, request: '${JSON.stringify(request)}', response: '${JSON.stringify(response)}'`);
       return;
     }
 
     return {
       request: request.request,
-      response: response.response,
+      response: response?.response,
       parameters: request.parameters,
       requestSchema: request.schema,
-      responseSchema: response.schema,
+      responseSchema: response?.schema,
     };
   }
 

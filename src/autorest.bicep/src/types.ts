@@ -188,7 +188,7 @@ export class ResourceType extends TypeBase {
 }
 
 export class ResourceFunctionType extends TypeBase {
-  constructor(name: string, resourceType: string, apiVersion: string, output: TypeReference, input?: TypeReference) {
+  constructor(name: string, resourceType: string, apiVersion: string, output?: TypeReference, input?: TypeReference) {
     super(TypeBaseKind.ResourceFunctionType);
     this.Name = name;
     this.ResourceType = resourceType;
@@ -199,7 +199,7 @@ export class ResourceFunctionType extends TypeBase {
   readonly Name: string;
   readonly ResourceType: string;
   readonly ApiVersion: string;
-  readonly Output: TypeReference;
+  readonly Output?: TypeReference;
   readonly Input?: TypeReference;
 }
 

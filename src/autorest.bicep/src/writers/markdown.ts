@@ -132,7 +132,9 @@ export function writeMarkdown(provider: string, apiVersion: string, types: TypeB
         if (resourceFunctionType.Input) {
           writeBullet("Input", getTypeName(types, resourceFunctionType.Input));
         }
-        writeBullet("Output", getTypeName(types, resourceFunctionType.Output));
+        if (resourceFunctionType.Output) {
+          writeBullet("Output", getTypeName(types, resourceFunctionType.Output));
+        }
 
         writeNewLine();
         return;
@@ -199,8 +201,11 @@ export function writeMarkdown(provider: string, apiVersion: string, types: TypeB
         typesToWrite.push(types[resourceFunctionType.Input.Index]);
         findTypesToWrite(types, typesToWrite, resourceFunctionType.Input);
       }
-      typesToWrite.push(types[resourceFunctionType.Output.Index]);
-      findTypesToWrite(types, typesToWrite, resourceFunctionType.Output);
+      if (resourceFunctionType.Output)
+      {
+        typesToWrite.push(types[resourceFunctionType.Output.Index]);
+        findTypesToWrite(types, typesToWrite, resourceFunctionType.Output);
+      }
     }
 
     typesToWrite.sort((a, b) => {
