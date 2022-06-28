@@ -415,7 +415,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     }
 
     return {
-      response: (validResponses[0].protocol.http as HttpResponse),
+      response: validResponses[0].protocol.http as HttpResponse,
     };
   }
 
@@ -469,6 +469,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     const request = getRequestSchema(operation, validRequests);
 
     if (!request || !response) {
+      logWarning(`skip at getPostSchema, request: '${request}', response: '${response}'`);
       return;
     }
 
