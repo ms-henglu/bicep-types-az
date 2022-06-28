@@ -62,6 +62,18 @@
 * **ApiVersion**: 2021-03-01
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
 ## AccessProfile
 ### Properties
 * **kubeConfig**: any: Base64-encoded Kubernetes configuration file.
@@ -80,6 +92,15 @@
 * **details**: [CloudErrorBody](#clouderrorbody)[]: A list of additional details about the error.
 * **message**: string: A message describing the error, intended to be suitable for display in a user interface.
 * **target**: string: The target of the particular error. For example, the name of the property in error.
+
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): exit code of the command
+* **finishedAt**: string (ReadOnly): time when the command finished.
+* **logs**: string (ReadOnly): command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): explain why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): time when the command started.
 
 ## Components1Umhcm8SchemasManagedclusteridentityPropertiesUserassignedidentitiesAdditionalproperties
 ### Properties
@@ -481,6 +502,24 @@
 * **requiredMembers**: string[]: RequiredMembers of the resource
 * **type**: string: The resource type.
 
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **description**: string: The private link service connection description.
@@ -499,6 +538,17 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): command to run.
+* **context**: string: base64 encoded zip file, contains files required by the command
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## SysctlConfig
 ### Properties
