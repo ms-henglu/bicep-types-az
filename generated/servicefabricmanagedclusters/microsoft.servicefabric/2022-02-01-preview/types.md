@@ -75,6 +75,26 @@
 * **tags**: [ManagedProxyResourceTags](#managedproxyresourcetags): Azure resource tags.
 * **type**: 'Microsoft.ServiceFabric/managedClusters/nodeTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function deleteNode (Microsoft.ServiceFabric/managedClusters/nodeTypes@2022-02-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2022-02-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function getazresiliencystatus (Microsoft.ServiceFabric/managedClusters@2022-02-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2022-02-01-preview
+* **Output**: [ManagedAzResiliencyStatus](#managedazresiliencystatus)
+
+## Function reimage (Microsoft.ServiceFabric/managedClusters/nodeTypes@2022-02-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2022-02-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function restart (Microsoft.ServiceFabric/managedClusters/nodeTypes@2022-02-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2022-02-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
 ## ApplicationHealthPolicy
 ### Properties
 * **considerWarningAsError**: bool (Required): Indicates whether warnings are treated with the same severity as errors.
@@ -166,6 +186,11 @@ This name must be the full Arm Resource ID for the referenced application type v
 * **probeRequestPath**: string: The probe request path. Only supported for HTTP/HTTPS probes.
 * **protocol**: 'tcp' | 'udp' | string (Required): The reference to the transport protocol used by the load balancing rule.
 
+## ManagedAzResiliencyStatus
+### Properties
+* **baseResourceStatus**: [ResourceAzStatus](#resourceazstatus)[]: List of Managed VM Sizes for Service Fabric Managed Clusters.
+* **isClusterZoneResilient**: bool (ReadOnly): URL to get the next set of Managed VM Sizes if there are any.
+
 ## ManagedClusterProperties
 ### Properties
 * **addonFeatures**: 'BackupRestoreService' | 'DnsService' | 'ResourceMonitorService' | string[]: List of add-on features to enable on the cluster.
@@ -229,6 +254,21 @@ This name must be the full Arm Resource ID for the referenced application type v
 * **sourceAddressPrefixes**: string[]: The CIDR or source IP ranges.
 * **sourcePortRange**: string: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
 * **sourcePortRanges**: string[]: The source port ranges.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[] (Required): List of node names from the node type.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[] (Required): List of node names from the node type.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[] (Required): List of node names from the node type.
 
 ## NodeTypeProperties
 ### Properties
@@ -321,6 +361,12 @@ should be split between the partition ‘Count’
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceAzStatus
+### Properties
+* **isZoneResilient**: bool (ReadOnly): VM Size name.
+* **resourceName**: string (ReadOnly): VM Size properties.
+* **resourceType**: string (ReadOnly): VM Size id.
 
 ## ResourceTags
 ### Properties

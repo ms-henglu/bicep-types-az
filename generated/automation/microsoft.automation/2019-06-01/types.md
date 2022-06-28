@@ -237,6 +237,42 @@
 * **ApiVersion**: 2019-06-01
 * **Output**: [KeyListResult](#keylistresult)
 
+## Function publish (Microsoft.Automation/automationAccounts/runbooks@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks
+* **ApiVersion**: 2019-06-01
+
+## Function resume (Microsoft.Automation/automationAccounts/runbooks/draft@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2019-06-01
+
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2019-06-01
+
+## Function start (Microsoft.Automation/automationAccounts/watchers@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2019-06-01
+
+## Function stop (Microsoft.Automation/automationAccounts/runbooks/draft@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2019-06-01
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2019-06-01
+
+## Function stop (Microsoft.Automation/automationAccounts/watchers@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2019-06-01
+
+## Function suspend (Microsoft.Automation/automationAccounts/runbooks/draft@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2019-06-01
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2019-06-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2019-06-01
+
 ## AdvancedSchedule
 ### Properties
 * **monthDays**: int[]: Days of the month that the job should execute on. Must be between 1 and 31.
@@ -575,7 +611,7 @@
 * **parameters**: [RunbookPropertiesParameters](#runbookpropertiesparameters) (ReadOnly): Gets or sets the runbook parameters.
 * **provisioningState**: 'Succeeded' (ReadOnly): Gets or sets the provisioning state of the runbook.
 * **publishContentLink**: [ContentLink](#contentlink): Gets or sets the published runbook content link.
-* **runbookType**: 'Graph' | 'GraphPowerShell' | 'GraphPowerShellWorkflow' | 'PowerShell' | 'PowerShellWorkflow' | 'Script' | string (Required): Gets or sets the type of the runbook.
+* **runbookType**: 'Graph' | 'GraphPowerShell' | 'GraphPowerShellWorkflow' | 'PowerShell' | 'PowerShellWorkflow' | 'Python2' | 'Python3' | 'Script' | string (Required): Gets or sets the type of the runbook.
 * **state**: 'Edit' | 'New' | 'Published' | string (ReadOnly): Gets or sets the state of the runbook.
 
 ## RunbookDraft

@@ -49,6 +49,11 @@
 * **properties**: [TopicTypeProperties](#topictypeproperties) (ReadOnly): Properties of the topic type info
 * **type**: 'Microsoft.EventGrid/topicTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2020-01-01-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2020-01-01-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2020-01-01-preview)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2020-01-01-preview
@@ -57,6 +62,18 @@
 ## Function listKeys (Microsoft.EventGrid/topics@2020-01-01-preview)
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2020-01-01-preview
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2020-01-01-preview)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2020-01-01-preview
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2020-01-01-preview)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2020-01-01-preview
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
 
 ## AdvancedFilter
@@ -149,6 +166,15 @@
 * **metricResourceId**: string (ReadOnly): Metric resource id for the domain.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the domain.
 
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
+
+## DomainSharedAccessKeys
+### Properties
+* **key1**: string: Shared access key1 for the domain.
+* **key2**: string: Shared access key2 for the domain.
+
 ## DomainSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the domain.
@@ -213,6 +239,10 @@ The format of this depends on the publisher of the events.
 Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
 
 ## EventSubscriptionProperties
 ### Properties
@@ -288,6 +318,15 @@ Wildcard characters are not supported in this path.
 * **inputSchemaMapping**: [InputSchemaMapping](#inputschemamapping): This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
 * **metricResourceId**: string (ReadOnly): Metric resource id for the topic.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the topic.
+
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
+
+## TopicSharedAccessKeys
+### Properties
+* **key1**: string: Shared access key1 for the topic.
+* **key2**: string: Shared access key2 for the topic.
 
 ## TopicSharedAccessKeys
 ### Properties

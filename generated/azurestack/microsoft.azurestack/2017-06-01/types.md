@@ -42,10 +42,47 @@
 * **properties**: [ProductNestedProperties](#productnestedproperties) (ReadOnly): Properties of the product resource.
 * **type**: 'Microsoft.AzureStack/registrations/products' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function enableRemoteManagement (Microsoft.AzureStack/registrations@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations
+* **ApiVersion**: 2017-06-01
+
+## Function getactivationkey (Microsoft.AzureStack/registrations@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations
+* **ApiVersion**: 2017-06-01
+* **Output**: [ActivationKeyResult](#activationkeyresult)
+
+## Function getProduct (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [DeviceConfiguration](#deviceconfiguration)
+* **Output**: [Product](#product)
+
+## Function getProducts (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [DeviceConfiguration](#deviceconfiguration)
+* **Output**: [ProductList](#productlist)
+
 ## Function listDetails (Microsoft.AzureStack/registrations/products@2017-06-01)
 * **Resource**: Microsoft.AzureStack/registrations/products
 * **ApiVersion**: 2017-06-01
 * **Output**: [ExtendedProduct](#extendedproduct)
+
+## Function listProducts (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [DeviceConfiguration](#deviceconfiguration)
+* **Output**: [ProductList](#productlist)
+
+## Function uploadProductLog (Microsoft.AzureStack/registrations/products@2017-06-01)
+* **Resource**: Microsoft.AzureStack/registrations/products
+* **ApiVersion**: 2017-06-01
+* **Input**: [MarketplaceProductLogUpdate](#marketplaceproductlogupdate)
+* **Output**: [ProductLog](#productlog)
+
+## ActivationKeyResult
+### Properties
+* **activationKey**: string: Azure Stack activation key.
 
 ## CloudManifestFileDeploymentData
 ### Properties
@@ -79,6 +116,21 @@
 * **lun**: int (ReadOnly): The LUN.
 * **sourceBlobSasUri**: string (ReadOnly): SAS key for source blob.
 
+## DeviceConfiguration
+### Properties
+* **deviceVersion**: string (ReadOnly): Version of the device.
+* **identitySystem**: 'ADFS' | 'AzureAD' | string (ReadOnly): Identity system of the device.
+
+## DeviceConfiguration
+### Properties
+* **deviceVersion**: string (ReadOnly): Version of the device.
+* **identitySystem**: 'ADFS' | 'AzureAD' | string (ReadOnly): Identity system of the device.
+
+## DeviceConfiguration
+### Properties
+* **deviceVersion**: string (ReadOnly): Version of the device.
+* **identitySystem**: 'ADFS' | 'AzureAD' | string (ReadOnly): Identity system of the device.
+
 ## ExtendedProduct
 ### Properties
 * **galleryPackageBlobSasUri**: string (ReadOnly): The URI to the .azpkg file that provides information required for showing product in the gallery.
@@ -105,15 +157,54 @@
 * **small**: string: URI to small icon.
 * **wide**: string: URI to wide icon.
 
+## MarketplaceProductLogUpdate
+### Properties
+* **details**: string (ReadOnly): Error details related to operation.
+* **error**: string (ReadOnly): Error related to the operation.
+* **operation**: string (ReadOnly): Operation to log.
+* **status**: string (ReadOnly): Operation status to log.
+
 ## OsDiskImage
 ### Properties
 * **operatingSystem**: 'Linux' | 'None' | 'Windows' | string (ReadOnly): OS operating system type.
 * **sourceBlobSasUri**: string (ReadOnly): SAS key for source blob.
 
+## Product
+### Properties
+* **etag**: string: The entity tag used for optimistic concurrency when modifying the resource.
+* **id**: string (ReadOnly): ID of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [ProductNestedProperties](#productnestedproperties): Properties of the product resource.
+* **type**: string (ReadOnly): Type of Resource.
+
 ## ProductLink
 ### Properties
 * **displayName**: string: The description of the link.
 * **uri**: string: The URI corresponding to the link.
+
+## ProductList
+### Properties
+* **nextLink**: string: URI to the next page.
+* **value**: [Product](#product)[]: List of products.
+
+## ProductList
+### Properties
+* **nextLink**: string: URI to the next page.
+* **value**: [Product](#product)[]: List of products.
+
+## ProductLog
+### Properties
+* **details**: string (ReadOnly): Operation error details.
+* **endDate**: string (ReadOnly): Operation end datetime.
+* **error**: string (ReadOnly): Operation error data.
+* **id**: string (ReadOnly): Log ID.
+* **operation**: string (ReadOnly): Logged operation.
+* **productId**: string (ReadOnly): Logged product ID.
+* **registrationName**: string (ReadOnly): Logged registration name.
+* **resourceGroupName**: string (ReadOnly): Logged resource group name.
+* **startDate**: string (ReadOnly): Operation start datetime.
+* **status**: string (ReadOnly): Operation status.
+* **subscriptionId**: string (ReadOnly): Logged subscription ID.
 
 ## ProductNestedProperties
 ### Properties

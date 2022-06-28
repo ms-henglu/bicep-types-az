@@ -39,6 +39,10 @@
 * **ApiVersion**: 2019-05-01
 * **Output**: [AmlComputeNodesInformation](#amlcomputenodesinformation)
 
+## Function resyncKeys (Microsoft.MachineLearningServices/workspaces@2019-05-01)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2019-05-01
+
 ## AksNetworkingConfiguration
 ### Properties
 * **dnsServiceIP**: string: An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.

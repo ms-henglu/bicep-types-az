@@ -13,6 +13,11 @@
 * **tags**: [AzureResourceTags](#azureresourcetags): Resource tags
 * **type**: 'Microsoft.Insights/actionGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function subscribe (Microsoft.Insights/actionGroups@2021-09-01)
+* **Resource**: Microsoft.Insights/actionGroups
+* **ApiVersion**: 2021-09-01
+* **Input**: [EnableRequest](#enablerequest)
+
 ## ActionGroup
 ### Properties
 * **armRoleReceivers**: [ArmRoleReceiver](#armrolereceiver)[]: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
@@ -69,6 +74,10 @@
 * **name**: string (Required): The name of the email receiver. Names must be unique across all receivers within an action group.
 * **status**: 'Disabled' | 'Enabled' | 'NotSpecified' (ReadOnly): The receiver status of the e-mail.
 * **useCommonAlertSchema**: bool: Indicates whether to use common alert schema.
+
+## EnableRequest
+### Properties
+* **receiverName**: string (Required): The name of the receiver to resubscribe.
 
 ## EventHubReceiver
 ### Properties
