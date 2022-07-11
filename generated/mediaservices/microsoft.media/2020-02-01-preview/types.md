@@ -9,6 +9,14 @@
 * **properties**: [MediaGraphProperties](#mediagraphproperties): Class for Media Graph properties.
 * **type**: 'Microsoft.Media/mediaServices/mediaGraphs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function start (Microsoft.Media/mediaServices/mediaGraphs@2020-02-01-preview)
+* **Resource**: Microsoft.Media/mediaServices/mediaGraphs
+* **ApiVersion**: 2020-02-01-preview
+
+## Function stop (Microsoft.Media/mediaServices/mediaGraphs@2020-02-01-preview)
+* **Resource**: Microsoft.Media/mediaServices/mediaGraphs
+* **ApiVersion**: 2020-02-01-preview
+
 ## MediaGraphCertificateSource
 * **Discriminator**: @odata.type
 

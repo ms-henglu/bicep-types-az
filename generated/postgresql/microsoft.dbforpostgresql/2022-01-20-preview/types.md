@@ -53,6 +53,25 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforPostgreSQL/locations@2022-01-20-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2022-01-20-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function restart (Microsoft.DBforPostgreSQL/flexibleServers@2022-01-20-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2022-01-20-preview
+* **Input**: [RestartParameter](#restartparameter)
+
+## Function start (Microsoft.DBforPostgreSQL/flexibleServers@2022-01-20-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2022-01-20-preview
+
+## Function stop (Microsoft.DBforPostgreSQL/flexibleServers@2022-01-20-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2022-01-20-preview
+
 ## Backup
 ### Properties
 * **backupRetentionDays**: int: Backup retention days for the server.
@@ -78,6 +97,11 @@
 * **charset**: string: The charset of the database.
 * **collation**: string: The collation of the database.
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
+
 ## FirewallRuleProperties
 ### Properties
 * **endIpAddress**: string (Required): The end IP address of the server firewall rule. Must be IPv4 format.
@@ -101,6 +125,11 @@
 * **delegatedSubnetResourceId**: string: delegated subnet arm resource id.
 * **privateDnsZoneArmResourceId**: string: private dns zone arm resource id.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string (ReadOnly): public network access is enabled or not
+
+## RestartParameter
+### Properties
+* **failoverMode**: 'ForcedFailover' | 'ForcedSwitchover' | 'PlannedFailover' | 'PlannedSwitchover' | string: Failover mode.
+* **restartWithFailover**: bool: Indicates whether to restart the server with failover.
 
 ## ServerBackupProperties
 ### Properties
@@ -148,4 +177,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
+* **location**: string (ReadOnly): location of the delegated subnet usage
+* **subscriptionId**: string (ReadOnly): subscriptionId of the delegated subnet usage
 

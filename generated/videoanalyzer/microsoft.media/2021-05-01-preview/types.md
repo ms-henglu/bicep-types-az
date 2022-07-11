@@ -43,6 +43,12 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/videoAnalyzers/videos' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Media/locations@2021-05-01-preview)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2021-05-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listProvisioningToken (Microsoft.Media/videoAnalyzers/edgeModules@2021-05-01-preview)
 * **Resource**: Microsoft.Media/videoAnalyzers/edgeModules
 * **ApiVersion**: 2021-05-01-preview
@@ -53,6 +59,11 @@
 * **Resource**: Microsoft.Media/videoAnalyzers/videos
 * **ApiVersion**: 2021-05-01-preview
 * **Output**: [VideoStreamingToken](#videostreamingtoken)
+
+## Function syncStorageKeys (Microsoft.Media/videoAnalyzers@2021-05-01-preview)
+* **Resource**: Microsoft.Media/videoAnalyzers
+* **ApiVersion**: 2021-05-01-preview
+* **Input**: [SyncStorageKeysInput](#syncstoragekeysinput)
 
 ## AccessPolicyProperties
 ### Properties
@@ -78,6 +89,17 @@
 * **issuers**: string[]: List of expected token issuers. Token issuer is valid if it matches at least one of the given values.
 * **keys**: [TokenKey](#tokenkey)[]: List of keys which can be used to validate access tokens. Having multiple keys allow for seamless key rotation of the token signing key. Token signature must match exactly one key.
 
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## EdgeModuleProperties
 ### Properties
@@ -111,6 +133,10 @@
 * **id**: string: The ID of the storage account resource. Video Analyzer relies on tables, queues, and blobs. The primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage).
 * **identity**: [ResourceIdentity](#resourceidentity): A managed identity that Video Analyzer will use to access the storage account.
 * **status**: string (ReadOnly): The current status of the storage account mapping.
+
+## SyncStorageKeysInput
+### Properties
+* **id**: string: The ID of the storage account resource.
 
 ## SystemData
 ### Properties

@@ -76,6 +76,44 @@
 * **ApiVersion**: 2020-03-01
 * **Output**: [ClusterJobListResult](#clusterjoblistresult)
 
+## Function retrieveDefaultDefinition (Microsoft.StreamAnalytics/streamingjobs/functions@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/functions
+* **ApiVersion**: 2020-03-01
+* **Input**: [FunctionRetrieveDefaultDefinitionParameters](#functionretrievedefaultdefinitionparameters)
+* **Output**: [Function](#function)
+
+## Function scale (Microsoft.StreamAnalytics/streamingjobs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs
+* **ApiVersion**: 2020-03-01
+* **Input**: [ScaleStreamingJobParameters](#scalestreamingjobparameters)
+
+## Function start (Microsoft.StreamAnalytics/streamingjobs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs
+* **ApiVersion**: 2020-03-01
+* **Input**: [StartStreamingJobParameters](#startstreamingjobparameters)
+
+## Function stop (Microsoft.StreamAnalytics/streamingjobs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs
+* **ApiVersion**: 2020-03-01
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/inputs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/inputs
+* **ApiVersion**: 2020-03-01
+* **Input**: [Input](#input)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/outputs@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/outputs
+* **ApiVersion**: 2020-03-01
+* **Input**: [Output](#output)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
+## Function test (Microsoft.StreamAnalytics/streamingjobs/functions@2020-03-01)
+* **Resource**: Microsoft.StreamAnalytics/streamingjobs/functions
+* **ApiVersion**: 2020-03-01
+* **Input**: [Function](#function)
+* **Output**: [ResourceTestStatus](#resourceteststatus)
+
 ## AzureDataLakeStoreOutputDataSourceProperties
 ### Properties
 * **accountName**: string: The name of the Azure Data Lake Store account. Required on PUT (CreateOrReplace) requests.
@@ -103,6 +141,11 @@
 * **endpoint**: string: The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs
 * **inputs**: [AzureMachineLearningWebServiceInputs](#azuremachinelearningwebserviceinputs): The inputs for the Azure Machine Learning web service endpoint.
 * **outputs**: [AzureMachineLearningWebServiceOutputColumn](#azuremachinelearningwebserviceoutputcolumn)[]: A list of outputs from the Azure Machine Learning web service endpoint execution.
+
+## AzureMachineLearningWebServiceFunctionBindingRetrievalProperties
+### Properties
+* **executeEndpoint**: string: The Request-Response execute endpoint of the Azure Machine Learning web service. Find out more here: https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-consume-web-services#request-response-service-rrs
+* **udfType**: 'Scalar': The function type.
 
 ## AzureMachineLearningWebServiceInputColumn
 ### Properties
@@ -164,6 +207,7 @@
 ## BlobOutputDataSourceProperties
 ### Properties
 * **authenticationMode**: 'ConnectionString' | 'Msi' | 'UserToken' | string: Authentication Mode.
+* **blobPathPrefix**: string: Blob path prefix.
 * **container**: string: The name of a container within the associated Storage account. This container contains either the blob(s) to be read from or written to. Required on PUT (CreateOrReplace) requests.
 * **dateFormat**: string: The date format. Wherever {date} appears in pathPattern, the value of this property is used as the date format instead.
 * **pathPattern**: string: The blob path pattern. Not a regular expression. It represents a pattern against which blob names will be matched to determine whether or not they should be included as input or output to the job. See https://docs.microsoft.com/en-us/rest/api/streamanalytics/stream-analytics-input or https://docs.microsoft.com/en-us/rest/api/streamanalytics/stream-analytics-output for a more detailed explanation and example.
@@ -245,6 +289,11 @@
 * **documentId**: string: The name of the field in output events used to specify the primary key which insert or update operations are based on.
 * **partitionKey**: string: The name of the field in output events used to specify the key for partitioning output across collections. If 'collectionNamePattern' contains the {partition} token, this property is required to be specified.
 
+## ErrorResponse
+### Properties
+* **code**: string (ReadOnly): Error code associated with the error that occurred.
+* **message**: string (ReadOnly): Describes the error in detail.
+
 ## EventHubOutputDataSourceProperties
 ### Properties
 * **authenticationMode**: 'ConnectionString' | 'Msi' | 'UserToken' | string: Authentication Mode.
@@ -263,6 +312,24 @@
 * **serviceBusNamespace**: string: The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc. Required on PUT (CreateOrReplace) requests.
 * **sharedAccessPolicyKey**: string: The shared access policy key for the specified shared access policy. Required on PUT (CreateOrReplace) requests.
 * **sharedAccessPolicyName**: string: The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc. Required on PUT (CreateOrReplace) requests.
+
+## FileReferenceInputDataSourceProperties
+### Properties
+* **path**: string: The path of the file.
+
+## Function
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [FunctionProperties](#functionproperties): The properties that are associated with a function.
+* **type**: string (ReadOnly): Resource type
+
+## Function
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [FunctionProperties](#functionproperties): The properties that are associated with a function.
+* **type**: string (ReadOnly): Resource type
 
 ## Function
 ### Properties
@@ -316,11 +383,41 @@
 * **type**: 'Scalar' (Required): Indicates the type of function.
 
 
+## FunctionRetrieveDefaultDefinitionParameters
+* **Discriminator**: bindingType
+
+### Base Properties
+### AzureMachineLearningWebServiceFunctionRetrieveDefaultDefinitionParameters
+#### Properties
+* **bindingRetrievalProperties**: [AzureMachineLearningWebServiceFunctionBindingRetrievalProperties](#azuremachinelearningwebservicefunctionbindingretrievalproperties): The binding retrieval properties associated with an Azure Machine learning web service.
+* **bindingType**: 'Microsoft.MachineLearning/WebService' (Required): Indicates the function binding type.
+
+### JavaScriptFunctionRetrieveDefaultDefinitionParameters
+#### Properties
+* **bindingRetrievalProperties**: [JavaScriptFunctionBindingRetrievalProperties](#javascriptfunctionbindingretrievalproperties): The binding retrieval properties associated with a JavaScript function.
+* **bindingType**: 'Microsoft.StreamAnalytics/JavascriptUdf' (Required): Indicates the function binding type.
+
+
+## GatewayMessageBusOutputDataSourceProperties
+### Properties
+* **topic**: string: The name of the Service Bus topic.
+
+## GatewayMessageBusStreamInputDataSourceProperties
+### Properties
+* **topic**: string: The name of the Service Bus topic.
+
 ## Identity
 ### Properties
-* **principalId**: string: The identity principal ID
-* **tenantId**: string: The identity tenantId
+* **principalId**: string (ReadOnly): The identity principal ID
+* **tenantId**: string (ReadOnly): The identity tenantId
 * **type**: string: The identity type
+
+## Input
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [InputProperties](#inputproperties): The properties that are associated with an input. Required on PUT (CreateOrReplace) requests.
+* **type**: string (ReadOnly): Resource type
 
 ## Input
 ### Properties
@@ -361,6 +458,11 @@
 ### Properties
 * **script**: string: The JavaScript code containing a single function definition. For example: 'function (x, y) { return x + y; }'
 
+## JavaScriptFunctionBindingRetrievalProperties
+### Properties
+* **script**: string: The JavaScript code containing a single function definition. For example: 'function (x, y) { return x + y; }'.
+* **udfType**: 'Scalar': The function type.
+
 ## JobStorageAccount
 ### Properties
 * **accountKey**: string: The account key for the Azure Storage account. Required on PUT (CreateOrReplace) requests.
@@ -379,10 +481,22 @@
 * **properties**: [OutputProperties](#outputproperties): The properties that are associated with an output. Required on PUT (CreateOrReplace) requests.
 * **type**: string (ReadOnly): Resource type
 
+## Output
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string: Resource name
+* **properties**: [OutputProperties](#outputproperties): The properties that are associated with an output. Required on PUT (CreateOrReplace) requests.
+* **type**: string (ReadOnly): Resource type
+
 ## OutputDataSource
 * **Discriminator**: type
 
 ### Base Properties
+### GatewayMessageBusOutputDataSource
+#### Properties
+* **properties**: [GatewayMessageBusOutputDataSourceProperties](#gatewaymessagebusoutputdatasourceproperties): The properties that are associated with a Gateway Message Bus output. Required on PUT (CreateOrReplace) requests.
+* **type**: 'GatewayMessageBus' (Required): Indicates the type of data source output will be written to. Required on PUT (CreateOrReplace) requests.
+
 ### AzureFunctionOutputDataSource
 #### Properties
 * **properties**: [AzureFunctionOutputDataSourceProperties](#azurefunctionoutputdatasourceproperties): The properties that are associated with a Azure Function output. Required on PUT (CreateOrReplace) requests.
@@ -490,6 +604,11 @@
 * **Discriminator**: type
 
 ### Base Properties
+### FileReferenceInputDataSource
+#### Properties
+* **properties**: [FileReferenceInputDataSourceProperties](#filereferenceinputdatasourceproperties): The properties that are associated with a file input containing reference data. Required on PUT (CreateOrReplace) requests.
+* **type**: 'File' (Required): Indicates the type of input data source containing reference data. Required on PUT (CreateOrReplace) requests.
+
 ### AzureSqlReferenceInputDataSource
 #### Properties
 * **properties**: [AzureSqlReferenceInputDataSourceProperties](#azuresqlreferenceinputdatasourceproperties): The properties that are associated with SQL DB input containing reference data. Required on PUT (CreateOrReplace) requests.
@@ -500,6 +619,25 @@
 * **properties**: [BlobReferenceInputDataSourceProperties](#blobreferenceinputdatasourceproperties): The properties that are associated with a blob input containing reference data. Required on PUT (CreateOrReplace) requests.
 * **type**: 'Microsoft.Storage/Blob' (Required): Indicates the type of input data source containing reference data. Required on PUT (CreateOrReplace) requests.
 
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
+
+## ResourceTestStatus
+### Properties
+* **error**: [ErrorResponse](#errorresponse) (ReadOnly): Describes the error that occurred.
+* **status**: string (ReadOnly): The status of the test operation.
+
+## ScaleStreamingJobParameters
+### Properties
+* **streamingUnits**: int: Specifies the number of streaming units that the streaming job will scale to.
 
 ## Serialization
 * **Discriminator**: type
@@ -555,6 +693,11 @@
 ### Properties
 * **name**: 'Standard' | string: The name of the SKU. Required on PUT (CreateOrReplace) requests.
 
+## StartStreamingJobParameters
+### Properties
+* **outputStartMode**: 'CustomTime' | 'JobStartTime' | 'LastOutputEventTime' | string: Value may be JobStartTime, CustomTime, or LastOutputEventTime to indicate whether the starting point of the output event stream should start whenever the job is started, start at a custom user time stamp specified via the outputStartTime property, or start from the last event output time.
+* **outputStartTime**: string: Value is either an ISO-8601 formatted time stamp that indicates the starting point of the output event stream, or null to indicate that the output event stream will start whenever the streaming job is started. This property must have a value if outputStartMode is set to CustomTime.
+
 ## StorageAccount
 ### Properties
 * **accountKey**: string: The account key for the Azure Storage account. Required on PUT (CreateOrReplace) requests.
@@ -590,6 +733,11 @@
 * **Discriminator**: type
 
 ### Base Properties
+### GatewayMessageBusStreamInputDataSource
+#### Properties
+* **properties**: [GatewayMessageBusStreamInputDataSourceProperties](#gatewaymessagebusstreaminputdatasourceproperties): The properties that are associated with a gateway message bus input containing stream data.
+* **type**: 'GatewayMessageBus' (Required): Indicates the type of input data source containing stream data. Required on PUT (CreateOrReplace) requests.
+
 ### IoTHubStreamInputDataSource
 #### Properties
 * **properties**: [IoTHubStreamInputDataSourceProperties](#iothubstreaminputdatasourceproperties): The properties that are associated with an IoT Hub input containing stream data. Required on PUT (CreateOrReplace) requests.

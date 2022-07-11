@@ -43,6 +43,14 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Solutions/jitRequests' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function listAllowedUpgradePlans (Microsoft.Solutions/applications@2021-07-01)
+* **Resource**: Microsoft.Solutions/applications
+* **ApiVersion**: 2021-07-01
+
+## Function refreshPermissions (Microsoft.Solutions/applications@2021-07-01)
+* **Resource**: Microsoft.Solutions/applications
+* **ApiVersion**: 2021-07-01
+
 ## ApplicationArtifact
 ### Properties
 * **name**: 'Authorizations' | 'CustomRoleDefinition' | 'NotSpecified' | 'ViewDefinition' | string (Required): The managed application artifact name.

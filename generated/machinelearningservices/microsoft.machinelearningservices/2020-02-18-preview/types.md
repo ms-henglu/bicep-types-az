@@ -54,6 +54,28 @@
 * **ApiVersion**: 2020-02-18-preview
 * **Output**: [AmlComputeNodesInformation](#amlcomputenodesinformation)
 
+## Function restart (Microsoft.MachineLearningServices/workspaces/computes@2020-02-18-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/computes
+* **ApiVersion**: 2020-02-18-preview
+
+## Function resyncKeys (Microsoft.MachineLearningServices/workspaces@2020-02-18-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2020-02-18-preview
+
+## Function start (Microsoft.MachineLearningServices/workspaces/computes@2020-02-18-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/computes
+* **ApiVersion**: 2020-02-18-preview
+
+## Function stop (Microsoft.MachineLearningServices/workspaces/computes@2020-02-18-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces/computes
+* **ApiVersion**: 2020-02-18-preview
+
+## Function updateQuotas (Microsoft.MachineLearningServices/locations@2020-02-18-preview)
+* **Resource**: Microsoft.MachineLearningServices/locations
+* **ApiVersion**: 2020-02-18-preview
+* **Input**: [QuotaUpdateParameters](#quotaupdateparameters)
+* **Output**: [UpdateWorkspaceQuotasResult](#updateworkspacequotasresult)
+
 ## AksNetworkingConfiguration
 ### Properties
 * **dnsServiceIP**: string: An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.
@@ -305,6 +327,17 @@
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
 
+## QuotaBaseProperties
+### Properties
+* **id**: string: Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **type**: string: Specifies the resource type.
+* **unit**: 'Count' | string: An enum describing the unit of quota measurement.
+
+## QuotaUpdateParameters
+### Properties
+* **value**: [QuotaBaseProperties](#quotabaseproperties)[]: The list for update quota.
+
 ## RegistryListCredentialsResult
 ### Properties
 * **location**: string (ReadOnly)
@@ -353,6 +386,19 @@
 * **publicIpAddress**: string (ReadOnly): Public IP address
 * **systemServiceType**: string (ReadOnly): The type of this system service.
 * **version**: string (ReadOnly): The version for this type.
+
+## UpdateWorkspaceQuotas
+### Properties
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **status**: 'Failure' | 'InvalidQuotaBelowClusterMinimum' | 'InvalidQuotaExceedsSubscriptionLimit' | 'InvalidVMFamilyName' | 'OperationNotEnabledForRegion' | 'OperationNotSupportedForSku' | 'Success' | 'Undefined' | string: Status of update workspace quota.
+* **type**: string (ReadOnly): Specifies the resource type.
+* **unit**: 'Count' | string (ReadOnly): An enum describing the unit of quota measurement.
+
+## UpdateWorkspaceQuotasResult
+### Properties
+* **nextLink**: string (ReadOnly): The URI to fetch the next page of workspace quota update result. Call ListNext() with this to fetch the next page of Workspace Quota update result.
+* **value**: [UpdateWorkspaceQuotas](#updateworkspacequotas)[] (ReadOnly): The list of workspace quota update result.
 
 ## UserAccountCredentials
 ### Properties

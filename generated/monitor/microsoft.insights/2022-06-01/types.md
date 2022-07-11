@@ -13,6 +13,16 @@
 * **tags**: [AzureResourceTags](#azureresourcetags): Resource tags
 * **type**: 'Microsoft.Insights/actionGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function createNotifications (Microsoft.Insights/actionGroups@2022-06-01)
+* **Resource**: Microsoft.Insights/actionGroups
+* **ApiVersion**: 2022-06-01
+* **Input**: [NotificationRequestBody](#notificationrequestbody)
+
+## Function subscribe (Microsoft.Insights/actionGroups@2022-06-01)
+* **Resource**: Microsoft.Insights/actionGroups
+* **ApiVersion**: 2022-06-01
+* **Input**: [EnableRequest](#enablerequest)
+
 ## ActionGroup
 ### Properties
 * **armRoleReceivers**: [ArmRoleReceiver](#armrolereceiver)[]: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
@@ -70,6 +80,10 @@
 * **status**: 'Disabled' | 'Enabled' | 'NotSpecified' (ReadOnly): The receiver status of the e-mail.
 * **useCommonAlertSchema**: bool: Indicates whether to use common alert schema.
 
+## EnableRequest
+### Properties
+* **receiverName**: string (Required): The name of the receiver to resubscribe.
+
 ## EventHubReceiver
 ### Properties
 * **eventHubName**: string (Required): The name of the specific Event Hub queue
@@ -93,6 +107,21 @@
 * **name**: string (Required): The name of the logic app receiver. Names must be unique across all receivers within an action group.
 * **resourceId**: string (Required): The azure resource id of the logic app receiver.
 * **useCommonAlertSchema**: bool: Indicates whether to use common alert schema.
+
+## NotificationRequestBody
+### Properties
+* **alertType**: string (Required): The name of the supported alert type.
+* **armRoleReceivers**: [ArmRoleReceiver](#armrolereceiver)[]: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
+* **automationRunbookReceivers**: [AutomationRunbookReceiver](#automationrunbookreceiver)[]: The list of AutomationRunbook receivers that are part of this action group.
+* **azureAppPushReceivers**: [AzureAppPushReceiver](#azureapppushreceiver)[]: The list of AzureAppPush receivers that are part of this action group.
+* **azureFunctionReceivers**: [AzureFunctionReceiver](#azurefunctionreceiver)[]: The list of azure function receivers that are part of this action group.
+* **emailReceivers**: [EmailReceiver](#emailreceiver)[]: The list of email receivers that are part of this action group.
+* **eventHubReceivers**: [EventHubReceiver](#eventhubreceiver)[]: The list of event hub receivers that are part of this action group.
+* **itsmReceivers**: [ItsmReceiver](#itsmreceiver)[]: The list of ITSM receivers that are part of this action group.
+* **logicAppReceivers**: [LogicAppReceiver](#logicappreceiver)[]: The list of logic app receivers that are part of this action group.
+* **smsReceivers**: [SmsReceiver](#smsreceiver)[]: The list of SMS receivers that are part of this action group.
+* **voiceReceivers**: [VoiceReceiver](#voicereceiver)[]: The list of voice receivers that are part of this action group.
+* **webhookReceivers**: [WebhookReceiver](#webhookreceiver)[]: The list of webhook receivers that are part of this action group.
 
 ## SmsReceiver
 ### Properties

@@ -34,6 +34,15 @@
 * **tags**: [Tags](#tags): The list of tags
 * **type**: 'Microsoft.VMwareCloudSimple/virtualMachines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function start (Microsoft.VMwareCloudSimple/virtualMachines@2019-04-01)
+* **Resource**: Microsoft.VMwareCloudSimple/virtualMachines
+* **ApiVersion**: 2019-04-01
+
+## Function stop (Microsoft.VMwareCloudSimple/virtualMachines@2019-04-01)
+* **Resource**: Microsoft.VMwareCloudSimple/virtualMachines
+* **ApiVersion**: 2019-04-01
+* **Input**: [VirtualMachineStopMode](#virtualmachinestopmode)
+
 ## DedicatedCloudNodeProperties
 ### Properties
 * **availabilityZoneId**: string (Required): Availability Zone id, e.g. "az1"
@@ -156,6 +165,10 @@
 * **vmId**: string (ReadOnly): The internal id of Virtual Machine in VCenter
 * **vmwaretools**: string (ReadOnly): VMware tools version
 * **vSphereNetworks**: string[]: The list of Virtual VSphere Networks
+
+## VirtualMachineStopMode
+### Properties
+* **mode**: 'poweroff' | 'reboot' | 'shutdown' | 'suspend': mode indicates a type of stop operation - reboot, suspend, shutdown or power-off
 
 ## VirtualNetwork
 ### Properties

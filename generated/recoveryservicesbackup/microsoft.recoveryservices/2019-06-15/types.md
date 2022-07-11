@@ -84,6 +84,25 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/backupPolicies/operationResults' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backupJobsExport (Microsoft.RecoveryServices/vaults@2019-06-15)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2019-06-15
+
+## Function backupValidateOperation (Microsoft.RecoveryServices/vaults@2019-06-15)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2019-06-15
+* **Input**: [ValidateOperationRequest](#validateoperationrequest)
+* **Output**: [ValidateOperationsResponse](#validateoperationsresponse)
+
+## Function cancel (Microsoft.RecoveryServices/vaults/backupJobs@2019-06-15)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupJobs
+* **ApiVersion**: 2019-06-15
+
+## Function restore (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints@2019-06-15)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints
+* **ApiVersion**: 2019-06-15
+* **Input**: [RestoreRequestResource](#restorerequestresource)
+
 ## AzureFileshareProtectedItemExtendedInfo
 ### Properties
 * **oldestRecoveryPoint**: string: The oldest backup copy available for this item in the service.
@@ -265,6 +284,20 @@ eg: number of bytes transferred etc
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## EncryptionDetails
+### Properties
+* **encryptionEnabled**: bool: Identifies whether this backup copy represents an encrypted VM at the time of backup.
+* **kekUrl**: string: Key Url.
+* **kekVaultId**: string: ID of Key Vault where KEK is stored.
+* **secretKeyUrl**: string: Secret Url.
+* **secretKeyVaultId**: string: ID of Key Vault where Secret is stored.
+
+## ErrorDetail
+### Properties
+* **code**: string (ReadOnly): Error code.
+* **message**: string (ReadOnly): Error Message related to the Code.
+* **recommendations**: string[] (ReadOnly): List of recommendation strings.
 
 ## GenericProtectedItemSourceAssociations
 ### Properties
@@ -638,6 +671,83 @@ eg: number of bytes transferred etc
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RestoreFileSpecs
+### Properties
+* **fileSpecType**: string: Indicates what the Path variable stands for
+* **path**: string: Source File/Folder path
+* **targetFolderPath**: string: Destination folder path in target FileShare
+
+## RestoreRequest
+* **Discriminator**: objectType
+
+### Base Properties
+### AzureFileShareRestoreRequest
+#### Properties
+* **copyOptions**: 'CreateCopy' | 'FailOnConflict' | 'Invalid' | 'Overwrite' | 'Skip' | string: Options to resolve copy conflicts.
+* **objectType**: 'AzureFileShareRestoreRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryType**: 'AlternateLocation' | 'Invalid' | 'Offline' | 'OriginalLocation' | 'RestoreDisks' | string: Type of this recovery.
+* **restoreFileSpecs**: [RestoreFileSpecs](#restorefilespecs)[]: List of Source Files/Folders(which need to recover) and TargetFolderPath details
+* **restoreRequestType**: 'FullShareRestore' | 'Invalid' | 'ItemLevelRestore' | string: Restore Type (FullShareRestore or ItemLevelRestore)
+* **sourceResourceId**: string: Source storage account ARM Id
+* **targetDetails**: [TargetAFSRestoreInfo](#targetafsrestoreinfo): Target File Share Details
+
+### AzureWorkloadPointInTimeRestoreRequest
+#### Properties
+* **objectType**: 'AzureWorkloadPointInTimeRestoreRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **pointInTime**: string: PointInTime value
+
+### AzureWorkloadSAPHanaPointInTimeRestoreRequest
+#### Properties
+* **objectType**: 'AzureWorkloadSAPHanaPointInTimeRestoreRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **pointInTime**: string: PointInTime value
+
+### AzureWorkloadSQLPointInTimeRestoreRequest
+#### Properties
+* **objectType**: 'AzureWorkloadSQLPointInTimeRestoreRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **pointInTime**: string: PointInTime value
+
+### IaasVMRestoreRequest
+#### Properties
+* **affinityGroup**: string: Affinity group associated to VM to be restored. Used only for Classic Compute Virtual Machines.
+* **createNewCloudService**: bool: Should a new cloud service be created while restoring the VM. If this is false, VM will be restored to the same
+cloud service as it was at the time of backup.
+* **encryptionDetails**: [EncryptionDetails](#encryptiondetails): Details needed if the VM was encrypted at the time of backup.
+* **objectType**: 'IaasVMRestoreRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **originalStorageAccountOption**: bool: Original Storage Account Option
+* **recoveryPointId**: string: ID of the backup copy to be recovered.
+* **recoveryType**: 'AlternateLocation' | 'Invalid' | 'Offline' | 'OriginalLocation' | 'RestoreDisks' | string: Type of this recovery.
+* **region**: string: Region in which the virtual machine is restored.
+* **restoreDiskLunList**: int[]: List of Disk LUNs for partial restore
+* **sourceResourceId**: string: Fully qualified ARM ID of the VM which is being recovered.
+* **storageAccountId**: string: Fully qualified ARM ID of the storage account to which the VM has to be restored.
+* **subnetId**: string: Subnet ID, is the subnet ID associated with the to be restored VM. For Classic VMs it would be
+{VnetID}/Subnet/{SubnetName} and, for the Azure Resource Manager VMs it would be ARM resource ID used to represent
+the subnet.
+* **targetDomainNameId**: string: Fully qualified ARM ID of the domain name to be associated to the VM being restored. This applies only to Classic
+Virtual Machines.
+* **targetResourceGroupId**: string: This is the ARM Id of the resource group that you want to create for this Virtual machine and other artifacts.
+For e.g. /subscriptions/{subId}/resourcegroups/{rg}
+* **targetVirtualMachineId**: string: This is the complete ARM Id of the VM that will be created.
+For e.g. /subscriptions/{subId}/resourcegroups/{rg}/provider/Microsoft.Compute/virtualmachines/{vm}
+* **virtualNetworkId**: string: This is the virtual network Id of the vnet that will be attached to the virtual machine.
+User will be validated for join action permissions in the linked access.
+
+
+## RestoreRequestResource
+### Properties
+* **eTag**: string: Optional ETag.
+* **id**: string (ReadOnly): Resource Id represents the complete path to the resource.
+* **location**: string: Resource location.
+* **name**: string (ReadOnly): Resource name associated with the resource.
+* **properties**: [RestoreRequest](#restorerequest): RestoreRequestResource properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
+
 ## RetentionDuration
 ### Properties
 * **count**: int: Count of duration types. Retention duration is obtained by the counting the duration type Count times.
@@ -696,6 +806,28 @@ will be deprecated once clients upgrade to consider this flag.
 * **policyType**: 'CopyOnlyFull' | 'Differential' | 'Full' | 'Invalid' | 'Log' | string: Type of backup policy type
 * **retentionPolicy**: [RetentionPolicy](#retentionpolicy): Retention policy with the details on backup copy retention ranges.
 * **schedulePolicy**: [SchedulePolicy](#schedulepolicy): Backup schedule specified as part of backup policy.
+
+## TargetAFSRestoreInfo
+### Properties
+* **name**: string: File share name
+* **targetResourceId**: string: Target file share resource ARM ID
+
+## ValidateOperationRequest
+* **Discriminator**: objectType
+
+### Base Properties
+### ValidateIaasVMRestoreOperationRequest
+#### Properties
+* **objectType**: 'ValidateIaasVMRestoreOperationRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+
+
+## ValidateOperationResponse
+### Properties
+* **validationResults**: [ErrorDetail](#errordetail)[]: Gets the validation result
+
+## ValidateOperationsResponse
+### Properties
+* **validateOperationResponse**: [ValidateOperationResponse](#validateoperationresponse): Base class for validate operation response.
 
 ## WeeklyRetentionFormat
 ### Properties

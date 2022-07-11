@@ -49,9 +49,26 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/operationResults' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.RecoveryServices/locations@2022-04-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2022-04-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
 ## AzureMonitorAlertSettings
 ### Properties
 * **alertsForAllJobFailures**: 'Disabled' | 'Enabled' | string
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string: Resource name for which availability needs to be checked
+* **type**: string: Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string
+* **nameAvailable**: bool
+* **reason**: string
 
 ## ClassicAlertSettings
 ### Properties
@@ -116,7 +133,7 @@
 ### Properties
 * **capacity**: string: The sku capacity
 * **family**: string: The sku family
-* **name**: 'RS0' | 'Standard' | string (Required): The Sku name.
+* **name**: 'RS0' | 'Standard' | string (Required): Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig
 * **size**: string: The sku size
 * **tier**: string: The Sku tier.
 

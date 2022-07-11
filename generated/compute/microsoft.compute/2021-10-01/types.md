@@ -55,6 +55,21 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/galleries/images/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function share (Microsoft.Compute/galleries@2021-10-01)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2021-10-01
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
+## CommunityGalleryInfo
+### Properties
+* **communityGalleryEnabled**: bool (ReadOnly): Contains info about whether community gallery sharing is enabled.
+* **eula**: string: Community gallery publisher eula
+* **publicNamePrefix**: string: Community gallery public name prefix
+* **publicNames**: string[] (ReadOnly): Community gallery public name list.
+* **publisherContact**: string: Community gallery publisher contact email
+* **publisherUri**: string: Community gallery publisher uri
+
 ## DataDiskImageEncryption
 ### Properties
 * **diskEncryptionSetId**: string: A relative URI containing the resource ID of the disk encryption set.
@@ -266,7 +281,7 @@
 
 ## SharingProfile
 ### Properties
-* **communityGalleryInfo**: any: Information of community gallery if current gallery is shared to community.
+* **communityGalleryInfo**: [CommunityGalleryInfo](#communitygalleryinfo): Information of community gallery if current gallery is shared to community.
 * **groups**: [SharingProfileGroup](#sharingprofilegroup)[] (ReadOnly): A list of sharing profile groups.
 * **permissions**: 'Groups' | 'Private' | string: This property allows you to specify the permission of sharing gallery. <br><br> Possible values are: <br><br> **Private** <br><br> **Groups**
 
@@ -279,6 +294,16 @@
 ### Properties
 * **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Aggregated sharing state of current gallery.
 * **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
 
 ## SoftDeletePolicy
 ### Properties

@@ -69,6 +69,37 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.IoTSecurity/sites' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function downloadActivation (Microsoft.IoTSecurity/sensors@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/sensors
+* **ApiVersion**: 2021-02-01-preview
+
+## Function downloadActivation (Microsoft.IoTSecurity/onPremiseSensors@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/onPremiseSensors
+* **ApiVersion**: 2021-02-01-preview
+
+## Function downloadManagerActivation (Microsoft.IoTSecurity/defenderSettings@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/defenderSettings
+* **ApiVersion**: 2021-02-01-preview
+
+## Function downloadResetPassword (Microsoft.IoTSecurity/sensors@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/sensors
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [ResetPasswordInput](#resetpasswordinput)
+
+## Function downloadResetPassword (Microsoft.IoTSecurity/onPremiseSensors@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/onPremiseSensors
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [ResetPasswordInput](#resetpasswordinput)
+
+## Function packageDownloads (Microsoft.IoTSecurity/defenderSettings@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/defenderSettings
+* **ApiVersion**: 2021-02-01-preview
+* **Output**: [PackageDownloads](#packagedownloads)
+
+## Function triggerTiPackageUpdate (Microsoft.IoTSecurity/sensors@2021-02-01-preview)
+* **Resource**: Microsoft.IoTSecurity/sensors
+* **ApiVersion**: 2021-02-01-preview
+
 ## DefenderSettingsProperties
 ### Properties
 * **deviceQuota**: int (Required): Size of the device quota. Value is required to be in multiples of 100.
@@ -165,6 +196,63 @@
 * **name**: string: Package name.
 * **version**: string: Package version.
 
+## PackageDownloadInfo
+### Properties
+* **link**: string (ReadOnly): Download link
+* **version**: string (ReadOnly): Version number
+* **versionKind**: 'Latest' | 'Preview' | 'Previous' | string (ReadOnly): Kind of the version
+
+## PackageDownloads
+### Properties
+* **authorizedDevicesImportTemplate**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Authorized devices import template
+* **centralManager**: [PackageDownloadsCentralManager](#packagedownloadscentralmanager) (ReadOnly): All downloads for Central Manager
+* **deviceInformationUpdateImportTemplate**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Authorized devices import template
+* **sensor**: [PackageDownloadsSensor](#packagedownloadssensor) (ReadOnly): Contains all Sensor binary downloads
+* **snmp**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): SNMP Server file
+* **threatIntelligence**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): All downloads for threat intelligence
+* **wmiTool**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Used for local configuration export
+
+## PackageDownloadsCentralManager
+### Properties
+* **full**: [PackageDownloadsCentralManagerFull](#packagedownloadscentralmanagerfull) (ReadOnly): Contains full package downloads
+* **upgrade**: [UpgradePackageDownloadInfo](#upgradepackagedownloadinfo)[] (ReadOnly): Central Manager upgrade package downloads (on existing installations)
+
+## PackageDownloadsCentralManagerFull
+### Properties
+* **iso**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Contains all ISO full versions of the Central Manager
+* **ovf**: [PackageDownloadsCentralManagerFullOvf](#packagedownloadscentralmanagerfullovf) (ReadOnly): Contains all OVF (virtual machine) full versions of the Central Manager
+
+## PackageDownloadsCentralManagerFullOvf
+### Properties
+* **enterprise**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): The Enterprise package type
+* **enterpriseHighAvailability**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): The EnterpriseHighAvailability package type
+* **medium**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): The Medium package type
+* **mediumHighAvailability**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): The MediumHighAvailability package type
+
+## PackageDownloadsSensor
+### Properties
+* **full**: [PackageDownloadsSensorFull](#packagedownloadssensorfull) (ReadOnly): Contains full package downloads
+* **upgrade**: [UpgradePackageDownloadInfo](#upgradepackagedownloadinfo)[]: Sensor upgrade package downloads (on existing installations)
+
+## PackageDownloadsSensorFull
+### Properties
+* **iso**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Contains all ISO full versions for the sensor
+* **ovf**: [PackageDownloadsSensorFullOvf](#packagedownloadssensorfullovf): Contains all OVF (virtual machine) full versions for the sensor
+
+## PackageDownloadsSensorFullOvf
+### Properties
+* **enterprise**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Enterprise package type
+* **line**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Line package type
+* **medium**: [PackageDownloadInfo](#packagedownloadinfo)[] (ReadOnly): Medium package type
+
+## ResetPasswordInput
+### Properties
+* **applianceId**: string: The appliance id of the sensor.
+
+## ResetPasswordInput
+### Properties
+* **applianceId**: string: The appliance id of the sensor.
+
 ## Sensor
 ### Properties
 * **name**: string (ReadOnly): Sensor name.
@@ -218,4 +306,11 @@
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## UpgradePackageDownloadInfo
+### Properties
+* **fromVersion**: string (ReadOnly): Minimum base version for upgrade
+* **link**: string (ReadOnly): Download link
+* **version**: string (ReadOnly): Version number
+* **versionKind**: 'Latest' | 'Preview' | 'Previous' | string (ReadOnly): Kind of the version
 
