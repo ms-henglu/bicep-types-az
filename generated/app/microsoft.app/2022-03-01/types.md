@@ -97,6 +97,20 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
+## Function checkNameAvailability (Microsoft.App/managedEnvironments@2022-03-01)
+* **Resource**: Microsoft.App/managedEnvironments
+* **ApiVersion**: 2022-03-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-03-01)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-03-01
@@ -111,6 +125,10 @@
 * **Resource**: Microsoft.App/managedEnvironments/daprComponents
 * **ApiVersion**: 2022-03-01
 * **Output**: [DaprSecretsCollection](#daprsecretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -232,6 +250,17 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **valid**: bool (ReadOnly): Is the certificate valid?.
 * **value**: any (WriteOnly): PFX or PEM blob
 
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+
 ## ClientRegistration
 ### Properties
 * **clientId**: string: The Client ID of the app used for login.
@@ -327,12 +356,25 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **aRecords**: string[]: A records visible for this hostname.
 * **cNameRecords**: string[]: CName records visible for this hostname.
 * **conflictingContainerAppResourceId**: string (ReadOnly): Name of the conflicting Container App on the Managed Environment if it's within the same subscription.
-* **customDomainVerificationFailureInfo**: [DefaultErrorResponse](#defaulterrorresponse) (ReadOnly): Raw failure information if DNS verification fails.
+* **customDomainVerificationFailureInfo**: [CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo](#customhostnameanalysisresultcustomdomainverificationfailureinfo) (ReadOnly): Raw failure information if DNS verification fails.
 * **customDomainVerificationTest**: 'Failed' | 'Passed' | 'Skipped' (ReadOnly): DNS verification test result.
 * **hasConflictOnManagedEnvironment**: bool (ReadOnly): <code>true</code> if there is a conflict on the Container App's managed environment; otherwise, <code>false</code>.
 * **hostName**: string (ReadOnly): Host name that was analyzed
 * **isHostnameAlreadyVerified**: bool (ReadOnly): <code>true</code> if hostname is already verified; otherwise, <code>false</code>.
 * **txtRecords**: string[]: TXT records visible for this hostname.
+
+## CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo
+### Properties
+* **code**: string (ReadOnly): Standardized string to programmatically identify the error.
+* **details**: [CustomHostnameAnalysisResultCustomDomainVerificationFailureInfoDetailsItem](#customhostnameanalysisresultcustomdomainverificationfailureinfodetailsitem)[]: Details or the error
+* **message**: string (ReadOnly): Detailed error description and debugging information.
+* **target**: string (ReadOnly): Detailed error description and debugging information.
+
+## CustomHostnameAnalysisResultCustomDomainVerificationFailureInfoDetailsItem
+### Properties
+* **code**: string (ReadOnly): Standardized string to programmatically identify the error.
+* **message**: string (ReadOnly): Detailed error description and debugging information.
+* **target**: string (ReadOnly): Detailed error description and debugging information.
 
 ## CustomOpenIdConnectProvider
 ### Properties
@@ -383,24 +425,6 @@ eg: azure-servicebus, redis etc.
 ### Properties
 * **allowedApplications**: string[]: The configuration settings of the Azure Active Directory allowed applications.
 * **allowedPrincipals**: [AllowedPrincipals](#allowedprincipals): The configuration settings of the Azure Active Directory allowed principals.
-
-## DefaultErrorResponse
-### Properties
-* **error**: [DefaultErrorResponseError](#defaulterrorresponseerror) (ReadOnly): Error model.
-
-## DefaultErrorResponseError
-### Properties
-* **code**: string (ReadOnly): Standardized string to programmatically identify the error.
-* **details**: [DefaultErrorResponseErrorDetailsItem](#defaulterrorresponseerrordetailsitem)[]: Details or the error
-* **innererror**: string (ReadOnly): More information to debug error.
-* **message**: string (ReadOnly): Detailed error description and debugging information.
-* **target**: string (ReadOnly): Detailed error description and debugging information.
-
-## DefaultErrorResponseErrorDetailsItem
-### Properties
-* **code**: string (ReadOnly): Standardized string to programmatically identify the error.
-* **message**: string (ReadOnly): Detailed error description and debugging information.
-* **target**: string (ReadOnly): Detailed error description and debugging information.
 
 ## EnvironmentVar
 ### Properties

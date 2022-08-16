@@ -279,6 +279,8 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -751,6 +753,8 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -780,6 +784,8 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -809,6 +815,7 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/metrics': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.

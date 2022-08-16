@@ -42,6 +42,26 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/FrontDoorWebApplicationFirewallPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function disableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2021-06-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2021-06-01
+
+## Function enableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2021-06-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2021-06-01
+* **Input**: [CustomHttpsConfiguration](#customhttpsconfiguration)
+
+## Function purge (Microsoft.Network/frontDoors@2021-06-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2021-06-01
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function validateCustomDomain (Microsoft.Network/frontDoors@2021-06-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2021-06-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## Backend
 ### Properties
 * **address**: string: Location of the backend (IP address or FQDN)
@@ -82,6 +102,14 @@
 * **dynamicCompression**: 'Disabled' | 'Enabled' | string: Whether to use dynamic compression for cached content
 * **queryParameters**: string: query parameters to include or exclude (comma separated).
 * **queryParameterStripDirective**: 'StripAll' | 'StripAllExcept' | 'StripNone' | 'StripOnly' | string: Treatment of URL query terms when forming the cache key.
+
+## CustomHttpsConfiguration
+### Properties
+* **certificateSource**: 'AzureKeyVault' | 'FrontDoor' | string (Required): Defines the source of the SSL certificate
+* **frontDoorCertificateSourceParameters**: [FrontDoorCertificateSourceParameters](#frontdoorcertificatesourceparameters): Parameters required for enabling SSL with Front Door-managed certificates (if certificateSource=FrontDoor)
+* **keyVaultCertificateSourceParameters**: [KeyVaultCertificateSourceParameters](#keyvaultcertificatesourceparameters): KeyVault certificate source parameters (if certificateSource=AzureKeyVault)
+* **minimumTlsVersion**: '1.0' | '1.2' | string (Required): The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
+* **protocolType**: 'ServerNameIndication' | string (Required): Defines the TLS extension protocol that is used for secure delivery
 
 ## CustomHttpsConfiguration
 ### Properties
@@ -253,6 +281,10 @@
 * **redirectUrl**: string: If action type is redirect, this field represents redirect URL for the client.
 * **requestBodyCheck**: 'Disabled' | 'Enabled' | string: Describes if policy managed rules will inspect the request body content.
 
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -358,6 +390,16 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource ID.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
 
 ## WebApplicationFirewallPolicyProperties
 ### Properties

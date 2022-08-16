@@ -33,6 +33,19 @@ region is specified on update the request will succeed.
 * **properties**: [DataStoreProperties](#datastoreproperties) (Required): DataStore properties.
 * **type**: 'Microsoft.HybridData/dataManagers/dataStores' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs@2019-06-01)
+* **Resource**: Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs
+* **ApiVersion**: 2019-06-01
+
+## Function resume (Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs@2019-06-01)
+* **Resource**: Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs
+* **ApiVersion**: 2019-06-01
+
+## Function run (Microsoft.HybridData/dataManagers/dataServices/jobDefinitions@2019-06-01)
+* **Resource**: Microsoft.HybridData/dataManagers/dataServices/jobDefinitions
+* **ApiVersion**: 2019-06-01
+* **Input**: [RunParameters](#runparameters)
+
 ## CustomerSecret
 ### Properties
 * **algorithm**: 'None' | 'PlainText' | 'RSA1_5' | 'RSA_OAEP' (Required): The encryption algorithm used to encrypt data.
@@ -63,6 +76,12 @@ region is specified on update the request will succeed.
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RunParameters
+### Properties
+* **customerSecrets**: [CustomerSecret](#customersecret)[]: List of customer secrets containing a key identifier and key value. The key identifier is a way for the specific data source to understand the key. Value contains customer secret encrypted by the encryptionKeys.
+* **dataServiceInput**: any: A generic json used differently by each data service type.
+* **userConfirmation**: 'NotRequired' | 'Required': Enum to detect if user confirmation is required. If not passed will default to NotRequired.
 
 ## Schedule
 ### Properties

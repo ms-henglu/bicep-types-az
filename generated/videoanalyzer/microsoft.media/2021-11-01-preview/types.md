@@ -118,6 +118,24 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Media/videoAnalyzers/videos' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Media/videoAnalyzers/livePipelines@2021-11-01-preview)
+* **Resource**: Microsoft.Media/videoAnalyzers/livePipelines
+* **ApiVersion**: 2021-11-01-preview
+
+## Function cancel (Microsoft.Media/videoAnalyzers/pipelineJobs@2021-11-01-preview)
+* **Resource**: Microsoft.Media/videoAnalyzers/pipelineJobs
+* **ApiVersion**: 2021-11-01-preview
+
+## Function checkNameAvailability (Microsoft.Media/locations@2021-11-01-preview)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2021-11-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function deactivate (Microsoft.Media/videoAnalyzers/livePipelines@2021-11-01-preview)
+* **Resource**: Microsoft.Media/videoAnalyzers/livePipelines
+* **ApiVersion**: 2021-11-01-preview
+
 ## Function listContentToken (Microsoft.Media/videoAnalyzers/videos@2021-11-01-preview)
 * **Resource**: Microsoft.Media/videoAnalyzers/videos
 * **ApiVersion**: 2021-11-01-preview
@@ -173,6 +191,17 @@
 * **@type**: '#Microsoft.VideoAnalyzer.PemCertificateList' (Required): The discriminator for derived types.
 * **certificates**: string[] (Required): PEM formatted public certificates. One certificate per entry.
 
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## CredentialsBase
 * **Discriminator**: @type

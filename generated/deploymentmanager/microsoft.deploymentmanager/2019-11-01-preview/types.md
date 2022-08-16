@@ -67,6 +67,16 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DeploymentManager/steps' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.DeploymentManager/rollouts@2019-11-01-preview)
+* **Resource**: Microsoft.DeploymentManager/rollouts
+* **ApiVersion**: 2019-11-01-preview
+* **Output**: [Rollout](#rollout)
+
+## Function restart (Microsoft.DeploymentManager/rollouts@2019-11-01-preview)
+* **Resource**: Microsoft.DeploymentManager/rollouts
+* **ApiVersion**: 2019-11-01-preview
+* **Output**: [Rollout](#rollout)
+
 ## ArtifactSourceProperties
 ### Properties
 * **artifactRoot**: string: The path from the location that the 'authentication' property [say, a SAS URI to the blob container] refers to, to the location of the artifacts. This can be used to differentiate different versions of the artifacts. Or, different types of artifacts like binaries or templates. The location referenced by the authentication property concatenated with this optional artifactRoot path forms the artifact source location where the artifacts are expected to be found.
@@ -168,6 +178,26 @@
 * **matches**: string[]: The list of regular expressions.
 * **matchQuantifier**: 'All' | 'Any': Indicates whether any or all of the expressions should match with the response content.
 
+## Rollout
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **identity**: [Identity](#identity): Identity for the resource.
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RolloutProperties](#rolloutproperties): The properties that define a rollout.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## Rollout
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **identity**: [Identity](#identity): Identity for the resource.
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RolloutProperties](#rolloutproperties): The properties that define a rollout.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## RolloutOperationInfo
 ### Properties
 * **endTime**: string (ReadOnly): The start time of the rollout in UTC. This property will not be set if the rollout has not completed yet.
@@ -175,6 +205,17 @@
 * **retryAttempt**: int (ReadOnly): The ordinal count of the number of retry attempts on a rollout. 0 if no retries of the rollout have been performed. If the rollout is updated with a PUT, this count is reset to 0.
 * **skipSucceededOnRetry**: bool (ReadOnly): True, if all steps that succeeded on the previous run/attempt were chosen to be skipped in this retry attempt. False, otherwise.
 * **startTime**: string (ReadOnly): The start time of the rollout in UTC.
+
+## RolloutProperties
+### Properties
+* **artifactSourceId**: string: The reference to the artifact source resource Id where the payload is located.
+* **buildVersion**: string (Required): The version of the build being deployed.
+* **operationInfo**: [RolloutOperationInfo](#rolloutoperationinfo) (ReadOnly): Operational information of the rollout.
+* **services**: [Service](#service)[] (ReadOnly): The detailed information on the services being deployed.
+* **status**: string (ReadOnly): The current status of the rollout.
+* **stepGroups**: [StepGroup](#stepgroup)[] (Required): The list of step groups that define the orchestration.
+* **targetServiceTopologyId**: string (Required): The resource Id of the service topology from which service units are being referenced in step groups to be deployed.
+* **totalRetryAttempts**: int (ReadOnly): The cardinal count of total number of retries performed on the rollout at a given time.
 
 ## RolloutRequestPropertiesOrRolloutProperties
 ### Properties
@@ -268,6 +309,11 @@
 * **attributes**: [WaitStepAttributes](#waitstepattributes) (Required): The Wait attributes
 * **stepType**: 'Wait' (Required): The type of step.
 
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

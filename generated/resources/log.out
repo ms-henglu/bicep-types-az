@@ -686,6 +686,21 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1120,6 +1135,23 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1322,6 +1354,21 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1437,6 +1484,8 @@ warning | DeprecatedConfig | Using directive.46.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.47.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}/register': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}/unregister': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1497,6 +1546,8 @@ warning | PreCheck/SchemaMissingType | The schema 'Operation-display' with an un
 warning | PreCheck/SchemaMissingType | The schema 'OperationListResult' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Features/stable/2015-12-01/features.json:349:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}/register': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}/unregister': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2827,6 +2878,20 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3019,6 +3084,21 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3205,6 +3285,20 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3383,6 +3477,21 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3559,6 +3668,21 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3723,6 +3847,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3887,6 +4020,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4051,6 +4193,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4215,6 +4366,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4375,6 +4535,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4533,6 +4702,15 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4702,6 +4880,15 @@ warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
 warning | Skipping path '/{linkId}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4857,6 +5044,15 @@ warning | Modeler/MissingType | The schema 'DeploymentOperationProperties-status
 warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -5010,6 +5206,15 @@ warning | Modeler/MissingType | The schema 'DeploymentOperationProperties-status
 warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -5198,6 +5403,16 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
 warning | Skipping path '/{policyAssignmentId}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/calculateTemplateHash': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -5290,6 +5505,8 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'ErrorResponse' (3 d
   - properties.error.description: "The error details." => "The error object."
   - title: <none> => "Error response"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' -> 'ErrorResponseAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -5377,6 +5594,8 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'ErrorResponse' (3 d
   - properties.error.description: "The error details." => "The error object."
   - title: <none> => "Error response"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' -> 'ErrorResponseAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -5460,6 +5679,8 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'ErrorResponse' (3 d
   - properties.error.description: "The error details." => "The error object."
   - title: <none> => "Error response"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' -> 'ErrorResponseAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -5541,6 +5762,8 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'ErrorResponse' (3 d
   - properties.error.description: "The error details." => "The error object."
   - title: <none> => "Error response"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' -> 'ErrorResponseAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -5622,6 +5845,8 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'ErrorResponse' (3 d
   - properties.error.description: "The error details." => "The error object."
   - title: <none> => "Error response"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' -> 'ErrorResponseAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/checkZonePeers/': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Resources/checkResourceName': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.

@@ -980,6 +980,213 @@ az sql elastic-pool list-editions -l <location> -o table
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.Sql/virtualClusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function acquire (Microsoft.Sql/servers/dnsAliases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/dnsAliases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [ServerDnsAliasAcquisition](#serverdnsaliasacquisition)
+* **Output**: [ServerDnsAlias](#serverdnsalias)
+
+## Function cancel (Microsoft.Sql/servers/databases/operations@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/operations
+* **ApiVersion**: 2021-08-01-preview
+
+## Function cancel (Microsoft.Sql/servers/elasticPools/operations@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/elasticPools/operations
+* **ApiVersion**: 2021-08-01-preview
+
+## Function cancel (Microsoft.Sql/servers/jobAgents/jobs/executions@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/jobAgents/jobs/executions
+* **ApiVersion**: 2021-08-01-preview
+
+## Function cancel (Microsoft.Sql/managedInstances/operations@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/operations
+* **ApiVersion**: 2021-08-01-preview
+
+## Function cancelSync (Microsoft.Sql/servers/databases/syncGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2021-08-01-preview
+
+## Function completeRestore (Microsoft.Sql/managedInstances/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [CompleteDatabaseRestoreDefinition](#completedatabaserestoredefinition)
+
+## Function copy (Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [CopyLongTermRetentionBackupParameters](#copylongtermretentionbackupparameters)
+* **Output**: [LongTermRetentionBackupOperationResult](#longtermretentionbackupoperationresult)
+
+## Function disable (Microsoft.Sql/servers/databases/ledgerDigestUploads@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/ledgerDigestUploads
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [LedgerDigestUploads](#ledgerdigestuploads)
+
+## Function disable (Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2021-08-01-preview
+
+## Function disable (Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2021-08-01-preview
+
+## Function enable (Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2021-08-01-preview
+
+## Function enable (Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2021-08-01-preview
+
+## Function export (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [ExportDatabaseDefinition](#exportdatabasedefinition)
+* **Output**: [ImportExportOperationResult](#importexportoperationresult)
+
+## Function export (Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [DatabaseVulnerabilityAssessmentScansExport](#databasevulnerabilityassessmentscansexport)
+
+## Function export (Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [DatabaseVulnerabilityAssessmentScansExport](#databasevulnerabilityassessmentscansexport)
+
+## Function failover (Microsoft.Sql/servers/elasticPools@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/elasticPools
+* **ApiVersion**: 2021-08-01-preview
+
+## Function failover (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+
+## Function failover (Microsoft.Sql/servers/failoverGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/failoverGroups
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [FailoverGroup](#failovergroup)
+
+## Function failover (Microsoft.Sql/locations/instanceFailoverGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/locations/instanceFailoverGroups
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [InstanceFailoverGroup](#instancefailovergroup)
+
+## Function failover (Microsoft.Sql/managedInstances@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances
+* **ApiVersion**: 2021-08-01-preview
+
+## Function forceFailoverAllowDataLoss (Microsoft.Sql/servers/failoverGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/failoverGroups
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [FailoverGroup](#failovergroup)
+
+## Function forceFailoverAllowDataLoss (Microsoft.Sql/locations/instanceFailoverGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/locations/instanceFailoverGroups
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [InstanceFailoverGroup](#instancefailovergroup)
+
+## Function generateKey (Microsoft.Sql/servers/syncAgents@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/syncAgents
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [SyncAgentKeyProperties](#syncagentkeyproperties)
+
+## Function import (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [ImportExistingDatabaseDefinition](#importexistingdatabasedefinition)
+* **Output**: [ImportExportOperationResult](#importexportoperationresult)
+
+## Function import (Microsoft.Sql/servers@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [ImportNewDatabaseDefinition](#importnewdatabasedefinition)
+* **Output**: [ImportExportOperationResult](#importexportoperationresult)
+
+## Function initiateScan (Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2021-08-01-preview
+
+## Function initiateScan (Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2021-08-01-preview
+
+## Function move (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [ResourceMoveDefinition](#resourcemovedefinition)
+
+## Function pause (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [Database](#database)
+
+## Function recover (Microsoft.Sql/locations/deletedServers@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/locations/deletedServers
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [DeletedServer](#deletedserver)
+
+## Function refreshHubSchema (Microsoft.Sql/servers/databases/syncGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2021-08-01-preview
+
+## Function refreshSchema (Microsoft.Sql/servers/databases/syncGroups/syncMembers@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups/syncMembers
+* **ApiVersion**: 2021-08-01-preview
+
+## Function restorePoints (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [CreateDatabaseRestorePointDefinition](#createdatabaserestorepointdefinition)
+* **Output**: [RestorePoint](#restorepoint)
+
+## Function resume (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [Database](#database)
+
+## Function revalidate (Microsoft.Sql/servers/encryptionProtector@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/encryptionProtector
+* **ApiVersion**: 2021-08-01-preview
+
+## Function revalidate (Microsoft.Sql/managedInstances/encryptionProtector@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/encryptionProtector
+* **ApiVersion**: 2021-08-01-preview
+
+## Function start (Microsoft.Sql/servers/jobAgents/jobs@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/jobAgents/jobs
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [JobExecution](#jobexecution)
+
+## Function tdeCertificates (Microsoft.Sql/managedInstances@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [TdeCertificate](#tdecertificate)
+
+## Function tdeCertificates (Microsoft.Sql/servers@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [TdeCertificate](#tdecertificate)
+
+## Function triggerSync (Microsoft.Sql/servers/databases/syncGroups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2021-08-01-preview
+
+## Function update (Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/locations/longTermRetentionServers/longTermRetentionDatabases/longTermRetentionBackups
+* **ApiVersion**: 2021-08-01-preview
+* **Input**: [UpdateLongTermRetentionBackupParameters](#updatelongtermretentionbackupparameters)
+* **Output**: [LongTermRetentionBackupOperationResult](#longtermretentionbackupoperationresult)
+
+## Function updateManagedInstanceDnsServers (Microsoft.Sql/virtualClusters@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/virtualClusters
+* **ApiVersion**: 2021-08-01-preview
+* **Output**: [UpdateManagedInstanceDnsServersOperation](#updatemanagedinstancednsserversoperation)
+
+## Function upgradeDataWarehouse (Microsoft.Sql/servers/databases@2021-08-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2021-08-01-preview
+
 ## AdministratorProperties
 ### Properties
 * **administratorType**: 'ActiveDirectory' | string (Required): Type of the sever administrator.
@@ -1037,6 +1244,73 @@ az sql elastic-pool list-editions -l <location> -o table
 * **weeklyRetention**: string: The weekly retention policy for an LTR backup in an ISO 8601 format.
 * **weekOfYear**: int: The week of year to take the yearly backup in an ISO 8601 format.
 * **yearlyRetention**: string: The yearly retention policy for an LTR backup in an ISO 8601 format.
+
+## CompleteDatabaseRestoreDefinition
+### Properties
+* **lastBackupName**: string (Required): The last backup name to apply
+
+## CopyLongTermRetentionBackupParameters
+### Properties
+* **properties**: [CopyLongTermRetentionBackupParametersProperties](#copylongtermretentionbackupparametersproperties): Resource properties.
+
+## CopyLongTermRetentionBackupParametersProperties
+### Properties
+* **targetBackupStorageRedundancy**: 'Geo' | 'GeoZone' | 'Local' | 'Zone' | string (WriteOnly): The storage redundancy type of the copied backup
+* **targetDatabaseName**: string (WriteOnly): The name of the database owns the copied backup.
+* **targetResourceGroup**: string (WriteOnly): The resource group that owns the target server
+* **targetServerFullyQualifiedDomainName**: string (WriteOnly): The fully qualified domain name of the target server
+* **targetServerResourceId**: string (WriteOnly): The resource Id of the target server that owns the database
+* **targetSubscriptionId**: string (WriteOnly): The subscription that owns the target server
+
+## CreateDatabaseRestorePointDefinition
+### Properties
+* **restorePointLabel**: string (Required): The restore point label to apply
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **identity**: [DatabaseIdentity](#databaseidentity): The Azure Active Directory identity of the database.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **managedBy**: string (ReadOnly): Resource that manages the database.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The database SKU.
+
+The list of SKUs may vary by region and support offer. To determine the SKUs (including the SKU name, tier/edition, family, and capacity) that are available to your subscription in an Azure region, use the `Capabilities_ListByLocation` REST API or one of the following commands:
+
+```azurecli
+az sql db list-editions -l <location> -o table
+````
+
+```powershell
+Get-AzSqlServerServiceObjective -Location <location>
+````
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **identity**: [DatabaseIdentity](#databaseidentity): The Azure Active Directory identity of the database.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **managedBy**: string (ReadOnly): Resource that manages the database.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The database SKU.
+
+The list of SKUs may vary by region and support offer. To determine the SKUs (including the SKU name, tier/edition, family, and capacity) that are available to your subscription in an Azure region, use the `Capabilities_ListByLocation` REST API or one of the following commands:
+
+```azurecli
+az sql db list-editions -l <location> -o table
+````
+
+```powershell
+Get-AzSqlServerServiceObjective -Location <location>
+````
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
 
 ## DatabaseAutomaticTuningProperties
 ### Properties
@@ -1264,9 +1538,34 @@ When source subscription belongs to a different tenant than target subscription,
 ### Properties
 * **baselineResults**: [DatabaseVulnerabilityAssessmentRuleBaselineItem](#databasevulnerabilityassessmentrulebaselineitem)[] (Required): The rule baseline result
 
+## DatabaseVulnerabilityAssessmentScanExportProperties
+### Properties
+* **exportedReportLocation**: string (ReadOnly): Location of the exported report (e.g. https://myStorage.blob.core.windows.net/VaScans/scans/serverName/databaseName/scan_scanId.xlsx).
+
+## DatabaseVulnerabilityAssessmentScansExport
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseVulnerabilityAssessmentScanExportProperties](#databasevulnerabilityassessmentscanexportproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## DatabaseVulnerabilityAssessmentScansExport
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseVulnerabilityAssessmentScanExportProperties](#databasevulnerabilityassessmentscanexportproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
 ## DataWarehouseUserActivitiesProperties
 ### Properties
 * **activeQueriesCount**: int (ReadOnly): Count of running and suspended queries.
+
+## DeletedServer
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DeletedServerProperties](#deletedserverproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## DeletedServerProperties
 ### Properties
@@ -1287,6 +1586,10 @@ When source subscription belongs to a different tenant than target subscription,
 * **sourceReplicaId**: string (ReadOnly): The source replica id
 * **targetDatabase**: string: The name of the target database
 * **targetReplicaId**: string (ReadOnly): The target replica id
+
+## DnsRefreshConfigurationProperties
+### Properties
+* **status**: 'Failed' | 'Succeeded' | string (ReadOnly): The status of the DNS refresh operation.
 
 ## ElasticPoolPerDatabaseSettings
 ### Properties
@@ -1312,6 +1615,16 @@ When source subscription belongs to a different tenant than target subscription,
 * **subregion**: string (ReadOnly): Subregion of the encryption protector.
 * **thumbprint**: string (ReadOnly): Thumbprint of the server key.
 * **uri**: string (ReadOnly): The URI of the server key.
+
+## ExportDatabaseDefinition
+### Properties
+* **administratorLogin**: string (Required, WriteOnly): Administrator login name.
+* **administratorLoginPassword**: string (Required, WriteOnly): Administrator login password.
+* **authenticationType**: string (WriteOnly): Authentication type.
+* **networkIsolation**: [NetworkIsolationSettings](#networkisolationsettings) (WriteOnly): Optional resource information to enable network isolation for request.
+* **storageKey**: string (Required, WriteOnly): Storage key.
+* **storageKeyType**: 'SharedAccessKey' | 'StorageAccessKey' | string (Required, WriteOnly): Storage key type.
+* **storageUri**: string (Required, WriteOnly): Storage Uri.
 
 ## ExtendedDatabaseBlobAuditingPolicyProperties
 ### Properties
@@ -1501,6 +1814,24 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **storageAccountSubscriptionId**: string: Specifies the blob storage subscription Id.
 * **storageEndpoint**: string: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint or isAzureMonitorTargetEnabled is required.
 
+## FailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (ReadOnly): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [FailoverGroupProperties](#failovergroupproperties): Resource properties.
+* **tags**: [FailoverGroupTags](#failovergrouptags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## FailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (ReadOnly): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [FailoverGroupProperties](#failovergroupproperties): Resource properties.
+* **tags**: [FailoverGroupTags](#failovergrouptags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
 ## FailoverGroupProperties
 ### Properties
 * **databases**: string[]: List of databases in the failover group.
@@ -1523,6 +1854,83 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## FailoverGroupTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ImportExistingDatabaseDefinition
+### Properties
+* **administratorLogin**: string (Required, WriteOnly): Administrator login name.
+* **administratorLoginPassword**: string (Required, WriteOnly): Administrator login password.
+* **authenticationType**: string (WriteOnly): Authentication type.
+* **networkIsolation**: [NetworkIsolationSettings](#networkisolationsettings) (WriteOnly): Optional resource information to enable network isolation for request.
+* **storageKey**: string (Required, WriteOnly): Storage key.
+* **storageKeyType**: 'SharedAccessKey' | 'StorageAccessKey' | string (Required, WriteOnly): Storage key type.
+* **storageUri**: string (Required, WriteOnly): Storage Uri.
+
+## ImportExportOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ImportExportOperationResultProperties](#importexportoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## ImportExportOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ImportExportOperationResultProperties](#importexportoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## ImportExportOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ImportExportOperationResultProperties](#importexportoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## ImportExportOperationResultProperties
+### Properties
+* **blobUri**: string (ReadOnly): Blob Uri.
+* **databaseName**: string (ReadOnly): Database name.
+* **errorMessage**: string (ReadOnly): Error message.
+* **lastModifiedTime**: string (ReadOnly): Last modified time.
+* **privateEndpointConnections**: [PrivateEndpointConnectionRequestStatus](#privateendpointconnectionrequeststatus)[] (ReadOnly): Gets the status of private endpoints associated with this request.
+* **queuedTime**: string (ReadOnly): Queued time.
+* **requestId**: string (ReadOnly): Request Id.
+* **requestType**: string (ReadOnly): Request type.
+* **serverName**: string (ReadOnly): Server name.
+* **status**: string (ReadOnly): Operation status.
+
+## ImportNewDatabaseDefinition
+### Properties
+* **administratorLogin**: string (Required, WriteOnly): Administrator login name.
+* **administratorLoginPassword**: string (Required, WriteOnly): Administrator login password.
+* **authenticationType**: string (WriteOnly): Authentication type.
+* **databaseName**: string (WriteOnly): Name of the import database.
+* **edition**: string (WriteOnly): Edition of the import database.
+* **maxSizeBytes**: string (WriteOnly): Max size in bytes for the import database.
+* **networkIsolation**: [NetworkIsolationSettings](#networkisolationsettings) (WriteOnly): Optional resource information to enable network isolation for request.
+* **serviceObjectiveName**: string (WriteOnly): Service level objective name of the import database.
+* **storageKey**: string (Required, WriteOnly): Storage key.
+* **storageKeyType**: 'SharedAccessKey' | 'StorageAccessKey' | string (Required, WriteOnly): Storage key type.
+* **storageUri**: string (Required, WriteOnly): Storage Uri.
+
+## InstanceFailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [InstanceFailoverGroupProperties](#instancefailovergroupproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## InstanceFailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [InstanceFailoverGroupProperties](#instancefailovergroupproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## InstanceFailoverGroupProperties
 ### Properties
@@ -1562,6 +1970,13 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Properties
 * **password**: string (Required, WriteOnly): The credential password.
 * **username**: string (Required): The credential user name.
+
+## JobExecution
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [JobExecutionProperties](#jobexecutionproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## JobExecutionProperties
 ### Properties
@@ -1647,10 +2062,31 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Properties
 * **members**: [JobTarget](#jobtarget)[] (Required): Members of the target group.
 
+## LedgerDigestUploads
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [LedgerDigestUploadsProperties](#ledgerdigestuploadsproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
 ## LedgerDigestUploadsProperties
 ### Properties
 * **digestStorageEndpoint**: string: The digest storage endpoint, which must be either an Azure blob storage endpoint or an URI for Azure Confidential Ledger.
 * **state**: 'Disabled' | 'Enabled' (ReadOnly): Specifies the state of ledger digest upload.
+
+## LongTermRetentionBackupOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [LongTermRetentionOperationResultProperties](#longtermretentionoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## LongTermRetentionBackupOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [LongTermRetentionOperationResultProperties](#longtermretentionoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## LongTermRetentionBackupProperties
 ### Properties
@@ -1662,6 +2098,16 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **requestedBackupStorageRedundancy**: 'Geo' | 'GeoZone' | 'Local' | 'Zone' | string (WriteOnly): The storage redundancy type of the backup
 * **serverCreateTime**: string (ReadOnly): The create time of the server.
 * **serverName**: string (ReadOnly): The server name that the backup database belong to.
+
+## LongTermRetentionOperationResultProperties
+### Properties
+* **fromBackupResourceId**: string (ReadOnly): Source backup resource id
+* **message**: string (ReadOnly): Progress message
+* **operationType**: string (ReadOnly): Operation type.
+* **requestId**: string (ReadOnly): Request Id.
+* **status**: string (ReadOnly): Operation status
+* **targetBackupStorageRedundancy**: 'Geo' | 'GeoZone' | 'Local' | 'Zone' | string (ReadOnly): The storage redundancy type of the copied backup
+* **toBackupResourceId**: string (ReadOnly): Target backup resource id
 
 ## MaintenanceWindowOptionsProperties
 ### Properties
@@ -1906,6 +2352,12 @@ An example of valid timezone id is "Pacific Standard Time" or "W. Europe Standar
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionStateProperty](#privatelinkserviceconnectionstateproperty): Connection state of the private endpoint connection.
 * **provisioningState**: 'Approving' | 'Dropping' | 'Failed' | 'Ready' | 'Rejecting' | string (ReadOnly): State of the private endpoint connection.
 
+## PrivateEndpointConnectionRequestStatus
+### Properties
+* **privateEndpointConnectionName**: string (ReadOnly): The connection name for the private endpoint.
+* **privateLinkServiceId**: string (ReadOnly): Resource id for which the private endpoint is created.
+* **status**: string (ReadOnly): Status of this private endpoint connection.
+
 ## PrivateEndpointProperty
 ### Properties
 * **id**: string: Resource id of the private endpoint.
@@ -2028,6 +2480,10 @@ An example of valid timezone id is "Pacific Standard Time" or "W. Europe Standar
 ### Additional Properties
 * **Additional Properties Type**: [UserIdentity](#useridentity)
 
+## ResourceMoveDefinition
+### Properties
+* **id**: string (Required): The target ID for the resource
+
 ## RestorableDroppedDatabaseProperties
 ### Properties
 * **backupStorageRedundancy**: 'Geo' | 'GeoZone' | 'Local' | 'Zone' | string (ReadOnly): The storage account type used to store backups for this database.
@@ -2048,6 +2504,14 @@ An example of valid timezone id is "Pacific Standard Time" or "W. Europe Standar
 * **databaseName**: string (ReadOnly): The name of the database.
 * **deletionDate**: string (ReadOnly): The deletion date of the database (ISO8601 format).
 * **earliestRestoreDate**: string (ReadOnly): The earliest restore date of the database (ISO8601 format).
+
+## RestorePoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (ReadOnly): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [RestorePointProperties](#restorepointproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## RestorePointProperties
 ### Properties
@@ -2214,6 +2678,17 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **storageAccountSubscriptionId**: string: Specifies the blob storage subscription Id.
 * **storageEndpoint**: string: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint or isAzureMonitorTargetEnabled is required.
 
+## ServerDnsAlias
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ServerDnsAliasProperties](#serverdnsaliasproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## ServerDnsAliasAcquisition
+### Properties
+* **oldServerDnsAliasId**: string (Required): The id of the server alias that will be acquired to point to this server instead.
+
 ## ServerDnsAliasProperties
 ### Properties
 * **azureDnsRecord**: string (ReadOnly): The fully qualified DNS record for alias
@@ -2311,6 +2786,10 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **limit**: int (ReadOnly): Boundary value of the metric.
 * **unit**: string (ReadOnly): Unit of the metric.
 
+## SyncAgentKeyProperties
+### Properties
+* **syncAgentKey**: string (ReadOnly): Key of sync agent.
+
 ## SyncAgentProperties
 ### Properties
 * **expiryTime**: string (ReadOnly): Expiration time of the sync agent version.
@@ -2376,6 +2855,25 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 
+## TdeCertificate
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [TdeCertificateProperties](#tdecertificateproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## TdeCertificate
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [TdeCertificateProperties](#tdecertificateproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## TdeCertificateProperties
+### Properties
+* **certPassword**: string (WriteOnly): The certificate password.
+* **privateBlob**: string (Required, WriteOnly): The base64 encoded certificate private blob.
+
 ## TimeZoneProperties
 ### Properties
 * **displayName**: string (ReadOnly): The time zone display name
@@ -2426,9 +2924,29 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## TransparentDataEncryptionProperties
 ### Properties
 * **state**: 'Disabled' | 'Enabled' (Required): Specifies the state of the transparent data encryption.
+
+## UpdateLongTermRetentionBackupParameters
+### Properties
+* **properties**: [UpdateLongTermRetentionBackupParametersProperties](#updatelongtermretentionbackupparametersproperties): Resource properties.
+
+## UpdateLongTermRetentionBackupParametersProperties
+### Properties
+* **requestedBackupStorageRedundancy**: 'Geo' | 'GeoZone' | 'Local' | 'Zone' | string (WriteOnly): The storage redundancy type of the copied backup
+
+## UpdateManagedInstanceDnsServersOperation
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DnsRefreshConfigurationProperties](#dnsrefreshconfigurationproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## UpsertManagedServerOperationParameters
 ### Properties

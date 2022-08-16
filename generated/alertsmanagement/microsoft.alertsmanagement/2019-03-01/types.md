@@ -18,6 +18,12 @@
 * **properties**: [AlertRuleProperties](#alertruleproperties): The properties of the alert rule.
 * **type**: 'microsoft.alertsManagement/smartDetectorAlertRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function changestate (Microsoft.AlertsManagement/alerts@2019-03-01)
+* **Resource**: Microsoft.AlertsManagement/alerts
+* **ApiVersion**: 2019-03-01
+* **Input**: string
+* **Output**: [Alert](#alert)
+
 ## ActionGroupsInformation
 ### Properties
 * **customEmailSubject**: string: An optional custom email subject to use in email notifications.
@@ -27,6 +33,13 @@
 ## ActionStatus
 ### Properties
 * **isSuppressed**: bool: Value indicating whether alert is suppressed.
+
+## Alert
+### Properties
+* **id**: string (ReadOnly): Azure resource Id
+* **name**: string (ReadOnly): Azure resource name
+* **properties**: [AlertProperties](#alertproperties): Alert property bag
+* **type**: string (ReadOnly): Azure resource type
 
 ## AlertProperties
 ### Properties
