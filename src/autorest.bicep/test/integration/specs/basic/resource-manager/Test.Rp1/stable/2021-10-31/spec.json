@@ -104,6 +104,26 @@
       "properties": {
         "locationData": {
           "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/locationData"
+        },
+        "base64EncodedBytes": {
+          "type": "string",
+          "format": "base64url"
+        },
+        "binaryBuffer": {
+          "type": "string",
+          "format": "byte"
+        },
+        "subnetId": {
+          "type": "string",
+          "description": "A fully-qualified resource ID",
+          "format": "arm-id",
+          "x-ms-arm-id-details": {
+            "allowedResources": [
+              {
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+              }
+            ]
+          }
         }
       }
     },

@@ -139,7 +139,7 @@
 ## KeyReleasePolicy
 ### Properties
 * **contentType**: string: Content type and version of key release policy
-* **data**: any: Blob encoding the policy rules under which the key can be released.
+* **data**: string: Blob encoding the policy rules under which the key can be released.
 
 ## KeyRotationPolicyAttributes
 ### Properties
@@ -200,6 +200,8 @@
 
 ## MhsmPrivateEndpointConnectionItem
 ### Properties
+* **etag**: string: Modified whenever there is a change in the state of private endpoint connection.
+* **id**: string: Id of private endpoint connection.
 * **properties**: [MhsmPrivateEndpointConnectionProperties](#mhsmprivateendpointconnectionproperties): Private endpoint connection properties.
 
 ## MhsmPrivateEndpointConnectionProperties
