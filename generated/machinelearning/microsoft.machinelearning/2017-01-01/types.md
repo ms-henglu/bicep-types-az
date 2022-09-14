@@ -11,6 +11,11 @@
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.MachineLearning/webServices' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function CreateRegionalBlob (Microsoft.MachineLearning/webServices@2017-01-01)
+* **Resource**: Microsoft.MachineLearning/webServices
+* **ApiVersion**: 2017-01-01
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
 ## AssetItem
 ### Properties
 * **id**: string: Asset's Id.
@@ -36,6 +41,23 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [OutputPort](#outputport)
+
+## AsyncOperationErrorInfo
+### Properties
+* **code**: string (ReadOnly): The error code.
+* **details**: [AsyncOperationErrorInfo](#asyncoperationerrorinfo)[] (ReadOnly): An array containing error information.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The error target.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string (ReadOnly): The date time that the async operation finished.
+* **errorInfo**: [AsyncOperationErrorInfo](#asyncoperationerrorinfo) (ReadOnly): If the async operation fails, this structure contains the error details.
+* **id**: string (ReadOnly): Async operation id.
+* **name**: string (ReadOnly): Async operation name.
+* **percentComplete**: int (ReadOnly): Async operation progress.
+* **provisioningState**: 'Failed' | 'Provisioning' | 'Succeeded' | 'Unknown' | string (ReadOnly): Read Only: The provisioning state of the web service. Valid values are Unknown, Provisioning, Succeeded, and Failed.
+* **startTime**: string (ReadOnly): The date time that the async operation started.
 
 ## BlobLocation
 ### Properties

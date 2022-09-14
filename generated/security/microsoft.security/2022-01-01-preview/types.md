@@ -18,6 +18,15 @@
 * **properties**: [GovernanceRuleProperties](#governanceruleproperties): Properties of a security governanceRule
 * **type**: 'Microsoft.Security/governanceRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function execute (Microsoft.Security/governanceRules@2022-01-01-preview)
+* **Resource**: Microsoft.Security/governanceRules
+* **ApiVersion**: 2022-01-01-preview
+* **Input**: [ExecuteGovernanceRuleParams](#executegovernanceruleparams)
+
+## ExecuteGovernanceRuleParams
+### Properties
+* **override**: bool: Describe if governance rule should be override
+
 ## GovernanceAssignmentAdditionalData
 ### Properties
 * **ticketLink**: string: Ticket link associated with this GovernanceAssignment - for example: https://snow.com
