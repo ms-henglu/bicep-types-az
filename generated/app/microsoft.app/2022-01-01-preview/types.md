@@ -97,6 +97,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-01-01-preview)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
@@ -106,6 +114,10 @@
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
 * **Output**: [SecretsCollection](#secretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -289,7 +301,7 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **latestRevisionFqdn**: string (ReadOnly): Fully Qualified Domain Name of the latest revision of the Container App.
 * **latestRevisionName**: string (ReadOnly): Name of the latest revision of the Container App.
 * **managedEnvironmentId**: string: Resource ID of the Container App's environment.
-* **outboundIPAddresses**: string[] (ReadOnly): Outbound IP Addresses for container app.
+* **outboundIpAddresses**: string[] (ReadOnly): Outbound IP Addresses for container app.
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): Provisioning state of the Container App.
 * **template**: [Template](#template): Container App versioned application definition.
 
@@ -322,6 +334,7 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **aRecords**: string[]: A records visible for this hostname.
 * **cNameRecords**: string[]: CName records visible for this hostname.
 * **conflictingContainerAppResourceId**: string (ReadOnly): Name of the conflicting Container App on the Managed Environment if it's within the same subscription.
+* **conflictWithEnvironmentCustomDomain**: bool (ReadOnly): <code>true</code> if there is a conflict on the Container App's managed environment level custom domain; otherwise, <code>false</code>.
 * **customDomainVerificationFailureInfo**: [CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo](#customhostnameanalysisresultcustomdomainverificationfailureinfo) (ReadOnly): Raw failure information if DNS verification fails.
 * **customDomainVerificationTest**: 'Failed' | 'Passed' | 'Skipped' (ReadOnly): DNS verification test result.
 * **hasConflictOnManagedEnvironment**: bool (ReadOnly): <code>true</code> if there is a conflict on the Container App's managed environment; otherwise, <code>false</code>.

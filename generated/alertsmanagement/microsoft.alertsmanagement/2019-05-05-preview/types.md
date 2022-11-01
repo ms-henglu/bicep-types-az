@@ -29,6 +29,17 @@
 * **properties**: [SmartGroupProperties](#smartgroupproperties) (ReadOnly): Properties of smart group.
 * **type**: 'Microsoft.AlertsManagement/smartGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function changestate (Microsoft.AlertsManagement/alerts@2019-05-05-preview)
+* **Resource**: Microsoft.AlertsManagement/alerts
+* **ApiVersion**: 2019-05-05-preview
+* **Input**: [Comments](#comments)
+* **Output**: [Alert](#alert)
+
+## Function changeState (Microsoft.AlertsManagement/smartGroups@2019-05-05-preview)
+* **Resource**: Microsoft.AlertsManagement/smartGroups
+* **ApiVersion**: 2019-05-05-preview
+* **Output**: [SmartGroup](#smartgroup)
+
 ## ActionRuleProperties
 * **Discriminator**: type
 
@@ -61,11 +72,22 @@
 ### Properties
 * **isSuppressed**: bool: Value indicating whether alert is suppressed.
 
+## Alert
+### Properties
+* **id**: string (ReadOnly): Azure resource Id
+* **name**: string (ReadOnly): Azure resource name
+* **properties**: [AlertProperties](#alertproperties): Alert property bag
+* **type**: string (ReadOnly): Azure resource type
+
 ## AlertProperties
 ### Properties
 * **context**: any (ReadOnly): Information specific to the monitor service that gives more contextual details about the alert.
 * **egressConfig**: any (ReadOnly): Config which would be used for displaying the data in portal.
 * **essentials**: [Essentials](#essentials): This object contains consistent fields across different monitor services.
+
+## Comments
+### Properties
+* **comments**: string
 
 ## Condition
 ### Properties
@@ -114,6 +136,13 @@
 ### Properties
 * **scopeType**: 'Resource' | 'ResourceGroup' | 'Subscription' | string: type of target scope
 * **values**: string[]: list of ARM IDs of the given scope type which will be the target of the given action rule.
+
+## SmartGroup
+### Properties
+* **id**: string (ReadOnly): Azure resource Id
+* **name**: string (ReadOnly): Azure resource name
+* **properties**: [SmartGroupProperties](#smartgroupproperties): Properties of smart group.
+* **type**: string (ReadOnly): Azure resource type
 
 ## SmartGroupAggregatedProperty
 ### Properties

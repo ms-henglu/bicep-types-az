@@ -97,6 +97,20 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
+## Function checkNameAvailability (Microsoft.App/managedEnvironments@2022-03-01)
+* **Resource**: Microsoft.App/managedEnvironments
+* **ApiVersion**: 2022-03-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-03-01)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-03-01
@@ -111,6 +125,10 @@
 * **Resource**: Microsoft.App/managedEnvironments/daprComponents
 * **ApiVersion**: 2022-03-01
 * **Output**: [DaprSecretsCollection](#daprsecretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -232,6 +250,17 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **valid**: bool (ReadOnly): Is the certificate valid?.
 * **value**: any (WriteOnly): PFX or PEM blob
 
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+
 ## ClientRegistration
 ### Properties
 * **clientId**: string: The Client ID of the app used for login.
@@ -294,7 +323,7 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **latestRevisionFqdn**: string (ReadOnly): Fully Qualified Domain Name of the latest revision of the Container App.
 * **latestRevisionName**: string (ReadOnly): Name of the latest revision of the Container App.
 * **managedEnvironmentId**: string: Resource ID of the Container App's environment.
-* **outboundIPAddresses**: string[] (ReadOnly): Outbound IP Addresses for container app.
+* **outboundIpAddresses**: string[] (ReadOnly): Outbound IP Addresses for container app.
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): Provisioning state of the Container App.
 * **template**: [Template](#template): Container App versioned application definition.
 
@@ -327,6 +356,7 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **aRecords**: string[]: A records visible for this hostname.
 * **cNameRecords**: string[]: CName records visible for this hostname.
 * **conflictingContainerAppResourceId**: string (ReadOnly): Name of the conflicting Container App on the Managed Environment if it's within the same subscription.
+* **conflictWithEnvironmentCustomDomain**: bool (ReadOnly): <code>true</code> if there is a conflict on the Container App's managed environment level custom domain; otherwise, <code>false</code>.
 * **customDomainVerificationFailureInfo**: [CustomHostnameAnalysisResultCustomDomainVerificationFailureInfo](#customhostnameanalysisresultcustomdomainverificationfailureinfo) (ReadOnly): Raw failure information if DNS verification fails.
 * **customDomainVerificationTest**: 'Failed' | 'Passed' | 'Skipped' (ReadOnly): DNS verification test result.
 * **hasConflictOnManagedEnvironment**: bool (ReadOnly): <code>true</code> if there is a conflict on the Container App's managed environment; otherwise, <code>false</code>.
@@ -388,9 +418,14 @@ eg: azure-servicebus, redis etc.
 * **secretRef**: string: Name of the Dapr Component secret from which to pull the metadata property value.
 * **value**: string: Metadata property value.
 
+## DaprSecret
+### Properties
+* **name**: string (ReadOnly): Secret Name.
+* **value**: string (ReadOnly): Secret Value.
+
 ## DaprSecretsCollection
 ### Properties
-* **value**: [Secret](#secret)[] (Required): Collection of secrets used by a Dapr component
+* **value**: [DaprSecret](#daprsecret)[] (Required): Collection of secrets for ListSecrets Action
 
 ## DefaultAuthorizationPolicy
 ### Properties
@@ -599,6 +634,8 @@ supported
 ## ReplicaContainer
 ### Properties
 * **containerId**: string: The Id of the Container
+* **execEndpoint**: string (ReadOnly): Container exec endpoint
+* **logStreamEndpoint**: string (ReadOnly): Log Stream endpoint
 * **name**: string: The Name of the Container
 * **ready**: bool: The container ready status
 * **restartCount**: int: The container restart count

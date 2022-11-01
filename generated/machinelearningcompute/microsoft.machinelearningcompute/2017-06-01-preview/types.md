@@ -11,10 +11,20 @@
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.MachineLearningCompute/operationalizationClusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkUpdate (Microsoft.MachineLearningCompute/operationalizationClusters@2017-06-01-preview)
+* **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
+* **ApiVersion**: 2017-06-01-preview
+* **Output**: [CheckUpdateResponse](#checkupdateresponse)
+
 ## Function listKeys (Microsoft.MachineLearningCompute/operationalizationClusters@2017-06-01-preview)
 * **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
 * **ApiVersion**: 2017-06-01-preview
 * **Output**: [OperationalizationClusterCredentials](#operationalizationclustercredentials)
+
+## Function updateSystem (Microsoft.MachineLearningCompute/operationalizationClusters@2017-06-01-preview)
+* **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
+* **ApiVersion**: 2017-06-01-preview
+* **Output**: [UpdateSystemResponse](#updatesystemresponse)
 
 ## AcsClusterProperties
 ### Properties
@@ -37,6 +47,10 @@
 * **refreshPeriodInSeconds**: int: Refresh period in seconds.
 * **status**: 'Disabled' | 'Enabled' | string: If auto-scale is enabled for all services. Each service can turn it off individually.
 * **targetUtilization**: int: The target utilization.
+
+## CheckUpdateResponse
+### Properties
+* **updatesAvailable**: 'No' | 'Yes' | string (ReadOnly): Yes if updates are available for the system services, No if not.
 
 ## ContainerRegistryCredentials
 ### Properties
@@ -119,4 +133,10 @@
 ## StorageAccountProperties
 ### Properties
 * **resourceId**: string: ARM resource ID of the Azure Storage Account to store CLI specific files. If not provided one will be created. This cannot be changed once the cluster is created.
+
+## UpdateSystemResponse
+### Properties
+* **updateCompletedOn**: string (ReadOnly): Read Only: The date and time when the last system services update completed.
+* **updateStartedOn**: string (ReadOnly): Read Only: The date and time when the last system services update was started.
+* **updateStatus**: 'Completed' | 'InProgress' | string (ReadOnly): Update status
 
