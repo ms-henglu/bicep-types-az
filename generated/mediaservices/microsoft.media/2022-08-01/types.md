@@ -148,6 +148,20 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/streamingPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function allocate (Microsoft.Media/mediaservices/liveEvents@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-08-01
+
+## Function getEncryptionKey (Microsoft.Media/mediaServices/assets@2022-08-01)
+* **Resource**: Microsoft.Media/mediaServices/assets
+* **ApiVersion**: 2022-08-01
+* **Output**: [StorageEncryptedAssetDecryptionData](#storageencryptedassetdecryptiondata)
+
+## Function getPolicyPropertiesWithSecrets (Microsoft.Media/mediaServices/contentKeyPolicies@2022-08-01)
+* **Resource**: Microsoft.Media/mediaServices/contentKeyPolicies
+* **ApiVersion**: 2022-08-01
+* **Output**: [ContentKeyPolicyProperties](#contentkeypolicyproperties)
+
 ## Function listContainerSas (Microsoft.Media/mediaServices/assets@2022-08-01)
 * **Resource**: Microsoft.Media/mediaServices/assets
 * **ApiVersion**: 2022-08-01
@@ -169,6 +183,36 @@
 * **ApiVersion**: 2022-08-01
 * **Output**: [ListStreamingLocatorsResponse](#liststreaminglocatorsresponse)
 
+## Function reset (Microsoft.Media/mediaservices/liveEvents@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-08-01
+
+## Function scale (Microsoft.Media/mediaservices/streamingEndpoints@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-08-01
+* **Input**: [StreamingEntityScaleUnit](#streamingentityscaleunit)
+
+## Function start (Microsoft.Media/mediaservices/liveEvents@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-08-01
+
+## Function start (Microsoft.Media/mediaservices/streamingEndpoints@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-08-01
+
+## Function stop (Microsoft.Media/mediaservices/liveEvents@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-08-01
+* **Input**: [LiveEventActionInput](#liveeventactioninput)
+
+## Function stop (Microsoft.Media/mediaservices/streamingEndpoints@2022-08-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-08-01
+
+## Function updateTrackData (Microsoft.Media/mediaServices/assets/tracks@2022-08-01)
+* **Resource**: Microsoft.Media/mediaServices/assets/tracks
+* **ApiVersion**: 2022-08-01
+
 ## AkamaiAccessControl
 ### Properties
 * **akamaiSignatureHeaderAuthenticationKeyList**: [AkamaiSignatureHeaderAuthenticationKey](#akamaisignatureheaderauthenticationkey)[]: authentication key list
@@ -187,6 +231,12 @@
 ## AssetContainerSas
 ### Properties
 * **assetContainerSasUrls**: string[]: The list of Asset container SAS URLs.
+
+## AssetFileEncryptionMetadata
+### Properties
+* **assetFileId**: string (Required): The Asset File Id.
+* **assetFileName**: string: The Asset File name.
+* **initializationVector**: string: The Asset File initialization vector.
 
 ## AssetProperties
 ### Properties
@@ -258,7 +308,7 @@
 ### ContentKeyPolicyFairPlayConfiguration
 #### Properties
 * **@odata.type**: '#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration' (Required): The discriminator for derived types.
-* **ask**: any (Required): The key that must be used as FairPlay Application Secret key.
+* **ask**: any (Required): The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
 * **fairPlayPfx**: string (Required): The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format (including private key).
 * **fairPlayPfxPassword**: string (Required): The password encrypting FairPlay certificate in PKCS 12 (pfx) format.
 * **offlineRentalConfiguration**: [ContentKeyPolicyFairPlayOfflineRentalConfiguration](#contentkeypolicyfairplayofflinerentalconfiguration): Offline rental policy
@@ -342,6 +392,14 @@
 * **scmsRestriction**: int: Configures the Serial Copy Management System (SCMS) in the license. Must be between 0 and 3 inclusive.
 * **uncompressedDigitalAudioOpl**: int: Specifies the output protection level for uncompressed digital audio.
 * **uncompressedDigitalVideoOpl**: int: Specifies the output protection level for uncompressed digital video.
+
+## ContentKeyPolicyProperties
+### Properties
+* **created**: string (ReadOnly): The creation date of the Policy
+* **description**: string: A description for the Policy.
+* **lastModified**: string (ReadOnly): The last modified date of the Policy
+* **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
+* **policyId**: string (ReadOnly): The legacy Policy ID.
 
 ## ContentKeyPolicyProperties
 ### Properties
@@ -483,6 +541,10 @@
 ### Properties
 * **streamingLocators**: [AssetStreamingLocator](#assetstreaminglocator)[] (ReadOnly): The list of Streaming Locators.
 
+## LiveEventActionInput
+### Properties
+* **removeOutputsOnStop**: bool: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
+
 ## LiveEventEncoding
 ### Properties
 * **encodingType**: 'None' | 'PassthroughBasic' | 'PassthroughStandard' | 'Premium1080p' | 'Standard' | string: Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
@@ -584,6 +646,11 @@
 * **startTimestamp**: int: The absolute start time boundary.
 * **timescale**: int: The time scale of time stamps.
 
+## StorageEncryptedAssetDecryptionData
+### Properties
+* **assetFileEncryptionMetadata**: [AssetFileEncryptionMetadata](#assetfileencryptionmetadata)[]: Asset File encryption metadata.
+* **key**: any: The Asset File storage encryption key.
+
 ## StreamingEndpointAccessControl
 ### Properties
 * **akamai**: [AkamaiAccessControl](#akamaiaccesscontrol): The access control of Akamai
@@ -607,6 +674,10 @@
 * **provisioningState**: string (ReadOnly): The provisioning state of the streaming endpoint.
 * **resourceState**: 'Deleting' | 'Running' | 'Scaling' | 'Starting' | 'Stopped' | 'Stopping' | string (ReadOnly): The resource state of the streaming endpoint.
 * **scaleUnits**: int (Required): The number of scale units. Use the Scale operation to adjust this value.
+
+## StreamingEntityScaleUnit
+### Properties
+* **scaleUnit**: int: The scale unit number of the streaming endpoint.
 
 ## StreamingLocatorContentKey
 ### Properties

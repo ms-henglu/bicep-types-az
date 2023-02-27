@@ -43,6 +43,23 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.DigitalTwins/digitalTwinsInstances/timeSeriesDatabaseConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.DigitalTwins/locations@2021-06-30-preview)
+* **Resource**: Microsoft.DigitalTwins/locations
+* **ApiVersion**: 2021-06-30-preview
+* **Input**: [CheckNameRequest](#checknamerequest)
+* **Output**: [CheckNameResult](#checknameresult)
+
+## CheckNameRequest
+### Properties
+* **name**: string (Required): Resource name.
+* **type**: 'Microsoft.DigitalTwins/digitalTwinsInstances' (Required): The type of resource, for instance Microsoft.DigitalTwins/digitalTwinsInstances.
+
+## CheckNameResult
+### Properties
+* **message**: string: Message indicating an unavailable name due to a conflict, or a description of the naming rules that are violated.
+* **nameAvailable**: bool: Specifies a Boolean value that indicates if the name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: Message providing the reason why the given name is invalid.
+
 ## ConnectionProperties
 ### Properties
 * **groupIds**: string[]: The list of group ids for the private endpoint connection.
@@ -142,7 +159,7 @@
 * **adxDatabaseName**: string (Required): The name of the Azure Data Explorer database.
 * **adxEndpointUri**: string (Required): The URI of the Azure Data Explorer endpoint.
 * **adxResourceId**: string (Required): The resource ID of the Azure Data Explorer cluster.
-* **adxTableName**: string: The name of the Azure Data Explorer table.
+* **adxTableName**: string: The name of the Azure Data Explorer table. Defaults to AdtPropertyEvents.
 * **connectionType**: 'AzureDataExplorer' (Required): The type of time series connection resource.
 * **eventHubConsumerGroup**: string: The EventHub consumer group to use when ADX reads from EventHub. Defaults to $Default.
 * **eventHubEndpointUri**: string (Required): The URL of the EventHub namespace for identity-based authentication. It must include the protocol sb://

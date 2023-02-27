@@ -136,6 +136,26 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/networkSecurityPerimeters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Resource Microsoft.Network/networkSecurityPerimeters/linkReferences@2021-02-01-preview (ReadOnly)
+* **Valid Scope(s)**: ResourceGroup
+### Properties
+* **apiVersion**: '2021-02-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
+* **etag**: string (ReadOnly): A unique read-only string that changes whenever the resource is updated.
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string (Required, DeployTimeConstant): The resource name
+* **properties**: [NspLinkReferenceProperties](#nsplinkreferenceproperties) (ReadOnly): Properties of the network security perimeter linkReference resource.
+* **type**: 'Microsoft.Network/networkSecurityPerimeters/linkReferences' (ReadOnly, DeployTimeConstant): The resource type
+
+## Resource Microsoft.Network/networkSecurityPerimeters/links@2021-02-01-preview
+* **Valid Scope(s)**: ResourceGroup
+### Properties
+* **apiVersion**: '2021-02-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
+* **etag**: string (ReadOnly): A unique read-only string that changes whenever the resource is updated.
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string (Required, DeployTimeConstant): The resource name
+* **properties**: [NspLinkProperties](#nsplinkproperties): Properties of the network security perimeter link resource.
+* **type**: 'Microsoft.Network/networkSecurityPerimeters/links' (ReadOnly, DeployTimeConstant): The resource type
+
 ## Resource Microsoft.Network/networkSecurityPerimeters/profiles@2021-02-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
@@ -158,17 +178,6 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/networkSecurityPerimeters/profiles/accessRules' (ReadOnly, DeployTimeConstant): The resource type
 
-## Resource Microsoft.Network/networkSecurityPerimeters/resourceAssociationProxies@2021-02-01-preview
-* **Valid Scope(s)**: ResourceGroup
-### Properties
-* **apiVersion**: '2021-02-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string: Resource location.
-* **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [NspAssociationProperties](#nspassociationproperties): Properties of the NSP resource association.
-* **tags**: [ResourceTags](#resourcetags): Resource tags.
-* **type**: 'Microsoft.Network/networkSecurityPerimeters/resourceAssociationProxies' (ReadOnly, DeployTimeConstant): The resource type
-
 ## Resource Microsoft.Network/networkSecurityPerimeters/resourceAssociations@2021-02-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
@@ -179,6 +188,11 @@
 * **properties**: [NspAssociationProperties](#nspassociationproperties): Properties of the NSP resource association.
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/networkSecurityPerimeters/resourceAssociations' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function commit (Microsoft.Network/networkManagers@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkManagers
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [NetworkManagerCommit](#networkmanagercommit)
 
 ## Function listActiveConnectivityConfigurations (Microsoft.Network/networkManagers@2021-02-01-preview)
 * **Resource**: Microsoft.Network/networkManagers
@@ -227,6 +241,26 @@
 * **ApiVersion**: 2021-02-01-preview
 * **Input**: [QueryRequestOptions](#queryrequestoptions)
 * **Output**: [NetworkManagerEffectiveSecurityAdminRulesListResult](#networkmanagereffectivesecurityadminruleslistresult)
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/resourceAssociations@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/resourceAssociations
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: any
+* **Output**: any
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/profiles/accessRules@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/profiles/accessRules
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: any
+* **Output**: any
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/links@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/links
+* **ApiVersion**: 2021-02-01-preview
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/linkReferences@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/linkReferences
+* **ApiVersion**: 2021-02-01-preview
 
 ## ActiveBaseSecurityAdminRule
 * **Discriminator**: kind
@@ -454,6 +488,13 @@
 * **memberType**: string: Group member type.
 * **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the scope assignment resource.
 
+## NetworkManagerCommit
+### Properties
+* **commitId**: string (ReadOnly): Commit Id.
+* **commitType**: 'Connectivity' | 'SecurityAdmin' | 'SecurityUser' | string: Commit Type.
+* **configurationIds**: string[]: List of configuration ids.
+* **targetLocations**: string[]: List of target locations.
+
 ## NetworkManagerDeploymentStatus
 ### Properties
 * **commitTime**: string: Commit Time.
@@ -503,17 +544,19 @@
 
 ## NetworkSecurityPerimeterProperties
 ### Properties
-* **perimeterGuid**: string: perimeter guid of the network security perimeter.
+* **perimeterGuid**: string (ReadOnly): perimeter guid of the network security perimeter.
 * **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the scope assignment resource.
 
 ## NspAccessRuleProperties
 ### Properties
 * **addressPrefixes**: string[]: Inbound address prefixes (IPv4/IPv6)
 * **direction**: 'Inbound' | 'Outbound' | string: Direction that specifies whether the access rules is inbound/outbound.
+* **emailAddresses**: string[]: Outbound rules email address format.
 * **fullyQualifiedDomainNames**: string[]: Outbound rules fully qualified domain name format.
 * **networkSecurityPerimeters**: [PerimeterBasedAccessRule](#perimeterbasedaccessrule)[]: Inbound rule specified by the perimeter id.
+* **phoneNumbers**: string[]: Outbound rules phone number format.
 * **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the scope assignment resource.
-* **subscriptions**: string[]: Subscription id in the ARM id format.
+* **subscriptions**: [SubscriptionId](#subscriptionid)[]: List of subscription ids
 
 ## NspAssociationProperties
 ### Properties
@@ -523,9 +566,36 @@
 * **profile**: [SubResource](#subresource): Profile id to which the PaaS resource is associated.
 * **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the resource  association resource.
 
+## NspLinkProperties
+### Properties
+* **autoApprovedRemotePerimeterResourceId**: string: Perimeter ARM Id for the remote NSP with which the link gets created in Auto-approval mode. It should be used when the NSP admin have Microsoft.Network/networkSecurityPerimeters/linkPerimeter/action permission on the remote NSP resource.
+* **description**: string: A message passed to the owner of the remote NSP link resource with this connection request. In case of Auto-approved flow, it is default to 'Auto Approved'. Restricted to 140 chars.
+* **localInboundProfiles**: string[]: Local Inbound profile names to which Inbound is allowed. Use ['*'] to allow inbound to all profiles. It's default value is ['*'].
+* **localOutboundProfiles**: string[] (ReadOnly): Local Outbound profile names from which Outbound is allowed. In current version, it is readonly property and it's value is set to ['*'] to allow outbound from all profiles. In later version, user will be able to modify it.
+* **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | 'WaitForRemoteCompletion' | string (ReadOnly): The provisioning state of the NSP Link resource.
+* **remoteInboundProfiles**: string[]: Remote Inbound profile names to which Inbound is allowed. Use ['*'] to allow inbound to all profiles. This property can only be updated in auto-approval mode. It's default value is ['*'].
+* **remoteOutboundProfiles**: string[] (ReadOnly): Remote Outbound profile names from which Outbound is allowed. In current version, it is readonly property and it's value is set to ['*'] to allow outbound from all profiles. In later version, user will be able to modify it.
+* **remotePerimeterGuid**: string (ReadOnly): Remote NSP Guid with which the link gets created.
+* **remotePerimeterLocation**: string (ReadOnly): Remote NSP location with which the link gets created.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string (ReadOnly): The NSP link state.
+
+## NspLinkReferenceProperties
+### Properties
+* **description**: string (ReadOnly): A message sent by the remote NSP link admin for connection request. In case of Auto-approved flow, it is default to 'Auto Approved'.
+* **localInboundProfiles**: string[]: Local Inbound profile names to which Inbound is allowed. Use ['*'] to allow inbound to all profiles. It's default value is ['*'].
+* **localOutboundProfiles**: string[] (ReadOnly): Local Outbound profile names from which Outbound is allowed. Use ['*'] to allow outbound from all profiles. It's default value is ['*'].
+* **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | 'WaitForRemoteCompletion' | string (ReadOnly): The provisioning state of the NSP LinkReference resource.
+* **remoteInboundProfiles**: string[] (ReadOnly): Remote Inbound profile names to which Inbound is allowed. ['*'] value implies inbound is allowed to all profiles at remote perimeter. This property can only be updated from remote perimeter.
+* **remoteOutboundProfiles**: string[] (ReadOnly): Remote Outbound profile names from which Outbound is allowed. ['*'] value implies outbound is allowed from all profiles at remote perimeter. This property can only be updated from remote perimeter.
+* **remotePerimeterGuid**: string (ReadOnly): Remote NSP Guid with which the link is created.
+* **remotePerimeterLocation**: string (ReadOnly): Remote NSP location with which the link gets created.
+* **remotePerimeterResourceId**: string (ReadOnly): Perimeter ARM Id for the remote NSP with which the link is created.
+* **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: The NSP linkReference state. It cannot be changed if link is created in auto-approval mode.
+
 ## NspProfileProperties
 ### Properties
 * **accessRulesVersion**: string (ReadOnly): Version number that increases with every update to access rules within the profile.
+* **diagnosticSettingsVersion**: string (ReadOnly): Version number that increases with every update to diagnostic settings within the profile.
 
 ## PerimeterBasedAccessRule
 ### Properties
@@ -570,11 +640,6 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## ResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## RuleCollectionPropertiesFormat
 ### Properties
 * **appliesToGroups**: [NetworkManagerSecurityGroupItem](#networkmanagersecuritygroupitem)[]: Groups for configuration
@@ -593,6 +658,10 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource ID.
+
+## SubscriptionId
+### Properties
+* **id**: string: Subscription id in the ARM id format.
 
 ## SystemData
 ### Properties

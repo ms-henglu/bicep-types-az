@@ -111,6 +111,14 @@
 * **properties**: [Ruleproperties](#ruleproperties): Properties of Rule resource
 * **type**: 'Microsoft.ServiceBus/namespaces/topics/subscriptions/rules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function breakPairing (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2017-04-01
+
+## Function failover (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2017-04-01
+
 ## Function listKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2017-04-01)
 * **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
 * **ApiVersion**: 2017-04-01
@@ -130,6 +138,67 @@
 * **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs/AuthorizationRules
 * **ApiVersion**: 2017-04-01
 * **Output**: [AccessKeys](#accesskeys)
+
+## Function migrate (Microsoft.ServiceBus/namespaces@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces
+* **ApiVersion**: 2017-04-01
+* **Input**: [SBNamespaceMigrate](#sbnamespacemigrate)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
+* **ApiVersion**: 2017-04-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/queues/authorizationRules@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/queues/authorizationRules
+* **ApiVersion**: 2017-04-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/topics/authorizationRules@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
+* **ApiVersion**: 2017-04-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function revert (Microsoft.ServiceBus/namespaces/migrationConfigurations@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2017-04-01
+
+## Function upgrade (Microsoft.ServiceBus/namespaces/migrationConfigurations@2017-04-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2017-04-01
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
 
 ## AccessKeys
 ### Properties
@@ -235,6 +304,21 @@
 * **ignoreMissingVnetServiceEndpoint**: bool: Value that indicates whether to ignore missing VNet Service Endpoint
 * **subnet**: [Subnet](#subnet): Subnet properties
 
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
 ## Ruleproperties
 ### Properties
 * **action**: [Action](#action): Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression.
@@ -245,6 +329,10 @@
 ## SBAuthorizationRuleProperties
 ### Properties
 * **rights**: 'Listen' | 'Manage' | 'Send'[] (Required): The rights associated with the rule.
+
+## SBNamespaceMigrate
+### Properties
+* **targetNamespaceType**: 'EventHub' | 'Messaging' | 'Mixed' | 'NotificationHub' | 'Relay' (Required): Type of namespaces
 
 ## SBNamespaceProperties
 ### Properties

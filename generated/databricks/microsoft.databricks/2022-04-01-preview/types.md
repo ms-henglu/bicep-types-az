@@ -9,6 +9,7 @@
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AccessConnectorProperties](#accessconnectorproperties): Azure Databricks accessConnector properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Databricks/accessConnectors' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -75,6 +76,7 @@
 
 ## EncryptionEntitiesDefinition
 ### Properties
+* **managedDisk**: [ManagedDiskEncryption](#manageddiskencryption): Encryption properties for the databricks managed disks.
 * **managedServices**: [EncryptionV2](#encryptionv2): Encryption properties for the databricks managed services.
 
 ## EncryptionV2
@@ -100,6 +102,18 @@
 * **tenantId**: string (ReadOnly): The tenant ID of resource.
 * **type**: 'None' | 'SystemAssigned' | string (Required): The identity type.
 
+## ManagedDiskEncryption
+### Properties
+* **keySource**: 'Microsoft.Keyvault' | string (Required): The encryption keySource (provider). Possible values (case-insensitive):  Microsoft.Keyvault
+* **keyVaultProperties**: [ManagedDiskEncryptionKeyVaultProperties](#manageddiskencryptionkeyvaultproperties) (Required): Key Vault input properties for encryption.
+* **rotationToLatestKeyVersionEnabled**: bool: Indicate whether the latest key version should be automatically used for Managed Disk Encryption.
+
+## ManagedDiskEncryptionKeyVaultProperties
+### Properties
+* **keyName**: string (Required): The name of KeyVault key.
+* **keyVaultUri**: string (Required): The URI of KeyVault.
+* **keyVersion**: string (Required): The version of KeyVault key.
+
 ## ManagedIdentityConfiguration
 ### Properties
 * **principalId**: string (ReadOnly): The objectId of the Managed Identity that is linked to the Managed Storage account.
@@ -119,13 +133,14 @@
 
 ## PrivateEndpointConnectionProperties
 ### Properties
+* **groupIds**: string[]: GroupIds from the private link service resource.
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): Private endpoint
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (Required): Private endpoint connection state
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the private endpoint connection.
 
 ## PrivateLinkServiceConnectionState
 ### Properties
-* **actionRequired**: string: Actions required for a private endpoint connection
+* **actionsRequired**: string: Actions required for a private endpoint connection
 * **description**: string: The description for the current state of a private endpoint connection
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string (Required): The status of a private endpoint connection
 
@@ -218,7 +233,9 @@
 * **authorizations**: [WorkspaceProviderAuthorization](#workspaceproviderauthorization)[]: The workspace provider authorizations.
 * **createdBy**: [CreatedBy](#createdby): Indicates the Object ID, PUID and Application ID of entity that created the workspace.
 * **createdDateTime**: string (ReadOnly): Specifies the date and time when the workspace is created.
+* **diskEncryptionSetId**: string (ReadOnly): The resource Id of the managed disk encryption set.
 * **encryption**: [WorkspacePropertiesEncryption](#workspacepropertiesencryption): Encryption properties for databricks workspace
+* **managedDiskIdentity**: [ManagedIdentityConfiguration](#managedidentityconfiguration): The details of Managed Identity of Disk Encryption Set used for Managed Disk Encryption
 * **managedResourceGroupId**: string (Required): The managed resource group Id.
 * **parameters**: [WorkspaceCustomParameters](#workspacecustomparameters): The workspace's custom parameters.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): Private endpoint connections created on the workspace

@@ -116,6 +116,56 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.NetApp/netAppAccounts/volumeGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function authorizeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+* **Input**: [AuthorizeRequest](#authorizerequest)
+
+## Function breakReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+* **Input**: [BreakReplicationRequest](#breakreplicationrequest)
+
+## Function checkFilePathAvailability (Microsoft.NetApp/locations@2021-08-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2021-08-01
+* **Input**: [FilePathAvailabilityRequest](#filepathavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkNameAvailability (Microsoft.NetApp/locations@2021-08-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2021-08-01
+* **Input**: [ResourceNameAvailabilityRequest](#resourcenameavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkQuotaAvailability (Microsoft.NetApp/locations@2021-08-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2021-08-01
+* **Input**: [QuotaAvailabilityRequest](#quotaavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function deleteReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+
+## Function poolChange (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+* **Input**: [PoolChangeRequest](#poolchangerequest)
+
+## Function reinitializeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+
+## Function resyncReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+
+## Function revert (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2021-08-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2021-08-01
+* **Input**: [VolumeRevert](#volumerevert)
+
 ## AccountEncryption
 ### Properties
 * **keySource**: string: Encryption Key Source. Possible values are: 'Microsoft.NetApp'.
@@ -148,7 +198,11 @@
 * **smbServerName**: string: NetBIOS name of the SMB server. This name will be registered as a computer account in the AD and used to mount volumes
 * **status**: 'Created' | 'Deleted' | 'Error' | 'InUse' | 'Updating' | string (ReadOnly): Status of the Active Directory
 * **statusDetails**: string (ReadOnly): Any details in regards to the Status of the Active Directory
-* **username**: string: Username of Active Directory domain administrator
+* **username**: string: A domain user account with permission to create machine accounts
+
+## AuthorizeRequest
+### Properties
+* **remoteVolumeResourceId**: string: Resource id of the remote volume
 
 ## BackupPolicyProperties
 ### Properties
@@ -172,6 +226,28 @@
 * **size**: int (ReadOnly): Size of backup
 * **useExistingSnapshot**: bool: Manual backup an already existing snapshot. This will always be false for scheduled backups and true/false for manual backups
 * **volumeName**: string (ReadOnly): Volume name
+
+## BreakReplicationRequest
+### Properties
+* **forceBreakReplication**: bool: If replication is in status transferring and you want to force break the replication, set to true
+
+## CheckAvailabilityResponse
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
+
+## CheckAvailabilityResponse
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
+
+## CheckAvailabilityResponse
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
 
 ## DailySchedule
 ### Properties
@@ -197,6 +273,11 @@
 * **ruleIndex**: int: Order index
 * **unixReadOnly**: bool: Read only access
 * **unixReadWrite**: bool: Read and write access
+
+## FilePathAvailabilityRequest
+### Properties
+* **name**: string (Required): File path to verify.
+* **subnetId**: string (Required): The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes
 
 ## HourlySchedule
 ### Properties
@@ -224,6 +305,10 @@
 * **key**: string (Required): Key for an application specific parameter for the placement of volumes in the volume group
 * **value**: string (Required): Value for an application specific parameter for the placement of volumes in the volume group
 
+## PoolChangeRequest
+### Properties
+* **newPoolResourceId**: string (Required): Resource id of the pool to move volume to
+
 ## PoolProperties
 ### Properties
 * **coolAccess**: bool: If enabled (true) the pool can contain cool Access enabled volumes.
@@ -236,6 +321,12 @@
 * **totalThroughputMibps**: int (ReadOnly): Total throughput of pool in Mibps
 * **utilizedThroughputMibps**: int (ReadOnly): Utilized throughput of pool in Mibps
 
+## QuotaAvailabilityRequest
+### Properties
+* **name**: string (Required): Name of the resource to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
+
 ## ReplicationObject
 ### Properties
 * **endpointType**: 'dst' | 'src' | string: Indicates whether the local volume is the source or destination for the Volume Replication
@@ -243,6 +334,12 @@
 * **remoteVolumeResourceId**: string (Required): The resource ID of the remote volume.
 * **replicationId**: string: Id
 * **replicationSchedule**: '_10minutely' | 'daily' | 'hourly' | string: Schedule
+
+## ResourceNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
 
 ## ResourceTags
 ### Properties
@@ -396,6 +493,10 @@
 ## VolumePropertiesExportPolicy
 ### Properties
 * **rules**: [ExportPolicyRule](#exportpolicyrule)[]: Export policy rule
+
+## VolumeRevert
+### Properties
+* **snapshotId**: string: Resource id of the snapshot
 
 ## VolumeSnapshotProperties
 ### Properties

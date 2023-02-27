@@ -35,6 +35,14 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function redeploy (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2022-07-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2022-07-01-preview
+
+## Function startAssessment (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2022-07-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2022-07-01-preview
+
 ## AdditionalFeaturesServerConfigurations
 ### Properties
 * **isRServicesEnabled**: bool: Enable or disable R services (SQL 2016 onwards).
@@ -196,7 +204,7 @@
 * **autoPatchingSettings**: [AutoPatchingSettings](#autopatchingsettings): Auto patching settings for applying critical security updates to SQL virtual machine.
 * **enableAutomaticUpgrade**: bool: Enable automatic upgrade of Sql IaaS extension Agent.
 * **keyVaultCredentialSettings**: [KeyVaultCredentialSettings](#keyvaultcredentialsettings): Key vault credential settings.
-* **leastPrivilegeMode**: 'Enabled' | string: SQL IaaS Agent least privilege mode.
+* **leastPrivilegeMode**: 'Enabled' | 'NotSet' | string: SQL IaaS Agent least privilege mode.
 * **provisioningState**: string (ReadOnly): Provisioning state to track the async operation status.
 * **serverConfigurationsManagementSettings**: [ServerConfigurationsManagementSettings](#serverconfigurationsmanagementsettings): SQL Server configuration management settings.
 * **sqlImageOffer**: string: SQL image offer. Examples include SQL2016-WS2016, SQL2017-WS2016.

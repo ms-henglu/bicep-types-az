@@ -30,6 +30,12 @@
 * **ApiVersion**: 2018-09-01-preview
 * **Output**: [KeyDescriptionList](#keydescriptionlist)
 
+## Function regenerateKey (Microsoft.EngagementFabric/Accounts@2018-09-01-preview)
+* **Resource**: Microsoft.EngagementFabric/Accounts
+* **ApiVersion**: 2018-09-01-preview
+* **Input**: [RegenerateKeyParameter](#regeneratekeyparameter)
+* **Output**: [KeyDescription](#keydescription)
+
 ## ChannelProperties
 ### Properties
 * **channelFunctions**: string[]: The functions to be enabled for the channel
@@ -57,9 +63,20 @@
 * **rank**: 'PrimaryKey' | 'SecondaryKey' | string (ReadOnly): The rank of the key
 * **value**: string (ReadOnly): The value of the key
 
+## KeyDescription
+### Properties
+* **name**: string (ReadOnly): The name of the key
+* **rank**: 'PrimaryKey' | 'SecondaryKey' | string (ReadOnly): The rank of the key
+* **value**: string (ReadOnly): The value of the key
+
 ## KeyDescriptionList
 ### Properties
 * **value**: [KeyDescription](#keydescription)[] (ReadOnly): Account keys
+
+## RegenerateKeyParameter
+### Properties
+* **name**: string (Required): The name of key to be regenerated
+* **rank**: 'PrimaryKey' | 'SecondaryKey' | string (Required): The rank of the key to be regenerated
 
 ## SKU
 ### Properties

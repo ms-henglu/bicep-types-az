@@ -18,9 +18,26 @@
 * **properties**: [SmartGroupProperties](#smartgroupproperties) (ReadOnly): Properties of smart group.
 * **type**: 'Microsoft.AlertsManagement/smartGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function changestate (Microsoft.AlertsManagement/alerts@2018-05-05)
+* **Resource**: Microsoft.AlertsManagement/alerts
+* **ApiVersion**: 2018-05-05
+* **Output**: [Alert](#alert)
+
+## Function changeState (Microsoft.AlertsManagement/smartGroups@2018-05-05)
+* **Resource**: Microsoft.AlertsManagement/smartGroups
+* **ApiVersion**: 2018-05-05
+* **Output**: [SmartGroup](#smartgroup)
+
 ## ActionStatus
 ### Properties
 * **isSuppressed**: bool: Value indicating whether alert is suppressed.
+
+## Alert
+### Properties
+* **id**: string (ReadOnly): Azure resource Id
+* **name**: string (ReadOnly): Azure resource name
+* **properties**: [AlertProperties](#alertproperties): Alert property bag
+* **type**: string (ReadOnly): Azure resource type
 
 ## AlertProperties
 ### Properties
@@ -49,6 +66,13 @@
 * **targetResourceGroup**: string: Resource group of target ARM resource, on which alert got created.
 * **targetResourceName**: string: Name of the target ARM resource name, on which alert got created.
 * **targetResourceType**: string: Resource type of target ARM resource, on which alert got created.
+
+## SmartGroup
+### Properties
+* **id**: string (ReadOnly): Azure resource Id
+* **name**: string (ReadOnly): Azure resource name
+* **properties**: [SmartGroupProperties](#smartgroupproperties): Properties of smart group.
+* **type**: string (ReadOnly): Azure resource type
 
 ## SmartGroupAggregatedProperty
 ### Properties

@@ -22,6 +22,12 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DevHub/workflows' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getGitHubOAuthInfo (Microsoft.DevHub/locations/githuboauth@2022-04-01-preview)
+* **Resource**: Microsoft.DevHub/locations/githuboauth
+* **ApiVersion**: 2022-04-01-preview
+* **Input**: [GitHubOAuthCallRequest](#githuboauthcallrequest)
+* **Output**: [GitHubOAuthInfoResponse](#githuboauthinforesponse)
+
 ## ACR
 ### Properties
 * **acrRegistryName**: string: ACR registry
@@ -42,6 +48,15 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## GitHubOAuthCallRequest
+### Properties
+* **redirectUrl**: string: The URL the client will redirect to on successful authentication. If empty, no redirect will occur.
+
+## GitHubOAuthInfoResponse
+### Properties
+* **authURL**: string: URL for authorizing the Developer Hub GitHub App
+* **token**: string: OAuth token used to make calls to GitHub
+
 ## GitHubOAuthProperties
 ### Properties
 * **username**: string: user making request
@@ -50,7 +65,7 @@
 ### Properties
 * **acr**: [ACR](#acr): Information on the azure container registry
 * **aksResourceId**: string: The Azure Kubernetes Cluster Resource the application will be deployed to.
-* **authStatus**: 'helm' | 'kube' | string: Determines the type of manifests within the repository.
+* **authStatus**: 'Authorized' | 'Error' | 'NotFound' | string (ReadOnly): Determines the authorization status of requests.
 * **branchName**: string: Repository Branch Name
 * **deploymentProperties**: [DeploymentProperties](#deploymentproperties)
 * **dockerBuildContext**: string: Path to Dockerfile Build Context within the repository.
@@ -58,7 +73,7 @@
 * **lastWorkflowRun**: [WorkflowRun](#workflowrun)
 * **namespace**: string: Kubernetes namespace the application is deployed to.
 * **oidcCredentials**: [GitHubWorkflowProfileOidcCredentials](#githubworkflowprofileoidccredentials): The fields needed for OIDC with GitHub.
-* **prStatus**: 'merged' | 'merged' | 'submitted' | 'unknown' | string (ReadOnly): The status of the Pull Request submitted against the users repository.
+* **prStatus**: 'merged' | 'removed' | 'submitted' | 'unknown' | string (ReadOnly): The status of the Pull Request submitted against the users repository.
 * **prURL**: string (ReadOnly): The URL to the Pull Request submitted against the users repository.
 * **pullNumber**: int (ReadOnly): The number associated with the submitted pull request.
 * **repositoryName**: string: Repository Name
