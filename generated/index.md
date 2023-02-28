@@ -3165,10 +3165,12 @@
 ### microsoft.containerservice/fleets
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicefleets2022-06-02-preview)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicefleets2022-07-02-preview)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicefleets2022-09-02-preview)
 
 ### microsoft.containerservice/fleets/members
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicefleetsmembers2022-06-02-preview)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicefleetsmembers2022-07-02-preview)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicefleetsmembers2022-09-02-preview)
 
 ### microsoft.containerservice/managedclusters
 * [2017-08-31](containerservice/microsoft.containerservice/2017-08-31/types.md#resource-microsoftcontainerservicemanagedclusters2017-08-31)
@@ -3210,6 +3212,15 @@
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-06-02-preview)
 * [2022-07-01](containerservice/microsoft.containerservice/2022-07-01/types.md#resource-microsoftcontainerservicemanagedclusters2022-07-01)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-08-03-preview)
+* [2022-09-01](containerservice/microsoft.containerservice/2022-09-01/types.md#resource-microsoftcontainerservicemanagedclusters2022-09-01)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-10-02-preview)
+* [2022-11-01](containerservice/microsoft.containerservice/2022-11-01/types.md#resource-microsoftcontainerservicemanagedclusters2022-11-01)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2022-11-02-preview)
+* [2023-01-01](containerservice/microsoft.containerservice/2023-01-01/types.md#resource-microsoftcontainerservicemanagedclusters2023-01-01)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclusters2023-01-02-preview)
 
 ### microsoft.containerservice/managedclusters/accessprofiles
 * [2017-08-31](containerservice/microsoft.containerservice/2017-08-31/types.md#resource-microsoftcontainerservicemanagedclustersaccessprofiles2017-08-31)
@@ -3251,6 +3262,15 @@
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-06-02-preview)
 * [2022-07-01](containerservice/microsoft.containerservice/2022-07-01/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-07-01)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-08-03-preview)
+* [2022-09-01](containerservice/microsoft.containerservice/2022-09-01/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-09-01)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-10-02-preview)
+* [2022-11-01](containerservice/microsoft.containerservice/2022-11-01/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-11-01)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2022-11-02-preview)
+* [2023-01-01](containerservice/microsoft.containerservice/2023-01-01/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2023-01-01)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersagentpools2023-01-02-preview)
 
 ### microsoft.containerservice/managedclusters/maintenanceconfigurations
 * [2020-12-01](containerservice/microsoft.containerservice/2020-12-01/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2020-12-01)
@@ -3275,6 +3295,15 @@
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-06-02-preview)
 * [2022-07-01](containerservice/microsoft.containerservice/2022-07-01/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-07-01)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-08-03-preview)
+* [2022-09-01](containerservice/microsoft.containerservice/2022-09-01/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-09-01)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-10-02-preview)
+* [2022-11-01](containerservice/microsoft.containerservice/2022-11-01/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-11-01)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2022-11-02-preview)
+* [2023-01-01](containerservice/microsoft.containerservice/2023-01-01/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2023-01-01)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersmaintenanceconfigurations2023-01-02-preview)
 
 ### microsoft.containerservice/managedclusters/privateendpointconnections
 * [2020-06-01](containerservice/microsoft.containerservice/2020-06-01/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2020-06-01)
@@ -3303,12 +3332,27 @@
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-06-02-preview)
 * [2022-07-01](containerservice/microsoft.containerservice/2022-07-01/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-07-01)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-08-03-preview)
+* [2022-09-01](containerservice/microsoft.containerservice/2022-09-01/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-09-01)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-10-02-preview)
+* [2022-11-01](containerservice/microsoft.containerservice/2022-11-01/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-11-01)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2022-11-02-preview)
+* [2023-01-01](containerservice/microsoft.containerservice/2023-01-01/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2023-01-01)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersprivateendpointconnections2023-01-02-preview)
 
 ### microsoft.containerservice/managedclusters/trustedaccessrolebindings
 * [2022-04-02-preview](containerservice/microsoft.containerservice/2022-04-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-04-02-preview)
 * [2022-05-02-preview](containerservice/microsoft.containerservice/2022-05-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-05-02-preview)
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-06-02-preview)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-08-03-preview)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-10-02-preview)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2022-11-02-preview)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclusterstrustedaccessrolebindings2023-01-02-preview)
 
 ### microsoft.containerservice/managedclustersnapshots
 * [2022-02-02-preview](containerservice/microsoft.containerservice/2022-02-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-02-02-preview)
@@ -3317,6 +3361,12 @@
 * [2022-05-02-preview](containerservice/microsoft.containerservice/2022-05-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-05-02-preview)
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-06-02-preview)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-08-03-preview)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-10-02-preview)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2022-11-02-preview)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicemanagedclustersnapshots2023-01-02-preview)
 
 ### microsoft.containerservice/openshiftmanagedclusters
 * [2018-09-30-preview](containerservice/microsoft.containerservice/2018-09-30-preview/types.md#resource-microsoftcontainerserviceopenshiftmanagedclusters2018-09-30-preview)
@@ -3342,6 +3392,15 @@
 * [2022-06-02-preview](containerservice/microsoft.containerservice/2022-06-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-06-02-preview)
 * [2022-07-01](containerservice/microsoft.containerservice/2022-07-01/types.md#resource-microsoftcontainerservicesnapshots2022-07-01)
 * [2022-07-02-preview](containerservice/microsoft.containerservice/2022-07-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-07-02-preview)
+* [2022-08-02-preview](containerservice/microsoft.containerservice/2022-08-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-08-02-preview)
+* [2022-08-03-preview](containerservice/microsoft.containerservice/2022-08-03-preview/types.md#resource-microsoftcontainerservicesnapshots2022-08-03-preview)
+* [2022-09-01](containerservice/microsoft.containerservice/2022-09-01/types.md#resource-microsoftcontainerservicesnapshots2022-09-01)
+* [2022-09-02-preview](containerservice/microsoft.containerservice/2022-09-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-09-02-preview)
+* [2022-10-02-preview](containerservice/microsoft.containerservice/2022-10-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-10-02-preview)
+* [2022-11-01](containerservice/microsoft.containerservice/2022-11-01/types.md#resource-microsoftcontainerservicesnapshots2022-11-01)
+* [2022-11-02-preview](containerservice/microsoft.containerservice/2022-11-02-preview/types.md#resource-microsoftcontainerservicesnapshots2022-11-02-preview)
+* [2023-01-01](containerservice/microsoft.containerservice/2023-01-01/types.md#resource-microsoftcontainerservicesnapshots2023-01-01)
+* [2023-01-02-preview](containerservice/microsoft.containerservice/2023-01-02-preview/types.md#resource-microsoftcontainerservicesnapshots2023-01-02-preview)
 
 ## microsoft.costmanagement
 ### microsoft.costmanagement/alerts
