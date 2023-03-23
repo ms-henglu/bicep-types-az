@@ -332,7 +332,7 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
 
         const { routingScope: actionRoutingScope } = parseResult.value;
         const actionName = actionRoutingScope.substr(actionRoutingScope.lastIndexOf('/') + 1);
-        if (!actionName.toLowerCase().startsWith('list'))
+        if (!actionName.toLowerCase())
         {
           return false;
         }
@@ -555,16 +555,17 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     const response = getResponseSchema(operation);
     const request = getRequestSchema(operation, validRequests);
 
-    if (!request || !response) {
+     // operation can have no response schema
+     if (!request) {
       return;
     }
 
     return {
       request: request.request,
-      response: response.response,
+      response: response?.response,
       parameters: request.parameters,
       requestSchema: request.schema,
-      responseSchema: response.schema,
+      responseSchema: response?.schema,
     };
   }
 
