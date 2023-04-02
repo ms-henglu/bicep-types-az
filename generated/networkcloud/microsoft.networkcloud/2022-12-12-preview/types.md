@@ -230,15 +230,132 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.NetworkCloud/volumes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function attachVolume (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [VirtualMachineVolumeParameters](#virtualmachinevolumeparameters)
+
+## Function cordon (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineCordonParameters](#baremetalmachinecordonparameters)
+
+## Function deploy (Microsoft.NetworkCloud/clusters@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/clusters
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [ClusterDeployParameters](#clusterdeployparameters)
+
+## Function detachVolume (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [VirtualMachineVolumeParameters](#virtualmachinevolumeparameters)
+
+## Function disableRemoteVendorManagement (Microsoft.NetworkCloud/storageAppliances@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/storageAppliances
+* **ApiVersion**: 2022-12-12-preview
+
+## Function enableRemoteVendorManagement (Microsoft.NetworkCloud/storageAppliances@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/storageAppliances
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [StorageApplianceEnableRemoteVendorManagementParameters](#storageapplianceenableremotevendormanagementparameters)
+
+## Function powerOff (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachinePowerOffParameters](#baremetalmachinepoweroffparameters)
+
+## Function powerOff (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [VirtualMachinePowerOffParameters](#virtualmachinepoweroffparameters)
+
+## Function reimage (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function reimage (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function replace (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineReplaceParameters](#baremetalmachinereplaceparameters)
+
+## Function restart (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function restart (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function restartNode (Microsoft.NetworkCloud/hybridAksClusters@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/hybridAksClusters
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [HybridAksClusterRestartNodeParameters](#hybridaksclusterrestartnodeparameters)
+
+## Function runCommand (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineRunCommandParameters](#baremetalmachineruncommandparameters)
+
+## Function runDataExtracts (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineRunDataExtractsParameters](#baremetalmachinerundataextractsparameters)
+
+## Function runReadCommands (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineRunReadCommandsParameters](#baremetalmachinerunreadcommandsparameters)
+
+## Function runReadCommands (Microsoft.NetworkCloud/storageAppliances@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/storageAppliances
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [StorageApplianceRunReadCommandsParameters](#storageappliancerunreadcommandsparameters)
+
+## Function start (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function start (Microsoft.NetworkCloud/virtualMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/virtualMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function uncordon (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+
+## Function updateVersion (Microsoft.NetworkCloud/clusters@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/clusters
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [ClusterUpdateVersionParameters](#clusterupdateversionparameters)
+
+## Function validateHardware (Microsoft.NetworkCloud/bareMetalMachines@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/bareMetalMachines
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [BareMetalMachineValidateHardwareParameters](#baremetalmachinevalidatehardwareparameters)
+
+## Function validateHardware (Microsoft.NetworkCloud/storageAppliances@2022-12-12-preview)
+* **Resource**: Microsoft.NetworkCloud/storageAppliances
+* **ApiVersion**: 2022-12-12-preview
+* **Input**: [StorageApplianceValidateHardwareParameters](#storageappliancevalidatehardwareparameters)
+
 ## AdministrativeCredentials
 ### Properties
 * **password**: string (Required): The password of the administrator of the device used during initialization.
 * **username**: string (Required): The username of the administrator of the device used during initialization.
 
+## BareMetalMachineCommandSpecification
+### Properties
+* **arguments**: string[]: The list of string arguments that will be passed to the script in order as separate arguments.
+* **command**: string (Required): The command to execute against the bare metal machine.
+
 ## BareMetalMachineConfigurationData
 ### Properties
 * **bmcConnectionString**: string (ReadOnly): The connection string for the baseboard management controller including IP address and protocol.
-* **bmcCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): AdministrativeCredentials represents the admin credentials for the device requiring password-based authentication.
+* **bmcCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): The credentials of the baseboard management controller on this bare metal machine.
 * **bmcMacAddress**: string (Required): The MAC address of the BMC for this machine.
 * **bootMacAddress**: string (Required): The MAC address associated with the PXE NIC card.
 * **machineDetails**: string: The free-form additional information about the machine, e.g. an asset tag.
@@ -246,6 +363,10 @@
 If not provided, the machine name will be generated programmatically.
 * **rackSlot**: int (Required): The slot the physical machine is in the rack based on the BOM configuration.
 * **serialNumber**: string (Required): The serial number of the machine. Hardware suppliers may use an alternate value. For example, service tag.
+
+## BareMetalMachineCordonParameters
+### Properties
+* **evacuate**: 'False' | 'True' | string: The indicator of whether to evacuate the node workload when the bare metal machine is cordoned.
 
 ## BareMetalMachineKeySetProperties
 ### Properties
@@ -261,18 +382,22 @@ If not provided, the machine name will be generated programmatically.
 * **userList**: [KeySetUser](#keysetuser)[] (Required): The unique list of permitted users.
 * **userListStatus**: [KeySetUserStatus](#keysetuserstatus)[] (ReadOnly): The status evaluation of each user.
 
+## BareMetalMachinePowerOffParameters
+### Properties
+* **skipShutdown**: 'False' | 'True' | string: The indicator of whether to skip the graceful OS shutdown and power off the bare metal machine immediately.
+
 ## BareMetalMachineProperties
 ### Properties
 * **bmcConnectionString**: string (Required): The connection string for the baseboard management controller including IP address and protocol.
-* **bmcCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): AdministrativeCredentials represents the admin credentials for the device requiring password-based authentication.
+* **bmcCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): The credentials of the baseboard management controller on this bare metal machine.
 * **bmcMacAddress**: string (Required): The MAC address of the BMC device.
 * **bootMacAddress**: string (Required): The MAC address of a NIC connected to the PXE network.
 * **clusterId**: string (ReadOnly): The resource ID of the cluster this bare metal machine is associated with.
 * **cordonStatus**: 'Cordoned' | 'Uncordoned' | string (ReadOnly): The cordon status of the bare metal machine.
 * **detailedStatus**: 'Available' | 'Deprovisioning' | 'Error' | 'Preparing' | 'Provisioned' | 'Provisioning' | string (ReadOnly): The more detailed status of the bare metal machine.
 * **detailedStatusMessage**: string (ReadOnly): The descriptive message about the current detailed status.
-* **hardwareInventory**: [HardwareInventory](#hardwareinventory): HardwareInventory represents the hardware configuration of this machine as exposed to the customer, including information acquired from the model/sku information and from the ironic inspector.
-* **hardwareValidationStatus**: [HardwareValidationStatus](#hardwarevalidationstatus): HardwareValidationStatus represents the latest hardware validation details performed for this bare metal machine.
+* **hardwareInventory**: [HardwareInventory](#hardwareinventory) (ReadOnly): The hardware inventory, including information acquired from the model/sku information and from the ironic inspector.
+* **hardwareValidationStatus**: [HardwareValidationStatus](#hardwarevalidationstatus) (ReadOnly): The details of the latest hardware validation performed for this bare metal machine.
 * **hybridAksClustersAssociatedIds**: string[] (ReadOnly): The list of the resource IDs for the HybridAksClusters that have nodes hosted on this bare metal machine.
 * **kubernetesNodeName**: string (ReadOnly): The name of this machine represented by the host object in the Cluster's Kubernetes control plane.
 * **kubernetesVersion**: string (ReadOnly): The version of Kubernetes running on this machine.
@@ -290,6 +415,37 @@ If not provided, the machine name will be generated programmatically.
 * **serialNumber**: string (Required): The serial number of the bare metal machine.
 * **serviceTag**: string (ReadOnly): The discovered value of the machine's service tag.
 * **virtualMachinesAssociatedIds**: string[] (ReadOnly): The list of the resource IDs for the VirtualMachines that are hosted on this bare metal machine.
+
+## BareMetalMachineReplaceParameters
+### Properties
+* **bmcCredentials**: [AdministrativeCredentials](#administrativecredentials): The credentials of the baseboard management controller on this bare metal machine.
+* **bmcMacAddress**: string: The MAC address of the BMC device.
+* **bootMacAddress**: string: The MAC address of a NIC connected to the PXE network.
+* **machineName**: string: The OS-level hostname assigned to this machine.
+* **serialNumber**: string: The serial number of the bare metal machine.
+
+## BareMetalMachineRunCommandParameters
+### Properties
+* **arguments**: string[]: The list of string arguments that will be passed to the script in order as separate arguments.
+* **limitTimeSeconds**: int (Required): The maximum time the script is allowed to run.
+If the execution time exceeds the maximum, the script will be stopped, any output produced until then will be captured, and the exit code matching a timeout will be returned (252).
+* **script**: string (Required): The base64 encoded script to execute on the bare metal machine.
+
+## BareMetalMachineRunDataExtractsParameters
+### Properties
+* **commands**: [BareMetalMachineCommandSpecification](#baremetalmachinecommandspecification)[] (Required): The list of curated data extraction commands to be executed directly against the target machine.
+* **limitTimeSeconds**: int (Required): The maximum time the commands are allowed to run.
+If the execution time exceeds the maximum, the script will be stopped, any output produced until then will be captured, and the exit code matching a timeout will be returned (252).
+
+## BareMetalMachineRunReadCommandsParameters
+### Properties
+* **commands**: [BareMetalMachineCommandSpecification](#baremetalmachinecommandspecification)[] (Required): The list of read-only commands to be executed directly against the target machine.
+* **limitTimeSeconds**: int (Required): The maximum time the commands are allowed to run.
+If the execution time exceeds the maximum, the script will be stopped, any output produced until then will be captured, and the exit code matching a timeout will be returned (252).
+
+## BareMetalMachineValidateHardwareParameters
+### Properties
+* **validationCategory**: 'BasicValidation' | string (Required): The category of hardware validation to perform.
 
 ## BgpPeer
 ### Properties
@@ -347,6 +503,10 @@ If not provided, the machine name will be generated programmatically.
 * **totalHostStorageGB**: int: The total machine or host-based storage in GB supported by this cluster for workload use.
 * **totalMemoryGB**: int: The total memory supported by this cluster for workload use.
 
+## ClusterDeployParameters
+### Properties
+* **skipValidationsForMachines**: string[]: The names of bare metal machines in the cluster that should be skipped during environment validation.
+
 ## ClusterManagerProperties
 ### Properties
 * **analyticsWorkspaceId**: string: The resource ID of the Log Analytics workspace that is used for the logs collection.
@@ -356,8 +516,7 @@ If not provided, the machine name will be generated programmatically.
 * **detailedStatusMessage**: string (ReadOnly): The descriptive message about the current detailed status.
 * **fabricControllerId**: string (Required): The resource ID of the fabric controller that has one to one mapping with the cluster manager.
 * **managedResourceGroupConfiguration**: [ManagedResourceGroupConfiguration](#managedresourcegroupconfiguration): The configuration of the managed resource group associated with the resource.
-* **managerExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the cluster manager's control plane location.
- This extended location is used when creating cluster and rack manifest resources.
+* **managerExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the cluster manager's control plane location. This extended location is used when creating cluster and rack manifest resources.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the cluster manager.
 * **vmSize**: string: Field deprecated, this value will no longer influence the cluster manager allocation process and will be removed in a future version. The size of the Azure virtual machines to use for hosting the cluster manager resource.
 
@@ -372,32 +531,34 @@ If not provided, the machine name will be generated programmatically.
 
 ## ClusterProperties
 ### Properties
-* **aggregatorOrSingleRackDefinition**: [RackDefinition](#rackdefinition) (Required): RackDefinition represents details regarding the rack.
+* **aggregatorOrSingleRackDefinition**: [RackDefinition](#rackdefinition) (Required): The rack definition that is intended to reflect only a single rack in a single rack cluster, or an aggregator rack in a multi-rack cluster.
 * **analyticsWorkspaceId**: string (Required): The resource ID of the Log Analytics Workspace that will be used for storing relevant logs.
 * **availableUpgradeVersions**: [ClusterAvailableUpgradeVersion](#clusteravailableupgradeversion)[] (ReadOnly): The list of cluster runtime version upgrades available for this cluster.
-* **clusterCapacity**: [ClusterCapacity](#clustercapacity): ClusterCapacity represents various details regarding compute capacity.
+* **clusterCapacity**: [ClusterCapacity](#clustercapacity) (ReadOnly): The capacity supported by this cluster.
 * **clusterConnectionStatus**: 'Connected' | 'Timeout' | 'Undefined' | string (ReadOnly): The latest heartbeat status between the cluster manager and the cluster.
-* **clusterExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the cluster's control plane location.
-This extended location is used to route the requests of child objects of the cluster that are handled by the platform operator.
+* **clusterExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the cluster's control plane location. This extended location is used to route the requests of child objects of the cluster that are handled by the platform operator.
 * **clusterLocation**: string: The customer-provided location information to identify where the cluster resides.
 * **clusterManagerConnectionStatus**: 'Connected' | 'Unreachable' | string (ReadOnly): The latest connectivity status between cluster manager and the cluster.
 * **clusterManagerId**: string (ReadOnly): The resource ID of the cluster manager that manages this cluster. This is set by the Cluster Manager when the cluster is created.
-* **clusterServicePrincipal**: [ServicePrincipalInformation](#serviceprincipalinformation): ServicePrincipalInformation represents the details of the service principal to be used by the cluster during Arc Appliance installation.
+* **clusterServicePrincipal**: [ServicePrincipalInformation](#serviceprincipalinformation): The service principal to be used by the cluster during Arc Appliance installation.
 * **clusterType**: 'MultiRack' | 'SingleRack' | string (Required): The type of rack configuration for the cluster.
 * **clusterVersion**: string (Required): The current runtime version of the cluster.
-* **computeDeploymentThreshold**: [ValidationThreshold](#validationthreshold): ValidationThreshold indicates allowed machine and node hardware and deployment failures.
+* **computeDeploymentThreshold**: [ValidationThreshold](#validationthreshold): The validation threshold indicating the allowable failures of compute machines during environment validation and deployment.
 * **computeRackDefinitions**: [RackDefinition](#rackdefinition)[]: The list of rack definitions for the compute racks in a multi-rack
 cluster, or an empty list in a single-rack cluster.
 * **detailedStatus**: 'Degraded' | 'Deleting' | 'Deploying' | 'Disconnected' | 'Failed' | 'PendingDeployment' | 'Running' | 'Updating' | string (ReadOnly): The current detailed status of the cluster.
 * **detailedStatusMessage**: string (ReadOnly): The descriptive message about the detailed status.
-* **hybridAksExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the Hybrid AKS control plane location.
-This extended location is used when creating provisioned clusters (Hybrid AKS clusters).
+* **hybridAksExtendedLocation**: [ExtendedLocation](#extendedlocation) (ReadOnly): The extended location (custom location) that represents the Hybrid AKS control plane location. This extended location is used when creating provisioned clusters (Hybrid AKS clusters).
 * **managedResourceGroupConfiguration**: [ManagedResourceGroupConfiguration](#managedresourcegroupconfiguration): The configuration of the managed resource group associated with the resource.
 * **manualActionCount**: int (ReadOnly): The count of Manual Action Taken (MAT) events that have not been validated.
 * **networkFabricId**: string (Required): The resource ID of the Network Fabric associated with the cluster.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Succeeded' | 'Updating' | 'Validating' | string (ReadOnly): The provisioning state of the cluster.
 * **supportExpiryDate**: string (ReadOnly): The support end date of the runtime version of the cluster.
 * **workloadResourceIds**: string[] (ReadOnly): The list of workload resource IDs that are hosted within this cluster.
+
+## ClusterUpdateVersionParameters
+### Properties
+* **targetClusterVersion**: string (Required): The version to be applied to the cluster during update.
 
 ## CniBgpConfiguration
 ### Properties
@@ -422,14 +583,14 @@ are within one of these blocks.
 * **expiration**: string: The date and time after which the key will be disallowed access.
 * **privateLinkServiceId**: string (ReadOnly): The resource ID of the private link service that is used to provide virtual machine console access.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the virtual machine console.
-* **sshPublicKey**: [SshPublicKey](#sshpublickey) (Required): SshPublicKey represents the public key used to authenticate with the virtual machine through SSH.
+* **sshPublicKey**: [SshPublicKey](#sshpublickey) (Required): The SSH public key that will be provisioned for user access. The user is expected to have the corresponding SSH private key for logging in.
 * **virtualMachineAccessId**: string (ReadOnly): The unique identifier for the virtual machine that is used to access the console.
 
 ## DefaultCniNetworkProperties
 ### Properties
 * **clusterId**: string (ReadOnly): The resource ID of the Network Cloud cluster this default CNI network is associated with.
 * **cniAsNumber**: int (ReadOnly): The autonomous system number that the fabric expects to peer with, derived from the associated L3 isolation domain.
-* **cniBgpConfiguration**: [CniBgpConfiguration](#cnibgpconfiguration): CniBgpConfiguration represents the Calico BGP configuration.
+* **cniBgpConfiguration**: [CniBgpConfiguration](#cnibgpconfiguration): The Calico BGP configuration.
 * **detailedStatus**: 'Available' | 'Error' | 'Provisioning' | string (ReadOnly): The more detailed status of the default CNI network.
 * **detailedStatusMessage**: string (ReadOnly): The descriptive message about the current detailed status.
 * **fabricBgpPeers**: [BgpPeer](#bgppeer)[] (ReadOnly): The L3 isolation fabric BGP peering connectivity information necessary for BGP peering the Hybrid AKS Cluster with the switch fabric.
@@ -493,6 +654,10 @@ is IPV6 or DualStack.
 * **workerCount**: int (Required): The number of worker node VMs.
 * **workerNodes**: [NodeConfiguration](#nodeconfiguration)[] (ReadOnly): The list of node configurations detailing associated VMs that are part of the worker nodes of this Hybrid AKS cluster.
 
+## HybridAksClusterRestartNodeParameters
+### Properties
+* **nodeName**: string (Required): The name of the node to restart.
+
 ## ImageRepositoryCredentials
 ### Properties
 * **password**: string (Required): The password or token used to access an image in the target repository.
@@ -503,7 +668,7 @@ is IPV6 or DualStack.
 ### Properties
 * **azureUserName**: string (Required): The Azure Active Directory user name (email name).
 * **description**: string: The free-form description for this user.
-* **sshPublicKey**: [SshPublicKey](#sshpublickey) (Required): SshPublicKey represents the public key used to authenticate with the virtual machine through SSH.
+* **sshPublicKey**: [SshPublicKey](#sshpublickey) (Required): The SSH public key for this user.
 
 ## KeySetUserStatus
 ### Properties
@@ -622,7 +787,7 @@ For a CloudServicesNetwork resource, this name will be ignored.
 
 ## Nic
 ### Properties
-* **lldpNeighbor**: [LldpNeighbor](#lldpneighbor): Type Deprecated. Will be removed in an upcoming version. LldpNeighbor represents the details about the device connected to the NIC.
+* **lldpNeighbor**: [LldpNeighbor](#lldpneighbor) (ReadOnly): The information about the device connected to this NIC.
 * **macAddress**: string (ReadOnly): The MAC address associated with this NIC.
 * **name**: string (ReadOnly): The name of the NIC/interface.
 
@@ -695,16 +860,25 @@ For a CloudServicesNetwork resource, this name will be ignored.
 ### Properties
 * **keyData**: string (Required): The public ssh key of the user.
 
+## StorageApplianceCommandSpecification
+### Properties
+* **arguments**: string[]: The list of string arguments that will be passed to the script in order as separate arguments.
+* **command**: string (Required): The read-only command to execute against the storage appliance.
+
 ## StorageApplianceConfigurationData
 ### Properties
-* **adminCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): AdministrativeCredentials represents the admin credentials for the device requiring password-based authentication.
+* **adminCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): The credentials of the administrative interface on this storage appliance.
 * **rackSlot**: int (Required): The slot that storage appliance is in the rack based on the BOM configuration.
 * **serialNumber**: string (Required): The serial number of the appliance.
 * **storageApplianceName**: string: The user-provided name for the storage appliance that will be created from this specification.
 
+## StorageApplianceEnableRemoteVendorManagementParameters
+### Properties
+* **supportEndpoints**: string[]: Field Deprecated. This field is not used and will be rejected if provided. The list of IPv4 subnets (in CIDR format), IPv6 subnets (in CIDR format), or hostnames that the storage appliance needs accessible in order to turn on the remote vendor management.
+
 ## StorageApplianceProperties
 ### Properties
-* **administratorCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): AdministrativeCredentials represents the admin credentials for the device requiring password-based authentication.
+* **administratorCredentials**: [AdministrativeCredentials](#administrativecredentials) (Required): The credentials of the administrative interface on this storage appliance.
 * **capacity**: int (ReadOnly): The total capacity of the storage appliance.
 * **capacityUsed**: int (ReadOnly): The amount of storage consumed.
 * **clusterId**: string (ReadOnly): The resource ID of the cluster this storage appliance is associated with.
@@ -719,6 +893,12 @@ For a CloudServicesNetwork resource, this name will be ignored.
 * **serialNumber**: string (Required): The serial number for the storage appliance.
 * **storageApplianceSkuId**: string (Required): The SKU for the storage appliance.
 
+## StorageApplianceRunReadCommandsParameters
+### Properties
+* **commands**: [StorageApplianceCommandSpecification](#storageappliancecommandspecification)[] (Required): The list of read-only commands to run.
+* **limitTimeSeconds**: int (Required): The maximum time the commands are allowed to run.
+If the execution time exceeds the maximum, the script will be stopped, any output produced until then will be captured, and the exit code matching a timeout will be returned (252).
+
 ## StorageApplianceSkuProperties
 ### Properties
 * **capacityGB**: int (ReadOnly): The maximum capacity of the storage appliance.
@@ -729,9 +909,13 @@ For a CloudServicesNetwork resource, this name will be ignored.
 * **properties**: [StorageApplianceSkuProperties](#storageapplianceskuproperties): The list of the resource properties.
 * **rackSlot**: int (ReadOnly): The position in the rack for the storage appliance.
 
+## StorageApplianceValidateHardwareParameters
+### Properties
+* **validationCategory**: 'BasicValidation' | string (Required): The category of hardware validation to perform.
+
 ## StorageProfile
 ### Properties
-* **osDisk**: [OsDisk](#osdisk) (Required): OsDisk represents configuration of the boot disk.
+* **osDisk**: [OsDisk](#osdisk) (Required): The disk to use with this virtual machine.
 * **volumeAttachments**: string[]: The resource IDs of volumes that are requested to be attached to the virtual machine.
 
 ## SystemData
@@ -854,12 +1038,16 @@ For a CloudServicesNetwork resource, this name will be ignored.
 * **schedulingExecution**: 'Hard' | 'Soft' | string (Required): The indicator of whether the hint is a hard or soft requirement during scheduling.
 * **scope**: 'Machine' | 'Rack' | string (Required): The scope for the virtual machine affinity or anti-affinity placement hint. It should always be "Machine" in the case of node affinity.
 
+## VirtualMachinePowerOffParameters
+### Properties
+* **skipShutdown**: 'False' | 'True' | string: The indicator of whether to skip the graceful OS shutdown and power off the virtual machine immediately.
+
 ## VirtualMachineProperties
 ### Properties
 * **adminUsername**: string (Required): The name of the administrator to which the ssh public keys will be added into the authorized keys.
 * **bareMetalMachineId**: string (ReadOnly): The resource ID of the bare metal machine the virtual machine has landed to.
 * **bootMethod**: 'BIOS' | 'UEFI' | string: Selects the boot method for the virtual machine.
-* **cloudServicesNetworkAttachment**: [NetworkAttachment](#networkattachment) (Required): NetworkAttachment represents the single network attachment.
+* **cloudServicesNetworkAttachment**: [NetworkAttachment](#networkattachment) (Required): The cloud service network that provides platform-level services for the virtual machine.
 * **clusterId**: string (ReadOnly): The resource ID of the cluster the virtual machine is created for.
 * **cpuCores**: int (Required): The number of CPU cores in the virtual machine.
 * **detailedStatus**: 'Available' | 'Error' | 'Provisioning' | string (ReadOnly): The more detailed status of the virtual machine.
@@ -872,13 +1060,21 @@ For a CloudServicesNetwork resource, this name will be ignored.
 * **powerState**: 'Off' | 'On' | string (ReadOnly): The power state of the virtual machine.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the virtual machine.
 * **sshPublicKeys**: [SshPublicKey](#sshpublickey)[]: The list of ssh public keys. Each key will be added to the virtual machine using the cloud-init ssh_authorized_keys mechanism for the adminUsername.
-* **storageProfile**: [StorageProfile](#storageprofile) (Required): StorageProfile represents information about a disk.
+* **storageProfile**: [StorageProfile](#storageprofile) (Required): The storage profile that specifies size and other parameters about the disks related to the virtual machine.
 * **userData**: string: The Base64 encoded cloud-init user data.
 * **virtioInterface**: 'Modern' | 'Transitional' | string: Field Deprecated, use virtualizationModel instead. The type of the virtio interface.
 * **vmDeviceModel**: 'T1' | 'T2' | string: The type of the device model to use.
 * **vmImage**: string (Required): The virtual machine image that is currently provisioned to the OS disk, using the full url and tag notation used to pull the image.
-* **vmImageRepositoryCredentials**: [ImageRepositoryCredentials](#imagerepositorycredentials): ImageRepositoryCredentials represents the credentials used to login to the image repository.
+* **vmImageRepositoryCredentials**: [ImageRepositoryCredentials](#imagerepositorycredentials): The credentials used to login to the image repository that has access to the specified image.
 * **volumes**: string[] (ReadOnly): The resource IDs of volumes that are attached to the virtual machine.
+
+## VirtualMachineVolumeParameters
+### Properties
+* **volumeId**: string (Required): The resource ID of the volume.
+
+## VirtualMachineVolumeParameters
+### Properties
+* **volumeId**: string (Required): The resource ID of the volume.
 
 ## VolumeProperties
 ### Properties

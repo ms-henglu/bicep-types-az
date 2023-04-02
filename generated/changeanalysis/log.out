@@ -12,13 +12,19 @@ warning | PreCheck/SchemaMissingType | The schema 'ResourceGraphChangeData-befor
 warning | PreCheck/SchemaMissingType | The schema 'ResourceGraphChangeData-afterSnapshot' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/changeanalysis/resource-manager/Microsoft.ChangeAnalysis/preview/2021-04-01-preview/changeanalysis.json:519:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping ResourceChanges_List due to required query parameter "startTime"
+warning | Skipping ResourceChanges_List due to required query parameter "endTime"
 warning | Skipping Changes_ListChangesByResourceGroup due to required query parameter "startTime"
 warning | Skipping Changes_ListChangesByResourceGroup due to required query parameter "endTime"
 warning | Skipping Changes_ListChangesBySubscription due to required query parameter "startTime"
 warning | Skipping Changes_ListChangesBySubscription due to required query parameter "endTime"
+warning | Skipping ChangeSnapshots_GetChangeSnapshots due to required query parameter "resourceId"
+warning | Skipping ChangeSnapshots_GetChangeSnapshots due to required query parameter "changeId"
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping ResourceChanges_List due to required query parameter "startTime"
+warning | Skipping ResourceChanges_List due to required query parameter "endTime"
 warning | Skipping Changes_ListChangesByResourceGroup due to required query parameter "startTime"
 warning | Skipping Changes_ListChangesByResourceGroup due to required query parameter "endTime"
 warning | Skipping Changes_ListChangesBySubscription due to required query parameter "startTime"

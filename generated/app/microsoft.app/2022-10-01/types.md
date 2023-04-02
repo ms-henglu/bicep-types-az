@@ -203,6 +203,36 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-10-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-10-01
+
+## Function checkNameAvailability (Microsoft.App/connectedEnvironments@2022-10-01)
+* **Resource**: Microsoft.App/connectedEnvironments
+* **ApiVersion**: 2022-10-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function checkNameAvailability (Microsoft.App/managedEnvironments@2022-10-01)
+* **Resource**: Microsoft.App/managedEnvironments
+* **ApiVersion**: 2022-10-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-10-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-10-01
+
+## Function getAuthtoken (Microsoft.App/containerApps@2022-10-01)
+* **Resource**: Microsoft.App/containerApps
+* **ApiVersion**: 2022-10-01
+* **Output**: [ContainerAppAuthToken](#containerappauthtoken)
+
+## Function getAuthtoken (Microsoft.App/managedEnvironments@2022-10-01)
+* **Resource**: Microsoft.App/managedEnvironments
+* **ApiVersion**: 2022-10-01
+* **Output**: [EnvironmentAuthToken](#environmentauthtoken)
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-10-01)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-10-01
@@ -222,6 +252,10 @@
 * **Resource**: Microsoft.App/managedEnvironments/daprComponents
 * **ApiVersion**: 2022-10-01
 * **Output**: [DaprSecretsCollection](#daprsecretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-10-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-10-01
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -344,6 +378,28 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **valid**: bool (ReadOnly): Is the certificate valid?.
 * **value**: any (WriteOnly): PFX or PEM blob
 
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+
 ## ClientRegistration
 ### Properties
 * **clientId**: string: The Client ID of the app used for login.
@@ -382,6 +438,21 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **probes**: [ContainerAppProbe](#containerappprobe)[]: List of probes for the container.
 * **resources**: [ContainerResources](#containerresources): Container resource requirements.
 * **volumeMounts**: [VolumeMount](#volumemount)[]: Container volume mounts.
+
+## ContainerAppAuthToken
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ContainerAppAuthTokenProperties](#containerappauthtokenproperties): Container App auth token resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ContainerAppAuthTokenProperties
+### Properties
+* **expires**: string (ReadOnly): Token expiration date.
+* **token**: string (ReadOnly): Auth token value.
 
 ## ContainerAppProbe
 ### Properties
@@ -623,6 +694,21 @@ eg: azure-servicebus, redis etc.
 ### Properties
 * **id**: string (ReadOnly): Unique topic identifier
 * **pesId**: string (ReadOnly): PES identifier
+
+## EnvironmentAuthToken
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [EnvironmentAuthTokenProperties](#environmentauthtokenproperties): Environment auth token resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## EnvironmentAuthTokenProperties
+### Properties
+* **expires**: string (ReadOnly): Token expiration date.
+* **token**: string (ReadOnly): Auth token value.
 
 ## EnvironmentSkuProperties
 ### Properties
@@ -991,6 +1077,16 @@ as they were at the creation time
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## TrafficWeight
 ### Properties
 * **label**: string: Associates a traffic label with a revision
@@ -1029,7 +1125,7 @@ application used for sign-in.
 * **outboundSettings**: [ManagedEnvironmentOutboundSettings](#managedenvironmentoutboundsettings): Configuration used to control the Environment Egress outbound traffic
 * **platformReservedCidr**: string: IP range in CIDR notation that can be reserved for environment infrastructure IP addresses. Must not overlap with any other provided IP ranges.
 * **platformReservedDnsIP**: string: An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server.
-* **runtimeSubnetId**: string: Resource ID of a subnet that Container App containers are injected into. This subnet must be in the same VNET as the subnet defined in infrastructureSubnetId. Must not overlap with any other provided IP ranges.
+* **runtimeSubnetId**: string: This field is deprecated and not used. If you wish to provide your own subnet that Container App containers are injected into, then you should leverage the infrastructureSubnetId.
 
 ## Volume
 ### Properties

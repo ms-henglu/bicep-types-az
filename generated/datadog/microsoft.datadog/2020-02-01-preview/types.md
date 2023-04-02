@@ -40,6 +40,11 @@
 * **properties**: [MonitoringTagRulesProperties](#monitoringtagrulesproperties): Definition of the properties for a TagRules resource.
 * **type**: 'Microsoft.Datadog/monitors/tagRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getDefaultKey (Microsoft.Datadog/monitors@2020-02-01-preview)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2020-02-01-preview
+* **Output**: [DatadogApiKey](#datadogapikey)
+
 ## Function listApiKeys (Microsoft.Datadog/monitors@2020-02-01-preview)
 * **Resource**: Microsoft.Datadog/monitors
 * **ApiVersion**: 2020-02-01-preview
@@ -60,6 +65,16 @@
 * **ApiVersion**: 2020-02-01-preview
 * **Output**: [MonitoredResourceListResponse](#monitoredresourcelistresponse)
 
+## Function refreshSetPasswordLink (Microsoft.Datadog/monitors@2020-02-01-preview)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2020-02-01-preview
+* **Output**: [DatadogSetPasswordLink](#datadogsetpasswordlink)
+
+## Function setDefaultKey (Microsoft.Datadog/monitors@2020-02-01-preview)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2020-02-01-preview
+* **Input**: [DatadogApiKey](#datadogapikey)
+
 ## DatadogAgreementProperties
 ### Properties
 * **accepted**: bool: If any version of the terms have been accepted, otherwise false.
@@ -70,6 +85,13 @@
 * **publisher**: string: Publisher identifier string.
 * **retrieveDatetime**: string: Date and time in UTC of when the terms were accepted. This is empty if Accepted is false.
 * **signature**: string: Terms signature.
+
+## DatadogApiKey
+### Properties
+* **created**: string: The time of creation of the API key.
+* **createdBy**: string: The user that created the API key.
+* **key**: string (Required): The value of the API key.
+* **name**: string: The name of the API key.
 
 ## DatadogApiKey
 ### Properties
@@ -126,6 +148,10 @@
 * **linkingClientId**: string (WriteOnly): The client_id from an existing in exchange for an auth token to link organization.
 * **name**: string (ReadOnly): Name of the Datadog organization.
 * **redirectUri**: string (WriteOnly): The redirect uri for linking.
+
+## DatadogSetPasswordLink
+### Properties
+* **setPasswordLink**: string
 
 ## DatadogSingleSignOnProperties
 ### Properties

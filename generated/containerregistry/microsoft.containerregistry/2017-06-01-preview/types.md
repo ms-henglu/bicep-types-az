@@ -34,6 +34,11 @@
 * **tags**: [WebhookCreateParametersTags](#webhookcreateparameterstags): The tags for the webhook.
 * **type**: 'Microsoft.ContainerRegistry/registries/webhooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getCallbackConfig (Microsoft.ContainerRegistry/registries/webhooks@2017-06-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2017-06-01-preview
+* **Output**: [CallbackConfig](#callbackconfig)
+
 ## Function listCredentials (Microsoft.ContainerRegistry/registries@2017-06-01-preview)
 * **Resource**: Microsoft.ContainerRegistry/registries
 * **ApiVersion**: 2017-06-01-preview
@@ -44,9 +49,30 @@
 * **ApiVersion**: 2017-06-01-preview
 * **Output**: [EventListResult](#eventlistresult)
 
+## Function ping (Microsoft.ContainerRegistry/registries/webhooks@2017-06-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2017-06-01-preview
+* **Output**: [EventInfo](#eventinfo)
+
+## Function regenerateCredential (Microsoft.ContainerRegistry/registries@2017-06-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2017-06-01-preview
+* **Input**: [RegenerateCredentialParameters](#regeneratecredentialparameters)
+* **Output**: [RegistryListCredentialsResult](#registrylistcredentialsresult)
+
 ## Actor
 ### Properties
 * **name**: string: The subject or username associated with the request context that generated the event.
+
+## CallbackConfig
+### Properties
+* **customHeaders**: [CallbackConfigCustomHeaders](#callbackconfigcustomheaders): Custom headers that will be added to the webhook notifications.
+* **serviceUri**: string (Required): The service URI for the webhook to post notifications.
+
+## CallbackConfigCustomHeaders
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## Event
 ### Properties
@@ -63,6 +89,10 @@
 * **source**: [Source](#source): The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
 * **target**: [Target](#target): The target of the event.
 * **timestamp**: string: The time at which the event occurred.
+
+## EventInfo
+### Properties
+* **id**: string: The event ID.
 
 ## EventListResult
 ### Properties
@@ -94,6 +124,15 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RegenerateCredentialParameters
+### Properties
+* **name**: 'password' | 'password2' (Required): Specifies name of the password which should be regenerated -- password or password2.
+
+## RegistryListCredentialsResult
+### Properties
+* **passwords**: [RegistryPassword](#registrypassword)[]: The list of passwords for a container registry.
+* **username**: string: The username for a container registry.
 
 ## RegistryListCredentialsResult
 ### Properties

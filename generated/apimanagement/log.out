@@ -125,6 +125,10 @@ warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{configurationName}/syncState': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -824,6 +828,10 @@ warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{configurationName}/syncState': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1529,6 +1537,10 @@ warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{configurationName}/syncState': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -2220,6 +2232,10 @@ warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{configurationName}/syncState': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -2909,6 +2925,10 @@ warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{configurationName}/syncState': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -3591,6 +3611,10 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -4267,6 +4291,10 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -4939,6 +4967,10 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/getDomainOwnershipIdentifier': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -5539,6 +5571,9 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/listSecrets': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -6126,6 +6161,9 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/listSecrets': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -6670,6 +6708,9 @@ warning | Skipping Reports_ListBySubscription due to required query parameter "f
 warning | Skipping Reports_ListByTime due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -7205,6 +7246,9 @@ warning | Skipping Reports_ListByOperation due to required query parameter "filt
 warning | Skipping Reports_ListByProduct due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -7722,6 +7766,9 @@ warning | Skipping Reports_ListByOperation due to required query parameter "filt
 warning | Skipping Reports_ListByProduct due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -8220,6 +8267,9 @@ warning | Skipping Reports_ListByOperation due to required query parameter "filt
 warning | Skipping Reports_ListByProduct due to required query parameter "filter"
 warning | Skipping Reports_ListByTime due to required query parameter "interval"
 warning | Skipping Reports_ListByRequest due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -8493,6 +8543,9 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'BackendUpdateParameter
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/operations/{operationId}/policy': Found mismatch between type segments (4) and name segments (3)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/apis/{apiId}/policy': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/products/{productId}/policy': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/access/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/access/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -8713,4 +8766,7 @@ warning | PreCheck/SchemaMissingType | The schema 'ApiManagementServiceUpdateHos
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/apimanagement/resource-manager/Microsoft.ApiManagement/stable/2016-07-07/apimdeployment.json:1111:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/access/git/regeneratePrimaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/access/git/regenerateSecondaryKey': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.ApiManagement/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: byte-array. Returning 'any'.
