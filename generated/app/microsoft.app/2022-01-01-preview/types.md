@@ -97,6 +97,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-01-01-preview)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
@@ -106,6 +114,10 @@
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
 * **Output**: [SecretsCollection](#secretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -715,7 +727,7 @@ application used for sign-in.
 * **internal**: bool: Boolean indicating the environment only has an internal load balancer. These environments do not have a public static IP resource. They must provide runtimeSubnetId and infrastructureSubnetId if enabling this property
 * **platformReservedCidr**: string: IP range in CIDR notation that can be reserved for environment infrastructure IP addresses. Must not overlap with any other provided IP ranges.
 * **platformReservedDnsIP**: string: An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server.
-* **runtimeSubnetId**: string: Resource ID of a subnet that Container App containers are injected into. This subnet must be in the same VNET as the subnet defined in infrastructureSubnetId. Must not overlap with any other provided IP ranges.
+* **runtimeSubnetId**: string: This field is deprecated and not used. If you wish to provide your own subnet that Container App containers are injected into, then you should leverage the infrastructureSubnetId.
 
 ## Volume
 ### Properties

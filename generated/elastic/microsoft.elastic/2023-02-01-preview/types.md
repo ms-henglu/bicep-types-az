@@ -4,7 +4,6 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2023-02-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **generateApiKey**: bool (ReadOnly): Flag to determine if User API Key has to be generated and shared.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [IdentityProperties](#identityproperties): Identity properties of the monitor resource.
 * **location**: string (Required): The location of the monitor resource
@@ -24,6 +23,36 @@
 * **properties**: [MonitoringTagRulesProperties](#monitoringtagrulesproperties): Properties of the monitoring tag rules.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource
 * **type**: 'Microsoft.Elastic/monitors/tagRules' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function associateTrafficFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+
+## Function createAndAssociateIPFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+
+## Function createAndAssociatePLFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+
+## Function createOrUpdateExternalUser (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+* **Input**: [ExternalUserInfo](#externaluserinfo)
+* **Output**: [ExternalUserCreationResponse](#externalusercreationresponse)
+
+## Function deleteTrafficFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+
+## Function detachAndDeleteTrafficFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+
+## Function detachTrafficFilter (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
 
 ## Function listAllTrafficFilters (Microsoft.Elastic/monitors@2023-02-01-preview)
 * **Resource**: Microsoft.Elastic/monitors
@@ -54,6 +83,21 @@
 * **Resource**: Microsoft.Elastic/monitors
 * **ApiVersion**: 2023-02-01-preview
 * **Output**: [VMHostListResponse](#vmhostlistresponse)
+
+## Function upgrade (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+* **Input**: [ElasticMonitorUpgrade](#elasticmonitorupgrade)
+
+## Function vmCollectionUpdate (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+* **Input**: [VMCollectionUpdate](#vmcollectionupdate)
+
+## Function vmIngestionDetails (Microsoft.Elastic/monitors@2023-02-01-preview)
+* **Resource**: Microsoft.Elastic/monitors
+* **ApiVersion**: 2023-02-01-preview
+* **Output**: [VMIngestionDetailsResponse](#vmingestiondetailsresponse)
 
 ## CompanyInfo
 ### Properties
@@ -93,6 +137,10 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ElasticMonitorUpgrade
+### Properties
+* **version**: string: Version to which the elastic monitor should be upgraded to
+
 ## ElasticProperties
 ### Properties
 * **elasticCloudDeployment**: [ElasticCloudDeployment](#elasticclouddeployment): Details of the elastic cloud deployment.
@@ -124,6 +172,18 @@
 * **id**: string: Id of the elastic filter rule
 * **source**: string: IP of the elastic filter rule
 
+## ExternalUserCreationResponse
+### Properties
+* **created**: bool (ReadOnly): Shows if user is created or updated
+
+## ExternalUserInfo
+### Properties
+* **emailId**: string: Email id of the user to be created or updated
+* **fullName**: string: Full name of the user to be created or updated
+* **password**: string: Password of the user to be created or updated
+* **roles**: string[]: Roles to be assigned for  created or updated user
+* **userName**: string: Username of the user to be created or updated
+
 ## FilteringTag
 ### Properties
 * **action**: 'Exclude' | 'Include' | string: Valid actions for a filtering tag.
@@ -145,9 +205,9 @@
 
 ## MarketplaceSaaSInfo
 ### Properties
-* **marketplaceName**: string: Subscription Details: Marketplace SAAS Name
-* **marketplaceResourceId**: string: Subscription Details: Marketplace Resource URI
-* **marketplaceSubscription**: [MarketplaceSaaSInfoMarketplaceSubscription](#marketplacesaasinfomarketplacesubscription): Marketplace Subscription Id
+* **marketplaceName**: string: Marketplace Subscription Details: SAAS Name
+* **marketplaceResourceId**: string: Marketplace Subscription Details: Resource URI
+* **marketplaceSubscription**: [MarketplaceSaaSInfoMarketplaceSubscription](#marketplacesaasinfomarketplacesubscription): Marketplace Subscription
 
 ## MarketplaceSaaSInfoMarketplaceSubscription
 ### Properties
@@ -172,6 +232,7 @@
 ## MonitorProperties
 ### Properties
 * **elasticProperties**: [ElasticProperties](#elasticproperties): Elastic cloud properties.
+* **generateApiKey**: bool: Flag to determine if User API Key has to be generated and shared.
 * **liftrResourceCategory**: 'MonitorLogs' | 'Unknown' | string (ReadOnly)
 * **liftrResourcePreference**: int (ReadOnly): The priority of the resource.
 * **monitoringStatus**: 'Disabled' | 'Enabled' | string: Flag specifying if the resource monitoring is enabled or disabled.
@@ -205,10 +266,20 @@
 * **firstName**: string: First name of the user
 * **lastName**: string: Last name of the user
 
+## VMCollectionUpdate
+### Properties
+* **operationName**: 'Add' | 'Delete' | string: Operation to be performed for given VM.
+* **vmResourceId**: string: ARM id of the VM resource.
+
 ## VMHostListResponse
 ### Properties
 * **nextLink**: string: Link to the next Vm resource Id, if any.
 * **value**: [VMResources](#vmresources)[]: Results of a list operation.
+
+## VMIngestionDetailsResponse
+### Properties
+* **cloudId**: string: The cloudId of given Elastic monitor resource.
+* **ingestionKey**: string: Ingestion details to install agent on given VM.
 
 ## VMResources
 ### Properties

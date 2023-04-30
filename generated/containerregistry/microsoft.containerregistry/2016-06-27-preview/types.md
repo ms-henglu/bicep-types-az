@@ -11,6 +11,26 @@
 * **tags**: [ResourceTags](#resourcetags): The tags of the resource.
 * **type**: 'Microsoft.ContainerRegistry/registries' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getCredentials (Microsoft.ContainerRegistry/registries@2016-06-27-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2016-06-27-preview
+* **Output**: [RegistryCredentials](#registrycredentials)
+
+## Function regenerateCredentials (Microsoft.ContainerRegistry/registries@2016-06-27-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2016-06-27-preview
+* **Output**: [RegistryCredentials](#registrycredentials)
+
+## RegistryCredentials
+### Properties
+* **password**: string: The administrator password.
+* **username**: string: The administrator username.
+
+## RegistryCredentials
+### Properties
+* **password**: string: The administrator password.
+* **username**: string: The administrator username.
+
 ## RegistryProperties
 ### Properties
 * **adminUserEnabled**: bool: The value that indicates whether the admin user is enabled. This value is false by default.

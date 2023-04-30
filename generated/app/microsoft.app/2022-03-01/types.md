@@ -97,6 +97,20 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
+## Function checkNameAvailability (Microsoft.App/managedEnvironments@2022-03-01)
+* **Resource**: Microsoft.App/managedEnvironments
+* **ApiVersion**: 2022-03-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-03-01)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-03-01
@@ -111,6 +125,10 @@
 * **Resource**: Microsoft.App/managedEnvironments/daprComponents
 * **ApiVersion**: 2022-03-01
 * **Output**: [DaprSecretsCollection](#daprsecretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-03-01)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-03-01
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -231,6 +249,17 @@ More information on OpenID Connect Discovery: http://openid.net/specs/openid-con
 * **thumbprint**: string (ReadOnly): Certificate thumbprint.
 * **valid**: bool (ReadOnly): Is the certificate valid?.
 * **value**: any (WriteOnly): PFX or PEM blob
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## ClientRegistration
 ### Properties
@@ -736,7 +765,7 @@ application used for sign-in.
 * **internal**: bool: Boolean indicating the environment only has an internal load balancer. These environments do not have a public static IP resource. They must provide runtimeSubnetId and infrastructureSubnetId if enabling this property
 * **platformReservedCidr**: string: IP range in CIDR notation that can be reserved for environment infrastructure IP addresses. Must not overlap with any other provided IP ranges.
 * **platformReservedDnsIP**: string: An IP address from the IP range defined by platformReservedCidr that will be reserved for the internal DNS server.
-* **runtimeSubnetId**: string: Resource ID of a subnet that Container App containers are injected into. This subnet must be in the same VNET as the subnet defined in infrastructureSubnetId. Must not overlap with any other provided IP ranges.
+* **runtimeSubnetId**: string: This field is deprecated and not used. If you wish to provide your own subnet that Container App containers are injected into, then you should leverage the infrastructureSubnetId.
 
 ## Volume
 ### Properties

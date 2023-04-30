@@ -1,4 +1,4 @@
-AutoRest code generation utility [cli version: 3.6.3; node: v16.19.1]
+AutoRest code generation utility [cli version: 3.6.3; node: v16.20.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -73,6 +73,14 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'VulnerabilityAs
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -136,6 +144,15 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -256,6 +273,16 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -415,6 +442,16 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -530,6 +567,16 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -643,6 +690,16 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -778,6 +835,16 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PrivateEndpoint
 warning | Skipping SqlPoolMaintenanceWindows_Get due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindows_CreateOrUpdate due to required query parameter "maintenanceWindowName"
 warning | Skipping SqlPoolMaintenanceWindowOptions_Get due to required query parameter "maintenanceWindowOptionsName"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/checkNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.

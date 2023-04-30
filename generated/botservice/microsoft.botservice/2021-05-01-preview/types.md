@@ -4,7 +4,7 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Entity Tag
+* **etag**: string: Entity Tag.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
 * **location**: string: Specifies the location of the resource.
@@ -13,12 +13,13 @@
 * **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.BotService/botServices' (ReadOnly, DeployTimeConstant): The resource type
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## Resource Microsoft.BotService/botServices/channels@2021-05-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Entity Tag
+* **etag**: string: Entity Tag.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
 * **location**: string: Specifies the location of the resource.
@@ -27,12 +28,13 @@
 * **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.BotService/botServices/channels' (ReadOnly, DeployTimeConstant): The resource type
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## Resource Microsoft.BotService/botServices/connections@2021-05-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2021-05-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Entity Tag
+* **etag**: string: Entity Tag.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
 * **location**: string: Specifies the location of the resource.
@@ -41,6 +43,7 @@
 * **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.BotService/botServices/connections' (ReadOnly, DeployTimeConstant): The resource type
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## Resource Microsoft.BotService/botServices/privateEndpointConnections@2021-05-01-preview
 * **Valid Scope(s)**: ResourceGroup
@@ -61,12 +64,31 @@
 * **ApiVersion**: 2021-05-01-preview
 * **Output**: [ConnectionSetting](#connectionsetting)
 
+## Function regeneratekeys (Microsoft.BotService/botServices/channels@2021-05-01-preview)
+* **Resource**: Microsoft.BotService/botServices/channels
+* **ApiVersion**: 2021-05-01-preview
+* **Input**: [SiteInfo](#siteinfo)
+* **Output**: [BotChannel](#botchannel)
+
 ## AlexaChannelProperties
 ### Properties
 * **alexaSkillId**: string (Required): The Alexa skill Id
 * **isEnabled**: bool (Required): Whether this channel is enabled for the bot
 * **serviceEndpointUri**: string (ReadOnly): Full Uri used to configured the skill in Alexa
 * **urlFragment**: string (ReadOnly): Url fragment used in part of the Uri configured in Alexa
+
+## BotChannel
+### Properties
+* **etag**: string: Entity Tag.
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
+* **location**: string: Specifies the location of the resource.
+* **name**: string (ReadOnly): Specifies the name of the resource.
+* **properties**: [Channel](#channel): The set of properties specific to bot channel resource
+* **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
+* **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
+* **type**: string (ReadOnly): Specifies the type of the resource.
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## BotProperties
 ### Properties
@@ -230,7 +252,7 @@
 
 ## ConnectionSetting
 ### Properties
-* **etag**: string: Entity Tag
+* **etag**: string: Entity Tag.
 * **id**: string (ReadOnly): Specifies the resource ID.
 * **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
 * **location**: string: Specifies the location of the resource.
@@ -239,6 +261,7 @@
 * **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: string (ReadOnly): Specifies the type of the resource.
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## ConnectionSettingParameter
 ### Properties
@@ -249,6 +272,8 @@
 ### Properties
 * **clientId**: string: Client Id associated with the Connection Setting.
 * **clientSecret**: string: Client Secret associated with the Connection Setting
+* **id**: string: Id of the Connection Setting.
+* **name**: string: Name of the Connection Setting.
 * **parameters**: [ConnectionSettingParameter](#connectionsettingparameter)[]: Service Provider Parameters associated with the Connection Setting
 * **provisioningState**: string: Provisioning state of the resource
 * **scopes**: string: Scopes associated with the Connection Setting
@@ -340,7 +365,7 @@
 ### Properties
 * **changedTime**: string: Changed time of the resource
 * **entityTag**: string: Entity tag of the resource
-* **etag**: string: Entity Tag
+* **etag**: string: Entity Tag.
 * **id**: string (ReadOnly): Specifies the resource ID.
 * **kind**: 'azurebot' | 'bot' | 'designer' | 'function' | 'sdk' | string: Required. Gets or sets the Kind of the resource.
 * **location**: string: Specifies the location of the resource.
@@ -352,6 +377,7 @@
 * **sku**: [Sku](#sku): Gets or sets the SKU of the resource.
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: string (ReadOnly): Specifies the type of the resource.
+* **zones**: string[] (ReadOnly): Entity zones
 
 ## MsTeamsChannelProperties
 ### Properties
@@ -411,6 +437,11 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## Site
 ### Properties
 * **appId**: string: DirectLine application id
@@ -432,6 +463,11 @@
 * **siteName**: string (Required): Site name
 * **tenantId**: string: Tenant Id
 * **trustedOrigins**: string[]: List of Trusted Origin URLs for this site. This field is applicable only if isSecureSiteEnabled is True.
+
+## SiteInfo
+### Properties
+* **key**: 'key1' | 'key2' (Required): Determines which key is to be regenerated
+* **siteName**: string (Required): The site name
 
 ## Sku
 ### Properties

@@ -61,6 +61,30 @@
 * **properties**: [QueryTextProperties](#querytextproperties) (ReadOnly): The properties of a query text.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/queryTexts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforPostgreSQL/locations@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function resetQueryPerformanceInsightData (Microsoft.DBforPostgreSQL/flexibleServers@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2021-06-01-preview
+* **Output**: [QueryPerformanceInsightResetDataResult](#queryperformanceinsightresetdataresult)
+
+## Function restart (Microsoft.DBforPostgreSQL/flexibleServers@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [RestartParameter](#restartparameter)
+
+## Function start (Microsoft.DBforPostgreSQL/flexibleServers@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2021-06-01-preview
+
+## Function stop (Microsoft.DBforPostgreSQL/flexibleServers@2021-06-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2021-06-01-preview
+
 ## Backup
 ### Properties
 * **backupRetentionDays**: int: Backup retention days for the server.
@@ -86,6 +110,11 @@
 * **charset**: string: The charset of the database.
 * **collation**: string: The collation of the database.
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
+
 ## FirewallRuleProperties
 ### Properties
 * **endIpAddress**: string (Required): The end IP address of the server firewall rule. Must be IPv4 format.
@@ -110,10 +139,20 @@
 * **privateDnsZoneArmResourceId**: string: private dns zone arm resource id.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string (ReadOnly): public network access is enabled or not
 
+## QueryPerformanceInsightResetDataResult
+### Properties
+* **message**: string: result operation message.
+* **status**: 'Failed' | 'Succeeded' | string: Indicates result of the operation.
+
 ## QueryTextProperties
 ### Properties
 * **queryId**: string: Query identifier unique to the server.
 * **queryText**: string: Query text.
+
+## RestartParameter
+### Properties
+* **failoverMode**: 'ForcedFailover' | 'ForcedSwitchover' | 'PlannedFailover' | 'PlannedSwitchover' | string: Failover mode.
+* **restartWithFailover**: bool: Indicates whether to restart the server with failover.
 
 ## ServerProperties
 ### Properties
@@ -155,4 +194,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
 

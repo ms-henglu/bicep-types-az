@@ -34,13 +34,13 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.DBforMySQL/flexibleServers/backups' (ReadOnly, DeployTimeConstant): The resource type
 
-## Resource Microsoft.DBforMySQL/flexibleServers/configurations@2021-12-01-preview (ReadOnly)
+## Resource Microsoft.DBforMySQL/flexibleServers/configurations@2021-12-01-preview
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2021-12-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [ConfigurationProperties](#configurationproperties) (ReadOnly): The properties of a configuration.
+* **properties**: [ConfigurationProperties](#configurationproperties): The properties of a configuration.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.DBforMySQL/flexibleServers/configurations' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -64,6 +64,41 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.DBforMySQL/flexibleServers/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.DBforMySQL/locations@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/locations
+* **ApiVersion**: 2021-12-01-preview
+* **Input**: [NameAvailabilityRequest](#nameavailabilityrequest)
+* **Output**: [NameAvailability](#nameavailability)
+
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforMySQL/locations@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/locations
+* **ApiVersion**: 2021-12-01-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function failover (Microsoft.DBforMySQL/flexibleServers@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2021-12-01-preview
+
+## Function restart (Microsoft.DBforMySQL/flexibleServers@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2021-12-01-preview
+* **Input**: [ServerRestartParameter](#serverrestartparameter)
+
+## Function start (Microsoft.DBforMySQL/flexibleServers@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2021-12-01-preview
+
+## Function stop (Microsoft.DBforMySQL/flexibleServers@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2021-12-01-preview
+
+## Function updateConfigurations (Microsoft.DBforMySQL/flexibleServers@2021-12-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2021-12-01-preview
+* **Input**: [ConfigurationListForBatchUpdate](#configurationlistforbatchupdate)
+* **Output**: [ConfigurationListResult](#configurationlistresult)
+
 ## AdministratorProperties
 ### Properties
 * **administratorType**: 'ActiveDirectory' | string: Type of the sever administrator.
@@ -78,12 +113,42 @@
 * **earliestRestoreDate**: string (ReadOnly): Earliest restore point creation time (ISO8601 format)
 * **geoRedundantBackup**: 'Disabled' | 'Enabled' | string: Whether or not geo redundant backup is enabled.
 
+## Configuration
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ConfigurationProperties](#configurationproperties): The properties of a configuration.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ConfigurationForBatchUpdate
+### Properties
+* **name**: string: Name of the configuration.
+* **properties**: [ConfigurationForBatchUpdateProperties](#configurationforbatchupdateproperties): The properties can be updated for a configuration.
+
+## ConfigurationForBatchUpdateProperties
+### Properties
+* **source**: string: Source of the configuration.
+* **value**: string: Value of the configuration.
+
+## ConfigurationListForBatchUpdate
+### Properties
+* **resetAllToDefault**: 'False' | 'True' | string: Whether to reset all server parameters to default.
+* **value**: [ConfigurationForBatchUpdate](#configurationforbatchupdate)[]: The list of server configurations.
+
+## ConfigurationListResult
+### Properties
+* **nextLink**: string: The link used to get the next page of operations.
+* **value**: [Configuration](#configuration)[]: The list of server configurations.
+
 ## ConfigurationProperties
 ### Properties
 * **allowedValues**: string (ReadOnly): Allowed values of the configuration.
+* **currentValue**: string: Current value of the configuration.
 * **dataType**: string (ReadOnly): Data type of the configuration.
 * **defaultValue**: string (ReadOnly): Default value of the configuration.
 * **description**: string (ReadOnly): Description of the configuration.
+* **documentationLink**: string (ReadOnly): The link used to get the document from community or Azure site.
 * **isConfigPendingRestart**: 'False' | 'True' | string (ReadOnly): If is the configuration pending restart or not.
 * **isDynamicConfig**: 'False' | 'True' | string (ReadOnly): If is the configuration dynamic.
 * **isReadOnly**: 'False' | 'True' | string (ReadOnly): If is the configuration read only.
@@ -102,6 +167,11 @@
 * **primaryKeyURI**: string: Primary key uri
 * **primaryUserAssignedIdentityId**: string: Primary user identity resource id
 * **type**: 'AzureKeyVault' | 'SystemManaged': The key type, AzureKeyVault for enable cmk, SystemManaged for disable cmk.
+
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
 
 ## FirewallRuleProperties
 ### Properties
@@ -132,6 +202,17 @@
 * **dayOfWeek**: int: day of week for maintenance window
 * **startHour**: int: start hour for maintenance window
 * **startMinute**: int: start minute for maintenance window
+
+## NameAvailability
+### Properties
+* **message**: string: Error Message.
+* **nameAvailable**: bool: Indicates whether the resource name is available.
+* **reason**: string: Reason for name being unavailable.
+
+## NameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **type**: string: Resource type used for verification.
 
 ## Network
 ### Properties
@@ -165,6 +246,11 @@
 * **storage**: [Storage](#storage): Storage related properties of a server.
 * **version**: '5.7' | '8.0.21' | string: Server version.
 
+## ServerRestartParameter
+### Properties
+* **maxFailoverSeconds**: int: The maximum allowed failover time in seconds.
+* **restartWithFailover**: 'Disabled' | 'Enabled' | string: Whether or not failover to standby server when restarting a server with high availability enabled.
+
 ## Sku
 ### Properties
 * **name**: string (Required): The name of the sku, e.g. Standard_D32s_v3.
@@ -175,6 +261,7 @@
 * **autoGrow**: 'Disabled' | 'Enabled' | string: Enable Storage Auto Grow or not.
 * **autoIoScaling**: 'Disabled' | 'Enabled' | string: Enable IO Auto Scaling or not.
 * **iops**: int: Storage IOPS for a server.
+* **logOnDisk**: 'Disabled' | 'Enabled' | string: Enable Log On Disk or not.
 * **storageSizeGB**: int: Max storage size allowed for a server.
 * **storageSku**: string (ReadOnly): The sku name of the server storage.
 
@@ -191,4 +278,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly): A list of delegated subnet usage
+* **location**: string (ReadOnly): The location name.
+* **subscriptionId**: string (ReadOnly): The subscription id.
 

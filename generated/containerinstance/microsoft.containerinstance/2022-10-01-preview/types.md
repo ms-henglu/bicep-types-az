@@ -13,6 +13,29 @@
 * **type**: 'Microsoft.ContainerInstance/containerGroups' (ReadOnly, DeployTimeConstant): The resource type
 * **zones**: string[]: The zones for the container group.
 
+## Function attach (Microsoft.ContainerInstance/containerGroups/containers@2022-10-01-preview)
+* **Resource**: Microsoft.ContainerInstance/containerGroups/containers
+* **ApiVersion**: 2022-10-01-preview
+* **Output**: [ContainerAttachResponse](#containerattachresponse)
+
+## Function exec (Microsoft.ContainerInstance/containerGroups/containers@2022-10-01-preview)
+* **Resource**: Microsoft.ContainerInstance/containerGroups/containers
+* **ApiVersion**: 2022-10-01-preview
+* **Input**: [ContainerExecRequest](#containerexecrequest)
+* **Output**: [ContainerExecResponse](#containerexecresponse)
+
+## Function restart (Microsoft.ContainerInstance/containerGroups@2022-10-01-preview)
+* **Resource**: Microsoft.ContainerInstance/containerGroups
+* **ApiVersion**: 2022-10-01-preview
+
+## Function start (Microsoft.ContainerInstance/containerGroups@2022-10-01-preview)
+* **Resource**: Microsoft.ContainerInstance/containerGroups
+* **ApiVersion**: 2022-10-01-preview
+
+## Function stop (Microsoft.ContainerInstance/containerGroups@2022-10-01-preview)
+* **Resource**: Microsoft.ContainerInstance/containerGroups
+* **ApiVersion**: 2022-10-01-preview
+
 ## AzureFileVolume
 ### Properties
 * **readOnly**: bool: The flag indicating whether the Azure File shared mounted as a volume is read-only.
@@ -29,9 +52,29 @@
 * **name**: string (Required): The user-provided name of the container instance.
 * **properties**: [ContainerProperties](#containerproperties) (Required): The properties of the container instance.
 
+## ContainerAttachResponse
+### Properties
+* **password**: string: The password to the output stream from the attach. Send as an Authorization header value when connecting to the websocketUri.
+* **webSocketUri**: string: The uri for the output stream from the attach.
+
 ## ContainerExec
 ### Properties
 * **command**: string[]: The commands to execute within the container.
+
+## ContainerExecRequest
+### Properties
+* **command**: string: The command to be executed.
+* **terminalSize**: [ContainerExecRequestTerminalSize](#containerexecrequestterminalsize): The size of the terminal.
+
+## ContainerExecRequestTerminalSize
+### Properties
+* **cols**: int: The column size of the terminal
+* **rows**: int: The row size of the terminal
+
+## ContainerExecResponse
+### Properties
+* **password**: string: The password to start the exec command.
+* **webSocketUri**: string: The uri for the exec websocket.
 
 ## ContainerGroupDiagnostics
 ### Properties
@@ -114,6 +157,7 @@
 * **ports**: [ContainerPort](#containerport)[]: The exposed ports on the container instance.
 * **readinessProbe**: [ContainerProbe](#containerprobe): The readiness probe.
 * **resources**: [ResourceRequirements](#resourcerequirements) (Required): The resource requirements of the container instance.
+* **securityContext**: [SecurityContextDefinition](#securitycontextdefinition): The container security properties.
 * **volumeMounts**: [VolumeMount](#volumemount)[]: The volume mounts available to the container instance.
 
 ## ContainerPropertiesInstanceView
@@ -206,6 +250,7 @@
 * **environmentVariables**: [EnvironmentVariable](#environmentvariable)[]: The environment variables to set in the init container.
 * **image**: string: The image of the init container.
 * **instanceView**: [InitContainerPropertiesDefinitionInstanceView](#initcontainerpropertiesdefinitioninstanceview) (ReadOnly): The instance view of the init container. Only valid in response.
+* **securityContext**: [SecurityContextDefinition](#securitycontextdefinition): The container security properties.
 * **volumeMounts**: [VolumeMount](#volumemount)[]: The volume mounts available to the init container.
 
 ## InitContainerPropertiesDefinitionInstanceView
@@ -268,6 +313,20 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SecurityContextCapabilitiesDefinition
+### Properties
+* **add**: string[]: The capabilities to add to the container.
+* **drop**: string[]: The capabilities to drop from the container.
+
+## SecurityContextDefinition
+### Properties
+* **allowPrivilegeEscalation**: bool: A boolean value indicating whether the init process can elevate its privileges
+* **capabilities**: [SecurityContextCapabilitiesDefinition](#securitycontextcapabilitiesdefinition): The capabilities to add or drop from a container.
+* **privileged**: bool: The flag to determine if the container permissions is elevated to Privileged.
+* **runAsGroup**: int: Sets the User GID for the container.
+* **runAsUser**: int: Sets the User UID for the container.
+* **seccompProfile**: string: a base64 encoded string containing the contents of the JSON in the seccomp profile
 
 ## UserAssignedIdentities
 ### Properties

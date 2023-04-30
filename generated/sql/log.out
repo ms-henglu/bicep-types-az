@@ -1,6 +1,6 @@
 WARNING: Unable to parse swagger path "Microsoft.Sql/stable/2014-04-01-legacy/sql.core_legacy.json"
 WARNING: Unable to parse swagger path "Microsoft.Sql/stable/2014-04-01-legacy/usages_legacy.json"
-AutoRest code generation utility [cli version: 3.6.3; node: v16.19.1]
+AutoRest code generation utility [cli version: 3.6.3; node: v16.20.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -36,6 +36,7 @@ warning | Skipping MaintenanceWindows_CreateOrUpdate due to required query param
 warning | Skipping SqlVulnerabilityAssessmentBaseline_ListBySqlVulnerabilityAssessment due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaselines_CreateOrUpdate due to required query parameter "systemDatabaseName"
+warning | Skipping SqlVulnerabilityAssessmentExecuteScan_Execute due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_ListByBaseline due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_CreateOrUpdate due to required query parameter "systemDatabaseName"
@@ -47,6 +48,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -78,6 +80,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -92,6 +95,7 @@ warning | Skipping MaintenanceWindows_CreateOrUpdate due to required query param
 warning | Skipping SqlVulnerabilityAssessmentBaseline_ListBySqlVulnerabilityAssessment due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaselines_CreateOrUpdate due to required query parameter "systemDatabaseName"
+warning | Skipping SqlVulnerabilityAssessmentExecuteScan_Execute due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_ListByBaseline due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_CreateOrUpdate due to required query parameter "systemDatabaseName"
@@ -103,6 +107,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -117,6 +122,7 @@ warning | Skipping MaintenanceWindows_CreateOrUpdate due to required query param
 warning | Skipping SqlVulnerabilityAssessmentBaseline_ListBySqlVulnerabilityAssessment due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentBaselines_CreateOrUpdate due to required query parameter "systemDatabaseName"
+warning | Skipping SqlVulnerabilityAssessmentExecuteScan_Execute due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_ListByBaseline due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_Get due to required query parameter "systemDatabaseName"
 warning | Skipping SqlVulnerabilityAssessmentRuleBaseline_CreateOrUpdate due to required query parameter "systemDatabaseName"
@@ -128,6 +134,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -143,6 +150,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -414,6 +422,7 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'RecommendedElas
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'RecommendedElasticPoolListResult' -> 'RecommendedElasticPoolListResultAutoGenerated'
 warning | Skipping Databases_ListMetrics due to required query parameter "filter"
 warning | Skipping ElasticPools_ListMetrics due to required query parameter "filter"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -427,6 +436,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -441,6 +451,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -456,6 +467,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -497,6 +509,7 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | Skipping SyncGroups_ListLogs due to required query parameter "startTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -511,6 +524,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -526,6 +540,7 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -547,4 +562,5 @@ warning | Skipping SyncGroups_ListLogs due to required query parameter "startTim
 warning | Skipping SyncGroups_ListLogs due to required query parameter "endTime"
 warning | Skipping SyncGroups_ListLogs due to required query parameter "type"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/firewallRules': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Sql/checkNameAvailability': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.

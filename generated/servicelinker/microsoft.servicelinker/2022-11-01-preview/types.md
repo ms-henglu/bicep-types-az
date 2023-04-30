@@ -40,10 +40,32 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ServiceLinker/locations/dryruns' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function generateConfigurations (Microsoft.ServiceLinker/locations/connectors@2022-11-01-preview)
+* **Resource**: Microsoft.ServiceLinker/locations/connectors
+* **ApiVersion**: 2022-11-01-preview
+* **Input**: [ConfigurationInfo](#configurationinfo)
+* **Output**: [ConfigurationResult](#configurationresult)
+
+## Function generateConfigurations (Microsoft.ServiceLinker/linkers@2022-11-01-preview)
+* **Resource**: Microsoft.ServiceLinker/linkers
+* **ApiVersion**: 2022-11-01-preview
+* **Input**: [ConfigurationInfo](#configurationinfo)
+* **Output**: [ConfigurationResult](#configurationresult)
+
 ## Function listConfigurations (Microsoft.ServiceLinker/linkers@2022-11-01-preview)
 * **Resource**: Microsoft.ServiceLinker/linkers
 * **ApiVersion**: 2022-11-01-preview
 * **Output**: [ConfigurationResult](#configurationresult)
+
+## Function validate (Microsoft.ServiceLinker/locations/connectors@2022-11-01-preview)
+* **Resource**: Microsoft.ServiceLinker/locations/connectors
+* **ApiVersion**: 2022-11-01-preview
+* **Output**: [ValidateOperationResult](#validateoperationresult)
+
+## Function validateLinker (Microsoft.ServiceLinker/linkers@2022-11-01-preview)
+* **Resource**: Microsoft.ServiceLinker/linkers
+* **ApiVersion**: 2022-11-01-preview
+* **Output**: [ValidateOperationResult](#validateoperationresult)
 
 ## AuthInfoBase
 * **Discriminator**: authType
@@ -124,6 +146,22 @@
 * **daprProperties**: [DaprProperties](#daprproperties): Indicates some additional properties for dapr client type
 * **deleteOrUpdateBehavior**: 'Default' | 'ForcedCleanup' | string: Indicates whether to clean up previous operation when Linker is updating or deleting
 
+## ConfigurationInfo
+### Properties
+* **action**: 'Internal' | 'enable' | 'optOut' | string: Optional, indicate whether to apply configurations on source application. If enable, generate configurations and applied to the source application. Default is enable. If optOut, no configuration change will be made on source.
+* **additionalConfigurations**: [ConfigurationInfoAdditionalConfigurations](#configurationinfoadditionalconfigurations): A dictionary of additional configurations to be added. Service will auto generate a set of basic configurations and this property is to full fill more customized configurations
+* **customizedKeys**: [ConfigurationInfoCustomizedKeys](#configurationinfocustomizedkeys): Optional. A dictionary of default key name and customized key name mapping. If not specified, default key name will be used for generate configurations
+* **daprProperties**: [DaprProperties](#daprproperties): Indicates some additional properties for dapr client type
+* **deleteOrUpdateBehavior**: 'Default' | 'ForcedCleanup' | string: Indicates whether to clean up previous operation when Linker is updating or deleting
+
+## ConfigurationInfo
+### Properties
+* **action**: 'Internal' | 'enable' | 'optOut' | string: Optional, indicate whether to apply configurations on source application. If enable, generate configurations and applied to the source application. Default is enable. If optOut, no configuration change will be made on source.
+* **additionalConfigurations**: [ConfigurationInfoAdditionalConfigurations](#configurationinfoadditionalconfigurations): A dictionary of additional configurations to be added. Service will auto generate a set of basic configurations and this property is to full fill more customized configurations
+* **customizedKeys**: [ConfigurationInfoCustomizedKeys](#configurationinfocustomizedkeys): Optional. A dictionary of default key name and customized key name mapping. If not specified, default key name will be used for generate configurations
+* **daprProperties**: [DaprProperties](#daprproperties): Indicates some additional properties for dapr client type
+* **deleteOrUpdateBehavior**: 'Default' | 'ForcedCleanup' | string: Indicates whether to clean up previous operation when Linker is updating or deleting
+
 ## ConfigurationInfoAdditionalConfigurations
 ### Properties
 ### Additional Properties
@@ -133,6 +171,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ConfigurationResult
+### Properties
+* **configurations**: [SourceConfiguration](#sourceconfiguration)[]: The configuration properties for source resource.
+
+## ConfigurationResult
+### Properties
+* **configurations**: [SourceConfiguration](#sourceconfiguration)[]: The configuration properties for source resource.
 
 ## ConfigurationResult
 ### Properties
@@ -296,6 +342,37 @@
 * **endpoint**: string: The endpoint of service.
 * **type**: 'SelfHostedServer' (Required): The target service type.
 
+
+## ValidateOperationResult
+### Properties
+* **properties**: [ValidateResult](#validateresult): The validation result detail.
+* **resourceId**: string: Validated Linker id.
+* **status**: string: Validation operation status.
+
+## ValidateOperationResult
+### Properties
+* **properties**: [ValidateResult](#validateresult): The validation result detail.
+* **resourceId**: string: Validated Linker id.
+* **status**: string: Validation operation status.
+
+## ValidateResult
+### Properties
+* **authType**: 'accessKey' | 'secret' | 'servicePrincipalCertificate' | 'servicePrincipalSecret' | 'systemAssignedIdentity' | 'userAccount' | 'userAssignedIdentity' | string: The authentication type.
+* **isConnectionAvailable**: bool: A boolean value indicating whether the connection is available or not
+* **linkerName**: string: The linker name.
+* **reportEndTimeUtc**: string: The end time of the validation report.
+* **reportStartTimeUtc**: string: The start time of the validation report.
+* **sourceId**: string: The resource id of the Linker source application.
+* **targetId**: string: The resource Id of target service.
+* **validationDetail**: [ValidationResultItem](#validationresultitem)[]: The detail of validation result
+
+## ValidationResultItem
+### Properties
+* **description**: string: The display name of validation item
+* **errorCode**: string: The error code of validation result
+* **errorMessage**: string: The error message of validation result
+* **name**: string: The validation item name.
+* **result**: 'failure' | 'success' | 'warning' | string: The result of validation
 
 ## VNetSolution
 ### Properties
