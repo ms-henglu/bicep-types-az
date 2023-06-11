@@ -12,6 +12,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.HybridCompute/machines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reconnect (Microsoft.HybridCompute/machines@2019-03-18-preview)
+* **Resource**: Microsoft.HybridCompute/machines
+* **ApiVersion**: 2019-03-18-preview
+* **Input**: [MachineReconnect](#machinereconnect)
+* **Output**: [Machine](#machine)
+
 ## ErrorDetail
 ### Properties
 * **code**: string (Required): The error's code.
@@ -24,6 +30,16 @@
 * **principalId**: string (ReadOnly): The identity's principal id.
 * **tenantId**: string (ReadOnly): The identity's tenant id.
 * **type**: string: The identity type.
+
+## Machine
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **identity**: [Identity](#identity): Hybrid Compute Machine Managed Identity
+* **location**: string (Required): Resource location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [MachineProperties](#machineproperties): Hybrid Compute Machine properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string (ReadOnly): Resource type
 
 ## MachineProperties
 ### Properties
@@ -41,9 +57,23 @@
 * **status**: 'Connected' | 'Disconnected' | 'Error' (ReadOnly): The status of the hybrid machine agent.
 * **vmId**: string (ReadOnly): Specifies the hybrid machine unique ID.
 
+## MachineReconnect
+### Properties
+* **properties**: [MachineReconnectProperties](#machinereconnectproperties): Hybrid Compute Machine properties
+
+## MachineReconnectProperties
+### Properties
+* **clientPublicKey**: string: Public Key that the client provides to be used during initial resource onboarding.
+* **vmId**: string: Specifies the hybrid machine unique ID.
+
 ## OSProfile
 ### Properties
 * **computerName**: string (ReadOnly): Specifies the host OS name of the hybrid machine.
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties

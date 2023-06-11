@@ -68,6 +68,41 @@
 * **tags**: [WorkloadInstanceModelTags](#workloadinstancemodeltags): Gets or sets the resource tags.
 * **type**: 'Microsoft.Migrate/modernizeProjects/workloadInstances' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function buildContainerImage (Microsoft.Migrate/modernizeProjects/workloadDeployments@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadDeployments
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [BuildContainerImageModel](#buildcontainerimagemodel)
+
+## Function completeMigration (Microsoft.Migrate/modernizeProjects/workloadInstances@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadInstances
+* **ApiVersion**: 2022-05-01-preview
+
+## Function disableReplication (Microsoft.Migrate/modernizeProjects/workloadInstances@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadInstances
+* **ApiVersion**: 2022-05-01-preview
+
+## Function getSecrets (Microsoft.Migrate/modernizeProjects/workloadDeployments@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadDeployments
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [WorkloadDeploymentModel](#workloaddeploymentmodel)
+
+## Function migrate (Microsoft.Migrate/modernizeProjects/workloadDeployments@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadDeployments
+* **ApiVersion**: 2022-05-01-preview
+
+## Function refresh (Microsoft.Migrate/modernizeProjects/migrateAgents@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/migrateAgents
+* **ApiVersion**: 2022-05-01-preview
+
+## Function testMigrate (Microsoft.Migrate/modernizeProjects/workloadDeployments@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadDeployments
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [TestMigrateModel](#testmigratemodel)
+
+## Function testMigrateCleanup (Microsoft.Migrate/modernizeProjects/workloadDeployments@2022-05-01-preview)
+* **Resource**: Microsoft.Migrate/modernizeProjects/workloadDeployments
+* **ApiVersion**: 2022-05-01-preview
+
 ## ACRProperties
 ### Properties
 * **registryName**: string: Gets or sets the azure container registry name.
@@ -160,6 +195,10 @@ the container file system.
 * **port**: string: Gets or sets the application port.
 * **portMapping**: [PortMapping](#portmapping): WebApplication port mapping.
 * **protocol**: string: Gets or sets the protocol.
+
+## BuildContainerImageModel
+### Properties
+* **properties**: [ContainerImageProperties](#containerimageproperties): Class for container image properties.
 
 ## BuildContainerImageWorkflowModelCustomPropertiesContainerImageProperties
 ### Properties
@@ -572,6 +611,14 @@ PersistentVolume.
 ### Properties
 * **instanceType**: string: Gets or sets the instance type.
 
+## TestMigrateModel
+### Properties
+* **properties**: [TestMigrateModelProperties](#testmigratemodelproperties): Test migrate model properties.
+
+## TestMigrateModelProperties
+### Properties
+* **customProperties**: [WorkloadDeploymentModelCustomProperties](#workloaddeploymentmodelcustomproperties): Workload deployment model custom properties.
+
 ## TestMigrateWorkflowModelCustomPropertiesDeployedResourcesProperties
 ### Properties
 * **context**: string (ReadOnly): Gets or sets the context of deployed resources.
@@ -691,6 +738,15 @@ managedIdentity.
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## WorkloadDeploymentModel
+### Properties
+* **id**: string (ReadOnly): Gets or sets the Id of the resource.
+* **name**: string (ReadOnly): Gets or sets the name of the resource.
+* **properties**: [WorkloadDeploymentModelProperties](#workloaddeploymentmodelproperties): Workload deployment model properties.
+* **systemData**: [WorkloadDeploymentModelSystemData](#workloaddeploymentmodelsystemdata) (ReadOnly)
+* **tags**: [WorkloadDeploymentModelTags](#workloaddeploymentmodeltags): Gets or sets the resource tags.
+* **type**: string (ReadOnly): Gets or sets the type of the resource.
+
 ## WorkloadDeploymentModelCustomProperties
 * **Discriminator**: instanceType
 
@@ -747,6 +803,11 @@ managedIdentity.
 * **lastModifiedBy**: string: Gets or sets the identity that last modified the resource.
 * **lastModifiedByType**: string: Gets or sets the type of identity that last modified the resource: user, application,
 managedIdentity.
+
+## WorkloadDeploymentModelTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## WorkloadDeploymentModelTags
 ### Properties

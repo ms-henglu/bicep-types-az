@@ -55,6 +55,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/galleries/images/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function share (Microsoft.Compute/galleries@2022-03-03)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2022-03-03
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
 ## CommunityGalleryInfo
 ### Properties
 * **communityGalleryEnabled**: bool (ReadOnly): Contains info about whether community gallery sharing is enabled.
@@ -123,7 +129,7 @@
 * **replicationMode**: 'Full' | 'Shallow' | string: Optional parameter which specifies the mode to be used for replication. This property is not updatable.
 * **settings**: [UserArtifactSettings](#userartifactsettings): Additional settings for the VM app that contains the target package and config file name when it is deployed to target VM or VM scale set.
 * **source**: [UserArtifactSource](#userartifactsource) (Required): The source image from which the Image Version is going to be created.
-* **storageAccountType**: 'Premium_LRS' | 'StandardSSD_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
 * **targetExtendedLocations**: [GalleryTargetExtendedLocation](#gallerytargetextendedlocation)[]: The target extended locations where the Image Version is going to be replicated to. This property is updatable.
 * **targetRegions**: [TargetRegion](#targetregion)[]: The target regions where the Image Version is going to be replicated to. This property is updatable.
 
@@ -207,7 +213,7 @@
 * **publishedDate**: string (ReadOnly): The timestamp for when the gallery image version is published.
 * **replicaCount**: int: The number of replicas of the Image Version to be created per region. This property would take effect for a region when regionalReplicaCount is not specified. This property is updatable.
 * **replicationMode**: 'Full' | 'Shallow' | string: Optional parameter which specifies the mode to be used for replication. This property is not updatable.
-* **storageAccountType**: 'Premium_LRS' | 'StandardSSD_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
 * **targetExtendedLocations**: [GalleryTargetExtendedLocation](#gallerytargetextendedlocation)[]: The target extended locations where the Image Version is going to be replicated to. This property is updatable.
 * **targetRegions**: [TargetRegion](#targetregion)[]: The target regions where the Image Version is going to be replicated to. This property is updatable.
 
@@ -336,6 +342,16 @@
 * **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Aggregated sharing state of current gallery.
 * **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
 
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**
+
 ## SoftDeletePolicy
 ### Properties
 * **isSoftDeleteEnabled**: bool: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
@@ -346,7 +362,7 @@
 * **excludeFromLatest**: bool: Contains the flag setting to hide an image when users specify version='latest'
 * **name**: string (Required): The name of the region.
 * **regionalReplicaCount**: int: The number of replicas of the Image Version to be created per region. This property is updatable.
-* **storageAccountType**: 'Premium_LRS' | 'StandardSSD_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
+* **storageAccountType**: 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to store the image. This property is not updatable.
 
 ## UserArtifactManage
 ### Properties

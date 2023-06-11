@@ -12,12 +12,17 @@
 * **tags**: [DeploymentStackTags](#deploymentstacktags): Deployment stack resource tags.
 * **type**: 'Microsoft.Resources/deploymentStacks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function exportTemplate (Microsoft.Resources/deploymentStacks@2022-08-01-preview)
+* **Resource**: Microsoft.Resources/deploymentStacks
+* **ApiVersion**: 2022-08-01-preview
+* **Output**: [DeploymentStackTemplateDefinition](#deploymentstacktemplatedefinition)
+
 ## DenySettings
 ### Properties
 * **applyToChildScopes**: bool: DenySettings will be applied to child scopes.
 * **excludedActions**: string[]: List of role-based management operations that are excluded from the denySettings. Up to 200 actions are permitted. If the denySetting mode is set to 'denyWriteAndDelete', then the following actions are automatically appended to 'excludedActions': '*/read' and 'Microsoft.Authorization/locks/delete'. If the denySetting mode is set to 'denyDelete', then the following actions are automatically appended to 'excludedActions': 'Microsoft.Authorization/locks/delete'. Duplicate actions will be removed.
 * **excludedPrincipals**: string[]: List of AAD principal IDs excluded from the lock. Up to 5 principals are permitted.
-* **mode**: 'denyDelete' | 'denyWriteAndDelete' | 'none' | string: denySettings Mode.
+* **mode**: 'denyDelete' | 'denyWriteAndDelete' | 'none' | string (Required): denySettings Mode.
 
 ## DeploymentStackProperties
 ### Properties
@@ -67,6 +72,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## DeploymentStackTemplateDefinition
+### Properties
+* **template**: any: The template content. Use this element to pass the template syntax directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string. Use either the templateLink property or the template property, but not both.
+* **templateLink**: [DeploymentStacksTemplateLink](#deploymentstackstemplatelink): The URI of the template. Use either the templateLink property or the template property, but not both.
 
 ## ErrorAdditionalInfo
 ### Properties

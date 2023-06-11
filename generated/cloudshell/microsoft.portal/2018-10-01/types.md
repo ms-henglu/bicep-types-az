@@ -36,6 +36,14 @@
 * **properties**: [UserProperties](#userproperties) (Required): The cloud shell user settings properties.
 * **type**: 'Microsoft.Portal/userSettings' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function keepAlive (Microsoft.Portal/locations/consoles@2018-10-01)
+* **Resource**: Microsoft.Portal/locations/consoles
+* **ApiVersion**: 2018-10-01
+
+## Function keepAlive (Microsoft.Portal/consoles@2018-10-01)
+* **Resource**: Microsoft.Portal/consoles
+* **ApiVersion**: 2018-10-01
+
 ## ConsoleCreatePropertiesOrConsoleProperties
 ### Properties
 * **osType**: 'Linux' | 'Windows' | string (Required): The operating system type of the cloud shell.

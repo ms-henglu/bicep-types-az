@@ -11,10 +11,20 @@
 * **tags**: [ResourceTags](#resourcetags): Contains resource tags defined as key/value pairs.
 * **type**: 'Microsoft.MachineLearningCompute/operationalizationClusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkSystemServicesUpdatesAvailable (Microsoft.MachineLearningCompute/operationalizationClusters@2017-08-01-preview)
+* **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
+* **ApiVersion**: 2017-08-01-preview
+* **Output**: [CheckSystemServicesUpdatesAvailableResponse](#checksystemservicesupdatesavailableresponse)
+
 ## Function listKeys (Microsoft.MachineLearningCompute/operationalizationClusters@2017-08-01-preview)
 * **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
 * **ApiVersion**: 2017-08-01-preview
 * **Output**: [OperationalizationClusterCredentials](#operationalizationclustercredentials)
+
+## Function updateSystemServices (Microsoft.MachineLearningCompute/operationalizationClusters@2017-08-01-preview)
+* **Resource**: Microsoft.MachineLearningCompute/operationalizationClusters
+* **ApiVersion**: 2017-08-01-preview
+* **Output**: [UpdateSystemServicesResponse](#updatesystemservicesresponse)
 
 ## AcsClusterProperties
 ### Properties
@@ -42,6 +52,10 @@
 * **refreshPeriodInSeconds**: int: Refresh period in seconds.
 * **status**: 'Disabled' | 'Enabled' | string: If auto-scale is enabled for all services. Each service can turn it off individually.
 * **targetUtilization**: int: The target utilization.
+
+## CheckSystemServicesUpdatesAvailableResponse
+### Properties
+* **updatesAvailable**: 'No' | 'Yes' | string (ReadOnly): Yes if updates are available for the system services, No if not.
 
 ## ContainerRegistryCredentials
 ### Properties
@@ -148,4 +162,10 @@
 * **publicIpAddress**: string (ReadOnly): The public IP address of the system service
 * **systemServiceType**: 'BatchFrontEnd' | 'None' | 'ScoringFrontEnd' | string (Required): The system service type
 * **version**: string (ReadOnly): The state of the system service
+
+## UpdateSystemServicesResponse
+### Properties
+* **updateCompletedOn**: string (ReadOnly): The date and time when the last system services update completed.
+* **updateStartedOn**: string (ReadOnly): The date and time when the last system services update was started.
+* **updateStatus**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | 'Updating' | string (ReadOnly): Update status
 

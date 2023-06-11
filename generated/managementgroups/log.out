@@ -59,6 +59,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2021-04-01/management.json:1914:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-10-01/management.json:896:5
@@ -117,6 +121,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-10-01/management.json:1885:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-05-01/management.json:890:5
@@ -175,6 +183,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-05-01/management.json:1871:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-02-01/management.json:803:5
@@ -229,6 +241,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2020-02-01/management.json:1750:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2019-11-01/management.json:614:5
@@ -275,6 +291,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/stable/2019-11-01/management.json:1418:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-03-01-preview/management.json:594:5
@@ -319,6 +339,10 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-03-01-preview/management.json:1383:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/startTenantBackfill': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/tenantBackfillStatus': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview/management.json:465:5
@@ -355,6 +379,8 @@ warning | PreCheck/SchemaMissingType | The schema 'CreateManagementGroupChildInf
 warning | PreCheck/SchemaMissingType | The schema 'CreateParentGroupInfo' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview/management.json:1088:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.Management/checkNameAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/getEntities': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'ErrorResponse' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/managementgroups/resource-manager/Microsoft.Management/preview/2017-11-01-preview/management.json:370:5

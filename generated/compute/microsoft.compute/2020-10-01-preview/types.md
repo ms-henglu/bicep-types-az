@@ -19,6 +19,46 @@
 * **name**: int (Required, DeployTimeConstant): The resource name
 * **type**: 'Microsoft.Compute/cloudServices/updateDomains' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function delete (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function poweroff (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+
+## Function rebuild (Microsoft.Compute/cloudServices/roleInstances@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2020-10-01-preview
+
+## Function rebuild (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function reimage (Microsoft.Compute/cloudServices/roleInstances@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2020-10-01-preview
+
+## Function reimage (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function restart (Microsoft.Compute/cloudServices/roleInstances@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2020-10-01-preview
+
+## Function restart (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function start (Microsoft.Compute/cloudServices@2020-10-01-preview)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2020-10-01-preview
+
 ## CloudServiceExtensionProfile
 ### Properties
 * **extensions**: [Extension](#extension)[]: List of extensions for the cloud service.
@@ -126,6 +166,22 @@ If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain 
 * **privateIPAddress**: string: The private IP address referenced by the cloud service.
 * **publicIPAddress**: [SubResource](#subresource)
 * **subnet**: [SubResource](#subresource)
+
+## RoleInstances
+### Properties
+* **roleInstances**: string[] (Required): List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
+
+## RoleInstances
+### Properties
+* **roleInstances**: string[] (Required): List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
+
+## RoleInstances
+### Properties
+* **roleInstances**: string[] (Required): List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
+
+## RoleInstances
+### Properties
+* **roleInstances**: string[] (Required): List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
 
 ## SubResource
 ### Properties
