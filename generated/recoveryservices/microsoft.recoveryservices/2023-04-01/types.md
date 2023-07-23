@@ -49,9 +49,45 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/operationResults' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function capabilities (Microsoft.RecoveryServices/locations@2023-04-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2023-04-01
+* **Input**: [ResourceCapabilities](#resourcecapabilities)
+* **Output**: [CapabilitiesResponse](#capabilitiesresponse)
+
+## Function checkNameAvailability (Microsoft.RecoveryServices/locations@2023-04-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2023-04-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
 ## AzureMonitorAlertSettings
 ### Properties
 * **alertsForAllJobFailures**: 'Disabled' | 'Enabled' | string
+
+## CapabilitiesProperties
+### Properties
+* **dnsZones**: [DNSZone](#dnszone)[]
+
+## CapabilitiesResponse
+### Properties
+* **properties**: [CapabilitiesResponseProperties](#capabilitiesresponseproperties): Capabilities properties in response
+* **type**: string (Required): Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CapabilitiesResponseProperties
+### Properties
+* **dnsZones**: [DNSZoneResponse](#dnszoneresponse)[]
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string: Resource name for which availability needs to be checked
+* **type**: string: Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string
+* **nameAvailable**: bool
+* **reason**: string
 
 ## ClassicAlertSettings
 ### Properties
@@ -69,6 +105,15 @@
 ## CrossSubscriptionRestoreSettings
 ### Properties
 * **crossSubscriptionRestoreState**: 'Disabled' | 'Enabled' | 'PermanentlyDisabled' | string
+
+## DNSZone
+### Properties
+* **subResource**: 'AzureBackup' | 'AzureBackup_secondary' | 'AzureSiteRecovery' | string: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery
+
+## DNSZoneResponse
+### Properties
+* **requiredZoneNames**: string[]: The private link resource Private link DNS zone names.
+* **subResource**: 'AzureBackup' | 'AzureBackup_secondary' | 'AzureSiteRecovery' | string: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery
 
 ## IdentityData
 ### Properties
@@ -121,6 +166,11 @@
 * **authType**: 'AAD' | 'ACS' | 'AccessControlService' | 'AzureActiveDirectory' | 'Invalid' | string: Specifies the authentication type.
 * **certificate**: any: The base64 encoded certificate raw data string
 
+## ResourceCapabilities
+### Properties
+* **properties**: [CapabilitiesProperties](#capabilitiesproperties): Capabilities information
+* **type**: string (Required): Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
 ## RestoreSettings
 ### Properties
 * **crossSubscriptionRestoreSettings**: [CrossSubscriptionRestoreSettings](#crosssubscriptionrestoresettings): Settings for CrossSubscriptionRestore
@@ -128,6 +178,8 @@
 ## SecuritySettings
 ### Properties
 * **immutabilitySettings**: [ImmutabilitySettings](#immutabilitysettings): Immutability Settings of a vault
+* **multiUserAuthorization**: 'Disabled' | 'Enabled' | 'Invalid' | string (ReadOnly): MUA Settings of a vault
+* **softDeleteSettings**: [SoftDeleteSettings](#softdeletesettings): Soft delete Settings of a vault
 
 ## Sku
 ### Properties
@@ -136,6 +188,11 @@
 * **name**: 'RS0' | 'Standard' | string (Required): Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig
 * **size**: string: The sku size
 * **tier**: string: The Sku tier.
+
+## SoftDeleteSettings
+### Properties
+* **softDeleteRetentionPeriodInDays**: int: Soft delete retention period in days
+* **softDeleteState**: 'AlwaysON' | 'Disabled' | 'Enabled' | 'Invalid' | string
 
 ## SystemData
 ### Properties

@@ -43,12 +43,89 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.Cdn/profiles/endpoints/origins' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkResourceUsage (Microsoft.Cdn/profiles@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2017-10-12
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function disableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2017-10-12
+
+## Function enableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2017-10-12
+* **Input**: [CustomDomainHttpsParameters](#customdomainhttpsparameters)
+
+## Function generateSsoUri (Microsoft.Cdn/profiles@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2017-10-12
+* **Output**: [SsoUri](#ssouri)
+
+## Function getSupportedOptimizationTypes (Microsoft.Cdn/profiles@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2017-10-12
+* **Output**: [SupportedOptimizationTypesListResult](#supportedoptimizationtypeslistresult)
+
+## Function load (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Input**: [LoadParameters](#loadparameters)
+
+## Function purge (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function start (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Output**: [Endpoint](#endpoint)
+
+## Function stop (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Output**: [Endpoint](#endpoint)
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/endpoints@2017-10-12)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2017-10-12
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## CacheExpirationActionParameters
 ### Properties
 * **@odata.type**: 'Microsoft.Azure.Cdn.Models.DeliveryRuleCacheExpirationActionParameters' | string (Required)
 * **cacheBehavior**: 'BypassCache' | 'Override' | 'SetIfMissing' | string (Required): Caching behavior for the requests that include query strings.
 * **cacheDuration**: string: The duration for which the content needs to be cached. Allowed format is [d.]hh:mm:ss
 * **cacheType**: 'All' | string (Required): The level at which the content needs to be cached.
+
+## CdnCertificateSourceParameters
+### Properties
+* **@odata.type**: '#Microsoft.Azure.Cdn.Models.CdnCertificateSourceParameters' | string (Required)
+* **certificateType**: 'Dedicated' | 'Shared' | string (Required): Type of certificate used
+
+## CustomDomainHttpsParameters
+* **Discriminator**: certificateSource
+
+### Base Properties
+* **protocolType**: 'IPBased' | 'ServerNameIndication' | string (Required): Defines the TLS extension protocol that is used for secure delivery.
+
+### UserManagedHttpsParameters
+#### Properties
+* **certificateSource**: 'AzureKeyVault' (Required): Defines the source of the SSL certificate.
+* **certificateSourceParameters**: [KeyVaultCertificateSourceParameters](#keyvaultcertificatesourceparameters) (Required): Defines the certificate source parameters using user's keyvault certificate for enabling SSL.
+
+### CdnManagedHttpsParameters
+#### Properties
+* **certificateSource**: 'Cdn' (Required): Defines the source of the SSL certificate.
+* **certificateSourceParameters**: [CdnCertificateSourceParameters](#cdncertificatesourceparameters) (Required): Defines the certificate source parameters using CDN managed certificate for enabling SSL.
+
 
 ## CustomDomainPropertiesParametersOrCustomDomainProperties
 ### Properties
@@ -103,6 +180,24 @@
 * **parameters**: [UrlPathConditionParameters](#urlpathconditionparameters) (Required): Defines the parameters for the condition.
 
 
+## Endpoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## Endpoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
 ## EndpointProperties
 ### Properties
 * **contentTypesToCompress**: string[]: List of content types on which compression applies. The value should be a valid MIME type.
@@ -132,6 +227,21 @@
 * **countryCodes**: string[] (Required): Two letter country codes defining user country access in a geo filter, e.g. AU, MX, US.
 * **relativePath**: string (Required): Relative path applicable to geo filter. (e.g. '/mypictures', '/mypicture/kitty.jpg', and etc.)
 
+## KeyVaultCertificateSourceParameters
+### Properties
+* **@odata.type**: '#Microsoft.Azure.Cdn.Models.KeyVaultCertificateSourceParameters' | string (Required)
+* **deleteRule**: 'NoAction' | string (Required): Describes the action that shall be taken when the certificate is removed from Key Vault.
+* **resourceGroupName**: string (Required): Resource group of the user's Key Vault containing the SSL certificate
+* **secretName**: string (Required): The name of Key Vault Secret (representing the full certificate PFX) in Key Vault.
+* **secretVersion**: string (Required): The version(GUID) of Key Vault Secret in Key Vault.
+* **subscriptionId**: string (Required): Subscription Id of the user's Key Vault containing the SSL certificate
+* **updateRule**: 'NoAction' | string (Required): Describes the action that shall be taken when the certificate is updated in Key Vault.
+* **vaultName**: string (Required): The name of the user's Key Vault containing the SSL certificate
+
+## LoadParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be loaded. Path should be a relative file URL of the origin.
+
 ## OriginProperties
 ### Properties
 * **hostName**: string (Required): The address of the origin. Domain names, IPv4 addresses, and IPv6 addresses are supported.
@@ -145,9 +255,43 @@
 * **provisioningState**: string (ReadOnly): Provisioning status of the profile.
 * **resourceState**: 'Active' | 'Creating' | 'Deleting' | 'Disabled' | string (ReadOnly): Resource status of the profile.
 
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+
+## ResourceUsage
+### Properties
+* **currentValue**: int (ReadOnly): Actual value of usage on the specified resource type.
+* **limit**: int (ReadOnly): Quota of the specified resource type.
+* **resourceType**: string (ReadOnly): Resource type for which the usage is provided.
+* **unit**: string (ReadOnly): Unit of the usage. e.g. Count.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[] (ReadOnly): List of resource usages.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[] (ReadOnly): List of resource usages.
+
 ## Sku
 ### Properties
 * **name**: 'Custom_Verizon' | 'Premium_ChinaCdn' | 'Premium_Verizon' | 'Standard_Akamai' | 'Standard_ChinaCdn' | 'Standard_Microsoft' | 'Standard_Verizon' | string: Name of the pricing tier.
+
+## SsoUri
+### Properties
+* **ssoUriValue**: string (ReadOnly): The URI used to login to the supplemental portal.
+
+## SupportedOptimizationTypesListResult
+### Properties
+* **supportedOptimizationTypes**: 'DynamicSiteAcceleration' | 'GeneralMediaStreaming' | 'GeneralWebDelivery' | 'LargeFileDownload' | 'VideoOnDemandMediaStreaming' | string[] (ReadOnly): Supported optimization types for a profile.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties
@@ -174,4 +318,14 @@
 * **@odata.type**: 'Microsoft.Azure.Cdn.Models.DeliveryRuleUrlPathConditionParameters' | string (Required)
 * **matchType**: 'Literal' | 'Wildcard' | string (Required): The match type for the condition of the delivery rule
 * **path**: string (Required): A URL path for the condition of the delivery rule
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
 

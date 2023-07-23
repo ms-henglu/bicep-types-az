@@ -34,6 +34,10 @@
 * **ApiVersion**: 2018-03-01-preview
 * **Output**: [ComputeSecrets](#computesecrets)
 
+## Function resyncKeys (Microsoft.MachineLearningServices/workspaces@2018-03-01-preview)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2018-03-01-preview
+
 ## AKSProperties
 ### Properties
 * **agentCount**: int: Number of agents

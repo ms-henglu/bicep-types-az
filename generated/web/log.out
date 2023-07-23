@@ -1,4 +1,4 @@
-AutoRest code generation utility [cli version: 3.6.3; node: v16.20.0]
+AutoRest code generation utility [cli version: 3.6.3; node: v16.20.1]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -969,6 +969,7 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -1456,6 +1457,8 @@ warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and 
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/transferOut': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -1968,6 +1971,9 @@ warning | Modeler/MissingType | The schema 'Expression-value' has no type or for
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2022-09-01/WebApps.json#/components/schemas/Expression-value
 warning | Modeler/MissingType | The schema 'OperationResultProperties-error' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2022-09-01/WebApps.json#/components/schemas/OperationResultProperties-error
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -1989,11 +1995,26 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -2504,6 +2525,7 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -2991,6 +3013,8 @@ warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and 
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/transferOut': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -3503,6 +3527,9 @@ warning | Modeler/MissingType | The schema 'Expression-value' has no type or for
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2022-03-01/WebApps.json#/components/schemas/Expression-value
 warning | Modeler/MissingType | The schema 'OperationResultProperties-error' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2022-03-01/WebApps.json#/components/schemas/OperationResultProperties-error
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -3524,11 +3551,24 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -4038,6 +4078,7 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -4525,6 +4566,8 @@ warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and 
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/transferOut': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -5031,6 +5074,9 @@ warning | PreCheck/BinarySchema | 'The schema paths·43fep2·subscriptions-subsc
 warning | PreCheck/BinarySchema | 'The schema paths·tix4l6·subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsoft-web-sites-name-slots-slot-publishxml·post·responses·200·content·application-xml·schema with 'type: file', format: undefined' will be treated as a binary blob for binary media types.
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2021-03-01/WebApps.json:17385:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -5052,7 +5098,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -5546,6 +5604,7 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -6032,6 +6091,8 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -6538,6 +6599,9 @@ warning | PreCheck/BinarySchema | 'The schema paths·43fep2·subscriptions-subsc
 warning | PreCheck/BinarySchema | 'The schema paths·tix4l6·subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsoft-web-sites-name-slots-slot-publishxml·post·responses·200·content·application-xml·schema with 'type: file', format: undefined' will be treated as a binary blob for binary media types.
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2021-02-01/WebApps.json:17217:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -6559,7 +6623,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -7053,6 +7129,7 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -7539,6 +7616,8 @@ warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -8045,6 +8124,9 @@ warning | PreCheck/BinarySchema | 'The schema paths·43fep2·subscriptions-subsc
 warning | PreCheck/BinarySchema | 'The schema paths·tix4l6·subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsoft-web-sites-name-slots-slot-publishxml·post·responses·200·content·application-xml·schema with 'type: file', format: undefined' will be treated as a binary blob for binary media types.
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2021-01-15/WebApps.json:17217:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -8066,7 +8148,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -8576,6 +8670,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DetectorResponse-properties' 
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -9073,6 +9168,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -9779,6 +9876,9 @@ warning | PreCheck/SchemaMissingType | The schema 'KubeEnvironment-properties' w
 warning | PreCheck/SchemaMissingType | The schema 'KubeEnvironmentPatchResource-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2021-01-01/KubeEnvironments.json:518:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -9802,7 +9902,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -10312,6 +10424,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DetectorResponse-properties' 
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -10809,6 +10922,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -11511,6 +11626,9 @@ warning | PreCheck/SchemaMissingType | The schema 'HybridConnectionLimits-proper
 warning | PreCheck/SchemaMissingType | The schema 'ResourceHealthMetadata-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2020-12-01/ResourceHealthMetadata.json:320:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -11534,7 +11652,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -12043,6 +12173,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -12539,6 +12670,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -13291,6 +13424,9 @@ warning | PreCheck/SchemaMissingType | The schema 'HybridConnectionLimits-proper
 warning | PreCheck/SchemaMissingType | The schema 'ResourceHealthMetadata-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2020-10-01/ResourceHealthMetadata.json:320:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -13313,7 +13449,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -13821,6 +13969,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -14317,6 +14466,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -15065,6 +15216,9 @@ warning | PreCheck/SchemaMissingType | The schema 'HybridConnectionLimits-proper
 warning | PreCheck/SchemaMissingType | The schema 'ResourceHealthMetadata-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2020-09-01/ResourceHealthMetadata.json:320:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -15087,7 +15241,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -15595,6 +15761,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -16091,6 +16258,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -16839,6 +17008,9 @@ warning | PreCheck/SchemaMissingType | The schema 'HybridConnectionLimits-proper
 warning | PreCheck/SchemaMissingType | The schema 'ResourceHealthMetadata-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2020-06-01/ResourceHealthMetadata.json:320:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -16861,7 +17033,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -17369,6 +17553,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -17865,6 +18050,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -18549,6 +18736,9 @@ warning | PreCheck/SchemaMissingType | The schema 'HybridConnectionLimits-proper
 warning | PreCheck/SchemaMissingType | The schema 'ResourceHealthMetadata-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2019-08-01/ResourceHealthMetadata.json:320:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -18570,7 +18760,19 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -19078,6 +19280,7 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -19574,6 +19777,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DefaultErrorResponse-error-de
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -20195,6 +20400,12 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -20863,6 +21074,9 @@ warning | PreCheck/SchemaMissingType | The schema 'Certificate-properties' with 
 warning | PreCheck/SchemaMissingType | The schema 'CertificatePatchResource-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2018-02-01/Certificates.json:463:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Recommendations_DisableAllForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_ResetAllFiltersForHostingEnvironment due to required query parameter "environmentName"
+warning | Skipping Recommendations_DisableRecommendationForHostingEnvironment due to required query parameter "environmentName"
 warning | Skipping WebApps_MigrateStorage due to required query parameter "subscriptionName"
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}': Parameter reference {keyType} is not defined as an enum
@@ -20883,7 +21097,20 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validateContainerSettings': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
@@ -21390,6 +21617,7 @@ warning | PreCheck/SchemaMissingType | The schema 'RenewCertificateOrderRequest-
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -21887,6 +22115,8 @@ warning | PreCheck/SchemaMissingType | The schema 'TopLevelDomain-properties' wi
 warning | PreCheck/SchemaMissingType | The schema 'ProxyOnlyResource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/SchemaMissingType | The schema 'Resource' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -22439,7 +22669,13 @@ warning | PreCheck/SchemaMissingType | The schema 'VnetValidationFailureDetails-
 warning | PreCheck/SchemaMissingType | The schema 'VnetValidationTestFailure-properties' with an undefined type and declared properties is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2016-03-01/ResourceProvider.json:1117:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/recommendations/reset': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/listSitesAssignedToHostName': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/verifyHostingEnvironmentVnet': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate': Unable to find type segments
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -23051,6 +23287,10 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log': Found mismatch between type segments (5) and name segments (4)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start': Found mismatch between type segments (3) and name segments (2)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop': Found mismatch between type segments (3) and name segments (2)
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
 warning | Unrecognized property type: byte-array. Returning 'any'.
@@ -24070,6 +24310,7 @@ warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -24665,7 +24906,34 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/metricdefinitions': Found mismatch between type segments (2) and name segments (1)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection': Found mismatch between type segments (3) and name segments (2)
 warning | Skipping path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection': Found mismatch between type segments (2) and name segments (1)
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Web/checknameavailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/generateSsoRequest': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/validateDomainRegistrationInformation': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/checkDomainAvailability': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.DomainRegistration/listDomainRecommendations': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.

@@ -22,6 +22,12 @@
 * **properties**: [TransactionNodeProperties](#transactionnodeproperties): Gets or sets the blockchain member properties.
 * **type**: 'Microsoft.Blockchain/blockchainMembers/transactionNodes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Blockchain/locations@2018-06-01-preview)
+* **Resource**: Microsoft.Blockchain/locations
+* **ApiVersion**: 2018-06-01-preview
+* **Input**: [NameAvailabilityRequest](#nameavailabilityrequest)
+* **Output**: [NameAvailability](#nameavailability)
+
 ## Function listApiKeys (Microsoft.Blockchain/blockchainMembers@2018-06-01-preview)
 * **Resource**: Microsoft.Blockchain/blockchainMembers
 * **ApiVersion**: 2018-06-01-preview
@@ -37,10 +43,40 @@
 * **ApiVersion**: 2018-06-01-preview
 * **Output**: [ConsortiumCollection](#consortiumcollection)
 
+## Function regenerateApiKeys (Microsoft.Blockchain/blockchainMembers@2018-06-01-preview)
+* **Resource**: Microsoft.Blockchain/blockchainMembers
+* **ApiVersion**: 2018-06-01-preview
+* **Input**: [ApiKey](#apikey)
+* **Output**: [ApiKeyCollection](#apikeycollection)
+
+## Function regenerateApiKeys (Microsoft.Blockchain/blockchainMembers/transactionNodes@2018-06-01-preview)
+* **Resource**: Microsoft.Blockchain/blockchainMembers/transactionNodes
+* **ApiVersion**: 2018-06-01-preview
+* **Input**: [ApiKey](#apikey)
+* **Output**: [ApiKeyCollection](#apikeycollection)
+
 ## ApiKey
 ### Properties
 * **keyName**: string: Gets or sets the API key name.
 * **value**: string: Gets or sets the API key value.
+
+## ApiKey
+### Properties
+* **keyName**: string: Gets or sets the API key name.
+* **value**: string: Gets or sets the API key value.
+
+## ApiKey
+### Properties
+* **keyName**: string: Gets or sets the API key name.
+* **value**: string: Gets or sets the API key value.
+
+## ApiKeyCollection
+### Properties
+* **keys**: [ApiKey](#apikey)[]: Gets or sets the collection of API key.
+
+## ApiKeyCollection
+### Properties
+* **keys**: [ApiKey](#apikey)[]: Gets or sets the collection of API key.
 
 ## ApiKeyCollection
 ### Properties
@@ -85,6 +121,17 @@
 * **endIpAddress**: string: Gets or sets the end IP address of the firewall rule range.
 * **ruleName**: string: Gets or sets the name of the firewall rules.
 * **startIpAddress**: string: Gets or sets the start IP address of the firewall rule range.
+
+## NameAvailability
+### Properties
+* **message**: string: Gets or sets the message.
+* **nameAvailable**: bool: Gets or sets the value indicating whether the name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | 'NotSpecified' | string: Gets or sets the name availability reason.
+
+## NameAvailabilityRequest
+### Properties
+* **name**: string: Gets or sets the name to check.
+* **type**: string: Gets or sets the type of the resource to check.
 
 ## Sku
 ### Properties

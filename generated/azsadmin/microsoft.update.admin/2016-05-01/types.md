@@ -44,6 +44,20 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): List of key-value pairs.
 * **type**: 'Microsoft.Update.Admin/updateLocations/updates/updateRuns' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function Apply (Microsoft.Update.Admin/updateLocations/updates@2016-05-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates
+* **ApiVersion**: 2016-05-01
+* **Output**: [UpdateRun](#updaterun)
+
+## Function rerun (Microsoft.Update.Admin/updateLocations/updates/updateRuns@2016-05-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates/updateRuns
+* **ApiVersion**: 2016-05-01
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -95,6 +109,15 @@
 * **publisher**: string: Publisher of the update.
 * **state**: 'HasPrerequisite' | 'InstallationFailed' | 'Installed' | 'Installing' | 'NotApplicableBecauseAnotherUpdateIsInProgress' | 'Obsolete' | 'PreparationFailed' | 'Preparing' | 'Ready' | string: Current state of the update.
 * **version**: string: Version of the update.
+
+## UpdateRun
+### Properties
+* **id**: string (ReadOnly): URI of the resource.
+* **location**: string: Region location of resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [UpdateRunModel](#updaterunmodel): Properties of a update run.
+* **tags**: [ResourceTags](#resourcetags): List of key-value pairs.
+* **type**: string (ReadOnly): Type of resource.
 
 ## UpdateRunModel
 ### Properties

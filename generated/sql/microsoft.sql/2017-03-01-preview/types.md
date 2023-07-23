@@ -300,6 +300,64 @@
 * **properties**: [SecurityAlertPolicyProperties](#securityalertpolicyproperties): Resource properties.
 * **type**: 'Microsoft.Sql/servers/securityAlertPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function acquire (Microsoft.Sql/servers/dnsAliases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/dnsAliases
+* **ApiVersion**: 2017-03-01-preview
+* **Input**: [ServerDnsAliasAcquisition](#serverdnsaliasacquisition)
+
+## Function cancel (Microsoft.Sql/servers/jobAgents/jobs/executions@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/jobAgents/jobs/executions
+* **ApiVersion**: 2017-03-01-preview
+
+## Function cancel (Microsoft.Sql/servers/databases/operations@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/operations
+* **ApiVersion**: 2017-03-01-preview
+
+## Function completeRestore (Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation
+* **ApiVersion**: 2017-03-01-preview
+* **Input**: [CompleteDatabaseRestoreDefinition](#completedatabaserestoredefinition)
+
+## Function disable (Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2017-03-01-preview
+
+## Function enable (Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/schemas/tables/columns/sensitivityLabels
+* **ApiVersion**: 2017-03-01-preview
+
+## Function export (Microsoft.Sql/servers/databases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-03-01-preview
+* **Input**: [ImportExportDatabaseDefinition](#importexportdatabasedefinition)
+* **Output**: [ImportExportOperationResult](#importexportoperationresult)
+
+## Function move (Microsoft.Sql/servers/databases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-03-01-preview
+* **Input**: [ResourceMoveDefinition](#resourcemovedefinition)
+
+## Function pause (Microsoft.Sql/servers/databases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-03-01-preview
+* **Output**: [Database](#database)
+
+## Function restorePoints (Microsoft.Sql/servers/databases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-03-01-preview
+* **Input**: [CreateDatabaseRestorePointDefinition](#createdatabaserestorepointdefinition)
+* **Output**: [RestorePoint](#restorepoint)
+
+## Function resume (Microsoft.Sql/servers/databases@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-03-01-preview
+* **Output**: [Database](#database)
+
+## Function start (Microsoft.Sql/servers/jobAgents/jobs@2017-03-01-preview)
+* **Resource**: Microsoft.Sql/servers/jobAgents/jobs
+* **ApiVersion**: 2017-03-01-preview
+* **Output**: [JobExecution](#jobexecution)
+
 ## AutomaticTuningServerOptions
 ### Properties
 * **actualState**: 'Off' | 'On' (ReadOnly): Automatic tuning option actual state.
@@ -317,6 +375,36 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [AutomaticTuningServerOptions](#automatictuningserveroptions)
+
+## CompleteDatabaseRestoreDefinition
+### Properties
+* **lastBackupName**: string (Required): The last backup name to apply
+
+## CreateDatabaseRestorePointDefinition
+### Properties
+* **restorePointLabel**: string (Required): The restore point label to apply
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The name and tier of the SKU.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The name and tier of the SKU.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
 
 ## DatabaseBlobAuditingPolicyProperties
 ### Properties
@@ -639,6 +727,38 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **storageAccountSubscriptionId**: string: Specifies the blob storage subscription Id.
 * **storageEndpoint**: string: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint or isAzureMonitorTargetEnabled is required.
 
+## ImportExportDatabaseDefinition
+### Properties
+* **administratorLogin**: string (Required, WriteOnly): Administrator login name.
+* **administratorLoginPassword**: string (Required, WriteOnly): Administrator login password.
+* **authenticationType**: string (WriteOnly): Authentication type.
+* **databaseName**: string (WriteOnly): Name of the import database.
+* **edition**: string (WriteOnly): Edition of the import database.
+* **maxSizeBytes**: string (WriteOnly): Max size in bytes for the import database.
+* **serviceObjectiveName**: string (WriteOnly): Service level objective name of the import database.
+* **storageKey**: string (Required, WriteOnly): Storage key.
+* **storageKeyType**: string (Required, WriteOnly): Storage key type.
+* **storageUri**: string (Required, WriteOnly): Storage Uri.
+
+## ImportExportOperationResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ImportExportOperationResultProperties](#importexportoperationresultproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## ImportExportOperationResultProperties
+### Properties
+* **blobUri**: string (ReadOnly): Blob Uri.
+* **databaseName**: string (ReadOnly): Database name.
+* **errorMessage**: string (ReadOnly): Error message.
+* **lastModifiedTime**: string (ReadOnly): Last modified time.
+* **queuedTime**: string (ReadOnly): Queued time.
+* **requestId**: string (ReadOnly): Request Id.
+* **requestType**: string (ReadOnly): Request type.
+* **serverName**: string (ReadOnly): Server name.
+* **status**: string (ReadOnly): Operation status.
+
 ## JobAgentProperties
 ### Properties
 * **databaseId**: string (Required): Resource ID of the database to store job metadata in.
@@ -648,6 +768,13 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Properties
 * **password**: string (Required, WriteOnly): The credential password.
 * **username**: string (Required): The credential user name.
+
+## JobExecution
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [JobExecutionProperties](#jobexecutionproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## JobExecutionProperties
 ### Properties
@@ -778,12 +905,24 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **sid**: string (Required): SID (object ID) of the managed instance administrator.
 * **tenantId**: string: Tenant ID of the managed instance administrator.
 
+## ResourceMoveDefinition
+### Properties
+* **id**: string (Required): The target ID for the resource
+
 ## RestorableDroppedManagedDatabaseProperties
 ### Properties
 * **creationDate**: string (ReadOnly): The creation date of the database (ISO8601 format).
 * **databaseName**: string (ReadOnly): The name of the database.
 * **deletionDate**: string (ReadOnly): The deletion date of the database (ISO8601 format).
 * **earliestRestoreDate**: string (ReadOnly): The earliest restore date of the database (ISO8601 format).
+
+## RestorePoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (ReadOnly): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [RestorePointProperties](#restorepointproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## RestorePointProperties
 ### Properties
@@ -899,6 +1038,10 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **storageAccountSubscriptionId**: string: Specifies the blob storage subscription Id.
 * **storageEndpoint**: string: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). If state is Enabled, storageEndpoint or isAzureMonitorTargetEnabled is required.
 
+## ServerDnsAliasAcquisition
+### Properties
+* **oldServerDnsAliasId**: string: The id of the server alias that will be acquired to point to this server instead.
+
 ## ServerDnsAliasProperties
 ### Properties
 * **azureDnsRecord**: string (ReadOnly): The fully qualified DNS record for alias
@@ -910,6 +1053,11 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **name**: string (Required): The name of the SKU, typically, a letter + Number code, e.g. P3.
 * **size**: string: Size of the particular SKU
 * **tier**: string: The tier or edition of the particular SKU, e.g. Basic, Premium.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

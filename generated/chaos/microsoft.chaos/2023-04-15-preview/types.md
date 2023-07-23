@@ -56,6 +56,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The standard system metadata of a resource type.
 * **type**: 'Microsoft.Chaos/targets/capabilities' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Chaos/experiments@2023-04-15-preview)
+* **Resource**: Microsoft.Chaos/experiments
+* **ApiVersion**: 2023-04-15-preview
+
+## Function start (Microsoft.Chaos/experiments@2023-04-15-preview)
+* **Resource**: Microsoft.Chaos/experiments
+* **ApiVersion**: 2023-04-15-preview
+
 ## Action
 * **Discriminator**: type
 
@@ -96,8 +104,8 @@
 
 ## CapabilityTypeProperties
 ### Properties
-* **azureRBACActions**: string[]: Control plane actions necessary to execute capability type.
-* **azureRBACDataActions**: string[]: Data plane actions necessary to execute capability type.
+* **azureRbacActions**: string[]: Control plane actions necessary to execute capability type.
+* **azureRbacDataActions**: string[]: Data plane actions necessary to execute capability type.
 * **description**: string (ReadOnly): Localized string of the description.
 * **displayName**: string (ReadOnly): Localized string of the display name.
 * **kind**: string (ReadOnly): String of the kind of this Capability Type.

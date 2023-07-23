@@ -231,6 +231,93 @@
 * **tags**: [ResourceTags](#resourcetags): The tags of the resource.
 * **type**: 'Microsoft.DevTestLab/schedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addDataDisk (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+* **Input**: [DataDiskProperties](#datadiskproperties)
+
+## Function applyArtifacts (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+* **Input**: [ApplyArtifactsRequest](#applyartifactsrequest)
+
+## Function attach (Microsoft.DevTestLab/labs/users/disks@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/users/disks
+* **ApiVersion**: 2018-09-15
+* **Input**: [AttachDiskProperties](#attachdiskproperties)
+
+## Function claim (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function claimAnyVm (Microsoft.DevTestLab/labs@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2018-09-15
+
+## Function createEnvironment (Microsoft.DevTestLab/labs@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2018-09-15
+* **Input**: [LabVirtualMachineCreationParameter](#labvirtualmachinecreationparameter)
+
+## Function detach (Microsoft.DevTestLab/labs/users/disks@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/users/disks
+* **ApiVersion**: 2018-09-15
+* **Input**: [DetachDiskProperties](#detachdiskproperties)
+
+## Function detachDataDisk (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+* **Input**: [DetachDataDiskProperties](#detachdatadiskproperties)
+
+## Function evaluatePolicies (Microsoft.DevTestLab/labs/policysets@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/policysets
+* **ApiVersion**: 2018-09-15
+* **Input**: [EvaluatePoliciesRequest](#evaluatepoliciesrequest)
+* **Output**: [EvaluatePoliciesResponse](#evaluatepoliciesresponse)
+
+## Function execute (Microsoft.DevTestLab/schedules@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/schedules
+* **ApiVersion**: 2018-09-15
+
+## Function execute (Microsoft.DevTestLab/labs/schedules@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/schedules
+* **ApiVersion**: 2018-09-15
+
+## Function execute (Microsoft.DevTestLab/labs/users/servicefabrics/schedules@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/users/servicefabrics/schedules
+* **ApiVersion**: 2018-09-15
+
+## Function execute (Microsoft.DevTestLab/labs/virtualmachines/schedules@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines/schedules
+* **ApiVersion**: 2018-09-15
+
+## Function exportResourceUsage (Microsoft.DevTestLab/labs@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2018-09-15
+* **Input**: [ExportResourceUsageParameters](#exportresourceusageparameters)
+
+## Function generateArmTemplate (Microsoft.DevTestLab/labs/artifactsources/artifacts@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/artifactsources/artifacts
+* **ApiVersion**: 2018-09-15
+* **Input**: [GenerateArmTemplateRequest](#generatearmtemplaterequest)
+* **Output**: [ArmTemplateInfo](#armtemplateinfo)
+
+## Function generateUploadUri (Microsoft.DevTestLab/labs@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2018-09-15
+* **Input**: [GenerateUploadUriParameter](#generateuploaduriparameter)
+* **Output**: [GenerateUploadUriResponse](#generateuploaduriresponse)
+
+## Function getRdpFileContents (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+* **Output**: [RdpConnection](#rdpconnection)
+
+## Function importVirtualMachine (Microsoft.DevTestLab/labs@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2018-09-15
+* **Input**: [ImportLabVirtualMachineRequest](#importlabvirtualmachinerequest)
+
 ## Function listApplicable (Microsoft.DevTestLab/labs/schedules@2018-09-15)
 * **Resource**: Microsoft.DevTestLab/labs/schedules
 * **ApiVersion**: 2018-09-15
@@ -250,6 +337,53 @@
 * **Resource**: Microsoft.DevTestLab/labs
 * **ApiVersion**: 2018-09-15
 * **Output**: [LabVhdList](#labvhdlist)
+
+## Function notify (Microsoft.DevTestLab/labs/notificationchannels@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/notificationchannels
+* **ApiVersion**: 2018-09-15
+* **Input**: [NotifyParameters](#notifyparameters)
+
+## Function redeploy (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function resize (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+* **Input**: [ResizeLabVirtualMachineProperties](#resizelabvirtualmachineproperties)
+
+## Function restart (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function retarget (Microsoft.DevTestLab/schedules@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/schedules
+* **ApiVersion**: 2018-09-15
+* **Input**: [RetargetScheduleProperties](#retargetscheduleproperties)
+
+## Function start (Microsoft.DevTestLab/labs/users/servicefabrics@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/users/servicefabrics
+* **ApiVersion**: 2018-09-15
+
+## Function start (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function stop (Microsoft.DevTestLab/labs/users/servicefabrics@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/users/servicefabrics
+* **ApiVersion**: 2018-09-15
+
+## Function stop (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function transferDisks (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
+
+## Function unClaim (Microsoft.DevTestLab/labs/virtualmachines@2018-09-15)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2018-09-15
 
 ## ApplicableSchedule
 ### Properties
@@ -282,6 +416,15 @@
 ### Properties
 * **labVmsShutdown**: [Schedule](#schedule): The auto-shutdown schedule, if one has been set at the lab or lab resource level.
 * **labVmsStartup**: [Schedule](#schedule): The auto-startup schedule, if one has been set at the lab or lab resource level.
+
+## ApplyArtifactsRequest
+### Properties
+* **artifacts**: [ArtifactInstallProperties](#artifactinstallproperties)[]: The list of artifacts to apply.
+
+## ArmTemplateInfo
+### Properties
+* **parameters**: any: The parameters of the ARM template.
+* **template**: any: The template's contents.
 
 ## ArmTemplateParameterProperties
 ### Properties
@@ -344,6 +487,10 @@
 * **status**: 'Disabled' | 'Enabled' | string: Indicates if the artifact source is enabled (values: Enabled, Disabled).
 * **uniqueIdentifier**: string (ReadOnly): The unique immutable identifier of a resource (Guid).
 * **uri**: string: The artifact source's URI.
+
+## AttachDiskProperties
+### Properties
+* **leasedByLabVmId**: string: The resource ID of the Lab virtual machine to which the disk is attached.
 
 ## AttachNewDataDiskOptions
 ### Properties
@@ -425,6 +572,12 @@
 * **existingLabDiskId**: string: Specifies the existing lab disk id to attach to virtual machine.
 * **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite' | string: Caching option for a data disk (i.e. None, ReadOnly, ReadWrite).
 
+## DataDiskProperties
+### Properties
+* **attachNewDataDiskOptions**: [AttachNewDataDiskOptions](#attachnewdatadiskoptions): Specifies options to attach a new disk to the virtual machine.
+* **existingLabDiskId**: string: Specifies the existing lab disk id to attach to virtual machine.
+* **hostCaching**: 'None' | 'ReadOnly' | 'ReadWrite' | string: Caching option for a data disk (i.e. None, ReadOnly, ReadWrite).
+
 ## DataDiskStorageTypeInfo
 ### Properties
 * **lun**: string: Disk Lun
@@ -433,6 +586,14 @@
 ## DayDetails
 ### Properties
 * **time**: string: The time of day the schedule will occur.
+
+## DetachDataDiskProperties
+### Properties
+* **existingLabDiskId**: string: Specifies the disk resource ID to detach from virtual machine.
+
+## DetachDiskProperties
+### Properties
+* **leasedByLabVmId**: string: The resource ID of the Lab VM to which the disk is attached.
 
 ## DiskProperties
 ### Properties
@@ -462,9 +623,29 @@
 * **resourceGroupId**: string (ReadOnly): The identifier of the resource group containing the environment's resources.
 * **uniqueIdentifier**: string (ReadOnly): The unique immutable identifier of a resource (Guid).
 
+## EvaluatePoliciesProperties
+### Properties
+* **factData**: string: The fact data.
+* **factName**: string: The fact name.
+* **userObjectId**: string: The user for which policies will be evaluated
+* **valueOffset**: string: The value offset.
+
+## EvaluatePoliciesRequest
+### Properties
+* **policies**: [EvaluatePoliciesProperties](#evaluatepoliciesproperties)[]: Policies to evaluate.
+
+## EvaluatePoliciesResponse
+### Properties
+* **results**: [PolicySetResult](#policysetresult)[]: Results of evaluating a policy set.
+
 ## Event
 ### Properties
 * **eventName**: 'AutoShutdown' | 'Cost' | string: The event type for which this notification is enabled (i.e. AutoShutdown, Cost)
+
+## ExportResourceUsageParameters
+### Properties
+* **blobStorageAbsoluteSasUri**: string: The blob storage absolute sas uri with write permission to the container which the usage data needs to be uploaded to.
+* **usageStartDate**: string: The start time of the usage. If not provided, usage will be reported since the beginning of data collection.
 
 ## ExternalSubnet
 ### Properties
@@ -494,6 +675,21 @@
 * **sku**: string: The SKU of the gallery image.
 * **version**: string: The version of the gallery image.
 
+## GenerateArmTemplateRequest
+### Properties
+* **fileUploadOptions**: 'None' | 'UploadFilesAndGenerateSasTokens' | string: Options for uploading the files for the artifact. UploadFilesAndGenerateSasTokens is the default value.
+* **location**: string: The location of the virtual machine.
+* **parameters**: [ParameterInfo](#parameterinfo)[]: The parameters of the ARM template.
+* **virtualMachineName**: string: The resource name of the virtual machine.
+
+## GenerateUploadUriParameter
+### Properties
+* **blobName**: string: The blob name of the upload URI.
+
+## GenerateUploadUriResponse
+### Properties
+* **uploadUri**: string: The upload URI for the VHD.
+
 ## HourDetails
 ### Properties
 * **minute**: int: Minutes of the hour the schedule will run.
@@ -504,6 +700,11 @@
 * **principalId**: string: The principal id of resource identity.
 * **tenantId**: string: The tenant identifier of resource.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string: Managed identity.
+
+## ImportLabVirtualMachineRequest
+### Properties
+* **destinationVirtualMachineName**: string: The name of the virtual machine in the destination lab
+* **sourceVirtualMachineResourceId**: string: The full resource ID of the virtual machine to be imported.
 
 ## InboundNatRule
 ### Properties
@@ -599,6 +800,13 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 ### Properties
 * **nextLink**: string: Link for next set of results.
 * **value**: [LabVhd](#labvhd)[]: Results of the list operation.
+
+## LabVirtualMachineCreationParameter
+### Properties
+* **location**: string: The location of the new virtual machine or environment
+* **name**: string: The name of the virtual machine or environment
+* **properties**: [LabVirtualMachineCreationParameterProperties](#labvirtualmachinecreationparameterproperties): The properties of the resource.
+* **tags**: [LabVirtualMachineCreationParameterTags](#labvirtualmachinecreationparametertags): The tags of the resource.
 
 ## LabVirtualMachineCreationParameter
 ### Properties
@@ -712,6 +920,16 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 * **timeInMinutes**: int: Time in minutes before event at which notification will be sent.
 * **webhookUrl**: string: The webhook URL to which the notification will be sent.
 
+## NotifyParameters
+### Properties
+* **eventName**: 'AutoShutdown' | 'Cost' | string: The type of event (i.e. AutoShutdown, Cost)
+* **jsonPayload**: string: Properties for the notification in json format.
+
+## ParameterInfo
+### Properties
+* **name**: string: The name of the artifact parameter.
+* **value**: string: The value of the artifact parameter.
+
 ## ParametersValueFileInfo
 ### Properties
 * **fileName**: string: File name.
@@ -733,15 +951,28 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 * **threshold**: string: The threshold of the policy (i.e. a number for MaxValuePolicy, and a JSON array of values for AllowedValuesPolicy).
 * **uniqueIdentifier**: string (ReadOnly): The unique immutable identifier of a resource (Guid).
 
+## PolicySetResult
+### Properties
+* **hasError**: bool: A value indicating whether this policy set evaluation has discovered violations.
+* **policyViolations**: [PolicyViolation](#policyviolation)[]: The list of policy violations.
+
+## PolicyViolation
+### Properties
+* **code**: string: The code of the policy violation.
+* **message**: string: The message of the policy violation.
+
 ## Port
 ### Properties
 * **backendPort**: int: Backend port of the target virtual machine.
 * **transportProtocol**: 'Tcp' | 'Udp' | string: Protocol type of the port.
 
-## ResourceTags
+## RdpConnection
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **contents**: string: The contents of the .rdp file
+
+## ResizeLabVirtualMachineProperties
+### Properties
+* **size**: string: Specifies the size of the virtual machine.
 
 ## ResourceTags
 ### Properties
@@ -852,6 +1083,16 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RetargetScheduleProperties
+### Properties
+* **currentResourceId**: string: The resource Id of the virtual machine on which the schedule operates
+* **targetResourceId**: string: The resource Id of the virtual machine that the schedule should be retargeted to
 
 ## Schedule
 ### Properties
@@ -877,7 +1118,7 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 * **status**: 'Disabled' | 'Enabled' | string: The status of the schedule (i.e. Enabled, Disabled)
 * **targetResourceId**: string: The resource ID to which the schedule belongs
 * **taskType**: string: The task type of the schedule (e.g. LabVmsShutdownTask, LabVmAutoStart).
-* **timeZoneId**: string: The time zone ID (e.g. Pacific Standard time).
+* **timeZoneId**: string: The time zone ID (e.g. China Standard Time, Greenland Standard Time, Pacific Standard time, etc.). The possible values for this property can be found in `IReadOnlyCollection<string> TimeZoneConverter.TZConvert.KnownWindowsTimeZoneIds` (https://github.com/mattjohnsonpint/TimeZoneConverter/blob/main/README.md)
 * **weeklyRecurrence**: [WeekDetails](#weekdetails): If the schedule will occur only some days of the week, specify the weekly recurrence.
 
 ## ScheduleCreationParameterTags
@@ -900,7 +1141,7 @@ When its value is 'Disabled', only creation of standard data disks is allowed.
 * **status**: 'Disabled' | 'Enabled' | string: The status of the schedule (i.e. Enabled, Disabled)
 * **targetResourceId**: string: The resource ID to which the schedule belongs
 * **taskType**: string: The task type of the schedule (e.g. LabVmsShutdownTask, LabVmAutoStart).
-* **timeZoneId**: string: The time zone ID (e.g. Pacific Standard time).
+* **timeZoneId**: string: The time zone ID (e.g. China Standard Time, Greenland Standard Time, Pacific Standard time, etc.). The possible values for this property can be found in `IReadOnlyCollection<string> TimeZoneConverter.TZConvert.KnownWindowsTimeZoneIds` (https://github.com/mattjohnsonpint/TimeZoneConverter/blob/main/README.md)
 * **uniqueIdentifier**: string (ReadOnly): The unique immutable identifier of a resource (Guid).
 * **weeklyRecurrence**: [WeekDetails](#weekdetails): If the schedule will occur only some days of the week, specify the weekly recurrence.
 
