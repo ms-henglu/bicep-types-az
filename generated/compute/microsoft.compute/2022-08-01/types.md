@@ -238,6 +238,216 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/virtualMachineScaleSets/virtualMachines/runCommands' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function assessPatches (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Output**: [VirtualMachineAssessPatchesResult](#virtualmachineassesspatchesresult)
+
+## Function capture (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineCaptureParameters](#virtualmachinecaptureparameters)
+* **Output**: [VirtualMachineCaptureResult](#virtualmachinecaptureresult)
+
+## Function convertToManagedDisks (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function convertToSinglePlacementGroup (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VMScaleSetConvertToSinglePlacementGroupInput](#vmscalesetconverttosingleplacementgroupinput)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function deallocate (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function delete (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+
+## Function extensionRollingUpgrade (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+
+## Function generalize (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function generateKeyPair (Microsoft.Compute/sshPublicKeys@2022-08-01)
+* **Resource**: Microsoft.Compute/sshPublicKeys
+* **ApiVersion**: 2022-08-01
+* **Output**: [SshPublicKeyGenerateKeyPairResult](#sshpublickeygeneratekeypairresult)
+
+## Function getRequestRateByInterval (Microsoft.Compute/locations/logAnalytics@2022-08-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2022-08-01
+* **Input**: [RequestRateByIntervalInput](#requestratebyintervalinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function getThrottledRequests (Microsoft.Compute/locations/logAnalytics@2022-08-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2022-08-01
+* **Input**: [ThrottledRequestsInput](#throttledrequestsinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function installPatches (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineInstallPatchesParameters](#virtualmachineinstallpatchesparameters)
+* **Output**: [VirtualMachineInstallPatchesResult](#virtualmachineinstallpatchesresult)
+
+## Function manualupgrade (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+
+## Function osRollingUpgrade (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+
+## Function performMaintenance (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+
+## Function powerOff (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function reapply (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+
+## Function redeploy (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetReimageParameters](#virtualmachinescalesetreimageparameters)
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMReimageParameters](#virtualmachinescalesetvmreimageparameters)
+
+## Function reimage (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineReimageParameters](#virtualmachinereimageparameters)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+
+## Function restart (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function restart (Microsoft.Compute/hostGroups/hosts@2022-08-01)
+* **Resource**: Microsoft.Compute/hostGroups/hosts
+* **ApiVersion**: 2022-08-01
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function setOrchestrationServiceState (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [OrchestrationServiceStateInput](#orchestrationservicestateinput)
+
+## Function simulateEviction (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function simulateEviction (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-08-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-08-01
+
+## Function start (Microsoft.Compute/virtualMachines@2022-08-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-08-01
+
 ## AdditionalCapabilities
 ### Properties
 * **hibernationEnabled**: bool: The flag that enables or disables hibernation capability on the VM.
@@ -305,18 +515,18 @@
 
 ## BillingProfile
 ### Properties
-* **maxPrice**: int: Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars. <br><br> This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price. <br><br> The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS. <br><br> Possible values are: <br><br> - Any decimal value greater than zero. Example: 0.01538 <br><br> -1 – indicates default price to be up-to on-demand. <br><br> You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. <br><br>Minimum api-version: 2019-03-01.
+* **maxPrice**: int: Specifies the maximum price you are willing to pay for a Azure Spot VM/VMSS. This price is in US Dollars.  This price will be compared with the current Azure Spot price for the VM size. Also, the prices are compared at the time of create/update of Azure Spot VM/VMSS and the operation will only succeed if  the maxPrice is greater than the current Azure Spot price.  The maxPrice will also be used for evicting a Azure Spot VM/VMSS if the current Azure Spot price goes beyond the maxPrice after creation of VM/VMSS.  Possible values are:  - Any decimal value greater than zero. Example: 0.01538  -1 – indicates default price to be up-to on-demand.  You can set the maxPrice to -1 to indicate that the Azure Spot VM/VMSS should not be evicted for price reasons. Also, the default max price is -1 if it is not provided by you. Minimum api-version: 2019-03-01.
 
 ## BootDiagnostics
 ### Properties
 * **enabled**: bool: Whether boot diagnostics should be enabled on the Virtual Machine.
-* **storageUri**: string: Uri of the storage account to use for placing the console output and screenshot. <br><br>If storageUri is not specified while enabling boot diagnostics, managed storage will be used.
+* **storageUri**: string: Uri of the storage account to use for placing the console output and screenshot. If storageUri is not specified while enabling boot diagnostics, managed storage will be used.
 
 ## BootDiagnosticsInstanceView
 ### Properties
-* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI. <br><br>NOTE: This will **not** be set if boot diagnostics is currently enabled with managed storage.
-* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob Uri. <br><br>NOTE: This will **not** be set if boot diagnostics is currently enabled with managed storage.
-* **status**: [InstanceViewStatus](#instanceviewstatus) (ReadOnly): The boot diagnostics status information for the VM. <br><br> NOTE: It will be set only if there are errors encountered in enabling boot diagnostics.
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI. NOTE: This will **not** be set if boot diagnostics is currently enabled with managed storage.
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob Uri. NOTE: This will **not** be set if boot diagnostics is currently enabled with managed storage.
+* **status**: [InstanceViewStatus](#instanceviewstatus) (ReadOnly): The boot diagnostics status information for the VM.  NOTE: It will be set only if there are errors encountered in enabling boot diagnostics.
 
 ## CapacityReservationGroupInstanceView
 ### Properties
@@ -360,13 +570,13 @@
 
 ## DataDisk
 ### Properties
-* **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None for Standard storage. ReadOnly for Premium storage**
-* **createOption**: 'Attach' | 'Empty' | 'FromImage' | string (Required): Specifies how the virtual machine should be created.<br><br> Possible values are:<br><br> **Attach** \u2013 This value is used when you are using a specialized disk to create the virtual machine.<br><br> **FromImage** \u2013 This value is used when you are using an image to create the virtual machine. If you are using a platform image, you also use the imageReference element described above. If you are using a marketplace image, you  also use the plan element previously described.
-* **deleteOption**: 'Delete' | 'Detach' | string: Specifies whether data disk should be deleted or detached upon VM deletion.<br><br> Possible values: <br><br> **Delete** If this value is used, the data disk is deleted when VM is deleted.<br><br> **Detach** If this value is used, the data disk is retained after VM is deleted.<br><br> The default value is set to **detach**
-* **detachOption**: 'ForceDetach' | string: Specifies the detach behavior to be used while detaching a disk or which is already in the process of detachment from the virtual machine. Supported values: **ForceDetach**. <br><br> detachOption: **ForceDetach** is applicable only for managed data disks. If a previous detachment attempt of the data disk did not complete due to an unexpected failure from the virtual machine and the disk is still not released then use force-detach as a last resort option to detach the disk forcibly from the VM. All writes might not have been flushed when using this detach behavior. <br><br> This feature is still in preview mode and is not supported for VirtualMachineScaleSet. To force-detach a data disk update toBeDetached to 'true' along with setting detachOption: 'ForceDetach'.
+* **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Specifies the caching requirements.  Possible values are:  **None**  **ReadOnly**  **ReadWrite**  Default: **None for Standard storage. ReadOnly for Premium storage**
+* **createOption**: 'Attach' | 'Empty' | 'FromImage' | string (Required): Specifies how the virtual machine should be created. Possible values are: **Attach** \u2013 This value is used when you are using a specialized disk to create the virtual machine. **FromImage** \u2013 This value is used when you are using an image to create the virtual machine. If you are using a platform image, you also use the imageReference element described above. If you are using a marketplace image, you  also use the plan element previously described.
+* **deleteOption**: 'Delete' | 'Detach' | string: Specifies whether data disk should be deleted or detached upon VM deletion. Possible values:  **Delete** If this value is used, the data disk is deleted when VM is deleted. **Detach** If this value is used, the data disk is retained after VM is deleted. The default value is set to **detach**
+* **detachOption**: 'ForceDetach' | string: Specifies the detach behavior to be used while detaching a disk or which is already in the process of detachment from the virtual machine. Supported values: **ForceDetach**.  detachOption: **ForceDetach** is applicable only for managed data disks. If a previous detachment attempt of the data disk did not complete due to an unexpected failure from the virtual machine and the disk is still not released then use force-detach as a last resort option to detach the disk forcibly from the VM. All writes might not have been flushed when using this detach behavior.  This feature is still in preview mode and is not supported for VirtualMachineScaleSet. To force-detach a data disk update toBeDetached to 'true' along with setting detachOption: 'ForceDetach'.
 * **diskIOPSReadWrite**: int (ReadOnly): Specifies the Read-Write IOPS for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
 * **diskMBpsReadWrite**: int (ReadOnly): Specifies the bandwidth in MB per second for the managed disk when StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the VirtualMachine Scale Set.
-* **diskSizeGB**: int: Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot be larger than 1023
+* **diskSizeGB**: int: Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image.  diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot be larger than 1023
 * **image**: [VirtualHardDisk](#virtualharddisk): The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not exist.
 * **lun**: int (Required): Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
 * **managedDisk**: [ManagedDiskParameters](#manageddiskparameters): The managed disk parameters.
@@ -427,12 +637,12 @@
 
 ## DiagnosticsProfile
 ### Properties
-* **bootDiagnostics**: [BootDiagnostics](#bootdiagnostics): Boot Diagnostics is a debugging feature which allows you to view Console Output and Screenshot to diagnose VM status. <br>**NOTE**: If storageUri is being specified then ensure that the storage account is in the same region and subscription as the VM. <br><br> You can easily view the output of your console log. <br><br> Azure also enables you to see a screenshot of the VM from the hypervisor.
+* **bootDiagnostics**: [BootDiagnostics](#bootdiagnostics): Boot Diagnostics is a debugging feature which allows you to view Console Output and Screenshot to diagnose VM status. **NOTE**: If storageUri is being specified then ensure that the storage account is in the same region and subscription as the VM.  You can easily view the output of your console log.  Azure also enables you to see a screenshot of the VM from the hypervisor.
 
 ## DiffDiskSettings
 ### Properties
 * **option**: 'Local' | string: Specifies the ephemeral disk settings for operating system disk.
-* **placement**: 'CacheDisk' | 'ResourceDisk' | string: Specifies the ephemeral disk placement for operating system disk.<br><br> Possible values are: <br><br> **CacheDisk** <br><br> **ResourceDisk** <br><br> Default: **CacheDisk** if one is configured for the VM size otherwise **ResourceDisk** is used.<br><br> Refer to VM size documentation for Windows VM at https://docs.microsoft.com/azure/virtual-machines/windows/sizes and Linux VM at https://docs.microsoft.com/azure/virtual-machines/linux/sizes to check which VM sizes exposes a cache disk.
+* **placement**: 'CacheDisk' | 'ResourceDisk' | string: Specifies the ephemeral disk placement for operating system disk. Possible values are:  **CacheDisk**  **ResourceDisk**  Default: **CacheDisk** if one is configured for the VM size otherwise **ResourceDisk** is used. Refer to VM size documentation for Windows VM at https://docs.microsoft.com/azure/virtual-machines/windows/sizes and Linux VM at https://docs.microsoft.com/azure/virtual-machines/linux/sizes to check which VM sizes exposes a cache disk.
 
 ## DiskEncryptionSetParameters
 ### Properties
@@ -446,7 +656,7 @@
 
 ## DiskInstanceView
 ### Properties
-* **encryptionSettings**: [DiskEncryptionSettings](#diskencryptionsettings)[]: Specifies the encryption settings for the OS Disk. <br><br> Minimum api-version: 2015-06-15
+* **encryptionSettings**: [DiskEncryptionSettings](#diskencryptionsettings)[]: Specifies the encryption settings for the OS Disk.  Minimum api-version: 2015-06-15
 * **name**: string: The disk name.
 * **statuses**: [InstanceViewStatus](#instanceviewstatus)[]: The resource status information.
 
@@ -467,8 +677,8 @@
 
 ## HardwareProfile
 ### Properties
-* **vmSize**: 'Basic_A0' | 'Basic_A1' | 'Basic_A2' | 'Basic_A3' | 'Basic_A4' | 'Standard_A0' | 'Standard_A1' | 'Standard_A10' | 'Standard_A11' | 'Standard_A1_v2' | 'Standard_A2' | 'Standard_A2_v2' | 'Standard_A2m_v2' | 'Standard_A3' | 'Standard_A4' | 'Standard_A4_v2' | 'Standard_A4m_v2' | 'Standard_A5' | 'Standard_A6' | 'Standard_A7' | 'Standard_A8' | 'Standard_A8_v2' | 'Standard_A8m_v2' | 'Standard_A9' | 'Standard_B1ms' | 'Standard_B1s' | 'Standard_B2ms' | 'Standard_B2s' | 'Standard_B4ms' | 'Standard_B8ms' | 'Standard_D1' | 'Standard_D11' | 'Standard_D11_v2' | 'Standard_D12' | 'Standard_D12_v2' | 'Standard_D13' | 'Standard_D13_v2' | 'Standard_D14' | 'Standard_D14_v2' | 'Standard_D15_v2' | 'Standard_D16_v3' | 'Standard_D16s_v3' | 'Standard_D1_v2' | 'Standard_D2' | 'Standard_D2_v2' | 'Standard_D2_v3' | 'Standard_D2s_v3' | 'Standard_D3' | 'Standard_D32_v3' | 'Standard_D32s_v3' | 'Standard_D3_v2' | 'Standard_D4' | 'Standard_D4_v2' | 'Standard_D4_v3' | 'Standard_D4s_v3' | 'Standard_D5_v2' | 'Standard_D64_v3' | 'Standard_D64s_v3' | 'Standard_D8_v3' | 'Standard_D8s_v3' | 'Standard_DS1' | 'Standard_DS11' | 'Standard_DS11_v2' | 'Standard_DS12' | 'Standard_DS12_v2' | 'Standard_DS13' | 'Standard_DS13-2_v2' | 'Standard_DS13-4_v2' | 'Standard_DS13_v2' | 'Standard_DS14' | 'Standard_DS14-4_v2' | 'Standard_DS14-8_v2' | 'Standard_DS14_v2' | 'Standard_DS15_v2' | 'Standard_DS1_v2' | 'Standard_DS2' | 'Standard_DS2_v2' | 'Standard_DS3' | 'Standard_DS3_v2' | 'Standard_DS4' | 'Standard_DS4_v2' | 'Standard_DS5_v2' | 'Standard_E16_v3' | 'Standard_E16s_v3' | 'Standard_E2_v3' | 'Standard_E2s_v3' | 'Standard_E32-16_v3' | 'Standard_E32-8s_v3' | 'Standard_E32_v3' | 'Standard_E32s_v3' | 'Standard_E4_v3' | 'Standard_E4s_v3' | 'Standard_E64-16s_v3' | 'Standard_E64-32s_v3' | 'Standard_E64_v3' | 'Standard_E64s_v3' | 'Standard_E8_v3' | 'Standard_E8s_v3' | 'Standard_F1' | 'Standard_F16' | 'Standard_F16s' | 'Standard_F16s_v2' | 'Standard_F1s' | 'Standard_F2' | 'Standard_F2s' | 'Standard_F2s_v2' | 'Standard_F32s_v2' | 'Standard_F4' | 'Standard_F4s' | 'Standard_F4s_v2' | 'Standard_F64s_v2' | 'Standard_F72s_v2' | 'Standard_F8' | 'Standard_F8s' | 'Standard_F8s_v2' | 'Standard_G1' | 'Standard_G2' | 'Standard_G3' | 'Standard_G4' | 'Standard_G5' | 'Standard_GS1' | 'Standard_GS2' | 'Standard_GS3' | 'Standard_GS4' | 'Standard_GS4-4' | 'Standard_GS4-8' | 'Standard_GS5' | 'Standard_GS5-16' | 'Standard_GS5-8' | 'Standard_H16' | 'Standard_H16m' | 'Standard_H16mr' | 'Standard_H16r' | 'Standard_H8' | 'Standard_H8m' | 'Standard_L16s' | 'Standard_L32s' | 'Standard_L4s' | 'Standard_L8s' | 'Standard_M128-32ms' | 'Standard_M128-64ms' | 'Standard_M128ms' | 'Standard_M128s' | 'Standard_M64-16ms' | 'Standard_M64-32ms' | 'Standard_M64ms' | 'Standard_M64s' | 'Standard_NC12' | 'Standard_NC12s_v2' | 'Standard_NC12s_v3' | 'Standard_NC24' | 'Standard_NC24r' | 'Standard_NC24rs_v2' | 'Standard_NC24rs_v3' | 'Standard_NC24s_v2' | 'Standard_NC24s_v3' | 'Standard_NC6' | 'Standard_NC6s_v2' | 'Standard_NC6s_v3' | 'Standard_ND12s' | 'Standard_ND24rs' | 'Standard_ND24s' | 'Standard_ND6s' | 'Standard_NV12' | 'Standard_NV24' | 'Standard_NV6' | string: Specifies the size of the virtual machine. <br><br> The enum data type is currently deprecated and will be removed by December 23rd 2023. <br><br> Recommended way to get the list of available sizes is using these APIs: <br><br> [List all available virtual machine sizes in an availability set](https://docs.microsoft.com/rest/api/compute/availabilitysets/listavailablesizes) <br><br> [List all available virtual machine sizes in a region]( https://docs.microsoft.com/rest/api/compute/resourceskus/list) <br><br> [List all available virtual machine sizes for resizing](https://docs.microsoft.com/rest/api/compute/virtualmachines/listavailablesizes). For more information about virtual machine sizes, see [Sizes for virtual machines](https://docs.microsoft.com/azure/virtual-machines/sizes). <br><br> The available VM sizes depend on region and availability set.
-* **vmSizeProperties**: [VMSizeProperties](#vmsizeproperties): Specifies the properties for customizing the size of the virtual machine. Minimum api-version: 2021-07-01. <br><br> This feature is still in preview mode and is not supported for VirtualMachineScaleSet. <br><br> Please follow the instructions in [VM Customization](https://aka.ms/vmcustomization) for more details.
+* **vmSize**: 'Basic_A0' | 'Basic_A1' | 'Basic_A2' | 'Basic_A3' | 'Basic_A4' | 'Standard_A0' | 'Standard_A1' | 'Standard_A10' | 'Standard_A11' | 'Standard_A1_v2' | 'Standard_A2' | 'Standard_A2_v2' | 'Standard_A2m_v2' | 'Standard_A3' | 'Standard_A4' | 'Standard_A4_v2' | 'Standard_A4m_v2' | 'Standard_A5' | 'Standard_A6' | 'Standard_A7' | 'Standard_A8' | 'Standard_A8_v2' | 'Standard_A8m_v2' | 'Standard_A9' | 'Standard_B1ms' | 'Standard_B1s' | 'Standard_B2ms' | 'Standard_B2s' | 'Standard_B4ms' | 'Standard_B8ms' | 'Standard_D1' | 'Standard_D11' | 'Standard_D11_v2' | 'Standard_D12' | 'Standard_D12_v2' | 'Standard_D13' | 'Standard_D13_v2' | 'Standard_D14' | 'Standard_D14_v2' | 'Standard_D15_v2' | 'Standard_D16_v3' | 'Standard_D16s_v3' | 'Standard_D1_v2' | 'Standard_D2' | 'Standard_D2_v2' | 'Standard_D2_v3' | 'Standard_D2s_v3' | 'Standard_D3' | 'Standard_D32_v3' | 'Standard_D32s_v3' | 'Standard_D3_v2' | 'Standard_D4' | 'Standard_D4_v2' | 'Standard_D4_v3' | 'Standard_D4s_v3' | 'Standard_D5_v2' | 'Standard_D64_v3' | 'Standard_D64s_v3' | 'Standard_D8_v3' | 'Standard_D8s_v3' | 'Standard_DS1' | 'Standard_DS11' | 'Standard_DS11_v2' | 'Standard_DS12' | 'Standard_DS12_v2' | 'Standard_DS13' | 'Standard_DS13-2_v2' | 'Standard_DS13-4_v2' | 'Standard_DS13_v2' | 'Standard_DS14' | 'Standard_DS14-4_v2' | 'Standard_DS14-8_v2' | 'Standard_DS14_v2' | 'Standard_DS15_v2' | 'Standard_DS1_v2' | 'Standard_DS2' | 'Standard_DS2_v2' | 'Standard_DS3' | 'Standard_DS3_v2' | 'Standard_DS4' | 'Standard_DS4_v2' | 'Standard_DS5_v2' | 'Standard_E16_v3' | 'Standard_E16s_v3' | 'Standard_E2_v3' | 'Standard_E2s_v3' | 'Standard_E32-16_v3' | 'Standard_E32-8s_v3' | 'Standard_E32_v3' | 'Standard_E32s_v3' | 'Standard_E4_v3' | 'Standard_E4s_v3' | 'Standard_E64-16s_v3' | 'Standard_E64-32s_v3' | 'Standard_E64_v3' | 'Standard_E64s_v3' | 'Standard_E8_v3' | 'Standard_E8s_v3' | 'Standard_F1' | 'Standard_F16' | 'Standard_F16s' | 'Standard_F16s_v2' | 'Standard_F1s' | 'Standard_F2' | 'Standard_F2s' | 'Standard_F2s_v2' | 'Standard_F32s_v2' | 'Standard_F4' | 'Standard_F4s' | 'Standard_F4s_v2' | 'Standard_F64s_v2' | 'Standard_F72s_v2' | 'Standard_F8' | 'Standard_F8s' | 'Standard_F8s_v2' | 'Standard_G1' | 'Standard_G2' | 'Standard_G3' | 'Standard_G4' | 'Standard_G5' | 'Standard_GS1' | 'Standard_GS2' | 'Standard_GS3' | 'Standard_GS4' | 'Standard_GS4-4' | 'Standard_GS4-8' | 'Standard_GS5' | 'Standard_GS5-16' | 'Standard_GS5-8' | 'Standard_H16' | 'Standard_H16m' | 'Standard_H16mr' | 'Standard_H16r' | 'Standard_H8' | 'Standard_H8m' | 'Standard_L16s' | 'Standard_L32s' | 'Standard_L4s' | 'Standard_L8s' | 'Standard_M128-32ms' | 'Standard_M128-64ms' | 'Standard_M128ms' | 'Standard_M128s' | 'Standard_M64-16ms' | 'Standard_M64-32ms' | 'Standard_M64ms' | 'Standard_M64s' | 'Standard_NC12' | 'Standard_NC12s_v2' | 'Standard_NC12s_v3' | 'Standard_NC24' | 'Standard_NC24r' | 'Standard_NC24rs_v2' | 'Standard_NC24rs_v3' | 'Standard_NC24s_v2' | 'Standard_NC24s_v3' | 'Standard_NC6' | 'Standard_NC6s_v2' | 'Standard_NC6s_v3' | 'Standard_ND12s' | 'Standard_ND24rs' | 'Standard_ND24s' | 'Standard_ND6s' | 'Standard_NV12' | 'Standard_NV24' | 'Standard_NV6' | string: Specifies the size of the virtual machine.  The enum data type is currently deprecated and will be removed by December 23rd 2023.  Recommended way to get the list of available sizes is using these APIs:  [List all available virtual machine sizes in an availability set](https://docs.microsoft.com/rest/api/compute/availabilitysets/listavailablesizes)  [List all available virtual machine sizes in a region]( https://docs.microsoft.com/rest/api/compute/resourceskus/list)  [List all available virtual machine sizes for resizing](https://docs.microsoft.com/rest/api/compute/virtualmachines/listavailablesizes). For more information about virtual machine sizes, see [Sizes for virtual machines](https://docs.microsoft.com/azure/virtual-machines/sizes).  The available VM sizes depend on region and availability set.
+* **vmSizeProperties**: [VMSizeProperties](#vmsizeproperties): Specifies the properties for customizing the size of the virtual machine. Minimum api-version: 2021-07-01.  This feature is still in preview mode and is not supported for VirtualMachineScaleSet.  Please follow the instructions in [VM Customization](https://aka.ms/vmcustomization) for more details.
 
 ## ImageDataDisk
 ### Properties
@@ -559,8 +769,15 @@
 * **disablePasswordAuthentication**: bool: Specifies whether password authentication should be disabled.
 * **enableVMAgentPlatformUpdates**: bool: Indicates whether VMAgent Platform Updates is enabled for the Linux virtual machine. Default value is false.
 * **patchSettings**: [LinuxPatchSettings](#linuxpatchsettings): [Preview Feature] Specifies settings related to VM Guest Patching on Linux.
-* **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. <br><br> When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+* **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
 * **ssh**: [SshConfiguration](#sshconfiguration): Specifies the ssh key configuration for a Linux OS.
+
+## LinuxParameters
+### Properties
+* **classificationsToInclude**: 'Critical' | 'Other' | 'Security' | string[]: The update classifications to select when installing patches for Linux.
+* **maintenanceRunId**: string: This is used as a maintenance run identifier for Auto VM Guest Patching in Linux.
+* **packageNameMasksToExclude**: string[]: packages to exclude in the patch operation. Format: packageName_packageVersion
+* **packageNameMasksToInclude**: string[]: packages to include in the patch operation. Format: packageName_packageVersion
 
 ## LinuxPatchSettings
 ### Properties
@@ -571,6 +788,18 @@
 ## LinuxVMGuestPatchAutomaticByPlatformSettings
 ### Properties
 * **rebootSetting**: 'Always' | 'IfRequired' | 'Never' | 'Unknown' | string: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalyticsOutput
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalyticsOutput
+
+## LogAnalyticsOutput
+### Properties
+* **output**: string (ReadOnly): Output file Uri path to blob container.
 
 ## MaintenanceRedeployStatus
 ### Properties
@@ -605,32 +834,46 @@
 * **networkInterfaceConfigurations**: [VirtualMachineNetworkInterfaceConfiguration](#virtualmachinenetworkinterfaceconfiguration)[]: Specifies the networking configurations that will be used to create the virtual machine networking resources.
 * **networkInterfaces**: [NetworkInterfaceReference](#networkinterfacereference)[]: Specifies the list of resource Ids for the network interfaces associated with the virtual machine.
 
+## OrchestrationServiceStateInput
+### Properties
+* **action**: 'Resume' | 'Suspend' | string (Required): The action to be performed.
+* **serviceName**: 'AutomaticRepairs' | string (Required): The name of the service.
+
 ## OSDisk
 ### Properties
-* **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None** for Standard storage. **ReadOnly** for Premium storage.
-* **createOption**: 'Attach' | 'Empty' | 'FromImage' | string (Required): Specifies how the virtual machine should be created.<br><br> Possible values are:<br><br> **Attach** \u2013 This value is used when you are using a specialized disk to create the virtual machine.<br><br> **FromImage** \u2013 This value is used when you are using an image to create the virtual machine. If you are using a platform image, you also use the imageReference element described above. If you are using a marketplace image, you  also use the plan element previously described.
-* **deleteOption**: 'Delete' | 'Detach' | string: Specifies whether OS Disk should be deleted or detached upon VM deletion. <br><br> Possible values: <br><br> **Delete** If this value is used, the OS disk is deleted when VM is deleted.<br><br> **Detach** If this value is used, the os disk is retained after VM is deleted. <br><br> The default value is set to **detach**. For an ephemeral OS Disk, the default value is set to **Delete**. User cannot change the delete option for ephemeral OS Disk.
+* **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Specifies the caching requirements.  Possible values are:  **None**  **ReadOnly**  **ReadWrite**  Default: **None** for Standard storage. **ReadOnly** for Premium storage.
+* **createOption**: 'Attach' | 'Empty' | 'FromImage' | string (Required): Specifies how the virtual machine should be created. Possible values are: **Attach** \u2013 This value is used when you are using a specialized disk to create the virtual machine. **FromImage** \u2013 This value is used when you are using an image to create the virtual machine. If you are using a platform image, you also use the imageReference element described above. If you are using a marketplace image, you  also use the plan element previously described.
+* **deleteOption**: 'Delete' | 'Detach' | string: Specifies whether OS Disk should be deleted or detached upon VM deletion.  Possible values:  **Delete** If this value is used, the OS disk is deleted when VM is deleted. **Detach** If this value is used, the os disk is retained after VM is deleted.  The default value is set to **detach**. For an ephemeral OS Disk, the default value is set to **Delete**. User cannot change the delete option for ephemeral OS Disk.
 * **diffDiskSettings**: [DiffDiskSettings](#diffdisksettings): Specifies the ephemeral Disk Settings for the operating system disk used by the virtual machine.
-* **diskSizeGB**: int: Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot be larger than 1023
-* **encryptionSettings**: [DiskEncryptionSettings](#diskencryptionsettings): Specifies the encryption settings for the OS Disk. <br><br> Minimum api-version: 2015-06-15
+* **diskSizeGB**: int: Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image.  diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot be larger than 1023
+* **encryptionSettings**: [DiskEncryptionSettings](#diskencryptionsettings): Specifies the encryption settings for the OS Disk.  Minimum api-version: 2015-06-15
 * **image**: [VirtualHardDisk](#virtualharddisk): The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not exist.
 * **managedDisk**: [ManagedDiskParameters](#manageddiskparameters): The managed disk parameters.
 * **name**: string: The disk name.
-* **osType**: 'Linux' | 'Windows': This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. <br><br> Possible values are: <br><br> **Windows** <br><br> **Linux**
+* **osType**: 'Linux' | 'Windows': This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD.  Possible values are:  **Windows**  **Linux**
 * **vhd**: [VirtualHardDisk](#virtualharddisk): The virtual hard disk.
 * **writeAcceleratorEnabled**: bool: Specifies whether writeAccelerator should be enabled or disabled on the disk.
 
 ## OSProfile
 ### Properties
-* **adminPassword**: string: Specifies the password of the administrator account. <br><br> **Minimum-length (Windows):** 8 characters <br><br> **Minimum-length (Linux):** 6 characters <br><br> **Max-length (Windows):** 123 characters <br><br> **Max-length (Linux):** 72 characters <br><br> **Complexity requirements:** 3 out of 4 conditions below need to be fulfilled <br> Has lower characters <br>Has upper characters <br> Has a digit <br> Has a special character (Regex match [\W_]) <br><br> **Disallowed values:** "abc@123", "P@$$w0rd", "P@ssw0rd", "P@ssword123", "Pa$$word", "pass@word1", "Password!", "Password1", "Password22", "iloveyou!" <br><br> For resetting the password, see [How to reset the Remote Desktop service or its login password in a Windows VM](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/reset-rdp) <br><br> For resetting root password, see [Manage users, SSH, and check or repair disks on Azure Linux VMs using the VMAccess Extension](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/troubleshoot-ssh-connection)
-* **adminUsername**: string: Specifies the name of the administrator account. <br><br> This property cannot be updated after the VM is created. <br><br> **Windows-only restriction:** Cannot end in "." <br><br> **Disallowed values:** "administrator", "admin", "user", "user1", "test", "user2", "test1", "user3", "admin1", "1", "123", "a", "actuser", "adm", "admin2", "aspnet", "backup", "console", "david", "guest", "john", "owner", "root", "server", "sql", "support", "support_388945a0", "sys", "test2", "test3", "user4", "user5". <br><br> **Minimum-length (Linux):** 1  character <br><br> **Max-length (Linux):** 64 characters <br><br> **Max-length (Windows):** 20 characters.
-* **allowExtensionOperations**: bool: Specifies whether extension operations should be allowed on the virtual machine. <br><br>This may only be set to False when no extensions are present on the virtual machine.
-* **computerName**: string: Specifies the host OS name of the virtual machine. <br><br> This name cannot be updated after the VM is created. <br><br> **Max-length (Windows):** 15 characters <br><br> **Max-length (Linux):** 64 characters. <br><br> For naming conventions and restrictions see [Azure infrastructure services implementation guidelines](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-name-rules).
-* **customData**: string: Specifies a base-64 encoded string of custom data. The base-64 encoded string is decoded to a binary array that is saved as a file on the Virtual Machine. The maximum length of the binary array is 65535 bytes. <br><br> **Note: Do not pass any secrets or passwords in customData property** <br><br> This property cannot be updated after the VM is created. <br><br> customData is passed to the VM to be saved as a file, for more information see [Custom Data on Azure VMs](https://azure.microsoft.com/blog/custom-data-and-cloud-init-on-windows-azure/) <br><br> For using cloud-init for your Linux VM, see [Using cloud-init to customize a Linux VM during creation](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init)
-* **linuxConfiguration**: [LinuxConfiguration](#linuxconfiguration): Specifies the Linux operating system settings on the virtual machine. <br><br>For a list of supported Linux distributions, see [Linux on Azure-Endorsed Distributions](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
+* **adminPassword**: string: Specifies the password of the administrator account. **Minimum-length (Windows):** 8 characters **Minimum-length (Linux):** 6 characters **Max-length (Windows):** 123 characters **Max-length (Linux):** 72 characters **Complexity requirements:** 3 out of 4 conditions below need to be fulfilled Has lower characters Has upper characters  Has a digit  Has a special character (Regex match [\W_])  **Disallowed values:** "abc@123", "P@$$w0rd", "P@ssw0rd", "P@ssword123", "Pa$$word", "pass@word1", "Password!", "Password1", "Password22", "iloveyou!"  For resetting the password, see [How to reset the Remote Desktop service or its login password in a Windows VM](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/reset-rdp)  For resetting root password, see [Manage users, SSH, and check or repair disks on Azure Linux VMs using the VMAccess Extension](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/troubleshoot-ssh-connection)
+* **adminUsername**: string: Specifies the name of the administrator account. This property cannot be updated after the VM is created. **Windows-only restriction:** Cannot end in "." **Disallowed values:** "administrator", "admin", "user", "user1", "test", "user2", "test1", "user3", "admin1", "1", "123", "a", "actuser", "adm", "admin2", "aspnet", "backup", "console", "david", "guest", "john", "owner", "root", "server", "sql", "support", "support_388945a0", "sys", "test2", "test3", "user4", "user5".  **Minimum-length (Linux):** 1  character  **Max-length (Linux):** 64 characters  **Max-length (Windows):** 20 characters.
+* **allowExtensionOperations**: bool: Specifies whether extension operations should be allowed on the virtual machine. This may only be set to False when no extensions are present on the virtual machine.
+* **computerName**: string: Specifies the host OS name of the virtual machine. This name cannot be updated after the VM is created. **Max-length (Windows):** 15 characters **Max-length (Linux):** 64 characters. For naming conventions and restrictions see [Azure infrastructure services implementation guidelines](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-name-rules).
+* **customData**: string: Specifies a base-64 encoded string of custom data. The base-64 encoded string is decoded to a binary array that is saved as a file on the Virtual Machine. The maximum length of the binary array is 65535 bytes. **Note: Do not pass any secrets or passwords in customData property** This property cannot be updated after the VM is created. customData is passed to the VM to be saved as a file, for more information see [Custom Data on Azure VMs](https://azure.microsoft.com/blog/custom-data-and-cloud-init-on-windows-azure/)  For using cloud-init for your Linux VM, see [Using cloud-init to customize a Linux VM during creation](https://docs.microsoft.com/azure/virtual-machines/linux/using-cloud-init)
+* **linuxConfiguration**: [LinuxConfiguration](#linuxconfiguration): Specifies the Linux operating system settings on the virtual machine. For a list of supported Linux distributions, see [Linux on Azure-Endorsed Distributions](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).
 * **requireGuestProvisionSignal**: bool: Optional property which must either be set to True or omitted.
 * **secrets**: [VaultSecretGroup](#vaultsecretgroup)[]: Specifies set of certificates that should be installed onto the virtual machine. To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
 * **windowsConfiguration**: [WindowsConfiguration](#windowsconfiguration): Specifies Windows operating system settings on the virtual machine.
+
+## PatchInstallationDetail
+### Properties
+* **classifications**: string[] (ReadOnly): The classification(s) of the patch as provided by the patch publisher.
+* **installationState**: 'Excluded' | 'Failed' | 'Installed' | 'NotSelected' | 'Pending' | 'Unknown' | string (ReadOnly): The state of the patch after the installation operation completed.
+* **kbId**: string (ReadOnly): The KBID of the patch. Only applies to Windows patches.
+* **name**: string (ReadOnly): The friendly name of the patch.
+* **patchId**: string (ReadOnly): A unique identifier for the patch.
+* **version**: string (ReadOnly): The version string of the package. It may conform to Semantic Versioning. Only applies to Linux.
 
 ## PatchSettings
 ### Properties
@@ -668,6 +911,18 @@
 ### Properties
 * **name**: 'Basic' | 'Standard' | string: Specify public IP sku name
 * **tier**: 'Global' | 'Regional' | string: Specify public IP sku tier
+
+## RequestRateByIntervalInput
+### Properties
+* **blobContainerSasUri**: string (Required): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required): From time of the query
+* **groupByClientApplicationId**: bool: Group query result by Client Application ID.
+* **groupByOperationName**: bool: Group query result by Operation Name.
+* **groupByResourceName**: bool: Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool: Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool: Group query result by User Agent.
+* **intervalLength**: 'FiveMins' | 'SixtyMins' | 'ThirtyMins' | 'ThreeMins' (Required): Interval value in minutes used to create LogAnalytics call rate logs.
+* **toTime**: string (Required): To time of the query
 
 ## ResourceTags
 ### Properties
@@ -828,6 +1083,16 @@
 * **dataDisks**: [RestorePointSourceVMDataDisk](#restorepointsourcevmdatadisk)[]: Gets the data disks of the VM captured at the time of the restore point creation.
 * **osDisk**: [RestorePointSourceVmosDisk](#restorepointsourcevmosdisk): Gets the OS disk of the VM captured at the time of the restore point creation.
 
+## RetrieveBootDiagnosticsDataResult
+### Properties
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob URI.
+
+## RetrieveBootDiagnosticsDataResult
+### Properties
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob URI.
+
 ## RollingUpgradePolicy
 ### Properties
 * **enableCrossZoneUpgrade**: bool: Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
@@ -858,10 +1123,30 @@
 * **progress**: [RollingUpgradeProgressInfo](#rollingupgradeprogressinfo) (ReadOnly): Information about the number of virtual machine instances in each upgrade state.
 * **runningStatus**: [RollingUpgradeRunningStatus](#rollingupgraderunningstatus) (ReadOnly): Information about the current running state of the overall upgrade.
 
+## RunCommandInput
+### Properties
+* **commandId**: string (Required): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[]: The run command parameters.
+* **script**: string[]: Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
+## RunCommandInput
+### Properties
+* **commandId**: string (Required): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[]: The run command parameters.
+* **script**: string[]: Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
 ## RunCommandInputParameter
 ### Properties
 * **name**: string (Required): The run command parameter name.
 * **value**: string (Required): The run command parameter value.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[]: Run command operation response.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[]: Run command operation response.
 
 ## ScaleInPolicy
 ### Properties
@@ -874,9 +1159,9 @@
 
 ## SecurityProfile
 ### Properties
-* **encryptionAtHost**: bool: This property can be used by user in the request to enable or disable the Host Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the disks including Resource/Temp disk at host itself. <br><br> Default: The Encryption at host will be disabled unless this property is set to true for the resource.
-* **securityType**: 'ConfidentialVM' | 'TrustedLaunch' | string: Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. <br><br> Default: UefiSettings will not be enabled unless this property is set.
-* **uefiSettings**: [UefiSettings](#uefisettings): Specifies the security settings like secure boot and vTPM used while creating the virtual machine. <br><br>Minimum api-version: 2020-12-01
+* **encryptionAtHost**: bool: This property can be used by user in the request to enable or disable the Host Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the disks including Resource/Temp disk at host itself. Default: The Encryption at host will be disabled unless this property is set to true for the resource.
+* **securityType**: 'ConfidentialVM' | 'TrustedLaunch' | string: Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. Default: UefiSettings will not be enabled unless this property is set.
+* **uefiSettings**: [UefiSettings](#uefisettings): Specifies the security settings like secure boot and vTPM used while creating the virtual machine. Minimum api-version: 2020-12-01
 
 ## Sku
 ### Properties
@@ -895,8 +1180,14 @@
 
 ## SshPublicKey
 ### Properties
-* **keyData**: string: SSH public key certificate used to authenticate with the VM through ssh. The key needs to be at least 2048-bit and in ssh-rsa format. <br><br> For creating ssh keys, see [Create SSH keys on Linux and Mac for Linux VMs in Azure]https://docs.microsoft.com/azure/virtual-machines/linux/create-ssh-keys-detailed).
+* **keyData**: string: SSH public key certificate used to authenticate with the VM through ssh. The key needs to be at least 2048-bit and in ssh-rsa format. For creating ssh keys, see [Create SSH keys on Linux and Mac for Linux VMs in Azure]https://docs.microsoft.com/azure/virtual-machines/linux/create-ssh-keys-detailed).
 * **path**: string: Specifies the full path on the created VM where ssh public key is stored. If the file already exists, the specified key is appended to the file. Example: /home/user/.ssh/authorized_keys
+
+## SshPublicKeyGenerateKeyPairResult
+### Properties
+* **id**: string (Required): The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}
+* **privateKey**: string (Required): Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
+* **publicKey**: string (Required): Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
 
 ## SshPublicKeyResourceProperties
 ### Properties
@@ -904,10 +1195,10 @@
 
 ## StorageProfile
 ### Properties
-* **dataDisks**: [DataDisk](#datadisk)[]: Specifies the parameters that are used to add a data disk to a virtual machine. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
-* **diskControllerType**: 'NVMe' | 'SCSI' | string: Specifies the disk controller type configured for the VM. <br><br>NOTE: This property will be set to the default disk controller type if not specified provided virtual machine is being created as a hyperVGeneration: V2 based on the capabilities of the operating system disk and VM size from the the specified minimum api version. <br>You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM. <br><br> Minimum api-version: 2022-08-01
+* **dataDisks**: [DataDisk](#datadisk)[]: Specifies the parameters that are used to add a data disk to a virtual machine.  For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+* **diskControllerType**: 'NVMe' | 'SCSI' | string: Specifies the disk controller type configured for the VM. NOTE: This property will be set to the default disk controller type if not specified provided virtual machine is being created as a hyperVGeneration: V2 based on the capabilities of the operating system disk and VM size from the the specified minimum api version. You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01
 * **imageReference**: [ImageReference](#imagereference): Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
-* **osDisk**: [OSDisk](#osdisk): Specifies information about the operating system disk used by the virtual machine. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+* **osDisk**: [OSDisk](#osdisk): Specifies information about the operating system disk used by the virtual machine.  For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
 
 ## SubResource
 ### Properties
@@ -927,10 +1218,21 @@
 * **enable**: bool: Specifies whether the Terminate Scheduled event is enabled or disabled.
 * **notBeforeTimeout**: string: Configurable length of time a Virtual Machine being deleted will have to potentially approve the Terminate Scheduled Event before the event is auto approved (timed out). The configuration must be specified in ISO 8601 format, the default value is 5 minutes (PT5M)
 
+## ThrottledRequestsInput
+### Properties
+* **blobContainerSasUri**: string (Required): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required): From time of the query
+* **groupByClientApplicationId**: bool: Group query result by Client Application ID.
+* **groupByOperationName**: bool: Group query result by Operation Name.
+* **groupByResourceName**: bool: Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool: Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool: Group query result by User Agent.
+* **toTime**: string (Required): To time of the query
+
 ## UefiSettings
 ### Properties
-* **secureBootEnabled**: bool: Specifies whether secure boot should be enabled on the virtual machine. <br><br>Minimum api-version: 2020-12-01
-* **vTpmEnabled**: bool: Specifies whether vTPM should be enabled on the virtual machine. <br><br>Minimum api-version: 2020-12-01
+* **secureBootEnabled**: bool: Specifies whether secure boot should be enabled on the virtual machine. Minimum api-version: 2020-12-01
+* **vTpmEnabled**: bool: Specifies whether vTPM should be enabled on the virtual machine. Minimum api-version: 2020-12-01
 
 ## UpgradePolicy
 ### Properties
@@ -955,8 +1257,8 @@
 
 ## VaultCertificate
 ### Properties
-* **certificateStore**: string: For Windows VMs, specifies the certificate store on the Virtual Machine to which the certificate should be added. The specified certificate store is implicitly in the LocalMachine account. <br><br>For Linux VMs, the certificate file is placed under the /var/lib/waagent directory, with the file name &lt;UppercaseThumbprint&gt;.crt for the X509 certificate file and &lt;UppercaseThumbprint&gt;.prv for private key. Both of these files are .pem formatted.
-* **certificateUrl**: string: This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: <br><br> {<br>  "data":"<Base64-encoded-certificate>",<br>  "dataType":"pfx",<br>  "password":"<pfx-file-password>"<br>} <br> To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
+* **certificateStore**: string: For Windows VMs, specifies the certificate store on the Virtual Machine to which the certificate should be added. The specified certificate store is implicitly in the LocalMachine account. For Linux VMs, the certificate file is placed under the /var/lib/waagent directory, with the file name &lt;UppercaseThumbprint&gt;.crt for the X509 certificate file and &lt;UppercaseThumbprint&gt;.prv for private key. Both of these files are .pem formatted.
+* **certificateUrl**: string: This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: {  "data":"<Base64-encoded-certificate>",  "dataType":"pfx",  "password":"<pfx-file-password>"} To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
 
 ## VaultSecretGroup
 ### Properties
@@ -972,6 +1274,31 @@
 * **extensionHandlers**: [VirtualMachineExtensionHandlerInstanceView](#virtualmachineextensionhandlerinstanceview)[]: The virtual machine extension handler instance view.
 * **statuses**: [InstanceViewStatus](#instanceviewstatus)[]: The resource status information.
 * **vmAgentVersion**: string: The VM Agent full version.
+
+## VirtualMachineAssessPatchesResult
+### Properties
+* **assessmentActivityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **availablePatches**: [VirtualMachineSoftwarePatchProperties](#virtualmachinesoftwarepatchproperties)[] (ReadOnly): The list of patches that have been detected as available for installation.
+* **criticalAndSecurityPatchCount**: int (ReadOnly): The number of critical or security patches that have been detected as available and not yet installed.
+* **error**: [ApiError](#apierror) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **otherPatchCount**: int (ReadOnly): The number of all available patches excluding critical and security.
+* **rebootPending**: bool (ReadOnly): The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+
+## VirtualMachineCaptureParameters
+### Properties
+* **destinationContainerName**: string (Required): The destination container name.
+* **overwriteVhds**: bool (Required): Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+* **vhdPrefix**: string (Required): The captured virtual hard disk's name prefix.
+
+## VirtualMachineCaptureResult
+### Properties
+* **$schema**: string (ReadOnly): the schema of the captured virtual machine
+* **contentVersion**: string (ReadOnly): the version of the content
+* **id**: string: Resource Id
+* **parameters**: any (ReadOnly): parameters of the captured virtual machine
+* **resources**: any[] (ReadOnly): a list of resource items of the captured virtual machine
 
 ## VirtualMachineExtension
 ### Properties
@@ -1029,6 +1356,28 @@
 * **tenantId**: string (ReadOnly): The tenant id associated with the virtual machine. This property will only be provided for a system assigned identity.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned': The type of identity used for the virtual machine. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine.
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The list of user identities associated with the Virtual Machine. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+
+## VirtualMachineInstallPatchesParameters
+### Properties
+* **linuxParameters**: [LinuxParameters](#linuxparameters): Input for InstallPatches on a Linux VM, as directly received by the API
+* **maximumDuration**: string: Specifies the maximum amount of time that the operation will run. It must be an ISO 8601-compliant duration string such as PT4H (4 hours)
+* **rebootSetting**: 'Always' | 'IfRequired' | 'Never' | string (Required): Defines when it is acceptable to reboot a VM during a software update operation.
+* **windowsParameters**: [WindowsParameters](#windowsparameters): Input for InstallPatches on a Windows VM, as directly received by the API
+
+## VirtualMachineInstallPatchesResult
+### Properties
+* **error**: [ApiError](#apierror) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **excludedPatchCount**: int (ReadOnly): The number of patches that were not installed due to the user blocking their installation.
+* **failedPatchCount**: int (ReadOnly): The number of patches that could not be installed due to some issue. See errors for details.
+* **installationActivityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **installedPatchCount**: int (ReadOnly): The number of patches successfully installed.
+* **maintenanceWindowExceeded**: bool (ReadOnly): Whether the operation ran out of time before it completed all its intended actions.
+* **notSelectedPatchCount**: int (ReadOnly): The number of patches that were detected as available for install, but did not meet the operation's criteria.
+* **patches**: [PatchInstallationDetail](#patchinstallationdetail)[] (ReadOnly): The patches that were installed during the operation.
+* **pendingPatchCount**: int (ReadOnly): The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+* **rebootStatus**: 'Completed' | 'Failed' | 'NotNeeded' | 'Required' | 'Started' | 'Unknown' | string (ReadOnly): The reboot state of the VM following completion of the operation.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings."
 
 ## VirtualMachineInstanceView
 ### Properties
@@ -1145,6 +1494,10 @@
 ## VirtualMachinePublicIPAddressDnsSettingsConfiguration
 ### Properties
 * **domainNameLabel**: string (Required): The Domain name label prefix of the PublicIPAddress resources that will be created. The generated name label is the concatenation of the domain name label and vm network profile unique ID.
+
+## VirtualMachineReimageParameters
+### Properties
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
 
 ## VirtualMachineRunCommandInstanceView
 ### Properties
@@ -1349,12 +1702,53 @@
 * **publicIPAddressVersion**: 'IPv4' | 'IPv6' | string: Available from Api-Version 2019-07-01 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
 * **publicIPPrefix**: [SubResource](#subresource): The PublicIPPrefix from which to allocate publicIP addresses.
 
+## VirtualMachineScaleSetReimageParameters
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+
 ## VirtualMachineScaleSetStorageProfile
 ### Properties
 * **dataDisks**: [VirtualMachineScaleSetDataDisk](#virtualmachinescalesetdatadisk)[]: Specifies the parameters that are used to add data disks to the virtual machines in the scale set. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
 * **diskControllerType**: string
 * **imageReference**: [ImageReference](#imagereference): Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
 * **osDisk**: [VirtualMachineScaleSetOSDisk](#virtualmachinescalesetosdisk): Specifies information about the operating system disk used by the virtual machines in the scale set. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceRequiredIDs
+### Properties
+* **instanceIds**: string[] (Required): The virtual machine scale set instance ids.
+
+## VirtualMachineScaleSetVMInstanceRequiredIDs
+### Properties
+* **instanceIds**: string[] (Required): The virtual machine scale set instance ids.
 
 ## VirtualMachineScaleSetVMInstanceView
 ### Properties
@@ -1418,10 +1812,27 @@
 * **protectFromScaleIn**: bool: Indicates that the virtual machine scale set VM shouldn't be considered for deletion during a scale-in operation.
 * **protectFromScaleSetActions**: bool: Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
 
+## VirtualMachineScaleSetVMReimageParameters
+### Properties
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+
+## VirtualMachineSoftwarePatchProperties
+### Properties
+* **activityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **assessmentState**: 'Available' | 'Unknown' | string (ReadOnly): Describes the availability of a given patch.
+* **classifications**: string[] (ReadOnly): The classification(s) of the patch as provided by the patch publisher.
+* **kbId**: string (ReadOnly): The KBID of the patch. Only applies to Windows patches.
+* **lastModifiedDateTime**: string (ReadOnly): The UTC timestamp of the last update to this patch record.
+* **name**: string (ReadOnly): The friendly name of the patch.
+* **patchId**: string (ReadOnly): A unique identifier for the patch.
+* **publishedDate**: string (ReadOnly): The UTC timestamp when the repository published this patch.
+* **rebootBehavior**: 'AlwaysRequiresReboot' | 'CanRequestReboot' | 'NeverReboots' | 'Unknown' | string (ReadOnly): Describes the reboot requirements of the patch.
+* **version**: string (ReadOnly): The version number of the patch. This property applies only to Linux patches.
+
 ## VMDiskSecurityProfile
 ### Properties
 * **diskEncryptionSet**: [DiskEncryptionSetParameters](#diskencryptionsetparameters): Specifies the customer managed disk encryption set resource id for the managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
-* **securityEncryptionType**: 'DiskWithVMGuestState' | 'VMGuestStateOnly' | string: Specifies the EncryptionType of the managed disk. <br> It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, and VMGuestStateOnly for encryption of just the VMGuestState blob. <br><br> NOTE: It can be set for only Confidential VMs.
+* **securityEncryptionType**: 'DiskWithVMGuestState' | 'VMGuestStateOnly' | string: Specifies the EncryptionType of the managed disk.  It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, and VMGuestStateOnly for encryption of just the VMGuestState blob.  NOTE: It can be set for only Confidential VMs.
 
 ## VMGalleryApplication
 ### Properties
@@ -1432,20 +1843,32 @@
 * **tags**: string: Optional, Specifies a passthrough value for more generic context.
 * **treatFailureAsDeploymentFailure**: bool: Optional, If true, any failure for any operation in the VmApplication will fail the deployment
 
+## VMScaleSetConvertToSinglePlacementGroupInput
+### Properties
+* **activePlacementGroupId**: string: Id of the placement group in which you want future virtual machine instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with maximum number of virtual machine instances.
+
 ## VMSizeProperties
 ### Properties
-* **vCPUsAvailable**: int: Specifies the number of vCPUs available for the VM. <br><br> When this property is not specified in the request body the default behavior is to set it to the value of vCPUs available for that VM size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list) .
-* **vCPUsPerCore**: int: Specifies the vCPU to physical core ratio. <br><br> When this property is not specified in the request body the default behavior is set to the value of vCPUsPerCore for the VM Size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list) <br><br> Setting this property to 1 also means that hyper-threading is disabled.
+* **vCPUsAvailable**: int: Specifies the number of vCPUs available for the VM.  When this property is not specified in the request body the default behavior is to set it to the value of vCPUs available for that VM size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list) .
+* **vCPUsPerCore**: int: Specifies the vCPU to physical core ratio.  When this property is not specified in the request body the default behavior is set to the value of vCPUsPerCore for the VM Size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list)  Setting this property to 1 also means that hyper-threading is disabled.
 
 ## WindowsConfiguration
 ### Properties
 * **additionalUnattendContent**: [AdditionalUnattendContent](#additionalunattendcontent)[]: Specifies additional base-64 encoded XML formatted information that can be included in the Unattend.xml file, which is used by Windows Setup.
-* **enableAutomaticUpdates**: bool: Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. <br><br> For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
+* **enableAutomaticUpdates**: bool: Indicates whether Automatic Updates is enabled for the Windows virtual machine. Default value is true. For virtual machine scale sets, this property can be updated and updates will take effect on OS reprovisioning.
 * **enableVMAgentPlatformUpdates**: bool: Indicates whether VMAgent Platform Updates is enabled for the Windows virtual machine. Default value is false.
 * **patchSettings**: [PatchSettings](#patchsettings): [Preview Feature] Specifies settings related to VM Guest Patching on Windows.
-* **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. <br><br> When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
-* **timeZone**: string: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". <br><br> Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
+* **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
+* **timeZone**: string: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
 * **winRM**: [WinRMConfiguration](#winrmconfiguration): Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell.
+
+## WindowsParameters
+### Properties
+* **classificationsToInclude**: 'Critical' | 'Definition' | 'FeaturePack' | 'Security' | 'ServicePack' | 'Tools' | 'UpdateRollUp' | 'Updates' | string[]: The update classifications to select when installing patches for Windows.
+* **excludeKbsRequiringReboot**: bool: Filters out Kbs that don't have an InstallationRebootBehavior of 'NeverReboots' when this is set to true.
+* **kbNumbersToExclude**: string[]: Kbs to exclude in the patch operation
+* **kbNumbersToInclude**: string[]: Kbs to include in the patch operation
+* **maxPatchPublishDate**: string: This is used to install patches that were published on or before this given max published date.
 
 ## WindowsVMGuestPatchAutomaticByPlatformSettings
 ### Properties
@@ -1457,6 +1880,6 @@
 
 ## WinRMListener
 ### Properties
-* **certificateUrl**: string: This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8: <br><br> {<br>  "data":"<Base64-encoded-certificate>",<br>  "dataType":"pfx",<br>  "password":"<pfx-file-password>"<br>} <br> To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
-* **protocol**: 'Http' | 'Https': Specifies the protocol of WinRM listener. <br><br> Possible values are: <br>**http** <br><br> **https**
+* **certificateUrl**: string: This is the URL of a certificate that has been uploaded to Key Vault as a secret. For adding a secret to the Key Vault, see [Add a key or secret to the key vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started/#add). In this case, your certificate needs to be It is the Base64 encoding of the following JSON Object which is encoded in UTF-8:  {  "data":"<Base64-encoded-certificate>",  "dataType":"pfx",  "password":"<pfx-file-password>"}  To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
+* **protocol**: 'Http' | 'Https': Specifies the protocol of WinRM listener. Possible values are: **http** **https**
 

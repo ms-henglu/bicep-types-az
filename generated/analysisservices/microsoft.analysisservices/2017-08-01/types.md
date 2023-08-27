@@ -12,10 +12,28 @@
 * **tags**: [ResourceTags](#resourcetags): Key-value pairs of additional resource provisioning properties.
 * **type**: 'Microsoft.AnalysisServices/servers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.AnalysisServices/locations@2017-08-01)
+* **Resource**: Microsoft.AnalysisServices/locations
+* **ApiVersion**: 2017-08-01
+* **Input**: [CheckServerNameAvailabilityParameters](#checkservernameavailabilityparameters)
+* **Output**: [CheckServerNameAvailabilityResult](#checkservernameavailabilityresult)
+
+## Function dissociateGateway (Microsoft.AnalysisServices/servers@2017-08-01)
+* **Resource**: Microsoft.AnalysisServices/servers
+* **ApiVersion**: 2017-08-01
+
 ## Function listGatewayStatus (Microsoft.AnalysisServices/servers@2017-08-01)
 * **Resource**: Microsoft.AnalysisServices/servers
 * **ApiVersion**: 2017-08-01
 * **Output**: [GatewayListStatusLive](#gatewayliststatuslive)
+
+## Function resume (Microsoft.AnalysisServices/servers@2017-08-01)
+* **Resource**: Microsoft.AnalysisServices/servers
+* **ApiVersion**: 2017-08-01
+
+## Function suspend (Microsoft.AnalysisServices/servers@2017-08-01)
+* **Resource**: Microsoft.AnalysisServices/servers
+* **ApiVersion**: 2017-08-01
 
 ## AnalysisServicesServerProperties
 ### Properties
@@ -30,6 +48,17 @@
 * **serverMonitorMode**: int: The server monitor mode for AS server
 * **sku**: [ResourceSku](#resourcesku): The SKU of the Analysis Services resource.
 * **state**: 'Deleting' | 'Failed' | 'Paused' | 'Pausing' | 'Preparing' | 'Provisioning' | 'Resuming' | 'Scaling' | 'Succeeded' | 'Suspended' | 'Suspending' | 'Updating' | string (ReadOnly): The current state of Analysis Services resource. The state is to indicate more states outside of resource provisioning.
+
+## CheckServerNameAvailabilityParameters
+### Properties
+* **name**: string: Name for checking availability.
+* **type**: string: The resource type of azure analysis services.
+
+## CheckServerNameAvailabilityResult
+### Properties
+* **message**: string: The detailed message of the request unavailability.
+* **nameAvailable**: bool: Indicator of available of the server name.
+* **reason**: string: The reason of unavailability.
 
 ## GatewayDetails
 ### Properties

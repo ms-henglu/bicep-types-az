@@ -24,6 +24,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.OperationalInsights/workspaces/tables' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelSearch (Microsoft.OperationalInsights/workspaces/tables@2022-10-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2022-10-01
+
+## Function migrate (Microsoft.OperationalInsights/workspaces/tables@2022-10-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2022-10-01
+
 ## Column
 ### Properties
 * **dataTypeHint**: 'armPath' | 'guid' | 'ip' | 'uri' | string: Column data type logical hint.
@@ -109,7 +117,7 @@
 * **retentionInDaysAsDefault**: bool (ReadOnly): True - Value originates from workspace retention in days, False - Customer specific.
 * **schema**: [Schema](#schema): Table schema.
 * **searchResults**: [SearchResults](#searchresults): Parameters of the search job that initiated this table.
-* **totalRetentionInDays**: int: The table total retention in days, between 4 and 2555. Setting this property to -1 will default to table retention.
+* **totalRetentionInDays**: int: The table total retention in days, between 4 and 2556. Setting this property to -1 will default to table retention.
 * **totalRetentionInDaysAsDefault**: bool (ReadOnly): True - Value originates from retention in days, False - Customer specific.
 
 ## TrackedResourceTags

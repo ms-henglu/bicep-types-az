@@ -187,6 +187,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DevCenter/projects/pools/schedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function runHealthChecks (Microsoft.DevCenter/networkConnections@2022-09-01-preview)
+* **Resource**: Microsoft.DevCenter/networkConnections
+* **ApiVersion**: 2022-09-01-preview
+
+## Function sync (Microsoft.DevCenter/devcenters/catalogs@2022-09-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2022-09-01-preview
+
 ## AllowedEnvironmentTypeProperties
 ### Properties
 * **provisioningState**: string (ReadOnly): The provisioning state of the resource.

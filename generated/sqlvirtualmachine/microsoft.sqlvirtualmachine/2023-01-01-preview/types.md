@@ -27,13 +27,27 @@
 ### Properties
 * **apiVersion**: '2023-01-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [ResourceIdentity](#resourceidentity): Azure Active Directory identity of the server.
+* **identity**: [ResourceIdentity](#resourceidentity): DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server.
 * **location**: string (Required): Resource location.
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SqlVirtualMachineProperties](#sqlvirtualmachineproperties): Resource properties.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachines' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function redeploy (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-01-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-01-01-preview
+
+## Function startAssessment (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-01-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-01-01-preview
+
+## Function troubleshoot (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-01-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-01-01-preview
+* **Input**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
+* **Output**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
 
 ## AADAuthenticationSettings
 ### Properties
@@ -80,6 +94,7 @@
 
 ## AutoPatchingSettings
 ### Properties
+* **additionalVmPatch**: 'MicrosoftUpdate' | 'NotSet' | string: Additional Patch to be enable or enabled on the SQL Virtual Machine.
 * **dayOfWeek**: 'Everyday' | 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday': Day of week to apply the patch on.
 * **enable**: bool: Enable or disable autopatching on SQL virtual machine.
 * **maintenanceWindowDuration**: int: Duration of patching.
@@ -216,6 +231,22 @@
 * **virtualMachineResourceId**: string: ARM Resource id of underlying virtual machine created from SQL marketplace image.
 * **wsfcDomainCredentials**: [WsfcDomainCredentials](#wsfcdomaincredentials): Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
 * **wsfcStaticIp**: string: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+
+## SqlVmTroubleshooting
+### Properties
+* **endTimeUtc**: string: End time in UTC timezone.
+* **properties**: [TroubleshootingAdditionalProperties](#troubleshootingadditionalproperties): Troubleshooting properties
+* **startTimeUtc**: string: Start time in UTC timezone.
+* **troubleshootingScenario**: 'UnhealthyReplica' | string: SQL VM troubleshooting scenario.
+* **virtualMachineResourceId**: string (ReadOnly): Virtual machine resource id for response.
+
+## SqlVmTroubleshooting
+### Properties
+* **endTimeUtc**: string: End time in UTC timezone.
+* **properties**: [TroubleshootingAdditionalProperties](#troubleshootingadditionalproperties): Troubleshooting properties
+* **startTimeUtc**: string: Start time in UTC timezone.
+* **troubleshootingScenario**: 'UnhealthyReplica' | string: SQL VM troubleshooting scenario.
+* **virtualMachineResourceId**: string (ReadOnly): Virtual machine resource id for response.
 
 ## SqlWorkloadTypeUpdateSettings
 ### Properties
