@@ -40,10 +40,92 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.StorageCache/caches/storageTargets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function archive (Microsoft.StorageCache/amlFilesystems@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/amlFilesystems
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [AmlFilesystemArchiveInfo](#amlfilesystemarchiveinfo)
+
+## Function cancelArchive (Microsoft.StorageCache/amlFilesystems@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/amlFilesystems
+* **ApiVersion**: 2023-03-01-preview
+
+## Function debugInfo (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+
+## Function dnsRefresh (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function flush (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+
+## Function flush (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function invalidate (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function pausePrimingJob (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function restoreDefaults (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function resume (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function resumePrimingJob (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function spaceAllocation (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [StorageTargetSpaceAllocation](#storagetargetspaceallocation)[]
+
+## Function start (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+
+## Function startPrimingJob (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [PrimingJob](#primingjob)
+
+## Function stop (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+
+## Function stopPrimingJob (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function suspend (Microsoft.StorageCache/caches/storageTargets@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-03-01-preview
+
+## Function upgrade (Microsoft.StorageCache/caches@2023-03-01-preview)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-03-01-preview
+
 ## AmlFilesystemArchive
 ### Properties
 * **filesystemPath**: string (ReadOnly): Lustre file system path to archive relative to the file system root.  Specify '/' to archive all modified data.
 * **status**: [AmlFilesystemArchiveStatus](#amlfilesystemarchivestatus) (ReadOnly): The status of the archive
+
+## AmlFilesystemArchiveInfo
+### Properties
+* **filesystemPath**: string: Lustre file system path to archive relative to the file system root.  Specify '/' to archive all modified data.
 
 ## AmlFilesystemArchiveStatus
 ### Properties
@@ -280,6 +362,28 @@
 * **primingJobState**: 'Complete' | 'Paused' | 'Queued' | 'Running' | string (ReadOnly): The state of the priming operation.
 * **primingJobStatus**: string (ReadOnly): The status code of the priming job.
 * **primingManifestUrl**: string (Required, WriteOnly): The URL for the priming manifest file to download. This file must be readable from the HPC Cache. When the file is in Azure blob storage the URL should include a Shared Access Signature (SAS) granting read permissions on the blob.
+
+## PrimingJob
+### Properties
+* **primingJobDetails**: string (ReadOnly): The job details or error information if any.
+* **primingJobId**: string (ReadOnly): The unique identifier of the priming job.
+* **primingJobName**: string (Required): The priming job name.
+* **primingJobPercentComplete**: int (ReadOnly): The current progress of the priming job, as a percentage.
+* **primingJobState**: 'Complete' | 'Paused' | 'Queued' | 'Running' | string (ReadOnly): The state of the priming operation.
+* **primingJobStatus**: string (ReadOnly): The status code of the priming job.
+* **primingManifestUrl**: string (Required, WriteOnly): The URL for the priming manifest file to download. This file must be readable from the HPC Cache. When the file is in Azure blob storage the URL should include a Shared Access Signature (SAS) granting read permissions on the blob.
+
+## PrimingJobIdParameter
+### Properties
+* **primingJobId**: string (Required): The unique identifier of the priming job.
+
+## PrimingJobIdParameter
+### Properties
+* **primingJobId**: string (Required): The unique identifier of the priming job.
+
+## PrimingJobIdParameter
+### Properties
+* **primingJobId**: string (Required): The unique identifier of the priming job.
 
 ## SkuName
 ### Properties

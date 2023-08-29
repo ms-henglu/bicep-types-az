@@ -1,4 +1,4 @@
-AutoRest code generation utility [cli version: 3.6.3; node: v16.20.1]
+AutoRest code generation utility [cli version: 3.6.3; node: v16.20.2]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -66,6 +66,7 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorResponse' 
 warning | Skipping TenantActionGroups_CreateOrUpdate due to required header parameter "xMsClientTenantId"
 warning | Skipping TenantActionGroups_Get due to required header parameter "xMsClientTenantId"
 warning | Skipping TenantActionGroups_ListByManagementGroupId due to required header parameter "xMsClientTenantId"
+warning | Skipping CreateNotificationsAtTenantActionGroupResourceLevel due to required header parameter "xMsClientTenantId"
 warning | Skipping GetTestNotificationsAtTenantActionGroupResourceLevel due to required header parameter "xMsClientTenantId"
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -399,6 +400,7 @@ warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping MetricDefinitions_ListAtSubscriptionScope due to required query parameter "region"
 warning | Skipping Metrics_ListAtSubscriptionScope due to required query parameter "region"
+warning | Skipping Metrics_ListAtSubscriptionScopePost due to required query parameter "region"
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -826,6 +828,8 @@ warning | PreCheck/SchemaMissingType | The schema 'DataCollectionRuleResource-sy
 warning | PreCheck/SchemaMissingType | The schema 'ResourceForUpdate-identity' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/monitor/resource-manager/Microsoft.Insights/stable/2022-06-01/dataCollectionRules_API.json:1395:9
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -1223,6 +1227,8 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
@@ -1252,6 +1258,8 @@ warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and
 warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/createNotifications': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.

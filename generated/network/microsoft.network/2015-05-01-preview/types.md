@@ -183,6 +183,20 @@
 * **properties**: [SubnetPropertiesFormat](#subnetpropertiesformat)
 * **type**: 'Microsoft.Network/virtualnetworks/subnets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reset (Microsoft.Network/virtualnetworkgateways@2015-05-01-preview)
+* **Resource**: Microsoft.Network/virtualnetworkgateways
+* **ApiVersion**: 2015-05-01-preview
+* **Input**: [VirtualNetworkGateway](#virtualnetworkgateway)
+* **Output**: [VirtualNetworkGateway](#virtualnetworkgateway)
+
+## Function start (Microsoft.Network/applicationGateways@2015-05-01-preview)
+* **Resource**: Microsoft.Network/applicationGateways
+* **ApiVersion**: 2015-05-01-preview
+
+## Function stop (Microsoft.Network/applicationGateways@2015-05-01-preview)
+* **Resource**: Microsoft.Network/applicationGateways
+* **ApiVersion**: 2015-05-01-preview
+
 ## AddressSpace
 ### Properties
 * **addressPrefixes**: string[]: Gets or sets List of address blocks reserved for this virtual network in CIDR notation
@@ -729,6 +743,26 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource Id
+
+## VirtualNetworkGateway
+### Properties
+* **etag**: string: Gets a unique read-only string that changes whenever the resource is updated
+* **id**: string (ReadOnly): Resource Id
+* **location**: string (Required): Resource location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [VirtualNetworkGatewayPropertiesFormat](#virtualnetworkgatewaypropertiesformat): VirtualNetworkGateway properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string (ReadOnly): Resource type
+
+## VirtualNetworkGateway
+### Properties
+* **etag**: string: Gets a unique read-only string that changes whenever the resource is updated
+* **id**: string (ReadOnly): Resource Id
+* **location**: string (Required): Resource location
+* **name**: string (ReadOnly): Resource name
+* **properties**: [VirtualNetworkGatewayPropertiesFormat](#virtualnetworkgatewaypropertiesformat): VirtualNetworkGateway properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string (ReadOnly): Resource type
 
 ## VirtualNetworkGateway
 ### Properties
