@@ -77,6 +77,14 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ContainerService/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function abort (Microsoft.ContainerService/managedclusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters
+* **ApiVersion**: 2022-10-02-preview
+
+## Function abort (Microsoft.ContainerService/managedclusters/agentPools@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters/agentPools
+* **ApiVersion**: 2022-10-02-preview
+
 ## Function listClusterAdminCredential (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
 * **Resource**: Microsoft.ContainerService/managedClusters
 * **ApiVersion**: 2022-10-02-preview
@@ -96,6 +104,48 @@
 * **Resource**: Microsoft.ContainerService/managedClusters/accessProfiles
 * **ApiVersion**: 2022-10-02-preview
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
+
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+
+## Function rotateServiceAccountSigningKeys (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+
+## Function stop (Microsoft.ContainerService/managedClusters@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2022-10-02-preview
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2022-10-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2022-10-02-preview
 
 ## AbsoluteMonthlySchedule
 ### Properties
@@ -126,6 +176,15 @@
 * **keyId**: string: Identifier of Azure Key Vault key. See [key identifier format](https://docs.microsoft.com/en-us/azure/key-vault/general/about-keys-secrets-certificates#vault-name-and-object-name) for more details. When Azure Key Vault key management service is enabled, this field is required and must be a valid key identifier. When Azure Key Vault key management service is disabled, leave the field empty.
 * **keyVaultNetworkAccess**: 'Private' | 'Public' | string: Network access of key vault. The possible values are `Public` and `Private`. `Public` means the key vault allows public access from all networks. `Private` means the key vault disables public access and enables private link. The default value is `Public`.
 * **keyVaultResourceId**: string: Resource ID of key vault. When keyVaultNetworkAccess is `Private`, this field is required and must be a valid resource ID. When keyVaultNetworkAccess is `Public`, leave the field empty.
+
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): The exit code of the command
+* **finishedAt**: string (ReadOnly): The time when the command finished.
+* **logs**: string (ReadOnly): The command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): An explanation of why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): The time when the command started.
 
 ## ContainerServiceLinuxProfile
 ### Properties
@@ -255,6 +314,16 @@
 * **startDate**: string: The date the maintenance window activates. If the current date is before this date, the maintenance window is inactive and will not be used for upgrades. If not specified, the maintenance window will be active right away.
 * **startTime**: string (Required): The start time of the maintenance window. Accepted values are from '00:00' to '23:59'. 'utcOffset' applies to this field. For example: '02:00' with 'utcOffset: +02:00' means UTC time '00:00'.
 * **utcOffset**: string: The UTC offset in format +/-HH:mm. For example, '+05:30' for IST and '-07:00' for PST. If not specified, the default is '+00:00'.
+
+## ManagedClusterAADProfile
+### Properties
+* **adminGroupObjectIDs**: string[]: The list of AAD group object IDs that will have admin role of the cluster.
+* **clientAppID**: string: The client AAD application ID.
+* **enableAzureRBAC**: bool: Whether to enable Azure RBAC for Kubernetes authorization.
+* **managed**: bool: Whether to enable managed AAD.
+* **serverAppID**: string: The server AAD application ID.
+* **serverAppSecret**: string: The server AAD application secret.
+* **tenantID**: string: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment subscription.
 
 ## ManagedClusterAADProfile
 ### Properties
@@ -666,6 +735,11 @@
 * **clientId**: string (Required): The ID for the service principal.
 * **secret**: string: The secret password associated with the service principal in plain text.
 
+## ManagedClusterServicePrincipalProfile
+### Properties
+* **clientId**: string (Required): The ID for the service principal.
+* **secret**: string: The secret password associated with the service principal in plain text.
+
 ## ManagedClusterSKU
 ### Properties
 * **name**: 'Basic' | string: The name of a managed cluster SKU.
@@ -766,6 +840,24 @@
 * **requiredMembers**: string[]: The RequiredMembers of the resource
 * **type**: string: The resource type.
 
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: The RequiredMembers of the resource
+* **type**: string: The resource type.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: The RequiredMembers of the resource
+* **type**: string: The resource type.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **description**: string: The private link service connection description.
@@ -780,6 +872,17 @@
 ## ResourceReference
 ### Properties
 * **id**: string: The fully qualified Azure resource id.
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): The command to run.
+* **context**: string: A base64 encoded zip file containing the files required by the command.
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): The command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## Schedule
 ### Properties

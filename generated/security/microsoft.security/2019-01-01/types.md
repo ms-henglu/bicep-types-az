@@ -34,6 +34,14 @@
 * **properties**: [DataExportSettingProperties](#dataexportsettingproperties): Data export setting data
 
 
+## Function dismiss (Microsoft.Security/locations/alerts@2019-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2019-01-01
+
+## Function reactivate (Microsoft.Security/locations/alerts@2019-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2019-01-01
+
 ## AdvancedThreatProtectionProperties
 ### Properties
 * **isEnabled**: bool: Indicates whether Advanced Threat Protection is enabled.

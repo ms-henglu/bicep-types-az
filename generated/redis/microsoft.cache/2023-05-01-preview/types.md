@@ -68,10 +68,47 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **type**: 'Microsoft.Cache/redis/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function export (Microsoft.Cache/redis@2023-05-01-preview)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [ExportRDBParameters](#exportrdbparameters)
+
+## Function forceReboot (Microsoft.Cache/redis@2023-05-01-preview)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+* **Output**: [RedisForceRebootResponse](#redisforcerebootresponse)
+
+## Function import (Microsoft.Cache/redis@2023-05-01-preview)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [ImportRDBParameters](#importrdbparameters)
+
 ## Function listKeys (Microsoft.Cache/redis@2023-05-01-preview)
 * **Resource**: Microsoft.Cache/redis
 * **ApiVersion**: 2023-05-01-preview
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## Function regenerateKey (Microsoft.Cache/redis@2023-05-01-preview)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## ExportRDBParameters
+### Properties
+* **container**: string (Required): Container name to export to.
+* **format**: string: File format.
+* **preferred-data-archive-auth-method**: string: Preferred auth method to communicate to storage account used for data archive, specify SAS or ManagedIdentity, default value is SAS
+* **prefix**: string (Required): Prefix to use for exported files.
+* **storage-subscription-id**: string: Subscription id of the storage container for data to be exported using ManagedIdentity.
+
+## ImportRDBParameters
+### Properties
+* **files**: string[] (Required): files to import.
+* **format**: string: File format.
+* **preferred-data-archive-auth-method**: string: Preferred auth method to communicate to storage account used for data archive, specify SAS or ManagedIdentity, default value is SAS
+* **storage-subscription-id**: string: Subscription id of the storage container containing files to import using Managed Identity.
 
 ## ManagedServiceIdentity
 ### Properties
@@ -102,6 +139,11 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RedisAccessKeys
+### Properties
+* **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate with Redis cache.
+* **secondaryKey**: string (ReadOnly): The current secondary key that clients can use to authenticate with Redis cache.
 
 ## RedisAccessKeys
 ### Properties
@@ -169,7 +211,7 @@
 * **minimumTlsVersion**: '1.0' | '1.1' | '1.2' | string: Optional: requires clients to use a specified TLS version (or higher) to connect (e,g, '1.0', '1.1', '1.2')
 * **port**: int (ReadOnly): Redis non-SSL port.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connection associated with the specified redis cache
-* **provisioningState**: 'Creating' | 'Deleting' | 'Disabled' | 'Failed' | 'Linking' | 'Provisioning' | 'RecoveringScaleFailure' | 'Scaling' | 'Succeeded' | 'Unlinking' | 'Unprovisioning' | 'Updating' | string (ReadOnly): Redis instance provisioning status.
+* **provisioningState**: 'ConfiguringAAD' | 'Creating' | 'Deleting' | 'Disabled' | 'Failed' | 'Linking' | 'Provisioning' | 'RecoveringScaleFailure' | 'Scaling' | 'Succeeded' | 'Unlinking' | 'Unprovisioning' | 'Updating' | string (ReadOnly): Redis instance provisioning status.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this cache.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'. If 'Disabled', private endpoints are the exclusive access method. Default value is 'Enabled'
 * **redisConfiguration**: [RedisCommonPropertiesRedisConfiguration](#rediscommonpropertiesredisconfiguration): All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta,maxmemory-policy,notify-keyspace-events,maxmemory-samples,slowlog-log-slower-than,slowlog-max-len,list-max-ziplist-entries,list-max-ziplist-value,hash-max-ziplist-entries,hash-max-ziplist-value,set-max-intset-entries,zset-max-ziplist-entries,zset-max-ziplist-value etc.
 * **redisVersion**: string: Redis version. This should be in the form 'major[.minor]' (only 'major' is required) or the value 'latest' which refers to the latest stable Redis version that is available. Supported versions: 4.0, 6.0 (latest). Default value is 'latest'.
@@ -186,6 +228,10 @@
 ### Properties
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
+
+## RedisForceRebootResponse
+### Properties
+* **message**: string (ReadOnly): Status message
 
 ## RedisInstanceDetails
 ### Properties
@@ -208,6 +254,16 @@
 * **primaryHostName**: string (ReadOnly): The changing DNS name that resolves to the current geo-primary cache among the linked redis caches before or after the Geo Failover.
 * **provisioningState**: string (ReadOnly): Terminal state of the link between primary and secondary redis cache.
 * **serverRole**: 'Primary' | 'Secondary' (Required): Role of the linked server.
+
+## RedisRebootParameters
+### Properties
+* **ports**: int[]: A list of redis instances to reboot, specified by per-instance SSL ports or non-SSL ports.
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' | string: Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shard to be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The Redis access key to regenerate.
 
 ## ScheduleEntries
 ### Properties

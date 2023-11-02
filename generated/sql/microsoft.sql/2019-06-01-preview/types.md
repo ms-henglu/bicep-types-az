@@ -111,6 +111,58 @@ Get-AzSqlServerServiceObjective -Location <location>
 * **properties**: [WorkloadClassifierProperties](#workloadclassifierproperties): Resource properties.
 * **type**: 'Microsoft.Sql/servers/databases/workloadGroups/workloadClassifiers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Sql/managedInstances/operations@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/operations
+* **ApiVersion**: 2019-06-01-preview
+
+## Function cancelSync (Microsoft.Sql/servers/databases/syncGroups@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2019-06-01-preview
+
+## Function completeRestore (Microsoft.Sql/managedInstances/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases
+* **ApiVersion**: 2019-06-01-preview
+* **Input**: [CompleteDatabaseRestoreDefinition](#completedatabaserestoredefinition)
+
+## Function failover (Microsoft.Sql/servers/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2019-06-01-preview
+
+## Function failover (Microsoft.Sql/managedInstances@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances
+* **ApiVersion**: 2019-06-01-preview
+
+## Function move (Microsoft.Sql/servers/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2019-06-01-preview
+* **Input**: [ResourceMoveDefinition](#resourcemovedefinition)
+
+## Function pause (Microsoft.Sql/servers/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2019-06-01-preview
+* **Output**: [Database](#database)
+
+## Function refreshHubSchema (Microsoft.Sql/servers/databases/syncGroups@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2019-06-01-preview
+
+## Function refreshSchema (Microsoft.Sql/servers/databases/syncGroups/syncMembers@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups/syncMembers
+* **ApiVersion**: 2019-06-01-preview
+
+## Function resume (Microsoft.Sql/servers/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2019-06-01-preview
+* **Output**: [Database](#database)
+
+## Function triggerSync (Microsoft.Sql/servers/databases/syncGroups@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2019-06-01-preview
+
+## Function upgradeDataWarehouse (Microsoft.Sql/servers/databases@2019-06-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2019-06-01-preview
+
 ## AdministratorProperties
 ### Properties
 * **administratorType**: 'ActiveDirectory' | string (Required): Type of the sever administrator.
@@ -118,6 +170,54 @@ Get-AzSqlServerServiceObjective -Location <location>
 * **login**: string (Required): Login name of the server administrator.
 * **sid**: string (Required): SID (object ID) of the server administrator.
 * **tenantId**: string: Tenant ID of the administrator.
+
+## CompleteDatabaseRestoreDefinition
+### Properties
+* **lastBackupName**: string (Required): The last backup name to apply
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **managedBy**: string (ReadOnly): Resource that manages the database.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The database SKU.
+
+The list of SKUs may vary by region and support offer. To determine the SKUs (including the SKU name, tier/edition, family, and capacity) that are available to your subscription in an Azure region, use the `Capabilities_ListByLocation` REST API or one of the following commands:
+
+```azurecli
+az sql db list-editions -l <location> -o table
+````
+
+```powershell
+Get-AzSqlServerServiceObjective -Location <location>
+````
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **managedBy**: string (ReadOnly): Resource that manages the database.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The database SKU.
+
+The list of SKUs may vary by region and support offer. To determine the SKUs (including the SKU name, tier/edition, family, and capacity) that are available to your subscription in an Azure region, use the `Capabilities_ListByLocation` REST API or one of the following commands:
+
+```azurecli
+az sql db list-editions -l <location> -o table
+````
+
+```powershell
+Get-AzSqlServerServiceObjective -Location <location>
+````
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
 
 ## DatabaseProperties
 ### Properties
@@ -265,6 +365,10 @@ When source subscription belongs to a different tenant than target subscription,
 * **tenantId**: string (ReadOnly): The Azure Active Directory tenant id.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string: The identity type. Set this to 'SystemAssigned' in order to automatically create and assign an Azure Active Directory principal for the resource.
 
+## ResourceMoveDefinition
+### Properties
+* **id**: string (Required): The target ID for the resource
+
 ## ServerPrivateEndpointConnection
 ### Properties
 * **id**: string (ReadOnly): Resource ID.
@@ -332,6 +436,11 @@ When source subscription belongs to a different tenant than target subscription,
 * **syncState**: 'DeProvisionFailed' | 'DeProvisioned' | 'DeProvisioning' | 'DisabledBackupRestore' | 'DisabledTombstoneCleanup' | 'ProvisionFailed' | 'Provisioned' | 'Provisioning' | 'ReprovisionFailed' | 'Reprovisioning' | 'SyncCancelled' | 'SyncCancelling' | 'SyncFailed' | 'SyncInProgress' | 'SyncSucceeded' | 'SyncSucceededWithWarnings' | 'UnProvisioned' | 'UnReprovisioned' | string (ReadOnly): Sync state of the sync member.
 * **usePrivateLinkConnection**: bool: Whether to use private link connection.
 * **userName**: string: User name of the member database in the sync member.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

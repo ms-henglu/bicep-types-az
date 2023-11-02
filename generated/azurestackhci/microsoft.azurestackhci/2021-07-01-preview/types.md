@@ -65,6 +65,18 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureStackHCI/virtualnetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function restart (Microsoft.AzureStackHCI/virtualmachines@2021-07-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-07-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualmachines@2021-07-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-07-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualmachines@2021-07-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-07-01-preview
+
 ## ComponentsL15GkaSchemasVirtualnetworkspropertiesPropertiesSubnetsItemsPropertiesRoutetable
 ### Properties
 * **id**: string: route ID - ID of the IP route

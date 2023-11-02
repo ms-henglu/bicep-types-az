@@ -34,6 +34,11 @@
 * **tags**: [WebtestsResourceTags](#webtestsresourcetags): Resource tags
 * **type**: 'Microsoft.Insights/webtests' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function purge (Microsoft.Insights/components@2018-05-01-preview)
+* **Resource**: Microsoft.Insights/components
+* **ApiVersion**: 2018-05-01-preview
+* **Input**: [ComponentPurgeBody](#componentpurgebody)
+
 ## ApplicationInsightsComponentProactiveDetectionConfigurationProperties
 ### Properties
 * **CustomEmails**: string[]: Custom email addresses for this rule notifications
@@ -76,6 +81,18 @@
 * **RetentionInDays**: int: Retention period in days.
 * **SamplingPercentage**: int: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
 * **TenantId**: string (ReadOnly): Azure Tenant Id.
+
+## ComponentPurgeBody
+### Properties
+* **filters**: [ComponentPurgeBodyFilters](#componentpurgebodyfilters)[] (Required): The set of columns and filters (queries) to run over them to purge the resulting data.
+* **table**: string (Required): Table from which to purge data.
+
+## ComponentPurgeBodyFilters
+### Properties
+* **column**: string: The column of the table over which the given query should run
+* **key**: string: When filtering over custom dimensions, this key will be used as the name of the custom dimension.
+* **operator**: string: A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >, >=, <, <=, between, and have the same behavior as they would in a KQL query.
+* **value**: any: the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >= '2017-09-01') or array of values.
 
 ## ComponentsResourceTags
 ### Properties

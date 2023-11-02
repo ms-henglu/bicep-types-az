@@ -248,10 +248,120 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.AppPlatform/Spring/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.AppPlatform/locations@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/locations
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailability](#nameavailability)
+
+## Function disableTestEndpoint (Microsoft.AppPlatform/Spring@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring
+* **ApiVersion**: 2022-05-01-preview
+
+## Function enableTestEndpoint (Microsoft.AppPlatform/Spring@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [TestKeys](#testkeys)
+
+## Function generateHeapDump (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [DiagnosticParameters](#diagnosticparameters)
+
+## Function generateThreadDump (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [DiagnosticParameters](#diagnosticparameters)
+
+## Function getLogFileUrl (Microsoft.AppPlatform/Spring/buildServices/builds/results@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/buildServices/builds/results
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [BuildResultLog](#buildresultlog)
+
+## Function getLogFileUrl (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [LogFileUrlResponse](#logfileurlresponse)
+
+## Function getResourceUploadUrl (Microsoft.AppPlatform/Spring/buildServices@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/buildServices
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [ResourceUploadDefinition](#resourceuploaddefinition)
+
+## Function getResourceUploadUrl (Microsoft.AppPlatform/Spring/apps@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps
+* **ApiVersion**: 2022-05-01-preview
+* **Output**: [ResourceUploadDefinition](#resourceuploaddefinition)
+
 ## Function listTestKeys (Microsoft.AppPlatform/Spring@2022-05-01-preview)
 * **Resource**: Microsoft.AppPlatform/Spring
 * **ApiVersion**: 2022-05-01-preview
 * **Output**: [TestKeys](#testkeys)
+
+## Function regenerateTestKey (Microsoft.AppPlatform/Spring@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [RegenerateTestKeyRequestPayload](#regeneratetestkeyrequestpayload)
+* **Output**: [TestKeys](#testkeys)
+
+## Function restart (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+
+## Function setActiveDeployments (Microsoft.AppPlatform/Spring/apps@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [ActiveDeploymentCollection](#activedeploymentcollection)
+* **Output**: [AppResource](#appresource)
+
+## Function start (Microsoft.AppPlatform/Spring@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring
+* **ApiVersion**: 2022-05-01-preview
+
+## Function start (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+
+## Function startJFR (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [DiagnosticParameters](#diagnosticparameters)
+
+## Function stop (Microsoft.AppPlatform/Spring@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring
+* **ApiVersion**: 2022-05-01-preview
+
+## Function stop (Microsoft.AppPlatform/Spring/apps/deployments@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps/deployments
+* **ApiVersion**: 2022-05-01-preview
+
+## Function validate (Microsoft.AppPlatform/Spring/configurationServices@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/configurationServices
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [ConfigurationServiceSettings](#configurationservicesettings)
+* **Output**: [ConfigurationServiceSettingsValidateResult](#configurationservicesettingsvalidateresult)
+
+## Function validateDomain (Microsoft.AppPlatform/Spring/apps@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apps
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [CustomDomainValidatePayload](#customdomainvalidatepayload)
+* **Output**: [CustomDomainValidateResult](#customdomainvalidateresult)
+
+## Function validateDomain (Microsoft.AppPlatform/Spring/gateways@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/gateways
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [CustomDomainValidatePayload](#customdomainvalidatepayload)
+* **Output**: [CustomDomainValidateResult](#customdomainvalidateresult)
+
+## Function validateDomain (Microsoft.AppPlatform/Spring/apiPortals@2022-05-01-preview)
+* **Resource**: Microsoft.AppPlatform/Spring/apiPortals
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [CustomDomainValidatePayload](#customdomainvalidatepayload)
+* **Output**: [CustomDomainValidateResult](#customdomainvalidateresult)
+
+## ActiveDeploymentCollection
+### Properties
+* **activeDeploymentNames**: string[]: Collection of Deployment name.
 
 ## AddonProfile
 ### Properties
@@ -292,6 +402,16 @@
 ## ApplicationInsightsAgentVersions
 ### Properties
 * **java**: string (ReadOnly): Indicates the version of application insight java agent
+
+## AppResource
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource Id for the resource.
+* **identity**: [ManagedIdentityProperties](#managedidentityproperties): The Managed Identity type of the app resource
+* **location**: string: The GEO location of the application, always the same with its parent resource
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [AppResourceProperties](#appresourceproperties): Properties of the App resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## AppResourceProperties
 ### Properties
@@ -392,6 +512,10 @@ The default value is 1, this should not exceed build service agent pool cpu size
 * **memory**: string: Optional Memory allocated to the build resource. 1 GB can be represented by 1Gi or 1024Mi. 
 The default value is 2Gi, this should not exceed build service agent pool memory size.
 
+## BuildResultLog
+### Properties
+* **blobUrl**: string: The public download URL of this build result log
+
 ## BuildResultProperties
 ### Properties
 * **buildPodName**: string: The build pod name which can be used to get the build log streaming.
@@ -460,7 +584,7 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 * **networkProfile**: [NetworkProfile](#networkprofile): Network profile of the Service
 * **powerState**: 'Running' | 'Stopped' | string (ReadOnly): Power state of the Service
 * **provisioningState**: 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'MoveFailed' | 'Moved' | 'Moving' | 'Starting' | 'Stopping' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Service
-* **serviceId**: string (ReadOnly): ServiceInstanceEntity GUID which uniquely identifies a created resource
+* **serviceId**: string (ReadOnly): ServiceInstanceEntity Id which uniquely identifies a created resource
 * **version**: int (ReadOnly): Version of the Service
 * **vnetAddons**: [ServiceVNetAddons](#servicevnetaddons): Additional Service settings in vnet injection instance
 * **zoneRedundant**: bool
@@ -491,6 +615,11 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 ## ConfigurationServiceGitProperty
 ### Properties
 * **repositories**: [ConfigurationServiceGitRepository](#configurationservicegitrepository)[]: Repositories of Application Configuration Service git property.
+
+## ConfigurationServiceGitPropertyValidateResult
+### Properties
+* **gitReposValidationResult**: [ValidationMessages](#validationmessages)[]: The detail validation results
+* **isValid**: bool: Indicate if the configuration service settings are valid
 
 ## ConfigurationServiceGitRepository
 ### Properties
@@ -528,6 +657,14 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 ### Properties
 * **gitProperty**: [ConfigurationServiceGitProperty](#configurationservicegitproperty): Property of git environment.
 
+## ConfigurationServiceSettings
+### Properties
+* **gitProperty**: [ConfigurationServiceGitProperty](#configurationservicegitproperty): Property of git environment.
+
+## ConfigurationServiceSettingsValidateResult
+### Properties
+* **gitPropertyValidationResult**: [ConfigurationServiceGitPropertyValidateResult](#configurationservicegitpropertyvalidateresult): Validation result for configuration service settings
+
 ## ContainerProbeSettings
 ### Properties
 * **disableProbe**: bool: Indicates whether disable the liveness and readiness probe
@@ -547,6 +684,33 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 * **certName**: string: The bound certificate name of domain.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Domain
 * **thumbprint**: string: The thumbprint of bound certificate.
+
+## CustomDomainValidatePayload
+### Properties
+* **name**: string (Required): Name to be validated
+
+## CustomDomainValidatePayload
+### Properties
+* **name**: string (Required): Name to be validated
+
+## CustomDomainValidatePayload
+### Properties
+* **name**: string (Required): Name to be validated
+
+## CustomDomainValidateResult
+### Properties
+* **isValid**: bool: Indicates if domain name is valid.
+* **message**: string: Message of why domain name is invalid.
+
+## CustomDomainValidateResult
+### Properties
+* **isValid**: bool: Indicates if domain name is valid.
+* **message**: string: Message of why domain name is invalid.
+
+## CustomDomainValidateResult
+### Properties
+* **isValid**: bool: Indicates if domain name is valid.
+* **message**: string: Message of why domain name is invalid.
 
 ## CustomPersistentDiskProperties
 * **Discriminator**: type
@@ -605,6 +769,24 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## DiagnosticParameters
+### Properties
+* **appInstance**: string: App instance name
+* **duration**: string: Duration of your JFR. 1 min can be represented by 1m or 60s.
+* **filePath**: string: Your target file path in your own BYOS
+
+## DiagnosticParameters
+### Properties
+* **appInstance**: string: App instance name
+* **duration**: string: Duration of your JFR. 1 min can be represented by 1m or 60s.
+* **filePath**: string: Your target file path in your own BYOS
+
+## DiagnosticParameters
+### Properties
+* **appInstance**: string: App instance name
+* **duration**: string: Duration of your JFR. 1 min can be represented by 1m or 60s.
+* **filePath**: string: Your target file path in your own BYOS
 
 ## Error
 ### Properties
@@ -717,6 +899,10 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 * **loadTrustStore**: bool: Indicate whether the certificate will be loaded into default trust store, only work for Java runtime.
 * **resourceId**: string (Required): Resource Id of loaded certificate
 
+## LogFileUrlResponse
+### Properties
+* **url**: string (Required): URL of the log file
+
 ## ManagedIdentityProperties
 ### Properties
 * **principalId**: string: Principal Id of system-assigned managed identity.
@@ -738,6 +924,17 @@ The default value is 2Gi, this should not exceed build service agent pool memory
 * **error**: [Error](#error): Error when apply Monitoring Setting changes.
 * **provisioningState**: 'Failed' | 'NotAvailable' | 'Succeeded' | 'Updating' | string (ReadOnly): State of the Monitoring Setting.
 * **traceEnabled**: bool: Indicates whether enable the trace functionality, which will be deprecated since api version 2020-11-01-preview. Please leverage appInsightsInstrumentationKey to indicate if monitoringSettings enabled or not
+
+## NameAvailability
+### Properties
+* **message**: string: Message why the name is not available
+* **nameAvailable**: bool: Indicates whether the name is available
+* **reason**: string: Reason why the name is not available
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string (Required): Name to be checked
+* **type**: string (Required): Type of the resource to check name availability
 
 ## NetworkProfile
 ### Properties
@@ -795,6 +992,10 @@ Possible enum values:
 * **type**: 'TCPSocketAction' (Required): The type of the action to take to perform the health check.
 
 
+## RegenerateTestKeyRequestPayload
+### Properties
+* **keyType**: 'Primary' | 'Secondary' | string (Required): Type of the test key
+
 ## RequiredTraffic
 ### Properties
 * **direction**: 'Inbound' | 'Outbound' | string (ReadOnly): The direction of required traffic
@@ -807,6 +1008,16 @@ Possible enum values:
 ### Properties
 * **cpu**: string: Required CPU. 1 core can be represented by 1 or 1000m. This should be 500m or 1 for Basic tier, and {500m, 1, 2, 3, 4} for Standard tier.
 * **memory**: string: Required memory. 1 GB can be represented by 1Gi or 1024Mi. This should be {512Mi, 1Gi, 2Gi} for Basic tier, and {512Mi, 1Gi, 2Gi, ..., 8Gi} for Standard tier.
+
+## ResourceUploadDefinition
+### Properties
+* **relativePath**: string: Source relative path
+* **uploadUrl**: string: Upload URL
+
+## ResourceUploadDefinition
+### Properties
+* **relativePath**: string: Source relative path
+* **uploadUrl**: string: Upload URL
 
 ## ServiceRegistryInstance
 ### Properties
@@ -890,6 +1101,22 @@ Possible enum values:
 * **secondaryKey**: string: Secondary key
 * **secondaryTestEndpoint**: string: Secondary test endpoint
 
+## TestKeys
+### Properties
+* **enabled**: bool: Indicates whether the test endpoint feature enabled or not
+* **primaryKey**: string: Primary key
+* **primaryTestEndpoint**: string: Primary test endpoint
+* **secondaryKey**: string: Secondary key
+* **secondaryTestEndpoint**: string: Secondary test endpoint
+
+## TestKeys
+### Properties
+* **enabled**: bool: Indicates whether the test endpoint feature enabled or not
+* **primaryKey**: string: Primary key
+* **primaryTestEndpoint**: string: Primary test endpoint
+* **secondaryKey**: string: Secondary key
+* **secondaryTestEndpoint**: string: Secondary test endpoint
+
 ## TrackedResourceTags
 ### Properties
 ### Additional Properties
@@ -947,4 +1174,9 @@ the relative path to the target module/project.
 * **runtimeVersion**: string: Runtime version of the source file
 * **type**: 'Source' (Required): Type of the source uploaded
 
+
+## ValidationMessages
+### Properties
+* **messages**: string[]: Detailed validation messages.
+* **name**: string: The name of the configuration service git repository.
 

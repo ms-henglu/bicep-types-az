@@ -83,10 +83,59 @@
 * **properties**: [PrivateLinkResourceProperties](#privatelinkresourceproperties) (ReadOnly): The properties associated with the private link resource.
 * **type**: 'Microsoft.Batch/batchAccounts/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Batch/batchAccounts/applications/versions@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts/applications/versions
+* **ApiVersion**: 2023-05-01
+* **Input**: [ActivateApplicationPackageParameters](#activateapplicationpackageparameters)
+* **Output**: [ApplicationPackage](#applicationpackage)
+
+## Function cancelDelete (Microsoft.Batch/batchAccounts/certificates@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts/certificates
+* **ApiVersion**: 2023-05-01
+* **Output**: [Certificate](#certificate)
+
+## Function checkNameAvailability (Microsoft.Batch/locations@2023-05-01)
+* **Resource**: Microsoft.Batch/locations
+* **ApiVersion**: 2023-05-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function disableAutoScale (Microsoft.Batch/batchAccounts/pools@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2023-05-01
+* **Output**: [Pool](#pool)
+
 ## Function listKeys (Microsoft.Batch/batchAccounts@2023-05-01)
 * **Resource**: Microsoft.Batch/batchAccounts
 * **ApiVersion**: 2023-05-01
 * **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function regenerateKeys (Microsoft.Batch/batchAccounts@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2023-05-01
+* **Input**: [BatchAccountRegenerateKeyParameters](#batchaccountregeneratekeyparameters)
+* **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function stopResize (Microsoft.Batch/batchAccounts/pools@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2023-05-01
+* **Output**: [Pool](#pool)
+
+## Function syncAutoStorageKeys (Microsoft.Batch/batchAccounts@2023-05-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2023-05-01
+
+## ActivateApplicationPackageParameters
+### Properties
+* **format**: string (Required): The format of the application package binary file.
+
+## ApplicationPackage
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [ApplicationPackageProperties](#applicationpackageproperties): The properties associated with the Application Package.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## ApplicationPackageProperties
 ### Properties
@@ -197,6 +246,16 @@
 * **primary**: string (ReadOnly): The primary key associated with the account.
 * **secondary**: string (ReadOnly): The secondary key associated with the account.
 
+## BatchAccountKeys
+### Properties
+* **accountName**: string (ReadOnly): The Batch account name.
+* **primary**: string (ReadOnly): The primary key associated with the account.
+* **secondary**: string (ReadOnly): The secondary key associated with the account.
+
+## BatchAccountRegenerateKeyParameters
+### Properties
+* **keyName**: 'Primary' | 'Secondary' (Required): The type of account key to regenerate.
+
 ## BatchPoolIdentity
 ### Properties
 * **type**: 'None' | 'UserAssigned' (Required): The type of identity used for the Batch Pool.
@@ -206,6 +265,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentities](#userassignedidentities)
+
+## Certificate
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [CertificateProperties](#certificateproperties): The properties associated with the certificate.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## CertificateCreateOrUpdatePropertiesOrCertificateProperties
 ### Properties
@@ -221,12 +288,35 @@
 * **thumbprint**: string: This must match the thumbprint from the name.
 * **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
 
+## CertificateProperties
+### Properties
+* **deleteCertificateError**: [DeleteCertificateError](#deletecertificateerror) (ReadOnly): This is only returned when the certificate provisioningState is 'Failed'.
+* **format**: 'Cer' | 'Pfx': The format of the certificate - either Pfx or Cer. If omitted, the default is Pfx.
+* **previousProvisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly): The previous provisioned state of the resource
+* **previousProvisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its previous state.
+* **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly)
+* **provisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its current state.
+* **publicData**: string (ReadOnly): The public key of the certificate.
+* **thumbprint**: string: This must match the thumbprint from the name.
+* **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
+
 ## CertificateReference
 ### Properties
 * **id**: string (Required): The fully qualified ID of the certificate to install on the pool. This must be inside the same batch account as the pool.
 * **storeLocation**: 'CurrentUser' | 'LocalMachine': The default value is currentUser. This property is applicable only for pools configured with Windows nodes (that is, created with cloudServiceConfiguration, or with virtualMachineConfiguration using a Windows image reference). For Linux compute nodes, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is supplied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory.
 * **storeName**: string: This property is applicable only for pools configured with Windows nodes (that is, created with cloudServiceConfiguration, or with virtualMachineConfiguration using a Windows image reference). Common store names include: My, Root, CA, Trust, Disallowed, TrustedPeople, TrustedPublisher, AuthRoot, AddressBook, but any custom store name can also be used. The default value is My.
 * **visibility**: 'RemoteUser' | 'StartTask' | 'Task'[]: Which user accounts on the compute node should have access to the private data of the certificate.
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability
+* **type**: 'Microsoft.Batch/batchAccounts' (Required): The resource type.
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): Gets an error message explaining the Reason value in more detail.
+* **nameAvailable**: bool (ReadOnly): Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or invalid and cannot be used.
+* **reason**: 'AlreadyExists' | 'Invalid' (ReadOnly): Gets the reason that a Batch account name could not be used. The Reason element is only returned if NameAvailable is false.
 
 ## CifsMountConfiguration
 ### Properties
@@ -407,6 +497,24 @@
 ### Properties
 * **ephemeralOSDiskSettings**: [DiffDiskSettings](#diffdisksettings): Specifies the ephemeral Disk Settings for the operating system disk used by the virtual machine.
 
+## Pool
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
+* **type**: string (ReadOnly): The type of the resource.
+
+## Pool
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
+* **type**: string (ReadOnly): The type of the resource.
+
 ## PoolEndpointConfiguration
 ### Properties
 * **inboundNatPools**: [InboundNatPool](#inboundnatpool)[] (Required): The maximum number of inbound NAT pools per Batch pool is 5. If the maximum number of inbound NAT pools is exceeded the request fails with HTTP status code 400. This cannot be specified if the IPAddressProvisioningType is NoPublicIPAddresses.
@@ -514,7 +622,7 @@ Warning: This property is deprecated and will be removed after February, 2024. P
 * **commandLine**: string: The command line does not run under a shell, and therefore cannot take advantage of shell features such as environment variable expansion. If you want to take advantage of such features, you should invoke the shell in the command line, for example using "cmd /c MyCommand" in Windows or "/bin/sh -c MyCommand" in Linux. Required if any other properties of the startTask are specified.
 * **containerSettings**: [TaskContainerSettings](#taskcontainersettings): When this is specified, all directories recursively below the AZ_BATCH_NODE_ROOT_DIR (the root of Azure Batch directories on the node) are mapped into the container, all task environment variables are mapped into the container, and the task command line is executed in the container.
 * **environmentSettings**: [EnvironmentSetting](#environmentsetting)[]: A list of environment variable settings for the start task.
-* **maxTaskRetryCount**: int: The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit.
+* **maxTaskRetryCount**: int: The Batch service retries a task if its exit code is nonzero. Note that this value specifically controls the number of retries. The Batch service will try the task once, and may then retry up to this limit. For example, if the maximum retry count is 3, Batch tries the task up to 4 times (one initial try and 3 retries). If the maximum retry count is 0, the Batch service does not retry the task. If the maximum retry count is -1, the Batch service retries the task without limit. Default is 0.
 * **resourceFiles**: [ResourceFile](#resourcefile)[]: A list of files that the Batch service will download to the compute node before running the command line.
 * **userIdentity**: [UserIdentity](#useridentity): If omitted, the task runs as a non-administrative user unique to the task.
 * **waitForSuccess**: bool: If true and the start task fails on a compute node, the Batch service retries the start task up to its maximum retry count (maxTaskRetryCount). If the task has still not completed successfully after all retries, then the Batch service marks the compute node unusable, and will not schedule tasks to it. This condition can be detected via the node state and scheduling error detail. If false, the Batch service will not wait for the start task to complete. In this case, other tasks can start executing on the compute node while the start task is still running; and even if the start task fails, new tasks will continue to be scheduled on the node. The default is true.
