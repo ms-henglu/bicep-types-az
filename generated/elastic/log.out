@@ -1,4 +1,4 @@
-AutoRest code generation utility [cli version: 3.6.3; node: v16.20.1]
+AutoRest code generation utility [cli version: 3.6.3; node: v16.20.2]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | SkippedSemanticValidation | Semantic validation was skipped.
@@ -18,15 +18,32 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getElasticOrganizationToAzureSubscriptionMapping': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getElasticOrganizationToAzureSubscriptionMapping': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getElasticOrganizationToAzureSubscriptionMapping': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping ElasticVersions_List due to required query parameter "region"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getOrganizationApiKey': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Elastic/getElasticOrganizationToAzureSubscriptionMapping': Unable to find type segments

@@ -94,6 +94,14 @@
 * **tags**: [SecretCreateOrUpdateParametersTags](#secretcreateorupdateparameterstags): The tags that will be assigned to the secret.
 * **type**: 'Microsoft.KeyVault/vaults/secrets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function purge (Microsoft.KeyVault/locations/deletedVaults@2022-02-01-preview)
+* **Resource**: Microsoft.KeyVault/locations/deletedVaults
+* **ApiVersion**: 2022-02-01-preview
+
+## Function purge (Microsoft.KeyVault/locations/deletedManagedHSMs@2022-02-01-preview)
+* **Resource**: Microsoft.KeyVault/locations/deletedManagedHSMs
+* **ApiVersion**: 2022-02-01-preview
+
 ## AccessPolicyEntry
 ### Properties
 * **applicationId**: string: Application ID of the client making request on behalf of a principal
@@ -103,7 +111,7 @@
 
 ## Action
 ### Properties
-* **type**: 'notify' | 'rotate': The type of action.
+* **type**: 'Notify' | 'Rotate': The type of the action. The value should be compared case-insensitively.
 
 ## IPRule
 ### Properties

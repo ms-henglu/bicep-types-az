@@ -82,7 +82,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: string: Kind of resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateLinkConnectionApprovalRequestOrRemotePrivateEndpointConnectionARMResourceProperties](#privatelinkconnectionapprovalrequestorremoteprivateendpointconnectionarmresourceproperties): Core resource properties
+* **properties**: [RemotePrivateEndpointConnectionARMResourceProperties](#remoteprivateendpointconnectionarmresourceproperties): RemotePrivateEndpointConnectionARMResource resource specific properties
 * **type**: 'Microsoft.Web/hostingEnvironments/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Web/hostingEnvironments/recommendations@2021-01-01 (ReadOnly)
@@ -616,7 +616,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: string: Kind of resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateLinkConnectionApprovalRequestOrRemotePrivateEndpointConnectionARMResourceProperties](#privatelinkconnectionapprovalrequestorremoteprivateendpointconnectionarmresourceproperties): Core resource properties
+* **properties**: [RemotePrivateEndpointConnectionARMResourceProperties](#remoteprivateendpointconnectionarmresourceproperties): RemotePrivateEndpointConnectionARMResource resource specific properties
 * **type**: 'Microsoft.Web/sites/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Web/sites/processes@2021-01-01 (ReadOnly)
@@ -1083,7 +1083,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: string: Kind of resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateLinkConnectionApprovalRequestOrRemotePrivateEndpointConnectionARMResourceProperties](#privatelinkconnectionapprovalrequestorremoteprivateendpointconnectionarmresourceproperties): Core resource properties
+* **properties**: [RemotePrivateEndpointConnectionARMResourceProperties](#remoteprivateendpointconnectionarmresourceproperties): RemotePrivateEndpointConnectionARMResource resource specific properties
 * **type**: 'Microsoft.Web/sites/slots/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Web/sites/slots/processes@2021-01-01 (ReadOnly)
@@ -1367,7 +1367,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: string: Kind of resource.
 * **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateLinkConnectionApprovalRequestOrRemotePrivateEndpointConnectionARMResourceProperties](#privatelinkconnectionapprovalrequestorremoteprivateendpointconnectionarmresourceproperties): Core resource properties
+* **properties**: [RemotePrivateEndpointConnectionARMResourceProperties](#remoteprivateendpointconnectionarmresourceproperties): RemotePrivateEndpointConnectionARMResource resource specific properties
 * **type**: 'Microsoft.Web/staticSites/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Web/staticSites/userProvidedFunctionApps@2021-01-01
@@ -1379,6 +1379,110 @@
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [StaticSiteUserProvidedFunctionAppARMResourceProperties](#staticsiteuserprovidedfunctionapparmresourceproperties): StaticSiteUserProvidedFunctionAppARMResource resource specific properties
 * **type**: 'Microsoft.Web/staticSites/userProvidedFunctionApps' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function applySlotConfig (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+
+## Function applySlotConfig (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+
+## Function backup (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function backup (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function changeVirtualNetwork (Microsoft.Web/hostingEnvironments@2021-01-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2021-01-01
+* **Input**: [VirtualNetworkProfile](#virtualnetworkprofile)
+* **Output**: [WebAppCollection](#webappcollection)
+
+## Function containerlogs (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function containerlogs (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function createUserInvitation (Microsoft.Web/staticSites@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSiteUserInvitationRequestResource](#staticsiteuserinvitationrequestresource)
+* **Output**: [StaticSiteUserInvitationResponseResource](#staticsiteuserinvitationresponseresource)
+
+## Function detach (Microsoft.Web/staticSites@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites
+* **ApiVersion**: 2021-01-01
+
+## Function disable (Microsoft.Web/recommendations@2021-01-01)
+* **Resource**: Microsoft.Web/recommendations
+* **ApiVersion**: 2021-01-01
+
+## Function disable (Microsoft.Web/sites/recommendations@2021-01-01)
+* **Resource**: Microsoft.Web/sites/recommendations
+* **ApiVersion**: 2021-01-01
+
+## Function discoverbackup (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreRequest](#restorerequest)
+
+## Function discoverbackup (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreRequest](#restorerequest)
+
+## Function download (Microsoft.Web/sites/containerlogs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/containerlogs
+* **ApiVersion**: 2021-01-01
+
+## Function download (Microsoft.Web/sites/slots/containerlogs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/containerlogs
+* **ApiVersion**: 2021-01-01
+
+## Function execute (Microsoft.Web/sites/diagnostics/analyses@2021-01-01)
+* **Resource**: Microsoft.Web/sites/diagnostics/analyses
+* **ApiVersion**: 2021-01-01
+* **Output**: [DiagnosticAnalysis](#diagnosticanalysis)
+
+## Function execute (Microsoft.Web/sites/diagnostics/detectors@2021-01-01)
+* **Resource**: Microsoft.Web/sites/diagnostics/detectors
+* **ApiVersion**: 2021-01-01
+* **Output**: [DiagnosticDetectorResponse](#diagnosticdetectorresponse)
+
+## Function execute (Microsoft.Web/sites/slots/diagnostics/analyses@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/diagnostics/analyses
+* **ApiVersion**: 2021-01-01
+* **Output**: [DiagnosticAnalysis](#diagnosticanalysis)
+
+## Function execute (Microsoft.Web/sites/slots/diagnostics/detectors@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/diagnostics/detectors
+* **ApiVersion**: 2021-01-01
+* **Output**: [DiagnosticDetectorResponse](#diagnosticdetectorresponse)
+
+## Function iscloneable (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Output**: [SiteCloneability](#sitecloneability)
+
+## Function iscloneable (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Output**: [SiteCloneability](#sitecloneability)
 
 ## Function list (Microsoft.Web/sites/backups@2021-01-01)
 * **Resource**: Microsoft.Web/sites/backups
@@ -1487,10 +1591,265 @@
 * **ApiVersion**: 2021-01-01
 * **Output**: [FunctionSecrets](#functionsecrets)
 
+## Function listsyncstatus (Microsoft.Web/sites/host@2021-01-01)
+* **Resource**: Microsoft.Web/sites/host
+* **ApiVersion**: 2021-01-01
+
+## Function listsyncstatus (Microsoft.Web/sites/slots/host@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/host
+* **ApiVersion**: 2021-01-01
+
 ## Function listUsers (Microsoft.Web/staticSites/authproviders@2021-01-01)
 * **Resource**: Microsoft.Web/staticSites/authproviders
 * **ApiVersion**: 2021-01-01
 * **Output**: [StaticSiteUserCollection](#staticsiteusercollection)
+
+## Function migratemysql (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [MigrateMySqlRequest](#migratemysqlrequest)
+* **Output**: [Operation](#operation)
+
+## Function newpassword (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function newpassword (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function previewStaticSiteWorkflowFile (Microsoft.Web/locations@2021-01-01)
+* **Resource**: Microsoft.Web/locations
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSitesWorkflowPreviewRequest](#staticsitesworkflowpreviewrequest)
+* **Output**: [StaticSitesWorkflowPreview](#staticsitesworkflowpreview)
+
+## Function publishxml (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmPublishingProfileOptions](#csmpublishingprofileoptions)
+
+## Function publishxml (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmPublishingProfileOptions](#csmpublishingprofileoptions)
+
+## Function reboot (Microsoft.Web/hostingEnvironments@2021-01-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2021-01-01
+
+## Function reboot (Microsoft.Web/serverfarms/workers@2021-01-01)
+* **Resource**: Microsoft.Web/serverfarms/workers
+* **ApiVersion**: 2021-01-01
+
+## Function recover (Microsoft.Web/sites/config/snapshots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/config/snapshots
+* **ApiVersion**: 2021-01-01
+
+## Function recover (Microsoft.Web/sites/slots/config/snapshots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/config/snapshots
+* **ApiVersion**: 2021-01-01
+
+## Function resetapikey (Microsoft.Web/staticSites@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSiteResetPropertiesARMResource](#staticsiteresetpropertiesarmresource)
+
+## Function resetSlotConfig (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function resetSlotConfig (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function restart (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function restart (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function restartSites (Microsoft.Web/serverfarms@2021-01-01)
+* **Resource**: Microsoft.Web/serverfarms
+* **ApiVersion**: 2021-01-01
+
+## Function restore (Microsoft.Web/sites/backups@2021-01-01)
+* **Resource**: Microsoft.Web/sites/backups
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+
+## Function restore (Microsoft.Web/sites/slots/backups@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/backups
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+
+## Function restoreFromBackupBlob (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+
+## Function restoreFromBackupBlob (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [RestoreRequest](#restorerequest)
+
+## Function restoreFromDeletedApp (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [DeletedAppRestoreRequest](#deletedapprestorerequest)
+
+## Function restoreFromDeletedApp (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [DeletedAppRestoreRequest](#deletedapprestorerequest)
+
+## Function restoreSnapshot (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [SnapshotRestoreRequest](#snapshotrestorerequest)
+
+## Function restoreSnapshot (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [SnapshotRestoreRequest](#snapshotrestorerequest)
+
+## Function resume (Microsoft.Web/hostingEnvironments@2021-01-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2021-01-01
+* **Output**: [WebAppCollection](#webappcollection)
+
+## Function run (Microsoft.Web/sites/slots/triggeredwebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/triggeredwebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function run (Microsoft.Web/sites/triggeredwebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/triggeredwebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function slotsdiffs (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
+
+## Function slotsdiffs (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
+
+## Function slotsswap (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+
+## Function slotsswap (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+
+## Function start (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function start (Microsoft.Web/sites/continuouswebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/continuouswebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function start (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function start (Microsoft.Web/sites/slots/continuouswebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/continuouswebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function startNetworkTrace (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+* **Output**: [NetworkTrace](#networktrace)[]
+
+## Function startNetworkTrace (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+* **Output**: [NetworkTrace](#networktrace)[]
+
+## Function stop (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function stop (Microsoft.Web/sites/continuouswebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/continuouswebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function stop (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function stop (Microsoft.Web/sites/slots/continuouswebjobs@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/continuouswebjobs
+* **ApiVersion**: 2021-01-01
+
+## Function stopNetworkTrace (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function stopNetworkTrace (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function suspend (Microsoft.Web/hostingEnvironments@2021-01-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2021-01-01
+* **Output**: [WebAppCollection](#webappcollection)
+
+## Function sync (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function sync (Microsoft.Web/sites/host@2021-01-01)
+* **Resource**: Microsoft.Web/sites/host
+* **ApiVersion**: 2021-01-01
+
+## Function sync (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function sync (Microsoft.Web/sites/slots/host@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots/host
+* **ApiVersion**: 2021-01-01
+
+## Function syncfunctiontriggers (Microsoft.Web/sites@2021-01-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2021-01-01
+
+## Function syncfunctiontriggers (Microsoft.Web/sites/slots@2021-01-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2021-01-01
+
+## Function validate (Microsoft.Web/staticSites/customDomains@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites/customDomains
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSiteCustomDomainRequestPropertiesARMResource](#staticsitecustomdomainrequestpropertiesarmresource)
+
+## Function zipdeploy (Microsoft.Web/staticSites/builds@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites/builds
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSiteZipDeploymentARMResource](#staticsitezipdeploymentarmresource)
+
+## Function zipdeploy (Microsoft.Web/staticSites@2021-01-01)
+* **Resource**: Microsoft.Web/staticSites
+* **ApiVersion**: 2021-01-01
+* **Input**: [StaticSiteZipDeploymentARMResource](#staticsitezipdeploymentarmresource)
+
+## AbnormalTimePeriod
+### Properties
+* **endTime**: string: End time of the downtime
+* **events**: [DetectorAbnormalTimePeriod](#detectorabnormaltimeperiod)[]: List of Possible Cause of downtime
+* **solutions**: [Solution](#solution)[]: List of proposed solutions
+* **startTime**: string: Start time of the downtime
 
 ## AddressResponseProperties
 ### Properties
@@ -1502,6 +1861,14 @@
 ## AllowedAudiencesValidation
 ### Properties
 * **allowedAudiences**: string[]: The configuration settings of the allowed list of audiences from which to validate the JWT token.
+
+## AnalysisData
+### Properties
+* **data**: [NameValuePair](#namevaluepair)[][]: Additional Source Data
+* **detectorDefinition**: [DetectorDefinition](#detectordefinition): Detector Definition
+* **detectorMetaData**: [ResponseMetaData](#responsemetadata): Detector Meta Data
+* **metrics**: [DiagnosticMetricSet](#diagnosticmetricset)[]: Source Metrics
+* **source**: string: Name of the Detector
 
 ## AnalysisDefinitionProperties
 ### Properties
@@ -1763,6 +2130,22 @@ Remove blobs older than X days.
 * **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
 * **type**: string (ReadOnly): Resource type.
 
+## BackupItem
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## BackupItem
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupItemProperties](#backupitemproperties): BackupItem resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
 ## BackupItemCollection
 ### Properties
 * **nextLink**: string (ReadOnly): Link to next page of resources.
@@ -1789,6 +2172,22 @@ Remove blobs older than X days.
 * **status**: 'Created' | 'DeleteFailed' | 'DeleteInProgress' | 'Deleted' | 'Failed' | 'InProgress' | 'PartiallySucceeded' | 'Skipped' | 'Succeeded' | 'TimedOut' (ReadOnly): Backup status.
 * **storageAccountUrl**: string (ReadOnly): SAS URL for the storage account container which contains this backup.
 * **websiteSizeInBytes**: int (ReadOnly): Size of the original web app which has been backed up.
+
+## BackupRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupRequestProperties](#backuprequestproperties): BackupRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## BackupRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [BackupRequestProperties](#backuprequestproperties): BackupRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
 
 ## BackupRequest
 ### Properties
@@ -1995,6 +2394,52 @@ for more details.
 ### Properties
 * **allow**: bool (Required): <code>true</code> to allow access to a publishing method; otherwise, <code>false</code>.
 
+## CsmPublishingProfileOptions
+### Properties
+* **format**: 'FileZilla3' | 'Ftp' | 'WebDeploy' | string: Name of the format. Valid values are: 
+FileZilla3
+WebDeploy -- default
+Ftp
+* **includeDisasterRecoveryEndpoints**: bool: Include the DisasterRecover endpoint if true
+
+## CsmPublishingProfileOptions
+### Properties
+* **format**: 'FileZilla3' | 'Ftp' | 'WebDeploy' | string: Name of the format. Valid values are: 
+FileZilla3
+WebDeploy -- default
+Ftp
+* **includeDisasterRecoveryEndpoints**: bool: Include the DisasterRecover endpoint if true
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool (Required): <code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>.
+* **targetSlot**: string (Required): Destination deployment slot during swap operation.
+
 ## CustomOpenIdConnectProvider
 ### Properties
 * **enabled**: bool: <code>false</code> if the custom Open ID provider provider should not be enabled; otherwise, <code>true</code>.
@@ -2014,6 +2459,11 @@ This is used during restore with overwrite connection strings options.
 * **propertyBag**: [KeyValuePairStringObject](#keyvaluepairstringobject)[] (ReadOnly): Settings for the data provider
 * **providerName**: string
 
+## DataSource
+### Properties
+* **dataSourceUri**: [NameValuePair](#namevaluepair)[]: Datasource Uri Links
+* **instructions**: string[]: Instructions if any for the data source
+
 ## DataTableResponseColumn
 ### Properties
 * **columnName**: string: Name of the column
@@ -2025,6 +2475,31 @@ This is used during restore with overwrite connection strings options.
 * **columns**: [DataTableResponseColumn](#datatableresponsecolumn)[]: List of columns with data types
 * **rows**: string[][]: Raw row values
 * **tableName**: string: Name of the table
+
+## DeletedAppRestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DeletedAppRestoreRequestProperties](#deletedapprestorerequestproperties): DeletedAppRestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DeletedAppRestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DeletedAppRestoreRequestProperties](#deletedapprestorerequestproperties): DeletedAppRestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DeletedAppRestoreRequestProperties
+### Properties
+* **deletedSiteId**: string: ARM resource ID of the deleted app. Example:
+/subscriptions/{subId}/providers/Microsoft.Web/deletedSites/{deletedSiteId}
+* **recoverConfiguration**: bool: If true, deleted site configuration, in addition to content, will be restored.
+* **snapshotTime**: string: Point in time to restore the deleted app from, formatted as a DateTime string. 
+If unspecified, default value is the time that the app was deleted.
+* **useDRSecondary**: bool: If true, the snapshot is retrieved from DRSecondary endpoint.
 
 ## DeletedSiteProperties
 ### Properties
@@ -2048,6 +2523,25 @@ This is used during restore with overwrite connection strings options.
 * **message**: string: Details about deployment status.
 * **start_time**: string: Start time.
 * **status**: int: Deployment status.
+
+## DetectorAbnormalTimePeriod
+### Properties
+* **endTime**: string: End time of the correlated event
+* **message**: string: Message describing the event
+* **metaData**: [NameValuePair](#namevaluepair)[][]: Downtime metadata
+* **priority**: int: Represents the rank of the Detector
+* **solutions**: [Solution](#solution)[]: List of proposed solutions
+* **source**: string: Represents the name of the Detector
+* **startTime**: string: Start time of the correlated event
+* **type**: 'AppCrash' | 'AppDeployment' | 'AseDeployment' | 'Other' | 'PlatformIssue' | 'RuntimeIssueDetected' | 'ServiceIncident' | 'UserIssue': Represents the type of the Detector
+
+## DetectorDefinition
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DetectorDefinitionProperties](#detectordefinitionproperties): DetectorDefinition resource specific properties
+* **type**: string (ReadOnly): Resource type.
 
 ## DetectorDefinitionProperties
 ### Properties
@@ -2076,6 +2570,30 @@ This is used during restore with overwrite connection strings options.
 * **status**: [Status](#status): Indicates status of the most severe insight.
 * **suggestedUtterances**: [QueryUtterancesResults](#queryutterancesresults): Suggested utterances where the detector can be applicable.
 
+## DiagnosticAnalysis
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticAnalysisProperties](#diagnosticanalysisproperties): DiagnosticAnalysis resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticAnalysis
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticAnalysisProperties](#diagnosticanalysisproperties): DiagnosticAnalysis resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticAnalysisProperties
+### Properties
+* **abnormalTimePeriods**: [AbnormalTimePeriod](#abnormaltimeperiod)[]: List of time periods.
+* **endTime**: string: End time of the period
+* **nonCorrelatedDetectors**: [DetectorDefinition](#detectordefinition)[]: Data by each detector for detectors that did not corelate
+* **payload**: [AnalysisData](#analysisdata)[]: Data by each detector
+* **startTime**: string: Start time of the period
+
 ## DiagnosticCategoryProperties
 ### Properties
 * **description**: string (ReadOnly): Description of the diagnostic category
@@ -2084,6 +2602,54 @@ This is used during restore with overwrite connection strings options.
 ### Properties
 * **renderingProperties**: [Rendering](#rendering): Properties that describe how the table should be rendered
 * **table**: [DataTableResponseObject](#datatableresponseobject): Data in table form
+
+## DiagnosticDetectorResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticDetectorResponseProperties](#diagnosticdetectorresponseproperties): DiagnosticDetectorResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticDetectorResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticDetectorResponseProperties](#diagnosticdetectorresponseproperties): DiagnosticDetectorResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticDetectorResponseProperties
+### Properties
+* **abnormalTimePeriods**: [DetectorAbnormalTimePeriod](#detectorabnormaltimeperiod)[]: List of Correlated events found by the detector
+* **data**: [NameValuePair](#namevaluepair)[][]: Additional Data that detector wants to send.
+* **detectorDefinition**: [DetectorDefinition](#detectordefinition): Detector's definition
+* **endTime**: string: End time of the period
+* **issueDetected**: bool: Flag representing Issue was detected.
+* **metrics**: [DiagnosticMetricSet](#diagnosticmetricset)[]: Metrics provided by the detector
+* **responseMetaData**: [ResponseMetaData](#responsemetadata): Meta Data
+* **startTime**: string: Start time of the period
+
+## DiagnosticMetricSample
+### Properties
+* **isAggregated**: bool: Whether the values are aggregates across all workers or not
+* **maximum**: int: Maximum of the metric sampled during the time period
+* **minimum**: int: Minimum of the metric sampled during the time period
+* **roleInstance**: string: Role Instance. Null if this counter is not per instance 
+This is returned and should be whichever instance name we desire to be returned
+i.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0) 
+where RDWORKERNAME is Machine name below and RoleInstance name in parenthesis
+* **timestamp**: string: Time at which metric is measured
+* **total**: int: Total value of the metric. If multiple measurements are made this will have sum of all.
+
+## DiagnosticMetricSet
+### Properties
+* **endTime**: string: End time of the period
+* **name**: string: Name of the metric
+* **startTime**: string: Start time of the period
+* **timeGrain**: string: Presented time grain. Supported grains at the moment are PT1M, PT1H, P1D
+* **unit**: string: Metric's unit
+* **values**: [DiagnosticMetricSample](#diagnosticmetricsample)[]: Collection of metric values for the selected period based on the {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}
 
 ## EnabledConfig
 ### Properties
@@ -2465,6 +3031,19 @@ Note that URLs within the current domain are always implicitly allowed.
 ### Additional Properties
 * **Additional Properties Type**: [Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties](#components1jq1t4ischemasmanagedserviceidentitypropertiesuserassignedidentitiesadditionalproperties)
 
+## MigrateMySqlRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [MigrateMySqlRequestProperties](#migratemysqlrequestproperties): MigrateMySqlRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## MigrateMySqlRequestProperties
+### Properties
+* **connectionString**: string (Required): Connection string to the remote MySQL database.
+* **migrationType**: 'LocalToRemote' | 'RemoteToLocal' (Required): The type of migration operation to be done
+
 ## MigrateMySqlStatusProperties
 ### Properties
 * **localMySqlEnabled**: bool (ReadOnly): True if the web app has in app MySql enabled
@@ -2507,6 +3086,12 @@ Setting is <code>false</code> by default.
 * **virtualNetworkConnection**: [VnetInfo](#vnetinfo) (ReadOnly): The Virtual Network summary view.
 * **virtualNetworkName**: string (ReadOnly): The Virtual Network name.
 
+## NetworkTrace
+### Properties
+* **message**: string: Detailed message of a network trace operation, e.g. error message in case of failure.
+* **path**: string: Local file path for the captured network trace file.
+* **status**: string: Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed).
+
 ## Nonce
 ### Properties
 * **nonceExpirationInterval**: string: The time after the request is made when the nonce should expire.
@@ -2536,6 +3121,17 @@ Setting is <code>false</code> by default.
 * **clientId**: string: The client id of the custom Open ID Connect provider.
 * **openIdConnectConfiguration**: [OpenIdConnectConfig](#openidconnectconfig): The configuration settings of the endpoints used for the custom Open ID Connect provider.
 
+## Operation
+### Properties
+* **createdTime**: string: Time when operation has started.
+* **errors**: [ErrorEntity](#errorentity)[]: Any errors associate with the operation.
+* **expirationTime**: string: Time when operation will expire.
+* **geoMasterOperationId**: string: Applicable only for stamp operation ids.
+* **id**: string: Operation ID.
+* **modifiedTime**: string: Time when operation has been updated.
+* **name**: string: Operation name.
+* **status**: 'Created' | 'Failed' | 'InProgress' | 'Succeeded' | 'TimedOut': The current status of the operation.
+
 ## PremierAddOnProperties
 ### Properties
 * **marketplaceOffer**: string: Premier add on Marketplace offer.
@@ -2560,13 +3156,6 @@ Setting is <code>false</code> by default.
 * **name**: string: The name of the Virtual Network.
 * **resourceId**: string: The ARM uri of the Virtual Network
 * **subnets**: [PrivateAccessSubnet](#privateaccesssubnet)[]: A List of subnets that access is allowed to on this Virtual Network. An empty array (but not null) is interpreted to mean that all subnets are allowed within this Virtual Network.
-
-## PrivateLinkConnectionApprovalRequestOrRemotePrivateEndpointConnectionARMResourceProperties
-### Properties
-* **ipAddresses**: string[] (ReadOnly): Private IPAddresses mapped to the remote private endpoint
-* **privateEndpoint**: [ArmIdWrapper](#armidwrapper) (ReadOnly): PrivateEndpoint of a remote private endpoint connection
-* **privateLinkServiceConnectionState**: [PrivateLinkConnectionState](#privatelinkconnectionstate): The state of a private link connection
-* **provisioningState**: string (ReadOnly)
 
 ## PrivateLinkConnectionState
 ### Properties
@@ -2754,6 +3343,13 @@ If such an object doesn't exist, it is set to null.
 * **properties**: [RemotePrivateEndpointConnectionProperties](#remoteprivateendpointconnectionproperties): RemotePrivateEndpointConnection resource specific properties
 * **type**: string (ReadOnly): Resource type.
 
+## RemotePrivateEndpointConnectionARMResourceProperties
+### Properties
+* **ipAddresses**: string[]: Private IPAddresses mapped to the remote private endpoint
+* **privateEndpoint**: [ArmIdWrapper](#armidwrapper): PrivateEndpoint of a remote private endpoint connection
+* **privateLinkServiceConnectionState**: [PrivateLinkConnectionState](#privatelinkconnectionstate): The state of a private link connection
+* **provisioningState**: string (ReadOnly)
+
 ## RemotePrivateEndpointConnectionProperties
 ### Properties
 * **ipAddresses**: string[]: Private IPAddresses mapped to the remote private endpoint
@@ -2822,6 +3418,11 @@ If such an object doesn't exist, it is set to null.
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ResponseMessageEnvelopeRemotePrivateEndpointConnection
 ### Properties
 * **error**: [ErrorEntity](#errorentity): Azure-AsyncOperation Error info.
@@ -2844,11 +3445,106 @@ For example: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupId}/pr
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResponseMetaData
+### Properties
+* **dataSource**: [DataSource](#datasource): Source of the Data
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RestoreRequestProperties](#restorerequestproperties): RestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RestoreRequestProperties
+### Properties
+* **adjustConnectionStrings**: bool: <code>true</code> if SiteConfig.ConnectionStrings should be set in new app; otherwise, <code>false</code>.
+* **appServicePlan**: string: Specify app service plan that will own restored site.
+* **blobName**: string: Name of a blob which contains the backup.
+* **databases**: [DatabaseBackupSetting](#databasebackupsetting)[]: Collection of databases which should be restored. This list has to match the list of databases included in the backup.
+* **hostingEnvironment**: string: App Service Environment name, if needed (only when restoring an app to an App Service Environment).
+* **ignoreConflictingHostNames**: bool: Changes a logic when restoring an app with custom domains. <code>true</code> to remove custom domains automatically. If <code>false</code>, custom domains are added to 
+the app's object when it is being restored, but that might fail due to conflicts during the operation.
+* **ignoreDatabases**: bool: Ignore the databases and only restore the site content
+* **operationType**: 'Clone' | 'CloudFS' | 'Default' | 'Relocation' | 'Snapshot': Operation type.
+* **overwrite**: bool (Required): <code>true</code> if the restore operation can overwrite target app; otherwise, <code>false</code>. <code>true</code> is needed if trying to restore over an existing app.
+* **siteName**: string: Name of an app.
+* **storageAccountUrl**: string (Required): SAS URL to the container.
+
 ## SampleUtterance
 ### Properties
 * **links**: string[]: Links attribute of sample utterance.
 * **qid**: string: Question id of sample utterance (for stackoverflow questions titles).
 * **text**: string: Text attribute of sample utterance.
+
+## Site
+### Properties
+* **extendedLocation**: [ExtendedLocation](#extendedlocation): Extended Location.
+* **id**: string (ReadOnly): Resource Id.
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): Managed service identity.
+* **kind**: string: Kind of resource.
+* **location**: string (Required): Resource Location.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [SiteProperties](#siteproperties): Site resource specific properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
 
 ## SiteAuthSettingsProperties
 ### Properties
@@ -2950,6 +3646,27 @@ application used for sign-in.
 * **identityProviders**: [IdentityProviders](#identityproviders): The configuration settings of each of the identity providers used to configure App Service Authentication/Authorization.
 * **login**: [Login](#login): The configuration settings of the login flow of users using App Service Authentication/Authorization.
 * **platform**: [AuthPlatform](#authplatform): The configuration settings of the platform of App Service Authentication/Authorization.
+
+## SiteCloneability
+### Properties
+* **blockingCharacteristics**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of blocking application characteristics.
+* **blockingFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that prevent cloning.
+* **result**: 'Cloneable' | 'NotCloneable' | 'PartiallyCloneable': Name of app.
+* **unsupportedFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
+but the features in this list will not be set up on cloned app.
+
+## SiteCloneability
+### Properties
+* **blockingCharacteristics**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of blocking application characteristics.
+* **blockingFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that prevent cloning.
+* **result**: 'Cloneable' | 'NotCloneable' | 'PartiallyCloneable': Name of app.
+* **unsupportedFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned
+but the features in this list will not be set up on cloned app.
+
+## SiteCloneabilityCriterion
+### Properties
+* **description**: string: Description of criterion.
+* **name**: string: Name of criterion.
 
 ## SiteConfig
 ### Properties
@@ -3161,6 +3878,34 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **azureStorageConfigNames**: string[]: List of external Azure storage account identifiers.
 * **connectionStringNames**: string[]: List of connection string names.
 
+## SlotDifference
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [SlotDifferenceProperties](#slotdifferenceproperties): SlotDifference resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## SlotDifferenceCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [SlotDifference](#slotdifference)[] (Required): Collection of resources.
+
+## SlotDifferenceCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [SlotDifference](#slotdifference)[] (Required): Collection of resources.
+
+## SlotDifferenceProperties
+### Properties
+* **description**: string (ReadOnly): Description of the setting difference.
+* **diffRule**: string (ReadOnly): Rule that describes how to process the setting difference during a slot swap.
+* **level**: string (ReadOnly): Level of the difference: Information, Warning or Error.
+* **settingName**: string (ReadOnly): Name of the setting.
+* **settingType**: string (ReadOnly): The type of the setting: General, AppSetting or ConnectionString.
+* **valueInCurrentSlot**: string (ReadOnly): Value of the setting in the current slot.
+* **valueInTargetSlot**: string (ReadOnly): Value of the setting in the target slot.
+
 ## SlotSwapStatus
 ### Properties
 * **destinationSlotName**: string (ReadOnly): The destination slot of the last swap operation.
@@ -3173,6 +3918,50 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **path**: string: Request Path.
 * **timeInterval**: string: Time interval.
 * **timeTaken**: string: Time taken.
+
+## SnapshotRecoverySource
+### Properties
+* **id**: string: ARM resource ID of the source app. 
+/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
+/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+* **location**: string: Geographical location of the source web app, e.g. SouthEastAsia, SouthCentralUS
+
+## SnapshotRestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [SnapshotRestoreRequestProperties](#snapshotrestorerequestproperties): SnapshotRestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## SnapshotRestoreRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [SnapshotRestoreRequestProperties](#snapshotrestorerequestproperties): SnapshotRestoreRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## SnapshotRestoreRequestProperties
+### Properties
+* **ignoreConflictingHostNames**: bool: If true, custom hostname conflicts will be ignored when recovering to a target web app.
+This setting is only necessary when RecoverConfiguration is enabled.
+* **overwrite**: bool (Required): If <code>true</code> the restore operation can overwrite source app; otherwise, <code>false</code>.
+* **recoverConfiguration**: bool: If true, site configuration, in addition to content, will be reverted.
+* **recoverySource**: [SnapshotRecoverySource](#snapshotrecoverysource): Optional. Specifies the web app that snapshot contents will be retrieved from.
+If empty, the targeted web app will be used as the source.
+* **snapshotTime**: string: Point in time in which the app restore should be done, formatted as a DateTime string.
+* **useDRSecondary**: bool: If true, the snapshot is retrieved from DRSecondary endpoint.
+
+## Solution
+### Properties
+* **data**: [NameValuePair](#namevaluepair)[][]: Solution Data.
+* **description**: string: Description of the solution
+* **displayName**: string: Display Name of the solution
+* **id**: int: Solution Id.
+* **metadata**: [NameValuePair](#namevaluepair)[][]: Solution Metadata.
+* **order**: int: Order of the solution.
+* **type**: 'BestPractices' | 'DeepInvestigation' | 'QuickSolution': Type of Solution
 
 ## SourceControlProperties
 ### Properties
@@ -3220,6 +4009,18 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **outputLocation**: string: The output path of the app after building.
 * **skipGithubActionWorkflowGeneration**: bool: Skip Github Action workflow generation.
 
+## StaticSiteCustomDomainRequestPropertiesARMResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteCustomDomainRequestPropertiesARMResourceProperties](#staticsitecustomdomainrequestpropertiesarmresourceproperties): StaticSiteCustomDomainRequestPropertiesARMResource resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSiteCustomDomainRequestPropertiesARMResourceProperties
+### Properties
+* **validationMethod**: string: Validation method for adding a custom domain
+
 ## StaticSiteCustomDomainRequestPropertiesARMResourcePropertiesOrStaticSiteCustomDomainOverviewARMResourceProperties
 ### Properties
 * **createdOn**: string (ReadOnly): The date and time on which the custom domain was created for the static site.
@@ -3228,6 +4029,46 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **status**: 'Adding' | 'Deleting' | 'Failed' | 'Ready' | 'RetrievingValidationToken' | 'Validating' | string (ReadOnly): The status of the custom domain
 * **validationMethod**: string (WriteOnly): Validation method for adding a custom domain
 * **validationToken**: string (ReadOnly): The TXT record validation token
+
+## StaticSiteResetPropertiesARMResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteResetPropertiesARMResourceProperties](#staticsiteresetpropertiesarmresourceproperties): StaticSiteResetPropertiesARMResource resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSiteResetPropertiesARMResourceProperties
+### Properties
+* **repositoryToken**: string: The token which proves admin privileges to the repository.
+* **shouldUpdateRepository**: bool: Determines whether the repository should be updated with the new properties.
+
+## StaticSitesWorkflowPreview
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSitesWorkflowPreviewProperties](#staticsitesworkflowpreviewproperties): StaticSitesWorkflowPreview resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSitesWorkflowPreviewProperties
+### Properties
+* **contents**: string (ReadOnly): The contents for the workflow file to be generated
+* **path**: string (ReadOnly): The path for the workflow file to be generated
+
+## StaticSitesWorkflowPreviewRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSitesWorkflowPreviewRequestProperties](#staticsitesworkflowpreviewrequestproperties): StaticSitesWorkflowPreviewRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSitesWorkflowPreviewRequestProperties
+### Properties
+* **branch**: string: The target branch in the repository.
+* **buildProperties**: [StaticSiteBuildProperties](#staticsitebuildproperties): Build properties to configure on the repository.
+* **repositoryUrl**: string: URL for the repository of the static site.
 
 ## StaticSiteTemplateOptions
 ### Properties
@@ -3257,6 +4098,35 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **nextLink**: string (ReadOnly): Link to next page of resources.
 * **value**: [StaticSiteUserARMResource](#staticsiteuserarmresource)[] (Required): Collection of resources.
 
+## StaticSiteUserInvitationRequestResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteUserInvitationRequestResourceProperties](#staticsiteuserinvitationrequestresourceproperties): StaticSiteUserInvitationRequestResource resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSiteUserInvitationRequestResourceProperties
+### Properties
+* **domain**: string: The domain name for the static site custom domain.
+* **numHoursToExpiration**: int: The number of hours the sas token stays valid
+* **provider**: string: The identity provider for the static site user.
+* **roles**: string: The roles for the static site user, in free-form string format
+* **userDetails**: string: The user id for the static site user.
+
+## StaticSiteUserInvitationResponseResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteUserInvitationResponseResourceProperties](#staticsiteuserinvitationresponseresourceproperties): StaticSiteUserInvitationResponseResource resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSiteUserInvitationResponseResourceProperties
+### Properties
+* **expiresOn**: string (ReadOnly): The expiration time of the invitation
+* **invitationUrl**: string (ReadOnly): The url for the invitation link
+
 ## StaticSiteUserProvidedFunctionApp
 ### Properties
 * **id**: string (ReadOnly): Resource Id.
@@ -3276,6 +4146,30 @@ This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resou
 * **createdOn**: string (ReadOnly): The date and time on which the function app was registered with the static site.
 * **functionAppRegion**: string: The region of the function app registered with the static site
 * **functionAppResourceId**: string: The resource id of the function app registered with the static site
+
+## StaticSiteZipDeployment
+### Properties
+* **apiZipUrl**: string: URL for the zipped api content
+* **appZipUrl**: string: URL for the zipped app content
+* **deploymentTitle**: string: A title to label the deployment
+* **functionLanguage**: string: The language of the api content, if it exists
+* **provider**: string: The provider submitting this deployment
+
+## StaticSiteZipDeploymentARMResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteZipDeployment](#staticsitezipdeployment): Core resource properties
+* **type**: string (ReadOnly): Resource type.
+
+## StaticSiteZipDeploymentARMResource
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [StaticSiteZipDeployment](#staticsitezipdeployment): Core resource properties
+* **type**: string (ReadOnly): Resource type.
 
 ## Status
 ### Properties
@@ -3534,6 +4428,13 @@ application used for sign-in.
 * **subnet**: string: Subnet within the Virtual Network.
 * **type**: string (ReadOnly): Resource type of the Virtual Network (read-only).
 
+## VirtualNetworkProfile
+### Properties
+* **id**: string (Required): Resource id of the Virtual Network.
+* **name**: string (ReadOnly): Name of the Virtual Network (read-only).
+* **subnet**: string: Subnet within the Virtual Network.
+* **type**: string (ReadOnly): Resource type of the Virtual Network (read-only).
+
 ## VnetGatewayProperties
 ### Properties
 * **vnetName**: string: The Virtual Network name.
@@ -3576,6 +4477,21 @@ STATIC - Static route set on the app only
 
 These values will be used for syncing an app's routes with those from a Virtual Network.
 * **startAddress**: string: The starting address for this route. This may also include a CIDR notation, in which case the end address must not be specified.
+
+## WebAppCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [Site](#site)[] (Required): Collection of resources.
+
+## WebAppCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [Site](#site)[] (Required): Collection of resources.
+
+## WebAppCollection
+### Properties
+* **nextLink**: string (ReadOnly): Link to next page of resources.
+* **value**: [Site](#site)[] (Required): Collection of resources.
 
 ## WebJobProperties
 ### Properties

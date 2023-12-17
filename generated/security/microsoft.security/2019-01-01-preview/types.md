@@ -76,6 +76,12 @@
 * **properties**: [RegulatoryComplianceAssessmentProperties](#regulatorycomplianceassessmentproperties) (ReadOnly): Regulatory compliance assessment data
 * **type**: 'Microsoft.Security/regulatoryComplianceStandards/regulatoryComplianceControls/regulatoryComplianceAssessments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function validate (Microsoft.Security/automations@2019-01-01-preview)
+* **Resource**: Microsoft.Security/automations
+* **ApiVersion**: 2019-01-01-preview
+* **Input**: [Automation](#automation)
+* **Output**: [AutomationValidationStatus](#automationvalidationstatus)
+
 ## AdditionalData
 * **Discriminator**: assessedResourceType
 
@@ -115,7 +121,7 @@
 ### Properties
 * **alertType**: string (Required): Type of the alert to automatically suppress. For all alert types, use '*'
 * **comment**: string: Any comment regarding the rule
-* **expirationDateUtc**: string: Expiration date of the rule, if value is not provided or provided as null this field will default to the maximum allowed expiration date.
+* **expirationDateUtc**: string: Expiration date of the rule, if value is not provided or provided as null there will no expiration at all
 * **lastModifiedUtc**: string (ReadOnly): The last time this rule was modified
 * **reason**: string (Required): The reason for dismissing the alert
 * **state**: 'Disabled' | 'Enabled' | 'Expired' (Required): Possible states of the rule
@@ -130,6 +136,17 @@
 * **cause**: string: Programmatic code for the cause of the assessment status
 * **code**: 'Healthy' | 'NotApplicable' | 'Unhealthy' | string (Required): Programmatic code for the status of the assessment
 * **description**: string: Human readable description of the assessment status
+
+## Automation
+### Properties
+* **etag**: string: Entity tag is used for comparing two or more entities from the same requested resource.
+* **id**: string (ReadOnly): Resource Id
+* **kind**: string: Kind of the resource
+* **location**: string: Location where the resource is stored
+* **name**: string (ReadOnly): Resource name
+* **properties**: [AutomationProperties](#automationproperties): Security automation data
+* **tags**: [Tags](#tags): A list of key value pairs that describe the resource.
+* **type**: string (ReadOnly): Resource type
 
 ## AutomationAction
 * **Discriminator**: actionType
@@ -183,6 +200,11 @@
 * **operator**: 'Contains' | 'EndsWith' | 'Equals' | 'GreaterThan' | 'GreaterThanOrEqualTo' | 'LesserThan' | 'LesserThanOrEqualTo' | 'NotEquals' | 'StartsWith' | string: A valid comparer operator to use. A case-insensitive comparison will be applied for String PropertyType.
 * **propertyJPath**: string: The JPath of the entity model property that should be checked.
 * **propertyType**: 'Boolean' | 'Integer' | 'Number' | 'String' | string: The data type of the compared operands (string, integer, floating point number or a boolean [true/false]]
+
+## AutomationValidationStatus
+### Properties
+* **isValid**: bool: Indicates whether the model is valid or not.
+* **message**: string: The validation message.
 
 ## ContainerRegistryVulnerabilityPropertiesCvss
 ### Properties
@@ -307,6 +329,11 @@
 ## SuppressionAlertsScope
 ### Properties
 * **allOf**: [ScopeElement](#scopeelement)[] (Required): All the conditions inside need to be true in order to suppress the alert
+
+## Tags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## Tags
 ### Properties

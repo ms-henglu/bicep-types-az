@@ -40,6 +40,35 @@
 * **properties**: [OriginPropertiesParametersOrOriginProperties](#originpropertiesparametersororiginproperties)
 * **type**: 'Microsoft.Cdn/profiles/endpoints/origins' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function generateSsoUri (Microsoft.Cdn/profiles@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2015-06-01
+* **Output**: [SsoUri](#ssouri)
+
+## Function load (Microsoft.Cdn/profiles/endpoints@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2015-06-01
+* **Input**: [LoadParameters](#loadparameters)
+
+## Function purge (Microsoft.Cdn/profiles/endpoints@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2015-06-01
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function start (Microsoft.Cdn/profiles/endpoints@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2015-06-01
+
+## Function stop (Microsoft.Cdn/profiles/endpoints@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2015-06-01
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/endpoints@2015-06-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2015-06-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## CustomDomainPropertiesParametersOrCustomDomainProperties
 ### Properties
 * **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
@@ -76,6 +105,10 @@
 * **queryStringCachingBehavior**: 'BypassCaching' | 'IgnoreQueryString' | 'NotSet' | 'UseQueryString': Defines the query string caching behavior.
 * **resourceState**: 'Creating' | 'Deleting' | 'Running' | 'Starting' | 'Stopped' | 'Stopping' (ReadOnly): Resource status of the endpoint.
 
+## LoadParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be loaded. Should describe a file path.
+
 ## OriginPropertiesParametersOrOriginProperties
 ### Properties
 * **hostName**: string (Required): The address of the origin. Domain names, IPv4 addresses, and IPv6 addresses are supported.
@@ -95,7 +128,25 @@
 * **resourceState**: 'Active' | 'Creating' | 'Deleting' | 'Disabled' (ReadOnly): Resource status of the profile.
 * **sku**: [Sku](#sku) (Required): Profile SKU
 
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+
 ## Sku
 ### Properties
 * **name**: 'Premium' | 'Standard': Name of the pricing tier
+
+## SsoUri
+### Properties
+* **ssoUriValue**: string: The URI used to login to third party web portal.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool: Indicates whether the custom domain is validated or not.
+* **message**: string: The message describing why the custom domain is not valid.
+* **reason**: string: The reason why the custom domain is not valid.
 

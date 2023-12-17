@@ -23,6 +23,25 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.LoadTestService/locations/quotas' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkAvailability (Microsoft.LoadTestService/locations/quotas@2022-12-01)
+* **Resource**: Microsoft.LoadTestService/locations/quotas
+* **ApiVersion**: 2022-12-01
+* **Input**: [QuotaBucketRequest](#quotabucketrequest)
+* **Output**: [CheckQuotaAvailabilityResponse](#checkquotaavailabilityresponse)
+
+## CheckQuotaAvailabilityResponse
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CheckQuotaAvailabilityResponseProperties](#checkquotaavailabilityresponseproperties): Check quota availability response properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## CheckQuotaAvailabilityResponseProperties
+### Properties
+* **availabilityStatus**: string: Message indicating additional details to add to quota support request.
+* **isAvailable**: bool: True/False indicating whether the quota request be granted based on availability.
+
 ## EncryptionProperties
 ### Properties
 * **identity**: [EncryptionPropertiesIdentity](#encryptionpropertiesidentity): All identity configuration for Customer-managed key settings defining which identity should be used to auth to Key Vault.
@@ -46,6 +65,26 @@
 * **tenantId**: string (ReadOnly): The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+
+## QuotaBucketRequest
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [QuotaBucketRequestProperties](#quotabucketrequestproperties): New quota request request properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## QuotaBucketRequestProperties
+### Properties
+* **currentQuota**: int: Current quota limit of the quota bucket.
+* **currentUsage**: int: Current quota usage of the quota bucket.
+* **dimensions**: [QuotaBucketRequestPropertiesDimensions](#quotabucketrequestpropertiesdimensions): Dimensions for new quota request.
+* **newQuota**: int: New quota limit of the quota bucket.
+
+## QuotaBucketRequestPropertiesDimensions
+### Properties
+* **location**: string: Location dimension for new quota request of the quota bucket.
+* **subscriptionId**: string: Subscription Id dimension for new quota request of the quota bucket.
 
 ## QuotaResourceProperties
 ### Properties

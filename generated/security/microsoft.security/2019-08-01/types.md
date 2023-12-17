@@ -86,6 +86,10 @@
 * **properties**: [IotRecommendationTypeProperties](#iotrecommendationtypeproperties) (ReadOnly): Recommendation type properties
 * **type**: 'Microsoft.Security/iotSecuritySolutions/iotRecommendationTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function dismiss (Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts@2019-08-01)
+* **Resource**: Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts
+* **ApiVersion**: 2019-08-01
+
 ## AdditionalWorkspacesProperties
 ### Properties
 * **dataTypes**: 'Alerts' | 'RawEvents' | string[]: List of data types sent to workspace

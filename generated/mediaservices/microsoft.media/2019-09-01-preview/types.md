@@ -9,6 +9,14 @@
 * **properties**: [MediaGraphProperties](#mediagraphproperties): Class for Media Graph properties
 * **type**: 'Microsoft.Media/mediaServices/mediaGraphs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function start (Microsoft.Media/mediaServices/mediaGraphs@2019-09-01-preview)
+* **Resource**: Microsoft.Media/mediaServices/mediaGraphs
+* **ApiVersion**: 2019-09-01-preview
+
+## Function stop (Microsoft.Media/mediaServices/mediaGraphs@2019-09-01-preview)
+* **Resource**: Microsoft.Media/mediaServices/mediaGraphs
+* **ApiVersion**: 2019-09-01-preview
+
 ## MediaGraphProperties
 ### Properties
 * **created**: string (ReadOnly): Date the Media Graph was created
