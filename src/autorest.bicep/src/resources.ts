@@ -335,13 +335,6 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
           return false;
         }
 
-        const { routingScope: actionRoutingScope } = parseResult.value;
-        const actionName = actionRoutingScope.substr(actionRoutingScope.lastIndexOf('/') + 1);
-        if (!actionName.toLowerCase().startsWith('list'))
-        {
-          return false;
-        }
-
         const parameterWarnings = [
           ...gatherParameterWarnings(operationId, operation.parameters ?? []),
           ...gatherParameterWarnings(`${r.httpRequest.path.toLowerCase()}::POST`, r.request.parameters ?? []),
@@ -560,16 +553,16 @@ export function getProviderDefinitions(codeModel: CodeModel, host: AutorestExten
     const response = getResponseSchema(operation);
     const request = getRequestSchema(operation, validRequests);
 
-    if (!request || !response) {
+    if (!request) {
       return;
     }
 
     return {
       request: request.request,
-      response: response.response,
+      response: response?.response,
       parameters: request.parameters,
       requestSchema: request.schema,
-      responseSchema: response.schema,
+      responseSchema: response?.schema,
     };
   }
 
