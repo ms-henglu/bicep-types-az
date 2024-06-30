@@ -333,6 +333,12 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Automation/automationAccounts/webhooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function convertGraphRunbookContent (Microsoft.Automation/automationAccounts@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts
+* **ApiVersion**: 2023-05-15-preview
+* **Input**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+* **Output**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+
 ## Function listDeletedRunbooks (Microsoft.Automation/automationAccounts@2023-05-15-preview)
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2023-05-15-preview
@@ -342,6 +348,47 @@
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2023-05-15-preview
 * **Output**: [KeyListResult](#keylistresult)
+
+## Function move (Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers
+* **ApiVersion**: 2023-05-15-preview
+* **Input**: [HybridRunbookWorkerMoveParameters](#hybridrunbookworkermoveparameters)
+
+## Function publish (Microsoft.Automation/automationAccounts/runbooks@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks
+* **ApiVersion**: 2023-05-15-preview
+
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-05-15-preview
+
+## Function resume (Microsoft.Automation/automationAccounts/runbooks/draft@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-05-15-preview
+
+## Function start (Microsoft.Automation/automationAccounts/watchers@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2023-05-15-preview
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-05-15-preview
+
+## Function stop (Microsoft.Automation/automationAccounts/runbooks/draft@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-05-15-preview
+
+## Function stop (Microsoft.Automation/automationAccounts/watchers@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2023-05-15-preview
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-05-15-preview
+
+## Function suspend (Microsoft.Automation/automationAccounts/runbooks/draft@2023-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-05-15-preview
 
 ## AdvancedSchedule
 ### Properties
@@ -598,6 +645,16 @@
 * **isOptional**: bool: Gets or sets the isOptional flag of the connection field definition.
 * **type**: string (Required): Gets or sets the type of the connection field definition.
 
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
+
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
+
 ## HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties
 ### Properties
 * **ip**: string (ReadOnly): Gets or sets the assigned machine IP address.
@@ -611,6 +668,10 @@
 ### Properties
 * **credential**: [RunAsCredentialAssociationProperty](#runascredentialassociationproperty): Sets the credential of a worker group.
 * **groupType**: 'System' | 'User' | string (ReadOnly): Type of the HybridWorkerGroup.
+
+## HybridRunbookWorkerMoveParameters
+### Properties
+* **hybridRunbookWorkerGroupName**: string: Gets or sets the target hybrid runbook worker group.
 
 ## Identity
 ### Properties
@@ -778,6 +839,12 @@
 * **provisioningState**: 'ActivitiesStored' | 'Cancelled' | 'ConnectionTypeImported' | 'ContentDownloaded' | 'ContentRetrieved' | 'ContentStored' | 'ContentValidated' | 'Created' | 'Creating' | 'Failed' | 'ModuleDataStored' | 'ModuleImportRunbookComplete' | 'RunningImportModuleRunbook' | 'StartingImportModuleRunbook' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets or sets the provisioning state of the module.
 * **sizeInBytes**: int (ReadOnly): Gets or sets the size in bytes of the module.
 * **version**: string (ReadOnly): Gets or sets the version of the module.
+
+## RawGraphicalRunbookContent
+### Properties
+* **runbookDefinition**: string: Serialized Graphical runbook
+* **runbookType**: 'GraphPowerShell' | 'GraphPowerShellWorkflow' | string: Runbook Type
+* **schemaVersion**: string: Schema version of the serializer.
 
 ## RunAsCredentialAssociationProperty
 ### Properties

@@ -70,6 +70,51 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.Media/mediaservices/streamingEndpoints/operationLocations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function allocate (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+
+## Function getStatus (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+* **Output**: [LiveEventGetStatusResult](#liveeventgetstatusresult)
+
+## Function getStreamEvents (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+* **Output**: [LiveEventGetStreamEventsResult](#liveeventgetstreameventsresult)
+
+## Function getTrackIngestHeartbeats (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+* **Output**: [LiveEventGetTrackIngestHeartbeatsResult](#liveeventgettrackingestheartbeatsresult)
+
+## Function reset (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+
+## Function scale (Microsoft.Media/mediaservices/streamingEndpoints@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-11-01
+* **Input**: [StreamingEntityScaleUnit](#streamingentityscaleunit)
+
+## Function start (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+
+## Function start (Microsoft.Media/mediaservices/streamingEndpoints@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-11-01
+
+## Function stop (Microsoft.Media/mediaservices/liveEvents@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2022-11-01
+* **Input**: [LiveEventActionInput](#liveeventactioninput)
+
+## Function stop (Microsoft.Media/mediaservices/streamingEndpoints@2022-11-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2022-11-01
+
 ## AkamaiAccessControl
 ### Properties
 * **akamaiSignatureHeaderAuthenticationKeyList**: [AkamaiSignatureHeaderAuthenticationKey](#akamaisignatureheaderauthenticationkey)[]: authentication key list
@@ -104,6 +149,10 @@
 * **name**: string: The friendly name for the IP address range.
 * **subnetPrefixLength**: int: The subnet mask prefix length (see CIDR notation).
 
+## LiveEventActionInput
+### Properties
+* **removeOutputsOnStop**: bool: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
+
 ## LiveEventEncoding
 ### Properties
 * **encodingType**: 'None' | 'PassthroughBasic' | 'PassthroughStandard' | 'Premium1080p' | 'Standard' | string: Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
@@ -115,6 +164,33 @@
 ### Properties
 * **protocol**: string: The endpoint protocol.
 * **url**: string: The endpoint URL.
+
+## LiveEventGetStatusResult
+### Properties
+* **value**: [LiveEventStatus](#liveeventstatus)[]: The result of the get live event status.
+
+## LiveEventGetStreamEventsResult
+### Properties
+* **value**: [LiveEventStreamEvent](#liveeventstreamevent)[]: The result of the get live event stream events.
+
+## LiveEventGetTrackIngestHeartbeatsResult
+### Properties
+* **value**: [LiveEventTrackEvent](#liveeventtrackevent)[]: The result of the get live event track events.
+
+## LiveEventIngestInterruption
+### Properties
+* **begin**: string: UTC time of interruption start, encoder disconnected.
+* **duration**: string: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour and 30 minutes.
+* **end**: string: UTC time of interruption end, encoder re-connected.
+* **reason**: string: Interruption reason.
+
+## LiveEventIngestion
+### Properties
+* **begin**: string: Ingestion begin time in UTC.
+* **end**: string: Ingestion end time in UTC. Empty if it's not stopped yet.
+* **endReason**: string: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No Ingestion.
+* **ingestInterruptions**: [LiveEventIngestInterruption](#liveeventingestinterruption)[]: IngestInterruption entry list.
+* **streamName**: string: Ingestion stream name.
 
 ## LiveEventInput
 ### Properties
@@ -167,9 +243,91 @@
 * **transcriptions**: [LiveEventTranscription](#liveeventtranscription)[]: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
 * **useStaticHostname**: bool: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state
 
+## LiveEventStatus
+### Properties
+* **healthDescriptions**: string[]: List of strings justifying the health status.
+* **healthStatus**: 'Excellent' | 'Good' | 'Poor' | string: Health status of last 20 seconds.
+* **ingestion**: [LiveEventIngestion](#liveeventingestion): Live event ingestion entry.
+* **lastUpdatedTime**: string: Last updated UTC time of this status.
+* **state**: 'Running' | 'Stopped' | string: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+* **trackStatus**: [LiveEventTrackStatus](#liveeventtrackstatus)[]: Track entry list.
+
+## LiveEventStreamEvent
+### Properties
+* **data**: [LiveEventStreamEventData](#liveeventstreameventdata): Event data based on event type.
+* **eventLevel**: 'Critical' | 'Error' | 'Information' | 'Warning' | string: Event level.
+* **eventTime**: string: The time event raised.
+* **eventType**: 'StreamEvent/BeginIngest' | 'StreamEvent/ChunkDropped' | 'StreamEvent/Discontinuity' | 'StreamEvent/EndIngest' | 'StreamEvent/FirstChunkReceived' | 'StreamEvent/InvalidConnection' | 'StreamEvent/UnalignedKeyFrames' | 'StreamEvent/UnalignedPresentation' | string: The type of the stream event. Format: StreamEvent/{eventType}
+
+## LiveEventStreamEventData
+### Properties
+* **bitrate**: int: Bitrate of the track.
+* **currentFragmentTimestamp**: string: Current fragment timestamp in timescale.
+* **discontinuityGap**: int: Length of the discontinuity gap in timescale.
+* **duration**: string: Fragment duration.
+* **fragmentDropReason**: string: Reason the fragment was dropped.
+* **fragmentOneDuration**: string: Duration of first fragment used to make a comparison, in timescale.
+* **fragmentOneTimestamp**: string: Timestamp of first fragment used to make a comparison, in timescale.
+* **fragmentTwoDuration**: string: Duration of second fragment used to make a comparison, in timescale.
+* **fragmentTwoTimestamp**: string: Timestamp of second fragment used to make a comparison, in timescale.
+* **maxTime**: string: The larger timestamp of the two fragments compared.
+* **maxTimeMediaType**: 'Audio' | 'Video' | string: The media type of the larger timestamp of two fragments compared.
+* **mediaTimestamp**: string: Fragment timestamp in timescale.
+* **mediaType**: 'audio' | 'video' | string: Type of the track.
+* **minTime**: string: The smaller timestamp of the two fragments compared.
+* **minTimeMediaType**: 'Audio' | 'Video' | string: The media type of the smaller timestamp of two fragments compared.
+* **previousFragmentDuration**: string: Previous fragment duration in timescale.
+* **previousFragmentTimestamp**: string: Previous fragment timestamp in timescale.
+* **remoteIp**: string: Truncated IP of the encoder.
+* **remotePort**: string: Port of the encoder.
+* **resolution**: string: Width x Height for video, null otherwise.
+* **resultCode**: string: Result code.
+* **resultMessage**: string: Result message.
+* **streamId**: string: Stream ID in the format "trackName_bitrate"
+* **streamName**: string: Identifier of the stream or connection. Encoder or customer is responsible to add this ID in the ingest URL.
+* **timescale**: string: Timescale in which timestamps are expressed.
+* **timescaleOfMaxTime**: string: Timescale of the fragment with the larger timestamp.
+* **timescaleOfMinTime**: string: Timescale of the fragment with the smaller timestamp.
+* **trackId**: int: Track index.
+* **trackName**: string: Name of the track.
+
 ## LiveEventTimedMetadataEndpoint
 ### Properties
 * **url**: string: The metadata endpoint URL.
+
+## LiveEventTrackEvent
+### Properties
+* **data**: [LiveEventTrackEventData](#liveeventtrackeventdata): Event data.
+* **eventTime**: string: The time event raised.
+* **eventType**: 'TrackEvent/IngestHeartbeat' | string: The type of the track event.
+
+## LiveEventTrackEventData
+### Properties
+* **bitrate**: int: Bitrate of the track.
+* **discontinuityCount**: int: Number of discontinuities detected in the last 20 seconds.
+* **healthy**: bool: Indicates whether ingest is healthy.
+* **incomingBitrate**: int: Calculated bitrate based on data chunks coming from encoder.
+* **ingestDriftValue**: string: Indicates the speed of delay, in seconds-per-minute, of the incoming audio or video data during the last minute. The value is greater than zero if data is arriving to the live event slower than expected in the last minute; zero if data arrived with no delay; and "n/a" if no audio or video data was received. For example, if you have a contribution encoder sending in live content, and it is slowing down due to processing issues, or network latency, it may be only able to deliver a total of 58 seconds of audio or video in a one-minute period. This would be reported as two seconds-per-minute of drift. If the encoder is able to catch up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for breaks in the data - only data that is delayed in timestamps.
+* **lastFragmentArrivalTime**: string: The last timestamp in UTC that a fragment arrived at the ingest endpoint.
+* **lastTimestamp**: string: Latest timestamp received for a track in last 20 seconds.
+* **nonincreasingCount**: int: Number of data chunks with timestamps in the past that were received in last 20 seconds.
+* **overlapCount**: int: Number of data chunks that had overlapped timestamps in last 20 seconds.
+* **state**: string: State of the live event.
+* **timescale**: string: Timescale in which timestamps are expressed.
+* **trackName**: string: Name of the track.
+* **trackType**: 'audio' | 'video' | string: Type of the track.
+* **transcriptionLanguage**: string: The language code (in BCP-47 format) of the transcription language. For example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live transcription is turned off.
+* **transcriptionState**: string: This value is "On" for audio track heartbeats if live transcription is turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for Live transcription. All other tracks will have an empty value.
+* **unexpectedBitrate**: bool: If expected and actual bitrates differ by more than allowed limit in last 20 seconds.
+
+## LiveEventTrackStatus
+### Properties
+* **expectedBitrate**: int: Expected bitrate for this track.
+* **incomingBitrate**: int: Average incoming bitrate for last 20 seconds when live event is running.
+* **ingestDrift**: string: Current ingest drift value in seconds for last 1 minute.
+* **requestReceived**: int: Total number of timed metadata request received.
+* **requestSucceeded**: int: Total number of successful timed metadata request received.
+* **trackId**: string: Track Id.
 
 ## LiveEventTranscription
 ### Properties
@@ -214,6 +372,10 @@
 * **provisioningState**: string (ReadOnly): The provisioning state of the streaming endpoint.
 * **resourceState**: 'Deleting' | 'Running' | 'Scaling' | 'Starting' | 'Stopped' | 'Stopping' | string (ReadOnly): The resource state of the streaming endpoint.
 * **scaleUnits**: int (Required): The number of scale units. Use the Scale operation to adjust this value.
+
+## StreamingEntityScaleUnit
+### Properties
+* **scaleUnit**: int: The scale unit number of the streaming endpoint.
 
 ## SystemData
 ### Properties

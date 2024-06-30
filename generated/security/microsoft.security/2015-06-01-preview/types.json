@@ -2768,5 +2768,151 @@
       "$ref": "#/218"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AdaptiveNetworkHardeningEnforceRequest",
+    "properties": {
+      "rules": {
+        "type": {
+          "$ref": "#/228"
+        },
+        "flags": 1,
+        "description": "The rules to enforce"
+      },
+      "networkSecurityGroups": {
+        "type": {
+          "$ref": "#/229"
+        },
+        "flags": 1,
+        "description": "The Azure resource IDs of the effective network security groups that will be updated with the created security rules from the Adaptive Network Hardening rules"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/144"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "{adaptiveNetworkHardeningEnforceAction}",
+    "resourceType": "Microsoft.Security/adaptiveNetworkHardenings",
+    "apiVersion": "2015-06-01-preview",
+    "input": {
+      "$ref": "#/227"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "dismiss",
+    "resourceType": "Microsoft.Security/locations/alerts",
+    "apiVersion": "2015-06-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reactivate",
+    "resourceType": "Microsoft.Security/locations/alerts",
+    "apiVersion": "2015-06-01-preview"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "JitNetworkAccessPolicyInitiateRequest",
+    "properties": {
+      "virtualMachines": {
+        "type": {
+          "$ref": "#/237"
+        },
+        "flags": 1,
+        "description": "A list of virtual machines & ports to open access for"
+      },
+      "justification": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The justification for making the initiate request"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "JitNetworkAccessPolicyInitiateVirtualMachine",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Resource ID of the virtual machine that is linked to this policy"
+      },
+      "ports": {
+        "type": {
+          "$ref": "#/236"
+        },
+        "flags": 1,
+        "description": "The ports to open for the resource with the `id`"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "JitNetworkAccessPolicyInitiatePort",
+    "properties": {
+      "number": {
+        "type": {
+          "$ref": "#/117"
+        },
+        "flags": 1
+      },
+      "allowedSourceAddressPrefix": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Source of the allowed traffic. If omitted, the request will be for the source IP address of the initiate request."
+      },
+      "endTimeUtc": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The time to close the request in UTC"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/235"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/234"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "{jitNetworkAccessPolicyInitiateType}",
+    "resourceType": "Microsoft.Security/locations/jitNetworkAccessPolicies",
+    "apiVersion": "2015-06-01-preview",
+    "input": {
+      "$ref": "#/233"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "{taskUpdateActionType}",
+    "resourceType": "Microsoft.Security/locations/tasks",
+    "apiVersion": "2015-06-01-preview"
   }
 ]

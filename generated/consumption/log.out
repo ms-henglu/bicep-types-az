@@ -134,6 +134,7 @@ warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAc
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/aggregatedCost': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/download': Found mismatch between type segments (1) and name segments (0)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -263,6 +264,7 @@ warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAc
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/aggregatedCost': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/download': Found mismatch between type segments (1) and name segments (0)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -392,6 +394,7 @@ warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAc
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/aggregatedCost': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/download': Found mismatch between type segments (1) and name segments (0)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -1209,6 +1212,7 @@ warning | Skipping path '/{scope}/providers/Microsoft.Consumption/charges': Foun
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/{scope}/providers/Microsoft.Consumption/usageDetails/download': Found mismatch between type segments (1) and name segments (0)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -1280,6 +1284,7 @@ warning | Skipping path '/{scope}/providers/Microsoft.Consumption/charges': Foun
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/balances': Found mismatch between type segments (1) and name segments (0)
 warning | Skipping path '/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Consumption/aggregatedcost': Found mismatch between type segments (1) and name segments (0)
+warning | Skipping resource POST action path '/{scope}/providers/Microsoft.Consumption/usageDetails/download': Found mismatch between type segments (1) and name segments (0)
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.

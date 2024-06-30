@@ -92,6 +92,22 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DBforPostgreSQL/serverGroupsv2/servers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function promote (Microsoft.DBforPostgreSQL/serverGroupsv2@2022-11-08)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2022-11-08
+
+## Function restart (Microsoft.DBforPostgreSQL/serverGroupsv2@2022-11-08)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2022-11-08
+
+## Function start (Microsoft.DBforPostgreSQL/serverGroupsv2@2022-11-08)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2022-11-08
+
+## Function stop (Microsoft.DBforPostgreSQL/serverGroupsv2@2022-11-08)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2022-11-08
+
 ## ClusterProperties
 ### Properties
 * **administratorLogin**: string (ReadOnly): The administrator's login name of the servers in the cluster.

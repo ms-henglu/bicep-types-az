@@ -237,7 +237,7 @@
         "type": {
           "$ref": "#/2"
         },
-        "flags": 1,
+        "flags": 0,
         "description": "Marketplace Subscription Id"
       },
       "offerDetails": {
@@ -1042,5 +1042,585 @@
       "$ref": "#/42"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "InformaticaServerlessRuntimeResourceList",
+    "properties": {
+      "informaticaRuntimeResources": {
+        "type": {
+          "$ref": "#/79"
+        },
+        "flags": 1,
+        "description": "List of runtime resources for the fetch all API"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "InfaRuntimeResourceFetchMetaData",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Environment name"
+      },
+      "createdTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Created time"
+      },
+      "updatedTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Updated Time"
+      },
+      "createdBy": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Created by"
+      },
+      "updatedBy": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Last Updated by"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Informatica serverless runtime id"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/76"
+        },
+        "flags": 1,
+        "description": "Environment Type"
+      },
+      "status": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Status of the environment"
+      },
+      "statusLocalized": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Display message for the given status"
+      },
+      "statusMessage": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "status message"
+      },
+      "serverlessConfigProperties": {
+        "type": {
+          "$ref": "#/77"
+        },
+        "flags": 1,
+        "description": "Serverless Config Properties"
+      },
+      "description": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Description of the runtime resource"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SERVERLESS"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/75"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "InfaServerlessFetchConfigProperties",
+    "properties": {
+      "subnet": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "subnet name"
+      },
+      "applicationType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "applicationType name"
+      },
+      "resourceGroupName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Resource group name"
+      },
+      "advancedCustomProperties": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Advanced custom properties"
+      },
+      "supplementaryFileLocation": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Supplementary File location"
+      },
+      "platform": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Serverless Account Platform"
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Tags for the resource"
+      },
+      "vnet": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "virtual network"
+      },
+      "executionTimeout": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Execution timeout"
+      },
+      "computeUnits": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Compute Units"
+      },
+      "tenantId": {
+        "type": {
+          "$ref": "#/78"
+        },
+        "flags": 0,
+        "description": "Tenant ID"
+      },
+      "subscriptionId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "subscription ID"
+      },
+      "region": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "region name for the runtime environment"
+      },
+      "serverlessArmResourceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Serverless Arm Resource ID"
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "minLength": 36,
+    "maxLength": 36,
+    "pattern": "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/74"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getAllServerlessRuntimes",
+    "resourceType": "Informatica.DataManagement/organizations",
+    "apiVersion": "2024-05-08",
+    "output": {
+      "$ref": "#/73"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ServerlessMetadataResponse",
+    "properties": {
+      "type": {
+        "type": {
+          "$ref": "#/83"
+        },
+        "flags": 0,
+        "description": "type of the runtime environment."
+      },
+      "serverlessConfigProperties": {
+        "type": {
+          "$ref": "#/84"
+        },
+        "flags": 0,
+        "description": "serverless config properties"
+      },
+      "serverlessRuntimeConfigProperties": {
+        "type": {
+          "$ref": "#/63"
+        },
+        "flags": 0,
+        "description": "serverless runtime config properties"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SERVERLESS"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/82"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ServerlessConfigProperties",
+    "properties": {
+      "platform": {
+        "type": {
+          "$ref": "#/86"
+        },
+        "flags": 0,
+        "description": "Platform types"
+      },
+      "applicationTypes": {
+        "type": {
+          "$ref": "#/88"
+        },
+        "flags": 0,
+        "description": "List of application types supported by informatica"
+      },
+      "computeUnits": {
+        "type": {
+          "$ref": "#/91"
+        },
+        "flags": 0,
+        "description": "The list of compute units with possible array of values"
+      },
+      "executionTimeout": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Serverless Runtime execution timeout"
+      },
+      "regions": {
+        "type": {
+          "$ref": "#/93"
+        },
+        "flags": 0,
+        "description": "List of supported serverless informatica regions"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AZURE"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/85"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ApplicationTypeMetadata",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Application type name"
+      },
+      "value": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Application type value"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/87"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ComputeUnitsMetadata",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "ComputeUnit name"
+      },
+      "value": {
+        "type": {
+          "$ref": "#/90"
+        },
+        "flags": 0,
+        "description": "ComputeUnit value"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/89"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RegionsMetadata",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Region Id"
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Region name"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/92"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getServerlessMetadata",
+    "resourceType": "Informatica.DataManagement/organizations",
+    "apiVersion": "2024-05-08",
+    "output": {
+      "$ref": "#/81"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckDependenciesResponse",
+    "properties": {
+      "count": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 1,
+        "description": "Count of dependencies"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "id of resource"
+      },
+      "references": {
+        "type": {
+          "$ref": "#/97"
+        },
+        "flags": 1,
+        "description": "List of dependencies"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ServerlessRuntimeDependency",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Dependency ID"
+      },
+      "appContextId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Application context ID"
+      },
+      "path": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Dependency path"
+      },
+      "documentType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "document type"
+      },
+      "description": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "description of Dependency"
+      },
+      "lastUpdatedTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Last Update Time"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/96"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkDependencies",
+    "resourceType": "Informatica.DataManagement/organizations/serverlessRuntimes",
+    "apiVersion": "2024-05-08",
+    "output": {
+      "$ref": "#/95"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "InformaticaServerlessRuntimeResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/43"
+        },
+        "flags": 0,
+        "description": "The resource-specific properties for this resource."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/28"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "serverlessResourceById",
+    "resourceType": "Informatica.DataManagement/organizations/serverlessRuntimes",
+    "apiVersion": "2024-05-08",
+    "output": {
+      "$ref": "#/99"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startFailedServerlessRuntime",
+    "resourceType": "Informatica.DataManagement/organizations/serverlessRuntimes",
+    "apiVersion": "2024-05-08"
   }
 ]

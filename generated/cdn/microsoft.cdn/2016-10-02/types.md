@@ -45,6 +45,58 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.Cdn/profiles/endpoints/origins' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkResourceUsage (Microsoft.Cdn/profiles@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2016-10-02
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function disableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2016-10-02
+
+## Function enableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2016-10-02
+
+## Function generateSsoUri (Microsoft.Cdn/profiles@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2016-10-02
+* **Output**: [SsoUri](#ssouri)
+
+## Function getSupportedOptimizationTypes (Microsoft.Cdn/profiles@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2016-10-02
+* **Output**: [SupportedOptimizationTypesResult](#supportedoptimizationtypesresult)
+
+## Function load (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+* **Input**: [LoadParameters](#loadparameters)
+
+## Function purge (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function start (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+
+## Function stop (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/endpoints@2016-10-02)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2016-10-02
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## CustomDomainPropertiesParametersOrCustomDomainProperties
 ### Properties
 * **customHttpsProvisioningState**: 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | 'Failed' | string (ReadOnly): Provisioning state of Custom Https of the custom domain.
@@ -86,6 +138,10 @@
 * **countryCodes**: string[] (Required): Two letter country codes defining user country access in a geo filter, e.g. AU, MX, US.
 * **relativePath**: string (Required): Relative path applicable to geo filter. (e.g. '/mypictures', '/mypicture/kitty.jpg', and etc.)
 
+## LoadParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be loaded. Path should be a relative file URL of the origin.
+
 ## OriginProperties
 ### Properties
 * **hostName**: string (Required): The address of the origin. Domain names, IPv4 addresses, and IPv6 addresses are supported.
@@ -99,10 +155,9 @@
 * **provisioningState**: string (ReadOnly): Provisioning status of the profile.
 * **resourceState**: 'Active' | 'Creating' | 'Deleting' | 'Disabled' | string (ReadOnly): Resource status of the profile.
 
-## ResourceTags
+## PurgeParameters
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
 
 ## ResourceTags
 ### Properties
@@ -118,8 +173,48 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceUsage
+### Properties
+* **currentValue**: int: Actual value of the resource type.
+* **limit**: int: Quota of the resource type.
+* **resourceType**: string: Resource type of the usages.
+* **unit**: string: Unit of the usage. e.g. Count.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[]: List of resource usages.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[]: List of resource usages.
 
 ## Sku
 ### Properties
 * **name**: 'Custom_Verizon' | 'Premium_Verizon' | 'Standard_Akamai' | 'Standard_ChinaCdn' | 'Standard_Verizon' | string: Name of the pricing tier.
+
+## SsoUri
+### Properties
+* **ssoUriValue**: string: The URI used to login to the supplemental portal.
+
+## SupportedOptimizationTypesResult
+### Properties
+* **supportedOptimizationTypes**: ('DynamicSiteAcceleration' | 'GeneralMediaStreaming' | 'GeneralWebDelivery' | 'LargeFileDownload' | 'VideoOnDemandMediaStreaming' | string)[]: Supported optimization types for a profile.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool: Indicates whether the custom domain is validated or not.
+* **message**: string: Error message describing why the custom domain is not valid.
+* **reason**: string: The reason why the custom domain is not valid.
 

@@ -19,6 +19,12 @@
 * **ApiVersion**: 2016-02-01-preview
 * **Output**: [CognitiveServicesAccountKeys](#cognitiveservicesaccountkeys)
 
+## Function regenerateKey (Microsoft.CognitiveServices/accounts@2016-02-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts
+* **ApiVersion**: 2016-02-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [CognitiveServicesAccountKeys](#cognitiveservicesaccountkeys)
+
 ## CognitiveServicesAccountCreateParametersTags
 ### Properties
 ### Additional Properties
@@ -28,6 +34,15 @@
 ### Properties
 * **key1**: string: Gets the value of key 1.
 * **key2**: string: Gets the value of key 2.
+
+## CognitiveServicesAccountKeys
+### Properties
+* **key1**: string: Gets the value of key 1.
+* **key2**: string: Gets the value of key 2.
+
+## RegenerateKeyParameters
+### Properties
+* **keyName**: 'Key1' | 'Key2': key name to generate (Key1|Key2)
 
 ## Sku
 ### Properties

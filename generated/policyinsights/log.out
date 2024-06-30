@@ -83,6 +83,8 @@ warning | Modeler/MissingType | The schema 'components·1twbxlw·schemas·policy
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/preview/2018-07-01-preview/policyEvents.json#/components/schemas/components·1twbxlw·schemas·policyevent·additionalproperties
 warning | Modeler/MissingType | The schema 'components·1yhb3ub·schemas·policystate·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/preview/2018-07-01-preview/policyStates.json#/components/schemas/components·1yhb3ub·schemas·policystate·additionalproperties
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -191,6 +193,8 @@ warning | Modeler/MissingType | The schema 'components·hezmy5·schemas·compone
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyStates.json#/components/schemas/components·hezmy5·schemas·componentstatedetails·additionalproperties
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -226,6 +230,9 @@ warning | PreCheck/SchemaMissingType | The schema 'TypedErrorInfo' with an undef
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/providers/{managementGroupsNamespace}/managementGroups/{managementGroupId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -247,6 +254,8 @@ warning | Modeler/MissingType | The schema 'components·zx71yo·schemas·compone
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2022-04-01/componentPolicyStates.json#/components/schemas/components·zx71yo·schemas·componentpolicystate·additionalproperties
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -311,6 +320,9 @@ warning | PreCheck/SchemaMissingType | The schema 'TypedErrorInfo' with an undef
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/providers/{managementGroupsNamespace}/managementGroups/{managementGroupId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -374,6 +386,8 @@ warning | PreCheck/SchemaMissingType | The schema 'TypedErrorInfo' with an undef
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -443,6 +457,8 @@ warning | PreCheck/SchemaMissingType | The schema 'TypedErrorInfo' with an undef
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'TypedErrorInfo-info' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/policyinsights/resource-manager/Microsoft.PolicyInsights/stable/2019-10-01/policyMetadata.json#/components/schemas/TypedErrorInfo-info
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PolicyInsights/checkPolicyRestrictions': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.

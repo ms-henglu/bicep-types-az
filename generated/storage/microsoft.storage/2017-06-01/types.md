@@ -31,6 +31,12 @@
 * **Input**: [ServiceSasParameters](#servicesasparameters)
 * **Output**: [ListServiceSasResponse](#listservicesasresponse)
 
+## Function regenerateKey (Microsoft.Storage/storageAccounts@2017-06-01)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2017-06-01
+* **Input**: [StorageAccountRegenerateKeyParameters](#storageaccountregeneratekeyparameters)
+* **Output**: [StorageAccountListKeysResult](#storageaccountlistkeysresult)
+
 ## AccountSasParameters
 ### Properties
 * **keyToSign**: string: The key to sign the account SAS token with.
@@ -161,6 +167,10 @@
 ### Properties
 * **keys**: [StorageAccountKey](#storageaccountkey)[] (ReadOnly): Gets the list of storage account keys and their properties for the specified storage account.
 
+## StorageAccountListKeysResult
+### Properties
+* **keys**: [StorageAccountKey](#storageaccountkey)[] (ReadOnly): Gets the list of storage account keys and their properties for the specified storage account.
+
 ## StorageAccountPropertiesCreateParametersOrStorageAccountProperties
 ### Properties
 * **accessTier**: 'Cool' | 'Hot': Required for storage accounts where kind = BlobStorage. The access tier used for billing.
@@ -177,6 +187,10 @@
 * **statusOfPrimary**: 'available' | 'unavailable' (ReadOnly): Gets the status indicating whether the primary location of the storage account is available or unavailable.
 * **statusOfSecondary**: 'available' | 'unavailable' (ReadOnly): Gets the status indicating whether the secondary location of the storage account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
 * **supportsHttpsTrafficOnly**: bool: Allows https traffic only to storage service if sets to true.
+
+## StorageAccountRegenerateKeyParameters
+### Properties
+* **keyName**: string (Required): The name of storage keys that want to be regenerated, possible values are key1, key2.
 
 ## VirtualNetworkRule
 ### Properties

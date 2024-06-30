@@ -712,5 +712,78 @@
       "$ref": "#/61"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RunParameters",
+    "properties": {
+      "userConfirmation": {
+        "type": {
+          "$ref": "#/72"
+        },
+        "flags": 0,
+        "description": "Enum to detect if user confirmation is required. If not passed will default to NotRequired."
+      },
+      "dataServiceInput": {
+        "type": {
+          "$ref": "#/50"
+        },
+        "flags": 0,
+        "description": "A generic json used differently by each data service type."
+      },
+      "customerSecrets": {
+        "type": {
+          "$ref": "#/73"
+        },
+        "flags": 0,
+        "description": "List of customer secrets containing a key identifier and key value. The key identifier is a way for the specific data source to understand the key. Value contains customer secret encrypted by the encryptionKeys."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotRequired"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Required"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/70"
+      },
+      {
+        "$ref": "#/71"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/51"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.HybridData/dataManagers/dataServices/jobDefinitions",
+    "apiVersion": "2019-06-01",
+    "input": {
+      "$ref": "#/69"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs",
+    "apiVersion": "2019-06-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resume",
+    "resourceType": "Microsoft.HybridData/dataManagers/dataServices/jobDefinitions/jobs",
+    "apiVersion": "2019-06-01"
   }
 ]

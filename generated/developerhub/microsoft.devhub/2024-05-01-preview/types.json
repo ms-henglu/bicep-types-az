@@ -1308,5 +1308,208 @@
       "$ref": "#/70"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GitHubOAuthCallRequest",
+    "properties": {
+      "redirectUrl": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The URL the client will redirect to on successful authentication. If empty, no redirect will occur."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GitHubOAuthInfoResponse",
+    "properties": {
+      "authURL": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "URL for authorizing the Developer Hub GitHub App"
+      },
+      "token": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "OAuth token used to make calls to GitHub"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getGitHubOAuthInfo",
+    "resourceType": "Microsoft.DevHub/locations/githuboauth",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/98"
+    },
+    "input": {
+      "$ref": "#/97"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GeneratePreviewArtifactsResponse",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "generatePreviewArtifacts",
+    "resourceType": "Microsoft.DevHub/locations",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/100"
+    },
+    "input": {
+      "$ref": "#/31"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExportTemplateRequest",
+    "properties": {
+      "templateName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Template Name"
+      },
+      "resourceGroupIds": {
+        "type": {
+          "$ref": "#/103"
+        },
+        "flags": 0
+      },
+      "siteId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0
+      },
+      "instanceName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0
+      },
+      "instanceStage": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PrLinkResponse",
+    "properties": {
+      "prLink": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The link of the pull request."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "export",
+    "resourceType": "Microsoft.DevHub/iacProfiles",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/104"
+    },
+    "input": {
+      "$ref": "#/102"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ScaleTemplateRequest",
+    "properties": {
+      "templateName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Template Name"
+      },
+      "scaleRequirement": {
+        "type": {
+          "$ref": "#/108"
+        },
+        "flags": 0
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ScaleProperty",
+    "properties": {
+      "region": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The region of the store"
+      },
+      "stage": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The stage of the store"
+      },
+      "numberOfStore": {
+        "type": {
+          "$ref": "#/15"
+        },
+        "flags": 0,
+        "description": "Number of the store"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/107"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "scale",
+    "resourceType": "Microsoft.DevHub/iacProfiles",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/104"
+    },
+    "input": {
+      "$ref": "#/106"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.DevHub/iacProfiles",
+    "apiVersion": "2024-05-01-preview"
   }
 ]

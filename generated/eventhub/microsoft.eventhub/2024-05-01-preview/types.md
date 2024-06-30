@@ -137,6 +137,19 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.EventHub/namespaces/schemagroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function breakPairing (Microsoft.EventHub/namespaces/disasterRecoveryConfigs@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2024-05-01-preview
+
+## Function failover (Microsoft.EventHub/namespaces@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [FailOver](#failover)
+
+## Function failover (Microsoft.EventHub/namespaces/disasterRecoveryConfigs@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2024-05-01-preview
+
 ## Function listKeys (Microsoft.EventHub/namespaces/authorizationRules@2024-05-01-preview)
 * **Resource**: Microsoft.EventHub/namespaces/authorizationRules
 * **ApiVersion**: 2024-05-01-preview
@@ -151,6 +164,42 @@
 * **Resource**: Microsoft.EventHub/namespaces/eventhubs/authorizationRules
 * **ApiVersion**: 2024-05-01-preview
 * **Output**: [AccessKeys](#accesskeys)
+
+## Function reconcile (Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2024-05-01-preview
+
+## Function regenerateKeys (Microsoft.EventHub/namespaces/authorizationRules@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces/authorizationRules
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.EventHub/namespaces/eventhubs/authorizationRules@2024-05-01-preview)
+* **Resource**: Microsoft.EventHub/namespaces/eventhubs/authorizationRules
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the AuthorizationRule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace AuthorizationRule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace AuthorizationRule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the AuthorizationRule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace AuthorizationRule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace AuthorizationRule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
 
 ## AccessKeys
 ### Properties
@@ -308,6 +357,15 @@
 * **updatedAt**: string (ReadOnly): The exact time the message was updated.
 * **userMetadata**: string: Gets and Sets Metadata of User.
 
+## FailOver
+### Properties
+* **properties**: [FailOverProperties](#failoverproperties)
+
+## FailOverProperties
+### Properties
+* **force**: bool: If Force is false then graceful failover is attempted after ensuring no data loss. If Force flag is set to true, Forced failover is attempted with possible data loss.
+* **primaryLocation**: string: Query parameter for the new primary location after failover.
+
 ## GeoDataReplicationProperties
 ### Properties
 * **locations**: [NamespaceReplicaLocation](#namespacereplicalocation)[]: A list of regions where replicas of the namespace are maintained.
@@ -379,6 +437,16 @@
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The Private Endpoint resource for this Connection.
 * **privateLinkServiceConnectionState**: [ConnectionState](#connectionstate): Details about the state of the connection.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the Private Endpoint Connection.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is set for KeyType or autogenerated Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' | string (Required): The access key to regenerate.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is set for KeyType or autogenerated Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' | string (Required): The access key to regenerate.
 
 ## RetentionDescription
 ### Properties

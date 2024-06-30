@@ -224,6 +224,87 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to Verified Partner resource.
 * **type**: 'Microsoft.EventGrid/verifiedPartners' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.EventGrid/partnerTopics@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2022-06-15
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function authorizePartner (Microsoft.EventGrid/partnerConfigurations@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerConfigurations
+* **ApiVersion**: 2022-06-15
+* **Input**: [Partner](#partner)
+* **Output**: [PartnerConfiguration](#partnerconfiguration)
+
+## Function deactivate (Microsoft.EventGrid/partnerTopics@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2022-06-15
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/topics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/topics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/domains/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/domains/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/domains/topics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/domains/topics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/systemTopics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getFullUrl (Microsoft.EventGrid/partnerNamespaces/channels@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerNamespaces/channels
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/topics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/topics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/domains/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/domains/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/domains/topics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/domains/topics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/systemTopics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2022-06-15
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2022-06-15)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2022-06-15
@@ -238,6 +319,30 @@
 * **Resource**: Microsoft.EventGrid/partnerNamespaces
 * **ApiVersion**: 2022-06-15
 * **Output**: [PartnerNamespaceSharedAccessKeys](#partnernamespacesharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2022-06-15)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2022-06-15
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2022-06-15)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2022-06-15
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/partnerNamespaces@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerNamespaces
+* **ApiVersion**: 2022-06-15
+* **Input**: [PartnerNamespaceRegenerateKeyRequest](#partnernamespaceregeneratekeyrequest)
+* **Output**: [PartnerNamespaceSharedAccessKeys](#partnernamespacesharedaccesskeys)
+
+## Function unauthorizePartner (Microsoft.EventGrid/partnerConfigurations@2022-06-15)
+* **Resource**: Microsoft.EventGrid/partnerConfigurations
+* **ApiVersion**: 2022-06-15
+* **Input**: [Partner](#partner)
+* **Output**: [PartnerConfiguration](#partnerconfiguration)
 
 ## AdvancedFilter
 * **Discriminator**: operatorType
@@ -379,6 +484,30 @@ the channel and corresponding partner topic are deleted.
 Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
 * **identity**: [EventSubscriptionIdentity](#eventsubscriptionidentity): The identity to use when dead-lettering events.
 
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
 ## DeliveryAttributeMapping
 * **Discriminator**: type
 
@@ -429,6 +558,15 @@ resources by the user.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Event Grid Domain Resource.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled.
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" />
+
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
+
+## DomainSharedAccessKeys
+### Properties
+* **key1**: string: Shared access key1 for the domain.
+* **key2**: string: Shared access key2 for the domain.
 
 ## DomainSharedAccessKeys
 ### Properties
@@ -501,6 +639,34 @@ The format of this depends on the publisher of the events.
 Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
 
 ## EventSubscriptionIdentity
 ### Properties
@@ -610,16 +776,57 @@ If not specified, the default value will be the value of defaultMaximumExpiratio
 * **partnerName**: string: The partner name.
 * **partnerRegistrationImmutableId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The immutableId of the corresponding partner registration.
 
+## Partner
+### Properties
+* **authorizationExpirationTimeInUtc**: string: Expiration time of the partner authorization. If this timer expires, any request from this partner to create, update or delete resources in subscriber's
+context will fail. If specified, the allowed values are between 1 to the value of defaultMaximumExpirationTimeInDays specified in PartnerConfiguration.
+If not specified, the default value will be the value of defaultMaximumExpirationTimeInDays specified in PartnerConfiguration or 7 if this value is not specified.
+* **partnerName**: string: The partner name.
+* **partnerRegistrationImmutableId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The immutableId of the corresponding partner registration.
+
+## Partner
+### Properties
+* **authorizationExpirationTimeInUtc**: string: Expiration time of the partner authorization. If this timer expires, any request from this partner to create, update or delete resources in subscriber's
+context will fail. If specified, the allowed values are between 1 to the value of defaultMaximumExpirationTimeInDays specified in PartnerConfiguration.
+If not specified, the default value will be the value of defaultMaximumExpirationTimeInDays specified in PartnerConfiguration or 7 if this value is not specified.
+* **partnerName**: string: The partner name.
+* **partnerRegistrationImmutableId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The immutableId of the corresponding partner registration.
+
 ## PartnerAuthorization
 ### Properties
 * **authorizedPartnersList**: [Partner](#partner)[]: The list of authorized partners.
 * **defaultMaximumExpirationTimeInDays**: int: Time used to validate the authorization expiration time for each authorized partner. If DefaultMaximumExpirationTimeInDays is
 not specified, the default is 7 days. Otherwise, allowed values are between 1 and 365 days.
 
+## PartnerConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **location**: string: Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerConfigurationProperties](#partnerconfigurationproperties): Properties of the partner configuration.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to partner configuration resource.
+* **tags**: [PartnerConfigurationTags](#partnerconfigurationtags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
+
+## PartnerConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **location**: string: Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerConfigurationProperties](#partnerconfigurationproperties): Properties of the partner configuration.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to partner configuration resource.
+* **tags**: [PartnerConfigurationTags](#partnerconfigurationtags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
+
 ## PartnerConfigurationProperties
 ### Properties
 * **partnerAuthorization**: [PartnerAuthorization](#partnerauthorization): The details of authorized partners.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the partner configuration.
+
+## PartnerConfigurationTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## PartnerConfigurationTags
 ### Properties
@@ -647,6 +854,15 @@ or use the channel name in the header when matching to the partner topic. If non
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled.
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules" />
 
+## PartnerNamespaceRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate (key1 or key2).
+
+## PartnerNamespaceSharedAccessKeys
+### Properties
+* **key1**: string: Shared access key1 for the partner namespace.
+* **key2**: string: Shared access key2 for the partner namespace.
+
 ## PartnerNamespaceSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the partner namespace.
@@ -657,6 +873,28 @@ You can further restrict to specific IPs by configuring <seealso cref="P:Microso
 * **partnerRegistrationImmutableId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The immutableId of the corresponding partner registration.
 Note: This property is marked for deprecation and is not supported in any future GA API version
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the partner registration.
+
+## PartnerTopic
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **identity**: [IdentityInfo](#identityinfo): Identity information for the Partner Topic resource.
+* **location**: string (Required): Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerTopicProperties](#partnertopicproperties): Properties of the Partner Topic.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to Partner Topic resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
+
+## PartnerTopic
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **identity**: [IdentityInfo](#identityinfo): Identity information for the Partner Topic resource.
+* **location**: string (Required): Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerTopicProperties](#partnertopicproperties): Properties of the Partner Topic.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to Partner Topic resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
 
 ## PartnerTopicInfo
 ### Properties
@@ -763,6 +1001,15 @@ This will be helpful to remove any ambiguity of the origin of creation of the pa
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" />
 
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
+
+## TopicSharedAccessKeys
+### Properties
+* **key1**: string: Shared access key1 for the topic.
+* **key2**: string: Shared access key2 for the topic.
+
 ## TopicSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the topic.
@@ -778,6 +1025,11 @@ You can further restrict to specific IPs by configuring <seealso cref="P:Microso
 * **sourceResourceFormat**: string: Source resource format.
 * **supportedLocations**: string[]: List of locations supported by this topic type.
 * **supportedScopesForSource**: ('AzureSubscription' | 'ManagementGroup' | 'Resource' | 'ResourceGroup' | string)[]: Supported source scopes.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

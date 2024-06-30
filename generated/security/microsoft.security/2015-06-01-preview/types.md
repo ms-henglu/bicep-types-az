@@ -101,6 +101,33 @@
 * **properties**: [TopologyResourceProperties](#topologyresourceproperties) (ReadOnly)
 * **type**: 'Microsoft.Security/locations/topologies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function dismiss (Microsoft.Security/locations/alerts@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2015-06-01-preview
+
+## Function reactivate (Microsoft.Security/locations/alerts@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2015-06-01-preview
+
+## Function {adaptiveNetworkHardeningEnforceAction} (Microsoft.Security/adaptiveNetworkHardenings@2015-06-01-preview)
+* **Resource**: Microsoft.Security/adaptiveNetworkHardenings
+* **ApiVersion**: 2015-06-01-preview
+* **Input**: [AdaptiveNetworkHardeningEnforceRequest](#adaptivenetworkhardeningenforcerequest)
+
+## Function {jitNetworkAccessPolicyInitiateType} (Microsoft.Security/locations/jitNetworkAccessPolicies@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/jitNetworkAccessPolicies
+* **ApiVersion**: 2015-06-01-preview
+* **Input**: [JitNetworkAccessPolicyInitiateRequest](#jitnetworkaccesspolicyinitiaterequest)
+
+## Function {taskUpdateActionType} (Microsoft.Security/locations/tasks@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/tasks
+* **ApiVersion**: 2015-06-01-preview
+
+## AdaptiveNetworkHardeningEnforceRequest
+### Properties
+* **networkSecurityGroups**: string[] (Required): The Azure resource IDs of the effective network security groups that will be updated with the created security rules from the Adaptive Network Hardening rules
+* **rules**: [Rule](#rule)[] (Required): The rules to enforce
+
 ## AdaptiveNetworkHardeningProperties
 ### Properties
 * **effectiveNetworkSecurityGroups**: [EffectiveNetworkSecurityGroups](#effectivenetworksecuritygroups)[]: The Network Security Groups effective on the network interfaces of the protected resource
@@ -193,6 +220,22 @@
 ### Properties
 * **networkInterface**: string: The Azure resource ID of the network interface
 * **networkSecurityGroups**: string[]: The Network Security Groups effective on the network interface
+
+## JitNetworkAccessPolicyInitiatePort
+### Properties
+* **allowedSourceAddressPrefix**: string: Source of the allowed traffic. If omitted, the request will be for the source IP address of the initiate request.
+* **endTimeUtc**: string (Required): The time to close the request in UTC
+* **number**: int {minValue: 0, maxValue: 65535} (Required)
+
+## JitNetworkAccessPolicyInitiateRequest
+### Properties
+* **justification**: string: The justification for making the initiate request
+* **virtualMachines**: [JitNetworkAccessPolicyInitiateVirtualMachine](#jitnetworkaccesspolicyinitiatevirtualmachine)[] (Required): A list of virtual machines & ports to open access for
+
+## JitNetworkAccessPolicyInitiateVirtualMachine
+### Properties
+* **id**: string (Required): Resource ID of the virtual machine that is linked to this policy
+* **ports**: [JitNetworkAccessPolicyInitiatePort](#jitnetworkaccesspolicyinitiateport)[] (Required): The ports to open for the resource with the `id`
 
 ## JitNetworkAccessPolicyProperties
 ### Properties

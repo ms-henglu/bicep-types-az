@@ -33,11 +33,54 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.NetworkAnalytics/dataProductsCatalogs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addUserRole (Microsoft.NetworkAnalytics/dataProducts@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts
+* **ApiVersion**: 2023-11-15
+* **Input**: [RoleAssignmentCommonProperties](#roleassignmentcommonproperties)
+* **Output**: [RoleAssignmentDetail](#roleassignmentdetail)
+
+## Function deleteData (Microsoft.NetworkAnalytics/dataProducts/dataTypes@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts/dataTypes
+* **ApiVersion**: 2023-11-15
+* **Input**: any
+
+## Function generateStorageAccountSasToken (Microsoft.NetworkAnalytics/dataProducts@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts
+* **ApiVersion**: 2023-11-15
+* **Input**: [AccountSas](#accountsas)
+* **Output**: [AccountSasToken](#accountsastoken)
+
+## Function generateStorageContainerSasToken (Microsoft.NetworkAnalytics/dataProducts/dataTypes@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts/dataTypes
+* **ApiVersion**: 2023-11-15
+* **Input**: [ContainerSaS](#containersas)
+* **Output**: [ContainerSasToken](#containersastoken)
+
 ## Function listRolesAssignments (Microsoft.NetworkAnalytics/dataProducts@2023-11-15)
 * **Resource**: Microsoft.NetworkAnalytics/dataProducts
 * **ApiVersion**: 2023-11-15
 * **Input**: any
 * **Output**: [ListRoleAssignments](#listroleassignments)
+
+## Function removeUserRole (Microsoft.NetworkAnalytics/dataProducts@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts
+* **ApiVersion**: 2023-11-15
+* **Input**: [RoleAssignmentDetail](#roleassignmentdetail)
+
+## Function rotateKey (Microsoft.NetworkAnalytics/dataProducts@2023-11-15)
+* **Resource**: Microsoft.NetworkAnalytics/dataProducts
+* **ApiVersion**: 2023-11-15
+* **Input**: [KeyVaultInfo](#keyvaultinfo)
+
+## AccountSas
+### Properties
+* **expiryTimeStamp**: string (Required): Sas token expiry timestamp.
+* **ipAddress**: string (Required): Ip Address
+* **startTimeStamp**: string (Required): Sas token start timestamp.
+
+## AccountSasToken
+### Properties
+* **storageAccountSasToken**: string {sensitive} (Required): Field to specify storage account sas token.
 
 ## ConsumptionEndpointsProperties
 ### Properties
@@ -47,6 +90,16 @@
 * **ingestionUrl**: string (ReadOnly): Ingestion url to upload the data.
 * **queryResourceId**: string (ReadOnly): Resource Id of query endpoint.
 * **queryUrl**: string (ReadOnly): Url to consume the processed data.
+
+## ContainerSaS
+### Properties
+* **expiryTimeStamp**: string (Required): Sas token expiry timestamp.
+* **ipAddress**: string (Required): Ip Address
+* **startTimeStamp**: string (Required): Sas token start timestamp.
+
+## ContainerSasToken
+### Properties
+* **storageContainerSasToken**: string {sensitive} (Required): Field to specify storage container sas token.
 
 ## DataProductInformation
 ### Properties
@@ -114,6 +167,10 @@
 * **action**: string (Required): The action of virtual network rule.
 * **value**: string: IP Rules Value
 
+## KeyVaultInfo
+### Properties
+* **keyVaultUrl**: string (Required): key vault url.
+
 ## ListRoleAssignments
 ### Properties
 * **count**: int (Required): Count of role assignments.
@@ -135,6 +192,25 @@
 ### Properties
 * **dataProducts**: [DataProductInformation](#dataproductinformation)[] (Required): Data product information.
 * **publisherName**: string (Required): Name of the publisher.
+
+## RoleAssignmentCommonProperties
+### Properties
+* **dataTypeScope**: string[] (Required): Data Type Scope at which the role assignment is created.
+* **principalId**: string (Required): Object ID of the AAD principal or security-group.
+* **principalType**: string (Required): Type of the principal Id: User, Group or ServicePrincipal
+* **role**: 'Reader' | 'SensitiveReader' | string (Required): Data Product role to be assigned to a user.
+* **roleId**: string (Required): Role Id of the Built-In Role
+* **userName**: string (Required): User name.
+
+## RoleAssignmentDetail
+### Properties
+* **dataTypeScope**: string[] (Required): Data Type Scope at which the role assignment is created.
+* **principalId**: string (Required): Object ID of the AAD principal or security-group.
+* **principalType**: string (Required): Type of the principal Id: User, Group or ServicePrincipal
+* **role**: 'Reader' | 'SensitiveReader' | string (Required): Data Product role to be assigned to a user.
+* **roleAssignmentId**: string (Required): Id of role assignment request
+* **roleId**: string (Required): Role Id of the Built-In Role
+* **userName**: string (Required): User name.
 
 ## RoleAssignmentDetail
 ### Properties

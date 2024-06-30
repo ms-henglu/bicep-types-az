@@ -21,6 +21,10 @@ warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -89,6 +93,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -139,6 +146,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -165,6 +175,10 @@ warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataT
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2023-11-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -206,6 +220,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -258,6 +275,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -310,6 +330,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -362,6 +385,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -415,7 +441,7 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencie
   - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:777"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencies' (2 differences):
   - properties.criteria.x-ms-identifiers.0: <none> => "contentId"
-  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1594"
+  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1584"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateList' (1 differences):
   - properties.value.$ref: "#/components/schemas/schemas:348" => "#/components/schemas/schemas:355"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateModel' (1 differences):
@@ -445,6 +471,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -525,6 +554,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -605,6 +637,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -652,6 +687,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -671,6 +709,10 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2023-02-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -707,6 +749,9 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -749,6 +794,9 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -768,6 +816,31 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2022-11-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -803,6 +876,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -868,6 +945,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -933,6 +1014,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -998,6 +1083,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1063,6 +1152,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1108,6 +1201,31 @@ warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threat
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1139,6 +1257,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1203,6 +1325,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1267,6 +1393,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1330,6 +1460,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1389,6 +1523,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1453,6 +1591,10 @@ warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1501,6 +1643,31 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'IncidentOwnerIn
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1512,6 +1679,9 @@ warning | PreCheck/SchemaMissingType | The schema 'CloudError' with an undefined
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2021-04-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1554,6 +1724,31 @@ warning | PreCheck/SchemaMissingType | The schema 'EntityQueryList' with an unde
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'SourceControl' has a property 'systemData' that is already declared the parent schema 'Resource' but isn't significantly different. The property has been removed from SourceControl
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{operationalInsightsResourceProvider}/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1703,6 +1898,12 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ResourceWithEta
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{operationalInsightsResourceProvider}/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.

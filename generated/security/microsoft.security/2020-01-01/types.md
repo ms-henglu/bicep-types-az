@@ -125,6 +125,28 @@
 * **properties**: [ServerVulnerabilityAssessmentProperties](#servervulnerabilityassessmentproperties) (ReadOnly): describes ServerVulnerabilityAssessment properties.
 * **type**: 'Microsoft.Security/serverVulnerabilityAssessments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function dismiss (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function resolve (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function {adaptiveNetworkHardeningEnforceAction} (Microsoft.Security/adaptiveNetworkHardenings@2020-01-01)
+* **Resource**: Microsoft.Security/adaptiveNetworkHardenings
+* **ApiVersion**: 2020-01-01
+* **Input**: [AdaptiveNetworkHardeningEnforceRequest](#adaptivenetworkhardeningenforcerequest)
+
+## Function {jitNetworkAccessPolicyInitiateType} (Microsoft.Security/locations/jitNetworkAccessPolicies@2020-01-01)
+* **Resource**: Microsoft.Security/locations/jitNetworkAccessPolicies
+* **ApiVersion**: 2020-01-01
+* **Input**: [JitNetworkAccessPolicyInitiateRequest](#jitnetworkaccesspolicyinitiaterequest)
+
 ## AdaptiveApplicationControlGroupData
 ### Properties
 * **configurationStatus**: 'Configured' | 'Failed' | 'InProgress' | 'NoStatus' | 'NotConfigured' | string (ReadOnly): The configuration status of the machines group or machine or rule
@@ -140,6 +162,11 @@
 ### Properties
 * **issue**: 'ExecutableViolationsAudited' | 'MsiAndScriptViolationsAudited' | 'MsiAndScriptViolationsBlocked' | 'RulesViolatedManually' | 'ViolationsAudited' | 'ViolationsBlocked' | string: An alert that machines within a group can have
 * **numberOfVms**: int: The number of machines in the group that have this alert
+
+## AdaptiveNetworkHardeningEnforceRequest
+### Properties
+* **networkSecurityGroups**: string[] (Required): The Azure resource IDs of the effective network security groups that will be updated with the created security rules from the Adaptive Network Hardening rules
+* **rules**: [Rule](#rule)[] (Required): The rules to enforce
 
 ## AdaptiveNetworkHardeningProperties
 ### Properties
@@ -227,6 +254,22 @@
 ### Properties
 * **networkInterface**: string: The Azure resource ID of the network interface
 * **networkSecurityGroups**: string[]: The Network Security Groups effective on the network interface
+
+## JitNetworkAccessPolicyInitiatePort
+### Properties
+* **allowedSourceAddressPrefix**: string: Source of the allowed traffic. If omitted, the request will be for the source IP address of the initiate request.
+* **endTimeUtc**: string (Required): The time to close the request in UTC
+* **number**: int {minValue: 0, maxValue: 65535} (Required)
+
+## JitNetworkAccessPolicyInitiateRequest
+### Properties
+* **justification**: string: The justification for making the initiate request
+* **virtualMachines**: [JitNetworkAccessPolicyInitiateVirtualMachine](#jitnetworkaccesspolicyinitiatevirtualmachine)[] (Required): A list of virtual machines & ports to open access for
+
+## JitNetworkAccessPolicyInitiateVirtualMachine
+### Properties
+* **id**: string (Required): Resource ID of the virtual machine that is linked to this policy
+* **ports**: [JitNetworkAccessPolicyInitiatePort](#jitnetworkaccesspolicyinitiateport)[] (Required): The ports to open for the resource with the `id`
 
 ## JitNetworkAccessPolicyProperties
 ### Properties

@@ -174,12 +174,48 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function disconnect (Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions@2024-04-03)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions
+* **ApiVersion**: 2024-04-03
+
+## Function expandMsixImage (Microsoft.DesktopVirtualization/hostPools@2024-04-03)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-04-03
+* **Input**: [MsixImageURI](#msiximageuri)
+* **Output**: [ExpandMsixImageList](#expandmsiximagelist)
+
+## Function importAppAttachPackageInfo (Microsoft.DesktopVirtualization/hostPools@2024-04-03)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-04-03
+* **Input**: [ImportPackageInfoRequest](#importpackageinforequest)
+* **Output**: [AppAttachPackageList](#appattachpackagelist)
+
+## Function retrieveRegistrationToken (Microsoft.DesktopVirtualization/hostPools@2024-04-03)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-04-03
+* **Output**: [RegistrationInfo](#registrationinfo)
+
+## Function sendMessage (Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions@2024-04-03)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions
+* **ApiVersion**: 2024-04-03
+* **Input**: [SendMessage](#sendmessage)
+
 ## AgentUpdateProperties
 ### Properties
 * **maintenanceWindows**: [MaintenanceWindowProperties](#maintenancewindowproperties)[]: List of maintenance windows. Maintenance windows are 2 hours long.
 * **maintenanceWindowTimeZone**: string: Time zone for maintenance as defined in https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.findsystemtimezonebyid?view=net-5.0. Must be set if useLocalTime is true.
 * **type**: 'Default' | 'Scheduled' | string: The type of maintenance for session host components.
 * **useSessionHostLocalTime**: bool: Whether to use localTime of the virtual machine.
+
+## AppAttachPackage
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [AppAttachPackageProperties](#appattachpackageproperties) (Required): Detailed properties for App Attach Package
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## AppAttachPackageInfoProperties
 ### Properties
@@ -199,6 +235,11 @@
 * **packageName**: string: Package Name from appxmanifest.xml.
 * **packageRelativePath**: string: Relative Path to the package inside the image.
 * **version**: string: Package version found in the appxmanifest.xml.
+
+## AppAttachPackageList
+### Properties
+* **nextLink**: string (ReadOnly): Link to the next page of results.
+* **value**: [AppAttachPackage](#appattachpackage)[]: List of App Attach Package definitions.
 
 ## AppAttachPackageProperties
 ### Properties
@@ -244,6 +285,37 @@
 * **iconHash**: string (ReadOnly): Hash of the icon.
 * **objectId**: string (ReadOnly): ObjectId of Desktop. (internal use)
 
+## ExpandMsixImage
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ExpandMsixImageProperties](#expandmsiximageproperties): Detailed properties for ExpandMsixImage
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ExpandMsixImageList
+### Properties
+* **nextLink**: string (ReadOnly): Link to the next page of results.
+* **value**: [ExpandMsixImage](#expandmsiximage)[]: List of MSIX package properties from give MSIX Image.
+
+## ExpandMsixImageProperties
+### Properties
+* **certificateExpiry**: string: Date certificate expires, found in the appxmanifest.xml.
+* **certificateName**: string: Certificate name found in the appxmanifest.xml.
+* **displayName**: string: User friendly Name to be displayed in the portal.
+* **imagePath**: string: VHD/CIM image path on Network Share.
+* **isActive**: bool: Make this version of the package the active one across the hostpool.
+* **isRegularRegistration**: bool: Specifies how to register Package in feed.
+* **lastUpdated**: string: Date Package was last updated, found in the appxmanifest.xml.
+* **packageAlias**: string: Alias of MSIX Package.
+* **packageApplications**: [MsixPackageApplications](#msixpackageapplications)[]: List of package applications.
+* **packageDependencies**: [MsixPackageDependencies](#msixpackagedependencies)[]: List of package dependencies.
+* **packageFamilyName**: string: Package Family Name from appxmanifest.xml. Contains Package Name and Publisher name.
+* **packageFullName**: string: Package Full Name from appxmanifest.xml.
+* **packageName**: string: Package Name from appxmanifest.xml.
+* **packageRelativePath**: string: Relative Path to the package inside the image.
+* **version**: string: Package version found in the appxmanifest.xml.
+
 ## HostPoolProperties
 ### Properties
 * **agentUpdate**: [AgentUpdateProperties](#agentupdateproperties): The session host configuration for updating agent, monitoring agent, and stack component.
@@ -271,10 +343,19 @@
 * **validationEnvironment**: bool: Is validation environment.
 * **vmTemplate**: string: VM template for sessionhosts configuration within hostpool.
 
+## ImportPackageInfoRequest
+### Properties
+* **packageArchitecture**: 'ALL' | 'ARM' | 'ARM64' | 'Neutral' | 'x64' | 'x86' | 'x86a64' | string: Possible device architectures that an app attach package can be configured for
+* **path**: string: URI to Image
+
 ## MaintenanceWindowProperties
 ### Properties
 * **dayOfWeek**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday': Day of the week.
 * **hour**: int: The update start hour of the day. (0 - 23)
+
+## MsixImageURI
+### Properties
+* **uri**: string: URI to Image
 
 ## MsixPackageApplications
 ### Properties
@@ -330,6 +411,12 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegistrationInfo
+### Properties
+* **expirationTime**: string: Expiration time of registration token.
+* **registrationTokenOperation**: 'Delete' | 'None' | 'Update' | string: The type of resetting the token.
+* **token**: string: The registration token base64 encoded string.
 
 ## RegistrationInfo
 ### Properties
@@ -445,6 +532,11 @@
 * **rampUpMinimumHostsPct**: int {minValue: 0, maxValue: 100}: Minimum host percentage for ramp up period.
 * **rampUpStartTime**: [Time](#time): Starting time for ramp up period.
 
+## SendMessage
+### Properties
+* **messageBody**: string: Body of message.
+* **messageTitle**: string: Title of message.
+
 ## SessionHostHealthCheckFailureDetails
 ### Properties
 * **errorCode**: int (ReadOnly): Error code corresponding for the failure.
@@ -490,6 +582,11 @@
 ### Properties
 * **hour**: int {minValue: 0, maxValue: 23} (Required): The hour.
 * **minute**: int {minValue: 0, maxValue: 59} (Required): The minute.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties
