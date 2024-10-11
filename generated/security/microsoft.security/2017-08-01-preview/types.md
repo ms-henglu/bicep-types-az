@@ -85,15 +85,6 @@
 * **tags**: [TagsResourceTags](#tagsresourcetags) (ReadOnly): Resource tags
 * **type**: 'Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedRecommendations' (ReadOnly, DeployTimeConstant): The resource type
 
-## Resource Microsoft.Security/pricings@2017-08-01-preview
-* **Valid Scope(s)**: Subscription, ResourceGroup
-### Properties
-* **apiVersion**: '2017-08-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: string (Required, DeployTimeConstant): The resource name
-* **properties**: [PricingProperties](#pricingproperties): Pricing data
-* **type**: 'Microsoft.Security/pricings' (ReadOnly, DeployTimeConstant): The resource type
-
 ## Resource Microsoft.Security/securityContacts@2017-08-01-preview
 * **Valid Scope(s)**: Subscription
 ### Properties
@@ -127,6 +118,10 @@
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [WorkspaceSettingProperties](#workspacesettingproperties): Workspace setting data
 * **type**: 'Microsoft.Security/workspaceSettings' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function dismiss (Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts@2017-08-01-preview)
+* **Resource**: Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts
+* **ApiVersion**: 2017-08-01-preview
 
 ## AdvancedThreatProtectionProperties
 ### Properties
@@ -315,10 +310,6 @@
 * **high**: int: count of high severity items
 * **low**: int: count of low severity items
 * **medium**: int: count of medium severity items
-
-## PricingProperties
-### Properties
-* **pricingTier**: 'Free' | 'Standard' | string (Required): Pricing tier type
 
 ## RecommendationConfigurationProperties
 ### Properties

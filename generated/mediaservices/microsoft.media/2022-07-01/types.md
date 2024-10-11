@@ -20,6 +20,10 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/transforms/jobs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelJob (Microsoft.Media/mediaServices/transforms/jobs@2022-07-01)
+* **Resource**: Microsoft.Media/mediaServices/transforms/jobs
+* **ApiVersion**: 2022-07-01
+
 ## AudioAnalyzerPresetExperimentalOptions
 ### Properties
 ### Additional Properties

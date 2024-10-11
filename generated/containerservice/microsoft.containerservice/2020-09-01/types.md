@@ -51,6 +51,38 @@
 * **ApiVersion**: 2020-09-01
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+
+## Function start (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+
+## Function stop (Microsoft.ContainerService/managedClusters@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2020-09-01
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2020-09-01)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2020-09-01
+
 ## AccessProfile
 ### Properties
 * **kubeConfig**: any: Base64-encoded Kubernetes configuration file.
@@ -101,6 +133,16 @@
 ## CredentialResults
 ### Properties
 * **kubeconfigs**: [CredentialResult](#credentialresult)[] (ReadOnly): Base64-encoded Kubernetes configuration file.
+
+## ManagedClusterAADProfile
+### Properties
+* **adminGroupObjectIDs**: string[]: AAD group object IDs that will have admin role of the cluster.
+* **clientAppID**: string: The client AAD application ID.
+* **enableAzureRBAC**: bool: Whether to enable Azure RBAC for Kubernetes authorization.
+* **managed**: bool: Whether to enable managed AAD.
+* **serverAppID**: string: The server AAD application ID.
+* **serverAppSecret**: string: The server AAD application secret.
+* **tenantID**: string: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment subscription.
 
 ## ManagedClusterAADProfile
 ### Properties
@@ -324,6 +366,11 @@
 * **clientId**: string (Required): The ID for the service principal.
 * **secret**: string: The secret password associated with the service principal in plain text.
 
+## ManagedClusterServicePrincipalProfile
+### Properties
+* **clientId**: string (Required): The ID for the service principal.
+* **secret**: string: The secret password associated with the service principal in plain text.
+
 ## ManagedClusterSKU
 ### Properties
 * **name**: 'Basic' | string: Name of a managed cluster SKU.
@@ -348,6 +395,24 @@
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The resource of private endpoint.
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (Required): A collection of information about the state of the connection between service consumer and provider.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | string (ReadOnly): The current provisioning state.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
 
 ## PrivateLinkServiceConnectionState
 ### Properties

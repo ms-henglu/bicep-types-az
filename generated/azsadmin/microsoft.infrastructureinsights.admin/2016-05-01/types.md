@@ -44,6 +44,10 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.InfrastructureInsights.Admin/regionHealths/serviceHealths/resourceHealths' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function repair (Microsoft.InfrastructureInsights.Admin/regionHealths/alerts@2016-05-01)
+* **Resource**: Microsoft.InfrastructureInsights.Admin/regionHealths/alerts
+* **ApiVersion**: 2016-05-01
+
 ## AlertModel
 ### Properties
 * **alertId**: string: Gets or sets the ID of the alert.

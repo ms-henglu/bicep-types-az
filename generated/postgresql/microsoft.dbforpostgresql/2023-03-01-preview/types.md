@@ -86,6 +86,49 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/migrations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMigrationNameAvailability (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+* **Output**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+
+## Function checkNameAvailability (Microsoft.DBforPostgreSQL/locations@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [NameAvailability](#nameavailability)
+
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforPostgreSQL/locations@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function ltrPreBackup (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [LtrPreBackupRequest](#ltrprebackuprequest)
+* **Output**: [LtrPreBackupResponse](#ltrprebackupresponse)
+
+## Function restart (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [RestartParameter](#restartparameter)
+
+## Function start (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+
+## Function startLtrBackup (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [LtrBackupRequest](#ltrbackuprequest)
+* **Output**: [LtrBackupResponse](#ltrbackupresponse)
+
+## Function stop (Microsoft.DBforPostgreSQL/flexibleServers@2023-03-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2023-03-01-preview
+
 ## AdminCredentials
 ### Properties
 * **sourceServerPassword**: string {sensitive} (Required, WriteOnly): Password for source server.
@@ -109,6 +152,19 @@
 * **backupRetentionDays**: int: Backup retention days for the server.
 * **earliestRestoreDate**: string (ReadOnly): The earliest restore point time (ISO8601 format) for server.
 * **geoRedundantBackup**: 'Disabled' | 'Enabled' | string: A value indicating whether Geo-Redundant backup is enabled on the server.
+
+## BackupSettings
+### Properties
+* **backupName**: string (Required): Backup Name for the current backup
+
+## BackupStoreDetails
+### Properties
+* **sasUriList**: (string {sensitive})[] (Required): List of SAS uri of storage containers where backup data is to be streamed/copied.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
 
 ## ConfigurationProperties
 ### Properties
@@ -146,6 +202,11 @@
 * **storageMb**: int: Storage size in MB for database server
 * **version**: string: Version for database engine
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): Name of the delegated subnet for which IP addresses are in use
+* **usage**: int (ReadOnly): Number of IP addresses used by the delegated subnet
+
 ## FirewallRuleProperties
 ### Properties
 * **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The end IP address of the server firewall rule. Must be IPv4 format.
@@ -170,12 +231,49 @@
 * **startTime**: string (Required): Start time of the operation.
 * **status**: 'Cancelled' | 'Failed' | 'Running' | 'Succeeded' | string (Required): Service-set extensible enum indicating the status of operation
 
+## LtrBackupRequest
+### Properties
+* **backupSettings**: [BackupSettings](#backupsettings) (Required): Backup Settings
+* **targetDetails**: [BackupStoreDetails](#backupstoredetails) (Required): Backup store detail for target server
+
+## LtrBackupResponse
+### Properties
+* **properties**: [LtrBackupOperationResponseProperties](#ltrbackupoperationresponseproperties): Long Term Retention Backup Operation Resource Properties
+
+## LtrPreBackupRequest
+### Properties
+* **backupSettings**: [BackupSettings](#backupsettings) (Required): Backup Settings
+
+## LtrPreBackupResponse
+### Properties
+* **properties**: [LtrPreBackupResponseProperties](#ltrprebackupresponseproperties) (Required): Additional Properties for the pre backup response
+
+## LtrPreBackupResponseProperties
+### Properties
+* **numberOfContainers**: int (Required): Number of storage containers the plugin will use during backup. More than one containers may be used for size limitations, parallelism, or redundancy etc.
+
 ## MaintenanceWindow
 ### Properties
 * **customWindow**: string: indicates whether custom window is enabled or disabled
 * **dayOfWeek**: int: day of week for maintenance window
 * **startHour**: int: start hour for maintenance window
 * **startMinute**: int: start minute for maintenance window
+
+## MigrationNameAvailabilityResource
+### Properties
+* **message**: string (ReadOnly): Migration name availability message.
+* **name**: string (Required): The resource name to verify.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string (ReadOnly): Migration name availability reason
+* **type**: string (Required): The type of the resource.
+
+## MigrationNameAvailabilityResource
+### Properties
+* **message**: string (ReadOnly): Migration name availability message.
+* **name**: string (Required): The resource name to verify.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string (ReadOnly): Migration name availability reason
+* **type**: string (Required): The type of the resource.
 
 ## MigrationResourceProperties
 ### Properties
@@ -216,11 +314,24 @@
 ### Properties
 * **currentSubState**: 'Completed' | 'CompletingMigration' | 'MigratingData' | 'PerformingPreRequisiteSteps' | 'WaitingForCutoverTrigger' | 'WaitingForDBsToMigrateSpecification' | 'WaitingForDataMigrationScheduling' | 'WaitingForDataMigrationWindow' | 'WaitingForLogicalReplicationSetupRequestOnSourceDB' | 'WaitingForTargetDBOverwriteConfirmation' | string (ReadOnly): Migration sub state.
 
+## NameAvailability
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **name**: string (ReadOnly): name of the PostgreSQL server.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+* **type**: string (ReadOnly): type of the server
+
 ## Network
 ### Properties
 * **delegatedSubnetResourceId**: string: Delegated subnet arm resource id. This is required to be passed during create, in case we want the server to be VNET injected, i.e. Private access server. During update, pass this only if we want to update the value for Private DNS zone.
 * **privateDnsZoneArmResourceId**: string: Private dns zone arm resource id. This is required to be passed during create, in case we want the server to be VNET injected, i.e. Private access server. During update, pass this only if we want to update the value for Private DNS zone.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string (ReadOnly): public network access is enabled or not
+
+## RestartParameter
+### Properties
+* **failoverMode**: 'ForcedFailover' | 'ForcedSwitchover' | 'PlannedFailover' | 'PlannedSwitchover' | string: Failover mode.
+* **restartWithFailover**: bool: Indicates whether to restart the server with failover.
 
 ## ServerBackupProperties
 ### Properties
@@ -301,4 +412,14 @@
 ### Properties
 * **clientId**: string: the client identifier of the Service Principal which this identity represents.
 * **principalId**: string: the object identifier of the Service Principal which this identity represents.
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
+* **location**: string (ReadOnly): location of the delegated subnet usage
+* **subscriptionId**: string (ReadOnly): subscriptionId of the delegated subnet usage
 

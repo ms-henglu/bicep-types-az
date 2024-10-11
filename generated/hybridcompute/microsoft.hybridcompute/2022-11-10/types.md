@@ -68,6 +68,11 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.HybridCompute/privateLinkScopes/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function upgradeExtensions (Microsoft.HybridCompute/machines@2022-11-10)
+* **Resource**: Microsoft.HybridCompute/machines
+* **ApiVersion**: 2022-11-10
+* **Input**: [MachineExtensionUpgrade](#machineextensionupgrade)
+
 ## AgentConfiguration
 ### Properties
 * **configMode**: 'full' | 'monitor' | string (ReadOnly): Name of configuration mode to use. Modes are pre-defined configurations of security controls, extension allowlists and guest configuration, maintained by Microsoft.
@@ -105,6 +110,15 @@
 * **details**: [ErrorDetail](#errordetail)[] (ReadOnly): The error details.
 * **message**: string (ReadOnly): The error message.
 * **target**: string (ReadOnly): The error target.
+
+## ExtensionTarget
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ExtensionTargetProperties](#extensiontargetproperties)
+
+## ExtensionTargetProperties
+### Properties
+* **targetVersion**: string: Properties for the specified Extension to Upgrade.
 
 ## ExtensionValueProperties
 ### Properties
@@ -180,6 +194,10 @@
 ### Additional Properties
 * **Additional Properties Type**: any
 
+## MachineExtensionUpgrade
+### Properties
+* **extensionTargets**: [ExtensionTarget](#extensiontarget): Describes the Extension Target Properties.
+
 ## MachineProperties
 ### Properties
 * **adFqdn**: string (ReadOnly): Specifies the AD fully qualified display name.
@@ -207,8 +225,8 @@
 * **provisioningState**: string (ReadOnly): The provisioning state, which only appears in the response.
 * **serviceStatuses**: [ServiceStatuses](#servicestatuses): Statuses of dependent services that are reported back to ARM.
 * **status**: 'Connected' | 'Disconnected' | 'Error' | string (ReadOnly): The status of the hybrid machine agent.
-* **vmId**: string: Specifies the hybrid machine unique ID.
-* **vmUuid**: string (ReadOnly): Specifies the Arc Machine's unique SMBIOS ID
+* **vmId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Specifies the hybrid machine unique ID.
+* **vmUuid**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): Specifies the Arc Machine's unique SMBIOS ID
 
 ## OSProfile
 ### Properties

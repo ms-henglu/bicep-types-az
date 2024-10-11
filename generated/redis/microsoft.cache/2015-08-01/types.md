@@ -11,10 +11,26 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Cache/Redis' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function forceReboot (Microsoft.Cache/Redis@2015-08-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2015-08-01
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+
 ## Function listKeys (Microsoft.Cache/Redis@2015-08-01)
 * **Resource**: Microsoft.Cache/Redis
 * **ApiVersion**: 2015-08-01
 * **Output**: [RedisListKeysResult](#redislistkeysresult)
+
+## Function regenerateKey (Microsoft.Cache/Redis@2015-08-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2015-08-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisListKeysResult](#redislistkeysresult)
+
+## RedisListKeysResult
+### Properties
+* **primaryKey**: string: The current primary key that clients can use to authenticate with Redis cache.
+* **secondaryKey**: string: The current secondary key that clients can use to authenticate with Redis cache.
 
 ## RedisListKeysResult
 ### Properties
@@ -46,6 +62,15 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RedisRebootParameters
+### Properties
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' (Required): Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shared be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): Which Redis access key to reset.
 
 ## ResourceTags
 ### Properties

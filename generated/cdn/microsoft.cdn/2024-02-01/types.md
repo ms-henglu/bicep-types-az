@@ -163,6 +163,126 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
 * **type**: 'Microsoft.Cdn/profiles/securityPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkEndpointNameAvailability (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Input**: [CheckEndpointNameAvailabilityInput](#checkendpointnameavailabilityinput)
+* **Output**: [CheckEndpointNameAvailabilityOutput](#checkendpointnameavailabilityoutput)
+
+## Function checkHostNameAvailability (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Input**: [CheckHostNameAvailabilityInput](#checkhostnameavailabilityinput)
+* **Output**: [CheckNameAvailabilityOutput](#checknameavailabilityoutput)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function disableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2024-02-01
+* **Output**: [CustomDomain](#customdomain)
+
+## Function enableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2024-02-01
+* **Input**: [CustomDomainHttpsParameters](#customdomainhttpsparameters)
+* **Output**: [CustomDomain](#customdomain)
+
+## Function generateSsoUri (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Output**: [SsoUri](#ssouri)
+
+## Function getSupportedOptimizationTypes (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Output**: [SupportedOptimizationTypesListResult](#supportedoptimizationtypeslistresult)
+
+## Function load (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Input**: [LoadParameters](#loadparameters)
+
+## Function migrationCommit (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+
+## Function purge (Microsoft.Cdn/profiles/afdEndpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2024-02-01
+* **Input**: [AfdPurgeParameters](#afdpurgeparameters)
+
+## Function purge (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function refreshValidationToken (Microsoft.Cdn/profiles/customDomains@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/customDomains
+* **ApiVersion**: 2024-02-01
+
+## Function start (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Output**: [Endpoint](#endpoint)
+
+## Function stop (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Output**: [Endpoint](#endpoint)
+
+## Function upgrade (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Input**: [ProfileUpgradeParameters](#profileupgradeparameters)
+* **Output**: [Profile](#profile)
+
+## Function usages (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/afdEndpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2024-02-01
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/originGroups@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/originGroups
+* **ApiVersion**: 2024-02-01
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/ruleSets@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/ruleSets
+* **ApiVersion**: 2024-02-01
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/afdEndpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2024-02-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/endpoints@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2024-02-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
+## Function validateSecret (Microsoft.Cdn/profiles@2024-02-01)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2024-02-01
+* **Input**: [ValidateSecretInput](#validatesecretinput)
+* **Output**: [ValidateSecretOutput](#validatesecretoutput)
+
 ## ActivatedResourceReference
 ### Properties
 * **id**: string: Resource ID.
@@ -227,6 +347,11 @@
 * **sharedPrivateLinkResource**: [SharedPrivateLinkResourceProperties](#sharedprivatelinkresourceproperties): The properties of the private link resource for private origin.
 * **weight**: int {minValue: 1, maxValue: 1000}: Weight of the origin in given origin group for load balancing. Must be between 1 and 1000
 
+## AfdPurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+* **domains**: string[]: List of domains.
+
 ## AfdRouteCacheConfiguration
 ### Properties
 * **compressionSettings**: [CompressionSettings](#compressionsettings): compression settings.
@@ -246,18 +371,18 @@
 * **cacheBehavior**: 'BypassCache' | 'Override' | 'SetIfMissing' | string (Required): Caching behavior for the requests
 * **cacheDuration**: string: The duration for which the content needs to be cached. Allowed format is [d.]hh:mm:ss
 * **cacheType**: 'All' | string (Required): The level at which the content needs to be cached.
-* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## CacheKeyQueryStringActionParameters
 ### Properties
 * **queryParameters**: string: query parameters to include or exclude (comma separated).
 * **queryStringBehavior**: 'Exclude' | 'ExcludeAll' | 'Include' | 'IncludeAll' | string (Required): Caching behavior for the requests
-* **typeName**: 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## CdnCertificateSourceParameters
 ### Properties
 * **certificateType**: 'Dedicated' | 'Shared' | string (Required): Type of certificate used
-* **typeName**: 'CdnCertificateSourceParameters' | string (Required)
+* **typeName**: 'CdnCertificateSourceParameters' | 'KeyVaultCertificateSourceParameters' | string (Required)
 
 ## CdnEndpoint
 ### Properties
@@ -279,13 +404,36 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## CheckEndpointNameAvailabilityInput
+### Properties
+* **autoGeneratedDomainNameLabelScope**: 'NoReuse' | 'ResourceGroupReuse' | 'SubscriptionReuse' | 'TenantReuse' | string: Indicates the endpoint name reuse scope. The default value is TenantReuse.
+* **name**: string (Required): The resource name to validate.
+* **type**: 'Microsoft.Cdn/Profiles/AfdEndpoints' | 'Microsoft.Cdn/Profiles/Endpoints' | string (Required): The type of the resource whose name is to be validated.
+
+## CheckEndpointNameAvailabilityOutput
+### Properties
+* **availableHostname**: string (ReadOnly): Returns the available hostname generated based on the AutoGeneratedDomainNameLabelScope when the name is available, otherwise it returns empty string
+* **message**: string (ReadOnly): The detailed error message describing why the name is not available.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason why the name is not available.
+
+## CheckHostNameAvailabilityInput
+### Properties
+* **hostName**: string (Required): The host name to validate.
+
+## CheckNameAvailabilityOutput
+### Properties
+* **message**: string (ReadOnly): The detailed error message describing why the name is not available.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason why the name is not available.
+
 ## ClientPortMatchConditionParameters
 ### Properties
 * **matchValues**: string[]: The match value for the condition of the delivery rule
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleClientPortConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## CompressionSettings
 ### Properties
@@ -299,7 +447,23 @@
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **selector**: string: Name of Cookies to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleCookiesConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
+
+## CustomDomain
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [CustomDomainProperties](#customdomainproperties): The JSON object that contains the properties of the custom domain to create.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **type**: string (ReadOnly): Resource type.
+
+## CustomDomain
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [CustomDomainProperties](#customdomainproperties): The JSON object that contains the properties of the custom domain to create.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **type**: string (ReadOnly): Resource type.
 
 ## CustomDomainHttpsParameters
 * **Discriminator**: certificateSource
@@ -318,6 +482,34 @@
 * **certificateSource**: 'Cdn' (Required): Defines the source of the SSL certificate.
 * **certificateSourceParameters**: [CdnCertificateSourceParameters](#cdncertificatesourceparameters) (Required): Defines the certificate source parameters using CDN managed certificate for enabling SSL.
 
+
+## CustomDomainHttpsParameters
+* **Discriminator**: certificateSource
+
+### Base Properties
+* **minimumTlsVersion**: 'None' | 'TLS10' | 'TLS12': TLS protocol version that will be used for Https
+* **protocolType**: 'IPBased' | 'ServerNameIndication' | string (Required): Defines the TLS extension protocol that is used for secure delivery.
+
+### UserManagedHttpsParameters
+#### Properties
+* **certificateSource**: 'AzureKeyVault' (Required): Defines the source of the SSL certificate.
+* **certificateSourceParameters**: [KeyVaultCertificateSourceParameters](#keyvaultcertificatesourceparameters) (Required): Defines the certificate source parameters using user's keyvault certificate for enabling SSL.
+
+### CdnManagedHttpsParameters
+#### Properties
+* **certificateSource**: 'Cdn' (Required): Defines the source of the SSL certificate.
+* **certificateSourceParameters**: [CdnCertificateSourceParameters](#cdncertificatesourceparameters) (Required): Defines the certificate source parameters using CDN managed certificate for enabling SSL.
+
+
+## CustomDomainProperties
+### Properties
+* **customHttpsParameters**: [CustomDomainHttpsParameters](#customdomainhttpsparameters): Certificate parameters for securing custom HTTPS
+* **customHttpsProvisioningState**: 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | 'Failed' | string (ReadOnly): Provisioning status of the custom domain.
+* **customHttpsProvisioningSubstate**: 'CertificateDeleted' | 'CertificateDeployed' | 'DeletingCertificate' | 'DeployingCertificate' | 'DomainControlValidationRequestApproved' | 'DomainControlValidationRequestRejected' | 'DomainControlValidationRequestTimedOut' | 'IssuingCertificate' | 'PendingDomainControlValidationREquestApproval' | 'SubmittingDomainControlValidationRequest' | string (ReadOnly): Provisioning substate shows the progress of custom HTTPS enabling/disabling process step by step.
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+* **provisioningState**: 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | 'Failed' | string (ReadOnly): Provisioning status of Custom Https of the custom domain.
+* **resourceState**: 'Active' | 'Creating' | 'Deleting' | string (ReadOnly): Resource status of the custom domain.
+* **validationData**: string: Special validation or data may be required when delivering CDN to some regions due to local compliance reasons. E.g. ICP license number of a custom domain is required to deliver content in China.
 
 ## CustomDomainPropertiesParametersOrCustomDomainProperties
 ### Properties
@@ -385,12 +577,12 @@
 
 ## DeliveryRule
 ### Properties
-* **actions**: [DeliveryRuleActionAutoGenerated](#deliveryruleactionautogenerated)[] (Required): A list of actions that are executed when all the conditions of a rule are satisfied.
+* **actions**: [DeliveryRuleAction](#deliveryruleaction)[] (Required): A list of actions that are executed when all the conditions of a rule are satisfied.
 * **conditions**: [DeliveryRuleCondition](#deliveryrulecondition)[]: A list of conditions that must be matched for the actions to be executed
 * **name**: string: Name of the rule
 * **order**: int (Required): The order in which the rules are applied for the endpoint. Possible values {0,1,2,3,………}. A rule with a lesser order will be applied before a rule with a greater order. Rule with order 0 is a special rule. It does not require any condition and actions listed in it will always be applied.
 
-## DeliveryRuleActionAutoGenerated
+## DeliveryRuleAction
 * **Discriminator**: name
 
 ### Base Properties
@@ -547,6 +739,26 @@
 * **expirationDate**: string (ReadOnly): The date time that the token expires
 * **validationToken**: string (ReadOnly): Challenge used for DNS TXT record or file based validation
 
+## Endpoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## Endpoint
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
 ## EndpointProperties
 ### Properties
 * **contentTypesToCompress**: string[]: List of content types on which compression applies. The value should be a valid MIME type.
@@ -589,7 +801,7 @@
 ### Properties
 * **headerAction**: 'Append' | 'Delete' | 'Overwrite' | string (Required): Action to perform
 * **headerName**: string (Required): Name of the header to modify
-* **typeName**: 'DeliveryRuleHeaderActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 * **value**: string: Value for the specified action
 
 ## HealthProbeParameters
@@ -605,7 +817,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleHostNameConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## HttpErrorRangeParameters
 ### Properties
@@ -618,7 +830,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Equal' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleHttpVersionConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## IsDeviceMatchConditionParameters
 ### Properties
@@ -626,7 +838,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Equal' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleIsDeviceConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## KeyVaultCertificateSourceParameters
 ### Properties
@@ -635,7 +847,7 @@
 * **secretName**: string (Required): The name of Key Vault Secret (representing the full certificate PFX) in Key Vault.
 * **secretVersion**: string: The version(GUID) of Key Vault Secret in Key Vault.
 * **subscriptionId**: string (Required): Subscription Id of the user's Key Vault containing the SSL certificate
-* **typeName**: 'KeyVaultCertificateSourceParameters' | string (Required)
+* **typeName**: 'CdnCertificateSourceParameters' | 'KeyVaultCertificateSourceParameters' | string (Required)
 * **updateRule**: 'NoAction' | string (Required): Describes the action that shall be taken when the certificate is updated in Key Vault.
 * **vaultName**: string (Required): The name of the user's Key Vault containing the SSL certificate
 
@@ -653,6 +865,10 @@
 * **additionalLatencyInMilliseconds**: int: The additional latency in milliseconds for probes to fall into the lowest latency bucket
 * **sampleSize**: int: The number of samples to consider for load balancing decisions
 * **successfulSamplesRequired**: int: The number of samples within the sample period that must succeed
+
+## LoadParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be loaded. Path should be a relative file URL of the origin.
 
 ## ManagedRuleGroupOverride
 ### Properties
@@ -700,7 +916,7 @@
 ## OriginGroupOverrideActionParameters
 ### Properties
 * **originGroup**: [ResourceReference](#resourcereference) (Required): defines the OriginGroup that would override the DefaultOriginGroup.
-* **typeName**: 'DeliveryRuleOriginGroupOverrideActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## OriginGroupProperties
 ### Properties
@@ -743,7 +959,25 @@
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **selector**: string: Name of PostArg to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRulePostArgsConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
+
+## Profile
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): Managed service identity (system assigned and/or user assigned identities).
+* **kind**: string (ReadOnly): Kind of the profile. Used by portal to differentiate traditional CDN profile and new AFD profile.
+* **location**: string (Required): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ProfileProperties](#profileproperties): The JSON object that contains the properties required to create a profile.
+* **sku**: [Sku](#sku) (Required): The pricing tier (defines Azure Front Door Standard or Premium or a CDN provider, feature list and rate) of the profile.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## ProfileChangeSkuWafMapping
+### Properties
+* **changeToWafPolicy**: [ResourceReference](#resourcereference) (Required): The new waf resource for the security policy to use.
+* **securityPolicyName**: string (Required): The security policy name.
 
 ## ProfileLogScrubbing
 ### Properties
@@ -771,13 +1005,21 @@
 * **selectorMatchOperator**: 'EqualsAny' | string (Required): When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
 * **state**: 'Disabled' | 'Enabled' | string: Defines the state of a log scrubbing rule. Default value is enabled.
 
+## ProfileUpgradeParameters
+### Properties
+* **wafMappingList**: [ProfileChangeSkuWafMapping](#profilechangeskuwafmapping)[] (Required): Web Application Firewall (WAF) and security policy mapping for the profile upgrade
+
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+
 ## QueryStringMatchConditionParameters
 ### Properties
 * **matchValues**: string[]: The match value for the condition of the delivery rule
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleQueryStringConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RateLimitRule
 ### Properties
@@ -799,7 +1041,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'GeoMatch' | 'IPMatch' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRemoteAddressConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RequestBodyMatchConditionParameters
 ### Properties
@@ -807,7 +1049,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRequestBodyConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RequestHeaderMatchConditionParameters
 ### Properties
@@ -816,7 +1058,7 @@
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **selector**: string: Name of Header to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRequestHeaderConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RequestMethodMatchConditionParameters
 ### Properties
@@ -824,7 +1066,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Equal' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRequestMethodConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RequestSchemeMatchConditionParameters
 ### Properties
@@ -832,7 +1074,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Equal' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRequestSchemeConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## RequestUriMatchConditionParameters
 ### Properties
@@ -840,11 +1082,28 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleRequestUriConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## ResourceReference
 ### Properties
 * **id**: string: Resource ID.
+
+## ResourceUsage
+### Properties
+* **currentValue**: int (ReadOnly): Actual value of usage on the specified resource type.
+* **limit**: int (ReadOnly): Quota of the specified resource type.
+* **resourceType**: string (ReadOnly): Resource type for which the usage is provided.
+* **unit**: 'count' | string (ReadOnly): Unit of the usage. e.g. count.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[] (ReadOnly): List of resource usages.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[] (ReadOnly): List of resource usages.
 
 ## ResponseBasedOriginErrorDetectionParameters
 ### Properties
@@ -856,7 +1115,7 @@
 ### Properties
 * **cacheConfiguration**: [CacheConfiguration](#cacheconfiguration): The caching configuration associated with this rule. To disable caching, do not provide a cacheConfiguration object.
 * **originGroupOverride**: [OriginGroupOverride](#origingroupoverride): A reference to the origin group override configuration. Leave empty to use the default origin group on route.
-* **typeName**: 'DeliveryRuleRouteConfigurationOverrideActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## RouteProperties
 ### Properties
@@ -877,7 +1136,7 @@
 
 ## RuleProperties
 ### Properties
-* **actions**: [DeliveryRuleActionAutoGenerated](#deliveryruleactionautogenerated)[]: A list of actions that are executed when all the conditions of a rule are satisfied.
+* **actions**: [DeliveryRuleAction](#deliveryruleaction)[]: A list of actions that are executed when all the conditions of a rule are satisfied.
 * **conditions**: [DeliveryRuleCondition](#deliveryrulecondition)[]: A list of conditions that must be matched for the actions to be executed
 * **deploymentStatus**: 'Failed' | 'InProgress' | 'NotStarted' | 'Succeeded' | string (ReadOnly)
 * **matchProcessingBehavior**: 'Continue' | 'Stop' | string: If this rule is a match should the rules engine continue running the remaining rules or stop. If not present, defaults to Continue.
@@ -969,7 +1228,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleServerPortConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## SharedPrivateLinkResourceProperties
 ### Properties
@@ -989,7 +1248,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'IPMatch' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleSocketAddrConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## SslProtocolMatchConditionParameters
 ### Properties
@@ -997,7 +1256,15 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Equal' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleSslProtocolConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
+
+## SsoUri
+### Properties
+* **ssoUriValue**: string (ReadOnly): The URI used to login to the supplemental portal.
+
+## SupportedOptimizationTypesListResult
+### Properties
+* **supportedOptimizationTypes**: ('DynamicSiteAcceleration' | 'GeneralMediaStreaming' | 'GeneralWebDelivery' | 'LargeFileDownload' | 'VideoOnDemandMediaStreaming' | string)[] (ReadOnly): Supported optimization types for a profile.
 
 ## SystemData
 ### Properties
@@ -1028,13 +1295,23 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## UrlFileExtensionMatchConditionParameters
 ### Properties
 * **matchValues**: string[]: The match value for the condition of the delivery rule
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## UrlFileNameMatchConditionParameters
 ### Properties
@@ -1042,7 +1319,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleUrlFilenameConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## UrlPathMatchConditionParameters
 ### Properties
@@ -1050,7 +1327,7 @@
 * **negateCondition**: bool: Describes if this is negate condition or not
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GreaterThan' | 'GreaterThanOrEqual' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | 'Wildcard' | string (Required): Describes operator to be matched
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
-* **typeName**: 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
 ## UrlRedirectActionParameters
 ### Properties
@@ -1060,20 +1337,20 @@
 * **customQueryString**: string: The set of query strings to be placed in the redirect URL. Setting this value would replace any existing query string; leave empty to preserve the incoming query string. Query string must be in <key>=<value> format. ? and & will be added automatically so do not include them.
 * **destinationProtocol**: 'Http' | 'Https' | 'MatchRequest' | string: Protocol to use for the redirect. The default value is MatchRequest
 * **redirectType**: 'Found' | 'Moved' | 'PermanentRedirect' | 'TemporaryRedirect' | string (Required): The redirect type the rule will use when redirecting traffic.
-* **typeName**: 'DeliveryRuleUrlRedirectActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## UrlRewriteActionParameters
 ### Properties
 * **destination**: string (Required): Define the relative URL to which the above requests will be rewritten by.
 * **preserveUnmatchedPath**: bool: Whether to preserve unmatched path. Default value is true.
 * **sourcePattern**: string (Required): define a request URI pattern that identifies the type of requests that may be rewritten. If value is blank, all strings are matched.
-* **typeName**: 'DeliveryRuleUrlRewriteActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## UrlSigningActionParameters
 ### Properties
 * **algorithm**: 'SHA256' | string: Algorithm to use for URL signing
 * **parameterNameOverride**: [UrlSigningParamIdentifier](#urlsigningparamidentifier)[]: Defines which query string parameters in the url to be considered for expires, key id etc.
-* **typeName**: 'DeliveryRuleUrlSigningActionParameters' | string (Required)
+* **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
 ## UrlSigningKey
 ### Properties
@@ -1085,6 +1362,39 @@
 * **paramIndicator**: 'Expires' | 'KeyId' | 'Signature' | string (Required): Indicates the purpose of the parameter
 * **paramName**: string (Required): Parameter name
 
+## Usage
+### Properties
+* **currentValue**: int (Required): The current value of the usage.
+* **id**: string (ReadOnly): Resource identifier.
+* **limit**: int (Required): The limit of usage.
+* **name**: [UsageName](#usagename) (Required): The name of the type of usage.
+* **unit**: 'Count' | string (Required): An enum describing the unit of measurement.
+
+## UsageName
+### Properties
+* **localizedValue**: string: A localized string describing the resource name.
+* **value**: string: A string describing the resource name.
+
+## UsagesListResult
+### Properties
+* **nextLink**: string: URL to get the next set of results.
+* **value**: [Usage](#usage)[]: The list of resource usages.
+
+## UsagesListResult
+### Properties
+* **nextLink**: string: URL to get the next set of results.
+* **value**: [Usage](#usage)[]: The list of resource usages.
+
+## UsagesListResult
+### Properties
+* **nextLink**: string: URL to get the next set of results.
+* **value**: [Usage](#usage)[]: The list of resource usages.
+
+## UsagesListResult
+### Properties
+* **nextLink**: string: URL to get the next set of results.
+* **value**: [Usage](#usage)[]: The list of resource usages.
+
 ## UserAssignedIdentities
 ### Properties
 ### Additional Properties
@@ -1094,4 +1404,35 @@
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client ID of the assigned identity.
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The principal ID of the assigned identity.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
+
+## ValidateSecretInput
+### Properties
+* **secretSource**: [ResourceReference](#resourcereference) (Required): Resource reference to the Azure Key Vault secret. Expected to be in format of /subscriptions/{​​​​​​​​​subscriptionId}​​​​​​​​​/resourceGroups/{​​​​​​​​​resourceGroupName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​/providers/Microsoft.KeyVault/vaults/{vaultName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​/secrets/{secretName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+* **secretType**: 'AzureFirstPartyManagedCertificate' | 'CustomerCertificate' | 'ManagedCertificate' | 'UrlSigningKey' | string (Required): The secret type.
+* **secretVersion**: string: Secret version, if customer is using a specific version.
+
+## ValidateSecretOutput
+### Properties
+* **message**: string: Detailed error message
+* **status**: 'AccessDenied' | 'CertificateExpired' | 'Invalid' | 'Valid' | string: The validation status.
 

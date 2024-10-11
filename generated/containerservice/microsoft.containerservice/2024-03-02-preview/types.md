@@ -138,6 +138,19 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ContainerService/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function abort (Microsoft.ContainerService/managedclusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters
+* **ApiVersion**: 2024-03-02-preview
+
+## Function abort (Microsoft.ContainerService/managedclusters/agentPools@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters/agentPools
+* **ApiVersion**: 2024-03-02-preview
+
+## Function deleteMachines (Microsoft.ContainerService/managedClusters/agentPools@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [AgentPoolDeleteMachinesParameter](#agentpooldeletemachinesparameter)
+
 ## Function listClusterAdminCredential (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
 * **Resource**: Microsoft.ContainerService/managedClusters
 * **ApiVersion**: 2024-03-02-preview
@@ -157,6 +170,53 @@
 * **Resource**: Microsoft.ContainerService/managedClusters/accessProfiles
 * **ApiVersion**: 2024-03-02-preview
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
+
+## Function rebalanceLoadBalancers (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [RebalanceLoadBalancersRequestBody](#rebalanceloadbalancersrequestbody)
+
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+
+## Function rotateServiceAccountSigningKeys (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+
+## Function stop (Microsoft.ContainerService/managedClusters@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-03-02-preview
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2024-03-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2024-03-02-preview
 
 ## AbsoluteMonthlySchedule
 ### Properties
@@ -178,6 +238,10 @@
 ## AgentPoolArtifactStreamingProfile
 ### Properties
 * **enabled**: bool: Artifact streaming speeds up the cold-start of containers on a node through on-demand image loading. To use this feature, container images must also enable artifact streaming on ACR. If not specified, the default is false.
+
+## AgentPoolDeleteMachinesParameter
+### Properties
+* **machineNames**: string[] (Required): The agent pool machine names.
 
 ## AgentPoolGatewayProfile
 ### Properties
@@ -220,6 +284,15 @@
 ### Properties
 * **overrideSettings**: [UpgradeOverrideSettings](#upgradeoverridesettings): Settings for overrides.
 
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): The exit code of the command
+* **finishedAt**: string (ReadOnly): The time when the command finished.
+* **logs**: string (ReadOnly): The command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): An explanation of why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): The time when the command started.
+
 ## CompatibleVersions
 ### Properties
 * **name**: string: The product/service name.
@@ -232,7 +305,7 @@
 
 ## ContainerServiceNetworkProfile
 ### Properties
-* **advancedNetworking**: [AdvancedNetworking](#advancednetworking): Advanced Networking profile for enabling observability on a cluster. For more information see aka.ms/aksadvancednetworking.
+* **advancedNetworking**: [AdvancedNetworking](#advancednetworking): Advanced Networking profile for enabling observability on a cluster. Note that enabling advanced networking features may incur additional costs. For more information see aka.ms/aksadvancednetworking.
 * **dnsServiceIP**: string {pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"}: An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.
 * **ipFamilies**: ('IPv4' | 'IPv6' | string)[]: IP families are used to determine single-stack or dual-stack clusters. For single-stack, the expected value is IPv4. For dual-stack, the expected values are IPv4 and IPv6.
 * **kubeProxyConfig**: [ContainerServiceNetworkProfileKubeProxyConfig](#containerservicenetworkprofilekubeproxyconfig): Holds configuration customizations for kube-proxy. Any values not defined will use the kube-proxy defaulting behavior. See https://v<version>.docs.kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/ where <version> is represented by a <major version>-<minor version> string. Kubernetes version 1.23 would be '1-23'.
@@ -432,6 +505,16 @@
 * **startDate**: string: The date the maintenance window activates. If the current date is before this date, the maintenance window is inactive and will not be used for upgrades. If not specified, the maintenance window will be active right away.
 * **startTime**: string {pattern: "^\d{2}:\d{2}$"} (Required): The start time of the maintenance window. Accepted values are from '00:00' to '23:59'. 'utcOffset' applies to this field. For example: '02:00' with 'utcOffset: +02:00' means UTC time '00:00'.
 * **utcOffset**: string {pattern: "^(-|\+)[0-9]{2}:[0-9]{2}$"}: The UTC offset in format +/-HH:mm. For example, '+05:30' for IST and '-07:00' for PST. If not specified, the default is '+00:00'.
+
+## ManagedClusterAADProfile
+### Properties
+* **adminGroupObjectIDs**: string[]: The list of AAD group object IDs that will have admin role of the cluster.
+* **clientAppID**: string: (DEPRECATED) The client AAD application ID. Learn more at https://aka.ms/aks/aad-legacy.
+* **enableAzureRBAC**: bool: Whether to enable Azure RBAC for Kubernetes authorization.
+* **managed**: bool: Whether to enable managed AAD.
+* **serverAppID**: string: (DEPRECATED) The server AAD application ID. Learn more at https://aka.ms/aks/aad-legacy.
+* **serverAppSecret**: string: (DEPRECATED) The server AAD application secret. Learn more at https://aka.ms/aks/aad-legacy.
+* **tenantID**: string: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment subscription.
 
 ## ManagedClusterAADProfile
 ### Properties
@@ -936,6 +1019,11 @@
 * **clientId**: string (Required): The ID for the service principal.
 * **secret**: string: The secret password associated with the service principal in plain text.
 
+## ManagedClusterServicePrincipalProfile
+### Properties
+* **clientId**: string (Required): The ID for the service principal.
+* **secret**: string: The secret password associated with the service principal in plain text.
+
 ## ManagedClusterSKU
 ### Properties
 * **name**: 'Automatic' | 'Base' | string: The name of a managed cluster SKU.
@@ -1064,10 +1152,32 @@
 * **requiredMembers**: string[]: The RequiredMembers of the resource
 * **type**: string: The resource type.
 
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: The RequiredMembers of the resource
+* **type**: string: The resource type.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: The RequiredMembers of the resource
+* **type**: string: The resource type.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **description**: string: The private link service connection description.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: The private link service connection status.
+
+## RebalanceLoadBalancersRequestBody
+### Properties
+* **loadBalancerNames**: string[]: The load balancer names list.
 
 ## RelativeMonthlySchedule
 ### Properties
@@ -1078,6 +1188,17 @@
 ## ResourceReference
 ### Properties
 * **id**: string: The fully qualified Azure resource id.
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): The command to run.
+* **context**: string: A base64 encoded zip file containing the files required by the command.
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): The command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## SafeguardsAvailableVersionsProperties
 ### Properties

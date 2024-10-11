@@ -11630,6 +11630,35 @@
   },
   {
     "$type": "ObjectType",
+    "name": "CsmSlotEntity",
+    "properties": {
+      "targetSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Destination deployment slot during swap operation."
+      },
+      "preserveVnet": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 1,
+        "description": "<code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "applySlotConfig",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/702"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "BackupRequest",
     "properties": {
       "properties": {
@@ -11712,26 +11741,32 @@
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/backups",
+    "name": "backup",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2018-11-01",
     "output": {
-      "$ref": "#/703"
+      "$ref": "#/705"
     },
     "input": {
-      "$ref": "#/702"
+      "$ref": "#/704"
     }
   },
   {
+    "$type": "ResourceFunctionType",
+    "name": "containerlogs",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
     "$type": "ObjectType",
-    "name": "StringDictionary",
+    "name": "RestoreRequest",
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/706"
+          "$ref": "#/709"
         },
         "flags": 0,
-        "description": "Settings."
+        "description": "RestoreRequest resource specific properties"
       },
       "id": {
         "type": {
@@ -11765,19 +11800,250 @@
   },
   {
     "$type": "ObjectType",
-    "name": "StringDictionaryProperties",
-    "properties": {},
-    "additionalProperties": {
-      "$ref": "#/0"
+    "name": "RestoreRequestProperties",
+    "properties": {
+      "storageAccountUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "SAS URL to the container."
+      },
+      "blobName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of a blob which contains the backup."
+      },
+      "overwrite": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 1,
+        "description": "<code>true</code> if the restore operation can overwrite target app; otherwise, <code>false</code>. <code>true</code> is needed if trying to restore over an existing app."
+      },
+      "siteName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of an app."
+      },
+      "databases": {
+        "type": {
+          "$ref": "#/710"
+        },
+        "flags": 0,
+        "description": "Collection of databases which should be restored. This list has to match the list of databases included in the backup."
+      },
+      "ignoreConflictingHostNames": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "Changes a logic when restoring an app with custom domains. <code>true</code> to remove custom domains automatically. If <code>false</code>, custom domains are added to \nthe app's object when it is being restored, but that might fail due to conflicts during the operation."
+      },
+      "ignoreDatabases": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "Ignore the databases and only restore the site content"
+      },
+      "appServicePlan": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specify app service plan that will own restored site."
+      },
+      "operationType": {
+        "type": {
+          "$ref": "#/716"
+        },
+        "flags": 0,
+        "description": "Operation type."
+      },
+      "adjustConnectionStrings": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "<code>true</code> if SiteConfig.ConnectionStrings should be set in new app; otherwise, <code>false</code>."
+      },
+      "hostingEnvironment": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "App Service Environment name, if needed (only when restoring an app to an App Service Environment)."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/201"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Default"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Clone"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Relocation"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Snapshot"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "CloudFS"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/711"
+      },
+      {
+        "$ref": "#/712"
+      },
+      {
+        "$ref": "#/713"
+      },
+      {
+        "$ref": "#/714"
+      },
+      {
+        "$ref": "#/715"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "discoverbackup",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/708"
+    },
+    "input": {
+      "$ref": "#/708"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteCloneability",
+    "properties": {
+      "result": {
+        "type": {
+          "$ref": "#/722"
+        },
+        "flags": 0,
+        "description": "Name of app."
+      },
+      "blockingFeatures": {
+        "type": {
+          "$ref": "#/724"
+        },
+        "flags": 0,
+        "description": "List of features enabled on app that prevent cloning."
+      },
+      "unsupportedFeatures": {
+        "type": {
+          "$ref": "#/725"
+        },
+        "flags": 0,
+        "description": "List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned\nbut the features in this list will not be set up on cloned app."
+      },
+      "blockingCharacteristics": {
+        "type": {
+          "$ref": "#/726"
+        },
+        "flags": 0,
+        "description": "List of blocking application characteristics."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Cloneable"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PartiallyCloneable"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotCloneable"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/719"
+      },
+      {
+        "$ref": "#/720"
+      },
+      {
+        "$ref": "#/721"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteCloneabilityCriterion",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of criterion."
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Description of criterion."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/723"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/723"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/723"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/config",
+    "name": "iscloneable",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2018-11-01",
     "output": {
-      "$ref": "#/705"
+      "$ref": "#/718"
     }
   },
   {
@@ -11786,7 +12052,7 @@
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/709"
+          "$ref": "#/729"
         },
         "flags": 0,
         "description": "FunctionSecrets resource specific properties"
@@ -11843,11 +12109,885 @@
   },
   {
     "$type": "ResourceFunctionType",
+    "name": "listsyncfunctiontriggerstatus",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/728"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "MigrateMySqlRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/732"
+        },
+        "flags": 0,
+        "description": "MigrateMySqlRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "MigrateMySqlRequestProperties",
+    "properties": {
+      "connectionString": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Connection string to the remote MySQL database."
+      },
+      "migrationType": {
+        "type": {
+          "$ref": "#/735"
+        },
+        "flags": 1,
+        "description": "The type of migration operation to be done"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "LocalToRemote"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RemoteToLocal"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/733"
+      },
+      {
+        "$ref": "#/734"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Operation",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Operation ID."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Operation name."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/742"
+        },
+        "flags": 0,
+        "description": "The current status of the operation."
+      },
+      "errors": {
+        "type": {
+          "$ref": "#/746"
+        },
+        "flags": 0,
+        "description": "Any errors associate with the operation."
+      },
+      "createdTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation has started."
+      },
+      "modifiedTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation has been updated."
+      },
+      "expirationTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation will expire."
+      },
+      "geoMasterOperationId": {
+        "type": {
+          "$ref": "#/141"
+        },
+        "flags": 0,
+        "description": "Applicable only for stamp operation ids."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "InProgress"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "TimedOut"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Created"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/737"
+      },
+      {
+        "$ref": "#/738"
+      },
+      {
+        "$ref": "#/739"
+      },
+      {
+        "$ref": "#/740"
+      },
+      {
+        "$ref": "#/741"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ErrorEntity",
+    "properties": {
+      "extendedCode": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Type of error."
+      },
+      "messageTemplate": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Message template."
+      },
+      "parameters": {
+        "type": {
+          "$ref": "#/744"
+        },
+        "flags": 0,
+        "description": "Parameters for the template."
+      },
+      "innerErrors": {
+        "type": {
+          "$ref": "#/745"
+        },
+        "flags": 0,
+        "description": "Inner errors."
+      },
+      "code": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Basic error code."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Any details of the error."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/743"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/743"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "migratemysql",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/736"
+    },
+    "input": {
+      "$ref": "#/731"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "newpassword",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CsmPublishingProfileOptions",
+    "properties": {
+      "format": {
+        "type": {
+          "$ref": "#/753"
+        },
+        "flags": 0,
+        "description": "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp"
+      },
+      "includeDisasterRecoveryEndpoints": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "Include the DisasterRecover endpoint if true"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "FileZilla3"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "WebDeploy"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Ftp"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/750"
+      },
+      {
+        "$ref": "#/751"
+      },
+      {
+        "$ref": "#/752"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "publishxml",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/749"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetSlotConfig",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromBackupBlob",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/708"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DeletedAppRestoreRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/759"
+        },
+        "flags": 0,
+        "description": "DeletedAppRestoreRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DeletedAppRestoreRequestProperties",
+    "properties": {
+      "deletedSiteId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "ARM resource ID of the deleted app. Example:\n/subscriptions/{subId}/providers/Microsoft.Web/deletedSites/{deletedSiteId}"
+      },
+      "recoverConfiguration": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "If true, deleted site configuration, in addition to content, will be restored."
+      },
+      "snapshotTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Point in time to restore the deleted app from, formatted as a DateTime string. \nIf unspecified, default value is the time that the app was deleted."
+      },
+      "useDRSecondary": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "If true, the snapshot is retrieved from DRSecondary endpoint."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromDeletedApp",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/758"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRestoreRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/762"
+        },
+        "flags": 0,
+        "description": "SnapshotRestoreRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRestoreRequestProperties",
+    "properties": {
+      "snapshotTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Point in time in which the app restore should be done, formatted as a DateTime string."
+      },
+      "recoverySource": {
+        "type": {
+          "$ref": "#/763"
+        },
+        "flags": 0,
+        "description": "Optional. Specifies the web app that snapshot contents will be retrieved from.\nIf empty, the targeted web app will be used as the source."
+      },
+      "overwrite": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 1,
+        "description": "If <code>true</code> the restore operation can overwrite source app; otherwise, <code>false</code>."
+      },
+      "recoverConfiguration": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "If true, site configuration, in addition to content, will be reverted."
+      },
+      "ignoreConflictingHostNames": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverConfiguration is enabled."
+      },
+      "useDRSecondary": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "If true, the snapshot is retrieved from DRSecondary endpoint."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRecoverySource",
+    "properties": {
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Geographical location of the source web app, e.g. SouthEastAsia, SouthCentralUS"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "ARM resource ID of the source app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreSnapshot",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/761"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SlotDifferenceCollection",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/768"
+        },
+        "flags": 1,
+        "description": "Collection of resources."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Link to next page of resources."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SlotDifference",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/767"
+        },
+        "flags": 0,
+        "description": "SlotDifference resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SlotDifferenceProperties",
+    "properties": {
+      "level": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Level of the difference: Information, Warning or Error."
+      },
+      "settingType": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the setting: General, AppSetting or ConnectionString."
+      },
+      "diffRule": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Rule that describes how to process the setting difference during a slot swap."
+      },
+      "settingName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Name of the setting."
+      },
+      "valueInCurrentSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Value of the setting in the current slot."
+      },
+      "valueInTargetSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Value of the setting in the target slot."
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Description of the setting difference."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/766"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsdiffs",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/765"
+    },
+    "input": {
+      "$ref": "#/702"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsswap",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/702"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NetworkTrace",
+    "properties": {
+      "path": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Local file path for the captured network trace file."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed)."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Detailed message of a network trace operation, e.g. error message in case of failure."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/772"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startNetworkTrace",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/773"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stopNetworkTrace",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncfunctiontriggers",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/backups",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/705"
+    },
+    "input": {
+      "$ref": "#/704"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restore",
+    "resourceType": "Microsoft.Web/sites/backups",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/708"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StringDictionary",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/782"
+        },
+        "flags": 0,
+        "description": "Settings."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StringDictionaryProperties",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/config",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/781"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "recover",
+    "resourceType": "Microsoft.Web/sites/config/snapshots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "download",
+    "resourceType": "Microsoft.Web/sites/containerlogs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/continuouswebjobs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/continuouswebjobs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
     "name": "listsecrets",
     "resourceType": "Microsoft.Web/sites/functions",
     "apiVersion": "2018-11-01",
     "output": {
-      "$ref": "#/708"
+      "$ref": "#/728"
     }
   },
   {
@@ -11856,7 +12996,7 @@
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/712"
+          "$ref": "#/790"
         },
         "flags": 0,
         "description": "HybridConnectionKey resource specific properties"
@@ -11917,55 +13057,55 @@
     "resourceType": "Microsoft.Web/sites/hybridConnectionNamespaces/relays",
     "apiVersion": "2018-11-01",
     "output": {
-      "$ref": "#/711"
+      "$ref": "#/789"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listsyncfunctiontriggerstatus",
-    "resourceType": "Microsoft.Web/sites",
+    "name": "applySlotConfig",
+    "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2018-11-01",
-    "output": {
-      "$ref": "#/708"
-    }
-  },
-  {
-    "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/slots/backups",
-    "apiVersion": "2018-11-01",
-    "output": {
-      "$ref": "#/703"
-    },
     "input": {
       "$ref": "#/702"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/slots/config",
+    "name": "backup",
+    "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2018-11-01",
     "output": {
       "$ref": "#/705"
+    },
+    "input": {
+      "$ref": "#/704"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listsecrets",
-    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "name": "containerlogs",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "discoverbackup",
+    "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2018-11-01",
     "output": {
+      "$ref": "#/708"
+    },
+    "input": {
       "$ref": "#/708"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listKeys",
-    "resourceType": "Microsoft.Web/sites/slots/hybridConnectionNamespaces/relays",
+    "name": "iscloneable",
+    "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2018-11-01",
     "output": {
-      "$ref": "#/711"
+      "$ref": "#/718"
     }
   },
   {
@@ -11974,7 +13114,211 @@
     "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2018-11-01",
     "output": {
+      "$ref": "#/728"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "newpassword",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "publishxml",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/749"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetSlotConfig",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromBackupBlob",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "input": {
       "$ref": "#/708"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromDeletedApp",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/758"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreSnapshot",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/761"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsdiffs",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/765"
+    },
+    "input": {
+      "$ref": "#/702"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsswap",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/702"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/772"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startNetworkTrace",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/808"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stopNetworkTrace",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncfunctiontriggers",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/slots/backups",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/705"
+    },
+    "input": {
+      "$ref": "#/704"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restore",
+    "resourceType": "Microsoft.Web/sites/slots/backups",
+    "apiVersion": "2018-11-01",
+    "input": {
+      "$ref": "#/708"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/slots/config",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/781"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "recover",
+    "resourceType": "Microsoft.Web/sites/slots/config/snapshots",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "download",
+    "resourceType": "Microsoft.Web/sites/slots/containerlogs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/slots/continuouswebjobs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/slots/continuouswebjobs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listsecrets",
+    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/728"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listKeys",
+    "resourceType": "Microsoft.Web/sites/slots/hybridConnectionNamespaces/relays",
+    "apiVersion": "2018-11-01",
+    "output": {
+      "$ref": "#/789"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.Web/sites/slots/triggeredwebjobs",
+    "apiVersion": "2018-11-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.Web/sites/triggeredwebjobs",
+    "apiVersion": "2018-11-01"
   }
 ]

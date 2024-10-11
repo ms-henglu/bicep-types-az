@@ -13,15 +13,41 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Quantum/workspaces' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Quantum/locations@2023-11-13-preview)
+* **Resource**: Microsoft.Quantum/locations
+* **ApiVersion**: 2023-11-13-preview
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
 ## Function listKeys (Microsoft.Quantum/workspaces@2023-11-13-preview)
 * **Resource**: Microsoft.Quantum/workspaces
 * **ApiVersion**: 2023-11-13-preview
 * **Output**: [ListKeysResult](#listkeysresult)
 
+## Function regenerateKey (Microsoft.Quantum/workspaces@2023-11-13-preview)
+* **Resource**: Microsoft.Quantum/workspaces
+* **ApiVersion**: 2023-11-13-preview
+* **Input**: [APIKeys](#apikeys)
+
 ## ApiKey
 ### Properties
 * **createdAt**: string: The creation time of the api key.
 * **key**: string {sensitive} (ReadOnly): The Api key.
+
+## APIKeys
+### Properties
+* **keys**: ('Primary' | 'Secondary' | string)[]: A list of api key names.
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string: Name for checking availability.
+* **type**: string: The resource type of Quantum Workspace.
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): The detailed info regarding the reason associated with the Namespace.
+* **nameAvailable**: bool: Indicator of availability of the Quantum Workspace resource name.
+* **reason**: string: The reason of unavailability.
 
 ## ListKeysResult
 ### Properties
