@@ -281,5 +281,17 @@
       "$ref": "#/3"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Media/mediaServices/mediaGraphs",
+    "apiVersion": "2019-09-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Media/mediaServices/mediaGraphs",
+    "apiVersion": "2019-09-01-preview"
   }
 ]

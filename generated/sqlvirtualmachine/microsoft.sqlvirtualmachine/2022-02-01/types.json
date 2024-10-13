@@ -2135,5 +2135,17 @@
       "$ref": "#/62"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "redeploy",
+    "resourceType": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
+    "apiVersion": "2022-02-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startAssessment",
+    "resourceType": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
+    "apiVersion": "2022-02-01"
   }
 ]

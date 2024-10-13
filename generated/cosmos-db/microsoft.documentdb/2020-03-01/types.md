@@ -252,6 +252,11 @@
 * **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
 * **type**: 'Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function failoverPriorityChange (Microsoft.DocumentDB/databaseAccounts@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts
+* **ApiVersion**: 2020-03-01
+* **Input**: [FailoverPolicies](#failoverpolicies)
+
 ## Function listConnectionInfo (Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces@2020-03-01)
 * **Resource**: Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces
 * **ApiVersion**: 2020-03-01
@@ -266,6 +271,124 @@
 * **Resource**: Microsoft.DocumentDB/databaseAccounts
 * **ApiVersion**: 2020-03-01
 * **Output**: [DatabaseAccountListKeysResult](#databaseaccountlistkeysresult)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToAutoscale (Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/tables/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/cassandraKeyspaces/tables/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function migrateToManualThroughput (Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/throughputSettings@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/gremlinDatabases/graphs/throughputSettings
+* **ApiVersion**: 2020-03-01
+* **Output**: [ThroughputSettingsGetResults](#throughputsettingsgetresults)
+
+## Function offlineRegion (Microsoft.DocumentDB/databaseAccounts@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts
+* **ApiVersion**: 2020-03-01
+* **Input**: [RegionForOnlineOffline](#regionforonlineoffline)
+
+## Function onlineRegion (Microsoft.DocumentDB/databaseAccounts@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts
+* **ApiVersion**: 2020-03-01
+* **Input**: [RegionForOnlineOffline](#regionforonlineoffline)
+
+## Function readonlykeys (Microsoft.DocumentDB/databaseAccounts@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts
+* **ApiVersion**: 2020-03-01
+* **Output**: [DatabaseAccountListReadOnlyKeysResult](#databaseaccountlistreadonlykeysresult)
+
+## Function regenerateAuthToken (Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces
+* **ApiVersion**: 2020-03-01
+
+## Function regenerateKey (Microsoft.DocumentDB/databaseAccounts@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts
+* **ApiVersion**: 2020-03-01
+* **Input**: [DatabaseAccountRegenerateKeyParameters](#databaseaccountregeneratekeyparameters)
+
+## Function start (Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces@2020-03-01)
+* **Resource**: Microsoft.DocumentDB/databaseAccounts/notebookWorkspaces
+* **ApiVersion**: 2020-03-01
 
 ## AutoUpgradePolicyResource
 ### Properties
@@ -443,9 +566,22 @@
 * **secondaryMasterKey**: string (ReadOnly): Base 64 encoded value of the secondary read-write key.
 * **secondaryReadonlyMasterKey**: string (ReadOnly): Base 64 encoded value of the secondary read-only key.
 
+## DatabaseAccountListReadOnlyKeysResult
+### Properties
+* **primaryReadonlyMasterKey**: string (ReadOnly): Base 64 encoded value of the primary read-only key.
+* **secondaryReadonlyMasterKey**: string (ReadOnly): Base 64 encoded value of the secondary read-only key.
+
+## DatabaseAccountRegenerateKeyParameters
+### Properties
+* **keyKind**: 'primary' | 'primaryReadonly' | 'secondary' | 'secondaryReadonly' | string (Required): The access key to regenerate.
+
 ## ExcludedPath
 ### Properties
 * **path**: string: The path for which the indexing behavior applies to. Index paths typically start with root and end with wildcard (/path/*)
+
+## FailoverPolicies
+### Properties
+* **failoverPolicies**: [FailoverPolicy](#failoverpolicy)[] (Required): List of failover policies.
 
 ## FailoverPolicy
 ### Properties
@@ -587,6 +723,14 @@
 * **autoUpgradePolicy**: [AutoUpgradePolicyResource](#autoupgradepolicyresource): Cosmos DB resource auto-upgrade policy
 * **maxThroughput**: int (Required): Represents maximum throughput container can scale up to.
 * **targetMaxThroughput**: int (ReadOnly): Represents target maximum throughput container can scale up to once offer is no longer in pending state.
+
+## RegionForOnlineOffline
+### Properties
+* **region**: string (Required): Cosmos DB region, with spaces between words and each word capitalized.
+
+## RegionForOnlineOffline
+### Properties
+* **region**: string (Required): Cosmos DB region, with spaces between words and each word capitalized.
 
 ## ShardKeys
 ### Properties
@@ -792,10 +936,191 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## Tags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ThroughputPolicyResource
 ### Properties
 * **incrementPercent**: int: Represents the percentage by which throughput can increase every time throughput policy kicks in.
 * **isEnabled**: bool: Determines whether the ThroughputPolicy is active or not
+
+## ThroughputSettingsGetProperties
+### Properties
+* **resource**: [ThroughputSettingsGetPropertiesResource](#throughputsettingsgetpropertiesresource)
+
+## ThroughputSettingsGetPropertiesResource
+### Properties
+* **_etag**: string (ReadOnly): A system generated property representing the resource etag required for optimistic concurrency control.
+* **_rid**: string (ReadOnly): A system generated property. A unique identifier.
+* **_ts**: any (ReadOnly): A system generated property that denotes the last updated timestamp of the resource.
+* **minimumThroughput**: string (ReadOnly): The minimum throughput of the resource
+* **offerReplacePending**: string (ReadOnly): The throughput replace is pending
+* **provisionedThroughputSettings**: [ProvisionedThroughputSettingsResource](#provisionedthroughputsettingsresource): Cosmos DB resource for provisioned throughput settings. Either throughput is required or provisionedThroughputSettings is required, but not both.
+* **throughput**: int: Value of the Cosmos DB resource throughput. Either throughput is required or provisionedThroughputSettings is required, but not both.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
+
+## ThroughputSettingsGetResults
+### Properties
+* **id**: string (ReadOnly): The unique resource identifier of the ARM resource.
+* **location**: string: The location of the resource group to which the resource belongs.
+* **name**: string (ReadOnly): The name of the ARM resource.
+* **properties**: [ThroughputSettingsGetProperties](#throughputsettingsgetproperties): The properties of an Azure Cosmos DB resource throughput
+* **tags**: [Tags](#tags): Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with "defaultExperience": "Cassandra". Current "defaultExperience" values also include "Table", "Graph", "DocumentDB", and "MongoDB".
+* **type**: string (ReadOnly): The type of Azure resource.
 
 ## ThroughputSettingsResourceOrThroughputSettingsGetPropertiesResource
 ### Properties

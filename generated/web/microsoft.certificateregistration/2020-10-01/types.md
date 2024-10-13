@@ -26,6 +26,45 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.CertificateRegistration/certificateOrders/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reissue (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Input**: [ReissueCertificateOrderRequest](#reissuecertificateorderrequest)
+
+## Function renew (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Input**: [RenewCertificateOrderRequest](#renewcertificateorderrequest)
+
+## Function resendEmail (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+
+## Function resendRequestEmails (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Input**: [NameIdentifier](#nameidentifier)
+
+## Function retrieveCertificateActions (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Output**: [CertificateOrderAction](#certificateorderaction)[]
+
+## Function retrieveEmailHistory (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Output**: [CertificateEmail](#certificateemail)[]
+
+## Function retrieveSiteSeal (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+* **Input**: [SiteSealRequest](#sitesealrequest)
+* **Output**: [SiteSeal](#siteseal)
+
+## Function verifyDomainOwnership (Microsoft.CertificateRegistration/certificateOrders@2020-10-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2020-10-01
+
 ## AppServiceCertificate
 ### Properties
 * **keyVaultId**: string: Key Vault resource Id.
@@ -71,6 +110,69 @@
 * **thumbprint**: string (ReadOnly): Certificate Thumbprint.
 * **version**: int (ReadOnly): Certificate Version.
 
+## CertificateEmail
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [CertificateEmailProperties](#certificateemailproperties): CertificateEmail resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
+* **type**: string (ReadOnly): Resource type.
+
+## CertificateEmailProperties
+### Properties
+* **emailId**: string: Email id.
+* **timeStamp**: string: Time stamp.
+
+## CertificateOrderAction
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [CertificateOrderActionProperties](#certificateorderactionproperties): CertificateOrderAction resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
+* **type**: string (ReadOnly): Resource type.
+
+## CertificateOrderActionProperties
+### Properties
+* **actionType**: 'CertificateExpirationWarning' | 'CertificateExpired' | 'CertificateIssued' | 'CertificateOrderCanceled' | 'CertificateOrderCreated' | 'CertificateRevoked' | 'DomainValidationComplete' | 'FraudCleared' | 'FraudDetected' | 'FraudDocumentationRequired' | 'OrgNameChange' | 'OrgValidationComplete' | 'SanDrop' | 'Unknown' (ReadOnly): Action type.
+* **createdAt**: string (ReadOnly): Time at which the certificate action was performed.
+
+## NameIdentifier
+### Properties
+* **name**: string: Name of the object.
+
+## ReissueCertificateOrderRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [ReissueCertificateOrderRequestProperties](#reissuecertificateorderrequestproperties): ReissueCertificateOrderRequest resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
+* **type**: string (ReadOnly): Resource type.
+
+## ReissueCertificateOrderRequestProperties
+### Properties
+* **csr**: string: Csr to be used for re-key operation.
+* **delayExistingRevokeInHours**: int: Delay in hours to revoke existing certificate after the new certificate is issued.
+* **isPrivateKeyExternal**: bool: Should we change the ASC type (from managed private key to external private key and vice versa).
+* **keySize**: int: Certificate Key Size.
+
+## RenewCertificateOrderRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RenewCertificateOrderRequestProperties](#renewcertificateorderrequestproperties): RenewCertificateOrderRequest resource specific properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
+* **type**: string (ReadOnly): Resource type.
+
+## RenewCertificateOrderRequestProperties
+### Properties
+* **csr**: string: Csr to be used for re-key operation.
+* **isPrivateKeyExternal**: bool: Should we change the ASC type (from managed private key to external private key and vice versa).
+* **keySize**: int: Certificate Key Size.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -80,6 +182,15 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SiteSeal
+### Properties
+* **html**: string (Required): HTML snippet
+
+## SiteSealRequest
+### Properties
+* **lightTheme**: bool: If <code>true</code> use the light color theme for site seal; otherwise, use the default color theme.
+* **locale**: string: Locale of site seal.
 
 ## SystemData
 ### Properties

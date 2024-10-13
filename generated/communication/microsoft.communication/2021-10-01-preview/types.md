@@ -36,10 +36,39 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Communication/emailServices/domains' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelVerification (Microsoft.Communication/emailServices/domains@2021-10-01-preview)
+* **Resource**: Microsoft.Communication/emailServices/domains
+* **ApiVersion**: 2021-10-01-preview
+* **Input**: [VerificationParameter](#verificationparameter)
+
+## Function initiateVerification (Microsoft.Communication/emailServices/domains@2021-10-01-preview)
+* **Resource**: Microsoft.Communication/emailServices/domains
+* **ApiVersion**: 2021-10-01-preview
+* **Input**: [VerificationParameter](#verificationparameter)
+
+## Function linkNotificationHub (Microsoft.Communication/communicationServices@2021-10-01-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2021-10-01-preview
+* **Input**: [LinkNotificationHubParameters](#linknotificationhubparameters)
+* **Output**: [LinkedNotificationHub](#linkednotificationhub)
+
 ## Function listKeys (Microsoft.Communication/communicationServices@2021-10-01-preview)
 * **Resource**: Microsoft.Communication/communicationServices
 * **ApiVersion**: 2021-10-01-preview
 * **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## Function regenerateKey (Microsoft.Communication/communicationServices@2021-10-01-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2021-10-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## CommunicationServiceKeys
+### Properties
+* **primaryConnectionString**: string: CommunicationService connection string constructed via the primaryKey
+* **primaryKey**: string: The primary access key.
+* **secondaryConnectionString**: string: CommunicationService connection string constructed via the secondaryKey
+* **secondaryKey**: string: The secondary access key.
 
 ## CommunicationServiceKeys
 ### Properties
@@ -98,6 +127,19 @@
 * **dataLocation**: string (Required): The location where the email service stores its data at rest.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Running' | 'Succeeded' | 'Unknown' | 'Updating' | string (ReadOnly): Provisioning state of the resource.
 
+## LinkedNotificationHub
+### Properties
+* **resourceId**: string: The resource ID of the notification hub
+
+## LinkNotificationHubParameters
+### Properties
+* **connectionString**: string (Required): Connection string for the notification hub
+* **resourceId**: string (Required): The resource ID of the notification hub
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary': The keyType to regenerate. Must be either 'primary' or 'secondary'(case-insensitive).
+
 ## SystemData
 ### Properties
 * **createdAt**: string: The timestamp of resource creation (UTC).
@@ -126,6 +168,14 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VerificationParameter
+### Properties
+* **verificationType**: 'DKIM' | 'DKIM2' | 'DMARC' | 'Domain' | 'SPF' | string (Required): Type of verification.
+
+## VerificationParameter
+### Properties
+* **verificationType**: 'DKIM' | 'DKIM2' | 'DMARC' | 'Domain' | 'SPF' | string (Required): Type of verification.
 
 ## VerificationStatusRecord
 ### Properties

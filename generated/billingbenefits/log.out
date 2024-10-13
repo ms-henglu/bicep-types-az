@@ -17,3 +17,4 @@ warning | DeprecatedConfig | Using directive.5.suppress which is deprecated and 
 warning | DeprecatedConfig | Using directive.6.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/providers/Microsoft.BillingBenefits/validate': Unable to find type segments

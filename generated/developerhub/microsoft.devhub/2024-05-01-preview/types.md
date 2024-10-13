@@ -25,12 +25,56 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DevHub/workflows' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function export (Microsoft.DevHub/iacProfiles@2024-05-01-preview)
+* **Resource**: Microsoft.DevHub/iacProfiles
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [ExportTemplateRequest](#exporttemplaterequest)
+* **Output**: [PrLinkResponse](#prlinkresponse)
+
+## Function generatePreviewArtifacts (Microsoft.DevHub/locations@2024-05-01-preview)
+* **Resource**: Microsoft.DevHub/locations
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [ArtifactGenerationProperties](#artifactgenerationproperties)
+* **Output**: [GeneratePreviewArtifactsResponse](#generatepreviewartifactsresponse)
+
+## Function getGitHubOAuthInfo (Microsoft.DevHub/locations/githuboauth@2024-05-01-preview)
+* **Resource**: Microsoft.DevHub/locations/githuboauth
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [GitHubOAuthCallRequest](#githuboauthcallrequest)
+* **Output**: [GitHubOAuthInfoResponse](#githuboauthinforesponse)
+
+## Function scale (Microsoft.DevHub/iacProfiles@2024-05-01-preview)
+* **Resource**: Microsoft.DevHub/iacProfiles
+* **ApiVersion**: 2024-05-01-preview
+* **Input**: [ScaleTemplateRequest](#scaletemplaterequest)
+* **Output**: [PrLinkResponse](#prlinkresponse)
+
+## Function sync (Microsoft.DevHub/iacProfiles@2024-05-01-preview)
+* **Resource**: Microsoft.DevHub/iacProfiles
+* **ApiVersion**: 2024-05-01-preview
+
 ## ACR
 ### Properties
 * **acrRegistryName**: string: ACR registry
 * **acrRepositoryName**: string: ACR repository
 * **acrResourceGroup**: string: ACR resource group
 * **acrSubscriptionId**: string: ACR subscription id
+
+## ArtifactGenerationProperties
+### Properties
+* **appName**: string: The name of the app.
+* **builderVersion**: string: The version of the language image used for building the code in the generated dockerfile.
+* **dockerfileGenerationMode**: 'disabled' | 'enabled' | string: The mode of generation to be used for generating Dockerfiles.
+* **dockerfileOutputDirectory**: string: The directory to output the generated Dockerfile to.
+* **generationLanguage**: 'clojure' | 'csharp' | 'erlang' | 'go' | 'gomodule' | 'gradle' | 'java' | 'javascript' | 'php' | 'python' | 'ruby' | 'rust' | 'swift' | string: The programming language used.
+* **imageName**: string: The name of the image to be generated.
+* **imageTag**: string: The tag to apply to the generated image.
+* **languageVersion**: string: The version of the language image used for execution in the generated dockerfile.
+* **manifestGenerationMode**: 'disabled' | 'enabled' | string: The mode of generation to be used for generating Manifest.
+* **manifestOutputDirectory**: string: The directory to output the generated manifests to.
+* **manifestType**: 'helm' | 'kube' | string: Determines the type of manifests to be generated.
+* **namespace**: string: The namespace to deploy the application to.
+* **port**: string: The port the application is exposed on.
 
 ## ArtifactGenerationProperties
 ### Properties
@@ -60,6 +104,28 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ExportTemplateRequest
+### Properties
+* **instanceName**: string
+* **instanceStage**: string
+* **resourceGroupIds**: string[]
+* **siteId**: string
+* **templateName**: string: Template Name
+
+## GeneratePreviewArtifactsResponse
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## GitHubOAuthCallRequest
+### Properties
+* **redirectUrl**: string: The URL the client will redirect to on successful authentication. If empty, no redirect will occur.
+
+## GitHubOAuthInfoResponse
+### Properties
+* **authURL**: string: URL for authorizing the Developer Hub GitHub App
+* **token**: string: OAuth token used to make calls to GitHub
 
 ## GitHubWorkflowProfile
 ### Properties
@@ -111,9 +177,28 @@
 ### Properties
 * **instanceName**: string: the sample instance name of the template
 * **instanceStage**: string: the source stage of the template
-* **quickStartTemplateType**: 'HCI' | 'HCIAKS' | 'HCIARCVM' | 'None' | string (ReadOnly): Determines the authorization status of requests.
+* **quickStartTemplateType**: 'ALL' | 'HCI' | 'HCIAKS' | 'HCIARCVM' | 'None' | string: Determines the authorization status of requests.
 * **sourceResourceId**: string: the source store of the template
 * **templateDetails**: [IacTemplateDetails](#iactemplatedetails)[]
+* **templateName**: string: Template Name
+
+## PrLinkResponse
+### Properties
+* **prLink**: string: The link of the pull request.
+
+## PrLinkResponse
+### Properties
+* **prLink**: string: The link of the pull request.
+
+## ScaleProperty
+### Properties
+* **numberOfStores**: int: Number of the store
+* **region**: string: The region of the store
+* **stage**: string: The stage of the store
+
+## ScaleTemplateRequest
+### Properties
+* **scaleProperties**: [ScaleProperty](#scaleproperty)[]
 * **templateName**: string: Template Name
 
 ## StageProperties

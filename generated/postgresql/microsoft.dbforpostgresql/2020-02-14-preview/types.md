@@ -31,6 +31,24 @@
 * **properties**: [FirewallRuleProperties](#firewallruleproperties) (Required): The properties of a firewall rule.
 * **type**: 'Microsoft.DBForPostgreSql/flexibleServers/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBForPostgreSql/locations@2020-02-14-preview)
+* **Resource**: Microsoft.DBForPostgreSql/locations
+* **ApiVersion**: 2020-02-14-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function restart (Microsoft.DBForPostgreSql/flexibleServers@2020-02-14-preview)
+* **Resource**: Microsoft.DBForPostgreSql/flexibleServers
+* **ApiVersion**: 2020-02-14-preview
+
+## Function start (Microsoft.DBForPostgreSql/flexibleServers@2020-02-14-preview)
+* **Resource**: Microsoft.DBForPostgreSql/flexibleServers
+* **ApiVersion**: 2020-02-14-preview
+
+## Function stop (Microsoft.DBForPostgreSql/flexibleServers@2020-02-14-preview)
+* **Resource**: Microsoft.DBForPostgreSql/flexibleServers
+* **ApiVersion**: 2020-02-14-preview
+
 ## ConfigurationProperties
 ### Properties
 * **allowedValues**: string (ReadOnly): Allowed values of the configuration.
@@ -39,6 +57,11 @@
 * **description**: string (ReadOnly): Description of the configuration.
 * **source**: string: Source of the configuration.
 * **value**: string: Value of the configuration.
+
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
 
 ## FirewallRuleProperties
 ### Properties
@@ -115,4 +138,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
 

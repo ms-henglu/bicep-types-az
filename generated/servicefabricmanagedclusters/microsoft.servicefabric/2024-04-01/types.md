@@ -75,6 +75,48 @@
 * **tags**: [ManagedProxyResourceTags](#managedproxyresourcetags): Azure resource tags.
 * **type**: 'Microsoft.ServiceFabric/managedClusters/nodeTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function applyMaintenanceWindow (Microsoft.ServiceFabric/managedClusters@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-04-01
+
+## Function deleteNode (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-04-01
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function fetchUpgradeStatus (Microsoft.ServiceFabric/managedClusters/applications@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-04-01
+
+## Function getazresiliencystatus (Microsoft.ServiceFabric/managedClusters@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-04-01
+* **Output**: [ManagedAzResiliencyStatus](#managedazresiliencystatus)
+
+## Function getMaintenanceWindowStatus (Microsoft.ServiceFabric/managedClusters@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-04-01
+* **Output**: [ManagedMaintenanceWindowStatus](#managedmaintenancewindowstatus)
+
+## Function reimage (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-04-01
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function restart (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-04-01
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function resumeUpgrade (Microsoft.ServiceFabric/managedClusters/applications@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-04-01
+* **Input**: [RuntimeResumeApplicationUpgradeParameters](#runtimeresumeapplicationupgradeparameters)
+
+## Function startRollback (Microsoft.ServiceFabric/managedClusters/applications@2024-04-01)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-04-01
+
 ## AdditionalNetworkInterfaceConfiguration
 ### Properties
 * **dscpConfiguration**: [SubResource](#subresource): Specifies the DSCP configuration to apply to the network interface.
@@ -239,6 +281,11 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **probeRequestPath**: string: The probe request path. Only supported for HTTP/HTTPS probes.
 * **protocol**: 'tcp' | 'udp' | string (Required): The reference to the transport protocol used by the load balancing rule.
 
+## ManagedAzResiliencyStatus
+### Properties
+* **baseResourceStatus**: [ResourceAzStatus](#resourceazstatus)[]: List of Managed VM Sizes for Service Fabric Managed Clusters.
+* **isClusterZoneResilient**: bool (ReadOnly): URL to get the next set of Managed VM Sizes if there are any.
+
 ## ManagedClusterProperties
 ### Properties
 * **addonFeatures**: ('BackupRestoreService' | 'DnsService' | 'ResourceMonitorService' | string)[]: List of add-on features to enable on the cluster.
@@ -289,6 +336,16 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **userAssignedIdentities**: [UserAssignedIdentityMap](#userassignedidentitymap): The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form:
 '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
+## ManagedMaintenanceWindowStatus
+### Properties
+* **canApplyUpdates**: bool (ReadOnly): If updates can be applied.
+* **isRegionReady**: bool (ReadOnly): Indicates if the region is ready to configure maintenance windows.
+* **isWindowActive**: bool (ReadOnly): If maintenance window is active.
+* **isWindowEnabled**: bool (ReadOnly): If maintenance window is enabled on this cluster.
+* **lastWindowEndTimeUTC**: string (ReadOnly): Last window end time in UTC.
+* **lastWindowStartTimeUTC**: string (ReadOnly): Last window start time in UTC.
+* **lastWindowStatusUpdateAtUTC**: string (ReadOnly): Last window update time in UTC.
+
 ## ManagedProxyResourceTags
 ### Properties
 ### Additional Properties
@@ -310,6 +367,24 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **sourceAddressPrefixes**: string[]: The CIDR or source IP ranges.
 * **sourcePortRange**: string: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
 * **sourcePortRanges**: string[]: The source port ranges.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[]: List of node names from the node type.
+* **updateType**: 'ByUpgradeDomain' | 'Default' | string: Specifies the way the operation will be performed.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[]: List of node names from the node type.
+* **updateType**: 'ByUpgradeDomain' | 'Default' | string: Specifies the way the operation will be performed.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[]: List of node names from the node type.
+* **updateType**: 'ByUpgradeDomain' | 'Default' | string: Specifies the way the operation will be performed.
 
 ## NodeTypeNatConfig
 ### Properties
@@ -429,6 +504,13 @@ should be split between the partition ‘Count’
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceAzStatus
+### Properties
+* **details**: string (ReadOnly): Zone resiliency status details for the resource.
+* **isZoneResilient**: bool (ReadOnly): VM Size name.
+* **resourceName**: string (ReadOnly): VM Size properties.
+* **resourceType**: string (ReadOnly): VM Size id.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -442,6 +524,10 @@ should be split between the partition ‘Count’
 * **healthCheckWaitDuration**: string (Required): The amount of time to wait after completing an upgrade domain before applying health policies. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeDomainTimeout**: string (Required): The amount of time each upgrade domain has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeTimeout**: string (Required): The amount of time the overall upgrade has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
+
+## RuntimeResumeApplicationUpgradeParameters
+### Properties
+* **upgradeDomainName**: string: The upgrade domain name. Expected to be the next upgrade domain if the application is upgrading.
 
 ## ScalingMechanism
 * **Discriminator**: kind

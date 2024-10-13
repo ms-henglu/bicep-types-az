@@ -20,6 +20,7 @@ warning | Skipping GlobalRulestack_listAdvancedSecurityObjects due to required q
 warning | Skipping GlobalRulestack_listSecurityServices due to required query parameter "type"
 warning | Skipping LocalRulestacks_listAdvancedSecurityObjects due to required query parameter "type"
 warning | Skipping LocalRulestacks_listSecurityServices due to required query parameter "type"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/PaloAltoNetworks.Cloudngfw/createProductSerialNumber': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/PaloAltoNetworks.Cloudngfw/listCloudManagerTenants': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/PaloAltoNetworks.Cloudngfw/listProductSerialNumberStatus': Unable to find type segments
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/PaloAltoNetworks.Cloudngfw/listSupportInfo': Unable to find type segments

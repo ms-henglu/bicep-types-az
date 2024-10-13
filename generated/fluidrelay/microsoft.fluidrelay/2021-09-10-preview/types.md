@@ -23,6 +23,17 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): System meta data for this resource, including creation and modification information.
 * **type**: 'Microsoft.FluidRelay/fluidRelayServers/fluidRelayContainers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getKeys (Microsoft.FluidRelay/fluidRelayServers@2021-09-10-preview)
+* **Resource**: Microsoft.FluidRelay/fluidRelayServers
+* **ApiVersion**: 2021-09-10-preview
+* **Output**: [FluidRelayServerKeys](#fluidrelayserverkeys)
+
+## Function regenerateKey (Microsoft.FluidRelay/fluidRelayServers@2021-09-10-preview)
+* **Resource**: Microsoft.FluidRelay/fluidRelayServers
+* **ApiVersion**: 2021-09-10-preview
+* **Input**: [RegenerateKeyRequest](#regeneratekeyrequest)
+* **Output**: [FluidRelayServerKeys](#fluidrelayserverkeys)
+
 ## FluidRelayContainerProperties
 ### Properties
 * **frsContainerId**: string (ReadOnly): The frsContainerId for this container
@@ -33,6 +44,16 @@
 ### Properties
 * **ordererEndpoints**: string[] (ReadOnly): The Fluid Relay Orderer endpoints.
 * **storageEndpoints**: string[] (ReadOnly): The Fluid Relay storage endpoints.
+
+## FluidRelayServerKeys
+### Properties
+* **key1**: string (ReadOnly): The primary key for this server
+* **key2**: string (ReadOnly): The secondary key for this server
+
+## FluidRelayServerKeys
+### Properties
+* **key1**: string (ReadOnly): The primary key for this server
+* **key2**: string (ReadOnly): The secondary key for this server
 
 ## FluidRelayServerProperties
 ### Properties
@@ -51,6 +72,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentitiesValue](#userassignedidentitiesvalue)
+
+## RegenerateKeyRequest
+### Properties
+* **keyName**: 'key1' | 'key2' (Required): The key to regenerate.
 
 ## SystemData
 ### Properties

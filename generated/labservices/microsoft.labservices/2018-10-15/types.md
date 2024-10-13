@@ -66,6 +66,53 @@
 * **tags**: [ResourceTags](#resourcetags): The tags of the resource.
 * **type**: 'Microsoft.LabServices/labaccounts/labs/users' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addUsers (Microsoft.LabServices/labaccounts/labs@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs
+* **ApiVersion**: 2018-10-15
+* **Input**: [AddUsersPayload](#adduserspayload)
+
+## Function claim (Microsoft.LabServices/labaccounts/labs/environmentsettings/environments@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings/environments
+* **ApiVersion**: 2018-10-15
+
+## Function claimAny (Microsoft.LabServices/labaccounts/labs/environmentsettings@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings
+* **ApiVersion**: 2018-10-15
+
+## Function createLab (Microsoft.LabServices/labaccounts@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts
+* **ApiVersion**: 2018-10-15
+* **Input**: [CreateLabProperties](#createlabproperties)
+
+## Function getEnvironment (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [EnvironmentOperationsPayload](#environmentoperationspayload)
+* **Output**: [GetEnvironmentResponse](#getenvironmentresponse)
+
+## Function getOperationBatchStatus (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [OperationBatchStatusPayload](#operationbatchstatuspayload)
+* **Output**: [OperationBatchStatusResponse](#operationbatchstatusresponse)
+
+## Function getOperationStatus (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [OperationStatusPayload](#operationstatuspayload)
+* **Output**: [OperationStatusResponse](#operationstatusresponse)
+
+## Function getPersonalPreferences (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [PersonalPreferencesOperationsPayload](#personalpreferencesoperationspayload)
+* **Output**: [GetPersonalPreferencesResponse](#getpersonalpreferencesresponse)
+
+## Function getRegionalAvailability (Microsoft.LabServices/labaccounts@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts
+* **ApiVersion**: 2018-10-15
+* **Output**: [GetRegionalAvailabilityResponse](#getregionalavailabilityresponse)
+
 ## Function listEnvironments (Microsoft.LabServices/users@2018-10-15)
 * **Resource**: Microsoft.LabServices/users
 * **ApiVersion**: 2018-10-15
@@ -76,6 +123,73 @@
 * **Resource**: Microsoft.LabServices/users
 * **ApiVersion**: 2018-10-15
 * **Output**: [ListLabsResponse](#listlabsresponse)
+
+## Function publish (Microsoft.LabServices/labaccounts/labs/environmentsettings@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings
+* **ApiVersion**: 2018-10-15
+* **Input**: [PublishPayload](#publishpayload)
+
+## Function register (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [RegisterPayload](#registerpayload)
+
+## Function register (Microsoft.LabServices/labaccounts/labs@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs
+* **ApiVersion**: 2018-10-15
+
+## Function resetPassword (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [ResetPasswordPayload](#resetpasswordpayload)
+
+## Function resetPassword (Microsoft.LabServices/labaccounts/labs/environmentsettings/environments@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings/environments
+* **ApiVersion**: 2018-10-15
+* **Input**: [ResetPasswordPayload](#resetpasswordpayload)
+
+## Function start (Microsoft.LabServices/labaccounts/labs/environmentsettings@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings
+* **ApiVersion**: 2018-10-15
+
+## Function start (Microsoft.LabServices/labaccounts/labs/environmentsettings/environments@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings/environments
+* **ApiVersion**: 2018-10-15
+
+## Function startEnvironment (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [EnvironmentOperationsPayload](#environmentoperationspayload)
+
+## Function stop (Microsoft.LabServices/labaccounts/labs/environmentsettings@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings
+* **ApiVersion**: 2018-10-15
+
+## Function stop (Microsoft.LabServices/labaccounts/labs/environmentsettings/environments@2018-10-15)
+* **Resource**: Microsoft.LabServices/labaccounts/labs/environmentsettings/environments
+* **ApiVersion**: 2018-10-15
+
+## Function stopEnvironment (Microsoft.LabServices/users@2018-10-15)
+* **Resource**: Microsoft.LabServices/users
+* **ApiVersion**: 2018-10-15
+* **Input**: [EnvironmentOperationsPayload](#environmentoperationspayload)
+
+## AddUsersPayload
+### Properties
+* **emailAddresses**: string[] (Required): List of user emails addresses to add to the lab.
+
+## CreateLabProperties
+### Properties
+* **environmentSettingCreationParameters**: [EnvironmentSettingCreationParameters](#environmentsettingcreationparameters): Settings related to creating an environment setting
+* **labCreationParameters**: [LabCreationParameters](#labcreationparameters) (Required): Settings related to creating a lab
+* **location**: string: The location of the resource
+* **name**: string (Required): The name of the resource
+* **tags**: [CreateLabPropertiesTags](#createlabpropertiestags): The tags of the resource.
+
+## CreateLabPropertiesTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## EnvironmentDetails
 ### Properties
@@ -88,6 +202,18 @@
 * **provisioningState**: string (ReadOnly): The provisioning state of the environment. This also includes LabIsFull and NotYetProvisioned status.
 * **totalUsage**: string (ReadOnly): How long the environment has been used by a lab user
 * **virtualMachineDetails**: [VirtualMachineDetails](#virtualmachinedetails) (ReadOnly): Details of backing DTL virtual machine with compute and network details.
+
+## EnvironmentOperationsPayload
+### Properties
+* **environmentId**: string (Required): The resourceId of the environment
+
+## EnvironmentOperationsPayload
+### Properties
+* **environmentId**: string (Required): The resourceId of the environment
+
+## EnvironmentOperationsPayload
+### Properties
+* **environmentId**: string (Required): The resourceId of the environment
 
 ## EnvironmentProperties
 ### Properties
@@ -103,6 +229,10 @@
 * **resourceSets**: [ResourceSet](#resourceset): The set of a VM and the setting id it was created for
 * **totalUsage**: string (ReadOnly): How long the environment has been used by a lab user
 * **uniqueIdentifier**: string: The unique immutable identifier of a resource (Guid).
+
+## EnvironmentSettingCreationParameters
+### Properties
+* **resourceSettingCreationParameters**: [ResourceSettingCreationParameters](#resourcesettingcreationparameters) (Required): The resource specific settings
 
 ## EnvironmentSettingProperties
 ### Properties
@@ -148,6 +278,19 @@
 * **sku**: string: The SKU of the gallery image.
 * **version**: string: The version of the gallery image.
 
+## GetEnvironmentResponse
+### Properties
+* **environment**: [EnvironmentDetails](#environmentdetails) (ReadOnly): Details of the environment
+
+## GetPersonalPreferencesResponse
+### Properties
+* **favoriteLabResourceIds**: string[]: Array of favorite lab resource ids
+* **id**: string: Id to be used by the cache orchestrator
+
+## GetRegionalAvailabilityResponse
+### Properties
+* **regionalAvailability**: [RegionalAvailability](#regionalavailability)[]: Availability information for different size categories per region
+
 ## LabAccountProperties
 ### Properties
 * **enabledRegionSelection**: bool: Represents if region selection is enabled
@@ -155,6 +298,10 @@
 * **provisioningState**: string: The provisioning status of the resource.
 * **sizeConfiguration**: [SizeConfigurationProperties](#sizeconfigurationproperties) (ReadOnly): Represents the size configuration under the lab account
 * **uniqueIdentifier**: string: The unique immutable identifier of a resource (Guid).
+
+## LabCreationParameters
+### Properties
+* **maxUsersInLab**: int: Maximum number of users allowed in the lab.
 
 ## LabDetails
 ### Properties
@@ -205,6 +352,37 @@
 * **sshAuthority**: string (ReadOnly): Connection information for Linux
 * **username**: string (ReadOnly): Username of the VM
 
+## OperationBatchStatusPayload
+### Properties
+* **urls**: string[] (Required): The operation url of long running operation
+
+## OperationBatchStatusResponse
+### Properties
+* **items**: [OperationBatchStatusResponseItem](#operationbatchstatusresponseitem)[] (ReadOnly): Gets a collection of items that contain the operation url and status.
+
+## OperationBatchStatusResponseItem
+### Properties
+* **operationUrl**: string (ReadOnly): status of the long running operation for an environment
+* **status**: string (ReadOnly): status of the long running operation for an environment
+
+## OperationStatusPayload
+### Properties
+* **operationUrl**: string (Required): The operation url of long running operation
+
+## OperationStatusResponse
+### Properties
+* **status**: string (ReadOnly): status of the long running operation for an environment
+
+## PersonalPreferencesOperationsPayload
+### Properties
+* **addRemove**: 'Add' | 'Remove' | string: Enum indicating if user is adding or removing a favorite lab
+* **labAccountResourceId**: string: Resource Id of the lab account
+* **labResourceId**: string: Resource Id of the lab to add/remove from the favorites list
+
+## PublishPayload
+### Properties
+* **useExistingImage**: bool: Whether to use existing VM custom image when publishing.
+
 ## ReferenceVm
 ### Properties
 * **password**: string: The password of the virtual machine. This will be set to null in GET resource API
@@ -212,10 +390,44 @@
 * **vmResourceId**: string (ReadOnly): VM resource Id for the environment
 * **vmStateDetails**: [VmStateDetails](#vmstatedetails) (ReadOnly): The state details for the reference virtual machine.
 
+## ReferenceVmCreationParameters
+### Properties
+* **password**: string (Required): The password of the virtual machine.
+* **userName**: string (Required): The username of the virtual machine
+
+## RegionalAvailability
+### Properties
+* **region**: string: Corresponding region
+* **sizeAvailabilities**: [SizeAvailability](#sizeavailability)[]: List of all the size information for the region
+
+## RegisterPayload
+### Properties
+* **registrationCode**: string: The registration code of the lab.
+
+## ResetPasswordPayload
+### Properties
+* **environmentId**: string (Required): The resourceId of the environment
+* **password**: string: The password to assign to the user specified in
+* **username**: string: The username for which the password will be reset.
+
+## ResetPasswordPayload
+### Properties
+* **environmentId**: string (Required): The resourceId of the environment
+* **password**: string: The password to assign to the user specified in
+* **username**: string: The username for which the password will be reset.
+
 ## ResourceSet
 ### Properties
 * **resourceSettingId**: string: resourceSettingId for the environment
 * **vmResourceId**: string: VM resource Id for the environment
+
+## ResourceSettingCreationParameters
+### Properties
+* **galleryImageResourceId**: string (Required): The resource id of the gallery image used for creating the virtual machine
+* **location**: string: The location where the virtual machine will live
+* **name**: string: The name of the resource setting
+* **referenceVmCreationParameters**: [ReferenceVmCreationParameters](#referencevmcreationparameters) (Required): Creation parameters for Reference Vm
+* **size**: 'Basic' | 'Performance' | 'Standard' | string: The size of the virtual machine
 
 ## ResourceSettings
 ### Properties
@@ -255,6 +467,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SizeAvailability
+### Properties
+* **isAvailable**: bool: Whether or not this size category is available
+* **sizeCategory**: 'Basic' | 'Performance' | 'Standard' | string: The category of the size (Basic, Standard, Performance).
 
 ## SizeConfigurationProperties
 ### Properties

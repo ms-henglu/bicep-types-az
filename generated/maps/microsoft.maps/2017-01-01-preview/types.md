@@ -17,6 +17,12 @@
 * **ApiVersion**: 2017-01-01-preview
 * **Output**: [MapsAccountKeys](#mapsaccountkeys)
 
+## Function regenerateKey (Microsoft.Maps/accounts@2017-01-01-preview)
+* **Resource**: Microsoft.Maps/accounts
+* **ApiVersion**: 2017-01-01-preview
+* **Input**: [MapsKeySpecification](#mapskeyspecification)
+* **Output**: [MapsAccountKeys](#mapsaccountkeys)
+
 ## MapsAccountCreateParametersTags
 ### Properties
 ### Additional Properties
@@ -28,9 +34,19 @@
 * **primaryKey**: string (ReadOnly): The primary key for accessing the Maps REST APIs.
 * **secondaryKey**: string (ReadOnly): The secondary key for accessing the Maps REST APIs.
 
+## MapsAccountKeys
+### Properties
+* **id**: string (ReadOnly): The full Azure resource identifier of the Maps Account.
+* **primaryKey**: string (ReadOnly): The primary key for accessing the Maps REST APIs.
+* **secondaryKey**: string (ReadOnly): The secondary key for accessing the Maps REST APIs.
+
 ## MapsAccountProperties
 ### Properties
 * **x-ms-client-id**: string: A unique identifier for the maps account
+
+## MapsKeySpecification
+### Properties
+* **keyType**: 'primary' | 'secondary' | string (Required): Whether the operation refers to the primary or secondary key.
 
 ## Sku
 ### Properties

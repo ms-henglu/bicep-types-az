@@ -30,10 +30,29 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Help/troubleshooters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function continue (Microsoft.Help/troubleshooters@2023-09-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2023-09-01-preview
+* **Input**: [ContinueRequestBody](#continuerequestbody)
+
+## Function end (Microsoft.Help/troubleshooters@2023-09-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2023-09-01-preview
+
+## Function restart (Microsoft.Help/troubleshooters@2023-09-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2023-09-01-preview
+* **Output**: [RestartTroubleshooterResponse](#restarttroubleshooterresponse)
+
 ## AutomatedCheckResult
 ### Properties
 * **result**: string: Insight Article Content
 * **type**: 'Error' | 'Information' | 'Success' | 'Warning' | string: Type of Result.
+
+## ContinueRequestBody
+### Properties
+* **responses**: [TroubleshooterResponse](#troubleshooterresponse)[]
+* **stepId**: string: Unique id of the result.
 
 ## Diagnostic
 ### Properties
@@ -131,6 +150,10 @@
 * **maxLength**: int: Max text input (open Ended Text).
 * **regex**: string: Regex used for the input validation.
 * **validationErrorMessage**: string: Validation Error Message.
+
+## RestartTroubleshooterResponse
+### Properties
+* **troubleshooterResourceName**: string (ReadOnly): Updated TroubleshooterResource Name .
 
 ## SearchResult
 ### Properties
@@ -232,6 +255,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TroubleshooterResponse
+### Properties
+* **questionId**: string: id of the question.
+* **questionType**: 'Dropdown' | 'MultiLineInfoBox' | 'RadioButton' | 'TextInput' | string: Type of Question
+* **response**: string: Response key for SingleInput. For Multi-line test/open ended question it is free form text
 
 ## Video
 ### Properties

@@ -62,6 +62,44 @@
 * **ApiVersion**: 2021-03-01
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+
+## Function stop (Microsoft.ContainerService/managedClusters@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2021-03-01
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2021-03-01)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2021-03-01
+
 ## AccessProfile
 ### Properties
 * **kubeConfig**: any: Base64-encoded Kubernetes configuration file.
@@ -80,6 +118,15 @@
 * **details**: [CloudErrorBody](#clouderrorbody)[]: A list of additional details about the error.
 * **message**: string: A message describing the error, intended to be suitable for display in a user interface.
 * **target**: string: The target of the particular error. For example, the name of the property in error.
+
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): exit code of the command
+* **finishedAt**: string (ReadOnly): time when the command finished.
+* **logs**: string (ReadOnly): command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): explain why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): time when the command started.
 
 ## Components1Umhcm8SchemasManagedclusteridentityPropertiesUserassignedidentitiesAdditionalproperties
 ### Properties
@@ -165,6 +212,16 @@
 ### Properties
 * **notAllowedTime**: [TimeSpan](#timespan)[]: Time slots on which upgrade is not allowed.
 * **timeInWeek**: [TimeInWeek](#timeinweek)[]: Weekday time slots allowed to upgrade.
+
+## ManagedClusterAADProfile
+### Properties
+* **adminGroupObjectIDs**: string[]: AAD group object IDs that will have admin role of the cluster.
+* **clientAppID**: string: The client AAD application ID.
+* **enableAzureRBAC**: bool: Whether to enable Azure RBAC for Kubernetes authorization.
+* **managed**: bool: Whether to enable managed AAD.
+* **serverAppID**: string: The server AAD application ID.
+* **serverAppSecret**: string: The server AAD application secret.
+* **tenantID**: string: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment subscription.
 
 ## ManagedClusterAADProfile
 ### Properties
@@ -446,6 +503,11 @@
 * **clientId**: string (Required): The ID for the service principal.
 * **secret**: string: The secret password associated with the service principal in plain text.
 
+## ManagedClusterServicePrincipalProfile
+### Properties
+* **clientId**: string (Required): The ID for the service principal.
+* **secret**: string: The secret password associated with the service principal in plain text.
+
 ## ManagedClusterSKU
 ### Properties
 * **name**: 'Basic' | string: Name of a managed cluster SKU.
@@ -481,6 +543,24 @@
 * **requiredMembers**: string[]: RequiredMembers of the resource
 * **type**: string: The resource type.
 
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
+
+## PrivateLinkResource
+### Properties
+* **groupId**: string: The group ID of the resource.
+* **id**: string: The ID of the private link resource.
+* **name**: string: The name of the private link resource.
+* **privateLinkServiceID**: string (ReadOnly): The private link service ID of the resource, this field is exposed only to NRP internally.
+* **requiredMembers**: string[]: RequiredMembers of the resource
+* **type**: string: The resource type.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **description**: string: The private link service connection description.
@@ -499,6 +579,17 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): command to run.
+* **context**: string: base64 encoded zip file, contains files required by the command
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## SysctlConfig
 ### Properties

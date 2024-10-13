@@ -87,6 +87,24 @@
 * **ApiVersion**: 2015-08-01
 * **Output**: [ResourceListKeys](#resourcelistkeys)
 
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2015-08-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
+* **ApiVersion**: 2015-08-01
+* **Input**: [RegenerateKeysParameters](#regeneratekeysparameters)
+* **Output**: [ResourceListKeys](#resourcelistkeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/queues/authorizationRules@2015-08-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/queues/authorizationRules
+* **ApiVersion**: 2015-08-01
+* **Input**: [RegenerateKeysParameters](#regeneratekeysparameters)
+* **Output**: [ResourceListKeys](#resourcelistkeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/topics/authorizationRules@2015-08-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
+* **ApiVersion**: 2015-08-01
+* **Input**: [RegenerateKeysParameters](#regeneratekeysparameters)
+* **Output**: [ResourceListKeys](#resourcelistkeys)
+
 ## MessageCountDetails
 ### Properties
 * **activeMessageCount**: int (ReadOnly): Number of active messages in the queue, topic, or subscription.
@@ -134,6 +152,42 @@
 * **status**: 'Active' | 'Creating' | 'Deleting' | 'Disabled' | 'ReceiveDisabled' | 'Renaming' | 'Restoring' | 'SendDisabled' | 'Unknown': Enumerates the possible values for the status of a messaging entity.
 * **supportOrdering**: bool: A value that indicates whether the queue supports ordering.
 * **updatedAt**: string (ReadOnly): The exact time the message was updated.
+
+## RegenerateKeysParameters
+### Properties
+* **Policykey**: 'PrimaryKey' | 'SecondaryKey': Key that needs to be regenerated.
+
+## RegenerateKeysParameters
+### Properties
+* **Policykey**: 'PrimaryKey' | 'SecondaryKey': Key that needs to be regenerated.
+
+## RegenerateKeysParameters
+### Properties
+* **Policykey**: 'PrimaryKey' | 'SecondaryKey': Key that needs to be regenerated.
+
+## ResourceListKeys
+### Properties
+* **keyName**: string: A string that describes the authorization rule.
+* **primaryConnectionString**: string: Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string: Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## ResourceListKeys
+### Properties
+* **keyName**: string: A string that describes the authorization rule.
+* **primaryConnectionString**: string: Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string: Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## ResourceListKeys
+### Properties
+* **keyName**: string: A string that describes the authorization rule.
+* **primaryConnectionString**: string: Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string: Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string: A base64-encoded 256-bit primary key for signing and validating the SAS token.
 
 ## ResourceListKeys
 ### Properties

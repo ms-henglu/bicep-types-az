@@ -26592,11 +26592,162 @@
   },
   {
     "$type": "ObjectType",
+    "name": "WebAppCollection",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/1700"
+        },
+        "flags": 1,
+        "description": "Collection of resources."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Link to next page of resources."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Site",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/359"
+        },
+        "flags": 0,
+        "description": "Site resource specific properties"
+      },
+      "identity": {
+        "type": {
+          "$ref": "#/248"
+        },
+        "flags": 0,
+        "description": "Managed service identity."
+      },
+      "extendedLocation": {
+        "type": {
+          "$ref": "#/104"
+        },
+        "flags": 0,
+        "description": "Extended Location."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Resource Location."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/1699"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1698"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "changeVirtualNetwork",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1697"
+    },
+    "input": {
+      "$ref": "#/16"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "testUpgradeAvailableNotification",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upgrade",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reboot",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resume",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1697"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "suspend",
+    "resourceType": "Microsoft.Web/hostingEnvironments",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1697"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "HybridConnectionKey",
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/1698"
+          "$ref": "#/1708"
         },
         "flags": 0,
         "description": "HybridConnectionKey resource specific properties"
@@ -26657,8 +26808,20 @@
     "resourceType": "Microsoft.Web/serverfarms/hybridConnectionNamespaces/relays",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1697"
+      "$ref": "#/1707"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restartSites",
+    "resourceType": "Microsoft.Web/serverfarms",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reboot",
+    "resourceType": "Microsoft.Web/serverfarms/workers",
+    "apiVersion": "2022-09-01"
   },
   {
     "$type": "ObjectType",
@@ -26666,7 +26829,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/1702"
+          "$ref": "#/1714"
         },
         "flags": 1,
         "description": "Collection of resources."
@@ -26696,7 +26859,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1701"
+      "$ref": "#/1713"
     }
   },
   {
@@ -26705,7 +26868,939 @@
     "resourceType": "Microsoft.Web/containerApps",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1700"
+      "$ref": "#/1712"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "activate",
+    "resourceType": "Microsoft.Web/containerApps/revisions",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deactivate",
+    "resourceType": "Microsoft.Web/containerApps/revisions",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.Web/containerApps/revisions",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticAnalysis",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1720"
+        },
+        "flags": 0,
+        "description": "DiagnosticAnalysis resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticAnalysisProperties",
+    "properties": {
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the period"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the period"
+      },
+      "abnormalTimePeriods": {
+        "type": {
+          "$ref": "#/1746"
+        },
+        "flags": 0,
+        "description": "List of time periods."
+      },
+      "payload": {
+        "type": {
+          "$ref": "#/1758"
+        },
+        "flags": 0,
+        "description": "Data by each detector"
+      },
+      "nonCorrelatedDetectors": {
+        "type": {
+          "$ref": "#/1759"
+        },
+        "flags": 0,
+        "description": "Data by each detector for detectors that did not corelate"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AbnormalTimePeriod",
+    "properties": {
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the downtime"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the downtime"
+      },
+      "events": {
+        "type": {
+          "$ref": "#/1744"
+        },
+        "flags": 0,
+        "description": "List of Possible Cause of downtime"
+      },
+      "solutions": {
+        "type": {
+          "$ref": "#/1745"
+        },
+        "flags": 0,
+        "description": "List of proposed solutions"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DetectorAbnormalTimePeriod",
+    "properties": {
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the correlated event"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the correlated event"
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Message describing the event"
+      },
+      "source": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Represents the name of the Detector"
+      },
+      "priority": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Represents the rank of the Detector"
+      },
+      "metaData": {
+        "type": {
+          "$ref": "#/1724"
+        },
+        "flags": 0,
+        "description": "Downtime metadata"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1733"
+        },
+        "flags": 0,
+        "description": "Represents the type of the Detector"
+      },
+      "solutions": {
+        "type": {
+          "$ref": "#/1743"
+        },
+        "flags": 0,
+        "description": "List of proposed solutions"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1723"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "ServiceIncident"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AppDeployment"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AppCrash"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RuntimeIssueDetected"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AseDeployment"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "UserIssue"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PlatformIssue"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Other"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1725"
+      },
+      {
+        "$ref": "#/1726"
+      },
+      {
+        "$ref": "#/1727"
+      },
+      {
+        "$ref": "#/1728"
+      },
+      {
+        "$ref": "#/1729"
+      },
+      {
+        "$ref": "#/1730"
+      },
+      {
+        "$ref": "#/1731"
+      },
+      {
+        "$ref": "#/1732"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Solution",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Solution Id."
+      },
+      "displayName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Display Name of the solution"
+      },
+      "order": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Order of the solution."
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Description of the solution"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1738"
+        },
+        "flags": 0,
+        "description": "Type of Solution"
+      },
+      "data": {
+        "type": {
+          "$ref": "#/1740"
+        },
+        "flags": 0,
+        "description": "Solution Data."
+      },
+      "metadata": {
+        "type": {
+          "$ref": "#/1742"
+        },
+        "flags": 0,
+        "description": "Solution Metadata."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "QuickSolution"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "DeepInvestigation"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "BestPractices"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1735"
+      },
+      {
+        "$ref": "#/1736"
+      },
+      {
+        "$ref": "#/1737"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1739"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1741"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1734"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1722"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1734"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1721"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AnalysisData",
+    "properties": {
+      "source": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of the Detector"
+      },
+      "detectorDefinition": {
+        "type": {
+          "$ref": "#/1110"
+        },
+        "flags": 0,
+        "description": "Detector Definition"
+      },
+      "metrics": {
+        "type": {
+          "$ref": "#/1751"
+        },
+        "flags": 0,
+        "description": "Source Metrics"
+      },
+      "data": {
+        "type": {
+          "$ref": "#/1753"
+        },
+        "flags": 0,
+        "description": "Additional Source Data"
+      },
+      "detectorMetaData": {
+        "type": {
+          "$ref": "#/1754"
+        },
+        "flags": 0,
+        "description": "Detector Meta Data"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticMetricSet",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of the metric"
+      },
+      "unit": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Metric's unit"
+      },
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the period"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the period"
+      },
+      "timeGrain": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Presented time grain. Supported grains at the moment are PT1M, PT1H, P1D"
+      },
+      "values": {
+        "type": {
+          "$ref": "#/1750"
+        },
+        "flags": 0,
+        "description": "Collection of metric values for the selected period based on the {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticMetricSample",
+    "properties": {
+      "timestamp": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time at which metric is measured"
+      },
+      "roleInstance": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Role Instance. Null if this counter is not per instance \nThis is returned and should be whichever instance name we desire to be returned\ni.e. CPU and Memory return RDWORKERNAME (LargeDed..._IN_0) \nwhere RDWORKERNAME is Machine name below and RoleInstance name in parenthesis"
+      },
+      "total": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Total value of the metric. If multiple measurements are made this will have sum of all."
+      },
+      "maximum": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Maximum of the metric sampled during the time period"
+      },
+      "minimum": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "Minimum of the metric sampled during the time period"
+      },
+      "isAggregated": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Whether the values are aggregates across all workers or not"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1749"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1748"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1752"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ResponseMetaData",
+    "properties": {
+      "dataSource": {
+        "type": {
+          "$ref": "#/1755"
+        },
+        "flags": 0,
+        "description": "Source of the Data"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DataSource",
+    "properties": {
+      "instructions": {
+        "type": {
+          "$ref": "#/1756"
+        },
+        "flags": 0,
+        "description": "Instructions if any for the data source"
+      },
+      "dataSourceUri": {
+        "type": {
+          "$ref": "#/1757"
+        },
+        "flags": 0,
+        "description": "Datasource Uri Links"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1747"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1110"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/diagnostics/analyses",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1719"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticDetectorResponse",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1762"
+        },
+        "flags": 0,
+        "description": "DiagnosticDetectorResponse resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticDetectorResponseProperties",
+    "properties": {
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the period"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the period"
+      },
+      "issueDetected": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Flag representing Issue was detected."
+      },
+      "detectorDefinition": {
+        "type": {
+          "$ref": "#/1110"
+        },
+        "flags": 0,
+        "description": "Detector's definition"
+      },
+      "metrics": {
+        "type": {
+          "$ref": "#/1763"
+        },
+        "flags": 0,
+        "description": "Metrics provided by the detector"
+      },
+      "abnormalTimePeriods": {
+        "type": {
+          "$ref": "#/1764"
+        },
+        "flags": 0,
+        "description": "List of Correlated events found by the detector"
+      },
+      "data": {
+        "type": {
+          "$ref": "#/1766"
+        },
+        "flags": 0,
+        "description": "Additional Data that detector wants to send."
+      },
+      "responseMetaData": {
+        "type": {
+          "$ref": "#/1754"
+        },
+        "flags": 0,
+        "description": "Meta Data"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1748"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1722"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/24"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1765"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/diagnostics/detectors",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1761"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/slots/diagnostics/analyses",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1719"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/slots/diagnostics/detectors",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1761"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "disable",
+    "resourceType": "Microsoft.Web/recommendations",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "disable",
+    "resourceType": "Microsoft.Web/sites/recommendations",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSitesWorkflowPreviewRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1773"
+        },
+        "flags": 0,
+        "description": "StaticSitesWorkflowPreviewRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSitesWorkflowPreviewRequestProperties",
+    "properties": {
+      "repositoryUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "URL for the repository of the static site."
+      },
+      "branch": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The target branch in the repository."
+      },
+      "buildProperties": {
+        "type": {
+          "$ref": "#/237"
+        },
+        "flags": 0,
+        "description": "Build properties to configure on the repository."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSitesWorkflowPreview",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1775"
+        },
+        "flags": 0,
+        "description": "StaticSitesWorkflowPreview resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSitesWorkflowPreviewProperties",
+    "properties": {
+      "path": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The path for the workflow file to be generated"
+      },
+      "contents": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The contents for the workflow file to be generated"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "previewStaticSiteWorkflowFile",
+    "resourceType": "Microsoft.Web/locations",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1774"
+    },
+    "input": {
+      "$ref": "#/1772"
     }
   },
   {
@@ -26714,7 +27809,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/1707"
+          "$ref": "#/1780"
         },
         "flags": 1,
         "description": "Collection of resources."
@@ -26734,7 +27829,7 @@
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/1706"
+          "$ref": "#/1779"
         },
         "flags": 0,
         "description": "StaticSiteUserARMResource resource specific properties"
@@ -26806,7 +27901,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1705"
+      "$ref": "#/1778"
     }
   },
   {
@@ -26815,7 +27910,57 @@
     "resourceType": "Microsoft.Web/staticSites/authproviders",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1704"
+      "$ref": "#/1777"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DatabaseConnection",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/294"
+        },
+        "flags": 0,
+        "description": "DatabaseConnection resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "show",
+    "resourceType": "Microsoft.Web/staticSites/builds/databaseConnections",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1782"
     }
   },
   {
@@ -26824,7 +27969,7 @@
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/1710"
+          "$ref": "#/1785"
         },
         "flags": 0,
         "description": "Settings."
@@ -26873,7 +28018,7 @@
     "resourceType": "Microsoft.Web/staticSites/builds",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
   },
   {
@@ -26882,8 +28027,295 @@
     "resourceType": "Microsoft.Web/staticSites/builds",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DatabaseConnectionCollection",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/1789"
+        },
+        "flags": 1,
+        "description": "Collection of resources."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Link to next page of resources."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1782"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "showDatabaseConnections",
+    "resourceType": "Microsoft.Web/staticSites/builds",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1788"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteZipDeploymentARMResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1792"
+        },
+        "flags": 0,
+        "description": "Core resource properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteZipDeployment",
+    "properties": {
+      "appZipUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "URL for the zipped app content"
+      },
+      "apiZipUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "URL for the zipped api content"
+      },
+      "deploymentTitle": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A title to label the deployment"
+      },
+      "provider": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The provider submitting this deployment"
+      },
+      "functionLanguage": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The language of the api content, if it exists"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "zipdeploy",
+    "resourceType": "Microsoft.Web/staticSites/builds",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1791"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteUserInvitationRequestResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1795"
+        },
+        "flags": 0,
+        "description": "StaticSiteUserInvitationRequestResource resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteUserInvitationRequestResourceProperties",
+    "properties": {
+      "domain": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The domain name for the static site custom domain."
+      },
+      "provider": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The identity provider for the static site user."
+      },
+      "userDetails": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The user id for the static site user."
+      },
+      "roles": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The roles for the static site user, in free-form string format"
+      },
+      "numHoursToExpiration": {
+        "type": {
+          "$ref": "#/22"
+        },
+        "flags": 0,
+        "description": "The number of hours the sas token stays valid"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteUserInvitationResponseResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1797"
+        },
+        "flags": 0,
+        "description": "StaticSiteUserInvitationResponseResource resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteUserInvitationResponseResourceProperties",
+    "properties": {
+      "expiresOn": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The expiration time of the invitation"
+      },
+      "invitationUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The url for the invitation link"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "createUserInvitation",
+    "resourceType": "Microsoft.Web/staticSites",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1796"
+    },
+    "input": {
+      "$ref": "#/1794"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "detach",
+    "resourceType": "Microsoft.Web/staticSites",
+    "apiVersion": "2022-09-01"
   },
   {
     "$type": "ResourceFunctionType",
@@ -26891,7 +28323,7 @@
     "resourceType": "Microsoft.Web/staticSites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
   },
   {
@@ -26900,7 +28332,7 @@
     "properties": {
       "properties": {
         "type": {
-          "$ref": "#/1715"
+          "$ref": "#/1802"
         },
         "flags": 0,
         "description": "List of string resources."
@@ -26947,7 +28379,7 @@
     "resourceType": "Microsoft.Web/staticSites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1714"
+      "$ref": "#/1801"
     }
   },
   {
@@ -26956,7 +28388,7 @@
     "resourceType": "Microsoft.Web/staticSites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
   },
   {
@@ -26965,7 +28397,255 @@
     "resourceType": "Microsoft.Web/staticSites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteResetPropertiesARMResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1807"
+        },
+        "flags": 0,
+        "description": "StaticSiteResetPropertiesARMResource resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteResetPropertiesARMResourceProperties",
+    "properties": {
+      "repositoryToken": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The token which proves admin privileges to the repository."
+      },
+      "shouldUpdateRepository": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Determines whether the repository should be updated with the new properties."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetapikey",
+    "resourceType": "Microsoft.Web/staticSites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1806"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "showDatabaseConnections",
+    "resourceType": "Microsoft.Web/staticSites",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1788"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "zipdeploy",
+    "resourceType": "Microsoft.Web/staticSites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1791"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteCustomDomainRequestPropertiesARMResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1812"
+        },
+        "flags": 0,
+        "description": "StaticSiteCustomDomainRequestPropertiesARMResource resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteCustomDomainRequestPropertiesARMResourceProperties",
+    "properties": {
+      "validationMethod": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Validation method for adding a custom domain"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "validate",
+    "resourceType": "Microsoft.Web/staticSites/customDomains",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1811"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "show",
+    "resourceType": "Microsoft.Web/staticSites/databaseConnections",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1782"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StaticSiteLinkedBackendARMResource",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/350"
+        },
+        "flags": 0,
+        "description": "StaticSiteLinkedBackendARMResource resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "validate",
+    "resourceType": "Microsoft.Web/staticSites/linkedBackends",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1815"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "validate",
+    "resourceType": "Microsoft.Web/staticSites/builds/linkedBackends",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1815"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CsmSlotEntity",
+    "properties": {
+      "targetSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Destination deployment slot during swap operation."
+      },
+      "preserveVnet": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 1,
+        "description": "<code>true</code> to preserve Virtual Network to the slot during swap; otherwise, <code>false</code>."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "applySlotConfig",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1818"
     }
   },
   {
@@ -27052,32 +28732,344 @@
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/backups",
+    "name": "backup",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1720"
+      "$ref": "#/1821"
     },
     "input": {
-      "$ref": "#/1719"
+      "$ref": "#/1820"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "list",
-    "resourceType": "Microsoft.Web/sites/config",
+    "name": "containerlogs",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RestoreRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1825"
+        },
+        "flags": 0,
+        "description": "RestoreRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RestoreRequestProperties",
+    "properties": {
+      "storageAccountUrl": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "SAS URL to the container."
+      },
+      "blobName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of a blob which contains the backup."
+      },
+      "overwrite": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 1,
+        "description": "<code>true</code> if the restore operation can overwrite target app; otherwise, <code>false</code>. <code>true</code> is needed if trying to restore over an existing app."
+      },
+      "siteName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of an app."
+      },
+      "databases": {
+        "type": {
+          "$ref": "#/1826"
+        },
+        "flags": 0,
+        "description": "Collection of databases which should be restored. This list has to match the list of databases included in the backup."
+      },
+      "ignoreConflictingHostNames": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Changes a logic when restoring an app with custom domains. <code>true</code> to remove custom domains automatically. If <code>false</code>, custom domains are added to \nthe app's object when it is being restored, but that might fail due to conflicts during the operation."
+      },
+      "ignoreDatabases": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Ignore the databases and only restore the site content"
+      },
+      "appServicePlan": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specify app service plan that will own restored site."
+      },
+      "operationType": {
+        "type": {
+          "$ref": "#/1832"
+        },
+        "flags": 0,
+        "description": "Operation type."
+      },
+      "adjustConnectionStrings": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "<code>true</code> if SiteConfig.ConnectionStrings should be set in new app; otherwise, <code>false</code>."
+      },
+      "hostingEnvironment": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "App Service Environment name, if needed (only when restoring an app to an App Service Environment)."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/632"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Default"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Clone"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Relocation"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Snapshot"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "CloudFS"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1827"
+      },
+      {
+        "$ref": "#/1828"
+      },
+      {
+        "$ref": "#/1829"
+      },
+      {
+        "$ref": "#/1830"
+      },
+      {
+        "$ref": "#/1831"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "discoverbackup",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1824"
+    },
+    "input": {
+      "$ref": "#/1824"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteCloneability",
+    "properties": {
+      "result": {
+        "type": {
+          "$ref": "#/1838"
+        },
+        "flags": 0,
+        "description": "Name of app."
+      },
+      "blockingFeatures": {
+        "type": {
+          "$ref": "#/1840"
+        },
+        "flags": 0,
+        "description": "List of features enabled on app that prevent cloning."
+      },
+      "unsupportedFeatures": {
+        "type": {
+          "$ref": "#/1841"
+        },
+        "flags": 0,
+        "description": "List of features enabled on app that are non-blocking but cannot be cloned. The app can still be cloned\nbut the features in this list will not be set up on cloned app."
+      },
+      "blockingCharacteristics": {
+        "type": {
+          "$ref": "#/1842"
+        },
+        "flags": 0,
+        "description": "List of blocking application characteristics."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Cloneable"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PartiallyCloneable"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotCloneable"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1835"
+      },
+      {
+        "$ref": "#/1836"
+      },
+      {
+        "$ref": "#/1837"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteCloneabilityCriterion",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of criterion."
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Description of criterion."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1839"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1839"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1839"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listkeys",
-    "resourceType": "Microsoft.Web/sites/functions",
+    "name": "iscloneable",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1834"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupItemCollection",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/1845"
+        },
+        "flags": 1,
+        "description": "Collection of resources."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Link to next page of resources."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1821"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listbackups",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1844"
     }
   },
   {
@@ -27102,72 +29094,507 @@
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listsecrets",
-    "resourceType": "Microsoft.Web/sites/functions",
+    "name": "listsyncfunctiontriggerstatus",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1724"
+      "$ref": "#/1847"
     }
   },
   {
     "$type": "ObjectType",
-    "name": "HostKeys",
+    "name": "MigrateMySqlRequest",
     "properties": {
-      "masterKey": {
+      "properties": {
+        "type": {
+          "$ref": "#/1850"
+        },
+        "flags": 0,
+        "description": "MigrateMySqlRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
         "type": {
           "$ref": "#/0"
         },
         "flags": 0,
-        "description": "Secret key."
+        "description": "Kind of resource."
       },
-      "functionKeys": {
+      "type": {
         "type": {
-          "$ref": "#/1727"
+          "$ref": "#/0"
         },
-        "flags": 0,
-        "description": "Host level function keys."
-      },
-      "systemKeys": {
-        "type": {
-          "$ref": "#/1728"
-        },
-        "flags": 0,
-        "description": "System keys."
+        "flags": 2,
+        "description": "Resource type."
       }
     }
   },
   {
     "$type": "ObjectType",
-    "name": "HostKeysFunctionKeys",
-    "properties": {},
-    "additionalProperties": {
-      "$ref": "#/0"
+    "name": "MigrateMySqlRequestProperties",
+    "properties": {
+      "connectionString": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Connection string to the remote MySQL database."
+      },
+      "migrationType": {
+        "type": {
+          "$ref": "#/1853"
+        },
+        "flags": 1,
+        "description": "The type of migration operation to be done"
+      }
     }
   },
   {
+    "$type": "StringLiteralType",
+    "value": "LocalToRemote"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RemoteToLocal"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1851"
+      },
+      {
+        "$ref": "#/1852"
+      }
+    ]
+  },
+  {
     "$type": "ObjectType",
-    "name": "HostKeysSystemKeys",
-    "properties": {},
-    "additionalProperties": {
-      "$ref": "#/0"
+    "name": "Operation",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Operation ID."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Operation name."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/1860"
+        },
+        "flags": 0,
+        "description": "The current status of the operation."
+      },
+      "errors": {
+        "type": {
+          "$ref": "#/1861"
+        },
+        "flags": 0,
+        "description": "Any errors associate with the operation."
+      },
+      "createdTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation has started."
+      },
+      "modifiedTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation has been updated."
+      },
+      "expirationTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Time when operation will expire."
+      },
+      "geoMasterOperationId": {
+        "type": {
+          "$ref": "#/499"
+        },
+        "flags": 0,
+        "description": "Applicable only for stamp operation ids."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "InProgress"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "TimedOut"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Created"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1855"
+      },
+      {
+        "$ref": "#/1856"
+      },
+      {
+        "$ref": "#/1857"
+      },
+      {
+        "$ref": "#/1858"
+      },
+      {
+        "$ref": "#/1859"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/244"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listkeys",
-    "resourceType": "Microsoft.Web/sites/host",
+    "name": "migratemysql",
+    "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1726"
+      "$ref": "#/1854"
+    },
+    "input": {
+      "$ref": "#/1849"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "newpassword",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CsmPublishingProfileOptions",
+    "properties": {
+      "format": {
+        "type": {
+          "$ref": "#/1868"
+        },
+        "flags": 0,
+        "description": "Name of the format. Valid values are: \nFileZilla3\nWebDeploy -- default\nFtp"
+      },
+      "includeDisasterRecoveryEndpoints": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "Include the DisasterRecover endpoint if true"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "FileZilla3"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "WebDeploy"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Ftp"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1865"
+      },
+      {
+        "$ref": "#/1866"
+      },
+      {
+        "$ref": "#/1867"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "publishxml",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1864"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetSlotConfig",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromBackupBlob",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1824"
     }
   },
   {
     "$type": "ObjectType",
-    "name": "BackupItemCollection",
+    "name": "DeletedAppRestoreRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1874"
+        },
+        "flags": 0,
+        "description": "DeletedAppRestoreRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DeletedAppRestoreRequestProperties",
+    "properties": {
+      "deletedSiteId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "ARM resource ID of the deleted app. Example:\n/subscriptions/{subId}/providers/Microsoft.Web/deletedSites/{deletedSiteId}"
+      },
+      "recoverConfiguration": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "If true, deleted site configuration, in addition to content, will be restored."
+      },
+      "snapshotTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Point in time to restore the deleted app from, formatted as a DateTime string. \nIf unspecified, default value is the time that the app was deleted."
+      },
+      "useDRSecondary": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "If true, the snapshot is retrieved from DRSecondary endpoint."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromDeletedApp",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1873"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRestoreRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1877"
+        },
+        "flags": 0,
+        "description": "SnapshotRestoreRequest resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRestoreRequestProperties",
+    "properties": {
+      "snapshotTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Point in time in which the app restore should be done, formatted as a DateTime string."
+      },
+      "recoverySource": {
+        "type": {
+          "$ref": "#/1878"
+        },
+        "flags": 0,
+        "description": "Optional. Specifies the web app that snapshot contents will be retrieved from.\nIf empty, the targeted web app will be used as the source."
+      },
+      "overwrite": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 1,
+        "description": "If <code>true</code> the restore operation can overwrite source app; otherwise, <code>false</code>."
+      },
+      "recoverConfiguration": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "If true, site configuration, in addition to content, will be reverted."
+      },
+      "ignoreConflictingHostNames": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "If true, custom hostname conflicts will be ignored when recovering to a target web app.\nThis setting is only necessary when RecoverConfiguration is enabled."
+      },
+      "useDRSecondary": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 0,
+        "description": "If true, the snapshot is retrieved from DRSecondary endpoint."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SnapshotRecoverySource",
+    "properties": {
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Geographical location of the source web app, e.g. SouthEastAsia, SouthCentralUS"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "ARM resource ID of the source app. \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and \n/subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreSnapshot",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1876"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SlotDifferenceCollection",
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/1731"
+          "$ref": "#/1883"
         },
         "flags": 1,
         "description": "Collection of resources."
@@ -27182,27 +29609,248 @@
     }
   },
   {
+    "$type": "ObjectType",
+    "name": "SlotDifference",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1882"
+        },
+        "flags": 0,
+        "description": "SlotDifference resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SlotDifferenceProperties",
+    "properties": {
+      "level": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Level of the difference: Information, Warning or Error."
+      },
+      "settingType": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the setting: General, AppSetting or ConnectionString."
+      },
+      "diffRule": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Rule that describes how to process the setting difference during a slot swap."
+      },
+      "settingName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Name of the setting."
+      },
+      "valueInCurrentSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Value of the setting in the current slot."
+      },
+      "valueInTargetSlot": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Value of the setting in the target slot."
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Description of the setting difference."
+      }
+    }
+  },
+  {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1720"
+      "$ref": "#/1881"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listbackups",
+    "name": "slotsdiffs",
     "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1730"
+      "$ref": "#/1880"
+    },
+    "input": {
+      "$ref": "#/1818"
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listsyncfunctiontriggerstatus",
+    "name": "slotsswap",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1818"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NetworkTrace",
+    "properties": {
+      "path": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Local file path for the captured network trace file."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed)."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Detailed message of a network trace operation, e.g. error message in case of failure."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1887"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startNetworkTrace",
     "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1724"
+      "$ref": "#/1888"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stopNetworkTrace",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncfunctiontriggers",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "WorkflowArtifacts",
+    "properties": {
+      "appSettings": {
+        "type": {
+          "$ref": "#/126"
+        },
+        "flags": 0,
+        "description": "Application settings of the workflow."
+      },
+      "files": {
+        "type": {
+          "$ref": "#/1895"
+        },
+        "flags": 0,
+        "description": "Files of the app."
+      },
+      "filesToDelete": {
+        "type": {
+          "$ref": "#/1896"
+        },
+        "flags": 0,
+        "description": "Files of the app to delete."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "WorkflowFiles",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/126"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deployWorkflowArtifacts",
+    "resourceType": "Microsoft.Web/sites",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1894"
     }
   },
   {
@@ -27246,7 +29894,7 @@
       },
       "properties": {
         "type": {
-          "$ref": "#/1735"
+          "$ref": "#/1899"
         },
         "flags": 0,
         "description": "Additional workflow properties."
@@ -27259,21 +29907,21 @@
     "properties": {
       "files": {
         "type": {
-          "$ref": "#/1736"
+          "$ref": "#/1900"
         },
         "flags": 0,
         "description": "Gets or sets the files."
       },
       "flowState": {
         "type": {
-          "$ref": "#/1743"
+          "$ref": "#/1907"
         },
         "flags": 0,
         "description": "Gets or sets the state of the workflow."
       },
       "health": {
         "type": {
-          "$ref": "#/1744"
+          "$ref": "#/1908"
         },
         "flags": 0,
         "description": "Gets or sets workflow health."
@@ -27316,22 +29964,22 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/1737"
+        "$ref": "#/1901"
       },
       {
-        "$ref": "#/1738"
+        "$ref": "#/1902"
       },
       {
-        "$ref": "#/1739"
+        "$ref": "#/1903"
       },
       {
-        "$ref": "#/1740"
+        "$ref": "#/1904"
       },
       {
-        "$ref": "#/1741"
+        "$ref": "#/1905"
       },
       {
-        "$ref": "#/1742"
+        "$ref": "#/1906"
       },
       {
         "$ref": "#/0"
@@ -27344,7 +29992,7 @@
     "properties": {
       "state": {
         "type": {
-          "$ref": "#/1749"
+          "$ref": "#/1913"
         },
         "flags": 1,
         "description": "Gets or sets the workflow health state."
@@ -27378,16 +30026,16 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/1745"
+        "$ref": "#/1909"
       },
       {
-        "$ref": "#/1746"
+        "$ref": "#/1910"
       },
       {
-        "$ref": "#/1747"
+        "$ref": "#/1911"
       },
       {
-        "$ref": "#/1748"
+        "$ref": "#/1912"
       }
     ]
   },
@@ -27397,55 +30045,191 @@
     "resourceType": "Microsoft.Web/sites",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1734"
+      "$ref": "#/1898"
     }
   },
   {
     "$type": "ResourceFunctionType",
     "name": "list",
-    "resourceType": "Microsoft.Web/sites/slots/backups",
+    "resourceType": "Microsoft.Web/sites/backups",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1720"
+      "$ref": "#/1821"
     },
     "input": {
-      "$ref": "#/1719"
+      "$ref": "#/1820"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restore",
+    "resourceType": "Microsoft.Web/sites/backups",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1824"
     }
   },
   {
     "$type": "ResourceFunctionType",
     "name": "list",
-    "resourceType": "Microsoft.Web/sites/slots/config",
+    "resourceType": "Microsoft.Web/sites/config",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "recover",
+    "resourceType": "Microsoft.Web/sites/config/snapshots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "download",
+    "resourceType": "Microsoft.Web/sites/containerlogs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/continuouswebjobs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/continuouswebjobs",
+    "apiVersion": "2022-09-01"
   },
   {
     "$type": "ResourceFunctionType",
     "name": "listkeys",
-    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "resourceType": "Microsoft.Web/sites/functions",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1709"
+      "$ref": "#/1784"
     }
   },
   {
     "$type": "ResourceFunctionType",
     "name": "listsecrets",
-    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "resourceType": "Microsoft.Web/sites/functions",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1724"
+      "$ref": "#/1847"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "HostKeys",
+    "properties": {
+      "masterKey": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Secret key."
+      },
+      "functionKeys": {
+        "type": {
+          "$ref": "#/1925"
+        },
+        "flags": 0,
+        "description": "Host level function keys."
+      },
+      "systemKeys": {
+        "type": {
+          "$ref": "#/1926"
+        },
+        "flags": 0,
+        "description": "System keys."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "HostKeysFunctionKeys",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "HostKeysSystemKeys",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
     }
   },
   {
     "$type": "ResourceFunctionType",
     "name": "listkeys",
-    "resourceType": "Microsoft.Web/sites/slots/host",
+    "resourceType": "Microsoft.Web/sites/host",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1726"
+      "$ref": "#/1924"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listsyncstatus",
+    "resourceType": "Microsoft.Web/sites/host",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites/host",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "applySlotConfig",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1818"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "backup",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1821"
+    },
+    "input": {
+      "$ref": "#/1820"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "containerlogs",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "discoverbackup",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1824"
+    },
+    "input": {
+      "$ref": "#/1824"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "iscloneable",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1834"
     }
   },
   {
@@ -27454,7 +30238,7 @@
     "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1730"
+      "$ref": "#/1844"
     }
   },
   {
@@ -27463,7 +30247,136 @@
     "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1724"
+      "$ref": "#/1847"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "newpassword",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "publishxml",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1864"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetSlotConfig",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromBackupBlob",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1824"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreFromDeletedApp",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1873"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restoreSnapshot",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1876"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsdiffs",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1880"
+    },
+    "input": {
+      "$ref": "#/1818"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "slotsswap",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1818"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1887"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startNetworkTrace",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1947"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stopNetworkTrace",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncfunctiontriggers",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deployWorkflowArtifacts",
+    "resourceType": "Microsoft.Web/sites/slots",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1894"
     }
   },
   {
@@ -27472,8 +30385,588 @@
     "resourceType": "Microsoft.Web/sites/slots",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1734"
+      "$ref": "#/1898"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/slots/backups",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1821"
+    },
+    "input": {
+      "$ref": "#/1820"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restore",
+    "resourceType": "Microsoft.Web/sites/slots/backups",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1824"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "list",
+    "resourceType": "Microsoft.Web/sites/slots/config",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1784"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "recover",
+    "resourceType": "Microsoft.Web/sites/slots/config/snapshots",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "download",
+    "resourceType": "Microsoft.Web/sites/slots/containerlogs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Web/sites/slots/continuouswebjobs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Web/sites/slots/continuouswebjobs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listkeys",
+    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1784"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listsecrets",
+    "resourceType": "Microsoft.Web/sites/slots/functions",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1847"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listkeys",
+    "resourceType": "Microsoft.Web/sites/slots/host",
+    "apiVersion": "2022-09-01",
+    "output": {
+      "$ref": "#/1924"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listsyncstatus",
+    "resourceType": "Microsoft.Web/sites/slots/host",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.Web/sites/slots/host",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.Web/sites/slots/triggeredwebjobs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.Web/sites/triggeredwebjobs",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RegenerateActionParameter",
+    "properties": {
+      "keyType": {
+        "type": {
+          "$ref": "#/1973"
+        },
+        "flags": 0,
+        "description": "The key type."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotSpecified"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Primary"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Secondary"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1970"
+      },
+      {
+        "$ref": "#/1971"
+      },
+      {
+        "$ref": "#/1972"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateAccessKey",
+    "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1969"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Workflow",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/1976"
+        },
+        "flags": 0,
+        "description": "The workflow properties."
+      },
+      "identity": {
+        "type": {
+          "$ref": "#/248"
+        },
+        "flags": 0,
+        "description": "Managed service identity."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The resource id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the resource name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the resource type."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The resource location."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/2011"
+        },
+        "flags": 0,
+        "description": "The resource tags."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "WorkflowProperties",
+    "properties": {
+      "provisioningState": {
+        "type": {
+          "$ref": "#/1999"
+        },
+        "flags": 2,
+        "description": "Gets the provisioning state."
+      },
+      "createdTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the created time."
+      },
+      "changedTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the changed time."
+      },
+      "state": {
+        "type": {
+          "$ref": "#/2006"
+        },
+        "flags": 0,
+        "description": "The state."
+      },
+      "version": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the version."
+      },
+      "accessEndpoint": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Gets the access endpoint."
+      },
+      "endpointsConfiguration": {
+        "type": {
+          "$ref": "#/1659"
+        },
+        "flags": 0,
+        "description": "The endpoints configuration."
+      },
+      "accessControl": {
+        "type": {
+          "$ref": "#/1664"
+        },
+        "flags": 0,
+        "description": "The access control configuration."
+      },
+      "sku": {
+        "type": {
+          "$ref": "#/1675"
+        },
+        "flags": 2,
+        "description": "The sku."
+      },
+      "integrationAccount": {
+        "type": {
+          "$ref": "#/1436"
+        },
+        "flags": 0,
+        "description": "The integration account."
+      },
+      "integrationServiceEnvironment": {
+        "type": {
+          "$ref": "#/1436"
+        },
+        "flags": 0,
+        "description": "The integration service environment."
+      },
+      "definition": {
+        "type": {
+          "$ref": "#/126"
+        },
+        "flags": 0,
+        "description": "The definition."
+      },
+      "parameters": {
+        "type": {
+          "$ref": "#/2007"
+        },
+        "flags": 0,
+        "description": "The parameters."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/2010"
+        },
+        "flags": 0,
+        "description": "The workflow kind."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotSpecified"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Accepted"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Running"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Ready"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Creating"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Created"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleting"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleted"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Canceled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Moving"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Updating"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Registering"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Registered"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unregistering"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unregistered"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Completed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Renewing"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Pending"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Waiting"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "InProgress"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/1977"
+      },
+      {
+        "$ref": "#/1978"
+      },
+      {
+        "$ref": "#/1979"
+      },
+      {
+        "$ref": "#/1980"
+      },
+      {
+        "$ref": "#/1981"
+      },
+      {
+        "$ref": "#/1982"
+      },
+      {
+        "$ref": "#/1983"
+      },
+      {
+        "$ref": "#/1984"
+      },
+      {
+        "$ref": "#/1985"
+      },
+      {
+        "$ref": "#/1986"
+      },
+      {
+        "$ref": "#/1987"
+      },
+      {
+        "$ref": "#/1988"
+      },
+      {
+        "$ref": "#/1989"
+      },
+      {
+        "$ref": "#/1990"
+      },
+      {
+        "$ref": "#/1991"
+      },
+      {
+        "$ref": "#/1992"
+      },
+      {
+        "$ref": "#/1993"
+      },
+      {
+        "$ref": "#/1994"
+      },
+      {
+        "$ref": "#/1995"
+      },
+      {
+        "$ref": "#/1996"
+      },
+      {
+        "$ref": "#/1997"
+      },
+      {
+        "$ref": "#/1998"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotSpecified"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Completed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Enabled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Disabled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleted"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Suspended"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/2000"
+      },
+      {
+        "$ref": "#/2001"
+      },
+      {
+        "$ref": "#/2002"
+      },
+      {
+        "$ref": "#/2003"
+      },
+      {
+        "$ref": "#/2004"
+      },
+      {
+        "$ref": "#/2005"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "WorkflowPropertiesParameters",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/1683"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Stateful"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Stateless"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/2008"
+      },
+      {
+        "$ref": "#/2009"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "WorkflowResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "validate",
+    "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows",
+    "apiVersion": "2022-09-01",
+    "input": {
+      "$ref": "#/1975"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/runs",
+    "apiVersion": "2022-09-01"
   },
   {
     "$type": "ObjectType",
@@ -27488,7 +30981,7 @@
       },
       "inputs": {
         "type": {
-          "$ref": "#/1766"
+          "$ref": "#/2021"
         },
         "flags": 0
       },
@@ -27528,14 +31021,14 @@
       },
       "subexpressions": {
         "type": {
-          "$ref": "#/1765"
+          "$ref": "#/2020"
         },
         "flags": 0,
         "description": "The sub expressions."
       },
       "error": {
         "type": {
-          "$ref": "#/1763"
+          "$ref": "#/2018"
         },
         "flags": 0,
         "description": "The azure resource error info."
@@ -27562,14 +31055,14 @@
       },
       "subexpressions": {
         "type": {
-          "$ref": "#/1762"
+          "$ref": "#/2017"
         },
         "flags": 0,
         "description": "The sub expressions."
       },
       "error": {
         "type": {
-          "$ref": "#/1763"
+          "$ref": "#/2018"
         },
         "flags": 0,
         "description": "The azure resource error info."
@@ -27579,7 +31072,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1761"
+      "$ref": "#/2016"
     }
   },
   {
@@ -27595,7 +31088,7 @@
       },
       "details": {
         "type": {
-          "$ref": "#/1764"
+          "$ref": "#/2019"
         },
         "flags": 0,
         "description": "The error details."
@@ -27612,19 +31105,19 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1763"
+      "$ref": "#/2018"
     }
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1761"
+      "$ref": "#/2016"
     }
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/1760"
+      "$ref": "#/2015"
     }
   },
   {
@@ -27633,7 +31126,7 @@
     "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/runs/actions",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1759"
+      "$ref": "#/2014"
     }
   },
   {
@@ -27642,7 +31135,7 @@
     "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/runs/actions/repetitions",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1759"
+      "$ref": "#/2014"
     }
   },
   {
@@ -27679,14 +31172,14 @@
       },
       "relativePathParameters": {
         "type": {
-          "$ref": "#/1770"
+          "$ref": "#/2025"
         },
         "flags": 0,
         "description": "Gets the workflow trigger callback URL relative path parameters."
       },
       "queries": {
         "type": {
-          "$ref": "#/1771"
+          "$ref": "#/2026"
         },
         "flags": 0,
         "description": "Gets the workflow trigger callback URL query parameters."
@@ -27746,7 +31239,19 @@
     "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/triggers",
     "apiVersion": "2022-09-01",
     "output": {
-      "$ref": "#/1769"
+      "$ref": "#/2024"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/triggers",
+    "apiVersion": "2022-09-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resubmit",
+    "resourceType": "Microsoft.Web/sites/hostruntime/webhooks/api/workflows/triggers/histories",
+    "apiVersion": "2022-09-01"
   }
 ]

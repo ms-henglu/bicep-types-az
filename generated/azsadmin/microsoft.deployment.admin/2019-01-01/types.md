@@ -74,6 +74,39 @@
 * **properties**: [ProductSecretProperties](#productsecretproperties) (ReadOnly): Properties of a product secret.
 * **type**: 'Microsoft.Deployment.Admin/locations/productPackages/secrets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function bootstrap (Microsoft.Deployment.Admin/locations/productDeployments@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productDeployments
+* **ApiVersion**: 2019-01-01
+* **Input**: [BootStrapActionParameters](#bootstrapactionparameters)
+
+## Function deploy (Microsoft.Deployment.Admin/locations/productDeployments@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productDeployments
+* **ApiVersion**: 2019-01-01
+* **Input**: [DeployActionParameters](#deployactionparameters)
+
+## Function executeRunner (Microsoft.Deployment.Admin/locations/productDeployments@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productDeployments
+* **ApiVersion**: 2019-01-01
+* **Input**: [ExecuteRunnerActionParameters](#executerunneractionparameters)
+
+## Function import (Microsoft.Deployment.Admin/locations/productPackages/secrets@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productPackages/secrets
+* **ApiVersion**: 2019-01-01
+* **Input**: [SecretParameters](#secretparameters)
+
+## Function remove (Microsoft.Deployment.Admin/locations/productDeployments@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productDeployments
+* **ApiVersion**: 2019-01-01
+
+## Function rotateSecrets (Microsoft.Deployment.Admin/locations/productDeployments@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productDeployments
+* **ApiVersion**: 2019-01-01
+
+## Function validate (Microsoft.Deployment.Admin/locations/productPackages/secrets@2019-01-01)
+* **Resource**: Microsoft.Deployment.Admin/locations/productPackages/secrets
+* **ApiVersion**: 2019-01-01
+* **Input**: [SecretParameters](#secretparameters)
+
 ## ActionPlanAdminProperties
 ### Properties
 * **actionPlanInstanceId**: string: Action plan instance identifier
@@ -103,6 +136,15 @@
 * **title**: string: The operation title
 * **type**: string: The action plan operation type
 
+## BootStrapActionParameters
+### Properties
+* **version**: string: Generic Version object
+
+## DeployActionParameters
+### Properties
+* **parameters**: any: Deployment parameters, value in JToken
+* **version**: string: Generic Version object
+
 ## DeploymentInfo
 ### Properties
 * **actionPlanInstanceResourceId**: string: The identifier of the latest action plan instance resource.
@@ -121,6 +163,10 @@
 * **code**: string: The error code.
 * **details**: [ErrorInfo](#errorinfo)[]: The detailed error messages.
 * **message**: string: The error message.
+
+## ExecuteRunnerActionParameters
+### Properties
+* **parameters**: any: Execute Runner parameters, value in JToken
 
 ## ExtendedErrorInfo
 ### Properties
@@ -196,6 +242,20 @@
 * **rotationStatus**: 'Complete' | 'None' | 'PlantNewSak' | 'RotateInactiveSak' | string: The storage account key secret rotation status.
 * **secondaryKeyIsActive**: bool: A value indicating whether the secondary or primary storage account key is active as a secret.
 * **subject**: string: Certificate's subject
+
+## SecretParameters
+### Properties
+* **data**: string: The pfx certificate converted Base64 data.
+* **key**: string: The symmetric key.
+* **password**: string: The pfx certificate file password.
+* **value**: string: The secret value in a secure string format.
+
+## SecretParameters
+### Properties
+* **data**: string: The pfx certificate converted Base64 data.
+* **key**: string: The symmetric key.
+* **password**: string: The pfx certificate file password.
+* **value**: string: The secret value in a secure string format.
 
 ## SecretRotationInfo
 ### Properties

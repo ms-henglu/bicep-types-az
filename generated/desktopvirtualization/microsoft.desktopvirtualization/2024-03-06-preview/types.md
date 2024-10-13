@@ -204,6 +204,46 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function controlSessionHostUpdate (Microsoft.DesktopVirtualization/hostPools/sessionHostManagements@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHostManagements
+* **ApiVersion**: 2024-03-06-preview
+* **Input**: [HostPoolControlParameter](#hostpoolcontrolparameter)
+
+## Function disconnect (Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions
+* **ApiVersion**: 2024-03-06-preview
+
+## Function expandMsixImage (Microsoft.DesktopVirtualization/hostPools@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-03-06-preview
+* **Input**: [MsixImageURI](#msiximageuri)
+* **Output**: [ExpandMsixImageList](#expandmsiximagelist)
+
+## Function importAppAttachPackageInfo (Microsoft.DesktopVirtualization/hostPools@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-03-06-preview
+* **Input**: [ImportPackageInfoRequest](#importpackageinforequest)
+* **Output**: [AppAttachPackageList](#appattachpackagelist)
+
+## Function initiateSessionHostUpdate (Microsoft.DesktopVirtualization/hostPools/sessionHostManagements@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHostManagements
+* **ApiVersion**: 2024-03-06-preview
+* **Input**: [UpdateSessionHostsRequestBody](#updatesessionhostsrequestbody)
+
+## Function retrieveRegistrationToken (Microsoft.DesktopVirtualization/hostPools@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools
+* **ApiVersion**: 2024-03-06-preview
+* **Output**: [RegistrationInfo](#registrationinfo)
+
+## Function retryProvisioning (Microsoft.DesktopVirtualization/hostPools/sessionHosts@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHosts
+* **ApiVersion**: 2024-03-06-preview
+
+## Function sendMessage (Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions@2024-03-06-preview)
+* **Resource**: Microsoft.DesktopVirtualization/hostPools/sessionHosts/userSessions
+* **ApiVersion**: 2024-03-06-preview
+* **Input**: [SendMessage](#sendmessage)
+
 ## ActiveDirectoryInfoProperties
 ### Properties
 * **domainCredentials**: [KeyVaultCredentialsProperties](#keyvaultcredentialsproperties) (Required): Credentials needed to create the virtual machine.
@@ -241,6 +281,16 @@
 * **type**: 'Default' | 'Scheduled' | string: The type of maintenance for session host components.
 * **useSessionHostLocalTime**: bool: Whether to use localTime of the virtual machine.
 
+## AppAttachPackage
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [AppAttachPackageProperties](#appattachpackageproperties) (Required): Detailed properties for App Attach Package
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## AppAttachPackageInfoProperties
 ### Properties
 * **certificateExpiry**: string: Date certificate expires, found in the appxmanifest.xml.
@@ -259,6 +309,11 @@
 * **packageName**: string: Package Name from appxmanifest.xml.
 * **packageRelativePath**: string: Relative Path to the package inside the image.
 * **version**: string: Package Version found in the appxmanifest.xml.
+
+## AppAttachPackageList
+### Properties
+* **nextLink**: string (ReadOnly): Link to the next page of results.
+* **value**: [AppAttachPackage](#appattachpackage)[]: List of App Attach Package definitions.
 
 ## AppAttachPackageProperties
 ### Properties
@@ -330,6 +385,41 @@
 * **azureActiveDirectoryInfo**: [AzureActiveDirectoryInfoProperties](#azureactivedirectoryinfoproperties): Azure active directory info. Only one should be populated based on the join type.
 * **joinType**: 'ActiveDirectory' | 'AzureActiveDirectory' | string (Required): The type of domain join done by the virtual machine.
 
+## ExpandMsixImage
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ExpandMsixImageProperties](#expandmsiximageproperties): Detailed properties for ExpandMsixImage
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ExpandMsixImageList
+### Properties
+* **nextLink**: string (ReadOnly): Link to the next page of results.
+* **value**: [ExpandMsixImage](#expandmsiximage)[]: List of MSIX package properties from give MSIX Image.
+
+## ExpandMsixImageProperties
+### Properties
+* **certificateExpiry**: string: Date certificate expires, found in the appxmanifest.xml.
+* **certificateName**: string: Certificate name found in the appxmanifest.xml.
+* **displayName**: string: User friendly Name to be displayed in the portal.
+* **imagePath**: string: VHD/CIM image path on Network Share.
+* **isActive**: bool: Make this version of the package the active one across the hostpool.
+* **isRegularRegistration**: bool: Specifies how to register Package in feed.
+* **lastUpdated**: string: Date Package was last updated, found in the appxmanifest.xml.
+* **packageAlias**: string: Alias of MSIX Package.
+* **packageApplications**: [MsixPackageApplications](#msixpackageapplications)[]: List of package applications.
+* **packageDependencies**: [MsixPackageDependencies](#msixpackagedependencies)[]: List of package dependencies.
+* **packageFamilyName**: string: Package Family Name from appxmanifest.xml. Contains Package Name and Publisher name.
+* **packageFullName**: string: Package Full Name from appxmanifest.xml.
+* **packageName**: string: Package Name from appxmanifest.xml.
+* **packageRelativePath**: string: Relative Path to the package inside the image.
+* **version**: string: Package Version found in the appxmanifest.xml.
+
+## HostPoolControlParameter
+### Properties
+* **action**: 'Cancel' | 'Pause' | 'Resume' | 'Retry' | 'Start' | string (Required): Action types for controlling hostpool update.
+* **cancelMessage**: string {maxLength: 260}: The cancel message sent to the user on the session host. This is can only be specified if the action is 'Cancel'.
+
 ## HostPoolProperties
 ### Properties
 * **agentUpdate**: [AgentUpdateProperties](#agentupdateproperties): The session host configuration for updating agent, monitoring agent, and stack component.
@@ -362,6 +452,13 @@
 * **validationEnvironment**: bool: Is validation environment.
 * **vmTemplate**: string: VM template for sessionhosts configuration within hostpool.
 
+## HostPoolUpdateConfigurationPatchProperties
+### Properties
+* **deleteOriginalVm**: bool: Whether not to save original disk. False by default.
+* **logOffDelayMinutes**: int: Grace period before logging off users in minutes.
+* **logOffMessage**: string {maxLength: 260}: Log off message sent to user for logoff.
+* **maxVmsRemoved**: int {minValue: 1}: The maximum number of virtual machines to be removed during hostpool update.
+
 ## HostPoolUpdateConfigurationProperties
 ### Properties
 * **deleteOriginalVm**: bool: Whether not to save original disk. False by default.
@@ -374,6 +471,11 @@
 * **customInfo**: [CustomInfoProperties](#custominfoproperties): The values to uniquely identify a custom image. Only one should be populated based on the image type.
 * **marketplaceInfo**: [MarketplaceInfoProperties](#marketplaceinfoproperties): The values to uniquely identify a marketplace image. Only one should be populated based on the image type.
 * **type**: 'Custom' | 'Marketplace' | string (Required): The type of image session hosts use in the hostpool.
+
+## ImportPackageInfoRequest
+### Properties
+* **packageArchitecture**: 'ALL' | 'ARM' | 'ARM64' | 'Neutral' | 'x64' | 'x86' | 'x86a64' | string: Possible device architectures that an app attach package can be configured for
+* **path**: string: URI to Image
 
 ## KeyVaultCredentialsProperties
 ### Properties
@@ -391,6 +493,10 @@
 * **offer**: string (Required): The offer of the image.
 * **publisher**: string (Required): The publisher of the image.
 * **sku**: string (Required): The sku of the image.
+
+## MsixImageURI
+### Properties
+* **uri**: string: URI to Image
 
 ## MsixPackageApplications
 ### Properties
@@ -449,6 +555,12 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegistrationInfo
+### Properties
+* **expirationTime**: string: Expiration time of registration token.
+* **registrationTokenOperation**: 'Delete' | 'None' | 'Update' | string: The type of resetting the token.
+* **token**: string: The registration token base64 encoded string.
 
 ## RegistrationInfo
 ### Properties
@@ -590,6 +702,11 @@
 * **type**: 'ConfidentialVM' | 'Standard' | 'TrustedLaunch' | string: The security type used by virtual machine in hostpool session host. Default is Standard.
 * **vTpmEnabled**: bool: Whether to use vTPM on the virtual machine.
 
+## SendMessage
+### Properties
+* **messageBody**: string: Body of message.
+* **messageTitle**: string: Title of message.
+
 ## SessionHostConfigurationProperties
 ### Properties
 * **availabilityZones**: int[]: Value for availability zones to be used by the session host. Should be from [1,2,3].
@@ -672,6 +789,17 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## UpdateSessionHostsRequestBody
+### Properties
+* **scheduledDateTime**: string: The timestamp that the update validation is scheduled for. If none is provided, the update will be executed immediately
+* **scheduledDateTimeZone**: string: The timeZone as defined in https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid.
+* **update**: [HostPoolUpdateConfigurationPatchProperties](#hostpoolupdateconfigurationpatchproperties): settings for management information for the hostpool update operation. If none is provided the update will use the settings saved in the sessionHostManagement object.
 
 ## UserSessionProperties
 ### Properties

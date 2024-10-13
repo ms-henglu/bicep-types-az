@@ -11,10 +11,29 @@
 * **tags**: [TaggedResourceTags](#taggedresourcetags): Tags of the service which is a list of key value pairs that describe the resource.
 * **type**: 'Microsoft.Communication/communicationServices' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function linkNotificationHub (Microsoft.Communication/communicationServices@2020-08-20-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2020-08-20-preview
+* **Input**: [LinkNotificationHubParameters](#linknotificationhubparameters)
+* **Output**: [LinkedNotificationHub](#linkednotificationhub)
+
 ## Function listKeys (Microsoft.Communication/communicationServices@2020-08-20-preview)
 * **Resource**: Microsoft.Communication/communicationServices
 * **ApiVersion**: 2020-08-20-preview
 * **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## Function regenerateKey (Microsoft.Communication/communicationServices@2020-08-20-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2020-08-20-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## CommunicationServiceKeys
+### Properties
+* **primaryConnectionString**: string: CommunicationService connection string constructed via the primaryKey
+* **primaryKey**: string: The primary access key.
+* **secondaryConnectionString**: string: CommunicationService connection string constructed via the secondaryKey
+* **secondaryKey**: string: The secondary access key.
 
 ## CommunicationServiceKeys
 ### Properties
@@ -31,6 +50,19 @@
 * **notificationHubId**: string (ReadOnly): Resource ID of an Azure Notification Hub linked to this resource.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Running' | 'Succeeded' | 'Unknown' | 'Updating' | string (ReadOnly): Provisioning state of the resource.
 * **version**: string (ReadOnly): Version of the CommunicationService resource. Probably you need the same or higher version of client SDKs.
+
+## LinkedNotificationHub
+### Properties
+* **resourceId**: string: The resource ID of the notification hub
+
+## LinkNotificationHubParameters
+### Properties
+* **connectionString**: string (Required): Connection string for the notification hub
+* **resourceId**: string (Required): The resource ID of the notification hub
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary': The keyType to regenerate. Must be either 'primary' or 'secondary'(case-insensitive).
 
 ## TaggedResourceTags
 ### Properties

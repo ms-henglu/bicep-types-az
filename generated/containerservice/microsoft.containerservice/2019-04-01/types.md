@@ -36,6 +36,16 @@
 * **ApiVersion**: 2019-04-01
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2019-04-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2019-04-01
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2019-04-01)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2019-04-01
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
 ## AccessProfile
 ### Properties
 * **kubeConfig**: any: Base64-encoded Kubernetes configuration file.
@@ -75,6 +85,13 @@
 ## CredentialResults
 ### Properties
 * **kubeconfigs**: [CredentialResult](#credentialresult)[] (ReadOnly): Base64-encoded Kubernetes configuration file.
+
+## ManagedClusterAADProfile
+### Properties
+* **clientAppID**: string (Required): The client AAD application ID.
+* **serverAppID**: string (Required): The server AAD application ID.
+* **serverAppSecret**: string: The server AAD application secret.
+* **tenantID**: string: The AAD tenant ID to use for authentication. If not specified, will use the tenant of the deployment subscription.
 
 ## ManagedClusterAADProfile
 ### Properties
@@ -164,6 +181,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [ManagedClusterAddonProfile](#managedclusteraddonprofile)
+
+## ManagedClusterServicePrincipalProfile
+### Properties
+* **clientId**: string (Required): The ID for the service principal.
+* **secret**: string: The secret password associated with the service principal in plain text.
 
 ## ManagedClusterServicePrincipalProfile
 ### Properties

@@ -134,6 +134,15 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.ServiceBus/namespaces/topics/subscriptions/rules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function breakPairing (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2021-06-01-preview
+
+## Function failover (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [FailoverProperties](#failoverproperties)
+
 ## Function listKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2021-06-01-preview)
 * **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
 * **ApiVersion**: 2021-06-01-preview
@@ -153,6 +162,62 @@
 * **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
 * **ApiVersion**: 2021-06-01-preview
 * **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/queues/authorizationRules@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/queues/authorizationRules
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/topics/authorizationRules@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
+* **ApiVersion**: 2021-06-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function revert (Microsoft.ServiceBus/namespaces/migrationConfigurations@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2021-06-01-preview
+
+## Function upgrade (Microsoft.ServiceBus/namespaces/migrationConfigurations@2021-06-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2021-06-01-preview
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+
+## AccessKeys
+### Properties
+* **aliasPrimaryConnectionString**: string (ReadOnly): Primary connection string of the alias if GEO DR is enabled
+* **aliasSecondaryConnectionString**: string (ReadOnly): Secondary  connection string of the alias if GEO DR is enabled
+* **keyName**: string (ReadOnly): A string that describes the authorization rule.
+* **primaryConnectionString**: string (ReadOnly): Primary connection string of the created namespace authorization rule.
+* **primaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
+* **secondaryConnectionString**: string (ReadOnly): Secondary connection string of the created namespace authorization rule.
+* **secondaryKey**: string (ReadOnly): A base64-encoded 256-bit primary key for signing and validating the SAS token.
 
 ## AccessKeys
 ### Properties
@@ -237,6 +302,14 @@
 * **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties)[]: Properties of KeyVault
 * **requireInfrastructureEncryption**: bool: Enable Infrastructure Encryption (Double Encryption)
 
+## FailoverProperties
+### Properties
+* **properties**: [FailoverPropertiesProperties](#failoverpropertiesproperties): Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
+
+## FailoverPropertiesProperties
+### Properties
+* **IsSafeFailover**: bool: Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
+
 ## Identity
 ### Properties
 * **principalId**: string (ReadOnly): ObjectId from the KeyVault
@@ -307,6 +380,21 @@
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The Private Endpoint resource for this Connection.
 * **privateLinkServiceConnectionState**: [ConnectionState](#connectionstate): Details about the state of the connection.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the Private Endpoint Connection.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
 
 ## Ruleproperties
 ### Properties

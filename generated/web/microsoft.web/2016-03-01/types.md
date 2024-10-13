@@ -132,6 +132,34 @@
 * **properties**: [SourceControlProperties](#sourcecontrolproperties): SourceControl resource specific properties
 * **type**: 'Microsoft.Web/sourcecontrols' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function disable (Microsoft.Web/recommendations@2016-03-01)
+* **Resource**: Microsoft.Web/recommendations
+* **ApiVersion**: 2016-03-01
+
+## Function disable (Microsoft.Web/sites/recommendations@2016-03-01)
+* **Resource**: Microsoft.Web/sites/recommendations
+* **ApiVersion**: 2016-03-01
+
+## Function execute (Microsoft.Web/sites/diagnostics/analyses@2016-03-01)
+* **Resource**: Microsoft.Web/sites/diagnostics/analyses
+* **ApiVersion**: 2016-03-01
+* **Output**: [DiagnosticAnalysis](#diagnosticanalysis)
+
+## Function execute (Microsoft.Web/sites/diagnostics/detectors@2016-03-01)
+* **Resource**: Microsoft.Web/sites/diagnostics/detectors
+* **ApiVersion**: 2016-03-01
+* **Output**: [DiagnosticDetectorResponse](#diagnosticdetectorresponse)
+
+## Function execute (Microsoft.Web/sites/slots/diagnostics/analyses@2016-03-01)
+* **Resource**: Microsoft.Web/sites/slots/diagnostics/analyses
+* **ApiVersion**: 2016-03-01
+* **Output**: [DiagnosticAnalysis](#diagnosticanalysis)
+
+## Function execute (Microsoft.Web/sites/slots/diagnostics/detectors@2016-03-01)
+* **Resource**: Microsoft.Web/sites/slots/diagnostics/detectors
+* **ApiVersion**: 2016-03-01
+* **Output**: [DiagnosticDetectorResponse](#diagnosticdetectorresponse)
+
 ## AbnormalTimePeriod
 ### Properties
 * **endTime**: string: End time of the downtime
@@ -225,6 +253,22 @@
 * **dataset**: [DiagnosticData](#diagnosticdata)[]: Data Set
 * **metadata**: [DetectorInfo](#detectorinfo): metadata for the detector
 
+## DiagnosticAnalysis
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticAnalysisProperties](#diagnosticanalysisproperties): DiagnosticAnalysis resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticAnalysis
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticAnalysisProperties](#diagnosticanalysisproperties): DiagnosticAnalysis resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
 ## DiagnosticAnalysisProperties
 ### Properties
 * **abnormalTimePeriods**: [AbnormalTimePeriod](#abnormaltimeperiod)[]: List of time periods.
@@ -241,6 +285,33 @@
 ### Properties
 * **renderingProperties**: [Rendering](#rendering): Properties that describe how the table should be rendered
 * **table**: [DataTableResponseObject](#datatableresponseobject): Data in table form
+
+## DiagnosticDetectorResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticDetectorResponseProperties](#diagnosticdetectorresponseproperties): DiagnosticDetectorResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticDetectorResponse
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [DiagnosticDetectorResponseProperties](#diagnosticdetectorresponseproperties): DiagnosticDetectorResponse resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## DiagnosticDetectorResponseProperties
+### Properties
+* **abnormalTimePeriods**: [DetectorAbnormalTimePeriod](#detectorabnormaltimeperiod)[]: List of Correlated events found by the detector
+* **data**: [NameValuePair](#namevaluepair)[][]: Additional Data that detector wants to send.
+* **detectorDefinition**: [DetectorDefinition](#detectordefinition): Detector's definition
+* **endTime**: string: End time of the period
+* **issueDetected**: bool: Flag representing Issue was detected.
+* **metrics**: [DiagnosticMetricSet](#diagnosticmetricset)[]: Metrics provided by the detector
+* **responseMetaData**: [ResponseMetaData](#responsemetadata): Meta Data
+* **startTime**: string: Start time of the period
 
 ## DiagnosticMetricSample
 ### Properties

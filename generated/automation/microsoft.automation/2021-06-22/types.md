@@ -36,10 +36,21 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Resource system metadata.
 * **type**: 'Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function convertGraphRunbookContent (Microsoft.Automation/automationAccounts@2021-06-22)
+* **Resource**: Microsoft.Automation/automationAccounts
+* **ApiVersion**: 2021-06-22
+* **Input**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+* **Output**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+
 ## Function listKeys (Microsoft.Automation/automationAccounts@2021-06-22)
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2021-06-22
 * **Output**: [KeyListResult](#keylistresult)
+
+## Function move (Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers@2021-06-22)
+* **Resource**: Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers
+* **ApiVersion**: 2021-06-22
+* **Input**: [HybridRunbookWorkerMoveParameters](#hybridrunbookworkermoveparameters)
 
 ## AutomationAccountCreateOrUpdateParametersTags
 ### Properties
@@ -75,6 +86,16 @@
 ### Properties
 * **userAssignedIdentity**: any: The user identity used for CMK. It will be an ARM resource id in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
+
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
+
 ## HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties
 ### Properties
 * **ip**: string (ReadOnly): Gets or sets the assigned machine IP address.
@@ -90,6 +111,10 @@
 * **lastSeenDateTime**: string: Last Heartbeat from the Worker
 * **name**: string: Gets or sets the worker machine name.
 * **registrationTime**: string: Gets or sets the registration time of the worker machine.
+
+## HybridRunbookWorkerMoveParameters
+### Properties
+* **hybridRunbookWorkerGroupName**: string: Gets or sets the target hybrid runbook worker group.
 
 ## Identity
 ### Properties
@@ -141,6 +166,12 @@
 * **actionsRequired**: string (ReadOnly): Any action that is required beyond basic workflow (approve/ reject/ disconnect)
 * **description**: string: The private link service connection description.
 * **status**: string: The private link service connection status.
+
+## RawGraphicalRunbookContent
+### Properties
+* **runbookDefinition**: string: Serialized Graphical runbook
+* **runbookType**: 'GraphPowerShell' | 'GraphPowerShellWorkflow' | string: Runbook Type
+* **schemaVersion**: string: Schema version of the serializer.
 
 ## RunAsCredentialAssociationProperty
 ### Properties

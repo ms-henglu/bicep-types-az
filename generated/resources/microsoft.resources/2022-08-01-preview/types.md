@@ -12,6 +12,11 @@
 * **tags**: [DeploymentStackTags](#deploymentstacktags): Deployment stack resource tags.
 * **type**: 'Microsoft.Resources/deploymentStacks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function exportTemplate (Microsoft.Resources/deploymentStacks@2022-08-01-preview)
+* **Resource**: Microsoft.Resources/deploymentStacks
+* **ApiVersion**: 2022-08-01-preview
+* **Output**: [DeploymentStackTemplateDefinition](#deploymentstacktemplatedefinition)
+
 ## DenySettings
 ### Properties
 * **applyToChildScopes**: bool: DenySettings will be applied to child scopes.
@@ -67,6 +72,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## DeploymentStackTemplateDefinition
+### Properties
+* **template**: any: The template content. Use this element to pass the template syntax directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string. Use either the templateLink property or the template property, but not both.
+* **templateLink**: [DeploymentStacksTemplateLink](#deploymentstackstemplatelink): The URI of the template. Use either the templateLink property or the template property, but not both.
 
 ## ErrorAdditionalInfo
 ### Properties

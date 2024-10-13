@@ -1662,21 +1662,54 @@
   },
   {
     "$type": "ObjectType",
-    "name": "VMResourcesListResponse",
+    "name": "VMExtensionPayload",
     "properties": {
-      "value": {
+      "apiKey": {
         "type": {
-          "$ref": "#/137"
+          "$ref": "#/136"
         },
         "flags": 0,
-        "description": "Response of a list vm host update operation."
+        "description": "API Key corresponding to the resource."
       },
-      "nextLink": {
+      "region": {
         "type": {
           "$ref": "#/0"
         },
         "flags": 0,
-        "description": "Link to the next set of results, if any."
+        "description": "Logz.io region where the resource has been created."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "vmHostPayload",
+    "resourceType": "Microsoft.Logz/monitors",
+    "apiVersion": "2022-01-01-preview",
+    "output": {
+      "$ref": "#/135"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VMHostUpdateRequest",
+    "properties": {
+      "vmResourceIds": {
+        "type": {
+          "$ref": "#/140"
+        },
+        "flags": 0,
+        "description": "Request of a list vm host update operation."
+      },
+      "state": {
+        "type": {
+          "$ref": "#/143"
+        },
+        "flags": 0,
+        "description": "Specifies the state of the operation - install/ delete."
       }
     }
   },
@@ -1703,7 +1736,67 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/136"
+      "$ref": "#/139"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Install"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Delete"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/141"
+      },
+      {
+        "$ref": "#/142"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VMResourcesListResponse",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/145"
+        },
+        "flags": 0,
+        "description": "Response of a list vm host update operation."
+      },
+      "nextLink": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Link to the next set of results, if any."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/139"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "vmHostUpdate",
+    "resourceType": "Microsoft.Logz/monitors",
+    "apiVersion": "2022-01-01-preview",
+    "output": {
+      "$ref": "#/144"
+    },
+    "input": {
+      "$ref": "#/138"
     }
   },
   {
@@ -1712,7 +1805,7 @@
     "resourceType": "Microsoft.Logz/monitors",
     "apiVersion": "2022-01-01-preview",
     "output": {
-      "$ref": "#/135"
+      "$ref": "#/144"
     }
   },
   {
@@ -1726,11 +1819,32 @@
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listVMHosts",
+    "name": "vmHostPayload",
     "resourceType": "Microsoft.Logz/monitors/accounts",
     "apiVersion": "2022-01-01-preview",
     "output": {
       "$ref": "#/135"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "vmHostUpdate",
+    "resourceType": "Microsoft.Logz/monitors/accounts",
+    "apiVersion": "2022-01-01-preview",
+    "output": {
+      "$ref": "#/144"
+    },
+    "input": {
+      "$ref": "#/138"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listVMHosts",
+    "resourceType": "Microsoft.Logz/monitors/accounts",
+    "apiVersion": "2022-01-01-preview",
+    "output": {
+      "$ref": "#/144"
     }
   }
 ]

@@ -52,10 +52,35 @@
 * **properties**: [SnapshotProperties](#snapshotproperties): All snapshot properties.
 * **type**: 'Microsoft.AppConfiguration/configurationStores/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.AppConfiguration/locations@2023-08-01-preview)
+* **Resource**: Microsoft.AppConfiguration/locations
+* **ApiVersion**: 2023-08-01-preview
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [NameAvailabilityStatus](#nameavailabilitystatus)
+
 ## Function listKeys (Microsoft.AppConfiguration/configurationStores@2023-08-01-preview)
 * **Resource**: Microsoft.AppConfiguration/configurationStores
 * **ApiVersion**: 2023-08-01-preview
 * **Output**: [ApiKeyListResult](#apikeylistresult)
+
+## Function purge (Microsoft.AppConfiguration/locations/deletedConfigurationStores@2023-08-01-preview)
+* **Resource**: Microsoft.AppConfiguration/locations/deletedConfigurationStores
+* **ApiVersion**: 2023-08-01-preview
+
+## Function regenerateKey (Microsoft.AppConfiguration/configurationStores@2023-08-01-preview)
+* **Resource**: Microsoft.AppConfiguration/configurationStores
+* **ApiVersion**: 2023-08-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [ApiKey](#apikey)
+
+## ApiKey
+### Properties
+* **connectionString**: string (ReadOnly): A connection string that can be used by supporting clients for authentication.
+* **id**: string (ReadOnly): The key ID.
+* **lastModified**: string (ReadOnly): The last time any of the key's properties were modified.
+* **name**: string (ReadOnly): A name for the key describing its usage.
+* **readOnly**: bool (ReadOnly): Whether this key can only be used for read operations.
+* **value**: string (ReadOnly): The value of the key that is used for authentication purposes.
 
 ## ApiKey
 ### Properties
@@ -70,6 +95,11 @@
 ### Properties
 * **nextLink**: string: The URI that can be used to request the next set of paged results.
 * **value**: [ApiKey](#apikey)[]: The collection value.
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability.
+* **type**: 'Microsoft.AppConfiguration/configurationStores' | string (Required): The resource type to check for name availability.
 
 ## ConfigurationStoreProperties
 ### Properties
@@ -124,6 +154,12 @@ A locked key-value may not be modified until it is unlocked.
 * **identityClientId**: string: The client id of the identity which will be used to access key vault.
 * **keyIdentifier**: string: The URI of the key vault key used to encrypt data.
 
+## NameAvailabilityStatus
+### Properties
+* **message**: string (ReadOnly): If any, the error message that provides more detail for the reason that the name is not available.
+* **nameAvailable**: bool (ReadOnly): The value indicating whether the resource name is available.
+* **reason**: string (ReadOnly): If any, the reason that the name is not available.
+
 ## PrivateEndpoint
 ### Properties
 * **id**: string: The resource Id for private endpoint
@@ -146,6 +182,10 @@ A locked key-value may not be modified until it is unlocked.
 * **actionsRequired**: 'None' | 'Recreate' | string (ReadOnly): Any action that is required beyond basic workflow (approve/ reject/ disconnect)
 * **description**: string: The private link service connection description.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: The private link service connection status.
+
+## RegenerateKeyParameters
+### Properties
+* **id**: string: The id of the key to regenerate.
 
 ## ReplicaProperties
 ### Properties

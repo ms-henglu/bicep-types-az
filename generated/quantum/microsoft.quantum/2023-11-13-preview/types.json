@@ -505,6 +505,65 @@
   },
   {
     "$type": "ObjectType",
+    "name": "CheckNameAvailabilityParameters",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Name for checking availability."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The resource type of Quantum Workspace."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckNameAvailabilityResult",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/26"
+        },
+        "flags": 0,
+        "description": "Indicator of availability of the Quantum Workspace resource name."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The reason of unavailability."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The detailed info regarding the reason associated with the Namespace."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.Quantum/locations",
+    "apiVersion": "2023-11-13-preview",
+    "output": {
+      "$ref": "#/45"
+    },
+    "input": {
+      "$ref": "#/44"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "ListKeysResult",
     "properties": {
       "apiKeyEnabled": {
@@ -516,28 +575,28 @@
       },
       "primaryKey": {
         "type": {
-          "$ref": "#/45"
+          "$ref": "#/48"
         },
         "flags": 0,
         "description": "The quantum workspace primary api key."
       },
       "secondaryKey": {
         "type": {
-          "$ref": "#/45"
+          "$ref": "#/48"
         },
         "flags": 0,
         "description": "The quantum workspace secondary api key."
       },
       "primaryConnectionString": {
         "type": {
-          "$ref": "#/46"
+          "$ref": "#/49"
         },
         "flags": 2,
         "description": "The connection string of the primary api key."
       },
       "secondaryConnectionString": {
         "type": {
-          "$ref": "#/46"
+          "$ref": "#/49"
         },
         "flags": 2,
         "description": "The connection string of the secondary api key."
@@ -557,7 +616,7 @@
       },
       "key": {
         "type": {
-          "$ref": "#/46"
+          "$ref": "#/49"
         },
         "flags": 2,
         "description": "The Api key."
@@ -574,7 +633,57 @@
     "resourceType": "Microsoft.Quantum/workspaces",
     "apiVersion": "2023-11-13-preview",
     "output": {
-      "$ref": "#/44"
+      "$ref": "#/47"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "APIKeys",
+    "properties": {
+      "keys": {
+        "type": {
+          "$ref": "#/55"
+        },
+        "flags": 0,
+        "description": "A list of api key names."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Primary"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Secondary"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/52"
+      },
+      {
+        "$ref": "#/53"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/54"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateKey",
+    "resourceType": "Microsoft.Quantum/workspaces",
+    "apiVersion": "2023-11-13-preview",
+    "input": {
+      "$ref": "#/51"
     }
   }
 ]

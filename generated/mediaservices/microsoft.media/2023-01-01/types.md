@@ -122,6 +122,22 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/streamingPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Media/locations@2023-01-01)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2023-01-01
+* **Input**: [CheckNameAvailabilityInput](#checknameavailabilityinput)
+* **Output**: [EntityNameAvailabilityCheckOutput](#entitynameavailabilitycheckoutput)
+
+## Function getEncryptionKey (Microsoft.Media/mediaServices/assets@2023-01-01)
+* **Resource**: Microsoft.Media/mediaServices/assets
+* **ApiVersion**: 2023-01-01
+* **Output**: [StorageEncryptedAssetDecryptionData](#storageencryptedassetdecryptiondata)
+
+## Function getPolicyPropertiesWithSecrets (Microsoft.Media/mediaServices/contentKeyPolicies@2023-01-01)
+* **Resource**: Microsoft.Media/mediaServices/contentKeyPolicies
+* **ApiVersion**: 2023-01-01
+* **Output**: [ContentKeyPolicyProperties](#contentkeypolicyproperties)
+
 ## Function listContainerSas (Microsoft.Media/mediaServices/assets@2023-01-01)
 * **Resource**: Microsoft.Media/mediaServices/assets
 * **ApiVersion**: 2023-01-01
@@ -149,6 +165,15 @@
 * **ApiVersion**: 2023-01-01
 * **Output**: [ListStreamingLocatorsResponse](#liststreaminglocatorsresponse)
 
+## Function syncStorageKeys (Microsoft.Media/mediaservices@2023-01-01)
+* **Resource**: Microsoft.Media/mediaservices
+* **ApiVersion**: 2023-01-01
+* **Input**: [SyncStorageKeysInput](#syncstoragekeysinput)
+
+## Function updateTrackData (Microsoft.Media/mediaServices/assets/tracks@2023-01-01)
+* **Resource**: Microsoft.Media/mediaServices/assets/tracks
+* **ApiVersion**: 2023-01-01
+
 ## AccessControl
 ### Properties
 * **defaultAction**: 'Allow' | 'Deny' | string: The behavior for IP access control in Key Delivery.
@@ -164,6 +189,12 @@
 ## AssetContainerSas
 ### Properties
 * **assetContainerSasUrls**: string[]: The list of Asset container SAS URLs.
+
+## AssetFileEncryptionMetadata
+### Properties
+* **assetFileId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (Required): The Asset File Id.
+* **assetFileName**: string: The Asset File name.
+* **initializationVector**: string: The Asset File initialization vector.
 
 ## AssetProperties
 ### Properties
@@ -203,6 +234,11 @@
 ### Properties
 * **playReady**: [StreamingPolicyPlayReadyConfiguration](#streamingpolicyplayreadyconfiguration): PlayReady configurations
 * **widevine**: [StreamingPolicyWidevineConfiguration](#streamingpolicywidevineconfiguration): Widevine configurations
+
+## CheckNameAvailabilityInput
+### Properties
+* **name**: string: The account name.
+* **type**: string: The account type. For a Media Services account, this should be 'MediaServices'.
 
 ## ClearKeyEncryptionConfiguration
 ### Properties
@@ -329,6 +365,14 @@
 * **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
 * **policyId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The legacy Policy ID.
 
+## ContentKeyPolicyProperties
+### Properties
+* **created**: string (ReadOnly): The creation date of the Policy
+* **description**: string: A description for the Policy.
+* **lastModified**: string (ReadOnly): The last modified date of the Policy
+* **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
+* **policyId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The legacy Policy ID.
+
 ## ContentKeyPolicyRestriction
 * **Discriminator**: @odata.type
 
@@ -413,6 +457,12 @@
 * **download**: bool (Required): Enable Download protocol or not
 * **hls**: bool (Required): Enable HLS protocol or not
 * **smoothStreaming**: bool (Required): Enable SmoothStreaming protocol or not
+
+## EntityNameAvailabilityCheckOutput
+### Properties
+* **message**: string: Specifies the detailed reason if the name is not available.
+* **nameAvailable**: bool (Required): Specifies if the name is available.
+* **reason**: string: Specifies the reason if the name is not available.
 
 ## EnvelopeEncryption
 ### Properties
@@ -551,6 +601,11 @@
 * **status**: string (ReadOnly): The current status of the storage account mapping.
 * **type**: 'Primary' | 'Secondary' | string (Required): The type of the storage account.
 
+## StorageEncryptedAssetDecryptionData
+### Properties
+* **assetFileEncryptionMetadata**: [AssetFileEncryptionMetadata](#assetfileencryptionmetadata)[]: Asset File encryption metadata.
+* **key**: any: The Asset File storage encryption key.
+
 ## StreamingLocatorContentKey
 ### Properties
 * **id**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (Required): ID of Content Key
@@ -612,6 +667,10 @@
 ## StreamingPolicyWidevineConfiguration
 ### Properties
 * **customLicenseAcquisitionUrlTemplate**: string: Template for the URL of the custom service delivering licenses to end user players.  Not required when using Azure Media Services for issuing licenses.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
+
+## SyncStorageKeysInput
+### Properties
+* **id**: string: The ID of the storage account resource.
 
 ## SystemData
 ### Properties

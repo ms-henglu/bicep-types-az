@@ -55,6 +55,12 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/galleries/images/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function share (Microsoft.Compute/galleries@2023-07-03)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2023-07-03
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
 ## CommunityGalleryInfo
 ### Properties
 * **communityGalleryEnabled**: bool (ReadOnly): Contains info about whether community gallery sharing is enabled.
@@ -346,6 +352,16 @@
 ### Properties
 * **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Aggregated sharing state of current gallery.
 * **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**
+
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**
 
 ## SoftDeletePolicy
 ### Properties

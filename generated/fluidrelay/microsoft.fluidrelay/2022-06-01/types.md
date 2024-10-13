@@ -28,6 +28,12 @@
 * **ApiVersion**: 2022-06-01
 * **Output**: [FluidRelayServerKeys](#fluidrelayserverkeys)
 
+## Function regenerateKey (Microsoft.FluidRelay/fluidRelayServers@2022-06-01)
+* **Resource**: Microsoft.FluidRelay/fluidRelayServers
+* **ApiVersion**: 2022-06-01
+* **Input**: [RegenerateKeyRequest](#regeneratekeyrequest)
+* **Output**: [FluidRelayServerKeys](#fluidrelayserverkeys)
+
 ## CustomerManagedKeyEncryptionProperties
 ### Properties
 * **keyEncryptionKeyIdentity**: [CustomerManagedKeyEncryptionPropertiesKeyEncryptionKeyIdentity](#customermanagedkeyencryptionpropertieskeyencryptionkeyidentity): All identity configuration for Customer-managed key settings defining which identity should be used to auth to Key Vault.
@@ -61,6 +67,11 @@
 * **key1**: string (ReadOnly): The primary key for this server
 * **key2**: string (ReadOnly): The secondary key for this server
 
+## FluidRelayServerKeys
+### Properties
+* **key1**: string (ReadOnly): The primary key for this server
+* **key2**: string (ReadOnly): The secondary key for this server
+
 ## FluidRelayServerProperties
 ### Properties
 * **encryption**: [EncryptionProperties](#encryptionproperties): All encryption configuration for a resource.
@@ -80,6 +91,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentitiesValue](#userassignedidentitiesvalue)
+
+## RegenerateKeyRequest
+### Properties
+* **keyName**: 'key1' | 'key2' (Required): The key to regenerate.
 
 ## SystemData
 ### Properties

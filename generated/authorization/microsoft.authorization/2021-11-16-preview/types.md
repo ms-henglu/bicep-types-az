@@ -82,6 +82,35 @@
 * **reminderNotificationsEnabled**: bool (WriteOnly): Flag to indicate whether sending reminder emails to reviewers are enabled.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleSettings' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function acceptRecommendations (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+
+## Function applyDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+
+## Function generateDownloadUri (Microsoft.Authorization/accessReviewHistoryDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewHistoryDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+* **Output**: [AccessReviewHistoryInstance](#accessreviewhistoryinstance)
+
+## Function resetDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+
+## Function sendReminders (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions
+* **ApiVersion**: 2021-11-16-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-11-16-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-11-16-preview
+
 ## AccessReviewActorIdentity
 ### Properties
 * **principalId**: string (ReadOnly): The identity id
@@ -144,6 +173,13 @@
 * **scopes**: [AccessReviewScope](#accessreviewscope)[]: A collection of scopes used when selecting review history data
 * **settings**: [AccessReviewHistoryScheduleSettings](#accessreviewhistoryschedulesettings): Recurrence settings for recurring history reports, skip for one-time reports.
 * **status**: 'Done' | 'Error' | 'InProgress' | 'Requested' | string (ReadOnly): This read-only field specifies the of the requested review history data. This is either requested, in-progress, done or error.
+
+## AccessReviewHistoryInstance
+### Properties
+* **id**: string (ReadOnly): The access review history definition instance id.
+* **name**: string (ReadOnly): The access review history definition instance unique id.
+* **properties**: [AccessReviewHistoryInstanceProperties](#accessreviewhistoryinstanceproperties): Access Review History Definition Instance properties.
+* **type**: string (ReadOnly): The resource type.
 
 ## AccessReviewHistoryInstance
 ### Properties

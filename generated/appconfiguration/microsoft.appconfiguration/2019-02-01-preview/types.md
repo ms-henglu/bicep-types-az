@@ -22,6 +22,21 @@
 * **Input**: [ListKeyValueParameters](#listkeyvalueparameters)
 * **Output**: [KeyValue](#keyvalue)
 
+## Function RegenerateKey (Microsoft.AppConfiguration/configurationStores@2019-02-01-preview)
+* **Resource**: Microsoft.AppConfiguration/configurationStores
+* **ApiVersion**: 2019-02-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [ApiKey](#apikey)
+
+## ApiKey
+### Properties
+* **connectionString**: string (ReadOnly): A connection string that can be used by supporting clients for authentication.
+* **id**: string (ReadOnly): The key ID.
+* **lastModified**: string (ReadOnly): The last time any of the key's properties were modified.
+* **name**: string (ReadOnly): A name for the key describing its usage.
+* **readOnly**: bool (ReadOnly): Whether this key can only be used for read operations.
+* **value**: string (ReadOnly): The value of the key that is used for authentication purposes.
+
 ## ApiKey
 ### Properties
 * **connectionString**: string (ReadOnly): A connection string that can be used by supporting clients for authentication.
@@ -66,6 +81,10 @@ A locked key-value may not be modified until it is unlocked.
 ### Properties
 * **key**: string (Required): The key to retrieve.
 * **label**: string: The label of the key.
+
+## RegenerateKeyParameters
+### Properties
+* **id**: string: The id of the key to regenerate.
 
 ## ResourceTags
 ### Properties

@@ -54,6 +54,21 @@
 * **ApiVersion**: 2020-04-01
 * **Output**: [AmlComputeNodesInformation](#amlcomputenodesinformation)
 
+## Function prepareNotebook (Microsoft.MachineLearningServices/workspaces@2020-04-01)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2020-04-01
+* **Output**: [NotebookResourceInfo](#notebookresourceinfo)
+
+## Function resyncKeys (Microsoft.MachineLearningServices/workspaces@2020-04-01)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2020-04-01
+
+## Function updateQuotas (Microsoft.MachineLearningServices/locations@2020-04-01)
+* **Resource**: Microsoft.MachineLearningServices/locations
+* **ApiVersion**: 2020-04-01
+* **Input**: [QuotaUpdateParameters](#quotaupdateparameters)
+* **Output**: [UpdateWorkspaceQuotasResult](#updateworkspacequotasresult)
+
 ## AksNetworkingConfiguration
 ### Properties
 * **dnsServiceIP**: string {pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"}: An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.
@@ -262,6 +277,12 @@
 * **notebookPreparationError**: [NotebookPreparationError](#notebookpreparationerror): The error that occurs when preparing notebook.
 * **resourceId**: string: the data plane resourceId that used to initialize notebook component
 
+## NotebookResourceInfo
+### Properties
+* **fqdn**: string
+* **notebookPreparationError**: [NotebookPreparationError](#notebookpreparationerror): The error that occurs when preparing notebook.
+* **resourceId**: string: the data plane resourceId that used to initialize notebook component
+
 ## Password
 ### Properties
 * **name**: string (ReadOnly)
@@ -293,6 +314,17 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | 'Timeout' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## QuotaBaseProperties
+### Properties
+* **id**: string: Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **type**: string: Specifies the resource type.
+* **unit**: 'Count' | string: An enum describing the unit of quota measurement.
+
+## QuotaUpdateParameters
+### Properties
+* **value**: [QuotaBaseProperties](#quotabaseproperties)[]: The list for update quota.
 
 ## RegistryListCredentialsResult
 ### Properties
@@ -361,6 +393,19 @@
 * **publicIpAddress**: string (ReadOnly): Public IP address
 * **systemServiceType**: string (ReadOnly): The type of this system service.
 * **version**: string (ReadOnly): The version for this type.
+
+## UpdateWorkspaceQuotas
+### Properties
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **status**: 'Failure' | 'InvalidQuotaBelowClusterMinimum' | 'InvalidQuotaExceedsSubscriptionLimit' | 'InvalidVMFamilyName' | 'OperationNotEnabledForRegion' | 'OperationNotSupportedForSku' | 'Success' | 'Undefined' | string: Status of update workspace quota.
+* **type**: string (ReadOnly): Specifies the resource type.
+* **unit**: 'Count' | string (ReadOnly): An enum describing the unit of quota measurement.
+
+## UpdateWorkspaceQuotasResult
+### Properties
+* **nextLink**: string (ReadOnly): The URI to fetch the next page of workspace quota update result. Call ListNext() with this to fetch the next page of Workspace Quota update result.
+* **value**: [UpdateWorkspaceQuotas](#updateworkspacequotas)[] (ReadOnly): The list of workspace quota update result.
 
 ## UserAccountCredentials
 ### Properties

@@ -32,6 +32,26 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/FrontDoorWebApplicationFirewallPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function disableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2018-08-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2018-08-01
+
+## Function enableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2018-08-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2018-08-01
+* **Input**: [CustomHttpsConfiguration](#customhttpsconfiguration)
+
+## Function purge (Microsoft.Network/frontDoors@2018-08-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2018-08-01
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function validateCustomDomain (Microsoft.Network/frontDoors@2018-08-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2018-08-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
 ## AzureManagedOverrideRuleGroup
 ### Properties
 * **action**: 'Allow' | 'Block' | 'Log' | string (Required): Type of Actions
@@ -65,6 +85,13 @@
 ### Properties
 * **dynamicCompression**: 'Disabled' | 'Enabled' | string: Whether to use dynamic compression for cached content
 * **queryParameterStripDirective**: 'StripAll' | 'StripNone' | string: Treatment of URL query terms when forming the cache key.
+
+## CustomHttpsConfiguration
+### Properties
+* **certificateSource**: 'AzureKeyVault' | 'FrontDoor' | string: Defines the source of the SSL certificate
+* **frontDoorCertificateSourceParameters**: [FrontDoorCertificateSourceParameters](#frontdoorcertificatesourceparameters): Parameters required for enabling SSL with Front Door-managed certificates (if certificateSource=FrontDoor)
+* **keyVaultCertificateSourceParameters**: [KeyVaultCertificateSourceParameters](#keyvaultcertificatesourceparameters): KeyVault certificate source parameters (if certificateSource=AzureKeyVault)
+* **protocolType**: 'ServerNameIndication' | string: Defines the TLS extension protocol that is used for secure delivery
 
 ## CustomHttpsConfiguration
 ### Properties
@@ -196,6 +223,10 @@
 * **enabledState**: 'Disabled' | 'Enabled' | string: describes if the policy is in enabled state or disabled state
 * **mode**: 'Detection' | 'Prevention' | string: Describes if it is in detection mode  or prevention mode at policy level
 
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -228,6 +259,16 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource ID.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
 
 ## WebApplicationFirewallPolicyPropertiesFormat
 ### Properties
