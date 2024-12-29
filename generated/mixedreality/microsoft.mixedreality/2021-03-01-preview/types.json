@@ -640,18 +640,102 @@
   },
   {
     "$type": "ObjectType",
+    "name": "CheckNameAvailabilityRequest",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Resource Name To Verify"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Fully qualified resource type which includes provider namespace"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckNameAvailabilityResponse",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/42"
+        },
+        "flags": 1,
+        "description": "if name Available"
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/45"
+        },
+        "flags": 0,
+        "description": "Resource Name To Verify"
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "detail message"
+      }
+    }
+  },
+  {
+    "$type": "BooleanType"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Invalid"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AlreadyExists"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/43"
+      },
+      {
+        "$ref": "#/44"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.MixedReality/locations",
+    "apiVersion": "2021-03-01-preview",
+    "output": {
+      "$ref": "#/41"
+    },
+    "input": {
+      "$ref": "#/40"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "AccountKeys",
     "properties": {
       "primaryKey": {
         "type": {
-          "$ref": "#/41"
+          "$ref": "#/48"
         },
         "flags": 2,
         "description": "value of primary key."
       },
       "secondaryKey": {
         "type": {
-          "$ref": "#/41"
+          "$ref": "#/48"
         },
         "flags": 2,
         "description": "value of secondary key."
@@ -668,7 +752,32 @@
     "resourceType": "Microsoft.MixedReality/spatialAnchorsAccounts",
     "apiVersion": "2021-03-01-preview",
     "output": {
-      "$ref": "#/40"
+      "$ref": "#/47"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AccountKeyRegenerateRequest",
+    "properties": {
+      "serial": {
+        "type": {
+          "$ref": "#/14"
+        },
+        "flags": 0,
+        "description": "Serial of key to be regenerated"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateKeys",
+    "resourceType": "Microsoft.MixedReality/spatialAnchorsAccounts",
+    "apiVersion": "2021-03-01-preview",
+    "output": {
+      "$ref": "#/47"
+    },
+    "input": {
+      "$ref": "#/50"
     }
   },
   {
@@ -677,7 +786,19 @@
     "resourceType": "Microsoft.MixedReality/remoteRenderingAccounts",
     "apiVersion": "2021-03-01-preview",
     "output": {
-      "$ref": "#/40"
+      "$ref": "#/47"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateKeys",
+    "resourceType": "Microsoft.MixedReality/remoteRenderingAccounts",
+    "apiVersion": "2021-03-01-preview",
+    "output": {
+      "$ref": "#/47"
+    },
+    "input": {
+      "$ref": "#/50"
     }
   },
   {
@@ -686,7 +807,19 @@
     "resourceType": "Microsoft.MixedReality/objectAnchorsAccounts",
     "apiVersion": "2021-03-01-preview",
     "output": {
-      "$ref": "#/40"
+      "$ref": "#/47"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateKeys",
+    "resourceType": "Microsoft.MixedReality/objectAnchorsAccounts",
+    "apiVersion": "2021-03-01-preview",
+    "output": {
+      "$ref": "#/47"
+    },
+    "input": {
+      "$ref": "#/50"
     }
   }
 ]

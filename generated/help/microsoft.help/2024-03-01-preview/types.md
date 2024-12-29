@@ -50,12 +50,36 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Help/troubleshooters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function continue (Microsoft.Help/troubleshooters@2024-03-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2024-03-01-preview
+* **Input**: [ContinueRequestBody](#continuerequestbody)
+
+## Function end (Microsoft.Help/troubleshooters@2024-03-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2024-03-01-preview
+
+## Function restart (Microsoft.Help/troubleshooters@2024-03-01-preview)
+* **Resource**: Microsoft.Help/troubleshooters
+* **ApiVersion**: 2024-03-01-preview
+* **Output**: [RestartTroubleshooterResponse](#restarttroubleshooterresponse)
+
+## Function warmup (Microsoft.Help/solutions@2024-03-01-preview)
+* **Resource**: Microsoft.Help/solutions
+* **ApiVersion**: 2024-03-01-preview
+* **Input**: [SolutionWarmUpRequestBody](#solutionwarmuprequestbody)
+
 ## AutomatedCheckResult
 ### Properties
 * **result**: string: Insight Article Content
 * **status**: string: Status for automated check result
 * **type**: 'Error' | 'Information' | 'Success' | 'Warning' | string: Type of Result.
 * **version**: string: Version for automated check result
+
+## ContinueRequestBody
+### Properties
+* **responses**: [TroubleshooterResponse](#troubleshooterresponse)[]
+* **stepId**: string: Unique id of the result.
 
 ## Diagnostic
 ### Properties
@@ -161,6 +185,10 @@
 * **validationErrorMessage**: string: Validation Error Message.
 * **validationScope**: 'GuidFormat' | 'IpAddressFormat' | 'None' | 'NumberOnlyFormat' | 'URLFormat' | string: Validation scope
 
+## RestartTroubleshooterResponse
+### Properties
+* **troubleshooterResourceName**: string (ReadOnly): Updated TroubleshooterResource Name .
+
 ## SearchResult
 ### Properties
 * **confidence**: 'High' | 'Low' | 'Medium' | string: Confidence of the search result.
@@ -243,6 +271,15 @@
 * **summary**: string: Troubleshooter summary
 * **title**: string: Troubleshooter title
 
+## SolutionWarmUpRequestBody
+### Properties
+* **parameters**: [SolutionWarmUpRequestBodyParameters](#solutionwarmuprequestbodyparameters): Dictionary of <string>
+
+## SolutionWarmUpRequestBodyParameters
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## Step
 ### Properties
 * **automatedCheckResults**: [AutomatedCheckResult](#automatedcheckresult): Only for AutomatedStep type
@@ -296,6 +333,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TroubleshooterResponse
+### Properties
+* **questionId**: string: id of the question.
+* **questionType**: 'DateTimePicker' | 'Dropdown' | 'MultiLineInfoBox' | 'MultiSelect' | 'RadioButton' | 'TextInput' | string: Type of Question
+* **response**: string: Response key for SingleInput. For Multi-line test/open ended question it is free form text
 
 ## Video
 ### Properties

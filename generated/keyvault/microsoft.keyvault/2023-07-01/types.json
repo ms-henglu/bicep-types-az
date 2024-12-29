@@ -3943,5 +3943,17 @@
       "$ref": "#/339"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "purge",
+    "resourceType": "Microsoft.KeyVault/locations/deletedVaults",
+    "apiVersion": "2023-07-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "purge",
+    "resourceType": "Microsoft.KeyVault/locations/deletedManagedHSMs",
+    "apiVersion": "2023-07-01"
   }
 ]

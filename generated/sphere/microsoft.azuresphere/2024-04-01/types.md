@@ -72,6 +72,37 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureSphere/catalogs/products/deviceGroups/devices' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function claimDevices (Microsoft.AzureSphere/catalogs/products/deviceGroups@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/products/deviceGroups
+* **ApiVersion**: 2024-04-01
+* **Input**: [ClaimDevicesRequest](#claimdevicesrequest)
+
+## Function countDevices (Microsoft.AzureSphere/catalogs@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs
+* **ApiVersion**: 2024-04-01
+* **Output**: [CountDevicesResponse](#countdevicesresponse)
+
+## Function countDevices (Microsoft.AzureSphere/catalogs/products@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/products
+* **ApiVersion**: 2024-04-01
+* **Output**: [CountDevicesResponse](#countdevicesresponse)
+
+## Function countDevices (Microsoft.AzureSphere/catalogs/products/deviceGroups@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/products/deviceGroups
+* **ApiVersion**: 2024-04-01
+* **Output**: [CountDevicesResponse](#countdevicesresponse)
+
+## Function generateCapabilityImage (Microsoft.AzureSphere/catalogs/products/deviceGroups/devices@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/products/deviceGroups/devices
+* **ApiVersion**: 2024-04-01
+* **Input**: [GenerateCapabilityImageRequest](#generatecapabilityimagerequest)
+* **Output**: [SignedCapabilityImageResponse](#signedcapabilityimageresponse)
+
+## Function generateDefaultDeviceGroups (Microsoft.AzureSphere/catalogs/products@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/products
+* **ApiVersion**: 2024-04-01
+* **Output**: [DeviceGroupListResult](#devicegrouplistresult)
+
 ## Function listDeployments (Microsoft.AzureSphere/catalogs@2024-04-01)
 * **Resource**: Microsoft.AzureSphere/catalogs
 * **ApiVersion**: 2024-04-01
@@ -93,10 +124,30 @@
 * **ApiVersion**: 2024-04-01
 * **Output**: [DeviceListResult](#devicelistresult)
 
+## Function retrieveCertChain (Microsoft.AzureSphere/catalogs/certificates@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/certificates
+* **ApiVersion**: 2024-04-01
+* **Output**: [CertificateChainResponse](#certificatechainresponse)
+
+## Function retrieveProofOfPossessionNonce (Microsoft.AzureSphere/catalogs/certificates@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs/certificates
+* **ApiVersion**: 2024-04-01
+* **Input**: [ProofOfPossessionNonceRequest](#proofofpossessionnoncerequest)
+* **Output**: [ProofOfPossessionNonceResponse](#proofofpossessionnonceresponse)
+
+## Function uploadImage (Microsoft.AzureSphere/catalogs@2024-04-01)
+* **Resource**: Microsoft.AzureSphere/catalogs
+* **ApiVersion**: 2024-04-01
+* **Input**: [Image](#image)
+
 ## CatalogProperties
 ### Properties
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The status of the last operation.
 * **tenantId**: string (ReadOnly): The Azure Sphere tenant ID associated with the catalog.
+
+## CertificateChainResponse
+### Properties
+* **certificateChain**: string (ReadOnly): The certificate chain.
 
 ## CertificateProperties
 ### Properties
@@ -107,6 +158,22 @@
 * **status**: 'Active' | 'Expired' | 'Inactive' | 'Revoked' | string (ReadOnly): The certificate status.
 * **subject**: string (ReadOnly): The certificate subject.
 * **thumbprint**: string (ReadOnly): The certificate thumbprint.
+
+## ClaimDevicesRequest
+### Properties
+* **deviceIdentifiers**: string[] (Required): Device identifiers of the devices to be claimed.
+
+## CountDevicesResponse
+### Properties
+* **value**: int (Required): Number of children resources in parent resource.
+
+## CountDevicesResponse
+### Properties
+* **value**: int (Required): Number of children resources in parent resource.
+
+## CountDevicesResponse
+### Properties
+* **value**: int (Required): Number of children resources in parent resource.
 
 ## Deployment
 ### Properties
@@ -149,6 +216,11 @@
 * **nextLink**: string: The link to the next page of items
 * **value**: [DeviceGroup](#devicegroup)[] (Required): The DeviceGroup items on this page
 
+## DeviceGroupListResult
+### Properties
+* **nextLink**: string: The link to the next page of items
+* **value**: [DeviceGroup](#devicegroup)[] (Required): The DeviceGroup items on this page
+
 ## DeviceGroupProperties
 ### Properties
 * **allowCrashDumpsCollection**: 'Disabled' | 'Enabled' | string: Flag to define if the user allows for crash dump collection.
@@ -185,6 +257,18 @@
 * **lastUpdateRequestUtc**: string (ReadOnly): Time when update was last requested
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The status of the last operation.
 
+## GenerateCapabilityImageRequest
+### Properties
+* **capabilities**: ('ApplicationDevelopment' | 'FieldServicing' | string)[] (Required): List of capabilities to create
+
+## Image
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ImageProperties](#imageproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## Image
 ### Properties
 * **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
@@ -218,6 +302,24 @@
 ### Properties
 * **description**: string: Description of the product
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The status of the last operation.
+
+## ProofOfPossessionNonceRequest
+### Properties
+* **proofOfPossessionNonce**: string (Required): The proof of possession nonce
+
+## ProofOfPossessionNonceResponse
+### Properties
+* **certificate**: string (ReadOnly): The certificate as a UTF-8 encoded base 64 string.
+* **expiryUtc**: string (ReadOnly): The certificate expiry date.
+* **notBeforeUtc**: string (ReadOnly): The certificate not before date.
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The status of the last operation.
+* **status**: 'Active' | 'Expired' | 'Inactive' | 'Revoked' | string (ReadOnly): The certificate status.
+* **subject**: string (ReadOnly): The certificate subject.
+* **thumbprint**: string (ReadOnly): The certificate thumbprint.
+
+## SignedCapabilityImageResponse
+### Properties
+* **image**: string (ReadOnly): The signed device capability image as a UTF-8 encoded base 64 string.
 
 ## SystemData
 ### Properties

@@ -16,6 +16,12 @@
 * **ApiVersion**: 2015-06-15
 * **Output**: [StorageAccountKeys](#storageaccountkeys)
 
+## Function regenerateKey (Microsoft.Storage/storageAccounts@2015-06-15)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2015-06-15
+* **Input**: [StorageAccountRegenerateKeyParameters](#storageaccountregeneratekeyparameters)
+* **Output**: [StorageAccountKeys](#storageaccountkeys)
+
 ## CustomDomain
 ### Properties
 * **name**: string (Required): The custom domain name. Name is the CNAME source.
@@ -38,6 +44,11 @@
 * **key1**: string: The value of key 1.
 * **key2**: string: The value of key 2.
 
+## StorageAccountKeys
+### Properties
+* **key1**: string: The value of key 1.
+* **key2**: string: The value of key 2.
+
 ## StorageAccountPropertiesCreateParametersOrStorageAccountProperties
 ### Properties
 * **accountType**: 'Premium_LRS' | 'Standard_GRS' | 'Standard_LRS' | 'Standard_RAGRS' | 'Standard_ZRS' (Required): The sku name. Required for account creation; optional for update. Note that in older versions, sku name was called accountType.
@@ -51,4 +62,8 @@
 * **secondaryLocation**: string (ReadOnly): The location of the geo-replicated secondary for the storage account. Only available if the accountType is Standard_GRS or Standard_RAGRS.
 * **statusOfPrimary**: 'Available' | 'Unavailable' (ReadOnly): The status indicating whether the primary location of the storage account is available or unavailable.
 * **statusOfSecondary**: 'Available' | 'Unavailable' (ReadOnly): The status indicating whether the secondary location of the storage account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
+
+## StorageAccountRegenerateKeyParameters
+### Properties
+* **keyName**: string (Required)
 

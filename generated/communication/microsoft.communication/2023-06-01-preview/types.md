@@ -67,10 +67,39 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelVerification (Microsoft.Communication/emailServices/domains@2023-06-01-preview)
+* **Resource**: Microsoft.Communication/emailServices/domains
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [VerificationParameter](#verificationparameter)
+
+## Function initiateVerification (Microsoft.Communication/emailServices/domains@2023-06-01-preview)
+* **Resource**: Microsoft.Communication/emailServices/domains
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [VerificationParameter](#verificationparameter)
+
+## Function linkNotificationHub (Microsoft.Communication/communicationServices@2023-06-01-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [LinkNotificationHubParameters](#linknotificationhubparameters)
+* **Output**: [LinkedNotificationHub](#linkednotificationhub)
+
 ## Function listKeys (Microsoft.Communication/communicationServices@2023-06-01-preview)
 * **Resource**: Microsoft.Communication/communicationServices
 * **ApiVersion**: 2023-06-01-preview
 * **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## Function regenerateKey (Microsoft.Communication/communicationServices@2023-06-01-preview)
+* **Resource**: Microsoft.Communication/communicationServices
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [CommunicationServiceKeys](#communicationservicekeys)
+
+## CommunicationServiceKeys
+### Properties
+* **primaryConnectionString**: string: CommunicationService connection string constructed via the primaryKey
+* **primaryKey**: string: The primary access key.
+* **secondaryConnectionString**: string: CommunicationService connection string constructed via the secondaryKey
+* **secondaryKey**: string: The secondary access key.
 
 ## CommunicationServiceKeys
 ### Properties
@@ -128,12 +157,25 @@
 * **dataLocation**: string (Required): The location where the email service stores its data at rest.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Running' | 'Succeeded' | 'Unknown' | 'Updating' | string (ReadOnly): Provisioning state of the resource.
 
+## LinkedNotificationHub
+### Properties
+* **resourceId**: string: The resource ID of the notification hub
+
+## LinkNotificationHubParameters
+### Properties
+* **connectionString**: string (Required): Connection string for the notification hub
+* **resourceId**: string (Required): The resource ID of the notification hub
+
 ## ManagedServiceIdentity
 ### Properties
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The service principal ID of the system assigned identity. This property will only be provided for a system assigned identity.
 * **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary': The keyType to regenerate. Must be either 'primary' or 'secondary'(case-insensitive).
 
 ## SenderUsernameProperties
 ### Properties
@@ -191,6 +233,14 @@
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client ID of the assigned identity.
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The principal ID of the assigned identity.
+
+## VerificationParameter
+### Properties
+* **verificationType**: 'DKIM' | 'DKIM2' | 'DMARC' | 'Domain' | 'SPF' | string (Required): Type of verification.
+
+## VerificationParameter
+### Properties
+* **verificationType**: 'DKIM' | 'DKIM2' | 'DMARC' | 'Domain' | 'SPF' | string (Required): Type of verification.
 
 ## VerificationStatusRecord
 ### Properties

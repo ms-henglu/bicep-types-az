@@ -100,10 +100,51 @@
 * **tags**: [AzureProxyResourceTags](#azureproxyresourcetags) (ReadOnly): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Batch/batchAccounts/applications/versions@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/applications/versions
+* **ApiVersion**: 2024-07-01
+* **Input**: [ActivateApplicationPackageParameters](#activateapplicationpackageparameters)
+* **Output**: [ApplicationPackage](#applicationpackage)
+
+## Function cancelDelete (Microsoft.Batch/batchAccounts/certificates@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/certificates
+* **ApiVersion**: 2024-07-01
+* **Output**: [Certificate](#certificate)
+
+## Function checkNameAvailability (Microsoft.Batch/locations@2024-07-01)
+* **Resource**: Microsoft.Batch/locations
+* **ApiVersion**: 2024-07-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function disableAutoScale (Microsoft.Batch/batchAccounts/pools@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2024-07-01
+* **Output**: [Pool](#pool)
+
 ## Function listKeys (Microsoft.Batch/batchAccounts@2024-07-01)
 * **Resource**: Microsoft.Batch/batchAccounts
 * **ApiVersion**: 2024-07-01
 * **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function reconcile (Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2024-07-01
+
+## Function regenerateKeys (Microsoft.Batch/batchAccounts@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2024-07-01
+* **Input**: [BatchAccountRegenerateKeyParameters](#batchaccountregeneratekeyparameters)
+* **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function stopResize (Microsoft.Batch/batchAccounts/pools@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2024-07-01
+* **Output**: [Pool](#pool)
+
+## Function syncAutoStorageKeys (Microsoft.Batch/batchAccounts@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2024-07-01
 
 ## AccessRule
 ### Properties
@@ -123,6 +164,19 @@
 ## AccessRulePropertiesSubscriptionsItem
 ### Properties
 * **id**: string: The fully qualified Azure resource ID of the subscription e.g. ('/subscriptions/00000000-0000-0000-0000-000000000000')
+
+## ActivateApplicationPackageParameters
+### Properties
+* **format**: string (Required): The format of the application package binary file.
+
+## ApplicationPackage
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [ApplicationPackageProperties](#applicationpackageproperties): The properties associated with the Application Package.
+* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## ApplicationPackageProperties
 ### Properties
@@ -237,6 +291,21 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## AzureProxyResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## AzureProxyResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## AzureProxyResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## BatchAccountCreateParametersTags
 ### Properties
 ### Additional Properties
@@ -280,6 +349,16 @@
 * **primary**: string (ReadOnly): The primary key associated with the account.
 * **secondary**: string (ReadOnly): The secondary key associated with the account.
 
+## BatchAccountKeys
+### Properties
+* **accountName**: string (ReadOnly): The Batch account name.
+* **primary**: string (ReadOnly): The primary key associated with the account.
+* **secondary**: string (ReadOnly): The secondary key associated with the account.
+
+## BatchAccountRegenerateKeyParameters
+### Properties
+* **keyName**: 'Primary' | 'Secondary' (Required): The type of account key to regenerate.
+
 ## BatchPoolIdentity
 ### Properties
 * **type**: 'None' | 'UserAssigned' (Required): The type of identity used for the Batch Pool.
@@ -289,6 +368,15 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentities](#userassignedidentities)
+
+## Certificate
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [CertificateProperties](#certificateproperties): The properties associated with the certificate.
+* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## CertificateCreateOrUpdatePropertiesOrCertificateProperties
 ### Properties
@@ -304,12 +392,35 @@
 * **thumbprint**: string: This must match the thumbprint from the name.
 * **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
 
+## CertificateProperties
+### Properties
+* **deleteCertificateError**: [DeleteCertificateError](#deletecertificateerror) (ReadOnly): This is only returned when the certificate provisioningState is 'Failed'.
+* **format**: 'Cer' | 'Pfx': The format of the certificate - either Pfx or Cer. If omitted, the default is Pfx.
+* **previousProvisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly): The previous provisioned state of the resource
+* **previousProvisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its previous state.
+* **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly)
+* **provisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its current state.
+* **publicData**: string (ReadOnly): The public key of the certificate.
+* **thumbprint**: string: This must match the thumbprint from the name.
+* **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
+
 ## CertificateReference
 ### Properties
 * **id**: string (Required): The fully qualified ID of the certificate to install on the pool. This must be inside the same batch account as the pool.
 * **storeLocation**: 'CurrentUser' | 'LocalMachine': The default value is currentUser. This property is applicable only for pools configured with Windows compute nodes. For Linux compute nodes, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is supplied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory.
 * **storeName**: string: This property is applicable only for pools configured with Windows compute nodes. Common store names include: My, Root, CA, Trust, Disallowed, TrustedPeople, TrustedPublisher, AuthRoot, AddressBook, but any custom store name can also be used. The default value is My.
 * **visibility**: ('RemoteUser' | 'StartTask' | 'Task')[]: Which user accounts on the compute node should have access to the private data of the certificate.
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability
+* **type**: 'Microsoft.Batch/batchAccounts' (Required): The resource type.
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): Gets an error message explaining the Reason value in more detail.
+* **nameAvailable**: bool (ReadOnly): Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or invalid and cannot be used.
+* **reason**: 'AlreadyExists' | 'Invalid' (ReadOnly): Gets the reason that a Batch account name could not be used. The Reason element is only returned if NameAvailable is false.
 
 ## CifsMountConfiguration
 ### Properties
@@ -414,7 +525,7 @@
 
 ## InboundNatPool
 ### Properties
-* **backendPort**: int (Required): This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 22, 3389, 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
+* **backendPort**: int (Required): This must be unique within a Batch pool. Acceptable values are between 1 and 65535 except for 29876 and 29877 as these are reserved. If any reserved values are provided the request fails with HTTP status code 400.
 * **frontendPortRangeEnd**: int (Required): Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved by the Batch service. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 * **frontendPortRangeStart**: int (Required): Acceptable values range between 1 and 65534 except ports from 50000 to 55000 which are reserved. All ranges within a pool must be distinct and cannot overlap. If any reserved or overlapping values are provided the request fails with HTTP status code 400.
 * **name**: string (Required): The name must be unique within a Batch pool, can contain letters, numbers, underscores, periods, and hyphens. Names must start with a letter or number, must end with a letter, number, or underscore, and cannot exceed 77 characters.  If any invalid values are provided the request fails with HTTP status code 400.
@@ -468,7 +579,7 @@
 * **enableAcceleratedNetworking**: bool: Accelerated networking enables single root I/O virtualization (SR-IOV) to a VM, which may lead to improved networking performance. For more details, see: https://learn.microsoft.com/azure/virtual-network/accelerated-networking-overview.
 * **endpointConfiguration**: [PoolEndpointConfiguration](#poolendpointconfiguration): The endpoint configuration for a pool.
 * **publicIPAddressConfiguration**: [PublicIPAddressConfiguration](#publicipaddressconfiguration): The public IP Address configuration of the networking configuration of a Pool.
-* **subnetId**: string: The virtual network must be in the same region and subscription as the Azure Batch account. The specified subnet should have enough free IP addresses to accommodate the number of nodes in the pool. If the subnet doesn't have enough free IP addresses, the pool will partially allocate compute nodes and a resize error will occur. The 'MicrosoftAzureBatch' service principal must have the 'Classic Virtual Machine Contributor' Role-Based Access Control (RBAC) role for the specified VNet. The specified subnet must allow communication from the Azure Batch service to be able to schedule tasks on the compute nodes. This can be verified by checking if the specified VNet has any associated Network Security Groups (NSG). If communication to the compute nodes in the specified subnet is denied by an NSG, then the Batch service will set the state of the compute nodes to unusable. If the specified VNet has any associated Network Security Groups (NSG), then a few reserved system ports must be enabled for inbound communication. Enable ports 29876 and 29877, as well as port 22 for Linux and port 3389 for Windows. Also enable outbound connections to Azure Storage on port 443. For more details see: https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewall-configuration
+* **subnetId**: string: The virtual network must be in the same region and subscription as the Azure Batch account. The specified subnet should have enough free IP addresses to accommodate the number of nodes in the pool. If the subnet doesn't have enough free IP addresses, the pool will partially allocate compute nodes and a resize error will occur. The 'MicrosoftAzureBatch' service principal must have the 'Classic Virtual Machine Contributor' Role-Based Access Control (RBAC) role for the specified VNet. The specified subnet must allow communication from the Azure Batch service to be able to schedule tasks on the compute nodes. This can be verified by checking if the specified VNet has any associated Network Security Groups (NSG). If communication to the compute nodes in the specified subnet is denied by an NSG, then the Batch service will set the state of the compute nodes to unusable. If the specified VNet has any associated Network Security Groups (NSG), then a few reserved system ports must be enabled for inbound communication，including ports 29876 and 29877. Also enable outbound connections to Azure Storage on port 443. For more details see: https://docs.microsoft.com/en-us/azure/batch/batch-api-basics#virtual-network-vnet-and-firewall-configuration
 
 ## NetworkProfile
 ### Properties
@@ -521,6 +632,26 @@
 * **ephemeralOSDiskSettings**: [DiffDiskSettings](#diffdisksettings): Specifies the ephemeral Disk Settings for the operating system disk used by the virtual machine.
 * **managedDisk**: [ManagedDisk](#manageddisk)
 * **writeAcceleratorEnabled**: bool: Specifies whether writeAccelerator should be enabled or disabled on the disk.
+
+## Pool
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
+* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource.
+
+## Pool
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): The ID of the resource.
+* **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
+* **name**: string (ReadOnly): The name of the resource.
+* **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
+* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource.
 
 ## PoolEndpointConfiguration
 ### Properties

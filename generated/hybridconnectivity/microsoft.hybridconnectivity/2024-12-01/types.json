@@ -397,7 +397,7 @@
         "type": {
           "$ref": "#/36"
         },
-        "flags": 5,
+        "flags": 1,
         "description": "Host cloud the public cloud connector."
       },
       "provisioningState": {
@@ -424,7 +424,7 @@
         "type": {
           "$ref": "#/2"
         },
-        "flags": 5,
+        "flags": 1,
         "description": "Account id for the AWS account."
       },
       "excludedAccounts": {
@@ -438,7 +438,7 @@
         "type": {
           "$ref": "#/34"
         },
-        "flags": 4,
+        "flags": 0,
         "description": "Boolean value that indicates whether the account is organizational or not. True represents organization account, whereas false represents a single account."
       }
     }
@@ -1154,136 +1154,188 @@
   },
   {
     "$type": "ObjectType",
-    "name": "ListCredentialsRequest",
+    "name": "OperationStatusResult",
     "properties": {
-      "serviceName": {
-        "type": {
-          "$ref": "#/94"
-        },
-        "flags": 0,
-        "description": "The name of the service. If not provided, the request will by pass the generation of service configuration token"
-      }
-    }
-  },
-  {
-    "$type": "StringLiteralType",
-    "value": "SSH"
-  },
-  {
-    "$type": "StringLiteralType",
-    "value": "WAC"
-  },
-  {
-    "$type": "UnionType",
-    "elements": [
-      {
-        "$ref": "#/92"
-      },
-      {
-        "$ref": "#/93"
-      },
-      {
-        "$ref": "#/2"
-      }
-    ]
-  },
-  {
-    "$type": "ObjectType",
-    "name": "EndpointAccessResource",
-    "properties": {
-      "relay": {
-        "type": {
-          "$ref": "#/96"
-        },
-        "flags": 0,
-        "description": "Azure relay hybrid connection access properties"
-      }
-    }
-  },
-  {
-    "$type": "ObjectType",
-    "name": "RelayNamespaceAccessProperties",
-    "properties": {
-      "namespaceName": {
-        "type": {
-          "$ref": "#/97"
-        },
-        "flags": 1,
-        "description": "The namespace name."
-      },
-      "namespaceNameSuffix": {
-        "type": {
-          "$ref": "#/98"
-        },
-        "flags": 1,
-        "description": "The suffix domain name of relay namespace."
-      },
-      "hybridConnectionName": {
+      "id": {
         "type": {
           "$ref": "#/2"
         },
-        "flags": 1,
-        "description": "Azure Relay hybrid connection name for the resource."
+        "flags": 0,
+        "description": "Fully qualified ID for the async operation."
       },
-      "accessKey": {
+      "resourceId": {
         "type": {
           "$ref": "#/2"
         },
         "flags": 2,
-        "description": "Access key for hybrid connection."
+        "description": "Fully qualified ID of the resource against which the original async operation was started."
       },
-      "expiresOn": {
+      "name": {
         "type": {
-          "$ref": "#/58"
+          "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The expiration of access key in unix time."
+        "description": "Name of the async operation."
       },
-      "serviceConfigurationToken": {
+      "status": {
         "type": {
-          "$ref": "#/99"
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Operation status."
+      },
+      "percentComplete": {
+        "type": {
+          "$ref": "#/92"
         },
         "flags": 0,
-        "description": "The token to access the enabled service."
+        "description": "Percent of the operation that is complete."
+      },
+      "startTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The start time of the operation."
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The end time of the operation."
+      },
+      "operations": {
+        "type": {
+          "$ref": "#/93"
+        },
+        "flags": 0,
+        "description": "The operations list."
+      },
+      "error": {
+        "type": {
+          "$ref": "#/94"
+        },
+        "flags": 0,
+        "description": "If present, details of the operation error."
       }
     }
   },
   {
-    "$type": "StringType",
-    "minLength": 1,
-    "maxLength": 200
+    "$type": "IntegerType",
+    "minValue": 0,
+    "maxValue": 100
   },
   {
-    "$type": "StringType",
-    "minLength": 1,
-    "maxLength": 100
-  },
-  {
-    "$type": "StringType",
-    "sensitive": true
-  },
-  {
-    "$type": "ResourceFunctionType",
-    "name": "listCredentials",
-    "resourceType": "Microsoft.HybridConnectivity/endpoints",
-    "apiVersion": "2024-12-01",
-    "output": {
-      "$ref": "#/95"
-    },
-    "input": {
+    "$type": "ArrayType",
+    "itemType": {
       "$ref": "#/91"
     }
   },
   {
     "$type": "ObjectType",
-    "name": "ListIngressGatewayCredentialsRequest",
+    "name": "ErrorDetail",
+    "properties": {
+      "code": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error code."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error message."
+      },
+      "target": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error target."
+      },
+      "details": {
+        "type": {
+          "$ref": "#/95"
+        },
+        "flags": 2,
+        "description": "The error details."
+      },
+      "additionalInfo": {
+        "type": {
+          "$ref": "#/98"
+        },
+        "flags": 2,
+        "description": "The error additional info."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/94"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ErrorAdditionalInfo",
+    "properties": {
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The additional info type."
+      },
+      "info": {
+        "type": {
+          "$ref": "#/97"
+        },
+        "flags": 2,
+        "description": "The additional info."
+      }
+    }
+  },
+  {
+    "$type": "AnyType"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/96"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncNow",
+    "resourceType": "Microsoft.HybridConnectivity/solutionConfigurations",
+    "apiVersion": "2024-12-01",
+    "output": {
+      "$ref": "#/91"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "testPermissions",
+    "resourceType": "Microsoft.HybridConnectivity/publicCloudConnectors",
+    "apiVersion": "2024-12-01",
+    "output": {
+      "$ref": "#/91"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ListCredentialsRequest",
     "properties": {
       "serviceName": {
         "type": {
           "$ref": "#/104"
         },
         "flags": 0,
-        "description": "The name of the service."
+        "description": "The name of the service. If not provided, the request will by pass the generation of service configuration token"
       }
     }
   },
@@ -1311,18 +1363,140 @@
   },
   {
     "$type": "ObjectType",
+    "name": "EndpointAccessResource",
+    "properties": {
+      "relay": {
+        "type": {
+          "$ref": "#/106"
+        },
+        "flags": 0,
+        "description": "Azure relay hybrid connection access properties"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RelayNamespaceAccessProperties",
+    "properties": {
+      "namespaceName": {
+        "type": {
+          "$ref": "#/107"
+        },
+        "flags": 1,
+        "description": "The namespace name."
+      },
+      "namespaceNameSuffix": {
+        "type": {
+          "$ref": "#/108"
+        },
+        "flags": 1,
+        "description": "The suffix domain name of relay namespace."
+      },
+      "hybridConnectionName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Azure Relay hybrid connection name for the resource."
+      },
+      "accessKey": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Access key for hybrid connection."
+      },
+      "expiresOn": {
+        "type": {
+          "$ref": "#/58"
+        },
+        "flags": 0,
+        "description": "The expiration of access key in unix time."
+      },
+      "serviceConfigurationToken": {
+        "type": {
+          "$ref": "#/109"
+        },
+        "flags": 0,
+        "description": "The token to access the enabled service."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "minLength": 1,
+    "maxLength": 200
+  },
+  {
+    "$type": "StringType",
+    "minLength": 1,
+    "maxLength": 100
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listCredentials",
+    "resourceType": "Microsoft.HybridConnectivity/endpoints",
+    "apiVersion": "2024-12-01",
+    "output": {
+      "$ref": "#/105"
+    },
+    "input": {
+      "$ref": "#/101"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ListIngressGatewayCredentialsRequest",
+    "properties": {
+      "serviceName": {
+        "type": {
+          "$ref": "#/114"
+        },
+        "flags": 0,
+        "description": "The name of the service."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SSH"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "WAC"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/112"
+      },
+      {
+        "$ref": "#/113"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
     "name": "IngressGatewayResource",
     "properties": {
       "relay": {
         "type": {
-          "$ref": "#/96"
+          "$ref": "#/106"
         },
         "flags": 0,
         "description": "Azure relay hybrid connection access properties"
       },
       "ingress": {
         "type": {
-          "$ref": "#/106"
+          "$ref": "#/116"
         },
         "flags": 0,
         "description": "Ingress gateway profile"
@@ -1342,7 +1516,7 @@
       },
       "aadProfile": {
         "type": {
-          "$ref": "#/107"
+          "$ref": "#/117"
         },
         "flags": 1,
         "description": "The AAD Profile"
@@ -1375,10 +1549,10 @@
     "resourceType": "Microsoft.HybridConnectivity/endpoints",
     "apiVersion": "2024-12-01",
     "output": {
-      "$ref": "#/105"
+      "$ref": "#/115"
     },
     "input": {
-      "$ref": "#/101"
+      "$ref": "#/111"
     }
   },
   {
@@ -1401,7 +1575,7 @@
       },
       "serviceName": {
         "type": {
-          "$ref": "#/112"
+          "$ref": "#/122"
         },
         "flags": 0,
         "description": "The name of the service. It is an optional property, if not provided, service configuration tokens issue code would be by passed."
@@ -1420,10 +1594,10 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/110"
+        "$ref": "#/120"
       },
       {
-        "$ref": "#/111"
+        "$ref": "#/121"
       },
       {
         "$ref": "#/2"
@@ -1456,10 +1630,10 @@
     "resourceType": "Microsoft.HybridConnectivity/endpoints",
     "apiVersion": "2024-12-01",
     "output": {
-      "$ref": "#/113"
+      "$ref": "#/123"
     },
     "input": {
-      "$ref": "#/109"
+      "$ref": "#/119"
     }
   }
 ]

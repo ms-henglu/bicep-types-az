@@ -12,12 +12,40 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DevHub/workflows' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function generatePreviewArtifacts (Microsoft.DevHub/locations@2022-10-11-preview)
+* **Resource**: Microsoft.DevHub/locations
+* **ApiVersion**: 2022-10-11-preview
+* **Input**: [ArtifactGenerationProperties](#artifactgenerationproperties)
+* **Output**: [GeneratePreviewArtifactsResponse](#generatepreviewartifactsresponse)
+
+## Function getGitHubOAuthInfo (Microsoft.DevHub/locations/githuboauth@2022-10-11-preview)
+* **Resource**: Microsoft.DevHub/locations/githuboauth
+* **ApiVersion**: 2022-10-11-preview
+* **Input**: [GitHubOAuthCallRequest](#githuboauthcallrequest)
+* **Output**: [GitHubOAuthInfoResponse](#githuboauthinforesponse)
+
 ## ACR
 ### Properties
 * **acrRegistryName**: string: ACR registry
 * **acrRepositoryName**: string: ACR repository
 * **acrResourceGroup**: string: ACR resource group
 * **acrSubscriptionId**: string: ACR subscription id
+
+## ArtifactGenerationProperties
+### Properties
+* **appName**: string: The name of the app.
+* **builderVersion**: string: The version of the language image used for building the code in the generated dockerfile.
+* **dockerfileGenerationMode**: 'disabled' | 'enabled' | string: The mode of generation to be used for generating Dockerfiles.
+* **dockerfileOutputDirectory**: string: The directory to output the generated Dockerfile to.
+* **generationLanguage**: 'clojure' | 'csharp' | 'erlang' | 'go' | 'gomodule' | 'gradle' | 'java' | 'javascript' | 'php' | 'python' | 'ruby' | 'rust' | 'swift' | string: The programming language used.
+* **imageName**: string: The name of the image to be generated.
+* **imageTag**: string: The tag to apply to the generated image.
+* **languageVersion**: string: The version of the language image used for execution in the generated dockerfile.
+* **manifestGenerationMode**: 'disabled' | 'enabled' | string: The mode of generation to be used for generating Manifest.
+* **manifestOutputDirectory**: string: The directory to output the generated manifests to.
+* **manifestType**: 'helm' | 'kube' | string: Determines the type of manifests to be generated.
+* **namespace**: string: The namespace to deploy the application to.
+* **port**: string: The port the application is exposed on.
 
 ## ArtifactGenerationProperties
 ### Properties
@@ -47,6 +75,20 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## GeneratePreviewArtifactsResponse
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## GitHubOAuthCallRequest
+### Properties
+* **redirectUrl**: string: The URL the client will redirect to on successful authentication. If empty, no redirect will occur.
+
+## GitHubOAuthInfoResponse
+### Properties
+* **authURL**: string: URL for authorizing the Developer Hub GitHub App
+* **token**: string: OAuth token used to make calls to GitHub
 
 ## GitHubWorkflowProfile
 ### Properties

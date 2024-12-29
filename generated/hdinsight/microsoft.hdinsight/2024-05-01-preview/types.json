@@ -3014,5 +3014,1125 @@
       "$ref": "#/43"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterPoolUpgrade",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/207"
+        },
+        "flags": 1,
+        "description": "Properties of upgrading cluster pool."
+      }
+    }
+  },
+  {
+    "$type": "DiscriminatedObjectType",
+    "name": "ClusterPoolUpgradeProperties",
+    "discriminator": "upgradeType",
+    "baseProperties": {},
+    "elements": {
+      "AKSPatchUpgrade": {
+        "$ref": "#/208"
+      },
+      "NodeOsUpgrade": {
+        "$ref": "#/210"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterPoolAKSPatchVersionUpgradeProperties",
+    "properties": {
+      "upgradeClusterPool": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 0,
+        "description": "whether upgrade cluster pool or not. If it's true, upgradeAllClusterNodes should be false."
+      },
+      "upgradeAllClusterNodes": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 0,
+        "description": "whether upgrade all clusters' nodes. If it's true, upgradeClusterPool should be false."
+      },
+      "targetAksVersion": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target AKS version. When it's not set, latest version will be used. When upgradeClusterPool is true and upgradeAllClusterNodes is false, target version should be greater or equal to current version. When upgradeClusterPool is false and upgradeAllClusterNodes is true, target version should be equal to AKS version of cluster pool."
+      },
+      "upgradeType": {
+        "type": {
+          "$ref": "#/209"
+        },
+        "flags": 1,
+        "description": "Type of upgrade."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AKSPatchUpgrade"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterPoolNodeOsImageUpdateProperties",
+    "properties": {
+      "upgradeType": {
+        "type": {
+          "$ref": "#/211"
+        },
+        "flags": 1,
+        "description": "Type of upgrade."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NodeOsUpgrade"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterPool",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/4"
+        },
+        "flags": 0,
+        "description": "Gets or sets the properties. Define cluster pool specific properties."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/213"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The geo-location where the resource lives"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "TrackedResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upgrade",
+    "resourceType": "Microsoft.HDInsight/clusterpools",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/212"
+    },
+    "input": {
+      "$ref": "#/206"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterUpgrade",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/216"
+        },
+        "flags": 1,
+        "description": "Properties of upgrading cluster."
+      }
+    }
+  },
+  {
+    "$type": "DiscriminatedObjectType",
+    "name": "ClusterUpgradeProperties",
+    "discriminator": "upgradeType",
+    "baseProperties": {},
+    "elements": {
+      "AKSPatchUpgrade": {
+        "$ref": "#/217"
+      },
+      "HotfixUpgrade": {
+        "$ref": "#/219"
+      },
+      "PatchVersionUpgrade": {
+        "$ref": "#/221"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterAKSPatchVersionUpgradeProperties",
+    "properties": {
+      "upgradeType": {
+        "type": {
+          "$ref": "#/218"
+        },
+        "flags": 1,
+        "description": "Type of upgrade."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AKSPatchUpgrade"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterHotfixUpgradeProperties",
+    "properties": {
+      "targetOssVersion": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target OSS version of component to be upgraded."
+      },
+      "targetClusterVersion": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target cluster version of component to be upgraded."
+      },
+      "targetBuildNumber": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target build number of component to be upgraded."
+      },
+      "componentName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of component to be upgraded."
+      },
+      "upgradeType": {
+        "type": {
+          "$ref": "#/220"
+        },
+        "flags": 1,
+        "description": "Type of upgrade."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "HotfixUpgrade"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterPatchVersionUpgradeProperties",
+    "properties": {
+      "targetOssVersion": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target OSS version of component to be upgraded."
+      },
+      "targetClusterVersion": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target cluster version of component to be upgraded."
+      },
+      "targetBuildNumber": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Target build number of component to be upgraded."
+      },
+      "componentName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of component to be upgraded."
+      },
+      "upgradeType": {
+        "type": {
+          "$ref": "#/222"
+        },
+        "flags": 1,
+        "description": "Type of upgrade."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PatchVersionUpgrade"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Cluster",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "Gets or sets the properties. Define cluster specific properties."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/224"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The geo-location where the resource lives"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "TrackedResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upgrade",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/223"
+    },
+    "input": {
+      "$ref": "#/215"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterUpgradeRollback",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/227"
+        },
+        "flags": 1,
+        "description": "Properties for manual rollback of cluster's upgrade."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterUpgradeRollbackProperties",
+    "properties": {
+      "upgradeHistory": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "A specific upgrade history to rollback"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "rollback",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/223"
+    },
+    "input": {
+      "$ref": "#/226"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterResizeData",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/230"
+        },
+        "flags": 0,
+        "description": "Sets the properties. Define cluster resize specific properties."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/231"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The geo-location where the resource lives"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterResizeProperties",
+    "properties": {
+      "targetWorkerNodeCount": {
+        "type": {
+          "$ref": "#/16"
+        },
+        "flags": 1,
+        "description": "Target node count of worker node."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "TrackedResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resize",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/223"
+    },
+    "input": {
+      "$ref": "#/229"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterJob",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/234"
+        },
+        "flags": 1,
+        "description": "Properties of cluster job."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "DiscriminatedObjectType",
+    "name": "ClusterJobProperties",
+    "discriminator": "jobType",
+    "baseProperties": {},
+    "elements": {
+      "FlinkJob": {
+        "$ref": "#/235"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FlinkJobProperties",
+    "properties": {
+      "runId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Run id of job"
+      },
+      "jobName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name of job"
+      },
+      "jobJarDirectory": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that specifies the directory where the job JAR is located."
+      },
+      "jarName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that represents the name of the job JAR."
+      },
+      "entryClass": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that specifies the entry class for the Flink job."
+      },
+      "args": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property representing additional JVM arguments for the Flink job. It should be space separated value."
+      },
+      "savePointName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that represents the name of the savepoint for the Flink job"
+      },
+      "action": {
+        "type": {
+          "$ref": "#/247"
+        },
+        "flags": 0,
+        "description": "A string property that indicates the action to be performed on the Flink job. It can have one of the following enum values => NEW, UPDATE, STATELESS_UPDATE, STOP, START, CANCEL, SAVEPOINT, LIST_SAVEPOINT, or DELETE."
+      },
+      "flinkConfiguration": {
+        "type": {
+          "$ref": "#/248"
+        },
+        "flags": 0,
+        "description": "Additional properties used to configure Flink jobs. It allows users to set properties such as parallelism and jobSavePointDirectory. It accepts additional key-value pairs as properties, where the keys are strings and the values are strings as well."
+      },
+      "jobId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Unique id for identifying a job"
+      },
+      "status": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Status of job."
+      },
+      "jobOutput": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Output of job."
+      },
+      "actionResult": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Action result of job."
+      },
+      "lastSavePoint": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The last savepoint."
+      },
+      "jobType": {
+        "type": {
+          "$ref": "#/249"
+        },
+        "flags": 1,
+        "description": "Type of cluster job."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NEW"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "UPDATE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "STATELESS_UPDATE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "STOP"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "START"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "CANCEL"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SAVEPOINT"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "LIST_SAVEPOINT"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "DELETE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "LAST_STATE_UPDATE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RE_LAUNCH"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/236"
+      },
+      {
+        "$ref": "#/237"
+      },
+      {
+        "$ref": "#/238"
+      },
+      {
+        "$ref": "#/239"
+      },
+      {
+        "$ref": "#/240"
+      },
+      {
+        "$ref": "#/241"
+      },
+      {
+        "$ref": "#/242"
+      },
+      {
+        "$ref": "#/243"
+      },
+      {
+        "$ref": "#/244"
+      },
+      {
+        "$ref": "#/245"
+      },
+      {
+        "$ref": "#/246"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FlinkJobPropertiesFlinkConfiguration",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "FlinkJob"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "runJob",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/233"
+    },
+    "input": {
+      "$ref": "#/233"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterLibraryManagementOperation",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/252"
+        },
+        "flags": 1,
+        "description": "Properties of a library management operation."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterLibraryManagementOperationProperties",
+    "properties": {
+      "action": {
+        "type": {
+          "$ref": "#/255"
+        },
+        "flags": 1,
+        "description": "The library management action."
+      },
+      "libraries": {
+        "type": {
+          "$ref": "#/268"
+        },
+        "flags": 1,
+        "description": "The libraries to be installed/updated/uninstalled."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Install"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Uninstall"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/253"
+      },
+      {
+        "$ref": "#/254"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterLibrary",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/257"
+        },
+        "flags": 1,
+        "description": "Properties of a library in the cluster."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/29"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "DiscriminatedObjectType",
+    "name": "ClusterLibraryProperties",
+    "discriminator": "type",
+    "baseProperties": {
+      "remarks": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Remark of the latest library management operation."
+      },
+      "timestamp": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Timestamp of the latest library management operation."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/263"
+        },
+        "flags": 2,
+        "description": "Status of the library."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Error message of the library operation when a failure occurs."
+      }
+    },
+    "elements": {
+      "maven": {
+        "$ref": "#/264"
+      },
+      "pypi": {
+        "$ref": "#/266"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "INSTALLING"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "INSTALLED"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "INSTALL_FAILED"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "UNINSTALLING"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "UNINSTALL_FAILED"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/258"
+      },
+      {
+        "$ref": "#/259"
+      },
+      {
+        "$ref": "#/260"
+      },
+      {
+        "$ref": "#/261"
+      },
+      {
+        "$ref": "#/262"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "MavenLibraryProperties",
+    "properties": {
+      "groupId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "GroupId of the Maven package."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "ArtifactId of the Maven package."
+      },
+      "version": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Version of the Maven package."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/265"
+        },
+        "flags": 1,
+        "description": "Type of the library."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "maven"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PyPiLibraryProperties",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Name of the PyPi package."
+      },
+      "version": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Version of the PyPi package."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/267"
+        },
+        "flags": 1,
+        "description": "Type of the library."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "pypi"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/256"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "manageLibraries",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2024-05-01-preview",
+    "input": {
+      "$ref": "#/251"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NameAvailabilityParameters",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name for checking availability."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The resource type in Microsoft.HDInsight."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NameAvailabilityResult",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 0,
+        "description": "Indicator of availability of the Microsoft.HDInsight resource name."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The reason of unavailability."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The error message of unavailability."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.HDInsight/locations",
+    "apiVersion": "2024-05-01-preview",
+    "output": {
+      "$ref": "#/271"
+    },
+    "input": {
+      "$ref": "#/270"
+    }
   }
 ]

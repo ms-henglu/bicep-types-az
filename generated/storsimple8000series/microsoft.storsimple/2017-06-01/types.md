@@ -113,6 +113,47 @@
 * **properties**: [StorageAccountCredentialProperties](#storageaccountcredentialproperties) (Required): The storage account credential properties.
 * **type**: 'Microsoft.StorSimple/managers/storageAccountCredentials' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function authorizeForServiceEncryptionKeyRollover (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+
+## Function cancel (Microsoft.StorSimple/managers/devices/jobs@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/jobs
+* **ApiVersion**: 2017-06-01
+
+## Function changeControllerPowerState (Microsoft.StorSimple/managers/devices/hardwareComponentGroups@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/hardwareComponentGroups
+* **ApiVersion**: 2017-06-01
+* **Input**: [ControllerPowerStateChangeRequest](#controllerpowerstatechangerequest)
+
+## Function clearAlerts (Microsoft.StorSimple/managers@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2017-06-01
+* **Input**: [ClearAlertRequest](#clearalertrequest)
+
+## Function clone (Microsoft.StorSimple/managers/devices/backups/elements@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/backups/elements
+* **ApiVersion**: 2017-06-01
+* **Input**: [CloneRequest](#clonerequest)
+
+## Function configureDevice (Microsoft.StorSimple/managers@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2017-06-01
+* **Input**: [ConfigureDeviceRequest](#configuredevicerequest)
+
+## Function deactivate (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+
+## Function failover (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+* **Input**: [FailoverRequest](#failoverrequest)
+
+## Function installUpdates (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+
 ## Function listActivationKey (Microsoft.StorSimple/managers@2017-06-01)
 * **Resource**: Microsoft.StorSimple/managers
 * **ApiVersion**: 2017-06-01
@@ -134,6 +175,38 @@
 * **ApiVersion**: 2017-06-01
 * **Output**: [SymmetricEncryptedSecret](#symmetricencryptedsecret)
 
+## Function provisionCloudAppliance (Microsoft.StorSimple/managers@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2017-06-01
+* **Input**: [CloudAppliance](#cloudappliance)
+
+## Function publicEncryptionKey (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+* **Output**: [PublicKey](#publickey)
+
+## Function regenerateActivationKey (Microsoft.StorSimple/managers@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2017-06-01
+* **Output**: [Key](#key)
+
+## Function restore (Microsoft.StorSimple/managers/devices/backups@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/backups
+* **ApiVersion**: 2017-06-01
+
+## Function scanForUpdates (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+
+## Function sendTestAlertEmail (Microsoft.StorSimple/managers/devices@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2017-06-01
+* **Input**: [SendTestAlertEmailRequest](#sendtestalertemailrequest)
+
+## Function syncRemoteManagementCertificate (Microsoft.StorSimple/managers/devices/securitySettings@2017-06-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/securitySettings
+* **ApiVersion**: 2017-06-01
+
 ## AccessControlRecordProperties
 ### Properties
 * **initiatorName**: string (Required): The iSCSI initiator name (IQN).
@@ -151,6 +224,16 @@
 * **encryptionAlgorithm**: 'AES256' | 'None' | 'RSAES_PKCS1_v_1_5' (Required): The algorithm used to encrypt "Value".
 * **encryptionCertThumbprint**: string: Thumbprint certificate that was used to encrypt "Value". If the value in unencrypted, it will be null.
 * **value**: string (Required): The value of the secret.
+
+## BackupElement
+### Properties
+* **elementId**: string (Required): The path ID that uniquely identifies the backup element.
+* **elementName**: string (Required): The name of the backup element.
+* **elementType**: string (Required): The hierarchical type of the backup element.
+* **sizeInBytes**: int (Required): The size in bytes.
+* **volumeContainerId**: string (Required): The path ID of the volume container.
+* **volumeName**: string (Required): The name of the volume.
+* **volumeType**: 'Archival' | 'LocallyPinned' | 'Tiered': The volume type.
 
 ## BackupPolicyProperties
 ### Properties
@@ -182,6 +265,68 @@
 * **rateInMbps**: int (Required): The rate in Mbps.
 * **start**: [Time](#time) (Required): The start time of the schedule.
 * **stop**: [Time](#time) (Required): The stop time of the schedule.
+
+## ClearAlertRequest
+### Properties
+* **alerts**: string[] (Required): The list of alert IDs to be cleared
+* **resolutionMessage**: string: The resolution message while clearing the alert
+
+## CloneRequest
+### Properties
+* **backupElement**: [BackupElement](#backupelement) (Required): The backup element that is cloned.
+* **targetAccessControlRecordIds**: string[] (Required): The list of path IDs of the access control records to be associated to the new cloned volume.
+* **targetDeviceId**: string (Required): The path ID of the device which will act as the clone target.
+* **targetVolumeName**: string (Required): The name of the new volume which will be created and the backup will be cloned into.
+
+## CloudAppliance
+### Properties
+* **isVnetDnsConfigured**: bool: Indicates whether virtual network used is configured with DNS or not.
+* **isVnetExpressConfigured**: bool: Indicates whether virtual network used is configured with express route or not.
+* **modelNumber**: string: The model number.
+* **name**: string (Required): The name.
+* **storageAccountName**: string: The name of the storage account.
+* **storageAccountType**: string: The type of the storage account.
+* **subnetName**: string: The name of the subnet.
+* **vmImageName**: string: The name of the virtual machine image.
+* **vmType**: string: The type of the virtual machine.
+* **vnetName**: string: The name of the virtual network.
+* **vnetRegion**: string (Required): The virtual network region.
+
+## ConfigureDeviceRequest
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **kind**: 'Series8000': The Kind of the object. Currently only Series8000 is supported
+* **name**: string (ReadOnly): The name of the object.
+* **properties**: [ConfigureDeviceRequestProperties](#configuredevicerequestproperties) (Required): The properties of the configure device request.
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## ConfigureDeviceRequestProperties
+### Properties
+* **currentDeviceName**: string (Required): The current name of the device.
+* **dnsSettings**: [SecondaryDNSSettings](#secondarydnssettings): The secondary DNS Settings of the device.
+* **friendlyName**: string (Required): The friendly name for the device.
+* **networkInterfaceData0Settings**: [NetworkInterfaceData0Settings](#networkinterfacedata0settings): The 'Data 0' network interface card settings.
+* **timeZone**: string (Required): The device time zone. For eg: "Pacific Standard Time"
+
+## ControllerPowerStateChangeRequest
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **kind**: 'Series8000': The Kind of the object. Currently only Series8000 is supported
+* **name**: string (ReadOnly): The name of the object.
+* **properties**: [ControllerPowerStateChangeRequestProperties](#controllerpowerstatechangerequestproperties) (Required): The properties of the controller power state change request.
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## ControllerPowerStateChangeRequestProperties
+### Properties
+* **action**: 'Restart' | 'Shutdown' | 'Start' (Required): The power state that the request is expecting for the controller of the device.
+* **activeController**: 'Controller0' | 'Controller1' | 'None' | 'Unknown' (Required): The active controller that the request is expecting on the device.
+* **controller0State**: 'Failure' | 'NotPresent' | 'Ok' | 'PoweredOff' | 'Recovering' | 'Warning' (Required): The controller 0's status that the request is expecting on the device.
+* **controller1State**: 'Failure' | 'NotPresent' | 'Ok' | 'PoweredOff' | 'Recovering' | 'Warning' (Required): The controller 1's status that the request is expecting on the device.
+
+## FailoverRequest
+### Properties
+* **targetDeviceId**: string: The ARM path ID of the device which will act as the failover target.
+* **volumeContainers**: string[]: The list of path IDs of the volume containers which needs to be failed-over to the target device.
 
 ## FailoverSet
 ### Properties
@@ -219,6 +364,10 @@
 ### Properties
 * **activationKey**: string (Required): The activation key for the device.
 
+## Key
+### Properties
+* **activationKey**: string (Required): The activation key for the device.
+
 ## ListFailoverTargetsRequest
 ### Properties
 * **volumeContainers**: string[]: The list of path IDs of the volume containers that needs to be failed-over, for which we want to fetch the eligible targets.
@@ -246,6 +395,15 @@
 ### Properties
 * **name**: 'Standard' (Required): Refers to the sku name which should be "Standard"
 
+## NetworkInterfaceData0Settings
+### Properties
+* **controllerOneIp**: string: The controller 1's IPv4 address.
+* **controllerZeroIp**: string: The controller 0's IPv4 address.
+
+## PublicKey
+### Properties
+* **key**: string (Required): The key.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -256,6 +414,14 @@
 * **recurrenceType**: 'Daily' | 'Hourly' | 'Minutes' | 'Weekly' (Required): The recurrence type.
 * **recurrenceValue**: int (Required): The recurrence value.
 * **weeklyDaysList**: ('Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday')[]: The week days list. Applicable only for schedules of recurrence type 'weekly'.
+
+## SecondaryDNSSettings
+### Properties
+* **secondaryDnsServers**: string[]: The list of secondary DNS Server IP addresses.
+
+## SendTestAlertEmailRequest
+### Properties
+* **emailList**: string[] (Required): The list of email IDs to send the test alert email
 
 ## StorageAccountCredentialProperties
 ### Properties

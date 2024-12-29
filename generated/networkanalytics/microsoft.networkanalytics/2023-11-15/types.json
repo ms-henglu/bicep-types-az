@@ -1278,27 +1278,80 @@
     "flags": 1
   },
   {
-    "$type": "AnyType"
-  },
-  {
     "$type": "ObjectType",
-    "name": "ListRoleAssignments",
+    "name": "RoleAssignmentCommonProperties",
     "properties": {
-      "count": {
+      "roleId": {
         "type": {
-          "$ref": "#/78"
+          "$ref": "#/2"
         },
         "flags": 1,
-        "description": "Count of role assignments."
+        "description": "Role Id of the Built-In Role"
       },
-      "roleAssignmentResponse": {
+      "principalId": {
         "type": {
-          "$ref": "#/107"
+          "$ref": "#/2"
         },
         "flags": 1,
-        "description": "list of role assignments"
+        "description": "Object ID of the AAD principal or security-group."
+      },
+      "userName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "User name."
+      },
+      "dataTypeScope": {
+        "type": {
+          "$ref": "#/101"
+        },
+        "flags": 1,
+        "description": "Data Type Scope at which the role assignment is created."
+      },
+      "principalType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Type of the principal Id: User, Group or ServicePrincipal"
+      },
+      "role": {
+        "type": {
+          "$ref": "#/104"
+        },
+        "flags": 1,
+        "description": "Data Product role to be assigned to a user."
       }
     }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Reader"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SensitiveReader"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/102"
+      },
+      {
+        "$ref": "#/103"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
   },
   {
     "$type": "ObjectType",
@@ -1327,7 +1380,7 @@
       },
       "dataTypeScope": {
         "type": {
-          "$ref": "#/103"
+          "$ref": "#/106"
         },
         "flags": 1,
         "description": "Data Type Scope at which the role assignment is created."
@@ -1341,7 +1394,7 @@
       },
       "role": {
         "type": {
-          "$ref": "#/106"
+          "$ref": "#/109"
         },
         "flags": 1,
         "description": "Data Product role to be assigned to a user."
@@ -1373,10 +1426,10 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/104"
+        "$ref": "#/107"
       },
       {
-        "$ref": "#/105"
+        "$ref": "#/108"
       },
       {
         "$ref": "#/2"
@@ -1384,9 +1437,100 @@
     ]
   },
   {
+    "$type": "ResourceFunctionType",
+    "name": "addUserRole",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts",
+    "apiVersion": "2023-11-15",
+    "output": {
+      "$ref": "#/105"
+    },
+    "input": {
+      "$ref": "#/100"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AccountSas",
+    "properties": {
+      "startTimeStamp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Sas token start timestamp."
+      },
+      "expiryTimeStamp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Sas token expiry timestamp."
+      },
+      "ipAddress": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Ip Address"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AccountSasToken",
+    "properties": {
+      "storageAccountSasToken": {
+        "type": {
+          "$ref": "#/113"
+        },
+        "flags": 1,
+        "description": "Field to specify storage account sas token."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "generateStorageAccountSasToken",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts",
+    "apiVersion": "2023-11-15",
+    "output": {
+      "$ref": "#/112"
+    },
+    "input": {
+      "$ref": "#/111"
+    }
+  },
+  {
+    "$type": "AnyType"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ListRoleAssignments",
+    "properties": {
+      "count": {
+        "type": {
+          "$ref": "#/78"
+        },
+        "flags": 1,
+        "description": "Count of role assignments."
+      },
+      "roleAssignmentResponse": {
+        "type": {
+          "$ref": "#/117"
+        },
+        "flags": 1,
+        "description": "list of role assignments"
+      }
+    }
+  },
+  {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/102"
+      "$ref": "#/105"
     }
   },
   {
@@ -1395,10 +1539,102 @@
     "resourceType": "Microsoft.NetworkAnalytics/dataProducts",
     "apiVersion": "2023-11-15",
     "output": {
-      "$ref": "#/101"
+      "$ref": "#/116"
     },
     "input": {
-      "$ref": "#/100"
+      "$ref": "#/115"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "removeUserRole",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts",
+    "apiVersion": "2023-11-15",
+    "input": {
+      "$ref": "#/105"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "KeyVaultInfo",
+    "properties": {
+      "keyVaultUrl": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "key vault url."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "rotateKey",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts",
+    "apiVersion": "2023-11-15",
+    "input": {
+      "$ref": "#/120"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deleteData",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts/dataTypes",
+    "apiVersion": "2023-11-15",
+    "input": {
+      "$ref": "#/115"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ContainerSaS",
+    "properties": {
+      "startTimeStamp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Sas token start timestamp."
+      },
+      "expiryTimeStamp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Sas token expiry timestamp."
+      },
+      "ipAddress": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Ip Address"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ContainerSasToken",
+    "properties": {
+      "storageContainerSasToken": {
+        "type": {
+          "$ref": "#/113"
+        },
+        "flags": 1,
+        "description": "Field to specify storage container sas token."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "generateStorageContainerSasToken",
+    "resourceType": "Microsoft.NetworkAnalytics/dataProducts/dataTypes",
+    "apiVersion": "2023-11-15",
+    "output": {
+      "$ref": "#/124"
+    },
+    "input": {
+      "$ref": "#/123"
     }
   }
 ]

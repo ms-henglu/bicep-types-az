@@ -88,10 +88,30 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.SignalRService/locations@2024-04-01-preview)
+* **Resource**: Microsoft.SignalRService/locations
+* **ApiVersion**: 2024-04-01-preview
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailability](#nameavailability)
+
 ## Function listKeys (Microsoft.SignalRService/webPubSub@2024-04-01-preview)
 * **Resource**: Microsoft.SignalRService/webPubSub
 * **ApiVersion**: 2024-04-01-preview
 * **Output**: [WebPubSubKeys](#webpubsubkeys)
+
+## Function regenerateKey (Microsoft.SignalRService/webPubSub@2024-04-01-preview)
+* **Resource**: Microsoft.SignalRService/webPubSub
+* **ApiVersion**: 2024-04-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [WebPubSubKeys](#webpubsubkeys)
+
+## Function restart (Microsoft.SignalRService/webPubSub@2024-04-01-preview)
+* **Resource**: Microsoft.SignalRService/webPubSub
+* **ApiVersion**: 2024-04-01-preview
+
+## Function restart (Microsoft.SignalRService/webPubSub/replicas@2024-04-01-preview)
+* **Resource**: Microsoft.SignalRService/webPubSub/replicas
+* **ApiVersion**: 2024-04-01-preview
 
 ## ApplicationFirewallSettings
 ### Properties
@@ -219,6 +239,17 @@ It also appears in the aud (audience) claim of the issued token.
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentityProperty](#userassignedidentityproperty)
 
+## NameAvailability
+### Properties
+* **message**: string: The message of the operation.
+* **nameAvailable**: bool: Indicates whether the name is available or not.
+* **reason**: string: The reason of the availability. Required if name is not available.
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string (Required): The resource name to validate. e.g."my-resource-name"
+* **type**: string (Required): The resource type. Can be "Microsoft.SignalRService/SignalR", "Microsoft.SignalRService/WebPubSub", "Microsoft.SignalRService/SignalR/replicas" or "Microsoft.SignalRService/WebPubSub/replicas"
+
 ## NetworkACL
 ### Properties
 * **allow**: ('ClientConnection' | 'RESTAPI' | 'ServerConnection' | 'Trace' | string)[]: Allowed request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI.
@@ -254,6 +285,10 @@ It also appears in the aud (audience) claim of the issued token.
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Salt' | 'Secondary' | string: The type of access key.
 
 ## ReplicaProperties
 ### Properties
@@ -354,6 +389,13 @@ Event listener is transparent to Web PubSub clients, and it doesn't return any r
 One event can be sent to multiple listeners, as long as it matches the filters in those listeners. The order of the array elements doesn't matter.
 Maximum count of event listeners among all hubs is 10.
 * **webSocketKeepAliveIntervalInSeconds**: int {minValue: 1, maxValue: 120}: The settings for configuring the WebSocket ping-pong interval in seconds for all clients in the hub. Valid range: 1 to 120. Default to 20 seconds.
+
+## WebPubSubKeys
+### Properties
+* **primaryConnectionString**: string {sensitive}: Connection string constructed via the primaryKey
+* **primaryKey**: string {sensitive}: The primary access key.
+* **secondaryConnectionString**: string {sensitive}: Connection string constructed via the secondaryKey
+* **secondaryKey**: string {sensitive}: The secondary access key.
 
 ## WebPubSubKeys
 ### Properties

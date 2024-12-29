@@ -63,6 +63,51 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2024-03-02)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints@2024-03-02)
+* **Resource**: Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2024-03-02)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function endGetAccess (Microsoft.Compute/disks@2024-03-02)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2024-03-02
+
+## Function endGetAccess (Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints@2024-03-02)
+* **Resource**: Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints
+* **ApiVersion**: 2024-03-02
+
+## Function endGetAccess (Microsoft.Compute/snapshots@2024-03-02)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2024-03-02
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
 ## ApiError
 ### Properties
 * **code**: string: The error code.
@@ -187,6 +232,27 @@
 ### Properties
 * **name**: string: The name of the extended location.
 * **type**: 'EdgeZone' | string: The type of the extended location.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required)
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+* **fileFormat**: 'VHD' | 'VHDX' | string: Used to specify the file format when making request for SAS on a VHDX file format snapshot
+* **getSecureVMGuestStateSAS**: bool: Set this flag to true to get additional SAS for VM guest state
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required)
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+* **fileFormat**: 'VHD' | 'VHDX' | string: Used to specify the file format when making request for SAS on a VHDX file format snapshot
+* **getSecureVMGuestStateSAS**: bool: Set this flag to true to get additional SAS for VM guest state
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required)
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+* **fileFormat**: 'VHD' | 'VHDX' | string: Used to specify the file format when making request for SAS on a VHDX file format snapshot
+* **getSecureVMGuestStateSAS**: bool: Set this flag to true to get additional SAS for VM guest state
 
 ## ImageDiskReference
 ### Properties

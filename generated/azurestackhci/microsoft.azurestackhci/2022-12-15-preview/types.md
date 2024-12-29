@@ -220,6 +220,81 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureStackHCI/virtualNetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function apply (Microsoft.AzureStackHCI/clusters/updates@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/updates
+* **ApiVersion**: 2022-12-15-preview
+
+## Function consentAndInstallDefaultExtensions (Microsoft.AzureStackHCI/clusters/arcSettings@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-12-15-preview
+* **Output**: [ArcSetting](#arcsetting)
+
+## Function createArcIdentity (Microsoft.AzureStackHCI/clusters/arcSettings@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-12-15-preview
+* **Output**: [ArcIdentityResponse](#arcidentityresponse)
+
+## Function createClusterIdentity (Microsoft.AzureStackHCI/clusters@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters
+* **ApiVersion**: 2022-12-15-preview
+* **Output**: [ClusterIdentityResponse](#clusteridentityresponse)
+
+## Function extendSoftwareAssuranceBenefit (Microsoft.AzureStackHCI/clusters@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters
+* **ApiVersion**: 2022-12-15-preview
+* **Input**: [SoftwareAssuranceChangeRequest](#softwareassurancechangerequest)
+* **Output**: [Cluster](#cluster)
+
+## Function generatePassword (Microsoft.AzureStackHCI/clusters/arcSettings@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-12-15-preview
+* **Output**: [PasswordCredential](#passwordcredential)
+
+## Function InitializeDisableProcess (Microsoft.AzureStackHCI/clusters/arcSettings@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-12-15-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachines@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachines
+* **ApiVersion**: 2022-12-15-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachines@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachines
+* **ApiVersion**: 2022-12-15-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachines@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachines
+* **ApiVersion**: 2022-12-15-preview
+
+## Function upgrade (Microsoft.AzureStackHCI/clusters/arcSettings/extensions@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings/extensions
+* **ApiVersion**: 2022-12-15-preview
+* **Input**: [ExtensionUpgradeParameters](#extensionupgradeparameters)
+
+## Function uploadCertificate (Microsoft.AzureStackHCI/clusters@2022-12-15-preview)
+* **Resource**: Microsoft.AzureStackHCI/clusters
+* **ApiVersion**: 2022-12-15-preview
+* **Input**: [UploadCertificateRequest](#uploadcertificaterequest)
+
+## ArcIdentityResponse
+### Properties
+* **properties**: [ArcIdentityResponseProperties](#arcidentityresponseproperties) (ReadOnly): ArcIdentity properties.
+
+## ArcIdentityResponseProperties
+### Properties
+* **arcApplicationClientId**: string
+* **arcApplicationObjectId**: string
+* **arcApplicationTenantId**: string
+* **arcServicePrincipalObjectId**: string
+
+## ArcSetting
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ArcSettingProperties](#arcsettingproperties): ArcSetting properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ArcSettingProperties
 ### Properties
 * **aggregateState**: 'Accepted' | 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'DisableInProgress' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): Aggregate state of Arc agent across the nodes in this HCI cluster.
@@ -233,10 +308,32 @@
 * **perNodeDetails**: [PerNodeState](#pernodestate)[] (ReadOnly): State of Arc agent in each of the nodes.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'DisableInProgress' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the ArcSetting proxy resource.
 
+## Cluster
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): Identity of Cluster resource
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterProperties](#clusterproperties): Cluster properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ClusterDesiredProperties
 ### Properties
 * **diagnosticLevel**: 'Basic' | 'Enhanced' | 'Off' | string: Desired level of diagnostic data emitted by the cluster.
 * **windowsServerSubscription**: 'Disabled' | 'Enabled' | string: Desired state of Windows Server Subscription.
+
+## ClusterIdentityResponse
+### Properties
+* **properties**: [ClusterIdentityResponseProperties](#clusteridentityresponseproperties) (ReadOnly): Cluster identity properties.
+
+## ClusterIdentityResponseProperties
+### Properties
+* **aadApplicationObjectId**: string
+* **aadClientId**: string
+* **aadServicePrincipalObjectId**: string
+* **aadTenantId**: string
 
 ## ClusterNode
 ### Properties
@@ -357,6 +454,10 @@
 * **managedBy**: 'Azure' | 'User' | string (ReadOnly): Indicates if the extension is managed by azure or the user.
 * **perNodeExtensionDetails**: [PerNodeExtensionState](#pernodeextensionstate)[] (ReadOnly): State of Arc Extension in each of the nodes.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'DisableInProgress' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Extension proxy resource.
+
+## ExtensionUpgradeParameters
+### Properties
+* **targetVersion**: string: Extension Upgrade Target Version.
 
 ## GalleryImageIdentifier
 ### Properties
@@ -581,6 +682,13 @@
 * **packageType**: string: Package type
 * **version**: string: Package version
 
+## PasswordCredential
+### Properties
+* **endDateTime**: string
+* **keyId**: string
+* **secretText**: string
+* **startDateTime**: string
+
 ## PerNodeExtensionState
 ### Properties
 * **extension**: string (ReadOnly): Fully qualified resource ID for the particular Arc Extension on this node.
@@ -638,6 +746,10 @@
 ### Properties
 * **provisioningState**: string (ReadOnly): Provisioning State
 
+## RawCertificateData
+### Properties
+* **certificates**: string[]
+
 ## SkuMappings
 ### Properties
 * **catalogPlanId**: string: Identifier of the CatalogPlan for the sku
@@ -652,6 +764,14 @@
 * **provisioningState**: string (ReadOnly): Provisioning State
 * **publisherId**: string: Identifier of the Publisher for the offer
 * **skuMappings**: [SkuMappings](#skumappings)[]: Array of SKU mappings
+
+## SoftwareAssuranceChangeRequest
+### Properties
+* **properties**: [SoftwareAssuranceChangeRequestProperties](#softwareassurancechangerequestproperties)
+
+## SoftwareAssuranceChangeRequestProperties
+### Properties
+* **softwareAssuranceIntent**: 'Disable' | 'Enable' | string: Customer Intent for Software Assurance Benefit.
 
 ## SoftwareAssuranceProperties
 ### Properties
@@ -698,6 +818,11 @@
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties
@@ -796,6 +921,10 @@
 * **packageVersions**: [PackageVersionInfo](#packageversioninfo)[]: Current version of each updatable component.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'DisableInProgress' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the UpdateSummaries proxy resource.
 * **state**: 'AppliedSuccessfully' | 'NeedsAttention' | 'PreparationFailed' | 'PreparationInProgress' | 'Unknown' | 'UpdateAvailable' | 'UpdateFailed' | 'UpdateInProgress' | string: Overall update state of the stamp.
+
+## UploadCertificateRequest
+### Properties
+* **properties**: [RawCertificateData](#rawcertificatedata)
 
 ## UserAssignedIdentities
 ### Properties

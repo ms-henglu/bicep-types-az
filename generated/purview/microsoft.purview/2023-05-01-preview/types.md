@@ -34,6 +34,17 @@
 * **systemData**: [ProxyResourceSystemData](#proxyresourcesystemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Purview/accounts/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addRootCollectionAdmin (Microsoft.Purview/accounts@2023-05-01-preview)
+* **Resource**: Microsoft.Purview/accounts
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [CollectionAdminUpdate](#collectionadminupdate)
+
+## Function ingestionPrivateEndpointConnectionStatus (Microsoft.Purview/accounts@2023-05-01-preview)
+* **Resource**: Microsoft.Purview/accounts
+* **ApiVersion**: 2023-05-01-preview
+* **Input**: [PrivateEndpointConnectionStatusUpdateRequest](#privateendpointconnectionstatusupdaterequest)
+* **Output**: [PrivateEndpointConnectionStatusUpdateResponse](#privateendpointconnectionstatusupdateresponse)
+
 ## Function listFeatures (Microsoft.Purview/accounts@2023-05-01-preview)
 * **Resource**: Microsoft.Purview/accounts
 * **ApiVersion**: 2023-05-01-preview
@@ -128,6 +139,10 @@
 * **awsExternalId**: string (ReadOnly): AWS external identifier.
 Configured in AWS to allow use of the role arn used for scanning
 
+## CollectionAdminUpdate
+### Properties
+* **objectId**: string: Gets or sets the object identifier of the admin.
+
 ## Credentials
 ### Properties
 * **identityId**: string: Identity identifier for UserAssign type.
@@ -185,6 +200,16 @@ Configured in AWS to allow use of the role arn used for scanning
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The private endpoint information.
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): The private link service connection state.
 * **provisioningState**: string (ReadOnly): The provisioning state.
+
+## PrivateEndpointConnectionStatusUpdateRequest
+### Properties
+* **privateEndpointId**: string: The private endpoint resource identifier.
+* **status**: string: The private endpoint connection status.
+
+## PrivateEndpointConnectionStatusUpdateResponse
+### Properties
+* **privateEndpointId**: string: The private endpoint resource identifier.
+* **status**: string: The private endpoint connection status.
 
 ## PrivateLinkServiceConnectionState
 ### Properties

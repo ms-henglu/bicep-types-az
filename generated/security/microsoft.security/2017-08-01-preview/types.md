@@ -119,6 +119,10 @@
 * **properties**: [WorkspaceSettingProperties](#workspacesettingproperties): Workspace setting data
 * **type**: 'Microsoft.Security/workspaceSettings' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function dismiss (Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts@2017-08-01-preview)
+* **Resource**: Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts
+* **ApiVersion**: 2017-08-01-preview
+
 ## AdvancedThreatProtectionProperties
 ### Properties
 * **isEnabled**: bool: Indicates whether Advanced Threat Protection is enabled.
