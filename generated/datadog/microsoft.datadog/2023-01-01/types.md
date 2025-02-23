@@ -53,6 +53,11 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Datadog/monitors/tagRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getDefaultKey (Microsoft.Datadog/monitors@2023-01-01)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2023-01-01
+* **Output**: [DatadogApiKey](#datadogapikey)
+
 ## Function listApiKeys (Microsoft.Datadog/monitors@2023-01-01)
 * **Resource**: Microsoft.Datadog/monitors
 * **ApiVersion**: 2023-01-01
@@ -73,6 +78,16 @@
 * **ApiVersion**: 2023-01-01
 * **Output**: [MonitoredResourceListResponse](#monitoredresourcelistresponse)
 
+## Function refreshSetPasswordLink (Microsoft.Datadog/monitors@2023-01-01)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2023-01-01
+* **Output**: [DatadogSetPasswordLink](#datadogsetpasswordlink)
+
+## Function setDefaultKey (Microsoft.Datadog/monitors@2023-01-01)
+* **Resource**: Microsoft.Datadog/monitors
+* **ApiVersion**: 2023-01-01
+* **Input**: [DatadogApiKey](#datadogapikey)
+
 ## DatadogAgreementProperties
 ### Properties
 * **accepted**: bool: If any version of the terms have been accepted, otherwise false.
@@ -83,6 +98,13 @@
 * **publisher**: string: Publisher identifier string.
 * **retrieveDatetime**: string: Date and time in UTC of when the terms were accepted. This is empty if Accepted is false.
 * **signature**: string: Terms signature.
+
+## DatadogApiKey
+### Properties
+* **created**: string: The time of creation of the API key.
+* **createdBy**: string: The user that created the API key.
+* **key**: string (Required): The value of the API key.
+* **name**: string: The name of the API key.
 
 ## DatadogApiKey
 ### Properties
@@ -140,6 +162,10 @@
 * **linkingClientId**: string {sensitive} (WriteOnly): The client_id from an existing in exchange for an auth token to link organization.
 * **name**: string: Name of the Datadog organization.
 * **redirectUri**: string (WriteOnly): The redirect URI for linking.
+
+## DatadogSetPasswordLink
+### Properties
+* **setPasswordLink**: string
 
 ## DatadogSingleSignOnProperties
 ### Properties
@@ -219,7 +245,7 @@
 
 ## ResourceSku
 ### Properties
-* **name**: string (Required): Name of the SKU in {PlanId} format. For Terraform, the only allowed value is 'linking'.
+* **name**: string (Required): Name of the SKU in {PlanId} format. For Terraform, the only allowed value is 'Linked'.
 
 ## SubscriptionList
 ### Properties

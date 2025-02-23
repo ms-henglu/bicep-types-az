@@ -58,6 +58,12 @@
 * **Input**: [AccountSasParameters](#accountsasparameters)
 * **Output**: [MapsAccountSasToken](#mapsaccountsastoken)
 
+## Function regenerateKey (Microsoft.Maps/accounts@2023-12-01-preview)
+* **Resource**: Microsoft.Maps/accounts
+* **ApiVersion**: 2023-12-01-preview
+* **Input**: [MapsKeySpecification](#mapskeyspecification)
+* **Output**: [MapsAccountKeys](#mapsaccountkeys)
+
 ## AccountSasParameters
 ### Properties
 * **expiry**: string (Required): The date time offset of when the token validity expires. For example "2017-05-24T10:42:03.1567373Z". Maximum duration allowed is 24 hours between `start` and `expiry`.
@@ -118,6 +124,13 @@
 * **secondaryKey**: string (ReadOnly): The secondary key for accessing the Maps REST APIs.
 * **secondaryKeyLastUpdated**: string (ReadOnly): The last updated date and time of the secondary key.
 
+## MapsAccountKeys
+### Properties
+* **primaryKey**: string (ReadOnly): The primary key for accessing the Maps REST APIs.
+* **primaryKeyLastUpdated**: string (ReadOnly): The last updated date and time of the primary key.
+* **secondaryKey**: string (ReadOnly): The secondary key for accessing the Maps REST APIs.
+* **secondaryKeyLastUpdated**: string (ReadOnly): The last updated date and time of the secondary key.
+
 ## MapsAccountProperties
 ### Properties
 * **cors**: [CorsRules](#corsrules): Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
@@ -132,6 +145,10 @@
 ## MapsAccountSasToken
 ### Properties
 * **accountSasToken**: string (ReadOnly): The shared access signature access token.
+
+## MapsKeySpecification
+### Properties
+* **keyType**: 'primary' | 'secondary' | string (Required): Whether the operation refers to the primary or secondary key.
 
 ## PrivateEndpoint
 ### Properties

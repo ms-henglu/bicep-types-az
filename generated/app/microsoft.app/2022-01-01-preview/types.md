@@ -97,6 +97,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.App/managedEnvironments/storages' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
+## Function deactivate (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
+
 ## Function listCustomHostNameAnalysis (Microsoft.App/containerApps@2022-01-01-preview)
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
@@ -106,6 +114,10 @@
 * **Resource**: Microsoft.App/containerApps
 * **ApiVersion**: 2022-01-01-preview
 * **Output**: [SecretsCollection](#secretscollection)
+
+## Function restart (Microsoft.App/containerApps/revisions@2022-01-01-preview)
+* **Resource**: Microsoft.App/containerApps/revisions
+* **ApiVersion**: 2022-01-01-preview
 
 ## AllowedAudiencesValidation
 ### Properties
@@ -516,9 +528,7 @@ Note that URLs within the current domain are always implicitly allowed.
 
 ## ManagedEnvironmentProperties
 ### Properties
-* **appLogsConfiguration**: [AppLogsConfiguration](#applogsconfiguration): Cluster configuration which enables the log daemon to export
-app logs to a destination. Currently only "log-analytics" is
-supported
+* **appLogsConfiguration**: [AppLogsConfiguration](#applogsconfiguration): Cluster configuration which enables the log daemon to export app logs to configured destination.
 * **daprAIInstrumentationKey**: string: Azure Monitor instrumentation key used by Dapr to export Service to Service communication telemetry
 * **defaultDomain**: string (ReadOnly): Default Domain Name for the cluster
 * **deploymentErrors**: string (ReadOnly): Any errors that occurred during deployment or deployment validation

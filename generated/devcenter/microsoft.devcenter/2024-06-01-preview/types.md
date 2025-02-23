@@ -295,10 +295,64 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DevCenter/projects/pools/schedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function connect (Microsoft.DevCenter/projects/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-06-01-preview
+
+## Function connect (Microsoft.DevCenter/devcenters/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-06-01-preview
+
+## Function getErrorDetails (Microsoft.DevCenter/devcenters/catalogs/environmentDefinitions@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs/environmentDefinitions
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [CatalogResourceValidationErrorDetails](#catalogresourcevalidationerrordetails)
+
+## Function getErrorDetails (Microsoft.DevCenter/projects/catalogs/environmentDefinitions@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects/catalogs/environmentDefinitions
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [CatalogResourceValidationErrorDetails](#catalogresourcevalidationerrordetails)
+
+## Function getErrorDetails (Microsoft.DevCenter/devcenters/catalogs/tasks@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs/tasks
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [CatalogResourceValidationErrorDetails](#catalogresourcevalidationerrordetails)
+
+## Function getInheritedSettings (Microsoft.DevCenter/projects@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [InheritedSettingsForProject](#inheritedsettingsforproject)
+
+## Function getSyncErrorDetails (Microsoft.DevCenter/projects/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [SyncErrorDetails](#syncerrordetails)
+
+## Function getSyncErrorDetails (Microsoft.DevCenter/devcenters/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-06-01-preview
+* **Output**: [SyncErrorDetails](#syncerrordetails)
+
 ## Function listSkus (Microsoft.DevCenter/projects@2024-06-01-preview)
 * **Resource**: Microsoft.DevCenter/projects
 * **ApiVersion**: 2024-06-01-preview
 * **Output**: [SkuListResult](#skulistresult)
+
+## Function runHealthChecks (Microsoft.DevCenter/projects/pools@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects/pools
+* **ApiVersion**: 2024-06-01-preview
+
+## Function runHealthChecks (Microsoft.DevCenter/networkConnections@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/networkConnections
+* **ApiVersion**: 2024-06-01-preview
+
+## Function sync (Microsoft.DevCenter/projects/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-06-01-preview
+
+## Function sync (Microsoft.DevCenter/devcenters/catalogs@2024-06-01-preview)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-06-01-preview
 
 ## AllowedEnvironmentTypeProperties
 ### Properties
@@ -318,6 +372,16 @@
 * **name**: string (ReadOnly): Name of the capability.
 * **value**: string (ReadOnly): Value of the capability.
 
+## CatalogConflictError
+### Properties
+* **name**: string (ReadOnly): Name of the conflicting catalog item.
+* **path**: string (ReadOnly): The path of the file that has a conflicting name.
+
+## CatalogErrorDetails
+### Properties
+* **code**: string: An identifier for the error.
+* **message**: string: A message describing the error.
+
 ## CatalogProperties
 ### Properties
 * **adoGit**: [GitCatalog](#gitcatalog): Properties for an Azure DevOps catalog type.
@@ -330,6 +394,23 @@
 * **syncState**: 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The synchronization state of the catalog.
 * **syncType**: 'Manual' | 'Scheduled' | string: Indicates the type of sync that is configured for the catalog.
 * **tags**: [CatalogUpdatePropertiesTags](#catalogupdatepropertiestags): Resource tags.
+
+## CatalogResourceValidationErrorDetails
+### Properties
+* **errors**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with resources synchronized from the catalog.
+
+## CatalogResourceValidationErrorDetails
+### Properties
+* **errors**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with resources synchronized from the catalog.
+
+## CatalogResourceValidationErrorDetails
+### Properties
+* **errors**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with resources synchronized from the catalog.
+
+## CatalogSyncError
+### Properties
+* **errorDetails**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with the file.
+* **path**: string (ReadOnly): The path of the file the error is associated with.
 
 ## CatalogUpdatePropertiesTags
 ### Properties
@@ -511,6 +592,11 @@
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Created' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'MovingResources' | 'NotSpecified' | 'RolloutInProgress' | 'Running' | 'StorageProvisioningFailed' | 'Succeeded' | 'TransientFailure' | 'Updated' | 'Updating' | string (ReadOnly): The provisioning state of the resource.
 * **publishedDate**: string (ReadOnly): The datetime that the backing image version was published.
 
+## InheritedSettingsForProject
+### Properties
+* **networkSettings**: [ProjectNetworkSettings](#projectnetworksettings) (ReadOnly): Network settings that will be enforced on this project.
+* **projectCatalogSettings**: [DevCenterProjectCatalogSettings](#devcenterprojectcatalogsettings) (ReadOnly): Dev Center settings to be used when associating a project with a catalog.
+
 ## ManagedServiceIdentity
 ### Properties
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The service principal ID of the system assigned identity. This property will only be provided for a system assigned identity.
@@ -593,6 +679,10 @@
 ### Additional Properties
 * **Additional Properties Type**: [UserRoleAssignmentValue](#userroleassignmentvalue)
 
+## ProjectNetworkSettings
+### Properties
+* **microsoftHostedNetworkEnableStatus**: 'Disabled' | 'Enabled' | string (ReadOnly): Indicates whether pools in this Dev Center can use Microsoft Hosted Networks. Defaults to Enabled if not set.
+
 ## ProjectProperties
 ### Properties
 * **catalogSettings**: [ProjectCatalogSettings](#projectcatalogsettings): Settings to be used when associating a project with a catalog.
@@ -641,6 +731,18 @@
 ### Properties
 * **gracePeriodMinutes**: int: The specified time in minutes to wait before stopping a Dev Box once disconnect is detected.
 * **status**: 'Disabled' | 'Enabled' | string: Whether the feature to stop the Dev Box on disconnect once the grace period has lapsed is enabled.
+
+## SyncErrorDetails
+### Properties
+* **conflicts**: [CatalogConflictError](#catalogconflicterror)[] (ReadOnly): Catalog items that have conflicting names.
+* **errors**: [CatalogSyncError](#catalogsyncerror)[] (ReadOnly): Errors that occured during synchronization.
+* **operationError**: [CatalogErrorDetails](#catalogerrordetails) (ReadOnly): Error information for the overall synchronization operation.
+
+## SyncErrorDetails
+### Properties
+* **conflicts**: [CatalogConflictError](#catalogconflicterror)[] (ReadOnly): Catalog items that have conflicting names.
+* **errors**: [CatalogSyncError](#catalogsyncerror)[] (ReadOnly): Errors that occured during synchronization.
+* **operationError**: [CatalogErrorDetails](#catalogerrordetails) (ReadOnly): Error information for the overall synchronization operation.
 
 ## SyncStats
 ### Properties

@@ -72,6 +72,10 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.HybridContainerService/virtualNetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function upgradeNodeImageVersionForEntireCluster (Microsoft.HybridContainerService/provisionedClusters@2022-09-01-preview)
+* **Resource**: Microsoft.HybridContainerService/provisionedClusters
+* **ApiVersion**: 2022-09-01-preview
+
 ## AADProfileOrAADProfileResponse
 ### Properties
 * **adminGroupObjectIDs**: string[]: The list of AAD group object IDs that will have admin role of the cluster.

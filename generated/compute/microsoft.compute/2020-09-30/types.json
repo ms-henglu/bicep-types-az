@@ -3620,5 +3620,169 @@
       "$ref": "#/264"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SharingUpdate",
+    "properties": {
+      "operationType": {
+        "type": {
+          "$ref": "#/270"
+        },
+        "flags": 1,
+        "description": "This property allows you to specify the operation type of gallery sharing update. <br><br> Possible values are: <br><br> **Add** <br><br> **Remove** <br><br> **Reset**"
+      },
+      "groups": {
+        "type": {
+          "$ref": "#/271"
+        },
+        "flags": 0,
+        "description": "A list of sharing profile groups."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Add"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Remove"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Reset"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/267"
+      },
+      {
+        "$ref": "#/268"
+      },
+      {
+        "$ref": "#/269"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/17"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "share",
+    "resourceType": "Microsoft.Compute/galleries",
+    "apiVersion": "2020-09-30",
+    "output": {
+      "$ref": "#/266"
+    },
+    "input": {
+      "$ref": "#/266"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GrantAccessData",
+    "properties": {
+      "access": {
+        "type": {
+          "$ref": "#/277"
+        },
+        "flags": 1
+      },
+      "durationInSeconds": {
+        "type": {
+          "$ref": "#/41"
+        },
+        "flags": 1,
+        "description": "Time duration in seconds until the SAS access expires."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "None"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Read"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Write"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/274"
+      },
+      {
+        "$ref": "#/275"
+      },
+      {
+        "$ref": "#/276"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AccessUri",
+    "properties": {
+      "accessSAS": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "A SAS uri for accessing a disk."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "beginGetAccess",
+    "resourceType": "Microsoft.Compute/disks",
+    "apiVersion": "2020-09-30",
+    "output": {
+      "$ref": "#/278"
+    },
+    "input": {
+      "$ref": "#/273"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "endGetAccess",
+    "resourceType": "Microsoft.Compute/disks",
+    "apiVersion": "2020-09-30"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "beginGetAccess",
+    "resourceType": "Microsoft.Compute/snapshots",
+    "apiVersion": "2020-09-30",
+    "output": {
+      "$ref": "#/278"
+    },
+    "input": {
+      "$ref": "#/273"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "endGetAccess",
+    "resourceType": "Microsoft.Compute/snapshots",
+    "apiVersion": "2020-09-30"
   }
 ]

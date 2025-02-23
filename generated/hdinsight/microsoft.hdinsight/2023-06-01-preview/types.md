@@ -24,6 +24,24 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.HDInsight/clusterpools/clusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.HDInsight/locations@2023-06-01-preview)
+* **Resource**: Microsoft.HDInsight/locations
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailabilityResult](#nameavailabilityresult)
+
+## Function resize (Microsoft.HDInsight/clusterpools/clusters@2023-06-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools/clusters
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [ClusterResizeData](#clusterresizedata)
+* **Output**: [Cluster](#cluster)
+
+## Function runJob (Microsoft.HDInsight/clusterpools/clusters@2023-06-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools/clusters
+* **ApiVersion**: 2023-06-01-preview
+* **Input**: [ClusterJob](#clusterjob)
+* **Output**: [ClusterJob](#clusterjob)
+
 ## AksClusterProfileAksClusterAgentPoolIdentityProfile
 ### Properties
 * **msiClientId**: string {pattern: "^[{(]?[0-9A-Fa-f]{8}[-]?(?:[0-9A-Fa-f]{4}[-]?){3}[0-9A-Fa-f]{12}[)}]?$"} (Required): ClientId of the MSI.
@@ -47,6 +65,16 @@
 ### Properties
 * **hive**: [HiveCatalogOption](#hivecatalogoption)[]: hive catalog options.
 
+## Cluster
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterResourceProperties](#clusterresourceproperties): Gets or sets the properties. Define cluster specific properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ClusterComponentsItem
 ### Properties
 * **name**: string
@@ -65,6 +93,45 @@ where key represents a valid service configuration name and value represents the
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ClusterJob
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterJobProperties](#clusterjobproperties) (Required): Properties of cluster job.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ClusterJob
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterJobProperties](#clusterjobproperties) (Required): Properties of cluster job.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ClusterJobProperties
+* **Discriminator**: jobType
+
+### Base Properties
+
+### FlinkJobProperties
+#### Properties
+* **action**: 'CANCEL' | 'DELETE' | 'LIST_SAVEPOINT' | 'NEW' | 'SAVEPOINT' | 'START' | 'STATELESS_UPDATE' | 'STOP' | 'UPDATE' | string: A string property that indicates the action to be performed on the Flink job. It can have one of the following enum values => NEW, UPDATE, STATELESS_UPDATE, STOP, START, CANCEL, SAVEPOINT, LIST_SAVEPOINT, or DELETE.
+* **actionResult**: string (ReadOnly): Action result of job.
+* **args**: string: A string property representing additional JVM arguments for the Flink job. It should be space separated value.
+* **entryClass**: string: A string property that specifies the entry class for the Flink job.
+* **flinkConfiguration**: [FlinkJobPropertiesFlinkConfiguration](#flinkjobpropertiesflinkconfiguration): Additional properties used to configure Flink jobs. It allows users to set properties such as parallelism and jobSavePointDirectory. It accepts additional key-value pairs as properties, where the keys are strings and the values are strings as well.
+* **jarName**: string: A string property that represents the name of the job JAR.
+* **jobId**: string (ReadOnly): Unique id for identifying a job
+* **jobJarDirectory**: string: A string property that specifies the directory where the job JAR is located.
+* **jobName**: string (Required): Name of job
+* **jobOutput**: string (ReadOnly): Output of job.
+* **jobType**: 'FlinkJob' (Required): Type of cluster job.
+* **lastSavePoint**: string (ReadOnly): The last savepoint.
+* **savePointName**: string: A string property that represents the name of the savepoint for the Flink job
+* **status**: string (ReadOnly): Status of job.
+
 
 ## ClusterLogAnalyticsApplicationLogs
 ### Properties
@@ -155,6 +222,20 @@ where key represents a valid service configuration name and value represents the
 ### Properties
 * **enabled**: bool (Required): Enable Prometheus for cluster or not.
 
+## ClusterResizeData
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterResizeProperties](#clusterresizeproperties): Sets the properties. Define cluster resize specific properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ClusterResizeProperties
+### Properties
+* **targetWorkerNodeCount**: int (Required): Target node count of worker node.
+
 ## ClusterResourceProperties
 ### Properties
 * **clusterProfile**: [ClusterProfile](#clusterprofile) (Required): Cluster profile.
@@ -207,6 +288,11 @@ where key represents a valid service configuration name and value represents the
 * **metastoreDbConnectionURL**: string (Required): Connection string for hive metastore database.
 * **metastoreDbConnectionUserName**: string (Required): User name for database connection.
 
+## FlinkJobPropertiesFlinkConfiguration
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## FlinkProfile
 ### Properties
 * **catalogOptions**: [FlinkCatalogOptions](#flinkcatalogoptions): Flink cluster catalog options.
@@ -242,6 +328,17 @@ where key represents a valid service configuration name and value represents the
 * **minNodes**: int (Required): User needs to set the minimum number of nodes for load based scaling, the load based scaling will use this to scale up and scale down between minimum and maximum number of nodes.
 * **pollInterval**: int: User can specify the poll interval, this is the time period (in seconds) after which scaling metrics are polled for triggering a scaling operation.
 * **scalingRules**: [ScalingRule](#scalingrule)[] (Required): The scaling rules.
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string: Name for checking availability.
+* **type**: string: The resource type in Microsoft.HDInsight.
+
+## NameAvailabilityResult
+### Properties
+* **message**: string: The error message of unavailability.
+* **nameAvailable**: bool: Indicator of availability of the Microsoft.HDInsight resource name.
+* **reason**: string: The reason of unavailability.
 
 ## NodeProfile
 ### Properties
@@ -331,6 +428,16 @@ where key represents a valid service configuration name and value represents the
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

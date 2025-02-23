@@ -75,6 +75,11 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.HybridNetwork/vendors/vendorSkus/previewSubscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function executeRequest (Microsoft.HybridNetwork/networkFunctions@2022-01-01-preview)
+* **Resource**: Microsoft.HybridNetwork/networkFunctions
+* **ApiVersion**: 2022-01-01-preview
+* **Input**: [ExecuteRequestParameters](#executerequestparameters)
+
 ## Function listCredential (Microsoft.HybridNetwork/vendors/vendorSkus@2022-01-01-preview)
 * **Resource**: Microsoft.HybridNetwork/vendors/vendorSkus
 * **ApiVersion**: 2022-01-01-preview
@@ -84,6 +89,18 @@
 * **Resource**: Microsoft.HybridNetwork/devices
 * **ApiVersion**: 2022-01-01-preview
 * **Output**: [DeviceRegistrationKey](#deviceregistrationkey)
+
+## Function restart (Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances@2022-01-01-preview)
+* **Resource**: Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances
+* **ApiVersion**: 2022-01-01-preview
+
+## Function start (Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances@2022-01-01-preview)
+* **Resource**: Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances
+* **ApiVersion**: 2022-01-01-preview
+
+## Function stop (Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances@2022-01-01-preview)
+* **Resource**: Microsoft.HybridNetwork/locations/vendors/networkFunctions/roleInstances
+* **ApiVersion**: 2022-01-01-preview
 
 ## CustomProfile
 ### Properties
@@ -112,6 +129,11 @@
 ## DeviceRegistrationKey
 ### Properties
 * **registrationKey**: string (ReadOnly): The registration key for the device.
+
+## ExecuteRequestParameters
+### Properties
+* **requestMetadata**: [RequestMetadata](#requestmetadata) (Required): The request metadata.
+* **serviceEndpoint**: string (Required): The endpoint of service to call.
 
 ## ImageReference
 ### Properties
@@ -206,6 +228,13 @@
 ## PreviewSubscriptionProperties
 ### Properties
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | string (ReadOnly): The provisioning state of the PreviewSubscription resource.
+
+## RequestMetadata
+### Properties
+* **apiVersion**: string: The api version of the request.
+* **httpMethod**: 'Delete' | 'Get' | 'Patch' | 'Post' | 'Put' | 'Unknown' | string (Required): The http method of the request.
+* **relativePath**: string (Required): The relative path of the request.
+* **serializedBody**: string (Required): The serialized body of the request.
 
 ## RoleInstanceProperties
 ### Properties

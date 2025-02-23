@@ -523,10 +523,245 @@
 * **tags**: [ProxyResourceWithTags](#proxyresourcewithtags) (ReadOnly): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
 * **type**: 'Microsoft.Billing/transfers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function accept (Microsoft.Billing/transfers@2024-04-01)
+* **Resource**: Microsoft.Billing/transfers
+* **ApiVersion**: 2024-04-01
+* **Input**: [AcceptTransferRequest](#accepttransferrequest)
+* **Output**: [RecipientTransferDetails](#recipienttransferdetails)
+
+## Function addPaymentTerms (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [PaymentTerm](#paymentterm)[]
+* **Output**: [BillingAccount](#billingaccount)
+
+## Function amend (Microsoft.Billing/billingAccounts/invoices@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/invoices
+* **ApiVersion**: 2024-04-01
+
+## Function cancel (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [CancelSubscriptionRequest](#cancelsubscriptionrequest)
+
+## Function cancel (Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/transfers@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections/transfers
+* **ApiVersion**: 2024-04-01
+* **Output**: [TransferDetails](#transferdetails)
+
+## Function cancel (Microsoft.Billing/billingAccounts/billingProfiles/customers/transfers@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/customers/transfers
+* **ApiVersion**: 2024-04-01
+* **Output**: [PartnerTransferDetails](#partnertransferdetails)
+
+## Function cancelPaymentTerms (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: string
+* **Output**: [BillingAccount](#billingaccount)
+
+## Function checkAccess (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function checkAccess (Microsoft.Billing/billingAccounts/billingProfiles@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function checkAccess (Microsoft.Billing/billingAccounts/billingProfiles/customers@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/customers
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function checkAccess (Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function checkAccess (Microsoft.Billing/billingAccounts/departments@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/departments
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function checkAccess (Microsoft.Billing/billingAccounts/enrollmentAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/enrollmentAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [CheckAccessRequest](#checkaccessrequest)
+* **Output**: [CheckAccessResponse](#checkaccessresponse)[]
+
+## Function confirmTransition (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Output**: [TransitionDetails](#transitiondetails)
+
+## Function createBillingRoleAssignment (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties)
+* **Output**: [BillingRoleAssignment](#billingroleassignment)
+
+## Function createBillingRoleAssignment (Microsoft.Billing/billingAccounts/billingProfiles@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties)
+* **Output**: [BillingRoleAssignment](#billingroleassignment)
+
+## Function createBillingRoleAssignment (Microsoft.Billing/billingAccounts/billingProfiles/customers@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/customers
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties)
+* **Output**: [BillingRoleAssignment](#billingroleassignment)
+
+## Function createBillingRoleAssignment (Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties)
+* **Output**: [BillingRoleAssignment](#billingroleassignment)
+
+## Function decline (Microsoft.Billing/transfers@2024-04-01)
+* **Resource**: Microsoft.Billing/transfers
+* **ApiVersion**: 2024-04-01
+* **Output**: [RecipientTransferDetails](#recipienttransferdetails)
+
+## Function download (Microsoft.Billing/billingAccounts/invoices@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/invoices
+* **ApiVersion**: 2024-04-01
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
+## Function download (Microsoft.Billing/billingAccounts/billingSubscriptions/invoices@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions/invoices
+* **ApiVersion**: 2024-04-01
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
+## Function downloadDocuments (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [DocumentDownloadRequest](#documentdownloadrequest)[]
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
+## Function downloadDocuments (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [DocumentDownloadRequest](#documentdownloadrequest)[]
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
+## Function downloadSummary (Microsoft.Billing/billingAccounts/invoices@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/invoices
+* **ApiVersion**: 2024-04-01
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
 ## Function listInvoiceSectionsWithCreateSubscriptionPermission (Microsoft.Billing/billingAccounts@2024-04-01)
 * **Resource**: Microsoft.Billing/billingAccounts
 * **ApiVersion**: 2024-04-01
 * **Output**: [InvoiceSectionWithCreateSubPermissionListResult](#invoicesectionwithcreatesubpermissionlistresult)
+
+## Function merge (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingSubscriptionMergeRequest](#billingsubscriptionmergerequest)
+* **Output**: [BillingSubscription](#billingsubscription)
+
+## Function move (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [MoveBillingSubscriptionRequest](#movebillingsubscriptionrequest)
+* **Output**: [BillingSubscription](#billingsubscription)
+
+## Function move (Microsoft.Billing/billingAccounts/products@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/products
+* **ApiVersion**: 2024-04-01
+* **Input**: [MoveProductRequest](#moveproductrequest)
+* **Output**: [Product](#product)
+
+## Function resolveBillingRoleAssignments (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Output**: [BillingRoleAssignmentListResult](#billingroleassignmentlistresult)
+
+## Function resolveBillingRoleAssignments (Microsoft.Billing/billingAccounts/billingProfiles@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles
+* **ApiVersion**: 2024-04-01
+* **Output**: [BillingRoleAssignmentListResult](#billingroleassignmentlistresult)
+
+## Function resolveBillingRoleAssignments (Microsoft.Billing/billingAccounts/billingProfiles/customers@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/customers
+* **ApiVersion**: 2024-04-01
+* **Output**: [BillingRoleAssignmentListResult](#billingroleassignmentlistresult)
+
+## Function resolveBillingRoleAssignments (Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections
+* **ApiVersion**: 2024-04-01
+* **Output**: [BillingRoleAssignmentListResult](#billingroleassignmentlistresult)
+
+## Function split (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [BillingSubscriptionSplitRequest](#billingsubscriptionsplitrequest)
+* **Output**: [BillingSubscription](#billingsubscription)
+
+## Function transactionsDownload (Microsoft.Billing/billingAccounts/invoices@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/invoices
+* **ApiVersion**: 2024-04-01
+* **Output**: [DocumentDownloadResult](#documentdownloadresult)
+
+## Function validate (Microsoft.Billing/billingAccounts/savingsPlanOrders/savingsPlans@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/savingsPlanOrders/savingsPlans
+* **ApiVersion**: 2024-04-01
+* **Input**: [SavingsPlanUpdateValidateRequest](#savingsplanupdatevalidaterequest)
+* **Output**: [SavingsPlanValidateResponse](#savingsplanvalidateresponse)
+
+## Function validate (Microsoft.Billing/transfers@2024-04-01)
+* **Resource**: Microsoft.Billing/transfers
+* **ApiVersion**: 2024-04-01
+* **Input**: [AcceptTransferRequest](#accepttransferrequest)
+* **Output**: [ValidateTransferListResponse](#validatetransferlistresponse)
+
+## Function validateDeleteEligibility (Microsoft.Billing/billingAccounts/billingProfiles@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles
+* **ApiVersion**: 2024-04-01
+* **Output**: [DeleteBillingProfileEligibilityResult](#deletebillingprofileeligibilityresult)
+
+## Function validateDeleteEligibility (Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingProfiles/invoiceSections
+* **ApiVersion**: 2024-04-01
+* **Output**: [DeleteInvoiceSectionEligibilityResult](#deleteinvoicesectioneligibilityresult)
+
+## Function validateMoveEligibility (Microsoft.Billing/billingAccounts/billingSubscriptions@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/billingSubscriptions
+* **ApiVersion**: 2024-04-01
+* **Input**: [MoveBillingSubscriptionRequest](#movebillingsubscriptionrequest)
+* **Output**: [MoveBillingSubscriptionEligibilityResult](#movebillingsubscriptioneligibilityresult)
+
+## Function validateMoveEligibility (Microsoft.Billing/billingAccounts/products@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts/products
+* **ApiVersion**: 2024-04-01
+* **Input**: [MoveProductRequest](#moveproductrequest)
+* **Output**: [MoveProductEligibilityResult](#moveproducteligibilityresult)
+
+## Function validatePaymentTerms (Microsoft.Billing/billingAccounts@2024-04-01)
+* **Resource**: Microsoft.Billing/billingAccounts
+* **ApiVersion**: 2024-04-01
+* **Input**: [PaymentTerm](#paymentterm)[]
+* **Output**: [PaymentTermsEligibilityResult](#paymenttermseligibilityresult)
+
+## AcceptTransferProperties
+### Properties
+* **productDetails**: [ProductDetails](#productdetails)[]: Request parameters to accept transfer.
+
+## AcceptTransferRequest
+### Properties
+* **properties**: [AcceptTransferProperties](#accepttransferproperties): Request parameters to accept transfer.
+
+## AcceptTransferRequest
+### Properties
+* **properties**: [AcceptTransferProperties](#accepttransferproperties): Request parameters to accept transfer.
 
 ## AgreementProperties
 ### Properties
@@ -589,6 +824,24 @@
 ### Properties
 * **objectId**: string: The ID that uniquely identifies a user in a tenant.
 * **tenantId**: string: The ID that uniquely identifies a tenant.
+
+## BillingAccount
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingAccountProperties](#billingaccountproperties): A billing account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingAccount
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingAccountProperties](#billingaccountproperties): A billing account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## BillingAccountPolicyProperties
 ### Properties
@@ -928,6 +1181,194 @@
 * **tenantId**: string: The tenant id of the principal who has interacted with a billing entity.
 * **upn**: string: The user principal name of the principal who has interacted with a billing entity.
 
+## BillingRoleAssignment
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties): The properties of the billing role assignment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingRoleAssignment
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties): The properties of the billing role assignment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingRoleAssignment
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties): The properties of the billing role assignment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingRoleAssignment
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingRoleAssignmentProperties](#billingroleassignmentproperties): The properties of the billing role assignment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingRoleAssignmentListResult
+### Properties
+* **nextLink**: string (ReadOnly): The link (url) to the next page of results.
+* **value**: [BillingRoleAssignment](#billingroleassignment)[] (ReadOnly): The list of resources.
+
+## BillingRoleAssignmentListResult
+### Properties
+* **nextLink**: string (ReadOnly): The link (url) to the next page of results.
+* **value**: [BillingRoleAssignment](#billingroleassignment)[] (ReadOnly): The list of resources.
+
+## BillingRoleAssignmentListResult
+### Properties
+* **nextLink**: string (ReadOnly): The link (url) to the next page of results.
+* **value**: [BillingRoleAssignment](#billingroleassignment)[] (ReadOnly): The list of resources.
+
+## BillingRoleAssignmentListResult
+### Properties
+* **nextLink**: string (ReadOnly): The link (url) to the next page of results.
+* **value**: [BillingRoleAssignment](#billingroleassignment)[] (ReadOnly): The list of resources.
+
+## BillingRoleAssignmentProperties
+### Properties
+* **billingAccountDisplayName**: string (ReadOnly): The name of the billing account.
+* **billingAccountId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing account.
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile.
+* **billingProfileId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing profile.
+* **billingRequestId**: string (ReadOnly): The ID of the billing request that was created for the role assignment. This is only applicable to cross tenant role assignments or role assignments created through the billing request.
+* **createdByPrincipalId**: string (ReadOnly): The object ID of the user who created the role assignment.
+* **createdByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who created the role assignment.
+* **createdByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who created the role assignment.
+* **createdByUserEmailAddress**: string (ReadOnly): The email address of the user who created the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **createdOn**: string (ReadOnly): The date the role assignment was created.
+* **customerDisplayName**: string (ReadOnly): The name of the customer.
+* **customerId**: string (ReadOnly): The fully qualified ID that uniquely identifies a customer.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section.
+* **invoiceSectionId**: string (ReadOnly): The fully qualified ID that uniquely identifies an invoice section.
+* **modifiedByPrincipalId**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who modified the role assignment.
+* **modifiedByUserEmailAddress**: string (ReadOnly): The email address of the user who modified the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **modifiedOn**: string (ReadOnly): The date the role assignment was modified.
+* **principalDisplayName**: string (ReadOnly): The display name of the principal to whom the role was assigned.
+* **principalId**: string: The object id of the user to whom the role was assigned.
+* **principalPuid**: string: The principal PUID of the user to whom the role was assigned.
+* **principalTenantId**: string: The principal tenant id of the user to whom the role was assigned.
+* **principalTenantName**: string (ReadOnly): The friendly name of the tenant of the user to whom the role was assigned. This will be 'Primary Tenant' for the primary tenant of the billing account.
+* **principalType**: 'DirectoryRole' | 'Everyone' | 'Group' | 'None' | 'ServicePrincipal' | 'Unknown' | 'User' | string (ReadOnly): The type of a role Assignment.
+* **provisioningState**: 'Canceled' | 'ConfirmedBilling' | 'Created' | 'Creating' | 'Expired' | 'Failed' | 'New' | 'Pending' | 'PendingBilling' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the resource during a long-running operation.
+* **roleDefinitionId**: string {minLength: 1} (Required): The ID of the role definition.
+* **scope**: string: The scope at which the role was assigned.
+* **userAuthenticationType**: string: The authentication type of the user, whether Organization or MSA, of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **userEmailAddress**: string: The email address of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+
+## BillingRoleAssignmentProperties
+### Properties
+* **billingAccountDisplayName**: string (ReadOnly): The name of the billing account.
+* **billingAccountId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing account.
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile.
+* **billingProfileId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing profile.
+* **billingRequestId**: string (ReadOnly): The ID of the billing request that was created for the role assignment. This is only applicable to cross tenant role assignments or role assignments created through the billing request.
+* **createdByPrincipalId**: string (ReadOnly): The object ID of the user who created the role assignment.
+* **createdByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who created the role assignment.
+* **createdByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who created the role assignment.
+* **createdByUserEmailAddress**: string (ReadOnly): The email address of the user who created the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **createdOn**: string (ReadOnly): The date the role assignment was created.
+* **customerDisplayName**: string (ReadOnly): The name of the customer.
+* **customerId**: string (ReadOnly): The fully qualified ID that uniquely identifies a customer.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section.
+* **invoiceSectionId**: string (ReadOnly): The fully qualified ID that uniquely identifies an invoice section.
+* **modifiedByPrincipalId**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who modified the role assignment.
+* **modifiedByUserEmailAddress**: string (ReadOnly): The email address of the user who modified the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **modifiedOn**: string (ReadOnly): The date the role assignment was modified.
+* **principalDisplayName**: string (ReadOnly): The display name of the principal to whom the role was assigned.
+* **principalId**: string: The object id of the user to whom the role was assigned.
+* **principalPuid**: string: The principal PUID of the user to whom the role was assigned.
+* **principalTenantId**: string: The principal tenant id of the user to whom the role was assigned.
+* **principalTenantName**: string (ReadOnly): The friendly name of the tenant of the user to whom the role was assigned. This will be 'Primary Tenant' for the primary tenant of the billing account.
+* **principalType**: 'DirectoryRole' | 'Everyone' | 'Group' | 'None' | 'ServicePrincipal' | 'Unknown' | 'User' | string (ReadOnly): The type of a role Assignment.
+* **provisioningState**: 'Canceled' | 'ConfirmedBilling' | 'Created' | 'Creating' | 'Expired' | 'Failed' | 'New' | 'Pending' | 'PendingBilling' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the resource during a long-running operation.
+* **roleDefinitionId**: string {minLength: 1} (Required): The ID of the role definition.
+* **scope**: string: The scope at which the role was assigned.
+* **userAuthenticationType**: string: The authentication type of the user, whether Organization or MSA, of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **userEmailAddress**: string: The email address of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+
+## BillingRoleAssignmentProperties
+### Properties
+* **billingAccountDisplayName**: string (ReadOnly): The name of the billing account.
+* **billingAccountId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing account.
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile.
+* **billingProfileId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing profile.
+* **billingRequestId**: string (ReadOnly): The ID of the billing request that was created for the role assignment. This is only applicable to cross tenant role assignments or role assignments created through the billing request.
+* **createdByPrincipalId**: string (ReadOnly): The object ID of the user who created the role assignment.
+* **createdByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who created the role assignment.
+* **createdByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who created the role assignment.
+* **createdByUserEmailAddress**: string (ReadOnly): The email address of the user who created the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **createdOn**: string (ReadOnly): The date the role assignment was created.
+* **customerDisplayName**: string (ReadOnly): The name of the customer.
+* **customerId**: string (ReadOnly): The fully qualified ID that uniquely identifies a customer.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section.
+* **invoiceSectionId**: string (ReadOnly): The fully qualified ID that uniquely identifies an invoice section.
+* **modifiedByPrincipalId**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who modified the role assignment.
+* **modifiedByUserEmailAddress**: string (ReadOnly): The email address of the user who modified the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **modifiedOn**: string (ReadOnly): The date the role assignment was modified.
+* **principalDisplayName**: string (ReadOnly): The display name of the principal to whom the role was assigned.
+* **principalId**: string: The object id of the user to whom the role was assigned.
+* **principalPuid**: string: The principal PUID of the user to whom the role was assigned.
+* **principalTenantId**: string: The principal tenant id of the user to whom the role was assigned.
+* **principalTenantName**: string (ReadOnly): The friendly name of the tenant of the user to whom the role was assigned. This will be 'Primary Tenant' for the primary tenant of the billing account.
+* **principalType**: 'DirectoryRole' | 'Everyone' | 'Group' | 'None' | 'ServicePrincipal' | 'Unknown' | 'User' | string (ReadOnly): The type of a role Assignment.
+* **provisioningState**: 'Canceled' | 'ConfirmedBilling' | 'Created' | 'Creating' | 'Expired' | 'Failed' | 'New' | 'Pending' | 'PendingBilling' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the resource during a long-running operation.
+* **roleDefinitionId**: string {minLength: 1} (Required): The ID of the role definition.
+* **scope**: string: The scope at which the role was assigned.
+* **userAuthenticationType**: string: The authentication type of the user, whether Organization or MSA, of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **userEmailAddress**: string: The email address of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+
+## BillingRoleAssignmentProperties
+### Properties
+* **billingAccountDisplayName**: string (ReadOnly): The name of the billing account.
+* **billingAccountId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing account.
+* **billingProfileDisplayName**: string (ReadOnly): The name of the billing profile.
+* **billingProfileId**: string (ReadOnly): The fully qualified ID that uniquely identifies a billing profile.
+* **billingRequestId**: string (ReadOnly): The ID of the billing request that was created for the role assignment. This is only applicable to cross tenant role assignments or role assignments created through the billing request.
+* **createdByPrincipalId**: string (ReadOnly): The object ID of the user who created the role assignment.
+* **createdByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who created the role assignment.
+* **createdByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who created the role assignment.
+* **createdByUserEmailAddress**: string (ReadOnly): The email address of the user who created the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **createdOn**: string (ReadOnly): The date the role assignment was created.
+* **customerDisplayName**: string (ReadOnly): The name of the customer.
+* **customerId**: string (ReadOnly): The fully qualified ID that uniquely identifies a customer.
+* **invoiceSectionDisplayName**: string (ReadOnly): The name of the invoice section.
+* **invoiceSectionId**: string (ReadOnly): The fully qualified ID that uniquely identifies an invoice section.
+* **modifiedByPrincipalId**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalPuid**: string (ReadOnly): The principal PUID of the user who modified the role assignment.
+* **modifiedByPrincipalTenantId**: string (ReadOnly): The tenant Id of the user who modified the role assignment.
+* **modifiedByUserEmailAddress**: string (ReadOnly): The email address of the user who modified the role assignment. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **modifiedOn**: string (ReadOnly): The date the role assignment was modified.
+* **principalDisplayName**: string (ReadOnly): The display name of the principal to whom the role was assigned.
+* **principalId**: string: The object id of the user to whom the role was assigned.
+* **principalPuid**: string: The principal PUID of the user to whom the role was assigned.
+* **principalTenantId**: string: The principal tenant id of the user to whom the role was assigned.
+* **principalTenantName**: string (ReadOnly): The friendly name of the tenant of the user to whom the role was assigned. This will be 'Primary Tenant' for the primary tenant of the billing account.
+* **principalType**: 'DirectoryRole' | 'Everyone' | 'Group' | 'None' | 'ServicePrincipal' | 'Unknown' | 'User' | string (ReadOnly): The type of a role Assignment.
+* **provisioningState**: 'Canceled' | 'ConfirmedBilling' | 'Created' | 'Creating' | 'Expired' | 'Failed' | 'New' | 'Pending' | 'PendingBilling' | 'Provisioning' | 'Succeeded' | string (ReadOnly): The provisioning state of the resource during a long-running operation.
+* **roleDefinitionId**: string {minLength: 1} (Required): The ID of the role definition.
+* **scope**: string: The scope at which the role was assigned.
+* **userAuthenticationType**: string: The authentication type of the user, whether Organization or MSA, of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+* **userEmailAddress**: string: The email address of the user to whom the role was assigned. This is supported only for billing accounts with agreement type Enterprise Agreement.
+
 ## BillingRoleAssignmentProperties
 ### Properties
 * **billingAccountDisplayName**: string (ReadOnly): The name of the billing account.
@@ -967,6 +1408,33 @@
 * **permissions**: [BillingPermission](#billingpermission)[] (ReadOnly): The billingPermissions the role has.
 * **roleName**: string {minLength: 1} (Required): The name of the role.
 
+## BillingSubscription
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingSubscriptionProperties](#billingsubscriptionproperties): The properties of a(n) BillingSubscription
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingSubscription
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingSubscriptionProperties](#billingsubscriptionproperties): The properties of a(n) BillingSubscription
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BillingSubscription
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BillingSubscriptionProperties](#billingsubscriptionproperties): The properties of a(n) BillingSubscription
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## BillingSubscriptionAliasProperties
 ### Properties
 * **autoRenew**: 'Off' | 'On' | string: Indicates whether auto renewal is turned on or off for a product.
@@ -992,7 +1460,7 @@
 * **lastMonthCharges**: [Amount](#amount) (ReadOnly): The last month's charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
 * **monthToDateCharges**: [Amount](#amount) (ReadOnly): The current month to date charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
 * **nextBillingCycleDetails**: [NextBillingCycleDetails](#nextbillingcycledetails) (ReadOnly): Next billing cycle details of the subscription.
-* **offerId**: string (ReadOnly): The offer ID for the subscription. This field is only available for the Microsoft Online Services Program billing accounts.
+* **offerId**: string (ReadOnly): The offer ID for the subscription. This field is only available for the Microsoft Online Services Program billing accounts or billing accounts with agreement type Enterprise Agreement.
 * **operationStatus**: 'LockedForUpdate' | 'None' | 'Other' | string (ReadOnly): The status of an operation on the subscription. When None, there is no ongoing operation. When LockedForUpdate, write operations will be blocked on the Billing Subscription. Other is the default value and you may need to refer to the latest API version for more details.
 * **productCategory**: string (ReadOnly): The category of the product for which the subscription is purchased. Possible values include: AzureSupport, Hardware, ReservationOrder, SaaS, SavingsPlanOrder, Software, UsageBased, Other.
 * **productType**: string (ReadOnly): Type of the product for which the subscription is purchased.
@@ -1014,6 +1482,11 @@
 * **termDuration**: string: The duration in ISO8601 format for which you can use the subscription. Example: P1M, P3M, P1Y
 * **termEndDate**: string (ReadOnly): End date of the term in UTC time.
 * **termStartDate**: string (ReadOnly): Start date of the term in UTC time.
+
+## BillingSubscriptionMergeRequest
+### Properties
+* **quantity**: int: The quantity of the source billing subscription that will be merged with the target billing subscription.
+* **targetBillingSubscriptionName**: string: The ID of the target billing subscription that will be merged with the source subscription provided in the request.
 
 ## BillingSubscriptionProperties
 ### Properties
@@ -1039,7 +1512,7 @@
 * **lastMonthCharges**: [Amount](#amount) (ReadOnly): The last month's charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
 * **monthToDateCharges**: [Amount](#amount) (ReadOnly): The current month to date charges. This field is only available for usage based subscriptions of Microsoft Customer Agreement billing accounts.
 * **nextBillingCycleDetails**: [NextBillingCycleDetails](#nextbillingcycledetails) (ReadOnly): Next billing cycle details of the subscription.
-* **offerId**: string (ReadOnly): The offer ID for the subscription. This field is only available for the Microsoft Online Services Program billing accounts.
+* **offerId**: string (ReadOnly): The offer ID for the subscription. This field is only available for the Microsoft Online Services Program billing accounts or billing accounts with agreement type Enterprise Agreement.
 * **operationStatus**: 'LockedForUpdate' | 'None' | 'Other' | string (ReadOnly): The status of an operation on the subscription. When None, there is no ongoing operation. When LockedForUpdate, write operations will be blocked on the Billing Subscription. Other is the default value and you may need to refer to the latest API version for more details.
 * **productCategory**: string (ReadOnly): The category of the product for which the subscription is purchased. Possible values include: AzureSupport, Hardware, ReservationOrder, SaaS, SavingsPlanOrder, Software, UsageBased, Other.
 * **productType**: string (ReadOnly): Type of the product for which the subscription is purchased.
@@ -1072,10 +1545,52 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## BillingSubscriptionSplitRequest
+### Properties
+* **billingFrequency**: string: The billing frequency of the target subscription in the ISO8601 format. Example: P1M, P3M, P1Y"
+* **quantity**: int: The quantity of the target product to which the subscription needs to be split into.
+* **targetProductTypeId**: string: The ID of the target product to which the subscription needs to be split into. This value is not same as the value returned in Get API call and can be retrieved from Catalog API to know the product id to split into.
+* **targetSkuId**: string: The ID of the target product to which the subscription needs to be split into. This value is not same as the value returned in Get API call and can be retrieved from Catalog API to know the sku id to split into.
+* **termDuration**: string: The term duration of the target in ISO8601 format product to which the subscription needs to be split into. Example: P1M, P1Y
+
 ## BillingSubscriptionStatusDetails
 ### Properties
 * **effectiveDate**: string (ReadOnly): The suspension effective date for a subscription. This field is not available for Enterprise Agreement billing accounts.
 * **reason**: 'Cancelled' | 'Expired' | 'None' | 'Other' | 'PastDue' | 'PolicyViolation' | 'SpendingLimitReached' | 'SuspiciousActivity' | 'Transferred' | string (ReadOnly): The suspension reason for a subscription. This field is not available for Enterprise Agreement billing accounts.
+
+## CancelSubscriptionRequest
+### Properties
+* **cancellationReason**: 'Compromise' | 'Dispute' | 'Other' | string (Required): Cancellation reason.
+* **customerId**: string: The fully qualified ID that uniquely identifies a customer.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessRequest
+### Properties
+* **actions**: string[]: List of actions passed in the request body against which the permissions will be checked.
+
+## CheckAccessResponse
+### Properties
+* **accessDecision**: 'Allowed' | 'NotAllowed' | 'Other' | string (ReadOnly): Access Decision, specifies access is allowed or not.
+* **action**: string (ReadOnly): Gets or sets an action.
 
 ## Commitment
 ### Properties
@@ -1105,6 +1620,26 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## DeleteBillingProfileEligibilityDetail
+### Properties
+* **code**: 'ActiveBillingSubscriptions' | 'ActiveCreditCard' | 'ActiveCredits' | 'LastBillingProfile' | 'None' | 'NotSupported' | 'OutstandingCharges' | 'PendingCharges' | 'ReservedInstances' | string: Code of the delete invoice section eligibility response.
+* **message**: string: Validation message.
+
+## DeleteBillingProfileEligibilityResult
+### Properties
+* **eligibilityDetails**: [DeleteBillingProfileEligibilityDetail](#deletebillingprofileeligibilitydetail)[]: Validation details of delete billing profile eligibility.
+* **eligibilityStatus**: 'Allowed' | 'NotAllowed' | string: Status describing if billing profile is eligible to be deleted.
+
+## DeleteInvoiceSectionEligibilityDetail
+### Properties
+* **code**: 'ActiveAzurePlans' | 'ActiveBillingSubscriptions' | 'LastInvoiceSection' | 'Other' | 'ReservedInstances' | string: Code for the delete invoice section validation.
+* **message**: string: Validation message.
+
+## DeleteInvoiceSectionEligibilityResult
+### Properties
+* **eligibilityDetails**: [DeleteInvoiceSectionEligibilityDetail](#deleteinvoicesectioneligibilitydetail)[]: A list of delete invoice section eligibility result details.
+* **eligibilityStatus**: 'Allowed' | 'NotAllowed' | string: Status describing if invoice section is eligible to be deleted.
+
 ## DepartmentProperties
 ### Properties
 * **costCenter**: string: The cost center associated with the department.
@@ -1120,6 +1655,41 @@
 * **productType**: 'AzureReservation' | 'AzureSubscription' | 'Department' | 'SAAS' | 'SavingsPlan' | string (ReadOnly): Type of product that is transferred.
 * **skuDescription**: string (ReadOnly): The SKU of the product that is transferred.
 * **transferStatus**: 'Completed' | 'Failed' | 'InProgress' | 'NotStarted' | string (ReadOnly): Transfer status.
+
+## DocumentDownloadRequest
+### Properties
+* **documentName**: string: The ID that uniquely identifies an invoice document. This ID may be an identifier for an invoice PDF, a credit note, or a tax receipt. If omitted, the most recent invoice PDF for the invoice will be returned.
+* **invoiceName**: string: The ID that uniquely identifies an invoice.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
+
+## DocumentDownloadResult
+### Properties
+* **expiryTime**: string (ReadOnly): The time in UTC when the download URL will expire.
+* **url**: string (ReadOnly): The URL to the PDF or .zip file.
 
 ## EnrollmentAccountProperties
 ### Properties
@@ -1306,6 +1876,46 @@
 * **nextLink**: string (ReadOnly): The link (url) to the next page of results.
 * **value**: [InvoiceSectionWithCreateSubPermission](#invoicesectionwithcreatesubpermission)[] (ReadOnly): The list of resources.
 
+## MoveBillingSubscriptionEligibilityResult
+### Properties
+* **errorDetails**: [MoveBillingSubscriptionErrorDetails](#movebillingsubscriptionerrordetails): Error details of the transfer eligibility validation.
+* **isMoveEligible**: bool (ReadOnly): Specifies whether the subscription is eligible to be transferred.
+
+## MoveBillingSubscriptionErrorDetails
+### Properties
+* **code**: 'AccountIsLocked' | 'AssetHasCap' | 'AssetNotActive' | 'BillingAccountInactive' | 'BillingProfilePastDue' | 'CrossBillingAccountNotAllowed' | 'DestinationBillingProfileInactive' | 'DestinationBillingProfileNotFound' | 'DestinationBillingProfilePastDue' | 'DestinationInvoiceSectionInactive' | 'DestinationInvoiceSectionNotFound' | 'InsufficientPermissionOnDestination' | 'InsufficientPermissionOnSource' | 'InvalidDestination' | 'InvalidSource' | 'InvoiceSectionIsRestricted' | 'MarketplaceNotEnabledOnDestination' | 'NoActiveAzurePlan' | 'None' | 'Other' | 'ProductInactive' | 'ProductNotFound' | 'ProductTypeNotSupported' | 'SourceBillingProfilePastDue' | 'SourceInvoiceSectionInactive' | 'SubscriptionHasReservations' | 'SubscriptionNotActive' | 'SubscriptionTypeNotSupported' | string: Error code of the transfer validation response.
+* **details**: string: Detailed error message explaining the error.
+* **message**: string: The error message.
+
+## MoveBillingSubscriptionRequest
+### Properties
+* **destinationEnrollmentAccountId**: string: The destination enrollment account id.
+* **destinationInvoiceSectionId**: string: The destination invoice section id.
+
+## MoveBillingSubscriptionRequest
+### Properties
+* **destinationEnrollmentAccountId**: string: The destination enrollment account id.
+* **destinationInvoiceSectionId**: string: The destination invoice section id.
+
+## MoveProductEligibilityResult
+### Properties
+* **errorDetails**: [MoveProductEligibilityResultErrorDetails](#moveproducteligibilityresulterrordetails): Error details of the transfer eligibility validation.
+* **isMoveEligible**: bool: Specifies whether the subscription is eligible to be transferred.
+
+## MoveProductEligibilityResultErrorDetails
+### Properties
+* **code**: 'BillingAccountInactive' | 'DestinationBillingProfileInactive' | 'DestinationBillingProfileNotFound' | 'DestinationBillingProfilePastDue' | 'DestinationInvoiceSectionInactive' | 'DestinationInvoiceSectionNotFound' | 'InsufficientPermissionOnDestination' | 'InsufficientPermissionOnSource' | 'InvalidDestination' | 'InvalidSource' | 'MarketplaceNotEnabledOnDestination' | 'Other' | 'ProductInactive' | 'ProductNotFound' | 'ProductTypeNotSupported' | 'SourceBillingProfilePastDue' | 'SourceInvoiceSectionInactive' | string (ReadOnly): Error code for the product transfer validation.
+* **details**: string (ReadOnly): Error details of the transfer eligibility validation.
+* **message**: string (ReadOnly): The error message.
+
+## MoveProductRequest
+### Properties
+* **destinationInvoiceSectionId**: string {minLength: 1} (Required): The destination invoice section id.
+
+## MoveProductRequest
+### Properties
+* **destinationInvoiceSectionId**: string {minLength: 1} (Required): The destination invoice section id.
+
 ## NextBillingCycleDetails
 ### Properties
 * **billingFrequency**: string (ReadOnly): Billing frequency of the product under the subscription.
@@ -1325,6 +1935,27 @@
 * **initiatorEmailId**: string (ReadOnly): The email ID of the user who sent the transfer request.
 * **recipientEmailId**: string: The email ID of the recipient to whom the transfer request is sent.
 * **resellerId**: string: Optional MPN ID of the reseller for transfer requests that are sent from a Microsoft Partner Agreement billing account.
+* **resellerName**: string (ReadOnly): Optional name of the reseller for transfer requests that are sent from Microsoft Partner Agreement billing account.
+* **transferStatus**: 'Canceled' | 'Completed' | 'CompletedWithErrors' | 'Declined' | 'Expired' | 'Failed' | 'InProgress' | 'Pending' | string (ReadOnly): Overall transfer status.
+
+## PartnerTransferDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [PartnerTransferProperties](#partnertransferproperties): Details of the transfer.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## PartnerTransferProperties
+### Properties
+* **canceledBy**: string (ReadOnly): The email ID of the user who canceled the transfer request.
+* **detailedTransferStatus**: [DetailedTransferStatus](#detailedtransferstatus)[] (ReadOnly): Detailed transfer status.
+* **expirationTime**: string (ReadOnly): The time at which the transfer request expires.
+* **initiatorCustomerType**: 'EA' | 'Partner' | string (ReadOnly): The type of customer who sent the transfer request.
+* **initiatorEmailId**: string (ReadOnly): The email ID of the user who sent the transfer request.
+* **recipientEmailId**: string (ReadOnly): The email ID of the user to whom the transfer request was sent.
+* **resellerId**: string (ReadOnly): Optional MPN ID of the reseller for transfer requests that are sent from a Microsoft Partner Agreement billing account.
 * **resellerName**: string (ReadOnly): Optional name of the reseller for transfer requests that are sent from Microsoft Partner Agreement billing account.
 * **transferStatus**: 'Canceled' | 'Completed' | 'CompletedWithErrors' | 'Declined' | 'Expired' | 'Failed' | 'InProgress' | 'Pending' | string (ReadOnly): Overall transfer status.
 
@@ -1403,6 +2034,16 @@
 * **startDate**: string: The date on when the defined 'Payment Term' will be effective from and is always in UTC.
 * **term**: string: Represents duration in netXX format. Always in days.
 
+## PaymentTermsEligibilityDetail
+### Properties
+* **code**: 'BillingAccountNotFound' | 'InactiveBillingAccount' | 'IneligibleBillingAccountStatus' | 'InvalidBillingAccountType' | 'InvalidDateFormat' | 'InvalidDateRange' | 'InvalidTerms' | 'NullOrEmptyPaymentTerms' | 'Other' | 'OverlappingPaymentTerms' | string: Indicates the reason for the ineligibility of the payment terms.
+* **message**: string: Indicates the message for the ineligibility of the payment terms.
+
+## PaymentTermsEligibilityResult
+### Properties
+* **eligibilityDetails**: [PaymentTermsEligibilityDetail](#paymenttermseligibilitydetail)[]: Details of the payment terms eligibility.
+* **eligibilityStatus**: 'Invalid' | 'Other' | 'Valid' | string: Indicates the eligibility status of the payment terms.
+
 ## PolicySummary
 ### Properties
 * **name**: string: The name of the policy.
@@ -1420,6 +2061,20 @@
 * **objectId**: string: The object id of the principal who has interacted with a billing entity.
 * **tenantId**: string: The tenant id of the principal who has interacted with a billing entity.
 * **upn**: string: The user principal name of the principal who has interacted with a billing entity.
+
+## Product
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ProductProperties](#productproperties): A product.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ProductDetails
+### Properties
+* **productId**: string: The ID of the product that is transferred.
+* **productType**: 'AzureReservation' | 'AzureSubscription' | 'Department' | 'SAAS' | 'SavingsPlan' | string: Type of the product that is transferred.
 
 ## ProductProperties
 ### Properties
@@ -1681,6 +2336,41 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ProxyResourceWithTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## PurchaseRequest
 ### Properties
 * **properties**: [PurchaseRequestProperties](#purchaserequestproperties): Purchase request properties.
@@ -1702,6 +2392,24 @@
 * **creditNoteDocumentId**: string (ReadOnly): The ID of credit note.
 * **invoiceDocumentId**: string (ReadOnly): The ID of invoice.
 * **rebillDetails**: [RebillDetails](#rebilldetails) (ReadOnly): The rebill details of an invoice.
+
+## RecipientTransferDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RecipientTransferProperties](#recipienttransferproperties): Details of the transfer.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## RecipientTransferDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RecipientTransferProperties](#recipienttransferproperties): Details of the transfer.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## RecipientTransferProperties
 ### Properties
@@ -1958,6 +2666,29 @@
 * **savingsPlans**: string[]
 * **term**: 'P1Y' | 'P3Y' | 'P5Y' | string: Represents the Savings plan term in ISO 8601 format.
 
+## SavingsPlanUpdateRequestProperties
+### Properties
+* **appliedScopeProperties**: [AppliedScopeProperties](#appliedscopeproperties): Properties specific to applied scope type. Not required if not applicable.
+* **appliedScopeType**: 'ManagementGroup' | 'Shared' | 'Single' | string: Type of the Applied Scope.
+* **displayName**: string: Display name
+* **renew**: bool: Setting this to true will automatically purchase a new benefit on the expiration date time.
+* **renewProperties**: [RenewProperties](#renewproperties): Properties specific to renew.
+
+## SavingsPlanUpdateValidateRequest
+### Properties
+* **benefits**: [SavingsPlanUpdateRequestProperties](#savingsplanupdaterequestproperties)[]: The benefits of a savings plan.
+
+## SavingsPlanValidateResponse
+### Properties
+* **benefits**: [SavingsPlanValidResponseProperty](#savingsplanvalidresponseproperty)[]
+* **nextLink**: string: Url to get the next page.
+
+## SavingsPlanValidResponseProperty
+### Properties
+* **reason**: string: Failure reason if the provided input is invalid
+* **reasonCode**: string: Failure reason code if the provided input is invalid
+* **valid**: bool: Indicates if the provided input is valid
+
 ## Sku
 ### Properties
 * **name**: string: Name of the SKU to be applied
@@ -2017,10 +2748,33 @@
 * **status**: 'Invalid' | 'Other' | 'Valid' | string: The status of the tax identifier.
 * **type**: 'BrazilCcmId' | 'BrazilCnpjId' | 'BrazilCpfId' | 'CanadianFederalExempt' | 'CanadianProvinceExempt' | 'ExternalTaxation' | 'IndiaFederalServiceTaxId' | 'IndiaFederalTanId' | 'IndiaPanId' | 'IndiaStateCstId' | 'IndiaStateGstINId' | 'IndiaStateVatId' | 'IntlExempt' | 'LoveCode' | 'MobileBarCode' | 'NationalIdentificationNumber' | 'Other' | 'PublicSectorId' | 'USExempt' | 'VatId' | string: The type of the tax identifier.
 
+## TransferDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [TransferProperties](#transferproperties): Details of the transfer.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ProxyResourceWithTags](#proxyresourcewithtags): Dictionary of metadata associated with the resource. It may not be populated for all resource types. Maximum key/value length supported of 256 characters. Keys/value should not empty value nor null. Keys can not contain < > % & \ ? /
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## TransferError
 ### Properties
 * **code**: string (ReadOnly): Error code.
 * **message**: string (ReadOnly): Error message.
+
+## TransferProperties
+### Properties
+* **canceledBy**: string (ReadOnly): The email ID of the user who canceled the transfer request.
+* **detailedTransferStatus**: [DetailedTransferStatus](#detailedtransferstatus)[] (ReadOnly): Detailed transfer status.
+* **expirationTime**: string (ReadOnly): The time at which the transfer request expires.
+* **initiatorEmailId**: string (ReadOnly): The email ID of the user who sent the transfer request.
+* **recipientEmailId**: string (ReadOnly): The email ID of the user to whom the transfer request was sent.
+* **transferStatus**: 'Canceled' | 'Completed' | 'CompletedWithErrors' | 'Declined' | 'Expired' | 'Failed' | 'InProgress' | 'Pending' | string (ReadOnly): Overall transfer status.
+
+## TransitionDetails
+### Properties
+* **anniversaryDay**: int (ReadOnly): The anniversary day of the pre-transitioned account of type Microsoft Online Services Program.
+* **transitionDate**: string (ReadOnly): The transition completion date.
 
 ## Utilization
 ### Properties
@@ -2033,4 +2787,24 @@
 * **grainUnit**: string (ReadOnly): The grain unit of the aggregate
 * **value**: int (ReadOnly): The aggregate value
 * **valueUnit**: string (ReadOnly): The aggregate value unit
+
+## ValidateTransferListResponse
+### Properties
+* **value**: [ValidateTransferResponse](#validatetransferresponse)[] (ReadOnly): The list of transfer validation results.
+
+## ValidateTransferResponse
+### Properties
+* **properties**: [ValidateTransferResponseProperties](#validatetransferresponseproperties): The properties of transfer validation response.
+
+## ValidateTransferResponseProperties
+### Properties
+* **productId**: string (ReadOnly): The product id for which this result applies.
+* **results**: [ValidationResultProperties](#validationresultproperties)[]: The array of validation results.
+* **status**: string (ReadOnly): The status of validation
+
+## ValidationResultProperties
+### Properties
+* **code**: string (ReadOnly): Result Code.
+* **level**: string (ReadOnly): Result Level.
+* **message**: string (ReadOnly): The validation message.
 

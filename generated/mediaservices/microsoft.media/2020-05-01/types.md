@@ -144,6 +144,30 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
 * **type**: 'Microsoft.Media/mediaServices/transforms/jobs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function allocate (Microsoft.Media/mediaservices/liveEvents@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2020-05-01
+
+## Function cancelJob (Microsoft.Media/mediaServices/transforms/jobs@2020-05-01)
+* **Resource**: Microsoft.Media/mediaServices/transforms/jobs
+* **ApiVersion**: 2020-05-01
+
+## Function checkNameAvailability (Microsoft.Media/locations@2020-05-01)
+* **Resource**: Microsoft.Media/locations
+* **ApiVersion**: 2020-05-01
+* **Input**: [CheckNameAvailabilityInput](#checknameavailabilityinput)
+* **Output**: [EntityNameAvailabilityCheckOutput](#entitynameavailabilitycheckoutput)
+
+## Function getEncryptionKey (Microsoft.Media/mediaServices/assets@2020-05-01)
+* **Resource**: Microsoft.Media/mediaServices/assets
+* **ApiVersion**: 2020-05-01
+* **Output**: [StorageEncryptedAssetDecryptionData](#storageencryptedassetdecryptiondata)
+
+## Function getPolicyPropertiesWithSecrets (Microsoft.Media/mediaServices/contentKeyPolicies@2020-05-01)
+* **Resource**: Microsoft.Media/mediaServices/contentKeyPolicies
+* **ApiVersion**: 2020-05-01
+* **Output**: [ContentKeyPolicyProperties](#contentkeypolicyproperties)
+
 ## Function listContainerSas (Microsoft.Media/mediaServices/assets@2020-05-01)
 * **Resource**: Microsoft.Media/mediaServices/assets
 * **ApiVersion**: 2020-05-01
@@ -171,6 +195,37 @@
 * **ApiVersion**: 2020-05-01
 * **Output**: [ListStreamingLocatorsResponse](#liststreaminglocatorsresponse)
 
+## Function reset (Microsoft.Media/mediaservices/liveEvents@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2020-05-01
+
+## Function scale (Microsoft.Media/mediaservices/streamingEndpoints@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2020-05-01
+* **Input**: [StreamingEntityScaleUnit](#streamingentityscaleunit)
+
+## Function start (Microsoft.Media/mediaservices/liveEvents@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2020-05-01
+
+## Function start (Microsoft.Media/mediaservices/streamingEndpoints@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2020-05-01
+
+## Function stop (Microsoft.Media/mediaservices/liveEvents@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/liveEvents
+* **ApiVersion**: 2020-05-01
+* **Input**: [LiveEventActionInput](#liveeventactioninput)
+
+## Function stop (Microsoft.Media/mediaservices/streamingEndpoints@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices/streamingEndpoints
+* **ApiVersion**: 2020-05-01
+
+## Function syncStorageKeys (Microsoft.Media/mediaservices@2020-05-01)
+* **Resource**: Microsoft.Media/mediaservices
+* **ApiVersion**: 2020-05-01
+* **Input**: [SyncStorageKeysInput](#syncstoragekeysinput)
+
 ## AccountEncryption
 ### Properties
 * **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties): The properties of the key used to encrypt the account.
@@ -189,6 +244,12 @@
 ## AssetContainerSas
 ### Properties
 * **assetContainerSasUrls**: string[]: The list of Asset container SAS URLs.
+
+## AssetFileEncryptionMetadata
+### Properties
+* **assetFileId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (Required): The Asset File Id.
+* **assetFileName**: string: The Asset File name.
+* **initializationVector**: string: The Asset File initialization vector.
 
 ## AssetProperties
 ### Properties
@@ -227,6 +288,11 @@
 ### Properties
 * **playReady**: [StreamingPolicyPlayReadyConfiguration](#streamingpolicyplayreadyconfiguration): PlayReady configurations
 * **widevine**: [StreamingPolicyWidevineConfiguration](#streamingpolicywidevineconfiguration): Widevine configurations
+
+## CheckNameAvailabilityInput
+### Properties
+* **name**: string: The account name.
+* **type**: string: The account type. For a Media Services account, this should be 'MediaServices'.
 
 ## ClipTime
 * **Discriminator**: @odata.type
@@ -428,6 +494,14 @@
 * **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
 * **policyId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The legacy Policy ID.
 
+## ContentKeyPolicyProperties
+### Properties
+* **created**: string (ReadOnly): The creation date of the Policy
+* **description**: string: A description for the Policy.
+* **lastModified**: string (ReadOnly): The last modified date of the Policy
+* **options**: [ContentKeyPolicyOption](#contentkeypolicyoption)[] (Required): The Key Policy options.
+* **policyId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The legacy Policy ID.
+
 ## ContentKeyPolicyRestriction
 * **Discriminator**: @odata.type
 
@@ -518,6 +592,12 @@
 * **download**: bool (Required): Enable Download protocol or not
 * **hls**: bool (Required): Enable HLS protocol or not
 * **smoothStreaming**: bool (Required): Enable SmoothStreaming protocol or not
+
+## EntityNameAvailabilityCheckOutput
+### Properties
+* **message**: string: Specifies the detailed reason if the name is not available.
+* **nameAvailable**: bool (Required): Specifies if the name is available.
+* **reason**: string: Specifies the reason if the name is not available.
 
 ## EnvelopeEncryption
 ### Properties
@@ -786,6 +866,10 @@
 ### Properties
 * **streamingLocators**: [AssetStreamingLocator](#assetstreaminglocator)[] (ReadOnly): The list of Streaming Locators.
 
+## LiveEventActionInput
+### Properties
+* **removeOutputsOnStop**: bool: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
+
 ## LiveEventEncoding
 ### Properties
 * **encodingType**: 'None' | 'Premium1080p' | 'Standard' | string: Live event type. When encodingType is set to None, the service simply passes through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or Premium1080p, a live encoder transcodes the incoming stream into multiple bitrates or layers. See https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the live event is created.
@@ -1001,6 +1085,11 @@
 * **id**: string: The ID of the storage account resource. Media Services relies on tables and queues as well as blobs, so the primary storage account must be a Standard Storage account (either Microsoft.ClassicStorage or Microsoft.Storage). Blob only storage accounts can be added as secondary storage accounts.
 * **type**: 'Primary' | 'Secondary' | string (Required): The type of the storage account.
 
+## StorageEncryptedAssetDecryptionData
+### Properties
+* **assetFileEncryptionMetadata**: [AssetFileEncryptionMetadata](#assetfileencryptionmetadata)[]: Asset File encryption metadata.
+* **key**: any: The Asset File storage encryption key.
+
 ## StreamingEndpointAccessControl
 ### Properties
 * **akamai**: [AkamaiAccessControl](#akamaiaccesscontrol): The access control of Akamai
@@ -1024,6 +1113,10 @@
 * **provisioningState**: string (ReadOnly): The provisioning state of the streaming endpoint.
 * **resourceState**: 'Deleting' | 'Running' | 'Scaling' | 'Starting' | 'Stopped' | 'Stopping' | string (ReadOnly): The resource state of the streaming endpoint.
 * **scaleUnits**: int (Required): The number of scale units. Use the Scale operation to adjust this value.
+
+## StreamingEntityScaleUnit
+### Properties
+* **scaleUnit**: int: The scale unit number of the streaming endpoint.
 
 ## StreamingLocatorContentKey
 ### Properties
@@ -1086,6 +1179,10 @@
 ## StreamingPolicyWidevineConfiguration
 ### Properties
 * **customLicenseAcquisitionUrlTemplate**: string: Template for the URL of the custom service delivering licenses to end user players.  Not required when using Azure Media Services for issuing licenses.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
+
+## SyncStorageKeysInput
+### Properties
+* **id**: string: The ID of the storage account resource.
 
 ## SystemData
 ### Properties

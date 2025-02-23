@@ -119,6 +119,30 @@
 * **properties**: [WidgetType](#widgettype) (ReadOnly): Definition of WidgetType.
 * **type**: 'Microsoft.CustomerInsights/hubs/widgetTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getEnrichingKpis (Microsoft.CustomerInsights/hubs/profiles@2017-01-01)
+* **Resource**: Microsoft.CustomerInsights/hubs/profiles
+* **ApiVersion**: 2017-01-01
+* **Output**: [KpiDefinition](#kpidefinition)[]
+
+## Function regeneratePrimaryKey (Microsoft.CustomerInsights/hubs/authorizationPolicies@2017-01-01)
+* **Resource**: Microsoft.CustomerInsights/hubs/authorizationPolicies
+* **ApiVersion**: 2017-01-01
+* **Output**: [AuthorizationPolicy](#authorizationpolicy)
+
+## Function regenerateSecondaryKey (Microsoft.CustomerInsights/hubs/authorizationPolicies@2017-01-01)
+* **Resource**: Microsoft.CustomerInsights/hubs/authorizationPolicies
+* **ApiVersion**: 2017-01-01
+* **Output**: [AuthorizationPolicy](#authorizationpolicy)
+
+## Function reprocess (Microsoft.CustomerInsights/hubs/kpi@2017-01-01)
+* **Resource**: Microsoft.CustomerInsights/hubs/kpi
+* **ApiVersion**: 2017-01-01
+
+## Function suggestRelationshipLinks (Microsoft.CustomerInsights/hubs/interactions@2017-01-01)
+* **Resource**: Microsoft.CustomerInsights/hubs/interactions
+* **ApiVersion**: 2017-01-01
+* **Output**: [SuggestRelationshipLinksResponse](#suggestrelationshiplinksresponse)
+
 ## AssignmentPrincipal
 ### Properties
 * **principalId**: string (Required): The principal id being assigned to.
@@ -129,6 +153,20 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## AuthorizationPolicy
+### Properties
+* **permissions**: ('Manage' | 'Read' | 'Write')[] (Required): The permissions associated with the policy.
+* **policyName**: string (ReadOnly): Name of the policy.
+* **primaryKey**: string: Primary key associated with the policy.
+* **secondaryKey**: string: Secondary key associated with the policy.
+
+## AuthorizationPolicy
+### Properties
+* **permissions**: ('Manage' | 'Read' | 'Write')[] (Required): The permissions associated with the policy.
+* **policyName**: string (ReadOnly): Name of the policy.
+* **primaryKey**: string: Primary key associated with the policy.
+* **secondaryKey**: string: Secondary key associated with the policy.
 
 ## AuthorizationPolicy
 ### Properties
@@ -535,6 +573,14 @@
 * **linkType**: 'CopyIfNull' | 'UpdateAlways': Link type.
 * **relationshipFieldName**: string (Required): The field name on the Relationship metadata.
 
+## RelationshipsLookup
+### Properties
+* **existingRelationshipName**: string (ReadOnly): The name of existing Relationship.
+* **profileName**: string (ReadOnly): The relationship profile.
+* **profilePropertyReferences**: [ParticipantPropertyReference](#participantpropertyreference)[] (ReadOnly): The property references for the profile type.
+* **relatedProfileName**: string (ReadOnly): The related profile.
+* **relatedProfilePropertyReferences**: [ParticipantPropertyReference](#participantpropertyreference)[] (ReadOnly): The property references for the related profile type.
+
 ## RelationshipTypeFieldMapping
 ### Properties
 * **profileFieldName**: string (Required): Specifies the fieldName in profile.
@@ -603,6 +649,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SuggestRelationshipLinksResponse
+### Properties
+* **interactionName**: string (ReadOnly): The interaction name.
+* **suggestedRelationships**: [RelationshipsLookup](#relationshipslookup)[] (ReadOnly): Suggested relationships for the type.
 
 ## TypePropertiesMapping
 ### Properties

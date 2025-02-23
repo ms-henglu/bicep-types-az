@@ -9,12 +9,176 @@ warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and 
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
-    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-03-01/ContentProductTemplates.json:187:5
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/ContentProductTemplates.json:187:5
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapAgentConfiguration' has a property 'type' that is already declared the parent schema 'AgentConfiguration' but isn't significantly different. The property has been removed from SapAgentConfiguration
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'RfcConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from RfcConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapControlConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from SapControlConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapSystemsConfiguration' has a property 'type' that is already declared the parent schema 'SystemsConfiguration' but isn't significantly different. The property has been removed from SapSystemsConfiguration
+warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Modeler/MissingType | The schema 'components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/ThreatIntelligenceQuery.json#/components/schemas/components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties
+warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/TriggeredAnalyticsRuleRuns.json#/components/schemas/components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties
+warning | Modeler/MissingType | The schema 'components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/dataConnectors.json#/components/schemas/components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties
+warning | Modeler/MissingType | The schema 'components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2025-01-01-preview/dataConnectors.json#/components/schemas/components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties
+warning | Skipping Entities_Queries due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/ContentProductTemplates.json:187:5
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapAgentConfiguration' has a property 'type' that is already declared the parent schema 'AgentConfiguration' but isn't significantly different. The property has been removed from SapAgentConfiguration
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'RfcConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from RfcConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapControlConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from SapControlConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapSystemsConfiguration' has a property 'type' that is already declared the parent schema 'SystemsConfiguration' but isn't significantly different. The property has been removed from SapSystemsConfiguration
+warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Modeler/MissingType | The schema 'components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/ThreatIntelligenceQuery.json#/components/schemas/components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties
+warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/TriggeredAnalyticsRuleRuns.json#/components/schemas/components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties
+warning | Modeler/MissingType | The schema 'components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/dataConnectors.json#/components/schemas/components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties
+warning | Modeler/MissingType | The schema 'components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-10-01-preview/dataConnectors.json#/components/schemas/components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties
+warning | Skipping Entities_Queries due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-09-01/ContentProductTemplates.json:187:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
-   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-03-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-09-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Modeler/MissingType | The schema 'components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-09-01/DataConnectors.json#/components/schemas/components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties
+warning | Modeler/MissingType | The schema 'components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-09-01/DataConnectors.json#/components/schemas/components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/ContentProductTemplates.json:187:5
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapAgentConfiguration' has a property 'type' that is already declared the parent schema 'AgentConfiguration' but isn't significantly different. The property has been removed from SapAgentConfiguration
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'RfcConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from RfcConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapControlConnector' has a property 'type' that is already declared the parent schema 'SystemsConfigurationConnector' but isn't significantly different. The property has been removed from SapControlConnector
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'SapSystemsConfiguration' has a property 'type' that is already declared the parent schema 'SystemsConfiguration' but isn't significantly different. The property has been removed from SapSystemsConfiguration
+warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Modeler/MissingType | The schema 'components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/ThreatIntelligenceQuery.json#/components/schemas/components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties
+warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/TriggeredAnalyticsRuleRuns.json#/components/schemas/components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties
+warning | Modeler/MissingType | The schema 'components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/dataConnectors.json#/components/schemas/components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties
+warning | Modeler/MissingType | The schema 'components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-04-01-preview/dataConnectors.json#/components/schemas/components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties
+warning | Skipping Entities_Queries due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-03-01/ContentProductTemplates.json:187:5
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:713" => "#/components/schemas/schemas:806"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
+warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
+warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
+   file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2024-03-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -58,16 +222,20 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Query' (5 differenc
   - properties.maxPageSize: <none> => {"$ref":"#/components/schemas/schemas:1148","description":"Represents the maximum size of the page that will be returned from the query API."}
   - properties.minPageSize: <none> => {"$ref":"#/components/schemas/schemas:1149","description":"Represents the minimum size of the page that will be returned from the query API."}
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'UserInfo' (10 differences):
-  - properties.objectId.$ref: "#/components/schemas/schemas:1157" => "#/components/schemas/schemas:1862"
+  - properties.objectId.$ref: "#/components/schemas/schemas:1157" => "#/components/schemas/schemas:1852"
   - properties.objectId.description: "The user's object ID." => "The object id of the user."
   - properties.objectId.readOnly: true => <none>
   - properties.objectId.nullable: <none> => true
-  - properties.email.$ref: "#/components/schemas/schemas:1158" => "#/components/schemas/schemas:1860"
+  - properties.email.$ref: "#/components/schemas/schemas:1158" => "#/components/schemas/schemas:1850"
   - properties.email.description: "The user's email address." => "The email of the user."
   - properties.email.readOnly: <none> => true
-  - properties.name.$ref: "#/components/schemas/schemas:1159" => "#/components/schemas/schemas:1861"
+  - properties.name.$ref: "#/components/schemas/schemas:1159" => "#/components/schemas/schemas:1851"
   - properties.name.description: "The user's name." => "The name of the user."
   - properties.name.readOnly: <none> => true
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1803" => "#/components/schemas/schemas:1922"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-01-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·5nhrn8·schemas·tiobjectcommonproperties·properties·data·additionalproperties' has no type or format information whatsoever. Location:
@@ -82,6 +250,7 @@ warning | Modeler/MissingType | The schema 'components·12h9143·schemas·restap
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-01-01-preview/dataConnectors.json#/components/schemas/components·12h9143·schemas·restapipollerrequestconfig·properties·queryparameters·additionalproperties
 warning | Modeler/MissingType | The schema 'components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2024-01-01-preview/dataConnectors.json#/components/schemas/components·q92l88·schemas·sessionauthmodel·properties·queryparameters·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'UserInfo' -> 'UserInfoAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'EnrichmentIpGeodata' -> 'EnrichmentIpGeodataAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Query' -> 'QueryAutoGenerated'
@@ -89,6 +258,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -127,6 +299,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-12-01-preview/dataConnectors.json:2933:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1573" => "#/components/schemas/schemas:2028"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-12-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -135,10 +311,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-12-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-12-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -161,10 +341,19 @@ warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/SchemaMissingType | The schema 'productTemplateProperties' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2023-11-01/ContentProductTemplates.json:187:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:680" => "#/components/schemas/schemas:1113"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2023-11-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -194,6 +383,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-10-01-preview/dataConnectors.json:2933:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1558" => "#/components/schemas/schemas:2013"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-10-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -202,10 +395,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-10-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-10-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -246,6 +443,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-09-01-preview/dataConnectors.json:2933:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1554" => "#/components/schemas/schemas:2009"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-09-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -254,10 +455,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-09-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-09-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -298,6 +503,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-08-01-preview/dataConnectors.json:2933:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1554" => "#/components/schemas/schemas:2009"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-08-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -306,10 +515,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-08-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-08-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -350,6 +563,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-07-01-preview/dataConnectors.json:2933:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1554" => "#/components/schemas/schemas:2009"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-07-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -358,10 +575,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-07-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-07-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -415,7 +636,7 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencie
   - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:777"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencies' (2 differences):
   - properties.criteria.x-ms-identifiers.0: <none> => "contentId"
-  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1596"
+  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1584"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateList' (1 differences):
   - properties.value.$ref: "#/components/schemas/schemas:348" => "#/components/schemas/schemas:355"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateModel' (1 differences):
@@ -425,6 +646,10 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateProperties'
   - properties.packagedContent: {"$ref":"#/components/schemas/schemas:352","description":"the json to deploy"} => <none>
   - properties.mainTemplate: <none> => {"$ref":"#/components/schemas/schemas:359","description":"The JSON of the ARM template to deploy active content"}
   - required.5: <none> => "packageId"
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1496" => "#/components/schemas/schemas:1946"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-06-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -433,6 +658,7 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-06-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-06-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageList' -> 'PackageListAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageModel' -> 'PackageModelAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageProperties' -> 'PackagePropertiesAutoGenerated'
@@ -445,6 +671,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -495,7 +724,7 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencie
   - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:777"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'metadataDependencies' (2 differences):
   - properties.criteria.x-ms-identifiers.0: <none> => "contentId"
-  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1577"
+  - properties.criteria.$ref: "#/components/schemas/schemas:337" => "#/components/schemas/schemas:1579"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateList' (1 differences):
   - properties.value.$ref: "#/components/schemas/schemas:348" => "#/components/schemas/schemas:355"
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateModel' (1 differences):
@@ -505,6 +734,10 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateProperties'
   - properties.packagedContent: {"$ref":"#/components/schemas/schemas:352","description":"the json to deploy"} => <none>
   - properties.mainTemplate: <none> => {"$ref":"#/components/schemas/schemas:359","description":"The JSON of the ARM template to deploy active content"}
   - required.5: <none> => "packageId"
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1479" => "#/components/schemas/schemas:1929"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-05-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -513,6 +746,7 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-05-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-05-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageList' -> 'PackageListAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageModel' -> 'PackageModelAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageProperties' -> 'PackagePropertiesAutoGenerated'
@@ -525,6 +759,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -585,6 +822,10 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'templateProperties'
   - properties.packagedContent: {"$ref":"#/components/schemas/schemas:343","description":"the json to deploy"} => <none>
   - properties.mainTemplate: <none> => {"$ref":"#/components/schemas/schemas:350","description":"The JSON of the ARM template to deploy active content"}
   - required.5: <none> => "packageId"
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1455" => "#/components/schemas/schemas:1905"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-04-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -593,6 +834,7 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-04-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-04-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageList' -> 'PackageListAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageModel' -> 'PackageModelAutoGenerated'
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'PackageProperties' -> 'PackagePropertiesAutoGenerated'
@@ -605,6 +847,9 @@ warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -640,6 +885,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-03-01-preview/dataConnectors.json:2807:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1328" => "#/components/schemas/schemas:1715"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-03-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
@@ -648,10 +897,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-03-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-03-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -668,9 +921,18 @@ warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and 
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:584" => "#/components/schemas/schemas:966"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2023-02-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -695,6 +957,10 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-02-01-preview/dataConnectors.json:2820:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1326" => "#/components/schemas/schemas:1730"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-02-01-preview/TriggeredAnalyticsRuleRuns.json#/components/schemas/components·18aj315·schemas·triggeredanalyticsrulerunproperties·properties·rulerunadditionaldata·additionalproperties
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
@@ -703,10 +969,14 @@ warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchli
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-02-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2023-02-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -739,16 +1009,24 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-12-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1299" => "#/components/schemas/schemas:1686"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-12-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-12-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-12-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -765,9 +1043,39 @@ warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and 
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:528" => "#/components/schemas/schemas:911"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2022-11-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -793,16 +1101,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-11-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1285" => "#/components/schemas/schemas:1673"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-11-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-11-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-11-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -858,16 +1175,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-10-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1250" => "#/components/schemas/schemas:1638"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-10-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-10-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-10-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -923,16 +1249,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-09-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1240" => "#/components/schemas/schemas:1628"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-09-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-09-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-09-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -988,16 +1323,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-08-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1231" => "#/components/schemas/schemas:1619"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-08-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-08-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-08-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1053,16 +1397,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-07-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1204" => "#/components/schemas/schemas:1592"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-07-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-07-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-07-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1102,9 +1455,39 @@ warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and 
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:493" => "#/components/schemas/schemas:876"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2022-08-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1129,16 +1512,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-06-01-preview/dataConnectors.json:2681:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1204" => "#/components/schemas/schemas:1576"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-06-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-06-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-06-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1193,16 +1585,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-05-01-preview/dataConnectors.json:2653:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1201" => "#/components/schemas/schemas:1573"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-05-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-05-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-05-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1257,16 +1658,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-04-01-preview/dataConnectors.json:2653:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1179" => "#/components/schemas/schemas:1551"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-04-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-04-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-04-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1320,16 +1730,25 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-01-01-preview/dataConnectors.json:2653:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1180" => "#/components/schemas/schemas:1552"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-01-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | Modeler/MissingType | The schema 'components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-01-01-preview/Watchlists.json#/components/schemas/components·2sbdb2·schemas·watchlistitemproperties·properties·itemskeyvalue·additionalproperties
 warning | Modeler/MissingType | The schema 'components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2022-01-01-preview/Watchlists.json#/components/schemas/components·84fvid·schemas·watchlistitemproperties·properties·entitymapping·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1383,12 +1802,21 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2021-10-01-preview/dataConnectors.json:2584:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1103" => "#/components/schemas/schemas:1475"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2021-10-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1446,13 +1874,22 @@ warning | PreCheck/SchemaMissingType | The schema 'Permissions-customsItem' with
 warning | PreCheck/SchemaMissingType | The schema 'InstructionSteps-instructionsItem' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2021-09-01-preview/dataConnectors.json:2394:11
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:1039" => "#/components/schemas/schemas:1428"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'ScheduledAlertRuleTemplate-properties' has a property 'tactics' that is already declared the parent schema 'QueryBasedAlertRuleTemplateProperties' but isn't significantly different. The property has been removed from ScheduledAlertRuleTemplate-properties
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/preview/2021-09-01-preview/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1494,10 +1931,40 @@ warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | PreCheck/DuplicateSchema | Duplicate Schema named 'IncidentOwnerInfo' (1 differences):
   - properties.ownerType: <none> => {"x-ms-enum":{"modelAsString":true,"name":"OwnerType","values":[{"description":"The incident owner type is unknown","value":"Unknown"},{"description":"The incident owner type is an AAD user","value":"User"},{"description":"The incident owner type is an AAD group","value":"Group"}]},"$ref":"#/components/schemas/OwnerType","description":"The type of the owner the incident is assigned to."}
+warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (3 differences):
+  - properties.id.$ref: "#/components/schemas/schemas:490" => "#/components/schemas/schemas:628"
+  - properties.id.description: "Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}" => "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+  - properties.systemData.type: "object" => <none>
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'MCASDataConnectorDataTypes' has a property 'alerts' that is already declared the parent schema 'AlertsDataTypeOfDataConnector' but isn't significantly different. The property has been removed from MCASDataConnectorDataTypes
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2021-10-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'IncidentOwnerInfo' -> 'IncidentOwnerInfoAutoGenerated'
+warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1512,6 +1979,9 @@ warning | PreCheck/SchemaMissingType | The schema 'CloudError' with an undefined
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Modeler/MissingType | The schema 'components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/securityinsights/resource-manager/Microsoft.SecurityInsights/stable/2021-04-01/ThreatIntelligence.json#/components/schemas/components·1qaufw0·schemas·threatintelligenceindicatorproperties·properties·extensions·additionalproperties
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1554,6 +2024,31 @@ warning | PreCheck/SchemaMissingType | The schema 'EntityQueryList' with an unde
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | PreCheck/PropertyRedeclarationWarning | Schema 'SourceControl' has a property 'systemData' that is already declared the parent schema 'Resource' but isn't significantly different. The property has been removed from SourceControl
 warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{operationalInsightsResourceProvider}/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/listRepositories': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
@@ -1703,6 +2198,12 @@ warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ResourceWithEta
 warning | Skipping IPGeodata_Get due to required query parameter "ipAddress"
 warning | Skipping DomainWhois_Get due to required query parameter "domain"
 warning | Skipping Entities_Queries due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{operationalInsightsResourceProvider}/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/dataConnectorsCheckRequirements': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.
 warning | Unrecognized property type: any-object. Returning 'any'.

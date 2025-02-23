@@ -142,6 +142,40 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.MobileNetwork/simGroups/sims' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function collectDiagnosticsPackage (Microsoft.MobileNetwork/packetCoreControlPlanes@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/packetCoreControlPlanes
+* **ApiVersion**: 2022-11-01
+* **Input**: [PacketCoreControlPlaneCollectDiagnosticsPackage](#packetcorecontrolplanecollectdiagnosticspackage)
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
+## Function deleteSims (Microsoft.MobileNetwork/simGroups@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/simGroups
+* **ApiVersion**: 2022-11-01
+* **Input**: [SimDeleteList](#simdeletelist)
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
+## Function reinstall (Microsoft.MobileNetwork/packetCoreControlPlanes@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/packetCoreControlPlanes
+* **ApiVersion**: 2022-11-01
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
+## Function rollback (Microsoft.MobileNetwork/packetCoreControlPlanes@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/packetCoreControlPlanes
+* **ApiVersion**: 2022-11-01
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
+## Function uploadEncryptedSims (Microsoft.MobileNetwork/simGroups@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/simGroups
+* **ApiVersion**: 2022-11-01
+* **Input**: [EncryptedSimUploadList](#encryptedsimuploadlist)
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
+## Function uploadSims (Microsoft.MobileNetwork/simGroups@2022-11-01)
+* **Resource**: Microsoft.MobileNetwork/simGroups
+* **ApiVersion**: 2022-11-01
+* **Input**: [SimUploadList](#simuploadlist)
+* **Output**: [AsyncOperationStatus](#asyncoperationstatus)
+
 ## Ambr
 ### Properties
 * **downlink**: string {pattern: "^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$"} (Required): Downlink bit rate.
@@ -150,6 +184,78 @@
 ## AsyncOperationId
 ### Properties
 * **id**: string {pattern: "^/[pP][rR][oO][vV][iI][dD][eE][rR][sS]/[^/?#]+/[lL][oO][cC][aA][tT][iI][oO][nN][sS]/[^/?#]+/[oO][pP][eE][rR][aA][tT][iI][oO][nN][sS][tT][aA][tT][uU][sS][eE][sS]/[^/?#]+$"} (Required): Azure Async Operation ID.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
+
+## AsyncOperationStatus
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percentage of the operation that is complete.
+* **properties**: any: Properties returned by the resource provider on a successful operation
+* **resourceId**: string: Fully qualified ID for the resource that this async operation status relates to.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): The operation status.
 
 ## AttachedDataNetworkPropertiesFormat
 ### Properties
@@ -212,6 +318,42 @@ At least one of userEquipmentAddressPoolPrefix and userEquipmentStaticAddressPoo
 ### Properties
 * **id**: string {pattern: "^/[sS][uU][bB][sS][cC][rR][iI][pP][tT][iI][oO][nN][sS]/[^/?#]+/[rR][eE][sS][oO][uU][rR][cC][eE][gG][rR][oO][uU][pP][sS]/[^/?#]+/[pP][rR][oO][vV][iI][dD][eE][rR][sS]/[mM][iI][cC][rR][oO][sS][oO][fF][tT]\.[mM][oO][bB][iI][lL][eE][nN][eE][tT][wW][oO][rR][kK]/[mM][oO][bB][iI][lL][eE][nN][eE][tT][wW][oO][rR][kK][sS]/[^/?#]+/[dD][aA][tT][aA][nN][eE][tT][wW][oO][rR][kK][sS]/[^/?#]+$"} (Required): Data network resource ID.
 
+## EncryptedSimPropertiesFormat
+### Properties
+* **deviceType**: string: An optional free-form text field that can be used to record the device type this SIM is associated with, for example 'Video camera'. The Azure portal allows SIMs to be grouped and filtered based on this value.
+* **encryptedCredentials**: string {sensitive, pattern: "^[0-9a-fA-F]+$"}: The encrypted SIM credentials.
+* **integratedCircuitCardIdentifier**: string {pattern: "^[0-9]{10,20}$"}: The integrated circuit card ID (ICCID) for the SIM.
+* **internationalMobileSubscriberIdentity**: string {pattern: "^[0-9]{5,15}$"} (Required): The international mobile subscriber identity (IMSI) for the SIM.
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | string (ReadOnly): The provisioning state of the SIM resource.
+* **simPolicy**: [SimPolicyResourceId](#simpolicyresourceid): The SIM policy used by this SIM. The SIM policy must be in the same location as the SIM.
+* **simState**: 'Disabled' | 'Enabled' | 'Invalid' | string (ReadOnly): The state of the SIM resource.
+* **siteProvisioningState**: [SiteProvisioning](#siteprovisioning) (ReadOnly): A dictionary of sites to the provisioning state of this SIM on that site.
+* **staticIpConfiguration**: [SimStaticIpProperties](#simstaticipproperties)[] {minLength: 1}: A list of static IP addresses assigned to this SIM. Each address is assigned at a defined network scope, made up of {attached data network, slice}.
+* **vendorKeyFingerprint**: string (ReadOnly): The public key fingerprint of the SIM vendor who provided this SIM, if any.
+* **vendorName**: string (ReadOnly): The name of the SIM vendor who provided this SIM, if any.
+
+## EncryptedSimUploadList
+### Properties
+* **azureKeyIdentifier**: int {minValue: 1} (Required): An identifier for the Azure SIM onboarding public key used for encrypted upload.
+* **encryptedTransportKey**: string {pattern: "^[0-9a-fA-F]+$"} (Required): The transport key used for encrypting SIM credentials, encrypted using the SIM onboarding public key.
+* **signedTransportKey**: string {pattern: "^[0-9a-fA-F]+$"} (Required): The encrypted transport key, signed using the SIM vendor private key.
+* **sims**: [SimNameAndEncryptedProperties](#simnameandencryptedproperties)[] {minLength: 1} (Required): A list of SIMs to upload, with encrypted properties.
+* **vendorKeyFingerprint**: string {pattern: "^[0-9a-fA-F]+$"} (Required): The fingerprint of the SIM vendor public key. The private counterpart is used for signing the encrypted transport key.
+* **version**: int {minValue: 1} (Required): The upload file format version.
+
+## ErrorAdditionalInfo
+### Properties
+* **info**: any (ReadOnly): The additional info.
+* **type**: string (ReadOnly): The additional info type.
+
+## ErrorDetail
+### Properties
+* **additionalInfo**: [ErrorAdditionalInfo](#erroradditionalinfo)[] (ReadOnly): The error additional info.
+* **code**: string (ReadOnly): The error code.
+* **details**: [ErrorDetail](#errordetail)[] (ReadOnly): The error details.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The error target.
+
 ## HttpsServerCertificate
 ### Properties
 * **certificateUrl**: string (Required): The certificate URL, unversioned. For example: https://contosovault.vault.azure.net/certificates/ingress.
@@ -264,6 +406,10 @@ At least one of userEquipmentAddressPoolPrefix and userEquipmentStaticAddressPoo
 If not specified and NAPT is enabled, this range defaults to 1,024 - 49,999.
 (Ports under 1,024 should not be used because these are special purpose ports reserved by IANA. Ports 50,000 and above are reserved for non-NAPT use.)
 * **portReuseHoldTime**: [PortReuseHoldTimes](#portreuseholdtimes): The minimum time (in seconds) that will pass before a port that was used by a closed pinhole can be recycled for use by another pinhole. All hold times must be at least 1 second.
+
+## PacketCoreControlPlaneCollectDiagnosticsPackage
+### Properties
+* **storageAccountBlobUrl**: string (Required): The Storage Account Blob URL to upload the diagnostics package to.
 
 ## PacketCoreControlPlanePropertiesFormat
 ### Properties
@@ -373,11 +519,25 @@ If not specified and NAPT is enabled, this range defaults to 1,024 - 49,999.
 ### Properties
 * **id**: string {pattern: "^/[sS][uU][bB][sS][cC][rR][iI][pP][tT][iI][oO][nN][sS]/[^/?#]+/[rR][eE][sS][oO][uU][rR][cC][eE][gG][rR][oO][uU][pP][sS]/[^/?#]+/[pP][rR][oO][vV][iI][dD][eE][rR][sS]/[mM][iI][cC][rR][oO][sS][oO][fF][tT]\.[mM][oO][bB][iI][lL][eE][nN][eE][tT][wW][oO][rR][kK]/[mM][oO][bB][iI][lL][eE][nN][eE][tT][wW][oO][rR][kK][sS]/[^/?#]+/[sS][eE][rR][vV][iI][cC][eE][sS]/[^/?#]+$"} (Required): Service resource ID.
 
+## SimDeleteList
+### Properties
+* **sims**: string[] {minLength: 1} (Required): A list of SIM resource names to delete.
+
 ## SimGroupPropertiesFormat
 ### Properties
 * **encryptionKey**: [KeyVaultKey](#keyvaultkey): A key to encrypt the SIM data that belongs to this SIM group.
 * **mobileNetwork**: [MobileNetworkResourceId](#mobilenetworkresourceid): Mobile network that this SIM group belongs to. The mobile network must be in the same location as the SIM group.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | string (ReadOnly): The provisioning state of the SIM group resource.
+
+## SimNameAndEncryptedProperties
+### Properties
+* **name**: string (Required): The name of the SIM.
+* **properties**: [EncryptedSimPropertiesFormat](#encryptedsimpropertiesformat) (Required): Encrypted SIM Properties.
+
+## SimNameAndProperties
+### Properties
+* **name**: string (Required): The name of the SIM.
+* **properties**: [SimPropertiesFormat](#simpropertiesformat) (Required): SIM Properties.
 
 ## SimPolicyPropertiesFormat
 ### Properties
@@ -418,10 +578,19 @@ If not specified and NAPT is enabled, this range defaults to 1,024 - 49,999.
 ### Properties
 * **ipv4Address**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"}: The IPv4 address assigned to the SIM at this network scope. This address must be in the userEquipmentStaticAddressPoolPrefix defined in the attached data network.
 
+## SimUploadList
+### Properties
+* **sims**: [SimNameAndProperties](#simnameandproperties)[] {minLength: 1} (Required): A list of SIMs to upload.
+
 ## SitePropertiesFormat
 ### Properties
 * **networkFunctions**: [SubResource](#subresource)[] (ReadOnly): An array of IDs of the network functions deployed in the site. Deleting the site will delete any network functions that are deployed in the site.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | string (ReadOnly): The provisioning state of the site resource.
+
+## SiteProvisioning
+### Properties
+### Additional Properties
+* **Additional Properties Type**: 'Adding' | 'Deleting' | 'Failed' | 'NotApplicable' | 'Provisioned' | 'Updating' | string
 
 ## SiteProvisioning
 ### Properties

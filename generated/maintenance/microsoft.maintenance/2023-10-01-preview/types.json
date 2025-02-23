@@ -828,7 +828,7 @@
           "$ref": "#/68"
         },
         "flags": 0,
-        "description": "Classification category of patches to be patched"
+        "description": "Classification category of patches to be patched. Allowed values are 'Critical', 'Security', 'UpdateRollup', 'FeaturePack', 'ServicePack', 'Definition', 'Tools', and 'Updates'."
       },
       "excludeKbsRequiringReboot": {
         "type": {
@@ -883,7 +883,7 @@
           "$ref": "#/73"
         },
         "flags": 0,
-        "description": "Classification category of patches to be patched"
+        "description": "Classification category of patches to be patched. Allowed values are 'Critical', 'Security', and 'Other'."
       }
     }
   },
@@ -1000,5 +1000,27 @@
       "$ref": "#/77"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ScheduledEventApproveResponse",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Successfully Approved"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "acknowledge",
+    "resourceType": "Microsoft.Maintenance/scheduledevents",
+    "apiVersion": "2023-10-01-preview",
+    "output": {
+      "$ref": "#/80"
+    }
   }
 ]

@@ -542,7 +542,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "SSH public key certificate used to authenticate with the VM through ssh. The key needs to be at least 2048-bit and in ssh-rsa format. <br><br> For creating ssh keys, see [Create SSH keys on Linux and Mac for Linux VMs in Azure]https://docs.microsoft.com/azure/virtual-machines/linux/create-ssh-keys-detailed)."
+        "description": "SSH public key certificate used to authenticate with the VM through ssh. The key needs to be at least 2048-bit and in ssh-rsa format. <br><br> For creating ssh keys, see [Create SSH keys on Linux and Mac for Linux VMs in Azure]https://learn.microsoft.com/azure/virtual-machines/linux/create-ssh-keys-detailed)."
       }
     }
   },
@@ -5139,5 +5139,35 @@
       "$ref": "#/394"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "pause",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-02-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-02-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "save",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-02-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-02-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-02-01-preview"
   }
 ]
