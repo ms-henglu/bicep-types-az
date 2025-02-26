@@ -34,6 +34,16 @@
 * **tags**: [WebhookCreateParametersTags](#webhookcreateparameterstags): The tags for the webhook.
 * **type**: 'Microsoft.ContainerRegistry/registries/webhooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getCallbackConfig (Microsoft.ContainerRegistry/registries/webhooks@2017-10-01)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2017-10-01
+* **Output**: [CallbackConfig](#callbackconfig)
+
+## Function importImage (Microsoft.ContainerRegistry/registries@2017-10-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2017-10-01
+* **Input**: [ImportImageParameters](#importimageparameters)
+
 ## Function listCredentials (Microsoft.ContainerRegistry/registries@2017-10-01)
 * **Resource**: Microsoft.ContainerRegistry/registries
 * **ApiVersion**: 2017-10-01
@@ -44,9 +54,36 @@
 * **ApiVersion**: 2017-10-01
 * **Output**: [EventListResult](#eventlistresult)
 
+## Function ping (Microsoft.ContainerRegistry/registries/webhooks@2017-10-01)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2017-10-01
+* **Output**: [EventInfo](#eventinfo)
+
+## Function regenerateCredential (Microsoft.ContainerRegistry/registries@2017-10-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2017-10-01
+* **Input**: [RegenerateCredentialParameters](#regeneratecredentialparameters)
+* **Output**: [RegistryListCredentialsResult](#registrylistcredentialsresult)
+
+## Function updatePolicies (Microsoft.ContainerRegistry/registries@2017-10-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2017-10-01
+* **Input**: [RegistryPolicies](#registrypolicies)
+* **Output**: [RegistryPolicies](#registrypolicies)
+
 ## Actor
 ### Properties
 * **name**: string: The subject or username associated with the request context that generated the event.
+
+## CallbackConfig
+### Properties
+* **customHeaders**: [CallbackConfigCustomHeaders](#callbackconfigcustomheaders): Custom headers that will be added to the webhook notifications.
+* **serviceUri**: string (Required): The service URI for the webhook to post notifications.
+
+## CallbackConfigCustomHeaders
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## Event
 ### Properties
@@ -63,6 +100,10 @@
 * **source**: [Source](#source): The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
 * **target**: [Target](#target): The target of the event.
 * **timestamp**: string: The time at which the event occurred.
+
+## EventInfo
+### Properties
+* **id**: string: The event ID.
 
 ## EventListResult
 ### Properties
@@ -95,6 +136,28 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ImportImageParameters
+### Properties
+* **mode**: 'Force' | 'NoForce' | string: When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.
+* **source**: [ImportSource](#importsource) (Required): The source of the image.
+* **targetTags**: string[]: List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).
+* **untaggedTargetRepositories**: string[]: List of strings of repository names to do a manifest only copy. No tag will be created.
+
+## ImportSource
+### Properties
+* **credentials**: [ImportSourceCredentials](#importsourcecredentials): Credentials used when importing from a registry uri.
+* **registryUri**: string: The address of the source registry (e.g. 'mcr.microsoft.com').
+* **resourceId**: string: The resource identifier of the source Azure Container Registry.
+* **sourceImage**: string (Required): Repository name of the source image.
+Specify an image by repository ('hello-world'). This will use the 'latest' tag.
+Specify an image by tag ('hello-world:latest').
+Specify an image by sha256-based manifest digest ('hello-world@sha256:abc123').
+
+## ImportSourceCredentials
+### Properties
+* **password**: string (Required): The password used to authenticate with the source registry.
+* **username**: string: The username to authenticate with the source registry.
+
 ## IPRule
 ### Properties
 * **action**: 'Allow' | string: The action of IP ACL rule.
@@ -106,6 +169,14 @@
 * **ipRules**: [IPRule](#iprule)[]: The IP ACL rules.
 * **virtualNetworkRules**: [VirtualNetworkRule](#virtualnetworkrule)[]: The virtual network rules.
 
+## QuarantinePolicy
+### Properties
+* **status**: 'disabled' | 'enabled' | string: The value that indicates whether the policy is enabled or not.
+
+## RegenerateCredentialParameters
+### Properties
+* **name**: 'password' | 'password2' (Required): Specifies name of the password which should be regenerated -- password or password2.
+
 ## RegistryListCredentialsResult
 ### Properties
 * **passwords**: [RegistryPassword](#registrypassword)[]: The list of passwords for a container registry.
@@ -115,6 +186,11 @@
 ### Properties
 * **name**: 'password' | 'password2': The password name.
 * **value**: string: The password value.
+
+## RegistryPolicies
+### Properties
+* **quarantinePolicy**: [QuarantinePolicy](#quarantinepolicy): An object that represents quarantine policy for a container registry.
+* **trustPolicy**: [TrustPolicy](#trustpolicy): An object that represents content trust policy for a container registry.
 
 ## RegistryProperties
 ### Properties
@@ -180,6 +256,11 @@
 * **tag**: string: The tag name.
 * **url**: string: The direct URL to the content.
 * **version**: string: The version of the artifact.
+
+## TrustPolicy
+### Properties
+* **status**: 'disabled' | 'enabled' | string: The value that indicates whether the policy is enabled or not.
+* **type**: 'Notary' | string: The type of trust policy.
 
 ## VirtualNetworkRule
 ### Properties

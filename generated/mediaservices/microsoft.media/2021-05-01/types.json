@@ -793,6 +793,28 @@
   },
   {
     "$type": "ObjectType",
+    "name": "SyncStorageKeysInput",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The ID of the storage account resource."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncStorageKeys",
+    "resourceType": "Microsoft.Media/mediaservices",
+    "apiVersion": "2021-05-01",
+    "input": {
+      "$ref": "#/65"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "ListEdgePoliciesInput",
     "properties": {
       "deviceId": {
@@ -810,7 +832,7 @@
     "properties": {
       "usageDataCollectionPolicy": {
         "type": {
-          "$ref": "#/67"
+          "$ref": "#/69"
         },
         "flags": 0
       }
@@ -843,7 +865,7 @@
       },
       "eventHubDetails": {
         "type": {
-          "$ref": "#/68"
+          "$ref": "#/70"
         },
         "flags": 0,
         "description": "Details of Event Hub where the usage will be reported."
@@ -883,10 +905,72 @@
     "resourceType": "Microsoft.Media/mediaservices",
     "apiVersion": "2021-05-01",
     "output": {
-      "$ref": "#/66"
+      "$ref": "#/68"
     },
     "input": {
-      "$ref": "#/65"
+      "$ref": "#/67"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckNameAvailabilityInput",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The account name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The account type. For a Media Services account, this should be 'MediaServices'."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "EntityNameAvailabilityCheckOutput",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/74"
+        },
+        "flags": 1,
+        "description": "Specifies if the name is available."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specifies the reason if the name is not available."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specifies the detailed reason if the name is not available."
+      }
+    }
+  },
+  {
+    "$type": "BooleanType"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.Media/locations",
+    "apiVersion": "2021-05-01",
+    "output": {
+      "$ref": "#/73"
+    },
+    "input": {
+      "$ref": "#/72"
     }
   }
 ]

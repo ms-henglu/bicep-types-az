@@ -4089,5 +4089,11 @@
       "$ref": "#/218"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancelJob",
+    "resourceType": "Microsoft.Media/mediaServices/transforms/jobs",
+    "apiVersion": "2022-07-01"
   }
 ]

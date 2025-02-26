@@ -22,6 +22,10 @@
 * **properties**: [FirewallRuleProperties](#firewallruleproperties): the properties of the firewall rule.
 * **type**: 'Microsoft.DataLakeStore/accounts/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function enableKeyVault (Microsoft.DataLakeStore/accounts@2015-10-01-preview)
+* **Resource**: Microsoft.DataLakeStore/accounts
+* **ApiVersion**: 2015-10-01-preview
+
 ## DataLakeStoreAccountProperties
 ### Properties
 * **creationTime**: string (ReadOnly): the account creation time.

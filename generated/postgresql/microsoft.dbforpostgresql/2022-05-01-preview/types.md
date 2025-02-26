@@ -12,6 +12,12 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/migrations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMigrationNameAvailability (Microsoft.DBforPostgreSQL/flexibleServers@2022-05-01-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2022-05-01-preview
+* **Input**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+* **Output**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+
 ## AdminCredentials
 ### Properties
 * **sourceServerPassword**: string {sensitive} (Required, WriteOnly)
@@ -23,6 +29,14 @@
 * **sku**: [ServerSku](#serversku): Sku information related properties of a server.
 * **storageMB**: int
 * **version**: string
+
+## MigrationNameAvailabilityResource
+### Properties
+* **message**: string (ReadOnly): Migration name availability message.
+* **name**: string (Required): The resource name to verify.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string (ReadOnly): Migration name availability reason
+* **type**: string (Required): The type of the resource.
 
 ## MigrationResourceProperties
 ### Properties

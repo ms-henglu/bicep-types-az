@@ -1928,21 +1928,21 @@
   },
   {
     "$type": "ObjectType",
-    "name": "Key",
+    "name": "PublicKey",
     "properties": {
-      "activationKey": {
+      "key": {
         "type": {
           "$ref": "#/2"
         },
         "flags": 1,
-        "description": "The activation key for the device."
+        "description": "The key."
       }
     }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listActivationKey",
-    "resourceType": "Microsoft.StorSimple/managers",
+    "name": "publicEncryptionKey",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
     "apiVersion": "2017-06-01",
     "output": {
       "$ref": "#/162"
@@ -1950,65 +1950,49 @@
   },
   {
     "$type": "ObjectType",
-    "name": "SymmetricEncryptedSecret",
+    "name": "SendTestAlertEmailRequest",
     "properties": {
-      "value": {
+      "emailList": {
         "type": {
-          "$ref": "#/2"
+          "$ref": "#/165"
         },
         "flags": 1,
-        "description": "The value of the secret itself. If the secret is in plaintext or null then EncryptionAlgorithm will be none."
-      },
-      "valueCertificateThumbprint": {
-        "type": {
-          "$ref": "#/2"
-        },
-        "flags": 0,
-        "description": "The thumbprint of the cert that was used to encrypt \"Value\"."
-      },
-      "encryptionAlgorithm": {
-        "type": {
-          "$ref": "#/168"
-        },
-        "flags": 1,
-        "description": "The algorithm used to encrypt the \"Value\"."
+        "description": "The list of email IDs to send the test alert email"
       }
     }
   },
   {
-    "$type": "StringLiteralType",
-    "value": "None"
-  },
-  {
-    "$type": "StringLiteralType",
-    "value": "AES256"
-  },
-  {
-    "$type": "StringLiteralType",
-    "value": "RSAES_PKCS1_v_1_5"
-  },
-  {
-    "$type": "UnionType",
-    "elements": [
-      {
-        "$ref": "#/165"
-      },
-      {
-        "$ref": "#/166"
-      },
-      {
-        "$ref": "#/167"
-      }
-    ]
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
   },
   {
     "$type": "ResourceFunctionType",
-    "name": "listPublicEncryptionKey",
-    "resourceType": "Microsoft.StorSimple/managers",
+    "name": "sendTestAlertEmail",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
     "apiVersion": "2017-06-01",
-    "output": {
+    "input": {
       "$ref": "#/164"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "authorizeForServiceEncryptionKeyRollover",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2017-06-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deactivate",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2017-06-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "installUpdates",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2017-06-01"
   },
   {
     "$type": "ObjectType",
@@ -2195,12 +2179,53 @@
     }
   },
   {
+    "$type": "ResourceFunctionType",
+    "name": "scanForUpdates",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2017-06-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FailoverRequest",
+    "properties": {
+      "targetDeviceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The ARM path ID of the device which will act as the failover target."
+      },
+      "volumeContainers": {
+        "type": {
+          "$ref": "#/186"
+        },
+        "flags": 0,
+        "description": "The list of path IDs of the volume containers which needs to be failed-over to the target device."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "failover",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/185"
+    }
+  },
+  {
     "$type": "ObjectType",
     "name": "ListFailoverTargetsRequest",
     "properties": {
       "volumeContainers": {
         "type": {
-          "$ref": "#/185"
+          "$ref": "#/189"
         },
         "flags": 0,
         "description": "The list of path IDs of the volume containers that needs to be failed-over, for which we want to fetch the eligible targets."
@@ -2219,7 +2244,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/214"
+          "$ref": "#/218"
         },
         "flags": 0,
         "description": "The list of all the failover targets."
@@ -2239,7 +2264,7 @@
       },
       "deviceStatus": {
         "type": {
-          "$ref": "#/199"
+          "$ref": "#/203"
         },
         "flags": 0,
         "description": "The status of the device."
@@ -2302,7 +2327,7 @@
       },
       "eligibilityResult": {
         "type": {
-          "$ref": "#/200"
+          "$ref": "#/204"
         },
         "flags": 0,
         "description": "The eligibility result of the device, as a failover target device."
@@ -2357,18 +2382,6 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/188"
-      },
-      {
-        "$ref": "#/189"
-      },
-      {
-        "$ref": "#/190"
-      },
-      {
-        "$ref": "#/191"
-      },
-      {
         "$ref": "#/192"
       },
       {
@@ -2388,6 +2401,18 @@
       },
       {
         "$ref": "#/198"
+      },
+      {
+        "$ref": "#/199"
+      },
+      {
+        "$ref": "#/200"
+      },
+      {
+        "$ref": "#/201"
+      },
+      {
+        "$ref": "#/202"
       }
     ]
   },
@@ -2397,14 +2422,14 @@
     "properties": {
       "eligibilityStatus": {
         "type": {
-          "$ref": "#/203"
+          "$ref": "#/207"
         },
         "flags": 0,
         "description": "The eligibility status of device, as a failover target device."
       },
       "messages": {
         "type": {
-          "$ref": "#/213"
+          "$ref": "#/217"
         },
         "flags": 0,
         "description": "The list of error messages, if a device does not qualify as a failover target device."
@@ -2423,10 +2448,10 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/201"
+        "$ref": "#/205"
       },
       {
-        "$ref": "#/202"
+        "$ref": "#/206"
       }
     ]
   },
@@ -2450,7 +2475,7 @@
       },
       "resultCode": {
         "type": {
-          "$ref": "#/212"
+          "$ref": "#/216"
         },
         "flags": 0,
         "description": "The result code for the error, due to which the device does not qualify as a failover target device."
@@ -2489,18 +2514,6 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/205"
-      },
-      {
-        "$ref": "#/206"
-      },
-      {
-        "$ref": "#/207"
-      },
-      {
-        "$ref": "#/208"
-      },
-      {
         "$ref": "#/209"
       },
       {
@@ -2508,19 +2521,31 @@
       },
       {
         "$ref": "#/211"
+      },
+      {
+        "$ref": "#/212"
+      },
+      {
+        "$ref": "#/213"
+      },
+      {
+        "$ref": "#/214"
+      },
+      {
+        "$ref": "#/215"
       }
     ]
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/204"
+      "$ref": "#/208"
     }
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/187"
+      "$ref": "#/191"
     }
   },
   {
@@ -2529,10 +2554,753 @@
     "resourceType": "Microsoft.StorSimple/managers/devices",
     "apiVersion": "2017-06-01",
     "output": {
-      "$ref": "#/186"
+      "$ref": "#/190"
     },
     "input": {
-      "$ref": "#/184"
+      "$ref": "#/188"
     }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Key",
+    "properties": {
+      "activationKey": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The activation key for the device."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listActivationKey",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "output": {
+      "$ref": "#/220"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SymmetricEncryptedSecret",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The value of the secret itself. If the secret is in plaintext or null then EncryptionAlgorithm will be none."
+      },
+      "valueCertificateThumbprint": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The thumbprint of the cert that was used to encrypt \"Value\"."
+      },
+      "encryptionAlgorithm": {
+        "type": {
+          "$ref": "#/226"
+        },
+        "flags": 1,
+        "description": "The algorithm used to encrypt the \"Value\"."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "None"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AES256"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RSAES_PKCS1_v_1_5"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/223"
+      },
+      {
+        "$ref": "#/224"
+      },
+      {
+        "$ref": "#/225"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "listPublicEncryptionKey",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "output": {
+      "$ref": "#/222"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateActivationKey",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "output": {
+      "$ref": "#/220"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClearAlertRequest",
+    "properties": {
+      "resolutionMessage": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The resolution message while clearing the alert"
+      },
+      "alerts": {
+        "type": {
+          "$ref": "#/230"
+        },
+        "flags": 1,
+        "description": "The list of alert IDs to be cleared"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "clearAlerts",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/229"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CloudAppliance",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name."
+      },
+      "vnetName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The name of the virtual network."
+      },
+      "vnetRegion": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The virtual network region."
+      },
+      "isVnetDnsConfigured": {
+        "type": {
+          "$ref": "#/181"
+        },
+        "flags": 0,
+        "description": "Indicates whether virtual network used is configured with DNS or not."
+      },
+      "isVnetExpressConfigured": {
+        "type": {
+          "$ref": "#/181"
+        },
+        "flags": 0,
+        "description": "Indicates whether virtual network used is configured with express route or not."
+      },
+      "subnetName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The name of the subnet."
+      },
+      "storageAccountName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The name of the storage account."
+      },
+      "storageAccountType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The type of the storage account."
+      },
+      "vmType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The type of the virtual machine."
+      },
+      "vmImageName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The name of the virtual machine image."
+      },
+      "modelNumber": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The model number."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "provisionCloudAppliance",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/232"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ConfigureDeviceRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/235"
+        },
+        "flags": 1,
+        "description": "The properties of the configure device request."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The path ID that uniquely identifies the object."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name of the object."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The hierarchical type of the object."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/239"
+        },
+        "flags": 0,
+        "description": "The Kind of the object. Currently only Series8000 is supported"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ConfigureDeviceRequestProperties",
+    "properties": {
+      "friendlyName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The friendly name for the device."
+      },
+      "currentDeviceName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The current name of the device."
+      },
+      "timeZone": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The device time zone. For eg: \"Pacific Standard Time\""
+      },
+      "dnsSettings": {
+        "type": {
+          "$ref": "#/236"
+        },
+        "flags": 0,
+        "description": "The secondary DNS Settings of the device."
+      },
+      "networkInterfaceData0Settings": {
+        "type": {
+          "$ref": "#/238"
+        },
+        "flags": 0,
+        "description": "The 'Data 0' network interface card settings."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SecondaryDNSSettings",
+    "properties": {
+      "secondaryDnsServers": {
+        "type": {
+          "$ref": "#/237"
+        },
+        "flags": 0,
+        "description": "The list of secondary DNS Server IP addresses."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NetworkInterfaceData0Settings",
+    "properties": {
+      "controllerZeroIp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The controller 0's IPv4 address."
+      },
+      "controllerOneIp": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The controller 1's IPv4 address."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Series8000"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "configureDevice",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/234"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncRemoteManagementCertificate",
+    "resourceType": "Microsoft.StorSimple/managers/devices/securitySettings",
+    "apiVersion": "2017-06-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CloneRequest",
+    "properties": {
+      "targetDeviceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The path ID of the device which will act as the clone target."
+      },
+      "targetVolumeName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the new volume which will be created and the backup will be cloned into."
+      },
+      "targetAccessControlRecordIds": {
+        "type": {
+          "$ref": "#/243"
+        },
+        "flags": 1,
+        "description": "The list of path IDs of the access control records to be associated to the new cloned volume."
+      },
+      "backupElement": {
+        "type": {
+          "$ref": "#/244"
+        },
+        "flags": 1,
+        "description": "The backup element that is cloned."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupElement",
+    "properties": {
+      "elementId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The path ID that uniquely identifies the backup element."
+      },
+      "elementName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the backup element."
+      },
+      "elementType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The hierarchical type of the backup element."
+      },
+      "sizeInBytes": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 1,
+        "description": "The size in bytes."
+      },
+      "volumeName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the volume."
+      },
+      "volumeContainerId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The path ID of the volume container."
+      },
+      "volumeType": {
+        "type": {
+          "$ref": "#/248"
+        },
+        "flags": 0,
+        "description": "The volume type."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Tiered"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Archival"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "LocallyPinned"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/245"
+      },
+      {
+        "$ref": "#/246"
+      },
+      {
+        "$ref": "#/247"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "clone",
+    "resourceType": "Microsoft.StorSimple/managers/devices/backups/elements",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/242"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restore",
+    "resourceType": "Microsoft.StorSimple/managers/devices/backups",
+    "apiVersion": "2017-06-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ControllerPowerStateChangeRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/252"
+        },
+        "flags": 1,
+        "description": "The properties of the controller power state change request."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The path ID that uniquely identifies the object."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name of the object."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The hierarchical type of the object."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/276"
+        },
+        "flags": 0,
+        "description": "The Kind of the object. Currently only Series8000 is supported"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ControllerPowerStateChangeRequestProperties",
+    "properties": {
+      "action": {
+        "type": {
+          "$ref": "#/256"
+        },
+        "flags": 1,
+        "description": "The power state that the request is expecting for the controller of the device."
+      },
+      "activeController": {
+        "type": {
+          "$ref": "#/261"
+        },
+        "flags": 1,
+        "description": "The active controller that the request is expecting on the device."
+      },
+      "controller0State": {
+        "type": {
+          "$ref": "#/268"
+        },
+        "flags": 1,
+        "description": "The controller 0's status that the request is expecting on the device."
+      },
+      "controller1State": {
+        "type": {
+          "$ref": "#/275"
+        },
+        "flags": 1,
+        "description": "The controller 1's status that the request is expecting on the device."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Start"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Restart"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Shutdown"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/253"
+      },
+      {
+        "$ref": "#/254"
+      },
+      {
+        "$ref": "#/255"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "None"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Controller0"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Controller1"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/257"
+      },
+      {
+        "$ref": "#/258"
+      },
+      {
+        "$ref": "#/259"
+      },
+      {
+        "$ref": "#/260"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotPresent"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PoweredOff"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Ok"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Recovering"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Warning"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failure"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/262"
+      },
+      {
+        "$ref": "#/263"
+      },
+      {
+        "$ref": "#/264"
+      },
+      {
+        "$ref": "#/265"
+      },
+      {
+        "$ref": "#/266"
+      },
+      {
+        "$ref": "#/267"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotPresent"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PoweredOff"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Ok"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Recovering"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Warning"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failure"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/269"
+      },
+      {
+        "$ref": "#/270"
+      },
+      {
+        "$ref": "#/271"
+      },
+      {
+        "$ref": "#/272"
+      },
+      {
+        "$ref": "#/273"
+      },
+      {
+        "$ref": "#/274"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Series8000"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "changeControllerPowerState",
+    "resourceType": "Microsoft.StorSimple/managers/devices/hardwareComponentGroups",
+    "apiVersion": "2017-06-01",
+    "input": {
+      "$ref": "#/251"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.StorSimple/managers/devices/jobs",
+    "apiVersion": "2017-06-01"
   }
 ]

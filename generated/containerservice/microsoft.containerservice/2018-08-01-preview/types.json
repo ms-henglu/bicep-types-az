@@ -1923,5 +1923,23 @@
     "output": {
       "$ref": "#/217"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetServicePrincipalProfile",
+    "resourceType": "Microsoft.ContainerService/managedClusters",
+    "apiVersion": "2018-08-01-preview",
+    "input": {
+      "$ref": "#/197"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resetAADProfile",
+    "resourceType": "Microsoft.ContainerService/managedClusters",
+    "apiVersion": "2018-08-01-preview",
+    "input": {
+      "$ref": "#/209"
+    }
   }
 ]

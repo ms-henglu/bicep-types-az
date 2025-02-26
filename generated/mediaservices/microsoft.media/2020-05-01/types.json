@@ -7977,11 +7977,73 @@
   },
   {
     "$type": "ObjectType",
+    "name": "StorageEncryptedAssetDecryptionData",
+    "properties": {
+      "key": {
+        "type": {
+          "$ref": "#/57"
+        },
+        "flags": 0,
+        "description": "The Asset File storage encryption key."
+      },
+      "assetFileEncryptionMetadata": {
+        "type": {
+          "$ref": "#/610"
+        },
+        "flags": 0,
+        "description": "Asset File encryption metadata."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AssetFileEncryptionMetadata",
+    "properties": {
+      "initializationVector": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The Asset File initialization vector."
+      },
+      "assetFileName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The Asset File name."
+      },
+      "assetFileId": {
+        "type": {
+          "$ref": "#/39"
+        },
+        "flags": 1,
+        "description": "The Asset File Id."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/609"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getEncryptionKey",
+    "resourceType": "Microsoft.Media/mediaServices/assets",
+    "apiVersion": "2020-05-01",
+    "output": {
+      "$ref": "#/608"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "ListStreamingLocatorsResponse",
     "properties": {
       "streamingLocators": {
         "type": {
-          "$ref": "#/610"
+          "$ref": "#/614"
         },
         "flags": 2,
         "description": "The list of Streaming Locators."
@@ -8053,7 +8115,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/609"
+      "$ref": "#/613"
     }
   },
   {
@@ -8062,8 +8124,23 @@
     "resourceType": "Microsoft.Media/mediaServices/assets",
     "apiVersion": "2020-05-01",
     "output": {
-      "$ref": "#/608"
+      "$ref": "#/612"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getPolicyPropertiesWithSecrets",
+    "resourceType": "Microsoft.Media/mediaServices/contentKeyPolicies",
+    "apiVersion": "2020-05-01",
+    "output": {
+      "$ref": "#/51"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancelJob",
+    "resourceType": "Microsoft.Media/mediaServices/transforms/jobs",
+    "apiVersion": "2020-05-01"
   },
   {
     "$type": "ObjectType",
@@ -8071,7 +8148,7 @@
     "properties": {
       "contentKeys": {
         "type": {
-          "$ref": "#/613"
+          "$ref": "#/619"
         },
         "flags": 0,
         "description": "ContentKeys used by current Streaming Locator"
@@ -8090,7 +8167,7 @@
     "resourceType": "Microsoft.Media/mediaServices/streamingLocators",
     "apiVersion": "2020-05-01",
     "output": {
-      "$ref": "#/612"
+      "$ref": "#/618"
     }
   },
   {
@@ -8099,14 +8176,14 @@
     "properties": {
       "streamingPaths": {
         "type": {
-          "$ref": "#/628"
+          "$ref": "#/634"
         },
         "flags": 0,
         "description": "Streaming Paths supported by current Streaming Locator"
       },
       "downloadPaths": {
         "type": {
-          "$ref": "#/629"
+          "$ref": "#/635"
         },
         "flags": 0,
         "description": "Download Paths supported by current Streaming Locator"
@@ -8119,21 +8196,21 @@
     "properties": {
       "streamingProtocol": {
         "type": {
-          "$ref": "#/621"
+          "$ref": "#/627"
         },
         "flags": 1,
         "description": "Streaming protocol"
       },
       "encryptionScheme": {
         "type": {
-          "$ref": "#/626"
+          "$ref": "#/632"
         },
         "flags": 1,
         "description": "Encryption scheme"
       },
       "paths": {
         "type": {
-          "$ref": "#/627"
+          "$ref": "#/633"
         },
         "flags": 0,
         "description": "Streaming paths for each protocol and encryptionScheme pair"
@@ -8160,16 +8237,16 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/617"
+        "$ref": "#/623"
       },
       {
-        "$ref": "#/618"
+        "$ref": "#/624"
       },
       {
-        "$ref": "#/619"
+        "$ref": "#/625"
       },
       {
-        "$ref": "#/620"
+        "$ref": "#/626"
       },
       {
         "$ref": "#/0"
@@ -8196,16 +8273,16 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/622"
+        "$ref": "#/628"
       },
       {
-        "$ref": "#/623"
+        "$ref": "#/629"
       },
       {
-        "$ref": "#/624"
+        "$ref": "#/630"
       },
       {
-        "$ref": "#/625"
+        "$ref": "#/631"
       },
       {
         "$ref": "#/0"
@@ -8221,7 +8298,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/616"
+      "$ref": "#/622"
     }
   },
   {
@@ -8236,7 +8313,103 @@
     "resourceType": "Microsoft.Media/mediaServices/streamingLocators",
     "apiVersion": "2020-05-01",
     "output": {
-      "$ref": "#/615"
+      "$ref": "#/621"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "allocate",
+    "resourceType": "Microsoft.Media/mediaservices/liveEvents",
+    "apiVersion": "2020-05-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Media/mediaservices/liveEvents",
+    "apiVersion": "2020-05-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "LiveEventActionInput",
+    "properties": {
+      "removeOutputsOnStop": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Media/mediaservices/liveEvents",
+    "apiVersion": "2020-05-01",
+    "input": {
+      "$ref": "#/639"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reset",
+    "resourceType": "Microsoft.Media/mediaservices/liveEvents",
+    "apiVersion": "2020-05-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Media/mediaservices/streamingEndpoints",
+    "apiVersion": "2020-05-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.Media/mediaservices/streamingEndpoints",
+    "apiVersion": "2020-05-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StreamingEntityScaleUnit",
+    "properties": {
+      "scaleUnit": {
+        "type": {
+          "$ref": "#/6"
+        },
+        "flags": 0,
+        "description": "The scale unit number of the streaming endpoint."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "scale",
+    "resourceType": "Microsoft.Media/mediaservices/streamingEndpoints",
+    "apiVersion": "2020-05-01",
+    "input": {
+      "$ref": "#/644"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SyncStorageKeysInput",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The ID of the storage account resource."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "syncStorageKeys",
+    "resourceType": "Microsoft.Media/mediaservices",
+    "apiVersion": "2020-05-01",
+    "input": {
+      "$ref": "#/646"
     }
   },
   {
@@ -8258,7 +8431,7 @@
     "properties": {
       "usageDataCollectionPolicy": {
         "type": {
-          "$ref": "#/633"
+          "$ref": "#/650"
         },
         "flags": 0
       }
@@ -8291,7 +8464,7 @@
       },
       "eventHubDetails": {
         "type": {
-          "$ref": "#/634"
+          "$ref": "#/651"
         },
         "flags": 0,
         "description": "Details of Event Hub where the usage will be reported."
@@ -8331,10 +8504,69 @@
     "resourceType": "Microsoft.Media/mediaservices",
     "apiVersion": "2020-05-01",
     "output": {
-      "$ref": "#/632"
+      "$ref": "#/649"
     },
     "input": {
-      "$ref": "#/631"
+      "$ref": "#/648"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckNameAvailabilityInput",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The account name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The account type. For a Media Services account, this should be 'MediaServices'."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "EntityNameAvailabilityCheckOutput",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 1,
+        "description": "Specifies if the name is available."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specifies the reason if the name is not available."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Specifies the detailed reason if the name is not available."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.Media/locations",
+    "apiVersion": "2020-05-01",
+    "output": {
+      "$ref": "#/654"
+    },
+    "input": {
+      "$ref": "#/653"
     }
   }
 ]

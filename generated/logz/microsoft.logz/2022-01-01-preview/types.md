@@ -105,6 +105,28 @@
 * **ApiVersion**: 2022-01-01-preview
 * **Output**: [VMResourcesListResponse](#vmresourceslistresponse)
 
+## Function vmHostPayload (Microsoft.Logz/monitors@2022-01-01-preview)
+* **Resource**: Microsoft.Logz/monitors
+* **ApiVersion**: 2022-01-01-preview
+* **Output**: [VMExtensionPayload](#vmextensionpayload)
+
+## Function vmHostPayload (Microsoft.Logz/monitors/accounts@2022-01-01-preview)
+* **Resource**: Microsoft.Logz/monitors/accounts
+* **ApiVersion**: 2022-01-01-preview
+* **Output**: [VMExtensionPayload](#vmextensionpayload)
+
+## Function vmHostUpdate (Microsoft.Logz/monitors@2022-01-01-preview)
+* **Resource**: Microsoft.Logz/monitors
+* **ApiVersion**: 2022-01-01-preview
+* **Input**: [VMHostUpdateRequest](#vmhostupdaterequest)
+* **Output**: [VMResourcesListResponse](#vmresourceslistresponse)
+
+## Function vmHostUpdate (Microsoft.Logz/monitors/accounts@2022-01-01-preview)
+* **Resource**: Microsoft.Logz/monitors/accounts
+* **ApiVersion**: 2022-01-01-preview
+* **Input**: [VMHostUpdateRequest](#vmhostupdaterequest)
+* **Output**: [VMResourcesListResponse](#vmresourceslistresponse)
+
 ## FilteringTag
 ### Properties
 * **action**: 'Exclude' | 'Include' | string: Valid actions for a filtering tag. Exclusion takes priority over inclusion.
@@ -231,6 +253,16 @@
 ## UserRoleResponse
 ### Properties
 * **role**: 'Admin' | 'None' | 'User' | string: User roles on configured in Logz.io account.
+
+## VMExtensionPayload
+### Properties
+* **apiKey**: string {sensitive}: API Key corresponding to the resource.
+* **region**: string: Logz.io region where the resource has been created.
+
+## VMHostUpdateRequest
+### Properties
+* **state**: 'Delete' | 'Install' | string: Specifies the state of the operation - install/ delete.
+* **vmResourceIds**: [VMResources](#vmresources)[]: Request of a list vm host update operation.
 
 ## VMResources
 ### Properties

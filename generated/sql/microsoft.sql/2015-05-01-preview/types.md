@@ -176,6 +176,41 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.Sql/virtualClusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelSync (Microsoft.Sql/servers/databases/syncGroups@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2015-05-01-preview
+
+## Function failover (Microsoft.Sql/servers/failoverGroups@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/failoverGroups
+* **ApiVersion**: 2015-05-01-preview
+* **Output**: [FailoverGroup](#failovergroup)
+
+## Function forceFailoverAllowDataLoss (Microsoft.Sql/servers/failoverGroups@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/failoverGroups
+* **ApiVersion**: 2015-05-01-preview
+* **Output**: [FailoverGroup](#failovergroup)
+
+## Function generateKey (Microsoft.Sql/servers/syncAgents@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/syncAgents
+* **ApiVersion**: 2015-05-01-preview
+* **Output**: [SyncAgentKeyProperties](#syncagentkeyproperties)
+
+## Function refreshHubSchema (Microsoft.Sql/servers/databases/syncGroups@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2015-05-01-preview
+
+## Function refreshSchema (Microsoft.Sql/servers/databases/syncGroups/syncMembers@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups/syncMembers
+* **ApiVersion**: 2015-05-01-preview
+
+## Function revalidate (Microsoft.Sql/servers/encryptionProtector@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/encryptionProtector
+* **ApiVersion**: 2015-05-01-preview
+
+## Function triggerSync (Microsoft.Sql/servers/databases/syncGroups@2015-05-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/syncGroups
+* **ApiVersion**: 2015-05-01-preview
+
 ## AdvisorProperties
 ### Properties
 * **advisorStatus**: 'GA' | 'LimitedPublicPreview' | 'PrivatePreview' | 'PublicPreview' (ReadOnly): Gets the status of availability of this advisor to customers. Possible values are 'GA', 'PublicPreview', 'LimitedPublicPreview' and 'PrivatePreview'.
@@ -295,6 +330,15 @@ For more information, see [Auditing to storage using Managed Identity authentica
 * **thumbprint**: string (ReadOnly): Thumbprint of the server key.
 * **uri**: string (ReadOnly): The URI of the server key.
 
+## FailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **location**: string (ReadOnly): Resource location.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [FailoverGroupProperties](#failovergroupproperties): Resource properties.
+* **tags**: [FailoverGroupTags](#failovergrouptags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
 ## FailoverGroupProperties
 ### Properties
 * **databases**: string[]: List of databases in the failover group.
@@ -312,6 +356,11 @@ For more information, see [Auditing to storage using Managed Identity authentica
 ### Properties
 * **failoverPolicy**: 'Automatic' | 'Manual' | string (Required): Failover policy of the read-write endpoint for the failover group. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.
 * **failoverWithDataLossGracePeriodMinutes**: int: Grace period before failover with data loss is attempted for the read-write endpoint. If failoverPolicy is Automatic then failoverWithDataLossGracePeriodMinutes is required.
+
+## FailoverGroupTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## FailoverGroupTags
 ### Properties
@@ -469,6 +518,10 @@ An example of valid timezone id is "Pacific Standard Time" or "W. Europe Standar
 * **displayName**: string (ReadOnly): User-readable name of the metric.
 * **limit**: int (ReadOnly): Boundary value of the metric.
 * **unit**: string (ReadOnly): Unit of the metric.
+
+## SyncAgentKeyProperties
+### Properties
+* **syncAgentKey**: string (ReadOnly): Key of sync agent.
 
 ## SyncAgentProperties
 ### Properties
