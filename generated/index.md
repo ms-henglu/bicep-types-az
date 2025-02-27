@@ -13296,18 +13296,22 @@
 ### microsoft.insights/privatelinkscopes
 * **Link**: [2019-10-17-preview](monitor/microsoft.insights/2019-10-17-preview/types.md#resource-microsoftinsightsprivatelinkscopes2019-10-17-preview)
 * **Link**: [2021-07-01-preview](monitor/microsoft.insights/2021-07-01-preview/types.md#resource-microsoftinsightsprivatelinkscopes2021-07-01-preview)
+* **Link**: [2023-06-01-preview](monitor/microsoft.insights/2023-06-01-preview/types.md#resource-microsoftinsightsprivatelinkscopes2023-06-01-preview)
 
 ### microsoft.insights/privatelinkscopes/privateendpointconnections
 * **Link**: [2019-10-17-preview](monitor/microsoft.insights/2019-10-17-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivateendpointconnections2019-10-17-preview)
 * **Link**: [2021-07-01-preview](monitor/microsoft.insights/2021-07-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivateendpointconnections2021-07-01-preview)
+* **Link**: [2023-06-01-preview](monitor/microsoft.insights/2023-06-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivateendpointconnections2023-06-01-preview)
 
 ### microsoft.insights/privatelinkscopes/privatelinkresources
 * **Link**: [2019-10-17-preview](monitor/microsoft.insights/2019-10-17-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivatelinkresources2019-10-17-preview)
 * **Link**: [2021-07-01-preview](monitor/microsoft.insights/2021-07-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivatelinkresources2021-07-01-preview)
+* **Link**: [2023-06-01-preview](monitor/microsoft.insights/2023-06-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesprivatelinkresources2023-06-01-preview)
 
 ### microsoft.insights/privatelinkscopes/scopedresources
 * **Link**: [2019-10-17-preview](monitor/microsoft.insights/2019-10-17-preview/types.md#resource-microsoftinsightsprivatelinkscopesscopedresources2019-10-17-preview)
 * **Link**: [2021-07-01-preview](monitor/microsoft.insights/2021-07-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesscopedresources2021-07-01-preview)
+* **Link**: [2023-06-01-preview](monitor/microsoft.insights/2023-06-01-preview/types.md#resource-microsoftinsightsprivatelinkscopesscopedresources2023-06-01-preview)
 
 ### microsoft.insights/scheduledqueryrules
 * **Link**: [2018-04-16](monitor/microsoft.insights/2018-04-16/types.md#resource-microsoftinsightsscheduledqueryrules2018-04-16)
