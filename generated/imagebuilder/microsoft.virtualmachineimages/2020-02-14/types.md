@@ -12,6 +12,14 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.VirtualMachineImages/imageTemplates' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.VirtualMachineImages/imageTemplates@2020-02-14)
+* **Resource**: Microsoft.VirtualMachineImages/imageTemplates
+* **ApiVersion**: 2020-02-14
+
+## Function run (Microsoft.VirtualMachineImages/imageTemplates@2020-02-14)
+* **Resource**: Microsoft.VirtualMachineImages/imageTemplates
+* **ApiVersion**: 2020-02-14
+
 ## ComponentsVrq145SchemasImagetemplateidentityPropertiesUserassignedidentitiesAdditionalproperties
 ### Properties
 * **clientId**: string (ReadOnly): The client id of user assigned identity.

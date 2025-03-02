@@ -26,6 +26,16 @@
 * **ApiVersion**: 2018-03-31
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2018-03-31)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2018-03-31
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2018-03-31)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2018-03-31
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
 ## AccessProfile
 ### Properties
 * **kubeConfig**: any: Base64-encoded Kubernetes configuration file.

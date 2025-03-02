@@ -219,6 +219,38 @@
 * **ApiVersion**: 2015-10-31
 * **Output**: [KeyListResult](#keylistresult)
 
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2015-10-31
+
+## Function resume (Microsoft.Automation/automationAccounts/runbooks/draft@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2015-10-31
+
+## Function start (Microsoft.Automation/automationAccounts/watchers@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2015-10-31
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2015-10-31
+
+## Function stop (Microsoft.Automation/automationAccounts/runbooks/draft@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2015-10-31
+
+## Function stop (Microsoft.Automation/automationAccounts/watchers@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2015-10-31
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2015-10-31
+
+## Function suspend (Microsoft.Automation/automationAccounts/runbooks/draft@2015-10-31)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2015-10-31
+
 ## AdvancedSchedule
 ### Properties
 * **monthDays**: int[]: Days of the month that the job should execute on. Must be between 1 and 31.

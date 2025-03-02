@@ -139,6 +139,15 @@
 * **properties**: [VirtualNetworkRuleProperties](#virtualnetworkruleproperties): Properties supplied to create or update VirtualNetworkRules
 * **type**: 'Microsoft.ServiceBus/namespaces/virtualnetworkrules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function breakPairing (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2018-01-01-preview
+
+## Function failover (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2018-01-01-preview
+* **Input**: [FailoverProperties](#failoverproperties)
+
 ## Function listKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2018-01-01-preview)
 * **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
 * **ApiVersion**: 2018-01-01-preview
@@ -158,6 +167,37 @@
 * **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
 * **ApiVersion**: 2018-01-01-preview
 * **Output**: [AccessKeys](#accesskeys)
+
+## Function migrate (Microsoft.ServiceBus/namespaces@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces
+* **ApiVersion**: 2018-01-01-preview
+* **Input**: [SBNamespaceMigrate](#sbnamespacemigrate)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
+* **ApiVersion**: 2018-01-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/queues/authorizationRules@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/queues/authorizationRules
+* **ApiVersion**: 2018-01-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/topics/authorizationRules@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
+* **ApiVersion**: 2018-01-01-preview
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function revert (Microsoft.ServiceBus/namespaces/migrationConfigurations@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2018-01-01-preview
+
+## Function upgrade (Microsoft.ServiceBus/namespaces/migrationConfigurations@2018-01-01-preview)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2018-01-01-preview
 
 ## AccessKeys
 ### Properties
@@ -210,6 +250,14 @@
 ### Properties
 * **keySource**: 'Microsoft.KeyVault': Enumerates the possible value of keySource for Encryption
 * **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties): Properties of KeyVault
+
+## FailoverProperties
+### Properties
+* **properties**: [FailoverPropertiesProperties](#failoverpropertiesproperties): Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
+
+## FailoverPropertiesProperties
+### Properties
+* **IsSafeFailover**: bool: Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
 
 ## Identity
 ### Properties
@@ -270,6 +318,11 @@
 * **privateLinkServiceConnectionState**: [ConnectionState](#connectionstate): Details about the state of the connection.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the Private Endpoint Connection.
 
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
 ## Ruleproperties
 ### Properties
 * **action**: [Action](#action): Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression.
@@ -280,6 +333,10 @@
 ## SBAuthorizationRuleProperties
 ### Properties
 * **rights**: ('Listen' | 'Manage' | 'Send')[] (Required): The rights associated with the rule.
+
+## SBNamespaceMigrate
+### Properties
+* **targetNamespaceType**: 'EventHub' | 'Messaging' | 'Mixed' | 'NotificationHub' | 'Relay' (Required): Type of namespaces
 
 ## SBNamespaceProperties
 ### Properties

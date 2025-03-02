@@ -2827,6 +2827,34 @@
   },
   {
     "$type": "ObjectType",
+    "name": "FailoverPolicies",
+    "properties": {
+      "failoverPolicies": {
+        "type": {
+          "$ref": "#/189"
+        },
+        "flags": 1,
+        "description": "List of failover policies."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/32"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "failoverPriorityChange",
+    "resourceType": "Microsoft.DocumentDB/databaseAccounts",
+    "apiVersion": "2016-03-19",
+    "input": {
+      "$ref": "#/188"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "DatabaseAccountListKeysResult",
     "properties": {
       "primaryMasterKey": {
@@ -2865,7 +2893,7 @@
     "resourceType": "Microsoft.DocumentDB/databaseAccounts",
     "apiVersion": "2016-03-19",
     "output": {
-      "$ref": "#/188"
+      "$ref": "#/191"
     }
   },
   {
@@ -2874,7 +2902,7 @@
     "properties": {
       "connectionStrings": {
         "type": {
-          "$ref": "#/192"
+          "$ref": "#/195"
         },
         "flags": 0,
         "description": "An array that contains the connection strings for the Cosmos DB account."
@@ -2904,7 +2932,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/191"
+      "$ref": "#/194"
     }
   },
   {
@@ -2913,7 +2941,125 @@
     "resourceType": "Microsoft.DocumentDB/databaseAccounts",
     "apiVersion": "2016-03-19",
     "output": {
-      "$ref": "#/190"
+      "$ref": "#/193"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RegionForOnlineOffline",
+    "properties": {
+      "region": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Cosmos DB region, with spaces between words and each word capitalized."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "offlineRegion",
+    "resourceType": "Microsoft.DocumentDB/databaseAccounts",
+    "apiVersion": "2016-03-19",
+    "input": {
+      "$ref": "#/197"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "onlineRegion",
+    "resourceType": "Microsoft.DocumentDB/databaseAccounts",
+    "apiVersion": "2016-03-19",
+    "input": {
+      "$ref": "#/197"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DatabaseAccountListReadOnlyKeysResult",
+    "properties": {
+      "primaryReadonlyMasterKey": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Base 64 encoded value of the primary read-only key."
+      },
+      "secondaryReadonlyMasterKey": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Base 64 encoded value of the secondary read-only key."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "readonlykeys",
+    "resourceType": "Microsoft.DocumentDB/databaseAccounts",
+    "apiVersion": "2016-03-19",
+    "output": {
+      "$ref": "#/200"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DatabaseAccountRegenerateKeyParameters",
+    "properties": {
+      "keyKind": {
+        "type": {
+          "$ref": "#/207"
+        },
+        "flags": 1,
+        "description": "The access key to regenerate."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "primary"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "secondary"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "primaryReadonly"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "secondaryReadonly"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/203"
+      },
+      {
+        "$ref": "#/204"
+      },
+      {
+        "$ref": "#/205"
+      },
+      {
+        "$ref": "#/206"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "regenerateKey",
+    "resourceType": "Microsoft.DocumentDB/databaseAccounts",
+    "apiVersion": "2016-03-19",
+    "input": {
+      "$ref": "#/202"
     }
   }
 ]

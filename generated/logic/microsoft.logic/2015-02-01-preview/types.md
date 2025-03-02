@@ -67,10 +67,42 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): Gets or sets the resource tags.
 * **type**: 'Microsoft.Logic/workflows/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Logic/workflows/runs@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows/runs
+* **ApiVersion**: 2015-02-01-preview
+
+## Function disable (Microsoft.Logic/workflows@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2015-02-01-preview
+
+## Function enable (Microsoft.Logic/workflows@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2015-02-01-preview
+
 ## Function list (Microsoft.Logic/workflows/accessKeys@2015-02-01-preview)
 * **Resource**: Microsoft.Logic/workflows/accessKeys
 * **ApiVersion**: 2015-02-01-preview
 * **Output**: [WorkflowSecretKeys](#workflowsecretkeys)
+
+## Function regenerate (Microsoft.Logic/workflows/accessKeys@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows/accessKeys
+* **ApiVersion**: 2015-02-01-preview
+* **Input**: [RegenerateSecretKeyParameters](#regeneratesecretkeyparameters)
+* **Output**: [WorkflowSecretKeys](#workflowsecretkeys)
+
+## Function run (Microsoft.Logic/workflows@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2015-02-01-preview
+* **Input**: [RunWorkflowParameters](#runworkflowparameters)
+
+## Function run (Microsoft.Logic/workflows/triggers@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows/triggers
+* **ApiVersion**: 2015-02-01-preview
+
+## Function validate (Microsoft.Logic/workflows@2015-02-01-preview)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2015-02-01-preview
+* **Input**: [Workflow](#workflow)
 
 ## ContentHash
 ### Properties
@@ -84,6 +116,10 @@
 * **contentVersion**: string: Gets or sets the content version.
 * **metadata**: any: Gets or sets the metadata.
 * **uri**: string: Gets or sets the content link URI.
+
+## RegenerateSecretKeyParameters
+### Properties
+* **keyType**: 'NotSpecified' | 'Primary' | 'Secondary': Gets or sets the key type.
 
 ## ResourceReference
 ### Properties
@@ -101,10 +137,29 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RunWorkflowParameters
+### Properties
+* **name**: string: Gets or sets the name of workflow run trigger.
+* **outputs**: any: Gets or sets the outputs of workflow run trigger.
+
 ## Sku
 ### Properties
 * **name**: 'Basic' | 'Free' | 'NotSpecified' | 'Premium' | 'Shared' | 'Standard': Gets or sets the name.
 * **plan**: [ResourceReference](#resourcereference): Gets or sets the reference to plan.
+
+## Workflow
+### Properties
+* **id**: string: Gets or sets the resource id.
+* **location**: string: Gets or sets the resource location.
+* **name**: string: Gets the resource name.
+* **properties**: [WorkflowProperties](#workflowproperties): Gets or sets the workflow properties.
+* **tags**: [ResourceTags](#resourcetags): Gets or sets the resource tags.
+* **type**: string: Gets the resource type.
 
 ## WorkflowAccessKeyProperties
 ### Properties

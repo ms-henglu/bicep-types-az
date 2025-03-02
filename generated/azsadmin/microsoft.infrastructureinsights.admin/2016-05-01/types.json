@@ -866,5 +866,11 @@
       "$ref": "#/46"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "repair",
+    "resourceType": "Microsoft.InfrastructureInsights.Admin/regionHealths/alerts",
+    "apiVersion": "2016-05-01"
   }
 ]

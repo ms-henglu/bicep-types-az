@@ -25,6 +25,75 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.StorageCache/caches/storageTargets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function debugInfo (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+
+## Function dnsRefresh (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function flush (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+
+## Function flush (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function invalidate (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function pausePrimingJob (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function restoreDefaults (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function resume (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function resumePrimingJob (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function spaceAllocation (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+* **Input**: [StorageTargetSpaceAllocation](#storagetargetspaceallocation)[]
+
+## Function start (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+
+## Function startPrimingJob (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+* **Input**: [PrimingJob](#primingjob)
+
+## Function stop (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+
+## Function stopPrimingJob (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+* **Input**: [PrimingJobIdParameter](#primingjobidparameter)
+
+## Function suspend (Microsoft.StorageCache/caches/storageTargets@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches/storageTargets
+* **ApiVersion**: 2023-01-01
+
+## Function upgrade (Microsoft.StorageCache/caches@2023-01-01)
+* **Resource**: Microsoft.StorageCache/caches
+* **ApiVersion**: 2023-01-01
+
 ## BlobNfsTarget
 ### Properties
 * **target**: string: Resource ID of the storage container.
@@ -203,6 +272,10 @@
 * **primingJobState**: 'Complete' | 'Paused' | 'Queued' | 'Running' | string (ReadOnly): The state of the priming operation.
 * **primingJobStatus**: string (ReadOnly): The status code of the priming job.
 * **primingManifestUrl**: string {sensitive} (Required, WriteOnly): The URL for the priming manifest file to download. This file must be readable from the HPC Cache. When the file is in Azure blob storage the URL should include a Shared Access Signature (SAS) granting read permissions on the blob.
+
+## PrimingJobIdParameter
+### Properties
+* **primingJobId**: string {pattern: "^[-0-9a-zA-Z_]{1,80}$"} (Required): The unique identifier of the priming job.
 
 ## StorageTargetProperties
 ### Properties

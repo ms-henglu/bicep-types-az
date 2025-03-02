@@ -32,6 +32,37 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): System data of Extension resource.
 * **type**: 'Microsoft.AzureStackHCI/clusters/arcSettings/extensions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function createArcIdentity (Microsoft.AzureStackHCI/clusters/arcSettings@2022-05-01)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-05-01
+* **Output**: [ArcIdentityResponse](#arcidentityresponse)
+
+## Function createClusterIdentity (Microsoft.AzureStackHCI/clusters@2022-05-01)
+* **Resource**: Microsoft.AzureStackHCI/clusters
+* **ApiVersion**: 2022-05-01
+* **Output**: [ClusterIdentityResponse](#clusteridentityresponse)
+
+## Function generatePassword (Microsoft.AzureStackHCI/clusters/arcSettings@2022-05-01)
+* **Resource**: Microsoft.AzureStackHCI/clusters/arcSettings
+* **ApiVersion**: 2022-05-01
+* **Output**: [PasswordCredential](#passwordcredential)
+
+## Function uploadCertificate (Microsoft.AzureStackHCI/clusters@2022-05-01)
+* **Resource**: Microsoft.AzureStackHCI/clusters
+* **ApiVersion**: 2022-05-01
+* **Input**: [UploadCertificateRequest](#uploadcertificaterequest)
+
+## ArcIdentityResponse
+### Properties
+* **properties**: [ArcIdentityResponseProperties](#arcidentityresponseproperties) (ReadOnly): ArcIdentity properties.
+
+## ArcIdentityResponseProperties
+### Properties
+* **arcApplicationClientId**: string
+* **arcApplicationObjectId**: string
+* **arcApplicationTenantId**: string
+* **arcServicePrincipalObjectId**: string
+
 ## ArcSettingProperties
 ### Properties
 * **aggregateState**: 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Succeeded' | 'Updating' | string (ReadOnly): Aggregate state of Arc agent across the nodes in this HCI cluster.
@@ -48,6 +79,17 @@
 ### Properties
 * **diagnosticLevel**: 'Basic' | 'Enhanced' | 'Off' | string: Desired level of diagnostic data emitted by the cluster.
 * **windowsServerSubscription**: 'Disabled' | 'Enabled' | string: Desired state of Windows Server Subscription.
+
+## ClusterIdentityResponse
+### Properties
+* **properties**: [ClusterIdentityResponseProperties](#clusteridentityresponseproperties) (ReadOnly): Cluster identity properties.
+
+## ClusterIdentityResponseProperties
+### Properties
+* **aadApplicationObjectId**: string
+* **aadClientId**: string
+* **aadServicePrincipalObjectId**: string
+* **aadTenantId**: string
 
 ## ClusterNode
 ### Properties
@@ -108,6 +150,13 @@
 * **perNodeExtensionDetails**: [PerNodeExtensionState](#pernodeextensionstate)[] (ReadOnly): State of Arc Extension in each of the nodes.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Provisioning' | 'Succeeded' | string (ReadOnly): Provisioning state of the Extension proxy resource.
 
+## PasswordCredential
+### Properties
+* **endDateTime**: string
+* **keyId**: string
+* **secretText**: string
+* **startDateTime**: string
+
 ## PerNodeExtensionState
 ### Properties
 * **extension**: string (ReadOnly): Fully qualified resource ID for the particular Arc Extension on this node.
@@ -119,6 +168,10 @@
 * **arcInstance**: string (ReadOnly): Fully qualified resource ID for the Arc agent of this node.
 * **name**: string (ReadOnly): Name of the Node in HCI Cluster
 * **state**: 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'Disconnected' | 'Error' | 'Failed' | 'Moving' | 'NotSpecified' | 'Succeeded' | 'Updating' | string (ReadOnly): State of Arc agent in this node.
+
+## RawCertificateData
+### Properties
+* **certificates**: string[]
 
 ## SystemData
 ### Properties
@@ -133,4 +186,8 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## UploadCertificateRequest
+### Properties
+* **properties**: [RawCertificateData](#rawcertificatedata)
 

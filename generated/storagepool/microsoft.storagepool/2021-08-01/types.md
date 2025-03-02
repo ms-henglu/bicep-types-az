@@ -27,6 +27,18 @@
 * **systemData**: [SystemMetadata](#systemmetadata) (ReadOnly): Resource metadata required by ARM RPC
 * **type**: 'Microsoft.StoragePool/diskPools/iscsiTargets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function deallocate (Microsoft.StoragePool/diskPools@2021-08-01)
+* **Resource**: Microsoft.StoragePool/diskPools
+* **ApiVersion**: 2021-08-01
+
+## Function start (Microsoft.StoragePool/diskPools@2021-08-01)
+* **Resource**: Microsoft.StoragePool/diskPools
+* **ApiVersion**: 2021-08-01
+
+## Function upgrade (Microsoft.StoragePool/diskPools@2021-08-01)
+* **Resource**: Microsoft.StoragePool/diskPools
+* **ApiVersion**: 2021-08-01
+
 ## Acl
 ### Properties
 * **initiatorIqn**: string (Required): iSCSI initiator IQN (iSCSI Qualified Name); example: "iqn.2005-03.org.iscsi:client".

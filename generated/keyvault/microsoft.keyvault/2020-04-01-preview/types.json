@@ -2361,5 +2361,11 @@
       "$ref": "#/211"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "purge",
+    "resourceType": "Microsoft.KeyVault/locations/deletedVaults",
+    "apiVersion": "2020-04-01-preview"
   }
 ]

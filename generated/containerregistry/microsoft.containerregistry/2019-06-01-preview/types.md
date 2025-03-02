@@ -47,6 +47,10 @@
 * **tags**: [ResourceTags](#resourcetags): The tags of the resource.
 * **type**: 'Microsoft.ContainerRegistry/registries/tasks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.ContainerRegistry/registries/runs@2019-06-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries/runs
+* **ApiVersion**: 2019-06-01-preview
+
 ## Function listBuildSourceUploadUrl (Microsoft.ContainerRegistry/registries@2019-06-01-preview)
 * **Resource**: Microsoft.ContainerRegistry/registries
 * **ApiVersion**: 2019-06-01-preview
@@ -71,6 +75,12 @@
 * **Resource**: Microsoft.ContainerRegistry/registries/agentPools
 * **ApiVersion**: 2019-06-01-preview
 * **Output**: [AgentPoolQueueStatus](#agentpoolqueuestatus)
+
+## Function scheduleRun (Microsoft.ContainerRegistry/registries@2019-06-01-preview)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2019-06-01-preview
+* **Input**: [RunRequest](#runrequest)
+* **Output**: [Run](#run)
 
 ## AgentPoolProperties
 ### Properties

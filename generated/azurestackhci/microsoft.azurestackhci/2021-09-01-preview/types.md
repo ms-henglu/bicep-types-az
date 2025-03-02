@@ -156,6 +156,18 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.AzureStackHCI/virtualnetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function restart (Microsoft.AzureStackHCI/virtualmachines@2021-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-09-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualmachines@2021-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-09-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualmachines@2021-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualmachines
+* **ApiVersion**: 2021-09-01-preview
+
 ## ArcSettingProperties
 ### Properties
 * **aggregateState**: 'Canceled' | 'Connected' | 'Creating' | 'Deleted' | 'Deleting' | 'Disconnected' | 'Error' | 'Failed' | 'InProgress' | 'Moving' | 'NotSpecified' | 'PartiallyConnected' | 'PartiallySucceeded' | 'Succeeded' | 'Updating' | string (ReadOnly): Aggregate state of Arc agent across the nodes in this HCI cluster.

@@ -49,6 +49,11 @@
 * **properties**: [TopicTypeProperties](#topictypeproperties) (ReadOnly): Properties of the topic type info
 * **type**: 'Microsoft.EventGrid/topicTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2019-02-01-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2019-02-01-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2019-02-01-preview)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2019-02-01-preview
@@ -57,6 +62,18 @@
 ## Function listKeys (Microsoft.EventGrid/topics@2019-02-01-preview)
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2019-02-01-preview
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2019-02-01-preview)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2019-02-01-preview
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2019-02-01-preview)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2019-02-01-preview
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
 
 ## AdvancedFilter
@@ -144,6 +161,10 @@
 * **inputSchemaMapping**: [InputSchemaMapping](#inputschemamapping): Information about the InputSchemaMapping which specified the info about mapping event payload.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the domain.
 
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
+
 ## DomainSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the domain.
@@ -199,6 +220,10 @@ The format of this depends on the publisher of the events.
 Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
 
 ## EventSubscriptionProperties
 ### Properties
@@ -270,6 +295,10 @@ Wildcard characters are not supported in this path.
 * **inputSchema**: 'CloudEventV01Schema' | 'CustomEventSchema' | 'EventGridSchema' | string: This determines the format that Event Grid should expect for incoming events published to the topic.
 * **inputSchemaMapping**: [InputSchemaMapping](#inputschemamapping): This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the topic.
+
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
 
 ## TopicSharedAccessKeys
 ### Properties
