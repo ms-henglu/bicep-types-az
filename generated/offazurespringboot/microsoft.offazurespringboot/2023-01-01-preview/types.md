@@ -57,6 +57,10 @@
 * **tags**: [SummaryTags](#summarytags) (ReadOnly): Resource tags
 * **type**: 'Microsoft.OffAzureSpringBoot/springbootsites/summaries' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function refreshSite (Microsoft.OffAzureSpringBoot/springbootsites@2023-01-01-preview)
+* **Resource**: Microsoft.OffAzureSpringBoot/springbootsites
+* **ApiVersion**: 2023-01-01-preview
+
 ## Error
 ### Properties
 * **code**: string: The error code.

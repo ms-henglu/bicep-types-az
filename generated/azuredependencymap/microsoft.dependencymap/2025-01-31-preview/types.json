@@ -469,5 +469,223 @@
       "$ref": "#/29"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExportDependenciesRequest",
+    "properties": {
+      "focusedMachineId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Machine arm id"
+      },
+      "filters": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "Filters for ExportDependencies"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DependencyMapVisualizationFilter",
+    "properties": {
+      "dateTime": {
+        "type": {
+          "$ref": "#/45"
+        },
+        "flags": 0,
+        "description": "DateTime filter"
+      },
+      "processNameFilter": {
+        "type": {
+          "$ref": "#/46"
+        },
+        "flags": 0,
+        "description": "Process name filter"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DateTimeFilter",
+    "properties": {
+      "startDateTimeUtc": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Start date time for dependency map visualization query"
+      },
+      "endDateTimeUtc": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "End date time for dependency map visualization query"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ProcessNameFilter",
+    "properties": {
+      "operator": {
+        "type": {
+          "$ref": "#/49"
+        },
+        "flags": 1,
+        "description": "Operator for process name filter"
+      },
+      "processNames": {
+        "type": {
+          "$ref": "#/50"
+        },
+        "flags": 1,
+        "description": "List of process names on which the operator should be applied"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "contains"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "notContains"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/47"
+      },
+      {
+        "$ref": "#/48"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "exportDependencies",
+    "resourceType": "Microsoft.DependencyMap/maps",
+    "apiVersion": "2025-01-31-preview",
+    "input": {
+      "$ref": "#/43"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GetConnectionsForProcessOnFocusedMachineRequest",
+    "properties": {
+      "focusedMachineId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Machine arm id"
+      },
+      "processIdOnFocusedMachine": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Process id"
+      },
+      "filters": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "Filters for GetProcessNetworkConnections"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getConnectionsForProcessOnFocusedMachine",
+    "resourceType": "Microsoft.DependencyMap/maps",
+    "apiVersion": "2025-01-31-preview",
+    "input": {
+      "$ref": "#/52"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GetConnectionsWithConnectedMachineForFocusedMachineRequest",
+    "properties": {
+      "focusedMachineId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Source machine arm id"
+      },
+      "connectedMachineId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Destination machine arm id"
+      },
+      "filters": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "Filters for GetNetworkConnectionsBetweenMachines"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getConnectionsWithConnectedMachineForFocusedMachine",
+    "resourceType": "Microsoft.DependencyMap/maps",
+    "apiVersion": "2025-01-31-preview",
+    "input": {
+      "$ref": "#/54"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GetDependencyViewForFocusedMachineRequest",
+    "properties": {
+      "focusedMachineId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Machine arm id"
+      },
+      "filters": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "Filters for GetSingleMachineDependencyView"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getDependencyViewForFocusedMachine",
+    "resourceType": "Microsoft.DependencyMap/maps",
+    "apiVersion": "2025-01-31-preview",
+    "input": {
+      "$ref": "#/56"
+    }
   }
 ]

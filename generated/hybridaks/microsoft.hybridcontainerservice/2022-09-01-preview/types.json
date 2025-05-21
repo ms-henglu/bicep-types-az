@@ -3247,5 +3247,11 @@
       "$ref": "#/206"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upgradeNodeImageVersionForEntireCluster",
+    "resourceType": "Microsoft.HybridContainerService/provisionedClusters",
+    "apiVersion": "2022-09-01-preview"
   }
 ]

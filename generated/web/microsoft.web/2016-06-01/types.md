@@ -60,6 +60,18 @@
 * **tags**: [TagsDictionary](#tagsdictionary) (ReadOnly): Resource tags
 * **type**: 'Microsoft.Web/locations/managedApis' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function confirmConsentCode (Microsoft.Web/connections@2016-06-01)
+* **Resource**: Microsoft.Web/connections
+* **ApiVersion**: 2016-06-01
+* **Input**: [ConfirmConsentCodeDefinition](#confirmconsentcodedefinition)
+* **Output**: [ConfirmConsentCodeDefinition](#confirmconsentcodedefinition)
+
+## Function extractApiDefinitionFromWsdl (Microsoft.Web/locations@2016-06-01)
+* **Resource**: Microsoft.Web/locations
+* **ApiVersion**: 2016-06-01
+* **Input**: [WsdlDefinition](#wsdldefinition)
+* **Output**: any
+
 ## Function listConsentLinks (Microsoft.Web/connections@2016-06-01)
 * **Resource**: Microsoft.Web/connections
 * **ApiVersion**: 2016-06-01
@@ -71,6 +83,11 @@
 * **ApiVersion**: 2016-06-01
 * **Input**: [WsdlDefinition](#wsdldefinition)
 * **Output**: [WsdlServiceCollection](#wsdlservicecollection)
+
+## Function move (Microsoft.Web/customApis@2016-06-01)
+* **Resource**: Microsoft.Web/customApis
+* **ApiVersion**: 2016-06-01
+* **Input**: [CustomApiReference](#customapireference)
 
 ## ApiConnectionDefinitionProperties
 ### Properties
@@ -188,6 +205,12 @@
 ### Additional Properties
 * **Additional Properties Type**: [ConnectionParameter](#connectionparameter)
 
+## ConfirmConsentCodeDefinition
+### Properties
+* **code**: string: Code that was returned during consent flow
+* **objectId**: string: AAD object ID. This is userId
+* **tenantId**: string: Tenant Id
+
 ## ConnectionError
 ### Properties
 * **etag**: string: Resource ETag
@@ -278,6 +301,17 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [ConnectionParameter](#connectionparameter)
+
+## CustomApiReference
+### Properties
+* **brandColor**: string: Brand color
+* **description**: string: The custom API description
+* **displayName**: string: The display name
+* **iconUri**: string: The icon URI
+* **id**: string: Resource reference id
+* **name**: string: The name of the API
+* **swagger**: any: The JSON representation of the swagger
+* **type**: string: Resource reference type
 
 ## ListConsentLinksDefinition
 ### Properties

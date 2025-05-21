@@ -34,6 +34,57 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DBforMySQL/locations/capabilitySets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.DBforMySQL/locations@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/locations
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [NameAvailabilityRequest](#nameavailabilityrequest)
+* **Output**: [NameAvailability](#nameavailability)
+
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforMySQL/locations@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/locations
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function cutoverMigration (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+* **Output**: [Server](#server)
+
+## Function detachVNet (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [ServerDetachVNetParameter](#serverdetachvnetparameter)
+* **Output**: [Server](#server)
+
+## Function failover (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+
+## Function resetGtid (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [ServerGtidSetParameter](#servergtidsetparameter)
+
+## Function restart (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [ServerRestartParameter](#serverrestartparameter)
+
+## Function start (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+
+## Function stop (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+
+## Function validateEstimateHighAvailability (Microsoft.DBforMySQL/flexibleServers@2024-10-01-preview)
+* **Resource**: Microsoft.DBforMySQL/flexibleServers
+* **ApiVersion**: 2024-10-01-preview
+* **Input**: [HighAvailabilityValidationEstimation](#highavailabilityvalidationestimation)
+* **Output**: [HighAvailabilityValidationEstimation](#highavailabilityvalidationestimation)
+
 ## AdvancedThreatProtectionProperties
 ### Properties
 * **creationTime**: string (ReadOnly): Specifies the UTC creation time of the policy.
@@ -62,6 +113,11 @@
 * **primaryUserAssignedIdentityId**: string: Primary user identity resource id
 * **type**: 'AzureKeyVault' | 'SystemManaged': The key type, AzureKeyVault for enable cmk, SystemManaged for disable cmk.
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): name of the subnet
+* **usage**: int (ReadOnly): Number of used delegated subnets
+
 ## FeatureProperty
 ### Properties
 * **featureName**: string (ReadOnly): feature name
@@ -72,6 +128,12 @@
 * **mode**: 'Disabled' | 'SameZone' | 'ZoneRedundant' | string: High availability mode for a server.
 * **standbyAvailabilityZone**: string: Availability zone of the standby server.
 * **state**: 'CreatingStandby' | 'FailingOver' | 'Healthy' | 'NotEnabled' | 'RemovingStandby' | string (ReadOnly): The state of server high availability.
+
+## HighAvailabilityValidationEstimation
+### Properties
+* **estimatedDowntime**: int (ReadOnly): Estimated seconds of downtime for the deployment.
+* **expectedStandbyAvailabilityZone**: string: Expected Availability zone of the standby server.
+* **scheduledStandbyAvailabilityZone**: string (ReadOnly): Scheduled Availability zone of the standby server.
 
 ## ImportSourceProperties
 ### Properties
@@ -108,6 +170,17 @@
 * **name**: string (Required): The name of the sku, e.g. Standard_D32s_v3.
 * **tier**: 'Burstable' | 'GeneralPurpose' | 'MemoryOptimized' | string (Required): The tier of the particular SKU, e.g. GeneralPurpose.
 
+## NameAvailability
+### Properties
+* **message**: string: Error Message.
+* **nameAvailable**: bool: Indicates whether the resource name is available.
+* **reason**: string: Reason for name being unavailable.
+
+## NameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **type**: string: Resource type used for verification.
+
 ## Network
 ### Properties
 * **delegatedSubnetResourceId**: string: Delegated subnet resource id used to setup vnet for a server.
@@ -139,6 +212,22 @@
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
 
+## Server
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **identity**: [MySQLServerIdentity](#mysqlserveridentity): The cmk identity for the server.
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ServerProperties](#serverproperties): Properties of the server.
+* **sku**: [MySQLServerSku](#mysqlserversku): The SKU (pricing tier) of the server.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ServerDetachVNetParameter
+### Properties
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public network access is allowed for this server. Value is 'Disabled' when server has VNet integration.
+
 ## ServerEditionCapabilityV2
 ### Properties
 * **defaultSku**: string (ReadOnly): Default Sku name
@@ -146,6 +235,10 @@
 * **name**: string (ReadOnly): Server edition name
 * **supportedSkus**: [SkuCapabilityV2](#skucapabilityv2)[] (ReadOnly): A list of supported Skus
 * **supportedStorageEditions**: [StorageEditionCapability](#storageeditioncapability)[] (ReadOnly): A list of supported storage editions
+
+## ServerGtidSetParameter
+### Properties
+* **gtidSet**: string: The Gtid set of server.
 
 ## ServerProperties
 ### Properties
@@ -171,6 +264,11 @@
 * **state**: 'Disabled' | 'Dropping' | 'Ready' | 'Starting' | 'Stopped' | 'Stopping' | 'Updating' | string (ReadOnly): The state of a server.
 * **storage**: [Storage](#storage): Storage related properties of a server.
 * **version**: '5.7' | '8.0.21' | string: Major version of MySQL. 8.0.21 stands for MySQL 8.0, 5.7.44 stands for MySQL 5.7
+
+## ServerRestartParameter
+### Properties
+* **maxFailoverSeconds**: int: The maximum allowed failover time in seconds.
+* **restartWithFailover**: 'Disabled' | 'Enabled' | string: Whether or not failover to standby server when restarting a server with high availability enabled.
 
 ## ServerVersionCapabilityV2
 ### Properties
@@ -218,4 +316,19 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly): A list of delegated subnet usage
+* **location**: string (ReadOnly): The location name.
+* **subscriptionId**: string (ReadOnly): The subscription id.
 

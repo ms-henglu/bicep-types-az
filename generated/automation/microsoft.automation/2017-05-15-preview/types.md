@@ -36,6 +36,18 @@
 * **properties**: [SourceControlSyncJobCreatePropertiesOrSourceControlSyncJobByIdProperties](#sourcecontrolsyncjobcreatepropertiesorsourcecontrolsyncjobbyidproperties) (Required): The properties of the source control sync job.
 * **type**: 'Microsoft.Automation/automationAccounts/sourceControls/sourceControlSyncJobs' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2017-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2017-05-15-preview
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2017-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2017-05-15-preview
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2017-05-15-preview)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2017-05-15-preview
+
 ## AdvancedSchedule
 ### Properties
 * **monthDays**: int[]: Days of the month that the job should execute on. Must be between 1 and 31.

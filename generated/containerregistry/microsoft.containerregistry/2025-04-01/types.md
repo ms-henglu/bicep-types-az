@@ -30,7 +30,7 @@
 * **apiVersion**: '2025-04-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 5, maxLength: 50, pattern: "^[a-zA-Z0-9]*$"} (Required, DeployTimeConstant): The resource name
-* **properties**: [ConnectedRegistryProperties](#connectedregistryproperties)
+* **properties**: [ConnectedRegistryProperties](#connectedregistryproperties): The properties of the connected registry.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.ContainerRegistry/registries/connectedRegistries' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -99,6 +99,26 @@
 * **tags**: [WebhookCreateParametersTags](#webhookcreateparameterstags): The tags for the webhook.
 * **type**: 'Microsoft.ContainerRegistry/registries/webhooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function deactivate (Microsoft.ContainerRegistry/registries/connectedRegistries@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries/connectedRegistries
+* **ApiVersion**: 2025-04-01
+
+## Function generateCredentials (Microsoft.ContainerRegistry/registries@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2025-04-01
+* **Input**: [GenerateCredentialsParameters](#generatecredentialsparameters)
+* **Output**: [GenerateCredentialsResult](#generatecredentialsresult)
+
+## Function getCallbackConfig (Microsoft.ContainerRegistry/registries/webhooks@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2025-04-01
+* **Output**: [CallbackConfig](#callbackconfig)
+
+## Function importImage (Microsoft.ContainerRegistry/registries@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2025-04-01
+* **Input**: [ImportImageParameters](#importimageparameters)
+
 ## Function listCredentials (Microsoft.ContainerRegistry/registries@2025-04-01)
 * **Resource**: Microsoft.ContainerRegistry/registries
 * **ApiVersion**: 2025-04-01
@@ -108,6 +128,21 @@
 * **Resource**: Microsoft.ContainerRegistry/registries/webhooks
 * **ApiVersion**: 2025-04-01
 * **Output**: [EventListResult](#eventlistresult)
+
+## Function ping (Microsoft.ContainerRegistry/registries/webhooks@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries/webhooks
+* **ApiVersion**: 2025-04-01
+* **Output**: [EventInfo](#eventinfo)
+
+## Function regenerateCredential (Microsoft.ContainerRegistry/registries@2025-04-01)
+* **Resource**: Microsoft.ContainerRegistry/registries
+* **ApiVersion**: 2025-04-01
+* **Input**: [RegenerateCredentialParameters](#regeneratecredentialparameters)
+* **Output**: [RegistryListCredentialsResult](#registrylistcredentialsresult)
+
+## ActivationProperties
+### Properties
+* **status**: 'Active' | 'Inactive' | string (ReadOnly): The activation status of the connected registry.
 
 ## Actor
 ### Properties
@@ -133,9 +168,19 @@
 * **targetRepository**: string: Target repository specified in docker pull command.
 Eg: docker pull myregistry.azurecr.io/{targetRepository}:{tag}
 
+## CallbackConfig
+### Properties
+* **customHeaders**: [CallbackConfigCustomHeaders](#callbackconfigcustomheaders): Custom headers that will be added to the webhook notifications.
+* **serviceUri**: string (Required): The service URI for the webhook to post notifications.
+
+## CallbackConfigCustomHeaders
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ConnectedRegistryProperties
 ### Properties
-* **activation**: [ConnectedRegistryPropertiesActivation](#connectedregistrypropertiesactivation) (ReadOnly)
+* **activation**: [ActivationProperties](#activationproperties) (ReadOnly): The activation properties of the connected registry.
 * **clientTokenIds**: string[]: The list of the ACR token resource IDs used to authenticate clients to the connected registry.
 * **connectionState**: 'Offline' | 'Online' | 'Syncing' | 'Unhealthy' | string (ReadOnly): The current connection state of the connected registry.
 * **garbageCollection**: [GarbageCollectionProperties](#garbagecollectionproperties): The garbage collection properties of the connected registry.
@@ -144,14 +189,10 @@ Eg: docker pull myregistry.azurecr.io/{targetRepository}:{tag}
 * **loginServer**: [LoginServerProperties](#loginserverproperties): The login server properties of the connected registry.
 * **mode**: 'Mirror' | 'ReadOnly' | 'ReadWrite' | 'Registry' | string (Required): The mode of the connected registry resource that indicates the permissions of the registry.
 * **notificationsList**: string[]: The list of notifications subscription information for the connected registry.
-* **parent**: [ParentProperties](#parentproperties) (Required): The properties of the connected registry parent.
+* **parent**: [ParentProperties](#parentproperties) (Required): The parent of the connected registry.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the resource.
 * **statusDetails**: [StatusDetailProperties](#statusdetailproperties)[] (ReadOnly): The list of current statuses of the connected registry.
 * **version**: string (ReadOnly): The current version of ACR runtime on the connected registry.
-
-## ConnectedRegistryPropertiesActivation
-### Properties
-* **status**: 'Active' | 'Inactive' | string (ReadOnly): The activation status of the connected registry.
 
 ## CredentialHealth
 ### Properties
@@ -187,6 +228,10 @@ Usually consists of a primary and an optional secondary credential.
 * **source**: [Source](#source): The registry node that generated the event. Put differently, while the actor initiates the event, the source generates it.
 * **target**: [Target](#target): The target of the event.
 * **timestamp**: string: The time at which the event occurred.
+
+## EventInfo
+### Properties
+* **id**: string: The event ID.
 
 ## EventListResult
 ### Properties
@@ -228,6 +273,17 @@ Usually consists of a primary and an optional secondary credential.
 * **enabled**: bool: Indicates whether garbage collection is enabled for the connected registry.
 * **schedule**: string: The cron expression indicating the schedule that the connected registry will run garbage collection.
 
+## GenerateCredentialsParameters
+### Properties
+* **expiry**: string: The expiry date of the generated credentials after which the credentials become invalid.
+* **name**: 'password1' | 'password2' | string: Specifies name of the password which should be regenerated if any -- password1 or password2.
+* **tokenId**: string: The resource ID of the token for which credentials have to be generated.
+
+## GenerateCredentialsResult
+### Properties
+* **passwords**: [TokenPassword](#tokenpassword)[]: The list of passwords for a container registry.
+* **username**: string: The username for a container registry.
+
 ## IdentityProperties
 ### Properties
 * **principalId**: string (ReadOnly): The principal ID of resource identity.
@@ -242,6 +298,28 @@ dictionary key references will be ARM resource ids in the form:
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserIdentityProperties](#useridentityproperties)
+
+## ImportImageParameters
+### Properties
+* **mode**: 'Force' | 'NoForce' | string: When Force, any existing target tags will be overwritten. When NoForce, any existing target tags will fail the operation before any copying begins.
+* **source**: [ImportSource](#importsource) (Required): The source of the image.
+* **targetTags**: string[]: List of strings of the form repo[:tag]. When tag is omitted the source will be used (or 'latest' if source tag is also omitted).
+* **untaggedTargetRepositories**: string[]: List of strings of repository names to do a manifest only copy. No tag will be created.
+
+## ImportSource
+### Properties
+* **credentials**: [ImportSourceCredentials](#importsourcecredentials): Credentials used when importing from a registry uri.
+* **registryUri**: string: The address of the source registry (e.g. 'mcr.microsoft.com').
+* **resourceId**: string: The resource identifier of the source Azure Container Registry.
+* **sourceImage**: string (Required): Repository name of the source image.
+Specify an image by repository ('hello-world'). This will use the 'latest' tag.
+Specify an image by tag ('hello-world:latest').
+Specify an image by sha256-based manifest digest ('hello-world@sha256:abc123').
+
+## ImportSourceCredentials
+### Properties
+* **password**: string (Required): The password used to authenticate with the source registry.
+* **username**: string: The username to authenticate with the source registry.
 
 ## IPRule
 ### Properties
@@ -264,12 +342,7 @@ dictionary key references will be ARM resource ids in the form:
 ## LoginServerProperties
 ### Properties
 * **host**: string (ReadOnly): The host of the connected registry. Can be FQDN or IP.
-* **tls**: [LoginServerPropertiesTls](#loginserverpropertiestls) (ReadOnly)
-
-## LoginServerPropertiesTls
-### Properties
-* **certificate**: [TlsPropertiesCertificate](#tlspropertiescertificate) (ReadOnly)
-* **status**: 'Disabled' | 'Enabled' | string (ReadOnly): Indicates whether HTTPS is enabled for the login server.
+* **tls**: [TlsProperties](#tlsproperties) (ReadOnly): The TLS properties of the connected registry login server.
 
 ## NetworkRuleSet
 ### Properties
@@ -316,6 +389,10 @@ dictionary key references will be ARM resource ids in the form:
 ## QuarantinePolicy
 ### Properties
 * **status**: 'disabled' | 'enabled' | string: The value that indicates whether the policy is enabled or not.
+
+## RegenerateCredentialParameters
+### Properties
+* **name**: 'password' | 'password2' (Required): Specifies name of the password which should be regenerated -- password or password2.
 
 ## RegistryListCredentialsResult
 ### Properties
@@ -440,10 +517,15 @@ repositories/repository-name/metadata/write
 * **url**: string: The direct URL to the content.
 * **version**: string: The version of the artifact.
 
-## TlsPropertiesCertificate
+## TlsCertificateProperties
 ### Properties
 * **location**: string (ReadOnly): Indicates the location of the certificates.
 * **type**: 'LocalDirectory' | string (ReadOnly): The type of certificate location.
+
+## TlsProperties
+### Properties
+* **certificate**: [TlsCertificateProperties](#tlscertificateproperties) (ReadOnly): The certificate used to configure HTTPS for the login server.
+* **status**: 'Disabled' | 'Enabled' | string (ReadOnly): Indicates whether HTTPS is enabled for the login server.
 
 ## TokenCertificate
 ### Properties

@@ -236,6 +236,24 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): The resource tags.
 * **type**: 'Microsoft.Logic/workflows/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Logic/workflows/runs@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows/runs
+* **ApiVersion**: 2019-05-01
+
+## Function disable (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+
+## Function enable (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+
+## Function generateUpgradedDefinition (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+* **Input**: [GenerateUpgradedDefinitionParameters](#generateupgradeddefinitionparameters)
+* **Output**: any
+
 ## Function listCallbackUrl (Microsoft.Logic/workflows@2019-05-01)
 * **Resource**: Microsoft.Logic/workflows
 * **ApiVersion**: 2019-05-01
@@ -308,6 +326,58 @@
 * **Resource**: Microsoft.Logic/workflows
 * **ApiVersion**: 2019-05-01
 * **Output**: any
+
+## Function logTrackingEvents (Microsoft.Logic/integrationAccounts@2019-05-01)
+* **Resource**: Microsoft.Logic/integrationAccounts
+* **ApiVersion**: 2019-05-01
+* **Input**: [TrackingEventsDefinition](#trackingeventsdefinition)
+
+## Function move (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+* **Input**: [WorkflowReference](#workflowreference)
+
+## Function regenerateAccessKey (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+* **Input**: [RegenerateActionParameter](#regenerateactionparameter)
+
+## Function regenerateAccessKey (Microsoft.Logic/integrationAccounts@2019-05-01)
+* **Resource**: Microsoft.Logic/integrationAccounts
+* **ApiVersion**: 2019-05-01
+* **Input**: [RegenerateActionParameter](#regenerateactionparameter)
+* **Output**: [IntegrationAccount](#integrationaccount)
+
+## Function reset (Microsoft.Logic/workflows/triggers@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows/triggers
+* **ApiVersion**: 2019-05-01
+
+## Function restart (Microsoft.Logic/integrationServiceEnvironments@2019-05-01)
+* **Resource**: Microsoft.Logic/integrationServiceEnvironments
+* **ApiVersion**: 2019-05-01
+
+## Function resubmit (Microsoft.Logic/workflows/triggers/histories@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows/triggers/histories
+* **ApiVersion**: 2019-05-01
+
+## Function run (Microsoft.Logic/workflows/triggers@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows/triggers
+* **ApiVersion**: 2019-05-01
+
+## Function setState (Microsoft.Logic/workflows/triggers@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows/triggers
+* **ApiVersion**: 2019-05-01
+* **Input**: [SetTriggerStateActionDefinition](#settriggerstateactiondefinition)
+
+## Function validate (Microsoft.Logic/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/workflows
+* **ApiVersion**: 2019-05-01
+* **Input**: [Workflow](#workflow)
+
+## Function validate (Microsoft.Logic/locations/workflows@2019-05-01)
+* **Resource**: Microsoft.Logic/locations/workflows
+* **ApiVersion**: 2019-05-01
+* **Input**: [Workflow](#workflow)
 
 ## AgreementContent
 ### Properties
@@ -752,10 +822,24 @@
 * **connector**: [FlowEndpoints](#flowendpoints): The connector endpoints.
 * **workflow**: [FlowEndpoints](#flowendpoints): The workflow endpoints.
 
+## GenerateUpgradedDefinitionParameters
+### Properties
+* **targetSchemaVersion**: string: The target schema version.
+
 ## GetCallbackUrlParameters
 ### Properties
 * **keyType**: 'NotSpecified' | 'Primary' | 'Secondary' | string: The key type.
 * **notAfter**: string: The expiry time.
+
+## IntegrationAccount
+### Properties
+* **id**: string (ReadOnly): The resource id.
+* **location**: string: The resource location.
+* **name**: string (ReadOnly): Gets the resource name.
+* **properties**: [IntegrationAccountProperties](#integrationaccountproperties): The integration account properties.
+* **sku**: [IntegrationAccountSku](#integrationaccountsku): The sku.
+* **tags**: [ResourceTags](#resourcetags): The resource tags.
+* **type**: string (ReadOnly): Gets the resource type.
 
 ## IntegrationAccountAgreementProperties
 ### Properties
@@ -978,6 +1062,10 @@
 * **day**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday': The day of the week.
 * **occurrence**: int: The occurrence.
 
+## RegenerateActionParameter
+### Properties
+* **keyType**: 'NotSpecified' | 'Primary' | 'Secondary' | string: The key type.
+
 ## RepetitionIndex
 ### Properties
 * **itemIndex**: int (Required): The index.
@@ -1087,6 +1175,16 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## Response
 ### Properties
 * **bodyLink**: [ContentLink](#contentlink): Details on the location of the body content.
@@ -1108,15 +1206,48 @@
 * **clientKeywords**: string[]: The client keywords.
 * **clientTrackingId**: string: The client tracking identifier.
 
+## SetTriggerStateActionDefinition
+### Properties
+* **source**: [WorkflowTriggerReference](#workflowtriggerreference) (Required): The source.
+
 ## Sku
 ### Properties
 * **name**: 'Basic' | 'Free' | 'NotSpecified' | 'Premium' | 'Shared' | 'Standard' | string (Required): The name.
 * **plan**: [ResourceReference](#resourcereference): The reference to plan.
 
+## TrackingEvent
+### Properties
+* **error**: [TrackingEventErrorInfo](#trackingeventerrorinfo): The error.
+* **eventLevel**: 'Critical' | 'Error' | 'Informational' | 'LogAlways' | 'Verbose' | 'Warning' (Required): The event level.
+* **eventTime**: string (Required): The event time.
+* **record**: any: The record.
+* **recordType**: 'AS2MDN' | 'AS2Message' | 'Custom' | 'EdifactFunctionalGroup' | 'EdifactFunctionalGroupAcknowledgment' | 'EdifactInterchange' | 'EdifactInterchangeAcknowledgment' | 'EdifactTransactionSet' | 'EdifactTransactionSetAcknowledgment' | 'NotSpecified' | 'X12FunctionalGroup' | 'X12FunctionalGroupAcknowledgment' | 'X12Interchange' | 'X12InterchangeAcknowledgment' | 'X12TransactionSet' | 'X12TransactionSetAcknowledgment' | string (Required): The record type.
+
+## TrackingEventErrorInfo
+### Properties
+* **code**: string: The code.
+* **message**: string: The message.
+
+## TrackingEventsDefinition
+### Properties
+* **events**: [TrackingEvent](#trackingevent)[] (Required): The events.
+* **sourceType**: string (Required): The source type.
+* **trackEventsOptions**: 'DisableSourceInfoEnrich' | 'None' | string: The track events options.
+
 ## UserAssignedIdentity
 ### Properties
 * **clientId**: string (ReadOnly): Client Id of user assigned identity
 * **principalId**: string (ReadOnly): Principal Id of user assigned identity
+
+## Workflow
+### Properties
+* **id**: string (ReadOnly): The resource id.
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): Managed service identity properties.
+* **location**: string: The resource location.
+* **name**: string (ReadOnly): Gets the resource name.
+* **properties**: [WorkflowProperties](#workflowproperties): The workflow properties.
+* **tags**: [ResourceTags](#resourcetags): The resource tags.
+* **type**: string (ReadOnly): Gets the resource type.
 
 ## WorkflowOutputParameter
 ### Properties
@@ -1153,6 +1284,12 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [WorkflowParameter](#workflowparameter)
+
+## WorkflowReference
+### Properties
+* **id**: string: The resource id.
+* **name**: string (ReadOnly): Gets the resource name.
+* **type**: string (ReadOnly): Gets the resource type.
 
 ## WorkflowRunActionProperties
 ### Properties
@@ -1275,6 +1412,14 @@
 * **schedule**: [RecurrenceSchedule](#recurrenceschedule): The recurrence schedule.
 * **startTime**: string: The start time.
 * **timeZone**: string: The time zone.
+
+## WorkflowTriggerReference
+### Properties
+* **flowName**: string: The workflow name.
+* **id**: string: The resource id.
+* **name**: string (ReadOnly): Gets the resource name.
+* **triggerName**: string: The workflow trigger name.
+* **type**: string (ReadOnly): Gets the resource type.
 
 ## WorkflowVersionProperties
 ### Properties

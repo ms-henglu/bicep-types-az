@@ -37,10 +37,29 @@
 * **type**: 'Microsoft.Batch/batchAccounts/applications/versions' (ReadOnly, DeployTimeConstant): The resource type
 * **version**: string (ReadOnly): The version of the application package.
 
+## Function activate (Microsoft.Batch/batchAccounts/applications/versions@2015-12-01)
+* **Resource**: Microsoft.Batch/batchAccounts/applications/versions
+* **ApiVersion**: 2015-12-01
+* **Input**: [ActivateApplicationPackageParameters](#activateapplicationpackageparameters)
+
 ## Function listKeys (Microsoft.Batch/batchAccounts@2015-12-01)
 * **Resource**: Microsoft.Batch/batchAccounts
 * **ApiVersion**: 2015-12-01
 * **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function regenerateKeys (Microsoft.Batch/batchAccounts@2015-12-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2015-12-01
+* **Input**: [BatchAccountRegenerateKeyParameters](#batchaccountregeneratekeyparameters)
+* **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function syncAutoStorageKeys (Microsoft.Batch/batchAccounts@2015-12-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2015-12-01
+
+## ActivateApplicationPackageParameters
+### Properties
+* **format**: string (Required): The format of the application package binary file.
 
 ## ApplicationPackage
 ### Properties
@@ -75,4 +94,8 @@
 ### Properties
 * **primary**: string: The primary key associated with the account.
 * **secondary**: string: The secondary key associated with the account.
+
+## BatchAccountRegenerateKeyParameters
+### Properties
+* **keyName**: 'Primary' | 'Secondary' (Required): The type of account key to regenerate.
 

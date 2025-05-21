@@ -126,9 +126,100 @@ az sql elastic-pool list-editions -l <location> -o table
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Sql/servers/elasticPools' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Sql/servers/databases/operations@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/operations
+* **ApiVersion**: 2017-10-01-preview
+
+## Function cancel (Microsoft.Sql/servers/elasticPools/operations@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/elasticPools/operations
+* **ApiVersion**: 2017-10-01-preview
+
+## Function export (Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [DatabaseVulnerabilityAssessmentScansExport](#databasevulnerabilityassessmentscansexport)
+
+## Function export (Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [DatabaseVulnerabilityAssessmentScansExport](#databasevulnerabilityassessmentscansexport)
+
+## Function failover (Microsoft.Sql/locations/instanceFailoverGroups@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/locations/instanceFailoverGroups
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [InstanceFailoverGroup](#instancefailovergroup)
+
+## Function forceFailoverAllowDataLoss (Microsoft.Sql/locations/instanceFailoverGroups@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/locations/instanceFailoverGroups
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [InstanceFailoverGroup](#instancefailovergroup)
+
+## Function initiateScan (Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2017-10-01-preview
+
+## Function initiateScan (Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/databases/vulnerabilityAssessments/scans
+* **ApiVersion**: 2017-10-01-preview
+
+## Function move (Microsoft.Sql/servers/databases@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-10-01-preview
+* **Input**: [ResourceMoveDefinition](#resourcemovedefinition)
+
+## Function pause (Microsoft.Sql/servers/databases@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [Database](#database)
+
+## Function resume (Microsoft.Sql/servers/databases@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-10-01-preview
+* **Output**: [Database](#database)
+
+## Function revalidate (Microsoft.Sql/managedInstances/encryptionProtector@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances/encryptionProtector
+* **ApiVersion**: 2017-10-01-preview
+
+## Function tdeCertificates (Microsoft.Sql/servers@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers
+* **ApiVersion**: 2017-10-01-preview
+* **Input**: [TdeCertificate](#tdecertificate)
+
+## Function tdeCertificates (Microsoft.Sql/managedInstances@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/managedInstances
+* **ApiVersion**: 2017-10-01-preview
+* **Input**: [TdeCertificate](#tdecertificate)
+
+## Function upgradeDataWarehouse (Microsoft.Sql/servers/databases@2017-10-01-preview)
+* **Resource**: Microsoft.Sql/servers/databases
+* **ApiVersion**: 2017-10-01-preview
+
 ## BackupShortTermRetentionPolicyProperties
 ### Properties
 * **retentionDays**: int: The backup retention period in days. This is how many days Point-in-Time Restore will be supported.
+
+## Database
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **kind**: string (ReadOnly): Kind of database. This is metadata used for the Azure portal experience.
+* **location**: string (Required): Resource location.
+* **managedBy**: string (ReadOnly): Resource that manages the database.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseProperties](#databaseproperties): Resource properties.
+* **sku**: [Sku](#sku): The database SKU.
+
+The list of SKUs may vary by region and support offer. To determine the SKUs (including the SKU name, tier/edition, family, and capacity) that are available to your subscription in an Azure region, use the `Capabilities_ListByLocation` REST API or one of the following commands:
+
+```azurecli
+az sql db list-editions -l <location> -o table
+````
+
+```powershell
+Get-AzSqlServerServiceObjective -Location <location>
+````
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type.
 
 ## DatabaseProperties
 ### Properties
@@ -195,6 +286,17 @@ Copy, Secondary, and RestoreLongTermRetentionBackup are not supported for DataWa
 ### Properties
 * **baselineResults**: [DatabaseVulnerabilityAssessmentRuleBaselineItem](#databasevulnerabilityassessmentrulebaselineitem)[] (Required): The rule baseline result
 
+## DatabaseVulnerabilityAssessmentScanExportProperties
+### Properties
+* **exportedReportLocation**: string (ReadOnly): Location of the exported report (e.g. https://myStorage.blob.core.windows.net/VaScans/scans/serverName/databaseName/scan_scanId.xlsx).
+
+## DatabaseVulnerabilityAssessmentScansExport
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [DatabaseVulnerabilityAssessmentScanExportProperties](#databasevulnerabilityassessmentscanexportproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
 ## ElasticPoolPerDatabaseSettings
 ### Properties
 * **maxCapacity**: int: The maximum capacity any one database can consume.
@@ -208,6 +310,13 @@ Copy, Secondary, and RestoreLongTermRetentionBackup are not supported for DataWa
 * **perDatabaseSettings**: [ElasticPoolPerDatabaseSettings](#elasticpoolperdatabasesettings): The per database settings for the elastic pool.
 * **state**: 'Creating' | 'Disabled' | 'Ready' | string (ReadOnly): The state of the elastic pool.
 * **zoneRedundant**: bool: Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones.
+
+## InstanceFailoverGroup
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [InstanceFailoverGroupProperties](#instancefailovergroupproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
 
 ## InstanceFailoverGroupProperties
 ### Properties
@@ -255,6 +364,10 @@ Copy, Secondary, and RestoreLongTermRetentionBackup are not supported for DataWa
 ### Properties
 * **lastAvailableBackupDate**: string (ReadOnly): The last available backup date.
 
+## ResourceMoveDefinition
+### Properties
+* **id**: string (Required): The target ID for the resource
+
 ## Sku
 ### Properties
 * **capacity**: int: Capacity of the particular SKU.
@@ -262,6 +375,23 @@ Copy, Secondary, and RestoreLongTermRetentionBackup are not supported for DataWa
 * **name**: string (Required): The name of the SKU, typically, a letter + Number code, e.g. P3.
 * **size**: string: Size of the particular SKU
 * **tier**: string: The tier or edition of the particular SKU, e.g. Basic, Premium.
+
+## TdeCertificate
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [TdeCertificateProperties](#tdecertificateproperties): Resource properties.
+* **type**: string (ReadOnly): Resource type.
+
+## TdeCertificateProperties
+### Properties
+* **certPassword**: string (WriteOnly): The certificate password.
+* **privateBlob**: string (Required, WriteOnly): The base64 encoded certificate private blob.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

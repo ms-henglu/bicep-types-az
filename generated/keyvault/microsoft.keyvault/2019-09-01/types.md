@@ -66,6 +66,10 @@
 * **tags**: [SecretCreateOrUpdateParametersTags](#secretcreateorupdateparameterstags): The tags that will be assigned to the secret.
 * **type**: 'Microsoft.KeyVault/vaults/secrets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function purge (Microsoft.KeyVault/locations/deletedVaults@2019-09-01)
+* **Resource**: Microsoft.KeyVault/locations/deletedVaults
+* **ApiVersion**: 2019-09-01
+
 ## AccessPolicyEntry
 ### Properties
 * **applicationId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Application ID of the client making request on behalf of a principal

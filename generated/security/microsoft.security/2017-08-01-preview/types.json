@@ -3310,5 +3310,11 @@
       "$ref": "#/246"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "dismiss",
+    "resourceType": "Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts",
+    "apiVersion": "2017-08-01-preview"
   }
 ]

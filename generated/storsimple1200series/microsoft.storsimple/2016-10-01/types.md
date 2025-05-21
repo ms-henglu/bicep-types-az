@@ -122,6 +122,60 @@
 * **properties**: [StorageDomainProperties](#storagedomainproperties) (Required): The properties.
 * **type**: 'Microsoft.StorSimple/managers/storageDomains' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backup (Microsoft.StorSimple/managers/devices/fileservers@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/fileservers
+* **ApiVersion**: 2016-10-01
+
+## Function backup (Microsoft.StorSimple/managers/devices/iscsiservers@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/iscsiservers
+* **ApiVersion**: 2016-10-01
+
+## Function clearAlerts (Microsoft.StorSimple/managers@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2016-10-01
+* **Input**: [ClearAlertRequest](#clearalertrequest)
+
+## Function clone (Microsoft.StorSimple/managers/devices/backups/elements@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/backups/elements
+* **ApiVersion**: 2016-10-01
+* **Input**: [CloneRequest](#clonerequest)
+
+## Function deactivate (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+
+## Function download (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+
+## Function failover (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+* **Input**: [FailoverRequest](#failoverrequest)
+
+## Function getEncryptionKey (Microsoft.StorSimple/managers@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers
+* **ApiVersion**: 2016-10-01
+* **Output**: [SymmetricEncryptedSecret](#symmetricencryptedsecret)
+
+## Function install (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+
+## Function scanForUpdates (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+
+## Function sendTestAlertEmail (Microsoft.StorSimple/managers/devices@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices
+* **ApiVersion**: 2016-10-01
+* **Input**: [SendTestAlertEmailRequest](#sendtestalertemailrequest)
+
+## Function update (Microsoft.StorSimple/managers/devices/securitySettings@2016-10-01)
+* **Resource**: Microsoft.StorSimple/managers/devices/securitySettings
+* **ApiVersion**: 2016-10-01
+* **Input**: [SecuritySettings](#securitysettings)
+
 ## AccessControlRecordProperties
 ### Properties
 * **initiatorName**: string (Required): The Iscsi initiator name (IQN)
@@ -147,12 +201,43 @@
 ### Properties
 * **password**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret) (Required): The chap password.
 
+## ClearAlertRequest
+### Properties
+* **alerts**: string[] (Required): List of alert Ids to be cleared
+* **resolutionMessage**: string: Resolution message while clearing the request
+
+## CloneRequest
+### Properties
+* **properties**: [CloneRequestProperties](#clonerequestproperties) (Required): CloneJob Properties are encapsulated in this object.
+
+## CloneRequestProperties
+### Properties
+* **disk**: [IscsiDisk](#iscsidisk): Disk Object
+* **newEndpointName**: string (Required): Name of new endpoint which will created as part of clone job.
+* **share**: [FileShare](#fileshare): Share Object.
+* **targetAccessPointId**: string (Required): Access point Id on which clone job will performed.
+* **targetDeviceId**: string (Required): DeviceId of the device which will act as the Clone target
+
+## FailoverRequest
+### Properties
+* **accesspointIds**: string[]
+* **keepSourceDevice**: bool
+* **skipValidation**: bool
+* **targetDeviceId**: string
+
 ## FileServerProperties
 ### Properties
 * **backupScheduleGroupId**: string (Required): The backup policy id.
 * **description**: string: The description of the file server
 * **domainName**: string (Required): Domain of the file server
 * **storageDomainId**: string (Required): The storage domain id.
+
+## FileShare
+### Properties
+* **id**: string (ReadOnly): The identifier.
+* **name**: string (ReadOnly): The name.
+* **properties**: [FileShareProperties](#fileshareproperties) (Required): The properties.
+* **type**: string (ReadOnly): The type.
 
 ## FileShareProperties
 ### Properties
@@ -164,6 +249,13 @@
 * **provisionedCapacityInBytes**: int (Required): The total provisioned capacity in Bytes
 * **shareStatus**: 'Offline' | 'Online' (Required): The Share Status
 * **usedCapacityInBytes**: int (ReadOnly): The used capacity in Bytes.
+
+## IscsiDisk
+### Properties
+* **id**: string (ReadOnly): The identifier.
+* **name**: string (ReadOnly): The name.
+* **properties**: [IscsiDiskProperties](#iscsidiskproperties) (Required): The properties.
+* **type**: string (ReadOnly): The type.
 
 ## IscsiDiskProperties
 ### Properties
@@ -217,6 +309,21 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## SecuritySettings
+### Properties
+* **id**: string (ReadOnly): The identifier.
+* **name**: string (ReadOnly): The name.
+* **properties**: [SecuritySettingsProperties](#securitysettingsproperties) (Required): Properties of the SecuritySettings.
+* **type**: string (ReadOnly): The type.
+
+## SecuritySettingsProperties
+### Properties
+* **deviceAdminPassword**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret) (Required): Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to log into the  local web UI of the device. Actual password could have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters
+
+## SendTestAlertEmailRequest
+### Properties
+* **emailList**: string[] (Required): List of emails to send the test alerts
+
 ## StorageAccountCredentialProperties
 ### Properties
 * **accessKey**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret): The details of the storage account password
@@ -231,6 +338,12 @@
 * **encryptionKey**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret): The encryption key used to encrypt the data. This is a user secret.
 * **encryptionStatus**: 'Disabled' | 'Enabled' (Required): The encryption status "Enabled | Disabled".
 * **storageAccountCredentialIds**: string[] (Required): The storage account credentials.
+
+## SymmetricEncryptedSecret
+### Properties
+* **encryptionAlgorithm**: 'AES256' | 'None' | 'RSAES_PKCS1_v_1_5' (Required): Algorithm used to encrypt "Value"
+* **value**: string (Required): The value of the secret itself. If the secret is in plaintext or null then EncryptionAlgorithm will be none
+* **valueCertificateThumbprint**: string: Thumbprint cert that was used to encrypt "Value"
 
 ## Time
 ### Properties

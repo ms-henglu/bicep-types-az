@@ -16,15 +16,42 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.MixedReality/remoteRenderingAccounts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.MixedReality/locations@2020-04-06-preview)
+* **Resource**: Microsoft.MixedReality/locations
+* **ApiVersion**: 2020-04-06-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listKeys (Microsoft.MixedReality/remoteRenderingAccounts@2020-04-06-preview)
 * **Resource**: Microsoft.MixedReality/remoteRenderingAccounts
 * **ApiVersion**: 2020-04-06-preview
 * **Output**: [AccountKeys](#accountkeys)
 
+## Function regenerateKeys (Microsoft.MixedReality/remoteRenderingAccounts@2020-04-06-preview)
+* **Resource**: Microsoft.MixedReality/remoteRenderingAccounts
+* **ApiVersion**: 2020-04-06-preview
+* **Input**: [AccountKeyRegenerateRequest](#accountkeyregeneraterequest)
+* **Output**: [AccountKeys](#accountkeys)
+
+## AccountKeyRegenerateRequest
+### Properties
+* **serial**: int: serial of key to be regenerated
+
 ## AccountKeys
 ### Properties
 * **primaryKey**: string {sensitive} (ReadOnly): value of primary key.
 * **secondaryKey**: string {sensitive} (ReadOnly): value of secondary key.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource Name To Verify
+* **type**: string (Required): Fully qualified resource type which includes provider namespace
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: detail message
+* **nameAvailable**: bool (Required): if name Available
+* **reason**: 'AlreadyExists' | 'Invalid' | string: Resource Name To Verify
 
 ## Identity
 ### Properties

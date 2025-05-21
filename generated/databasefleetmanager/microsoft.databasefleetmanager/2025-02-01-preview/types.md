@@ -52,11 +52,53 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DatabaseFleetManager/fleets/tiers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function changeTier (Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases
+* **ApiVersion**: 2025-02-01-preview
+* **Input**: [DatabaseChangeTierProperties](#databasechangetierproperties)
+
+## Function disable (Microsoft.DatabaseFleetManager/fleets/tiers@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/tiers
+* **ApiVersion**: 2025-02-01-preview
+* **Output**: [FleetTier](#fleettier)
+
+## Function registerServer (Microsoft.DatabaseFleetManager/fleets/fleetspaces@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/fleetspaces
+* **ApiVersion**: 2025-02-01-preview
+* **Input**: [RegisterServerProperties](#registerserverproperties)
+
+## Function rename (Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases
+* **ApiVersion**: 2025-02-01-preview
+* **Input**: [DatabaseRenameProperties](#databaserenameproperties)
+
+## Function revert (Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/fleetspaces/databases
+* **ApiVersion**: 2025-02-01-preview
+
+## Function unregister (Microsoft.DatabaseFleetManager/fleets/fleetspaces@2025-02-01-preview)
+* **Resource**: Microsoft.DatabaseFleetManager/fleets/fleetspaces
+* **ApiVersion**: 2025-02-01-preview
+
+## DatabaseChangeTierProperties
+### Properties
+* **targetTierName**: string: A target tier name.
+
 ## DatabaseIdentity
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Client Id of the database identity.
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Principal Id of the database identity.
 * **resourceId**: string: Resource Id of the database identity.
+
+## DatabaseRenameProperties
+### Properties
+* **newName**: string: New database name.
+
+## DestinationTierOverride
+### Properties
+* **resourceName**: string (Required): Resource name.
+* **resourceType**: 'Database' | 'Pool' | string (Required): Resource type.
+* **tierName**: string (Required): Destination tier name.
 
 ## FirewallRuleProperties
 ### Properties
@@ -99,6 +141,14 @@
 * **mainPrincipal**: [MainPrincipal](#mainprincipal): Main Microsoft Entra ID principal that has admin access to all databases in the fleetspace.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'Provisioning' | 'Succeeded' | string (ReadOnly): Fleetspace state.
 
+## FleetTier
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [FleetTierProperties](#fleettierproperties): A Fleet tier properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## FleetTierProperties
 ### Properties
 * **capacity**: int: Capacity of provisioned resources in the tier, in units matching the specified service tier, for example vCore for GeneralPurpose.
@@ -128,6 +178,14 @@
 * **objectId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Object Id of the main principal.
 * **principalType**: 'Application' | 'User' | string: Principal type of the main principal.
 * **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Tenant Id of the main principal.
+
+## RegisterServerProperties
+### Properties
+* **destinationTierOverrides**: [DestinationTierOverride](#destinationtieroverride)[]: Destination tier overrides.
+* **sourceResourceGroupName**: string: Source resource group name.
+* **sourceServerName**: string: Source SQL Server name.
+* **sourceSubscriptionId**: string: Source subscription id.
+* **tierName**: string: Destination tier name.
 
 ## SystemData
 ### Properties

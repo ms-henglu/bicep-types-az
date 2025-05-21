@@ -183,6 +183,25 @@
 * **properties**: [SubnetPropertiesFormat](#subnetpropertiesformat)
 * **type**: 'Microsoft.Network/virtualNetworks/subnets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function generatevpnclientpackage (Microsoft.Network/virtualNetworkGateways@2016-03-30)
+* **Resource**: Microsoft.Network/virtualNetworkGateways
+* **ApiVersion**: 2016-03-30
+* **Input**: [VpnClientParameters](#vpnclientparameters)
+
+## Function reset (Microsoft.Network/virtualNetworkGateways@2016-03-30)
+* **Resource**: Microsoft.Network/virtualNetworkGateways
+* **ApiVersion**: 2016-03-30
+* **Input**: [VirtualNetworkGateway](#virtualnetworkgateway)
+* **Output**: [VirtualNetworkGateway](#virtualnetworkgateway)
+
+## Function start (Microsoft.Network/applicationGateways@2016-03-30)
+* **Resource**: Microsoft.Network/applicationGateways
+* **ApiVersion**: 2016-03-30
+
+## Function stop (Microsoft.Network/applicationGateways@2016-03-30)
+* **Resource**: Microsoft.Network/applicationGateways
+* **ApiVersion**: 2016-03-30
+
 ## AddressSpace
 ### Properties
 * **addressPrefixes**: string[]: Gets or sets List of address blocks reserved for this virtual network in CIDR notation
@@ -946,6 +965,10 @@
 * **vpnClientAddressPool**: [AddressSpace](#addressspace): Gets or sets the reference of the Address space resource which represents Address space for P2S VpnClient.
 * **vpnClientRevokedCertificates**: [VpnClientRevokedCertificate](#vpnclientrevokedcertificate)[]: VpnClientRevokedCertificate for Virtual network gateway.
 * **vpnClientRootCertificates**: [VpnClientRootCertificate](#vpnclientrootcertificate)[]: VpnClientRootCertificate for Virtual network gateway.
+
+## VpnClientParameters
+### Properties
+* **ProcessorArchitecture**: 'Amd64' | 'X86' | string: VPN client Processor Architecture -Amd64/X86
 
 ## VpnClientRevokedCertificate
 ### Properties

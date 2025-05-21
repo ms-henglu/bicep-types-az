@@ -24,10 +24,81 @@
 * **tags**: [ApplicationTags](#applicationtags): The tags for the application.
 * **type**: 'Microsoft.HDInsight/clusters/applications' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function autoscale (Microsoft.HDInsight/clusters/roles@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters/roles
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [AutoscaleConfigurationUpdateParameter](#autoscaleconfigurationupdateparameter)
+
+## Function checkNameAvailability (Microsoft.HDInsight/locations@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/locations
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [NameAvailabilityCheckRequestParameters](#nameavailabilitycheckrequestparameters)
+* **Output**: [NameAvailabilityCheckResult](#nameavailabilitycheckresult)
+
+## Function configurations (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Output**: [ClusterConfigurations](#clusterconfigurations)
+
+## Function executeScriptActions (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [ExecuteScriptActionParameters](#executescriptactionparameters)
+
+## Function getGatewaySettings (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Output**: [GatewaySettings](#gatewaysettings)
+
 ## Function listHosts (Microsoft.HDInsight/clusters@2015-03-01-preview)
 * **Resource**: Microsoft.HDInsight/clusters
 * **ApiVersion**: 2015-03-01-preview
 * **Output**: [HostInfo](#hostinfo)[]
+
+## Function promote (Microsoft.HDInsight/clusters/scriptExecutionHistory@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters/scriptExecutionHistory
+* **ApiVersion**: 2015-03-01-preview
+
+## Function resize (Microsoft.HDInsight/clusters/roles@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters/roles
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [ClusterResizeParameters](#clusterresizeparameters)
+
+## Function restartHosts (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: string[]
+
+## Function rotatediskencryptionkey (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [ClusterDiskEncryptionParameters](#clusterdiskencryptionparameters)
+
+## Function updateClusterIdentityCertificate (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [UpdateClusterIdentityCertificateParameters](#updateclusteridentitycertificateparameters)
+
+## Function updateGatewaySettings (Microsoft.HDInsight/clusters@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/clusters
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [UpdateGatewaySettingsParameters](#updategatewaysettingsparameters)
+
+## Function validateCreateRequest (Microsoft.HDInsight/locations@2015-03-01-preview)
+* **Resource**: Microsoft.HDInsight/locations
+* **ApiVersion**: 2015-03-01-preview
+* **Input**: [ClusterCreateRequestValidationParameters](#clustercreaterequestvalidationparameters)
+* **Output**: [ClusterCreateValidationResult](#clustercreatevalidationresult)
+
+## AaddsResourceDetails
+### Properties
+* **domainName**: string: The Azure active directory domain service name.
+* **initialSyncComplete**: bool: This indicates whether initial sync complete or not.
+* **ldapsEnabled**: bool: This indicates whether enable ldaps or not.
+* **ldapsPublicCertificateInBase64**: string: The base 64 format string of public ldap certificate.
+* **resourceId**: string: The resource id of azure active directory domain service.
+* **subnetId**: string: The subnet resource id.
+* **tenantId**: string: The tenant id of azure active directory domain service .
 
 ## ApplicationGetEndpoint
 ### Properties
@@ -75,6 +146,10 @@
 * **maxInstanceCount**: int: The maximum instance count of the cluster
 * **minInstanceCount**: int: The minimum instance count of the cluster
 
+## AutoscaleConfigurationUpdateParameter
+### Properties
+* **autoscale**: [Autoscale](#autoscale): The autoscale configuration.
+
 ## AutoscaleRecurrence
 ### Properties
 * **schedule**: [AutoscaleSchedule](#autoscaleschedule)[]: Array of schedule-based autoscale rules
@@ -96,10 +171,45 @@
 * **groupId**: string: The AAD security group id.
 * **groupName**: string: The AAD security group name.
 
+## ClusterConfiguration
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ClusterConfigurations
+### Properties
+* **configurations**: [ClusterConfigurations](#clusterconfigurations): The configuration object for the specified configuration for the specified cluster.
+
+## ClusterConfigurations
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ClusterConfiguration](#clusterconfiguration)
+
 ## ClusterCreateParametersExtendedTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ClusterCreateParametersExtendedTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ClusterCreateProperties
+### Properties
+* **clusterDefinition**: [ClusterDefinition](#clusterdefinition): The cluster definition.
+* **clusterVersion**: string: The version of the cluster.
+* **computeIsolationProperties**: [ComputeIsolationProperties](#computeisolationproperties): The compute isolation properties.
+* **computeProfile**: [ComputeProfile](#computeprofile): The compute profile.
+* **diskEncryptionProperties**: [DiskEncryptionProperties](#diskencryptionproperties): The disk encryption properties.
+* **encryptionInTransitProperties**: [EncryptionInTransitProperties](#encryptionintransitproperties): The encryption-in-transit properties.
+* **kafkaRestProperties**: [KafkaRestProperties](#kafkarestproperties): The cluster kafka rest proxy configuration.
+* **minSupportedTlsVersion**: string: The minimal supported tls version.
+* **networkProperties**: [NetworkProperties](#networkproperties): The network properties.
+* **osType**: 'Linux' | 'Windows': The type of operating system.
+* **securityProfile**: [SecurityProfile](#securityprofile): The security profile.
+* **storageProfile**: [StorageProfile](#storageprofile): The storage profile.
+* **tier**: 'Premium' | 'Standard': The cluster tier.
 
 ## ClusterCreatePropertiesOrClusterGetProperties
 ### Properties
@@ -126,6 +236,24 @@
 * **storageProfile**: [StorageProfile](#storageprofile): The storage profile.
 * **tier**: 'Premium' | 'Standard': The cluster tier.
 
+## ClusterCreateRequestValidationParameters
+### Properties
+* **fetchAaddsResource**: bool: This indicates whether fetch Aadds resource or not.
+* **identity**: [ClusterIdentity](#clusteridentity): The identity of the cluster, if configured.
+* **location**: string: The location of the cluster.
+* **name**: string: The cluster name.
+* **properties**: [ClusterCreateProperties](#clustercreateproperties): The cluster create parameters.
+* **tags**: [ClusterCreateParametersExtendedTags](#clustercreateparametersextendedtags): The resource tags.
+* **tenantId**: string: The tenant id.
+* **type**: string: The resource type.
+
+## ClusterCreateValidationResult
+### Properties
+* **aaddsResourcesDetails**: [AaddsResourceDetails](#aaddsresourcedetails)[]: The Azure active directory domain service resource details.
+* **estimatedCreationDuration**: string: The estimated creation duration.
+* **validationErrors**: [ValidationErrorInfo](#validationerrorinfo)[]: The validation errors.
+* **validationWarnings**: [ValidationErrorInfo](#validationerrorinfo)[]: The validation warnings.
+
 ## ClusterDefinition
 ### Properties
 * **blueprint**: string: The link to the blueprint.
@@ -138,6 +266,12 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ClusterDiskEncryptionParameters
+### Properties
+* **keyName**: string: Key name that is used for enabling disk encryption.
+* **keyVersion**: string: Specific key version that is used for enabling disk encryption.
+* **vaultUri**: string: Base key vault URI where the customers key is located eg. https://myvault.vault.azure.net
+
 ## ClusterIdentity
 ### Properties
 * **principalId**: string (ReadOnly): The principal id of cluster identity. This property will only be provided for a system assigned identity.
@@ -149,6 +283,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [ComponentsC51Ht8SchemasClusteridentityPropertiesUserassignedidentitiesAdditionalproperties](#componentsc51ht8schemasclusteridentitypropertiesuserassignedidentitiesadditionalproperties)
+
+## ClusterResizeParameters
+### Properties
+* **targetInstanceCount**: int: The target instance count for the operation.
 
 ## ComponentsC51Ht8SchemasClusteridentityPropertiesUserassignedidentitiesAdditionalproperties
 ### Properties
@@ -202,6 +340,17 @@
 * **excludedServicesConfigId**: string: The config id of excluded services.
 * **excludedServicesList**: string: The list of excluded services.
 
+## ExecuteScriptActionParameters
+### Properties
+* **persistOnSuccess**: bool (Required): Gets or sets if the scripts needs to be persisted.
+* **scriptActions**: [RuntimeScriptAction](#runtimescriptaction)[]: The list of run time script actions.
+
+## GatewaySettings
+### Properties
+* **restAuthCredential.isEnabled**: string (ReadOnly): Indicates whether or not the gateway settings based authorization is enabled.
+* **restAuthCredential.password**: string (ReadOnly): The gateway settings user password.
+* **restAuthCredential.username**: string (ReadOnly): The gateway settings user name.
+
 ## HardwareProfile
 ### Properties
 * **vmSize**: string: The size of the VM
@@ -227,6 +376,17 @@
 * **password**: string: The password.
 * **sshProfile**: [SshProfile](#sshprofile): The SSH profile.
 * **username**: string: The username.
+
+## NameAvailabilityCheckRequestParameters
+### Properties
+* **name**: string: The resource name.
+* **type**: string: The resource type
+
+## NameAvailabilityCheckResult
+### Properties
+* **message**: string (ReadOnly): The related message.
+* **nameAvailable**: bool: This indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason of the result.
 
 ## NetworkProperties
 ### Properties
@@ -304,6 +464,25 @@
 ## StorageProfile
 ### Properties
 * **storageaccounts**: [StorageAccount](#storageaccount)[]: The list of storage accounts in the cluster.
+
+## UpdateClusterIdentityCertificateParameters
+### Properties
+* **applicationId**: string: The application id.
+* **certificate**: string: The certificate in base64 encoded format.
+* **certificatePassword**: string: The password of the certificate.
+
+## UpdateGatewaySettingsParameters
+### Properties
+* **restAuthCredential.isEnabled**: bool: Indicates whether or not the gateway settings based authorization is enabled.
+* **restAuthCredential.password**: string: The gateway settings user password.
+* **restAuthCredential.username**: string: The gateway settings user name.
+
+## ValidationErrorInfo
+### Properties
+* **code**: string: The error code.
+* **errorResource**: string: The error resource.
+* **message**: string: The error message.
+* **messageArguments**: string[]: The message arguments
 
 ## VirtualNetworkProfile
 ### Properties

@@ -166,6 +166,46 @@
 * **properties**: [TopicTypeProperties](#topictypeproperties) (ReadOnly): Properties of the topic type info
 * **type**: 'Microsoft.EventGrid/topicTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.EventGrid/partnerTopics@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function deactivate (Microsoft.EventGrid/partnerTopics@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/systemTopics/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/systemTopics/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2020-10-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2020-10-15-preview)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2020-10-15-preview
@@ -179,6 +219,24 @@
 ## Function listKeys (Microsoft.EventGrid/topics@2020-10-15-preview)
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2020-10-15-preview
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2020-10-15-preview
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/partnerNamespaces@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerNamespaces
+* **ApiVersion**: 2020-10-15-preview
+* **Input**: [PartnerNamespaceRegenerateKeyRequest](#partnernamespaceregeneratekeyrequest)
+* **Output**: [PartnerNamespaceSharedAccessKeys](#partnernamespacesharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2020-10-15-preview)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2020-10-15-preview
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
 
 ## AdvancedFilter
@@ -311,6 +369,10 @@
 Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
 * **identity**: [EventSubscriptionIdentity](#eventsubscriptionidentity): The identity to use when dead-lettering events.
 
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
 ## DeliveryAttributeMapping
 * **Discriminator**: type
 
@@ -345,6 +407,10 @@ Uses Azure Event Grid's identity to acquire the authentication tokens being used
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the domain.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" />
+
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
 
 ## DomainSharedAccessKeys
 ### Properties
@@ -448,6 +514,10 @@ Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
 
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
 ## EventSubscriptionIdentity
 ### Properties
 * **type**: 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identity.
@@ -541,6 +611,10 @@ This property is currently not used and reserved for future usage.
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/partnerRegistrations/{partnerRegistrationName}.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the partner namespace.
 
+## PartnerNamespaceRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate (key1 or key2).
+
 ## PartnerNamespaceSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the partner namespace.
@@ -569,6 +643,17 @@ length cannot exceed 16 digits including country code. Examples of valid phone n
 * **setupUri**: string: URI of the partner website that can be used by Azure customers to setup Event Grid
 integration on an event source.
 * **visibilityState**: 'GenerallyAvailable' | 'Hidden' | 'PublicPreview' | string: Visibility state of the partner registration.
+
+## PartnerTopic
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **identity**: [IdentityInfo](#identityinfo): Identity information for the resource.
+* **location**: string (Required): Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerTopicProperties](#partnertopicproperties): Properties of the partner topic.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to Partner Topic resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
 
 ## PartnerTopicProperties
 ### Properties
@@ -661,6 +746,10 @@ This will be helpful to remove any ambiguity of the origin of creation of the pa
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" />
 
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
+
 ## TopicSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the topic.
@@ -676,6 +765,11 @@ You can further restrict to specific IPs by configuring <seealso cref="P:Microso
 * **sourceResourceFormat**: string: Source resource format.
 * **supportedLocations**: string[]: List of locations supported by this topic type.
 * **supportedScopesForSource**: ('AzureSubscription' | 'Resource' | 'ResourceGroup' | string)[]: Supported source scopes.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

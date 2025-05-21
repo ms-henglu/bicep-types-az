@@ -1762,5 +1762,11 @@
       "$ref": "#/108"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "refreshPermissions",
+    "resourceType": "Microsoft.Solutions/applications",
+    "apiVersion": "2019-07-01"
   }
 ]

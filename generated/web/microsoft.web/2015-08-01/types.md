@@ -743,6 +743,40 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Web/sourcecontrols' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function applySlotConfig (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: any
+
+## Function applySlotConfig (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: any
+
+## Function backup (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function backup (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [BackupItem](#backupitem)
+
+## Function iscloneable (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: [SiteCloneability](#sitecloneability)
+
+## Function iscloneable (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: [SiteCloneability](#sitecloneability)
+
 ## Function list (Microsoft.Web/sites/slots/config@2015-08-01)
 * **Resource**: Microsoft.Web/sites/slots/config
 * **ApiVersion**: 2015-08-01
@@ -764,6 +798,146 @@
 * **ApiVersion**: 2015-08-01
 * **Input**: [BackupRequest](#backuprequest)
 * **Output**: [BackupItem](#backupitem)
+
+## Function newpassword (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function newpassword (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function publishxml (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmPublishingProfileOptions](#csmpublishingprofileoptions)
+
+## Function publishxml (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmPublishingProfileOptions](#csmpublishingprofileoptions)
+
+## Function reboot (Microsoft.Web/hostingEnvironments@2015-08-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2015-08-01
+
+## Function reboot (Microsoft.Web/serverfarms/workers@2015-08-01)
+* **Resource**: Microsoft.Web/serverfarms/workers
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function recover (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSiteRecoveryEntity](#csmsiterecoveryentity)
+
+## Function recover (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSiteRecoveryEntity](#csmsiterecoveryentity)
+
+## Function resetSlotConfig (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function resetSlotConfig (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function restart (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function restart (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function restartSites (Microsoft.Web/serverfarms@2015-08-01)
+* **Resource**: Microsoft.Web/serverfarms
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function restore (Microsoft.Web/sites/slots/backups@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots/backups
+* **ApiVersion**: 2015-08-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreResponse](#restoreresponse)
+
+## Function restore (Microsoft.Web/sites/backups@2015-08-01)
+* **Resource**: Microsoft.Web/sites/backups
+* **ApiVersion**: 2015-08-01
+* **Input**: [RestoreRequest](#restorerequest)
+* **Output**: [RestoreResponse](#restoreresponse)
+
+## Function resume (Microsoft.Web/hostingEnvironments@2015-08-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2015-08-01
+* **Output**: [SiteCollection](#sitecollection)
+
+## Function slotsdiffs (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
+
+## Function slotsdiffs (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: [SlotDifferenceCollection](#slotdifferencecollection)
+
+## Function slotsswap (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: any
+
+## Function slotsswap (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Input**: [CsmSlotEntity](#csmslotentity)
+* **Output**: any
+
+## Function start (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function start (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function stop (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function stop (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function suspend (Microsoft.Web/hostingEnvironments@2015-08-01)
+* **Resource**: Microsoft.Web/hostingEnvironments
+* **ApiVersion**: 2015-08-01
+* **Output**: [SiteCollection](#sitecollection)
+
+## Function sync (Microsoft.Web/sites@2015-08-01)
+* **Resource**: Microsoft.Web/sites
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function sync (Microsoft.Web/sites/slots@2015-08-01)
+* **Resource**: Microsoft.Web/sites/slots
+* **ApiVersion**: 2015-08-01
+* **Output**: any
 
 ## ApiDefinitionInfo
 ### Properties
@@ -953,6 +1127,25 @@
 ### Properties
 * **allowedOrigins**: string[]: Gets or sets the list of origins that should be allowed to make cross-origin
             calls (for example: http://example.com:12345). Use "*" to allow all.
+
+## CsmPublishingProfileOptions
+### Properties
+* **format**: string: Name of the format. Valid values are: 
+            FileZilla3
+            WebDeploy -- default
+            Ftp
+
+## CsmSiteRecoveryEntity
+### Properties
+* **recoverConfig**: bool: If true, then the website's configuration will be reverted to its state at SnapshotTime
+* **siteName**: string: [Optional] Destination web app name into which web app should be recovered. This is case when new web app should be created instead.
+* **slotName**: string: [Optional] Destination web app slot name into which web app should be recovered
+* **snapshotTime**: string: Point in time in which the site recover should be attempted.
+
+## CsmSlotEntity
+### Properties
+* **preserveVnet**: bool: Get or set the flag indicating it should preserve VNet to the slot during swap
+* **targetSlot**: string: Set the destination deployment slot during swap operation
 
 ## CsrProperties
 ### Properties
@@ -1461,6 +1654,49 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RestoreRequest
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [RestoreRequestProperties](#restorerequestproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## RestoreRequestProperties
+### Properties
+* **adjustConnectionStrings**: bool: Gets or sets a flag showing if SiteConfig.ConnectionStrings should be set in new site
+* **blobName**: string: Name of a blob which contains the backup
+* **databases**: [DatabaseBackupSetting](#databasebackupsetting)[]: Collection of databases which should be restored. This list has to match the list of databases included in the backup.
+* **hostingEnvironment**: string: App Service Environment name, if needed (only when restoring a site to an App Service Environment)
+* **ignoreConflictingHostNames**: bool: Changes a logic when restoring a site with custom domains. If "true", custom domains are removed automatically. If "false", custom domains are added to 
+            the site object when it is being restored, but that might fail due to conflicts during the operation.
+* **operationType**: 'Clone' | 'Default' | 'Relocation' (Required): Operation type
+* **overwrite**: bool: True if the restore operation can overwrite target site. "True" needed if trying to restore over an existing site.
+* **siteName**: string: Name of a site (Web App)
+* **storageAccountUrl**: string: SAS URL to the container
+
 ## RestoreRequestPropertiesOrBackupItemProperties
 ### Properties
 * **adjustConnectionStrings**: bool (WriteOnly): Gets or sets a flag showing if SiteConfig.ConnectionStrings should be set in new site
@@ -1485,6 +1721,20 @@
 * **storageAccountUrl**: string: SAS URL to the container
 * **websiteSizeInBytes**: int (ReadOnly): Size of the original web app which has been backed up
 
+## RestoreResponse
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [RestoreResponseProperties](#restoreresponseproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## RestoreResponseProperties
+### Properties
+* **operationId**: string: When server starts the restore process, it will return an OperationId identifying that particular restore operation
+
 ## ServerFarmWithRichSkuProperties
 ### Properties
 * **adminSiteName**: string: App Service Plan administration site
@@ -1500,6 +1750,34 @@
 * **status**: 'Pending' | 'Ready' (Required, ReadOnly): App Service Plan Status
 * **subscription**: string (ReadOnly): App Service Plan Subscription
 * **workerTierName**: string: Target worker tier assigned to the App Service Plan
+
+## Site
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [SiteProperties](#siteproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## SiteCloneability
+### Properties
+* **blockingCharacteristics**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of blocking application characteristics
+* **blockingFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on web app that prevent cloning
+* **result**: 'Cloneable' | 'NotCloneable' | 'PartiallyCloneable' (Required): Name of web app
+* **unsupportedFeatures**: [SiteCloneabilityCriterion](#sitecloneabilitycriterion)[]: List of features enabled on web app that are non-blocking but cannot be cloned. The web app can still be cloned
+            but the features in this list will not be set up on cloned web app.
+
+## SiteCloneabilityCriterion
+### Properties
+* **description**: string: Description of criterion
+* **name**: string: Name of criterion
+
+## SiteCollection
+### Properties
+* **nextLink**: string: Link to next page of resources
+* **value**: [Site](#site)[]: Collection of resources
 
 ## SiteConfig
 ### Properties
@@ -1627,6 +1905,31 @@
 ### Properties
 * **appSettingNames**: string[]: List of application settings names
 * **connectionStringNames**: string[]: List of connection string names
+
+## SlotDifference
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [SlotDifferenceProperties](#slotdifferenceproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## SlotDifferenceCollection
+### Properties
+* **nextLink**: string: Link to next page of resources
+* **value**: [SlotDifference](#slotdifference)[]: Collection of resources
+
+## SlotDifferenceProperties
+### Properties
+* **description**: string: Description of the difference
+* **diffRule**: string: Rule that describes how to process the difference in settings during web app slot swap.
+* **settingName**: string: Name of the setting
+* **settingType**: string: The type of the settings: General, AppSetting or ConnectionString
+* **type**: string: Indicates the type of the difference: Information, Warning or Error.
+* **valueInCurrentSlot**: string: Value of the setting in the current web app slot
+* **valueInTargetSlot**: string: Value of the setting in the target web app slot
 
 ## SlowRequestsBasedTrigger
 ### Properties

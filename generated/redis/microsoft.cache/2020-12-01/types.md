@@ -49,10 +49,43 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **type**: 'Microsoft.Cache/redis/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function export (Microsoft.Cache/redis@2020-12-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2020-12-01
+* **Input**: [ExportRDBParameters](#exportrdbparameters)
+
+## Function forceReboot (Microsoft.Cache/redis@2020-12-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2020-12-01
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+* **Output**: [RedisForceRebootResponse](#redisforcerebootresponse)
+
+## Function import (Microsoft.Cache/redis@2020-12-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2020-12-01
+* **Input**: [ImportRDBParameters](#importrdbparameters)
+
 ## Function listKeys (Microsoft.Cache/redis@2020-12-01)
 * **Resource**: Microsoft.Cache/redis
 * **ApiVersion**: 2020-12-01
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## Function regenerateKey (Microsoft.Cache/redis@2020-12-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2020-12-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## ExportRDBParameters
+### Properties
+* **container**: string (Required): Container name to export to.
+* **format**: string: File format.
+* **prefix**: string (Required): Prefix to use for exported files.
+
+## ImportRDBParameters
+### Properties
+* **files**: string[] (Required): files to import.
+* **format**: string: File format.
 
 ## PrivateEndpoint
 ### Properties
@@ -139,6 +172,10 @@
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
 
+## RedisForceRebootResponse
+### Properties
+* **message**: string (ReadOnly): Status message
+
 ## RedisInstanceDetails
 ### Properties
 * **isMaster**: bool (ReadOnly): Specifies whether the instance is a primary node.
@@ -158,6 +195,16 @@
 * **linkedRedisCacheLocation**: string (Required): Location of the linked redis cache.
 * **provisioningState**: string (ReadOnly): Terminal state of the link between primary and secondary redis cache.
 * **serverRole**: 'Primary' | 'Secondary' (Required): Role of the linked server.
+
+## RedisRebootParameters
+### Properties
+* **ports**: int[]: A list of redis instances to reboot, specified by per-instance SSL ports or non-SSL ports.
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' | string: Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shard to be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The Redis access key to regenerate.
 
 ## ScheduleEntries
 ### Properties

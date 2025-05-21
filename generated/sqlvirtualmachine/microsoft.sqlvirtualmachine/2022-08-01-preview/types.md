@@ -35,6 +35,20 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function redeploy (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2022-08-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2022-08-01-preview
+
+## Function startAssessment (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2022-08-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2022-08-01-preview
+
+## Function troubleshoot (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2022-08-01-preview)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2022-08-01-preview
+* **Input**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
+* **Output**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
+
 ## AADAuthenticationSettings
 ### Properties
 * **clientId**: string: The client Id of the Managed Identity to query Microsoft Graph API. An empty string must be used for the system assigned Managed Identity
@@ -214,6 +228,14 @@
 * **virtualMachineResourceId**: string: ARM Resource id of underlying virtual machine created from SQL marketplace image.
 * **wsfcDomainCredentials**: [WsfcDomainCredentials](#wsfcdomaincredentials): Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
 * **wsfcStaticIp**: string: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+
+## SqlVmTroubleshooting
+### Properties
+* **endTimeUtc**: string: End time in UTC timezone.
+* **properties**: [TroubleshootingAdditionalProperties](#troubleshootingadditionalproperties): Troubleshooting properties
+* **startTimeUtc**: string: Start time in UTC timezone.
+* **troubleshootingScenario**: 'UnhealthyReplica' | string: SQL VM troubleshooting scenario.
+* **virtualMachineResourceId**: string (ReadOnly): Virtual machine resource id for response.
 
 ## SqlWorkloadTypeUpdateSettings
 ### Properties

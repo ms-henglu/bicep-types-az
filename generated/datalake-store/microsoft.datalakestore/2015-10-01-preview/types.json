@@ -470,5 +470,11 @@
       "$ref": "#/8"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "enableKeyVault",
+    "resourceType": "Microsoft.DataLakeStore/accounts",
+    "apiVersion": "2015-10-01-preview"
   }
 ]

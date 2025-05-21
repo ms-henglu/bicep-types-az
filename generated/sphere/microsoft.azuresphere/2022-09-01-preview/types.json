@@ -1689,11 +1689,36 @@
   },
   {
     "$type": "ObjectType",
+    "name": "CountDeviceResponse",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/157"
+        },
+        "flags": 1,
+        "description": "Number of children resources in parent resource."
+      }
+    }
+  },
+  {
+    "$type": "IntegerType"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "countDevices",
+    "resourceType": "Microsoft.AzureSphere/catalogs",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/156"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "DeploymentListResult",
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/158"
+          "$ref": "#/161"
         },
         "flags": 1,
         "description": "The Deployment items on this page"
@@ -1751,7 +1776,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/157"
+      "$ref": "#/160"
     }
   },
   {
@@ -1760,7 +1785,7 @@
     "resourceType": "Microsoft.AzureSphere/catalogs",
     "apiVersion": "2022-09-01-preview",
     "output": {
-      "$ref": "#/156"
+      "$ref": "#/159"
     }
   },
   {
@@ -1782,7 +1807,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/163"
+          "$ref": "#/166"
         },
         "flags": 1,
         "description": "The DeviceGroup items on this page"
@@ -1840,7 +1865,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/162"
+      "$ref": "#/165"
     }
   },
   {
@@ -1849,10 +1874,10 @@
     "resourceType": "Microsoft.AzureSphere/catalogs",
     "apiVersion": "2022-09-01-preview",
     "output": {
-      "$ref": "#/161"
+      "$ref": "#/164"
     },
     "input": {
-      "$ref": "#/160"
+      "$ref": "#/163"
     }
   },
   {
@@ -1861,7 +1886,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/168"
+          "$ref": "#/170"
         },
         "flags": 1,
         "description": "The DeviceInsight items on this page"
@@ -1930,7 +1955,7 @@
       },
       "eventCount": {
         "type": {
-          "$ref": "#/167"
+          "$ref": "#/157"
         },
         "flags": 1,
         "description": "Event count"
@@ -1938,12 +1963,9 @@
     }
   },
   {
-    "$type": "IntegerType"
-  },
-  {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/166"
+      "$ref": "#/169"
     }
   },
   {
@@ -1952,7 +1974,7 @@
     "resourceType": "Microsoft.AzureSphere/catalogs",
     "apiVersion": "2022-09-01-preview",
     "output": {
-      "$ref": "#/165"
+      "$ref": "#/168"
     }
   },
   {
@@ -1961,7 +1983,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/172"
+          "$ref": "#/174"
         },
         "flags": 1,
         "description": "The Device items on this page"
@@ -2019,7 +2041,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/171"
+      "$ref": "#/173"
     }
   },
   {
@@ -2028,7 +2050,323 @@
     "resourceType": "Microsoft.AzureSphere/catalogs",
     "apiVersion": "2022-09-01-preview",
     "output": {
-      "$ref": "#/170"
+      "$ref": "#/172"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CertificateChainResponse",
+    "properties": {
+      "certificateChain": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate chain."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "retrieveCertChain",
+    "resourceType": "Microsoft.AzureSphere/catalogs/certificates",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/176"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ProofOfPossessionNonceRequest",
+    "properties": {
+      "proofOfPossessionNonce": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The proof of possession nonce"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ProofOfPossessionNonceResponse",
+    "properties": {
+      "certificate": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate as a UTF-8 encoded base 64 string."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/184"
+        },
+        "flags": 2,
+        "description": "The certificate status."
+      },
+      "subject": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate subject."
+      },
+      "thumbprint": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate thumbprint."
+      },
+      "expiryUtc": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate expiry date."
+      },
+      "notBeforeUtc": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The certificate not before date."
+      },
+      "provisioningState": {
+        "type": {
+          "$ref": "#/192"
+        },
+        "flags": 2,
+        "description": "The status of the last operation."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Active"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Inactive"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Expired"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Revoked"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/180"
+      },
+      {
+        "$ref": "#/181"
+      },
+      {
+        "$ref": "#/182"
+      },
+      {
+        "$ref": "#/183"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Canceled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Provisioning"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Updating"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleting"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Accepted"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/185"
+      },
+      {
+        "$ref": "#/186"
+      },
+      {
+        "$ref": "#/187"
+      },
+      {
+        "$ref": "#/188"
+      },
+      {
+        "$ref": "#/189"
+      },
+      {
+        "$ref": "#/190"
+      },
+      {
+        "$ref": "#/191"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "retrieveProofOfPossessionNonce",
+    "resourceType": "Microsoft.AzureSphere/catalogs/certificates",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/179"
+    },
+    "input": {
+      "$ref": "#/178"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "countDevices",
+    "resourceType": "Microsoft.AzureSphere/catalogs/products",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/156"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "generateDefaultDeviceGroups",
+    "resourceType": "Microsoft.AzureSphere/catalogs/products",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/164"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClaimDevicesRequest",
+    "properties": {
+      "deviceIdentifiers": {
+        "type": {
+          "$ref": "#/197"
+        },
+        "flags": 1,
+        "description": "Device identifiers of the devices to be claimed."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "claimDevices",
+    "resourceType": "Microsoft.AzureSphere/catalogs/products/deviceGroups",
+    "apiVersion": "2022-09-01-preview",
+    "input": {
+      "$ref": "#/196"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "countDevices",
+    "resourceType": "Microsoft.AzureSphere/catalogs/products/deviceGroups",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/156"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GenerateCapabilityImageRequest",
+    "properties": {
+      "capabilities": {
+        "type": {
+          "$ref": "#/204"
+        },
+        "flags": 1,
+        "description": "List of capabilities to create"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "ApplicationDevelopment"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "FieldServicing"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/201"
+      },
+      {
+        "$ref": "#/202"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/203"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SignedCapabilityImageResponse",
+    "properties": {
+      "image": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The signed device capability image as a UTF-8 encoded base 64 string."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "generateCapabilityImage",
+    "resourceType": "Microsoft.AzureSphere/catalogs/products/deviceGroups/devices",
+    "apiVersion": "2022-09-01-preview",
+    "output": {
+      "$ref": "#/205"
+    },
+    "input": {
+      "$ref": "#/200"
     }
   }
 ]
