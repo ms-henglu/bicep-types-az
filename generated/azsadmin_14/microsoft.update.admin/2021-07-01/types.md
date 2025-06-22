@@ -44,6 +44,22 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): List of key-value pairs.
 * **type**: 'Microsoft.Update.Admin/updateLocations/updates/updateRuns' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function apply (Microsoft.Update.Admin/updateLocations/updates@2021-07-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates
+* **ApiVersion**: 2021-07-01
+
+## Function checkHealth (Microsoft.Update.Admin/updateLocations/updates@2021-07-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates
+* **ApiVersion**: 2021-07-01
+
+## Function prepare (Microsoft.Update.Admin/updateLocations/updates@2021-07-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates
+* **ApiVersion**: 2021-07-01
+
+## Function rerun (Microsoft.Update.Admin/updateLocations/updates/updateRuns@2021-07-01)
+* **Resource**: Microsoft.Update.Admin/updateLocations/updates/updateRuns
+* **ApiVersion**: 2021-07-01
+
 ## PackageVersionInfo
 ### Properties
 * **lastUpdated**: string: Date of last update.

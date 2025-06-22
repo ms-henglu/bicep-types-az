@@ -1898,5 +1898,401 @@
       "$ref": "#/155"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SymmetricEncryptedSecret",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The value of the secret itself. If the secret is in plaintext or null then EncryptionAlgorithm will be none"
+      },
+      "valueCertificateThumbprint": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Thumbprint cert that was used to encrypt \"Value\""
+      },
+      "encryptionAlgorithm": {
+        "type": {
+          "$ref": "#/166"
+        },
+        "flags": 1,
+        "description": "Algorithm used to encrypt \"Value\""
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "None"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AES256"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "RSAES_PKCS1_v_1_5"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/163"
+      },
+      {
+        "$ref": "#/164"
+      },
+      {
+        "$ref": "#/165"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getEncryptionKey",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2016-10-01",
+    "output": {
+      "$ref": "#/162"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClearAlertRequest",
+    "properties": {
+      "resolutionMessage": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Resolution message while clearing the request"
+      },
+      "alerts": {
+        "type": {
+          "$ref": "#/169"
+        },
+        "flags": 1,
+        "description": "List of alert Ids to be cleared"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "clearAlerts",
+    "resourceType": "Microsoft.StorSimple/managers",
+    "apiVersion": "2016-10-01",
+    "input": {
+      "$ref": "#/168"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SendTestAlertEmailRequest",
+    "properties": {
+      "emailList": {
+        "type": {
+          "$ref": "#/172"
+        },
+        "flags": 1,
+        "description": "List of emails to send the test alerts"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sendTestAlertEmail",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01",
+    "input": {
+      "$ref": "#/171"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deactivate",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "download",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FailoverRequest",
+    "properties": {
+      "accesspointIds": {
+        "type": {
+          "$ref": "#/177"
+        },
+        "flags": 0
+      },
+      "targetDeviceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0
+      },
+      "skipValidation": {
+        "type": {
+          "$ref": "#/178"
+        },
+        "flags": 0
+      },
+      "keepSourceDevice": {
+        "type": {
+          "$ref": "#/178"
+        },
+        "flags": 0
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    }
+  },
+  {
+    "$type": "BooleanType"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "failover",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01",
+    "input": {
+      "$ref": "#/176"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "install",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "scanForUpdates",
+    "resourceType": "Microsoft.StorSimple/managers/devices",
+    "apiVersion": "2016-10-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CloneRequest",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/183"
+        },
+        "flags": 1,
+        "description": "CloneJob Properties are encapsulated in this object."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CloneRequestProperties",
+    "properties": {
+      "targetDeviceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "DeviceId of the device which will act as the Clone target"
+      },
+      "targetAccessPointId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Access point Id on which clone job will performed."
+      },
+      "newEndpointName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Name of new endpoint which will created as part of clone job."
+      },
+      "share": {
+        "type": {
+          "$ref": "#/184"
+        },
+        "flags": 0,
+        "description": "Share Object."
+      },
+      "disk": {
+        "type": {
+          "$ref": "#/185"
+        },
+        "flags": 0,
+        "description": "Disk Object"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FileShare",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/121"
+        },
+        "flags": 1,
+        "description": "The properties."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The identifier."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "IscsiDisk",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/98"
+        },
+        "flags": 1,
+        "description": "The properties."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The identifier."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The type."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "clone",
+    "resourceType": "Microsoft.StorSimple/managers/devices/backups/elements",
+    "apiVersion": "2016-10-01",
+    "input": {
+      "$ref": "#/182"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SecuritySettings",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/188"
+        },
+        "flags": 1,
+        "description": "Properties of the SecuritySettings."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The identifier."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SecuritySettingsProperties",
+    "properties": {
+      "deviceAdminPassword": {
+        "type": {
+          "$ref": "#/89"
+        },
+        "flags": 1,
+        "description": "Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to log into the  local web UI of the device. Actual password could have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "update",
+    "resourceType": "Microsoft.StorSimple/managers/devices/securitySettings",
+    "apiVersion": "2016-10-01",
+    "input": {
+      "$ref": "#/187"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "backup",
+    "resourceType": "Microsoft.StorSimple/managers/devices/fileservers",
+    "apiVersion": "2016-10-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "backup",
+    "resourceType": "Microsoft.StorSimple/managers/devices/iscsiservers",
+    "apiVersion": "2016-10-01"
   }
 ]

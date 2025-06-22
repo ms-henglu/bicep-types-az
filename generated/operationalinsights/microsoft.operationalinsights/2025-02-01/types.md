@@ -89,6 +89,15 @@
 * **properties**: [LinkedStorageAccountsProperties](#linkedstorageaccountsproperties) (Required): Linked storage accounts properties.
 * **type**: 'Microsoft.OperationalInsights/workspaces/linkedStorageAccounts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Resource Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations@2025-02-01 (ReadOnly)
+* **Valid Scope(s)**: ResourceGroup
+### Properties
+* **apiVersion**: '2025-02-01' (ReadOnly, DeployTimeConstant): The resource api version
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string {minLength: 1, maxLength: 512, pattern: "^.*$"} (Required, DeployTimeConstant): The resource name
+* **properties**: [NetworkSecurityPerimeterConfigurationProperties](#networksecurityperimeterconfigurationproperties) (ReadOnly): Network security configuration properties.
+* **type**: 'Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations' (ReadOnly, DeployTimeConstant): The resource type
+
 ## Resource Microsoft.OperationalInsights/workspaces/savedSearches@2025-02-01
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
@@ -119,6 +128,73 @@
 * **properties**: [TableProperties](#tableproperties): Table's properties.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.OperationalInsights/workspaces/tables' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function cancelSearch (Microsoft.OperationalInsights/workspaces/tables@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2025-02-01
+
+## Function Disable (Microsoft.OperationalInsights/workspaces/intelligencePacks@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/intelligencePacks
+* **ApiVersion**: 2025-02-01
+
+## Function Enable (Microsoft.OperationalInsights/workspaces/intelligencePacks@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/intelligencePacks
+* **ApiVersion**: 2025-02-01
+
+## Function failback (Microsoft.OperationalInsights/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-02-01
+
+## Function failover (Microsoft.OperationalInsights/locations/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/locations/workspaces
+* **ApiVersion**: 2025-02-01
+
+## Function migrate (Microsoft.OperationalInsights/workspaces/tables@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2025-02-01
+
+## Function purge (Microsoft.OperationalInsights/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-02-01
+* **Input**: [WorkspacePurgeBody](#workspacepurgebody)
+
+## Function reconcile (Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2025-02-01
+
+## Function regenerateSharedKey (Microsoft.OperationalInsights/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-02-01
+* **Output**: [SharedKeys](#sharedkeys)
+
+## Function schema (Microsoft.OperationalInsights/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-02-01
+* **Output**: [SearchGetSchemaResponse](#searchgetschemaresponse)
+
+## Function sharedKeys (Microsoft.OperationalInsights/workspaces@2025-02-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-02-01
+* **Output**: [SharedKeys](#sharedkeys)
+
+## AccessRule
+### Properties
+* **name**: string: Name of the access rule
+* **properties**: [AccessRuleProperties](#accessruleproperties): Properties of Access Rule
+
+## AccessRuleProperties
+### Properties
+* **addressPrefixes**: string[]: Address prefixes in the CIDR format for inbound rules
+* **direction**: 'Inbound' | 'Outbound' | string: Direction of Access Rule
+* **emailAddresses**: string[]: Email addresses for outbound rules
+* **fullyQualifiedDomainNames**: string[]: Fully qualified domain names (FQDN) for outbound rules
+* **networkSecurityPerimeters**: [NetworkSecurityPerimeter](#networksecurityperimeter)[]: Network security perimeters for inbound rules
+* **phoneNumbers**: string[]: Phone numbers for outbound rules
+* **subscriptions**: [AccessRulePropertiesSubscriptionsItem](#accessrulepropertiessubscriptionsitem)[]: Subscriptions for inbound rules
+
+## AccessRulePropertiesSubscriptionsItem
+### Properties
+* **id**: string: The fully qualified Azure resource ID of the subscription e.g. ('/subscriptions/00000000-0000-0000-0000-000000000000')
 
 ## AssociatedWorkspace
 ### Properties
@@ -169,6 +245,11 @@
 * **isHidden**: bool (ReadOnly): Is column hidden.
 * **name**: string: Column name.
 * **type**: 'boolean' | 'dateTime' | 'dynamic' | 'guid' | 'int' | 'long' | 'real' | 'string' | string: Column data type.
+
+## CoreSummary
+### Properties
+* **numberOfDocuments**: int (Required): The number of documents of a core summary.
+* **status**: string: The status of a core summary.
 
 ## DataExportProperties
 ### Properties
@@ -267,10 +348,50 @@
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
 
+## NetworkSecurityPerimeter
+### Properties
+* **id**: string: Fully qualified Azure resource ID of the NSP resource
+* **location**: string: Location of the network security perimeter
+* **perimeterGuid**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Universal unique ID (UUID) of the network security perimeter
+
+## NetworkSecurityPerimeterConfigurationProperties
+### Properties
+* **networkSecurityPerimeter**: [NetworkSecurityPerimeter](#networksecurityperimeter): Information about a network security perimeter (NSP)
+* **profile**: [NetworkSecurityProfile](#networksecurityprofile): Network security perimeter configuration profile
+* **provisioningIssues**: [ProvisioningIssue](#provisioningissue)[] (ReadOnly): List of provisioning issues, if any
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of a network security perimeter configuration that is being created or updated.
+* **resourceAssociation**: [ResourceAssociation](#resourceassociation): Information about resource association
+
+## NetworkSecurityProfile
+### Properties
+* **accessRules**: [AccessRule](#accessrule)[]: List of Access Rules
+* **accessRulesVersion**: int: Current access rules version
+* **diagnosticSettingsVersion**: int: Current diagnostic settings version
+* **enabledLogCategories**: string[]: List of log categories that are enabled
+* **name**: string: Name of the profile
+
 ## PrivateLinkScopedResource
 ### Properties
 * **resourceId**: string: The full resource Id of the private link scope resource.
 * **scopeId**: string: The private link scope unique Identifier.
+
+## ProvisioningIssue
+### Properties
+* **name**: string (ReadOnly): Name of the issue
+* **properties**: [ProvisioningIssueProperties](#provisioningissueproperties) (ReadOnly): Details of a provisioning issue for a network security perimeter (NSP) configuration. Resource providers should generate separate provisioning issue elements for each separate issue detected, and include a meaningful and distinctive description, as well as any appropriate suggestedResourceIds and suggestedAccessRules
+
+## ProvisioningIssueProperties
+### Properties
+* **description**: string (ReadOnly): Description of the issue
+* **issueType**: 'ConfigurationPropagationFailure' | 'MissingIdentityConfiguration' | 'MissingPerimeterConfiguration' | 'Unknown' | string (ReadOnly): Type of issue
+* **severity**: 'Error' | 'Warning' | string (ReadOnly): Severity of the issue.
+* **suggestedAccessRules**: [AccessRule](#accessrule)[] (ReadOnly): Access rules that can be added to the network security profile (NSP) to remediate the issue.
+* **suggestedResourceIds**: string[] (ReadOnly): Fully qualified resource IDs of suggested resources that can be associated to the network security perimeter (NSP) to remediate the issue.
+
+## ResourceAssociation
+### Properties
+* **accessMode**: 'Audit' | 'Enforced' | 'Learning' | string: Access mode of the resource association
+* **name**: string: Name of the resource association
 
 ## RestoredLogs
 ### Properties
@@ -309,6 +430,36 @@
 * **tableSubType**: 'Any' | 'Classic' | 'DataCollectionRuleBased' | string (ReadOnly): The subtype describes what APIs can be used to interact with the table, and what features are available against it.
 * **tableType**: 'CustomLog' | 'Microsoft' | 'RestoredLogs' | 'SearchResults' | string (ReadOnly): Table's creator.
 
+## SearchGetSchemaResponse
+### Properties
+* **metadata**: [SearchMetadata](#searchmetadata): The metadata from search results.
+* **value**: [SearchSchemaValue](#searchschemavalue)[]: The array of result values.
+
+## SearchMetadata
+### Properties
+* **aggregatedGroupingFields**: string: The aggregated grouping fields.
+* **aggregatedValueField**: string: The aggregated value field.
+* **coreSummaries**: [CoreSummary](#coresummary)[]: The core summaries.
+* **eTag**: string: The ETag of the search results.
+* **id**: string: The id of the search results request.
+* **lastUpdated**: string: The time of last update.
+* **max**: int: The max of all aggregates returned in the result set.
+* **requestId**: string: The request id of the search.
+* **requestTime**: int: The request time.
+* **resultType**: string: The search result type.
+* **schema**: [SearchMetadataSchema](#searchmetadataschema): The schema.
+* **sort**: [SearchSort](#searchsort)[]: How the results are sorted.
+* **startTime**: string: The start time for the search.
+* **status**: string: The status of the search results.
+* **sum**: int: The sum of all aggregates returned in the result set.
+* **top**: int: The number of top search results.
+* **total**: int: The total number of search results.
+
+## SearchMetadataSchema
+### Properties
+* **name**: string: The name of the metadata schema.
+* **version**: int: The version of the metadata schema.
+
 ## SearchResults
 ### Properties
 * **azureAsyncOperationId**: string (ReadOnly): Search results table async operation id.
@@ -318,6 +469,26 @@
 * **query**: string: Search job query.
 * **sourceTable**: string (ReadOnly): The table used in the search job.
 * **startSearchTime**: string: The timestamp to start the search from (UTC)
+
+## SearchSchemaValue
+### Properties
+* **displayName**: string: The display name of the schema.
+* **facet**: bool (Required): The boolean that indicates whether or not the field is a facet.
+* **indexed**: bool (Required): The boolean that indicates the field is searchable as free text.
+* **name**: string: The name of the schema.
+* **ownerType**: string[]: The array of workflows containing the field.
+* **stored**: bool (Required): The boolean that indicates whether or not the field is stored.
+* **type**: string: The type.
+
+## SearchSort
+### Properties
+* **name**: string: The name of the field the search query is sorted on.
+* **order**: 'asc' | 'desc' | string: The sort order of the search.
+
+## SharedKeys
+### Properties
+* **primarySharedKey**: string: The primary shared key of a workspace.
+* **secondarySharedKey**: string: The secondary shared key of a workspace.
 
 ## StorageAccount
 ### Properties
@@ -439,6 +610,18 @@
 * **retentionInDays**: int: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
 * **sku**: [WorkspaceSku](#workspacesku): The SKU of the workspace.
 * **workspaceCapping**: [WorkspaceCapping](#workspacecapping): The daily volume cap for ingestion.
+
+## WorkspacePurgeBody
+### Properties
+* **filters**: [WorkspacePurgeBodyFilters](#workspacepurgebodyfilters)[] (Required): The set of columns and filters (queries) to run over them to purge the resulting data.
+* **table**: string (Required): Table from which to purge data.
+
+## WorkspacePurgeBodyFilters
+### Properties
+* **column**: string: The column of the table over which the given query should run
+* **key**: string: When filtering over custom dimensions, this key will be used as the name of the custom dimension.
+* **operator**: string: A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >, >=, <, <=, between, and have the same behavior as they would in a KQL query.
+* **value**: any: the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >= '2017-09-01') or array of values.
 
 ## WorkspaceReplicationProperties
 ### Properties

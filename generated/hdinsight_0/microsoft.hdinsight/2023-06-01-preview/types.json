@@ -2241,5 +2241,466 @@
       "$ref": "#/37"
     },
     "flags": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterResizeData",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/152"
+        },
+        "flags": 0,
+        "description": "Sets the properties. Define cluster resize specific properties."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/153"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The geo-location where the resource lives"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterResizeProperties",
+    "properties": {
+      "targetWorkerNodeCount": {
+        "type": {
+          "$ref": "#/15"
+        },
+        "flags": 1,
+        "description": "Target node count of worker node."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "TrackedResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Cluster",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/38"
+        },
+        "flags": 0,
+        "description": "Gets or sets the properties. Define cluster specific properties."
+      },
+      "tags": {
+        "type": {
+          "$ref": "#/155"
+        },
+        "flags": 0,
+        "description": "Resource tags."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The geo-location where the resource lives"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "TrackedResourceTags",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "resize",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2023-06-01-preview",
+    "output": {
+      "$ref": "#/154"
+    },
+    "input": {
+      "$ref": "#/151"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ClusterJob",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/158"
+        },
+        "flags": 1,
+        "description": "Properties of cluster job."
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource ID for the resource. E.g. \"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}\""
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The name of the resource"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The type of the resource. E.g. \"Microsoft.Compute/virtualMachines\" or \"Microsoft.Storage/storageAccounts\""
+      },
+      "systemData": {
+        "type": {
+          "$ref": "#/23"
+        },
+        "flags": 2,
+        "description": "Azure Resource Manager metadata containing createdBy and modifiedBy information."
+      }
+    }
+  },
+  {
+    "$type": "DiscriminatedObjectType",
+    "name": "ClusterJobProperties",
+    "discriminator": "jobType",
+    "baseProperties": {},
+    "elements": {
+      "FlinkJob": {
+        "$ref": "#/159"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FlinkJobProperties",
+    "properties": {
+      "jobName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "Name of job"
+      },
+      "jobJarDirectory": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that specifies the directory where the job JAR is located."
+      },
+      "jarName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that represents the name of the job JAR."
+      },
+      "entryClass": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that specifies the entry class for the Flink job."
+      },
+      "args": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property representing additional JVM arguments for the Flink job. It should be space separated value."
+      },
+      "savePointName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "A string property that represents the name of the savepoint for the Flink job"
+      },
+      "action": {
+        "type": {
+          "$ref": "#/169"
+        },
+        "flags": 0,
+        "description": "A string property that indicates the action to be performed on the Flink job. It can have one of the following enum values => NEW, UPDATE, STATELESS_UPDATE, STOP, START, CANCEL, SAVEPOINT, LIST_SAVEPOINT, or DELETE."
+      },
+      "flinkConfiguration": {
+        "type": {
+          "$ref": "#/170"
+        },
+        "flags": 0,
+        "description": "Additional properties used to configure Flink jobs. It allows users to set properties such as parallelism and jobSavePointDirectory. It accepts additional key-value pairs as properties, where the keys are strings and the values are strings as well."
+      },
+      "jobId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Unique id for identifying a job"
+      },
+      "status": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Status of job."
+      },
+      "jobOutput": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Output of job."
+      },
+      "actionResult": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Action result of job."
+      },
+      "lastSavePoint": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "The last savepoint."
+      },
+      "jobType": {
+        "type": {
+          "$ref": "#/171"
+        },
+        "flags": 1,
+        "description": "Type of cluster job."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NEW"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "UPDATE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "STATELESS_UPDATE"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "STOP"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "START"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "CANCEL"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "SAVEPOINT"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "LIST_SAVEPOINT"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "DELETE"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/160"
+      },
+      {
+        "$ref": "#/161"
+      },
+      {
+        "$ref": "#/162"
+      },
+      {
+        "$ref": "#/163"
+      },
+      {
+        "$ref": "#/164"
+      },
+      {
+        "$ref": "#/165"
+      },
+      {
+        "$ref": "#/166"
+      },
+      {
+        "$ref": "#/167"
+      },
+      {
+        "$ref": "#/168"
+      },
+      {
+        "$ref": "#/0"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FlinkJobPropertiesFlinkConfiguration",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "FlinkJob"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "runJob",
+    "resourceType": "Microsoft.HDInsight/clusterpools/clusters",
+    "apiVersion": "2023-06-01-preview",
+    "output": {
+      "$ref": "#/157"
+    },
+    "input": {
+      "$ref": "#/157"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NameAvailabilityParameters",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Name for checking availability."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The resource type in Microsoft.HDInsight."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NameAvailabilityResult",
+    "properties": {
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/21"
+        },
+        "flags": 0,
+        "description": "Indicator of availability of the Microsoft.HDInsight resource name."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The reason of unavailability."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The error message of unavailability."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.HDInsight/locations",
+    "apiVersion": "2023-06-01-preview",
+    "output": {
+      "$ref": "#/174"
+    },
+    "input": {
+      "$ref": "#/173"
+    }
   }
 ]

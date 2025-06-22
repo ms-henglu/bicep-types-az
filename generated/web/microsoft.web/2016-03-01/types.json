@@ -2311,5 +2311,221 @@
       "$ref": "#/149"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticAnalysis",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/65"
+        },
+        "flags": 0,
+        "description": "DiagnosticAnalysis resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/diagnostics/analyses",
+    "apiVersion": "2016-03-01",
+    "output": {
+      "$ref": "#/151"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticDetectorResponse",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/154"
+        },
+        "flags": 0,
+        "description": "DiagnosticDetectorResponse resource specific properties"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Id."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource Name."
+      },
+      "kind": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Kind of resource."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DiagnosticDetectorResponseProperties",
+    "properties": {
+      "startTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Start time of the period"
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "End time of the period"
+      },
+      "issueDetected": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "Flag representing Issue was detected."
+      },
+      "detectorDefinition": {
+        "type": {
+          "$ref": "#/95"
+        },
+        "flags": 0,
+        "description": "Detector's definition"
+      },
+      "metrics": {
+        "type": {
+          "$ref": "#/155"
+        },
+        "flags": 0,
+        "description": "Metrics provided by the detector"
+      },
+      "abnormalTimePeriods": {
+        "type": {
+          "$ref": "#/156"
+        },
+        "flags": 0,
+        "description": "List of Correlated events found by the detector"
+      },
+      "data": {
+        "type": {
+          "$ref": "#/158"
+        },
+        "flags": 0,
+        "description": "Additional Data that detector wants to send."
+      },
+      "responseMetaData": {
+        "type": {
+          "$ref": "#/103"
+        },
+        "flags": 0,
+        "description": "Meta Data"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/97"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/67"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/69"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/157"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/diagnostics/detectors",
+    "apiVersion": "2016-03-01",
+    "output": {
+      "$ref": "#/153"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/slots/diagnostics/analyses",
+    "apiVersion": "2016-03-01",
+    "output": {
+      "$ref": "#/151"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.Web/sites/slots/diagnostics/detectors",
+    "apiVersion": "2016-03-01",
+    "output": {
+      "$ref": "#/153"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "disable",
+    "resourceType": "Microsoft.Web/recommendations",
+    "apiVersion": "2016-03-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "disable",
+    "resourceType": "Microsoft.Web/sites/recommendations",
+    "apiVersion": "2016-03-01"
   }
 ]

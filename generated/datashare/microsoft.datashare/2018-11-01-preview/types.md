@@ -221,6 +221,12 @@
 * **properties**: [ConsumerInvitationProperties](#consumerinvitationproperties) (ReadOnly): Properties on the account
 * **type**: 'Microsoft.DataShare/locations/consumerInvitations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelSynchronization (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
+* **Output**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
+
 ## Function listSourceShareSynchronizationSettings (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
 * **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
 * **ApiVersion**: 2018-11-01-preview
@@ -247,6 +253,28 @@
 * **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
 * **ApiVersion**: 2018-11-01-preview
 * **Output**: [ShareSubscriptionSynchronizationList](#sharesubscriptionsynchronizationlist)
+
+## Function reinstate (Microsoft.DataShare/accounts/shares/providerShareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shares/providerShareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Output**: [ProviderShareSubscription](#providersharesubscription)
+
+## Function rejectInvitation (Microsoft.DataShare/locations@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/locations
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [ConsumerInvitation](#consumerinvitation)
+* **Output**: [ConsumerInvitation](#consumerinvitation)
+
+## Function revoke (Microsoft.DataShare/accounts/shares/providerShareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shares/providerShareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Output**: [ProviderShareSubscription](#providersharesubscription)
+
+## Function synchronize (Microsoft.DataShare/accounts/shareSubscriptions@2018-11-01-preview)
+* **Resource**: Microsoft.DataShare/accounts/shareSubscriptions
+* **ApiVersion**: 2018-11-01-preview
+* **Input**: [Synchronize](#synchronize)
+* **Output**: [ShareSubscriptionSynchronization](#sharesubscriptionsynchronization)
 
 ## AccountProperties
 ### Properties
@@ -390,6 +418,13 @@
 * **storageAccountName**: string (Required): Storage account name of the source data set
 * **subscriptionId**: string (Required): Subscription id of storage account
 
+## ConsumerInvitation
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ConsumerInvitationProperties](#consumerinvitationproperties) (Required): Properties on the account
+* **type**: string (ReadOnly): Type of the azure resource
+
 ## ConsumerInvitationProperties
 ### Properties
 * **dataSetCount**: int (ReadOnly): Number of data sets in a share
@@ -461,6 +496,13 @@ invitations to specific users or applications in an AD tenant.
 * **kustoDatabaseResourceId**: string (Required): Resource id of the kusto database.
 * **location**: string (ReadOnly): Location of the kusto cluster.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Succeeded' | string (ReadOnly): Provisioning state of the kusto database data set.
+
+## ProviderShareSubscription
+### Properties
+* **id**: string (ReadOnly): The resource id of the azure resource
+* **name**: string (ReadOnly): Name of the azure resource
+* **properties**: [ProviderShareSubscriptionProperties](#providersharesubscriptionproperties): properties of providerShareSubscription
+* **type**: string (ReadOnly): Type of the azure resource
 
 ## ProviderShareSubscriptionProperties
 ### Properties
@@ -630,4 +672,8 @@ invitations to specific users or applications in an AD tenant.
 ### Properties
 * **nextLink**: string: The Url of next result page.
 * **value**: [SynchronizationDetails](#synchronizationdetails)[] (Required): Collection of items of type DataTransferObjects.
+
+## Synchronize
+### Properties
+* **synchronizationMode**: 'FullSync' | 'Incremental' | string: Mode of synchronization used in triggers and snapshot sync. Incremental by default
 

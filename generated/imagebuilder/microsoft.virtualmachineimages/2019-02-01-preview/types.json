@@ -792,5 +792,11 @@
       "$ref": "#/4"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.VirtualMachineImages/imageTemplates",
+    "apiVersion": "2019-02-01-preview"
   }
 ]

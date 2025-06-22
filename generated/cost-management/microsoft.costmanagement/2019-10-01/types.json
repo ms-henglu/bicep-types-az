@@ -727,5 +727,11 @@
       "$ref": "#/3"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "run",
+    "resourceType": "Microsoft.CostManagement/exports",
+    "apiVersion": "2019-10-01"
   }
 ]

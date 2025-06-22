@@ -39,10 +39,43 @@
 * **properties**: [ScheduleEntries](#scheduleentries) (Required): List of patch schedules for a Redis cache.
 * **type**: 'Microsoft.Cache/Redis/patchSchedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function export (Microsoft.Cache/Redis@2018-03-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2018-03-01
+* **Input**: [ExportRDBParameters](#exportrdbparameters)
+
+## Function forceReboot (Microsoft.Cache/Redis@2018-03-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2018-03-01
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+* **Output**: [RedisForceRebootResponse](#redisforcerebootresponse)
+
+## Function import (Microsoft.Cache/Redis@2018-03-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2018-03-01
+* **Input**: [ImportRDBParameters](#importrdbparameters)
+
 ## Function listKeys (Microsoft.Cache/Redis@2018-03-01)
 * **Resource**: Microsoft.Cache/Redis
 * **ApiVersion**: 2018-03-01
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## Function regenerateKey (Microsoft.Cache/Redis@2018-03-01)
+* **Resource**: Microsoft.Cache/Redis
+* **ApiVersion**: 2018-03-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## ExportRDBParameters
+### Properties
+* **container**: string (Required): Container name to export to.
+* **format**: string: File format.
+* **prefix**: string (Required): Prefix to use for exported files.
+
+## ImportRDBParameters
+### Properties
+* **files**: string[] (Required): files to import.
+* **format**: string: File format.
 
 ## RedisAccessKeys
 ### Properties
@@ -87,6 +120,10 @@
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
 
+## RedisForceRebootResponse
+### Properties
+* **message**: string (ReadOnly): Status message
+
 ## RedisLinkedServer
 ### Properties
 * **id**: string (ReadOnly): Linked server Id.
@@ -97,6 +134,15 @@
 * **linkedRedisCacheLocation**: string (Required): Location of the linked redis cache.
 * **provisioningState**: string (ReadOnly): Terminal state of the link between primary and secondary redis cache.
 * **serverRole**: 'Primary' | 'Secondary' (Required): Role of the linked server.
+
+## RedisRebootParameters
+### Properties
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' | string (Required): Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shard to be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The Redis access key to regenerate.
 
 ## ScheduleEntries
 ### Properties
