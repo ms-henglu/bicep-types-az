@@ -5638,5 +5638,80 @@
       "$ref": "#/428"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "pause",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2025-04-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2025-04-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "save",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2025-04-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2025-04-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2025-04-01-preview"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VirtualHardDiskUploadRequest",
+    "properties": {
+      "azureManagedDiskUploadUrl": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 1,
+        "description": "The Azure managed disk SAS URL to upload the virtual hard disk to."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VirtualHardDiskUploadResponse",
+    "properties": {
+      "virtualHardDiskId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The ARM ID for a Virtual Hard Disk."
+      },
+      "uploadStatus": {
+        "type": {
+          "$ref": "#/355"
+        },
+        "flags": 0,
+        "description": "The upload status of the virtual hard disk"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upload",
+    "resourceType": "Microsoft.AzureStackHCI/virtualHardDisks",
+    "apiVersion": "2025-04-01-preview",
+    "output": {
+      "$ref": "#/446"
+    },
+    "input": {
+      "$ref": "#/445"
+    }
   }
 ]

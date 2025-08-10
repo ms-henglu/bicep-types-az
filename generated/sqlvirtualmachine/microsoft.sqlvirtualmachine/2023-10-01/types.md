@@ -5,10 +5,10 @@
 ### Properties
 * **apiVersion**: '2023-10-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SqlVirtualMachineGroupProperties](#sqlvirtualmachinegroupproperties): Resource properties.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -19,7 +19,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AvailabilityGroupListenerProperties](#availabilitygrouplistenerproperties): Resource properties.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-10-01
@@ -28,12 +28,31 @@
 * **apiVersion**: '2023-10-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [ResourceIdentity](#resourceidentity): DO NOT USE. This value will be deprecated. Azure Active Directory identity of the server.
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string {minLength: 1, maxLength: 64, pattern: "^((?!_)[^\\/\"'\[\]:|<>+=;,?*@&]{1,64}(?<![.-]))$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [SqlVirtualMachineProperties](#sqlvirtualmachineproperties): Resource properties.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.SqlVirtualMachine/sqlVirtualMachines' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function fetchDCAssessment (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-10-01)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-10-01
+* **Input**: [DiskConfigAssessmentRequest](#diskconfigassessmentrequest)
+
+## Function redeploy (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-10-01)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-10-01
+
+## Function startAssessment (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-10-01)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-10-01
+
+## Function troubleshoot (Microsoft.SqlVirtualMachine/sqlVirtualMachines@2023-10-01)
+* **Resource**: Microsoft.SqlVirtualMachine/sqlVirtualMachines
+* **ApiVersion**: 2023-10-01
+* **Input**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
+* **Output**: [SqlVmTroubleshooting](#sqlvmtroubleshooting)
 
 ## AADAuthenticationSettings
 ### Properties
@@ -95,6 +114,10 @@
 * **multiSubnetIpConfigurations**: [MultiSubnetIpConfiguration](#multisubnetipconfiguration)[]: List of multi subnet IP configurations for an AG listener.
 * **port**: int: Listener port.
 * **provisioningState**: string (ReadOnly): Provisioning state to track the async operation status.
+
+## DiskConfigAssessmentRequest
+### Properties
+* **runDiskConfigRules**: bool: Boolean to run disk config Assessment. Use false to fetch past Assessment.
 
 ## KeyVaultCredentialSettings
 ### Properties
@@ -220,6 +243,14 @@
 * **virtualMachineResourceId**: string: ARM Resource id of underlying virtual machine created from SQL marketplace image.
 * **wsfcDomainCredentials**: [WsfcDomainCredentials](#wsfcdomaincredentials): Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
 * **wsfcStaticIp**: string: Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
+
+## SqlVmTroubleshooting
+### Properties
+* **endTimeUtc**: string: End time in UTC timezone.
+* **properties**: [TroubleshootingAdditionalProperties](#troubleshootingadditionalproperties): Troubleshooting properties
+* **startTimeUtc**: string: Start time in UTC timezone.
+* **troubleshootingScenario**: 'UnhealthyReplica' | string: SQL VM troubleshooting scenario.
+* **virtualMachineResourceId**: string (ReadOnly): Virtual machine resource id for response.
 
 ## SqlWorkloadTypeUpdateSettings
 ### Properties

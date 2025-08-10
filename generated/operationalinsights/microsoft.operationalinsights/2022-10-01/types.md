@@ -37,6 +37,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.OperationalInsights/workspaces/tables' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelSearch (Microsoft.OperationalInsights/workspaces/tables@2022-10-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2022-10-01
+
+## Function migrate (Microsoft.OperationalInsights/workspaces/tables@2022-10-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2022-10-01
+
 ## AssociatedWorkspace
 ### Properties
 * **associateDate**: string (ReadOnly): The time of workspace association.

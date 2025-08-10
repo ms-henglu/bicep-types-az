@@ -564,5 +564,11 @@
       "$ref": "#/3"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "execute",
+    "resourceType": "Microsoft.CostManagement/scheduledActions",
+    "apiVersion": "2022-04-01-preview"
   }
 ]

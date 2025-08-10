@@ -24,6 +24,38 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.CertificateRegistration/certificateOrders/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reissue (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Input**: [ReissueCertificateOrderRequest](#reissuecertificateorderrequest)
+* **Output**: any
+
+## Function renew (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Input**: [RenewCertificateOrderRequest](#renewcertificateorderrequest)
+* **Output**: any
+
+## Function resendEmail (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
+## Function retrieveCertificateActions (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Output**: [CertificateOrderAction](#certificateorderaction)[]
+
+## Function retrieveEmailHistory (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Output**: [CertificateEmail](#certificateemail)[]
+
+## Function verifyDomainOwnership (Microsoft.CertificateRegistration/certificateOrders@2015-08-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2015-08-01
+* **Output**: any
+
 ## CertificateDetails
 ### Properties
 * **id**: string: Resource Id
@@ -45,6 +77,36 @@
 * **subject**: string: Subject
 * **thumbprint**: string: Thumbprint
 * **version**: int: Version
+
+## CertificateEmail
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [CertificateEmailProperties](#certificateemailproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## CertificateEmailProperties
+### Properties
+* **emailId**: string: Email id
+* **timeStamp**: string: Time stamp
+
+## CertificateOrderAction
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [CertificateOrderActionProperties](#certificateorderactionproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## CertificateOrderActionProperties
+### Properties
+* **createdAt**: string: Time at which the certificate action was performed
+* **type**: 'CertificateIssued' | 'CertificateOrderCanceled' | 'CertificateOrderCreated' | 'CertificateRevoked' | 'DomainValidationComplete' | 'FraudDetected' | 'OrgNameChange' | 'OrgValidationComplete' | 'SanDrop' (Required): Type
 
 ## CertificateOrderCertificate
 ### Properties
@@ -85,6 +147,55 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [CertificateOrderCertificate](#certificateordercertificate)
+
+## ReissueCertificateOrderRequest
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [ReissueCertificateOrderRequestProperties](#reissuecertificateorderrequestproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## ReissueCertificateOrderRequestProperties
+### Properties
+* **delayExistingRevokeInHours**: int: Delay in hours to revoke existing certificate after the new certificate is issued
+* **keySize**: int: Certificate Key Size
+
+## RenewCertificateOrderRequest
+### Properties
+* **id**: string: Resource Id
+* **kind**: string: Kind of resource
+* **location**: string (Required): Resource Location
+* **name**: string: Resource Name
+* **properties**: [RenewCertificateOrderRequestProperties](#renewcertificateorderrequestproperties)
+* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **type**: string: Resource type
+
+## RenewCertificateOrderRequestProperties
+### Properties
+* **keySize**: int: Certificate Key Size
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## ResourceTags
 ### Properties

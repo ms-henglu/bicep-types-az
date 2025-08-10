@@ -75,6 +75,46 @@
 * **tags**: [NodeTypeTags](#nodetypetags): Resource tags.
 * **type**: 'Microsoft.ServiceFabric/managedClusters/nodeTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function applyMaintenanceWindow (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+
+## Function deallocate (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function deleteNode (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function fetchUpgradeStatus (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+
+## Function getazresiliencystatus (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Output**: [ManagedAzResiliencyStatus](#managedazresiliencystatus)
+
+## Function getFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function getFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function getMaintenanceWindowStatus (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Output**: [ManagedMaintenanceWindowStatus](#managedmaintenancewindowstatus)
+
 ## Function listFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
 * **Resource**: Microsoft.ServiceFabric/managedClusters
 * **ApiVersion**: 2024-11-01-preview
@@ -84,6 +124,59 @@
 * **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
 * **ApiVersion**: 2024-11-01-preview
 * **Output**: [FaultSimulationListResult](#faultsimulationlistresult)
+
+## Function redeploy (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function reimage (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function restart (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function resumeUpgrade (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [RuntimeResumeApplicationUpgradeParameters](#runtimeresumeapplicationupgradeparameters)
+
+## Function start (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function startFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationContentWrapper](#faultsimulationcontentwrapper)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function startFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationContentWrapper](#faultsimulationcontentwrapper)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function startRollback (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+
+## Function stopFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function stopFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
 
 ## AdditionalNetworkInterfaceConfiguration
 ### Properties
@@ -256,12 +349,20 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **zones**: string[]: Indicates the zones of the fault simulation.
 
 
+## FaultSimulationContentWrapper
+### Properties
+* **parameters**: [FaultSimulationContent](#faultsimulationcontent) (Required): Parameters for Fault Simulation start action.
+
 ## FaultSimulationDetails
 ### Properties
 * **clusterId**: string: unique identifier for the cluster resource.
 * **nodeTypeFaultSimulation**: [NodeTypeFaultSimulation](#nodetypefaultsimulation)[]: List of node type simulations associated with the cluster fault simulation.
 * **operationId**: string: unique identifier for the operation associated with the fault simulation.
 * **parameters**: [FaultSimulationContent](#faultsimulationcontent): Fault simulation parameters.
+
+## FaultSimulationIdContent
+### Properties
+* **simulationId**: string (Required): unique identifier for the fault simulation.
 
 ## FaultSimulationListResult
 ### Properties
@@ -299,6 +400,11 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **probeProtocol**: 'http' | 'https' | 'tcp' | string (Required): the reference to the load balancer probe used by the load balancing rule.
 * **probeRequestPath**: string: The probe request path. Only supported for HTTP/HTTPS probes.
 * **protocol**: 'tcp' | 'udp' | string (Required): The reference to the transport protocol used by the load balancing rule.
+
+## ManagedAzResiliencyStatus
+### Properties
+* **baseResourceStatus**: [ResourceAzStatus](#resourceazstatus)[]: List of Managed VM Sizes for Service Fabric Managed Clusters.
+* **isClusterZoneResilient**: bool (ReadOnly): URL to get the next set of Managed VM Sizes if there are any.
 
 ## ManagedClusterProperties
 ### Properties
@@ -357,6 +463,16 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
+## ManagedMaintenanceWindowStatus
+### Properties
+* **canApplyUpdates**: bool (ReadOnly): If updates can be applied.
+* **isRegionReady**: bool (ReadOnly): Indicates if the region is ready to configure maintenance windows.
+* **isWindowActive**: bool (ReadOnly): If maintenance window is active.
+* **isWindowEnabled**: bool (ReadOnly): If maintenance window is enabled on this cluster.
+* **lastWindowEndTimeUTC**: string (ReadOnly): Last window end time in UTC.
+* **lastWindowStartTimeUTC**: string (ReadOnly): Last window start time in UTC.
+* **lastWindowStatusUpdateAtUTC**: string (ReadOnly): Last window update time in UTC.
+
 ## NetworkSecurityRule
 ### Properties
 * **access**: 'allow' | 'deny' | string (Required): The network traffic is allowed or denied.
@@ -373,6 +489,12 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **sourceAddressPrefixes**: string[]: The CIDR or source IP ranges.
 * **sourcePortRange**: string: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
 * **sourcePortRanges**: string[]: The source port ranges.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[]: List of node names from the node type.
+* **updateType**: 'ByUpgradeDomain' | 'Default' | string: Specifies the way the operation will be performed.
 
 ## NodeTypeFaultSimulation
 ### Properties
@@ -416,8 +538,9 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **networkSecurityRules**: [NetworkSecurityRule](#networksecurityrule)[]: The Network Security Rules for this node type. This setting can only be specified for node types that are configured with frontend configurations.
 * **placementProperties**: [NodeTypePropertiesPlacementProperties](#nodetypepropertiesplacementproperties): The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run.
 * **provisioningState**: 'Canceled' | 'Created' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'None' | 'Other' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the node type resource.
-* **secureBootEnabled**: bool: Specifies whether secure boot should be enabled on the nodeType. Can only be used with TrustedLaunch SecurityType
-* **securityType**: 'Standard' | 'TrustedLaunch' | string: Specifies the security type of the nodeType. Only Standard and TrustedLaunch are currently supported
+* **secureBootEnabled**: bool: Specifies whether secure boot should be enabled on the nodeType. Can only be used with TrustedLaunch and ConfidentialVM SecurityType.
+* **securityEncryptionType**: 'DiskWithVMGuestState' | 'VMGuestStateOnly' | string: Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob and VMGuestStateOnly for encryption of just the VMGuestState blob. Note: It can be set for only Confidential VMs.
+* **securityType**: 'ConfidentialVM' | 'Standard' | 'TrustedLaunch' | string: Specifies the security type of the nodeType. Supported values include Standard, TrustedLaunch and ConfidentialVM.
 * **serviceArtifactReferenceId**: string: Specifies the service artifact reference id used to set same image version for all virtual machines in the scale set when using 'latest' image version.
 * **spotRestoreTimeout**: string: Indicates the time duration after which the platform will not try to restore the VMSS SPOT instances specified as ISO 8601.
 * **subnetId**: string: Indicates the resource id of the subnet for the node type.
@@ -491,6 +614,13 @@ should be split between the partition ‘Count’
 * **name**: string (Required): Name of the network interface.
 * **publicIPAddressVersion**: 'IPv4' | 'IPv6' | string: Specifies whether the IP configuration's public IP is IPv4 or IPv6. Default is IPv4.
 
+## ResourceAzStatus
+### Properties
+* **details**: string (ReadOnly): Zone resiliency status details for the resource.
+* **isZoneResilient**: bool (ReadOnly): VM Size name.
+* **resourceName**: string (ReadOnly): VM Size properties.
+* **resourceType**: string (ReadOnly): VM Size id.
+
 ## RollingUpgradeMonitoringPolicy
 ### Properties
 * **failureAction**: 'Manual' | 'Rollback' | string (Required): The compensating action to perform when a Monitored upgrade encounters monitoring policy or health policy violations. Invalid indicates the failure action is invalid. Rollback specifies that the upgrade will start rolling back automatically. Manual indicates that the upgrade will switch to UnmonitoredManual upgrade mode.
@@ -499,6 +629,10 @@ should be split between the partition ‘Count’
 * **healthCheckWaitDuration**: string (Required): The amount of time to wait after completing an upgrade domain before applying health policies. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeDomainTimeout**: string (Required): The amount of time each upgrade domain has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeTimeout**: string (Required): The amount of time the overall upgrade has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
+
+## RuntimeResumeApplicationUpgradeParameters
+### Properties
+* **upgradeDomainName**: string: The upgrade domain name. Expected to be the next upgrade domain if the application is upgrading.
 
 ## ScalingMechanism
 * **Discriminator**: kind

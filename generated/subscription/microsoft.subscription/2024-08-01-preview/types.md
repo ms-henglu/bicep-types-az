@@ -32,6 +32,35 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Subscription/policies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function acceptChangeTenant (Microsoft.Subscription/subscriptions@2024-08-01-preview)
+* **Resource**: Microsoft.Subscription/subscriptions
+* **ApiVersion**: 2024-08-01-preview
+
+## Function acceptOwnership (Microsoft.Subscription/subscriptions@2024-08-01-preview)
+* **Resource**: Microsoft.Subscription/subscriptions
+* **ApiVersion**: 2024-08-01-preview
+* **Input**: [AcceptOwnershipRequest](#acceptownershiprequest)
+
+## Function changeTenantStatus (Microsoft.Subscription/subscriptions@2024-08-01-preview)
+* **Resource**: Microsoft.Subscription/subscriptions
+* **ApiVersion**: 2024-08-01-preview
+* **Output**: [TargetDirectoryStatusResult](#targetdirectorystatusresult)
+
+## AcceptOwnershipRequest
+### Properties
+* **properties**: [AcceptOwnershipRequestProperties](#acceptownershiprequestproperties): Accept subscription ownership request properties.
+
+## AcceptOwnershipRequestProperties
+### Properties
+* **displayName**: string (Required): The friendly name of the subscription.
+* **managementGroupId**: string: Management group Id for the subscription.
+* **tags**: [AcceptOwnershipRequestPropertiesTags](#acceptownershiprequestpropertiestags): Tags for the subscription
+
+## AcceptOwnershipRequestPropertiesTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## PutAliasRequestAdditionalProperties
 ### Properties
 * **managementGroupId**: string: Management group Id for the subscription.
@@ -83,6 +112,10 @@ For Legacy EA - /billingAccounts/{billingAccountName}/enrollmentAccounts/{enroll
 * **destinationTenantId**: string: The destination Tenant id where subscription needs to be accepted
 * **expiresOn**: string (ReadOnly): Subscription Initiate Request Expiry time
 * **status**: string (ReadOnly): Subscription Status.
+
+## TargetDirectoryStatusResult
+### Properties
+* **status**: string: Subscription Status
 
 ## TenantPolicy
 ### Properties

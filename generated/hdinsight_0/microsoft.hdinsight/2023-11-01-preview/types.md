@@ -24,6 +24,36 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.HDInsight/clusterpools/clusters' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.HDInsight/locations@2023-11-01-preview)
+* **Resource**: Microsoft.HDInsight/locations
+* **ApiVersion**: 2023-11-01-preview
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailabilityResult](#nameavailabilityresult)
+
+## Function resize (Microsoft.HDInsight/clusterpools/clusters@2023-11-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools/clusters
+* **ApiVersion**: 2023-11-01-preview
+* **Input**: [ClusterResizeData](#clusterresizedata)
+* **Output**: [Cluster](#cluster)
+
+## Function runJob (Microsoft.HDInsight/clusterpools/clusters@2023-11-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools/clusters
+* **ApiVersion**: 2023-11-01-preview
+* **Input**: [ClusterJob](#clusterjob)
+* **Output**: [ClusterJob](#clusterjob)
+
+## Function upgrade (Microsoft.HDInsight/clusterpools@2023-11-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools
+* **ApiVersion**: 2023-11-01-preview
+* **Input**: [ClusterPoolUpgrade](#clusterpoolupgrade)
+* **Output**: [ClusterPool](#clusterpool)
+
+## Function upgrade (Microsoft.HDInsight/clusterpools/clusters@2023-11-01-preview)
+* **Resource**: Microsoft.HDInsight/clusterpools/clusters
+* **ApiVersion**: 2023-11-01-preview
+* **Input**: [ClusterUpgrade](#clusterupgrade)
+* **Output**: [Cluster](#cluster)
+
 ## AksClusterProfileAksClusterAgentPoolIdentityProfile
 ### Properties
 * **msiClientId**: string {pattern: "^[{(]?[0-9A-Fa-f]{8}[-]?(?:[0-9A-Fa-f]{4}[-]?){3}[0-9A-Fa-f]{12}[)}]?$"} (Required): ClientId of the MSI.
@@ -46,6 +76,16 @@
 ## CatalogOptions
 ### Properties
 * **hive**: [HiveCatalogOption](#hivecatalogoption)[]: hive catalog options.
+
+## Cluster
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterResourceProperties](#clusterresourceproperties): Gets or sets the properties. Define cluster specific properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## ClusterAccessProfile
 ### Properties
@@ -71,6 +111,38 @@ where key represents a valid service configuration name and value represents the
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ClusterJob
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterJobProperties](#clusterjobproperties) (Required): Properties of cluster job.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ClusterJobProperties
+* **Discriminator**: jobType
+
+### Base Properties
+
+### FlinkJobProperties
+#### Properties
+* **action**: 'CANCEL' | 'DELETE' | 'LAST_STATE_UPDATE' | 'LIST_SAVEPOINT' | 'NEW' | 'RE_LAUNCH' | 'SAVEPOINT' | 'START' | 'STATELESS_UPDATE' | 'STOP' | 'UPDATE' | string: A string property that indicates the action to be performed on the Flink job. It can have one of the following enum values => NEW, UPDATE, STATELESS_UPDATE, STOP, START, CANCEL, SAVEPOINT, LIST_SAVEPOINT, or DELETE.
+* **actionResult**: string (ReadOnly): Action result of job.
+* **args**: string: A string property representing additional JVM arguments for the Flink job. It should be space separated value.
+* **entryClass**: string: A string property that specifies the entry class for the Flink job.
+* **flinkConfiguration**: [FlinkJobPropertiesFlinkConfiguration](#flinkjobpropertiesflinkconfiguration): Additional properties used to configure Flink jobs. It allows users to set properties such as parallelism and jobSavePointDirectory. It accepts additional key-value pairs as properties, where the keys are strings and the values are strings as well.
+* **jarName**: string: A string property that represents the name of the job JAR.
+* **jobId**: string (ReadOnly): Unique id for identifying a job
+* **jobJarDirectory**: string: A string property that specifies the directory where the job JAR is located.
+* **jobName**: string: Name of job
+* **jobOutput**: string (ReadOnly): Output of job.
+* **jobType**: 'FlinkJob' (Required): Type of cluster job.
+* **lastSavePoint**: string (ReadOnly): The last savepoint.
+* **runId**: string: Run id of job
+* **savePointName**: string: A string property that represents the name of the savepoint for the Flink job
+* **status**: string (ReadOnly): Status of job.
+
+
 ## ClusterLogAnalyticsApplicationLogs
 ### Properties
 * **stdErrorEnabled**: bool: True if stderror is enabled, otherwise false.
@@ -81,6 +153,16 @@ where key represents a valid service configuration name and value represents the
 * **applicationLogs**: [ClusterLogAnalyticsApplicationLogs](#clusterloganalyticsapplicationlogs): Collection of logs to be enabled or disabled for log analytics.
 * **enabled**: bool (Required): True if log analytics is enabled for the cluster, otherwise false.
 * **metricsEnabled**: bool: True if metrics are enabled, otherwise false.
+
+## ClusterPool
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterPoolResourceProperties](#clusterpoolresourceproperties): Gets or sets the properties. Define cluster pool specific properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## ClusterPoolResourceProperties
 ### Properties
@@ -121,6 +203,27 @@ where key represents a valid service configuration name and value represents the
 * **enablePrivateApiServer**: bool: ClusterPool is based on AKS cluster. AKS cluster exposes the API server to public internet by default. If you set this property to true, a private AKS cluster will be created, and it will use private apiserver, which is not exposed to public internet.
 * **outboundType**: 'loadBalancer' | 'userDefinedRouting' | string: This can only be set at cluster pool creation time and cannot be changed later.
 * **subnetId**: string (Required): Cluster pool subnet resource id.
+
+## ClusterPoolUpgrade
+### Properties
+* **properties**: [ClusterPoolUpgradeProperties](#clusterpoolupgradeproperties) (Required): Properties of upgrading cluster pool.
+
+## ClusterPoolUpgradeProperties
+* **Discriminator**: upgradeType
+
+### Base Properties
+
+### ClusterPoolAKSPatchVersionUpgradeProperties
+#### Properties
+* **targetAksVersion**: string: Target AKS version. When it's not set, latest version will be used. When upgradeClusterPool is true and upgradeAllClusterNodes is false, target version should be greater or equal to current version. When upgradeClusterPool is false and upgradeAllClusterNodes is true, target version should be equal to AKS version of cluster pool.
+* **upgradeAllClusterNodes**: bool: whether upgrade all clusters' nodes. If it's true, upgradeClusterPool should be false.
+* **upgradeClusterPool**: bool: whether upgrade cluster pool or not. If it's true, upgradeAllClusterNodes should be false.
+* **upgradeType**: 'AKSPatchUpgrade' (Required): Type of upgrade.
+
+### ClusterPoolNodeOsImageUpdateProperties
+#### Properties
+* **upgradeType**: 'NodeOsUpgrade' (Required): Type of upgrade.
+
 
 ## ClusterProfile
 ### Properties
@@ -165,6 +268,20 @@ where key represents a valid service configuration name and value represents the
 ### Properties
 * **enabled**: bool (Required): Enable Ranger for cluster or not.
 
+## ClusterResizeData
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ClusterResizeProperties](#clusterresizeproperties): Sets the properties. Define cluster resize specific properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ClusterResizeProperties
+### Properties
+* **targetWorkerNodeCount**: int (Required): Target node count of worker node.
+
 ## ClusterResourceProperties
 ### Properties
 * **clusterProfile**: [ClusterProfile](#clusterprofile) (Required): Cluster profile.
@@ -183,6 +300,28 @@ where key represents a valid service configuration name and value represents the
 ### Properties
 * **configs**: [ClusterServiceConfig](#clusterserviceconfig)[] (Required): List of service configs.
 * **serviceName**: string (Required): Name of the service the configurations should apply to.
+
+## ClusterUpgrade
+### Properties
+* **properties**: [ClusterUpgradeProperties](#clusterupgradeproperties) (Required): Properties of upgrading cluster.
+
+## ClusterUpgradeProperties
+* **Discriminator**: upgradeType
+
+### Base Properties
+
+### ClusterAKSPatchVersionUpgradeProperties
+#### Properties
+* **upgradeType**: 'AKSPatchUpgrade' (Required): Type of upgrade.
+
+### ClusterHotfixUpgradeProperties
+#### Properties
+* **componentName**: string: Name of component to be upgraded.
+* **targetBuildNumber**: string: Target build number of component to be upgraded.
+* **targetClusterVersion**: string: Target cluster version of component to be upgraded.
+* **targetOssVersion**: string: Target OSS version of component to be upgraded.
+* **upgradeType**: 'HotfixUpgrade' (Required): Type of upgrade.
+
 
 ## ComparisonRule
 ### Properties
@@ -232,6 +371,11 @@ where key represents a valid service configuration name and value represents the
 * **jobJarDirectory**: string (Required): A string property that specifies the directory where the job JAR is located.
 * **savePointName**: string: A string property that represents the name of the savepoint for the Flink job
 * **upgradeMode**: 'LAST_STATE_UPDATE' | 'STATELESS_UPDATE' | 'UPDATE' | string (Required): A string property that indicates the upgrade mode to be performed on the Flink job. It can have one of the following enum values => STATELESS_UPDATE, UPDATE, LAST_STATE_UPDATE.
+
+## FlinkJobPropertiesFlinkConfiguration
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## FlinkProfile
 ### Properties
@@ -285,6 +429,17 @@ where key represents a valid service configuration name and value represents the
 * **minNodes**: int (Required): User needs to set the minimum number of nodes for load based scaling, the load based scaling will use this to scale up and scale down between minimum and maximum number of nodes.
 * **pollInterval**: int: User can specify the poll interval, this is the time period (in seconds) after which scaling metrics are polled for triggering a scaling operation.
 * **scalingRules**: [ScalingRule](#scalingrule)[] (Required): The scaling rules.
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string: Name for checking availability.
+* **type**: string: The resource type in Microsoft.HDInsight.
+
+## NameAvailabilityResult
+### Properties
+* **message**: string: The error message of unavailability.
+* **nameAvailable**: bool: Indicator of availability of the Microsoft.HDInsight resource name.
+* **reason**: string: The reason of unavailability.
 
 ## NodeProfile
 ### Properties
@@ -406,6 +561,21 @@ where key represents a valid service configuration name and value represents the
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

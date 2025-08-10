@@ -31,9 +31,35 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
 * **type**: 'Microsoft.Cache/redisEnterprise/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function export (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2023-07-01
+* **Input**: [ExportClusterParameters](#exportclusterparameters)
+
+## Function flush (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2023-07-01
+* **Input**: [FlushParameters](#flushparameters)
+
+## Function forceUnlink (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2023-07-01
+* **Input**: [ForceUnlinkParameters](#forceunlinkparameters)
+
+## Function import (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2023-07-01
+* **Input**: [ImportClusterParameters](#importclusterparameters)
+
 ## Function listKeys (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
 * **Resource**: Microsoft.Cache/redisEnterprise/databases
 * **ApiVersion**: 2023-07-01
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKey (Microsoft.Cache/redisEnterprise/databases@2023-07-01)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2023-07-01
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
 * **Output**: [AccessKeys](#accesskeys)
 
 ## AccessKeys
@@ -66,6 +92,22 @@
 ### Properties
 * **groupNickname**: string: Name for the group of linked database resources
 * **linkedDatabases**: [LinkedDatabase](#linkeddatabase)[]: List of database resources to link with this database
+
+## ExportClusterParameters
+### Properties
+* **sasUri**: string {sensitive} (Required): SAS URI for the target directory to export to
+
+## FlushParameters
+### Properties
+* **ids**: string[]: The identifiers of all the other database resources in the georeplication group to be flushed.
+
+## ForceUnlinkParameters
+### Properties
+* **ids**: string[] (Required): The resource IDs of the database resources to be unlinked.
+
+## ImportClusterParameters
+### Properties
+* **sasUris**: string[] (Required): SAS URIs for the target blobs to import from
 
 ## LinkedDatabase
 ### Properties
@@ -107,6 +149,10 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): Which access key to regenerate.
 
 ## Sku
 ### Properties

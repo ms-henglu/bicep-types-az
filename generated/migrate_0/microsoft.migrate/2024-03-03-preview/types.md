@@ -482,6 +482,54 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Migrate/assessmentProjects/webAppCompoundAssessments/summaries' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function compareSummary (Microsoft.Migrate/assessmentProjects/businessCases@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/businessCases
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [CompareSummary](#comparesummary)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/avsAssessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/avsAssessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/assessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/assessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/sqlAssessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/sqlAssessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/webAppAssessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/webAppAssessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/webAppCompoundAssessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/webAppCompoundAssessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function downloadUrl (Microsoft.Migrate/assessmentProjects/aksAssessments@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/aksAssessments
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [DownloadUrl](#downloadurl)
+
+## Function getReportDownloadUrl (Microsoft.Migrate/assessmentProjects/businessCases@2024-03-03-preview)
+* **Resource**: Microsoft.Migrate/assessmentProjects/businessCases
+* **ApiVersion**: 2024-03-03-preview
+* **Input**: any
+* **Output**: [ReportDownloadUrl](#reportdownloadurl)
+
 ## AKSAssessmentOptionsOutboundEdgeGroup
 ### Properties
 * **categories**: ('All' | 'ComputeOptimized' | 'GeneralPurpose' | 'GpuOptimized' | 'HighPerformanceCompute' | 'Isolated' | 'MemoryOptimized' | 'StorageOptimized' | string)[] (Required): Gets or sets the Azure VM Category.
@@ -1169,6 +1217,30 @@ Azure sizes.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): The status of the last operation.
 * **updatedTimestamp**: string (ReadOnly): Timestamp when collector was last updated.
 
+## CompareSummary
+### Properties
+* **azureArcEnabledOnPremisesCostDetails**: [CostDetails](#costdetails) (ReadOnly): The Azure arc enabled on-premises cost.
+* **azureAvsCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The Azure AvS Carbon Emissions details.
+* **azureAvsCostDetails**: [CostDetails](#costdetails) (ReadOnly): The AVS cost.
+* **azureIaasCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The Azure IaaS Carbon Emissions details.
+* **azureIaasCostDetails**: [CostDetails](#costdetails) (ReadOnly): The azure IaaS cost.
+* **azurePaasCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The Azure PaaS Carbon Emissions details.
+* **azurePaasCostDetails**: [CostDetails](#costdetails) (ReadOnly): The azure PaaS cost.
+* **futureAzureArcEnabledOnPremisesCostDetails**: [CostDetails](#costdetails) (ReadOnly): The final azure arc enabled on-premises cost based on the final migration percentage.
+* **futureCostDetails**: [CostDetails](#costdetails) (ReadOnly): Future state cost which includes Azure cost and Arc enabled on-premises cost based on the final migration percentage.
+* **onPremisesAvsCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises Avs Carbon Emissions details.
+* **onPremisesAvsCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises AVS cost.
+* **onPremisesAvsDecommissionedCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises Avs decommissioned Carbon Emissions details.
+* **onPremisesAvsDecommissionedCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises AVS decommissioned cost.
+* **onPremisesIaasCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises IaaS Carbon Emissions details.
+* **onPremisesIaasCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises IaaS cost.
+* **onPremisesIaasDecommissionedCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises IaaS decommissioned Carbon Emissions details.
+* **onPremisesIaasDecommissionedCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises IaaS decommissioned cost.
+* **onPremisesPaasCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises PaaS Carbon Emissions details.
+* **onPremisesPaasCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises PaaS cost.
+* **onPremisesPaasDecommissionedCarbonEmissionsDetails**: [CarbonEmissionsDetails](#carbonemissionsdetails) (ReadOnly): The on premises PaaS decommissioned Carbon Emissions details.
+* **onPremisesPaasDecommissionedCostDetails**: [CostDetails](#costdetails) (ReadOnly): The on premises PaaS decommissioned cost.
+
 ## CompoundAssessmentDetails
 ### Properties
 * **createdTimestamp**: string: Timestamp when the assessment was created.
@@ -1267,6 +1339,11 @@ Azure sizes.
 ### Properties
 * **count**: int (ReadOnly): The number of machines with the Virtualization type classification.
 * **virtualizationType**: string (ReadOnly): The Virtualization type.
+
+## DownloadUrl
+### Properties
+* **assessmentReportUrl**: string (Required, ReadOnly): Hyperlink to download report.
+* **expirationTime**: string (Required, ReadOnly): Expiry date of download url.
 
 ## EntityUptime
 ### Properties
@@ -1872,6 +1949,11 @@ format.
 ### Properties
 * **reportStatus**: 'Completed' | 'Failed' | 'InProgress' | 'None' | 'Unknown' | string (ReadOnly): Report status.
 * **reportType**: 'Excel' | 'Unknown' | string (ReadOnly): Report type.
+
+## ReportDownloadUrl
+### Properties
+* **businessCaseReportUrl**: string (ReadOnly): Hyperlink to download report.
+* **expirationTime**: string (ReadOnly): Expiry date of download url.
 
 ## SavingComponent
 ### Properties

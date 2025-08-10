@@ -48,6 +48,12 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.MixedReality/spatialAnchorsAccounts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.MixedReality/locations@2021-03-01-preview)
+* **Resource**: Microsoft.MixedReality/locations
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listKeys (Microsoft.MixedReality/spatialAnchorsAccounts@2021-03-01-preview)
 * **Resource**: Microsoft.MixedReality/spatialAnchorsAccounts
 * **ApiVersion**: 2021-03-01-preview
@@ -63,10 +69,43 @@
 * **ApiVersion**: 2021-03-01-preview
 * **Output**: [AccountKeys](#accountkeys)
 
+## Function regenerateKeys (Microsoft.MixedReality/spatialAnchorsAccounts@2021-03-01-preview)
+* **Resource**: Microsoft.MixedReality/spatialAnchorsAccounts
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [AccountKeyRegenerateRequest](#accountkeyregeneraterequest)
+* **Output**: [AccountKeys](#accountkeys)
+
+## Function regenerateKeys (Microsoft.MixedReality/remoteRenderingAccounts@2021-03-01-preview)
+* **Resource**: Microsoft.MixedReality/remoteRenderingAccounts
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [AccountKeyRegenerateRequest](#accountkeyregeneraterequest)
+* **Output**: [AccountKeys](#accountkeys)
+
+## Function regenerateKeys (Microsoft.MixedReality/objectAnchorsAccounts@2021-03-01-preview)
+* **Resource**: Microsoft.MixedReality/objectAnchorsAccounts
+* **ApiVersion**: 2021-03-01-preview
+* **Input**: [AccountKeyRegenerateRequest](#accountkeyregeneraterequest)
+* **Output**: [AccountKeys](#accountkeys)
+
+## AccountKeyRegenerateRequest
+### Properties
+* **serial**: int: Serial of key to be regenerated
+
 ## AccountKeys
 ### Properties
 * **primaryKey**: string {sensitive} (ReadOnly): value of primary key.
 * **secondaryKey**: string {sensitive} (ReadOnly): value of secondary key.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource Name To Verify
+* **type**: string (Required): Fully qualified resource type which includes provider namespace
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: detail message
+* **nameAvailable**: bool (Required): if name Available
+* **reason**: 'AlreadyExists' | 'Invalid' | string: Resource Name To Verify
 
 ## Identity
 ### Properties

@@ -93,6 +93,8 @@ warning | Modeler/MissingType | The schema 'components·jb1v7t·schemas·redisco
 warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operationstatus·properties·properties·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2024-11-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -177,6 +179,8 @@ warning | Modeler/MissingType | The schema 'components·jb1v7t·schemas·redisco
 warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operationstatus·properties·properties·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/preview/2024-04-01-preview/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -261,6 +265,8 @@ warning | Modeler/MissingType | The schema 'components·jb1v7t·schemas·redisco
 warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operationstatus·properties·properties·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2024-03-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -345,6 +351,8 @@ warning | Modeler/MissingType | The schema 'components·jb1v7t·schemas·redisco
 warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operationstatus·properties·properties·additionalproperties' has no type or format information whatsoever. Location:
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2023-08-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
+warning | Unrecognized property type: any-object. Returning 'any'.
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -432,6 +440,7 @@ warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operati
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/preview/2023-05-01-preview/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorDetail' -> 'ErrorDetailAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -519,6 +528,7 @@ warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operati
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2023-04-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorDetail' -> 'ErrorDetailAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -606,6 +616,7 @@ warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operati
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2022-06-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorDetail' -> 'ErrorDetailAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -693,6 +704,7 @@ warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operati
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2022-05-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorDetail' -> 'ErrorDetailAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -780,6 +792,7 @@ warning | Modeler/MissingType | The schema 'components·pgz285·schemas·operati
    file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2021-06-01/redis.json#/components/schemas/components·pgz285·schemas·operationstatus·properties·properties·additionalproperties
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'ErrorDetail' -> 'ErrorDetailAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -860,6 +873,7 @@ warning | PreCheck/SchemaMissingType | The schema 'NotificationListResponse' wit
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2020-12-01/redis.json:2707:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -952,6 +966,7 @@ warning | PreCheck/DuplicateSchema | Duplicate Schema named 'Resource' (4 differ
   - title: <none> => "Resource"
 warning | PreNamer/DeduplicateName | Deduplicating schema name: 'Resource' -> 'ResourceAutoGenerated'
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1038,6 +1053,7 @@ warning | PreCheck/SchemaMissingType | The schema 'NotificationListResponse' wit
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/preview/2019-07-01/redis.json:2208:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1122,6 +1138,7 @@ warning | PreCheck/SchemaMissingType | The schema 'NotificationListResponse' wit
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2018-03-01/redis.json:2153:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1206,6 +1223,7 @@ warning | PreCheck/SchemaMissingType | The schema 'NotificationListResponse' wit
     - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/redis/resource-manager/Microsoft.Cache/stable/2017-10-01/redis.json:2119:5
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping Redis_ListUpgradeNotifications due to required query parameter "history"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/CheckNameAvailability': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
