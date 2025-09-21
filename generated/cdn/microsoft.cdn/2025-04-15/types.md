@@ -6,11 +6,11 @@
 * **apiVersion**: '2025-04-15' (ReadOnly, DeployTimeConstant): The resource api version
 * **etag**: string: Gets a unique read-only string that changes whenever the resource is updated.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string {maxLength: 128} (Required, DeployTimeConstant): The resource name
 * **properties**: [CdnWebApplicationFirewallPolicyProperties](#cdnwebapplicationfirewallpolicyproperties): Properties of the web application firewall policy.
 * **sku**: [Sku](#sku) (Required): The pricing tier (defines a CDN provider, feature list and rate) of the CdnWebApplicationFirewallPolicy.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Cdn/cdnWebApplicationFirewallPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -21,11 +21,11 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [ManagedServiceIdentity](#managedserviceidentity): Managed service identity (system assigned and/or user assigned identities).
 * **kind**: string (ReadOnly): Kind of the profile. Used by portal to differentiate traditional CDN profile and new AFD profile.
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ProfileProperties](#profileproperties): The JSON object that contains the properties required to create a profile.
 * **sku**: [Sku](#sku) (Required): The pricing tier (defines Azure Front Door Standard or Premium or a CDN provider, feature list and rate) of the profile.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Cdn/profiles' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -34,10 +34,10 @@
 ### Properties
 * **apiVersion**: '2025-04-15' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AFDEndpointProperties](#afdendpointproperties): The JSON object that contains the properties required to create an endpoint.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Cdn/profiles/afdEndpoints' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -48,7 +48,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RouteProperties](#routeproperties): The JSON object that contains the properties of the Routes to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/afdEndpoints/routes' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/customDomains@2025-04-15
@@ -58,7 +58,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AFDDomainProperties](#afddomainproperties): The JSON object that contains the properties of the domain to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/customDomains' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/endpoints@2025-04-15
@@ -66,10 +66,10 @@
 ### Properties
 * **apiVersion**: '2025-04-15' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Cdn/profiles/endpoints' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -80,7 +80,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [CustomDomainPropertiesParametersOrCustomDomainProperties](#customdomainpropertiesparametersorcustomdomainproperties): The JSON object that contains the properties of the custom domain to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/endpoints/customDomains' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/endpoints/originGroups@2025-04-15
@@ -90,7 +90,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [OriginGroupProperties](#origingroupproperties): The JSON object that contains the properties of the origin group.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/endpoints/originGroups' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/endpoints/origins@2025-04-15
@@ -100,7 +100,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [OriginProperties](#originproperties): The JSON object that contains the properties of the origin.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/endpoints/origins' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/originGroups@2025-04-15
@@ -110,7 +110,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AFDOriginGroupProperties](#afdorigingroupproperties): The JSON object that contains the properties of the origin group.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/originGroups' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/originGroups/origins@2025-04-15
@@ -120,7 +120,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AFDOriginProperties](#afdoriginproperties): The JSON object that contains the properties of the origin.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/originGroups/origins' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/ruleSets@2025-04-15
@@ -130,7 +130,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RuleSetProperties](#rulesetproperties) (ReadOnly): The JSON object that contains the properties of the Rule Set to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/ruleSets' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/ruleSets/rules@2025-04-15
@@ -140,7 +140,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RuleProperties](#ruleproperties): The JSON object that contains the properties of the Rules to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/ruleSets/rules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/secrets@2025-04-15
@@ -150,7 +150,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SecretProperties](#secretproperties): The JSON object that contains the properties of the Secret to create.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/secrets' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cdn/profiles/securityPolicies@2025-04-15
@@ -160,8 +160,143 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SecurityPolicyProperties](#securitypolicyproperties): The json object that contains properties required to create a security policy
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Read only system data
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cdn/profiles/securityPolicies' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function cdnCanMigrateToAfd (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Output**: [CanMigrateResult](#canmigrateresult)
+
+## Function cdnMigrateToAfd (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Input**: [CdnMigrationToAfdParameters](#cdnmigrationtoafdparameters)
+* **Output**: [MigrateResult](#migrateresult)
+
+## Function checkEndpointNameAvailability (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Input**: [CheckEndpointNameAvailabilityInput](#checkendpointnameavailabilityinput)
+* **Output**: [CheckEndpointNameAvailabilityOutput](#checkendpointnameavailabilityoutput)
+
+## Function checkHostNameAvailability (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Input**: [CheckHostNameAvailabilityInput](#checkhostnameavailabilityinput)
+* **Output**: [CheckNameAvailabilityOutput](#checknameavailabilityoutput)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function checkResourceUsage (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Output**: [ResourceUsageListResult](#resourceusagelistresult)
+
+## Function disableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2025-04-15
+* **Output**: [CustomDomain](#customdomain)
+
+## Function enableCustomHttps (Microsoft.Cdn/profiles/endpoints/customDomains@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints/customDomains
+* **ApiVersion**: 2025-04-15
+* **Input**: [CustomDomainHttpsParameters](#customdomainhttpsparameters)
+* **Output**: [CustomDomain](#customdomain)
+
+## Function generateSsoUri (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Output**: [SsoUri](#ssouri)
+
+## Function getSupportedOptimizationTypes (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Output**: [SupportedOptimizationTypesListResult](#supportedoptimizationtypeslistresult)
+
+## Function load (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Input**: [LoadParameters](#loadparameters)
+
+## Function migrationAbort (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+
+## Function migrationCommit (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+
+## Function purge (Microsoft.Cdn/profiles/afdEndpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2025-04-15
+* **Input**: [AfdPurgeParameters](#afdpurgeparameters)
+
+## Function purge (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function refreshValidationToken (Microsoft.Cdn/profiles/customDomains@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/customDomains
+* **ApiVersion**: 2025-04-15
+
+## Function start (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Output**: [Endpoint](#endpoint)
+
+## Function stop (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Output**: [Endpoint](#endpoint)
+
+## Function upgrade (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Input**: [ProfileUpgradeParameters](#profileupgradeparameters)
+* **Output**: [Profile](#profile)
+
+## Function usages (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/afdEndpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2025-04-15
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/originGroups@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/originGroups
+* **ApiVersion**: 2025-04-15
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function usages (Microsoft.Cdn/profiles/ruleSets@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/ruleSets
+* **ApiVersion**: 2025-04-15
+* **Output**: [UsagesListResult](#usageslistresult)
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/afdEndpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/afdEndpoints
+* **ApiVersion**: 2025-04-15
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
+## Function validateCustomDomain (Microsoft.Cdn/profiles/endpoints@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles/endpoints
+* **ApiVersion**: 2025-04-15
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
+
+## Function validateSecret (Microsoft.Cdn/profiles@2025-04-15)
+* **Resource**: Microsoft.Cdn/profiles
+* **ApiVersion**: 2025-04-15
+* **Input**: [ValidateSecretInput](#validatesecretinput)
+* **Output**: [ValidateSecretOutput](#validatesecretoutput)
 
 ## ActivatedResourceReference
 ### Properties
@@ -234,6 +369,11 @@
 * **sharedPrivateLinkResource**: [SharedPrivateLinkResourceProperties](#sharedprivatelinkresourceproperties): The properties of the private link resource for private origin.
 * **weight**: int {minValue: 1, maxValue: 1000}: Weight of the origin in given origin group for load balancing. Must be between 1 and 1000
 
+## AfdPurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
+* **domains**: string[]: List of domains.
+
 ## AfdRouteCacheConfiguration
 ### Properties
 * **compressionSettings**: [CompressionSettings](#compressionsettings): compression settings.
@@ -261,6 +401,18 @@
 * **queryStringBehavior**: 'Exclude' | 'ExcludeAll' | 'Include' | 'IncludeAll' | string (Required): Caching behavior for the requests
 * **typeName**: 'DeliveryRuleCacheExpirationActionParameters' | 'DeliveryRuleCacheKeyQueryStringBehaviorActionParameters' | 'DeliveryRuleHeaderActionParameters' | 'DeliveryRuleOriginGroupOverrideActionParameters' | 'DeliveryRuleRouteConfigurationOverrideActionParameters' | 'DeliveryRuleUrlRedirectActionParameters' | 'DeliveryRuleUrlRewriteActionParameters' | 'DeliveryRuleUrlSigningActionParameters' | string (Required)
 
+## CanMigrateProperties
+### Properties
+* **canMigrate**: bool (ReadOnly): Flag that says if the profile can be migrated
+* **defaultSku**: 'Premium_AzureFrontDoor' | 'Standard_AzureFrontDoor' | string (ReadOnly): Recommended sku for the migration
+* **errors**: [MigrationErrorType](#migrationerrortype)[]
+
+## CanMigrateResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **properties**: [CanMigrateProperties](#canmigrateproperties)
+* **type**: string (ReadOnly): Resource type.
+
 ## CdnCertificateSourceParameters
 ### Properties
 * **certificateType**: 'Dedicated' | 'Shared' | string (Required): Type of certificate used
@@ -269,6 +421,11 @@
 ## CdnEndpoint
 ### Properties
 * **id**: string: ARM Resource ID string.
+
+## CdnMigrationToAfdParameters
+### Properties
+* **migrationEndpointMappings**: [MigrationEndpointMapping](#migrationendpointmapping)[]: A name map between classic CDN endpoints and AFD Premium/Standard endpoints.
+* **sku**: [Sku](#sku) (Required): Sku for the migration
 
 ## CdnWebApplicationFirewallPolicyProperties
 ### Properties
@@ -285,6 +442,29 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## CheckEndpointNameAvailabilityInput
+### Properties
+* **autoGeneratedDomainNameLabelScope**: 'NoReuse' | 'ResourceGroupReuse' | 'SubscriptionReuse' | 'TenantReuse' | string: Indicates the endpoint name reuse scope. The default value is TenantReuse.
+* **name**: string (Required): The resource name to validate.
+* **type**: 'Microsoft.Cdn/Profiles/AfdEndpoints' | 'Microsoft.Cdn/Profiles/Endpoints' | string (Required): The type of the resource whose name is to be validated.
+
+## CheckEndpointNameAvailabilityOutput
+### Properties
+* **availableHostname**: string (ReadOnly): Returns the available hostname generated based on the AutoGeneratedDomainNameLabelScope when the name is available, otherwise it returns empty string
+* **message**: string (ReadOnly): The detailed error message describing why the name is not available.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason why the name is not available.
+
+## CheckHostNameAvailabilityInput
+### Properties
+* **hostName**: string (Required): The host name to validate.
+
+## CheckNameAvailabilityOutput
+### Properties
+* **message**: string (ReadOnly): The detailed error message describing why the name is not available.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason why the name is not available.
 
 ## ClientPortMatchConditionParameters
 ### Properties
@@ -308,6 +488,14 @@
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
 * **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
+## CustomDomain
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CustomDomainProperties](#customdomainproperties): The JSON object that contains the properties of the custom domain to create.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## CustomDomainHttpsParameters
 * **Discriminator**: certificateSource
 
@@ -325,6 +513,16 @@
 * **certificateSource**: 'Cdn' (Required): Defines the source of the SSL certificate.
 * **certificateSourceParameters**: [CdnCertificateSourceParameters](#cdncertificatesourceparameters) (Required): Defines the certificate source parameters using CDN managed certificate for enabling SSL.
 
+
+## CustomDomainProperties
+### Properties
+* **customHttpsParameters**: [CustomDomainHttpsParameters](#customdomainhttpsparameters): Certificate parameters for securing custom HTTPS
+* **customHttpsProvisioningState**: 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | 'Failed' | string (ReadOnly): Provisioning status of the custom domain.
+* **customHttpsProvisioningSubstate**: 'CertificateDeleted' | 'CertificateDeployed' | 'DeletingCertificate' | 'DeployingCertificate' | 'DomainControlValidationRequestApproved' | 'DomainControlValidationRequestRejected' | 'DomainControlValidationRequestTimedOut' | 'IssuingCertificate' | 'PendingDomainControlValidationREquestApproval' | 'SubmittingDomainControlValidationRequest' | string (ReadOnly): Provisioning substate shows the progress of custom HTTPS enabling/disabling process step by step.
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+* **provisioningState**: 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | 'Failed' | string (ReadOnly): Provisioning status of Custom Https of the custom domain.
+* **resourceState**: 'Active' | 'Creating' | 'Deleting' | string (ReadOnly): Resource status of the custom domain.
+* **validationData**: string: Special validation or data may be required when delivering CDN to some regions due to local compliance reasons. E.g. ICP license number of a custom domain is required to deliver content in China.
 
 ## CustomDomainPropertiesParametersOrCustomDomainProperties
 ### Properties
@@ -554,6 +752,16 @@
 * **expirationDate**: string (ReadOnly): The date time that the token expires
 * **validationToken**: string (ReadOnly): Challenge used for DNS TXT record or file based validation
 
+## Endpoint
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [EndpointProperties](#endpointproperties): The JSON object that contains the properties required to create an endpoint.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## EndpointProperties
 ### Properties
 * **contentTypesToCompress**: string[]: List of content types on which compression applies. The value should be a valid MIME type.
@@ -661,6 +869,10 @@
 * **sampleSize**: int: The number of samples to consider for load balancing decisions
 * **successfulSamplesRequired**: int: The number of samples within the sample period that must succeed
 
+## LoadParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be loaded. Path should be a relative file URL of the origin.
+
 ## ManagedRuleGroupOverride
 ### Properties
 * **ruleGroupName**: string (Required): Describes the managed rule group within the rule set to override
@@ -687,8 +899,13 @@
 ### Properties
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The service principal ID of the system assigned identity. This property will only be provided for a system assigned identity.
 * **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
-* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
-* **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
+* **userAssignedIdentities**: [ManagedServiceIdentityUserAssignedIdentities](#managedserviceidentityuserassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+
+## ManagedServiceIdentityUserAssignedIdentities
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
 ## MatchCondition
 ### Properties
@@ -698,6 +915,28 @@
 * **operator**: 'Any' | 'BeginsWith' | 'Contains' | 'EndsWith' | 'Equal' | 'GeoMatch' | 'GreaterThan' | 'GreaterThanOrEqual' | 'IPMatch' | 'LessThan' | 'LessThanOrEqual' | 'RegEx' | string (Required): Describes operator to be matched
 * **selector**: string: Selector can used to match a specific key for QueryString, Cookies, RequestHeader or PostArgs.
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms.
+
+## MigrateResult
+### Properties
+* **id**: string (ReadOnly): Resource ID.
+* **properties**: [MigrateResultProperties](#migrateresultproperties)
+* **type**: string (ReadOnly): Resource type.
+
+## MigrateResultProperties
+### Properties
+* **migratedProfileResourceId**: [ResourceReference](#resourcereference) (ReadOnly): Arm resource id of the migrated profile
+
+## MigrationEndpointMapping
+### Properties
+* **migratedFrom**: string: Name of the classic CDN profile endpoint.
+* **migratedTo**: string: Name of the newly created migrated Azure Frontdoor Standard/Premium profile endpoint. This name will replace the name of the classic CDN endpoint resource.
+
+## MigrationErrorType
+### Properties
+* **code**: string (ReadOnly): Error code.
+* **errorMessage**: string (ReadOnly): Error message indicating why the operation failed.
+* **nextSteps**: string (ReadOnly): Describes what needs to be done to fix the problem
+* **resourceName**: string (ReadOnly): Resource which has the problem.
 
 ## OriginGroupOverride
 ### Properties
@@ -752,6 +991,24 @@
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
 * **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
+## Profile
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): Managed service identity (system assigned and/or user assigned identities).
+* **kind**: string (ReadOnly): Kind of the profile. Used by portal to differentiate traditional CDN profile and new AFD profile.
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ProfileProperties](#profileproperties): The JSON object that contains the properties required to create a profile.
+* **sku**: [Sku](#sku) (Required): The pricing tier (defines Azure Front Door Standard or Premium or a CDN provider, feature list and rate) of the profile.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## ProfileChangeSkuWafMapping
+### Properties
+* **changeToWafPolicy**: [ResourceReference](#resourcereference) (Required): The new waf resource for the security policy to use.
+* **securityPolicyName**: string (Required): The security policy name.
+
 ## ProfileLogScrubbing
 ### Properties
 * **scrubbingRules**: [ProfileScrubbingRules](#profilescrubbingrules)[]: List of log scrubbing rules applied to the Azure Front Door profile logs.
@@ -777,6 +1034,14 @@
 * **selector**: string: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
 * **selectorMatchOperator**: 'EqualsAny' | string (Required): When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
 * **state**: 'Disabled' | 'Enabled' | string: Defines the state of a log scrubbing rule. Default value is enabled.
+
+## ProfileUpgradeParameters
+### Properties
+* **wafMappingList**: [ProfileChangeSkuWafMapping](#profilechangeskuwafmapping)[] (Required): Web Application Firewall (WAF) and security policy mapping for the profile upgrade
+
+## PurgeParameters
+### Properties
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
 
 ## QueryStringMatchConditionParameters
 ### Properties
@@ -852,6 +1117,18 @@
 ## ResourceReference
 ### Properties
 * **id**: string: Resource ID.
+
+## ResourceUsage
+### Properties
+* **currentValue**: int (ReadOnly): Actual value of usage on the specified resource type.
+* **limit**: int (ReadOnly): Quota of the specified resource type.
+* **resourceType**: string (ReadOnly): Resource type for which the usage is provided.
+* **unit**: 'count' | string (ReadOnly): Unit of the usage. e.g. count.
+
+## ResourceUsageListResult
+### Properties
+* **nextLink**: string: URL to get the next set of custom domain objects if there are any.
+* **value**: [ResourceUsage](#resourceusage)[] (ReadOnly): List of resource usages.
 
 ## ResponseBasedOriginErrorDetectionParameters
 ### Properties
@@ -1006,14 +1283,32 @@
 * **transforms**: ('Lowercase' | 'RemoveNulls' | 'Trim' | 'Uppercase' | 'UrlDecode' | 'UrlEncode' | string)[]: List of transforms
 * **typeName**: 'DeliveryRuleClientPortConditionParameters' | 'DeliveryRuleCookiesConditionParameters' | 'DeliveryRuleHostNameConditionParameters' | 'DeliveryRuleHttpVersionConditionParameters' | 'DeliveryRuleIsDeviceConditionParameters' | 'DeliveryRulePostArgsConditionParameters' | 'DeliveryRuleQueryStringConditionParameters' | 'DeliveryRuleRemoteAddressConditionParameters' | 'DeliveryRuleRequestBodyConditionParameters' | 'DeliveryRuleRequestHeaderConditionParameters' | 'DeliveryRuleRequestMethodConditionParameters' | 'DeliveryRuleRequestSchemeConditionParameters' | 'DeliveryRuleRequestUriConditionParameters' | 'DeliveryRuleServerPortConditionParameters' | 'DeliveryRuleSocketAddrConditionParameters' | 'DeliveryRuleSslProtocolConditionParameters' | 'DeliveryRuleUrlFileExtensionMatchConditionParameters' | 'DeliveryRuleUrlFilenameConditionParameters' | 'DeliveryRuleUrlPathMatchConditionParameters' | string (Required)
 
+## SsoUri
+### Properties
+* **ssoUriValue**: string (ReadOnly): The URI used to login to the supplemental portal.
+
+## SupportedOptimizationTypesListResult
+### Properties
+* **supportedOptimizationTypes**: ('DynamicSiteAcceleration' | 'GeneralMediaStreaming' | 'GeneralWebDelivery' | 'LargeFileDownload' | 'VideoOnDemandMediaStreaming' | string)[] (ReadOnly): Supported optimization types for a profile.
+
 ## SystemData
 ### Properties
-* **createdAt**: string: The timestamp of resource creation (UTC)
-* **createdBy**: string: An identifier for the identity that created the resource
-* **createdByType**: 'application' | 'key' | 'managedIdentity' | 'user' | string: The type of identity that created the resource
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
-* **lastModifiedBy**: string: An identifier for the identity that last modified the resource
-* **lastModifiedByType**: 'application' | 'key' | 'managedIdentity' | 'user' | string: The type of identity that last modified the resource
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties
@@ -1092,13 +1387,47 @@
 * **paramIndicator**: 'Expires' | 'KeyId' | 'Signature' | string (Required): Indicates the purpose of the parameter
 * **paramName**: string (Required): Parameter name
 
-## UserAssignedIdentities
+## Usage
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
+* **currentValue**: int (Required): The current value of the usage.
+* **id**: string (ReadOnly): Resource identifier.
+* **limit**: int (Required): The limit of usage.
+* **name**: [UsageName](#usagename) (Required): The name of the type of usage.
+* **unit**: 'Count' | string (Required): An enum describing the unit of measurement.
+
+## UsageName
+### Properties
+* **localizedValue**: string: A localized string describing the resource name.
+* **value**: string: A string describing the resource name.
+
+## UsagesListResult
+### Properties
+* **nextLink**: string: URL to get the next set of results.
+* **value**: [Usage](#usage)[]: The list of resource usages.
 
 ## UserAssignedIdentity
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client ID of the assigned identity.
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The principal ID of the assigned identity.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
+
+## ValidateSecretInput
+### Properties
+* **secretSource**: [ResourceReference](#resourcereference) (Required): Resource reference to the Azure Key Vault secret. Expected to be in format of /subscriptions/{​​​​​​​​​subscriptionId}​​​​​​​​​/resourceGroups/{​​​​​​​​​resourceGroupName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​/providers/Microsoft.KeyVault/vaults/{vaultName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​/secrets/{secretName}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+* **secretType**: 'AzureFirstPartyManagedCertificate' | 'CustomerCertificate' | 'ManagedCertificate' | 'UrlSigningKey' | string (Required): The secret type.
+* **secretVersion**: string: Secret version, if customer is using a specific version.
+
+## ValidateSecretOutput
+### Properties
+* **message**: string: Detailed error message
+* **status**: 'AccessDenied' | 'CertificateExpired' | 'Invalid' | 'Valid' | string: The validation status.
 

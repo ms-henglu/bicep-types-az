@@ -43,6 +43,40 @@
 * **properties**: [SnapshotProperties](#snapshotproperties): Snapshot Properties
 * **type**: 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function authorizeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2020-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2020-03-01
+* **Input**: [AuthorizeRequest](#authorizerequest)
+
+## Function breakReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2020-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2020-03-01
+
+## Function checkFilePathAvailability (Microsoft.NetApp/locations@2020-03-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2020-03-01
+* **Input**: [ResourceNameAvailabilityRequest](#resourcenameavailabilityrequest)
+* **Output**: [ResourceNameAvailability](#resourcenameavailability)
+
+## Function checkNameAvailability (Microsoft.NetApp/locations@2020-03-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2020-03-01
+* **Input**: [ResourceNameAvailabilityRequest](#resourcenameavailabilityrequest)
+* **Output**: [ResourceNameAvailability](#resourcenameavailability)
+
+## Function deleteReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2020-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2020-03-01
+
+## Function resyncReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2020-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2020-03-01
+
+## Function revert (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2020-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2020-03-01
+* **Input**: [VolumeRevert](#volumerevert)
+
 ## AccountProperties
 ### Properties
 * **activeDirectories**: [ActiveDirectory](#activedirectory)[]: Active Directories
@@ -60,6 +94,10 @@
 * **smbServerName**: string: NetBIOS name of the SMB server. This name will be registered as a computer account in the AD and used to mount volumes
 * **status**: string: Status of the Active Directory
 * **username**: string: Username of Active Directory domain administrator
+
+## AuthorizeRequest
+### Properties
+* **remoteVolumeResourceId**: string: Resource id of the remote volume
 
 ## ExportPolicyRule
 ### Properties
@@ -97,6 +135,18 @@
 * **remoteVolumeResourceId**: string (Required): The resource ID of the remote volume.
 * **replicationId**: string: Id
 * **replicationSchedule**: '_10minutely' | 'daily' | 'hourly' | 'monthly' | 'weekly' | string (Required): Schedule
+
+## ResourceNameAvailability
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
+
+## ResourceNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
 
 ## ResourceTags
 ### Properties
@@ -145,6 +195,10 @@
 ## VolumePropertiesExportPolicy
 ### Properties
 * **rules**: [ExportPolicyRule](#exportpolicyrule)[]: Export policy rule
+
+## VolumeRevert
+### Properties
+* **snapshotId**: string: Resource id of the snapshot
 
 ## VolumeSnapshotProperties
 ### Properties

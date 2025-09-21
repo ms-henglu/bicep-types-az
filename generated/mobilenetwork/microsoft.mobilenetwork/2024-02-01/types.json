@@ -6190,5 +6190,657 @@
       "$ref": "#/458"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "AsyncOperationStatus",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Fully qualified ID for the async operation."
+      },
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Name of the async operation."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The operation status."
+      },
+      "resourceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Fully qualified ID for the resource that this async operation status relates to."
+      },
+      "startTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The start time of the operation."
+      },
+      "endTime": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The end time of the operation."
+      },
+      "percentComplete": {
+        "type": {
+          "$ref": "#/536"
+        },
+        "flags": 0,
+        "description": "Percentage of the operation that is complete."
+      },
+      "properties": {
+        "type": {
+          "$ref": "#/217"
+        },
+        "flags": 0,
+        "description": "Properties returned by the resource provider on a successful operation"
+      },
+      "error": {
+        "type": {
+          "$ref": "#/537"
+        },
+        "flags": 0,
+        "description": "If present, details of the operation error."
+      }
+    }
+  },
+  {
+    "$type": "IntegerType",
+    "minValue": 0,
+    "maxValue": 100
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ErrorDetail",
+    "properties": {
+      "code": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error code."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error message."
+      },
+      "target": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The error target."
+      },
+      "details": {
+        "type": {
+          "$ref": "#/538"
+        },
+        "flags": 2,
+        "description": "The error details."
+      },
+      "additionalInfo": {
+        "type": {
+          "$ref": "#/540"
+        },
+        "flags": 2,
+        "description": "The error additional info."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/537"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ErrorAdditionalInfo",
+    "properties": {
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The additional info type."
+      },
+      "info": {
+        "type": {
+          "$ref": "#/217"
+        },
+        "flags": 2,
+        "description": "The additional info."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/539"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.MobileNetwork/packetCoreControlPlanes/packetCaptures",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "rollback",
+    "resourceType": "Microsoft.MobileNetwork/packetCoreControlPlanes",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reinstall",
+    "resourceType": "Microsoft.MobileNetwork/packetCoreControlPlanes",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PacketCoreControlPlaneCollectDiagnosticsPackage",
+    "properties": {
+      "storageAccountBlobUrl": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The Storage Account Blob URL to upload the diagnostics package to."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "collectDiagnosticsPackage",
+    "resourceType": "Microsoft.MobileNetwork/packetCoreControlPlanes",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    },
+    "input": {
+      "$ref": "#/544"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SimUploadList",
+    "properties": {
+      "sims": {
+        "type": {
+          "$ref": "#/548"
+        },
+        "flags": 1,
+        "description": "A list of SIMs to upload."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SimNameAndProperties",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the SIM."
+      },
+      "properties": {
+        "type": {
+          "$ref": "#/294"
+        },
+        "flags": 1,
+        "description": "SIM Properties."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/547"
+    },
+    "minLength": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "uploadSims",
+    "resourceType": "Microsoft.MobileNetwork/simGroups",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    },
+    "input": {
+      "$ref": "#/546"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SimDeleteList",
+    "properties": {
+      "sims": {
+        "type": {
+          "$ref": "#/551"
+        },
+        "flags": 1,
+        "description": "A list of SIM resource names to delete."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/2"
+    },
+    "minLength": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deleteSims",
+    "resourceType": "Microsoft.MobileNetwork/simGroups",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    },
+    "input": {
+      "$ref": "#/550"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "EncryptedSimUploadList",
+    "properties": {
+      "version": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 1,
+        "description": "The upload file format version."
+      },
+      "azureKeyIdentifier": {
+        "type": {
+          "$ref": "#/25"
+        },
+        "flags": 1,
+        "description": "An identifier for the Azure SIM onboarding public key used for encrypted upload."
+      },
+      "vendorKeyFingerprint": {
+        "type": {
+          "$ref": "#/554"
+        },
+        "flags": 1,
+        "description": "The fingerprint of the SIM vendor public key. The private counterpart is used for signing the encrypted transport key."
+      },
+      "encryptedTransportKey": {
+        "type": {
+          "$ref": "#/554"
+        },
+        "flags": 1,
+        "description": "The transport key used for encrypting SIM credentials, encrypted using the SIM onboarding public key."
+      },
+      "signedTransportKey": {
+        "type": {
+          "$ref": "#/554"
+        },
+        "flags": 1,
+        "description": "The encrypted transport key, signed using the SIM vendor private key."
+      },
+      "sims": {
+        "type": {
+          "$ref": "#/579"
+        },
+        "flags": 1,
+        "description": "A list of SIMs to upload, with encrypted properties."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "pattern": "^[0-9a-fA-F]+$"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SimNameAndEncryptedProperties",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the SIM."
+      },
+      "properties": {
+        "type": {
+          "$ref": "#/556"
+        },
+        "flags": 1,
+        "description": "Encrypted SIM Properties."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "EncryptedSimPropertiesFormat",
+    "properties": {
+      "encryptedCredentials": {
+        "type": {
+          "$ref": "#/557"
+        },
+        "flags": 0,
+        "description": "The encrypted SIM credentials."
+      },
+      "provisioningState": {
+        "type": {
+          "$ref": "#/565"
+        },
+        "flags": 2,
+        "description": "The provisioning state of the SIM resource."
+      },
+      "simState": {
+        "type": {
+          "$ref": "#/569"
+        },
+        "flags": 2,
+        "description": "The state of the SIM resource."
+      },
+      "siteProvisioningState": {
+        "type": {
+          "$ref": "#/577"
+        },
+        "flags": 2,
+        "description": "A dictionary of sites to the provisioning state of this SIM on that site."
+      },
+      "internationalMobileSubscriberIdentity": {
+        "type": {
+          "$ref": "#/316"
+        },
+        "flags": 1,
+        "description": "The international mobile subscriber identity (IMSI) for the SIM."
+      },
+      "integratedCircuitCardIdentifier": {
+        "type": {
+          "$ref": "#/317"
+        },
+        "flags": 0,
+        "description": "The integrated circuit card ID (ICCID) for the SIM."
+      },
+      "deviceType": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "An optional free-form text field that can be used to record the device type this SIM is associated with, for example 'Video camera'. The Azure portal allows SIMs to be grouped and filtered based on this value."
+      },
+      "simPolicy": {
+        "type": {
+          "$ref": "#/318"
+        },
+        "flags": 0,
+        "description": "The SIM policy used by this SIM. The SIM policy must be in the same location as the SIM."
+      },
+      "staticIpConfiguration": {
+        "type": {
+          "$ref": "#/578"
+        },
+        "flags": 0,
+        "description": "A list of static IP addresses assigned to this SIM. Each address is assigned at a defined network scope, made up of {attached data network, slice}."
+      },
+      "vendorName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The name of the SIM vendor who provided this SIM, if any."
+      },
+      "vendorKeyFingerprint": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "The public key fingerprint of the SIM vendor who provided this SIM, if any."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true,
+    "pattern": "^[0-9a-fA-F]+$"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Accepted"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleting"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Canceled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleted"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/558"
+      },
+      {
+        "$ref": "#/559"
+      },
+      {
+        "$ref": "#/560"
+      },
+      {
+        "$ref": "#/561"
+      },
+      {
+        "$ref": "#/562"
+      },
+      {
+        "$ref": "#/563"
+      },
+      {
+        "$ref": "#/564"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Disabled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Enabled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Invalid"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/566"
+      },
+      {
+        "$ref": "#/567"
+      },
+      {
+        "$ref": "#/568"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "NotApplicable"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Adding"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Updating"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deleting"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Provisioned"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/570"
+      },
+      {
+        "$ref": "#/571"
+      },
+      {
+        "$ref": "#/572"
+      },
+      {
+        "$ref": "#/573"
+      },
+      {
+        "$ref": "#/574"
+      },
+      {
+        "$ref": "#/575"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteProvisioning",
+    "properties": {},
+    "additionalProperties": {
+      "$ref": "#/576"
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/320"
+    },
+    "minLength": 1
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/555"
+    },
+    "minLength": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "uploadEncryptedSims",
+    "resourceType": "Microsoft.MobileNetwork/simGroups",
+    "apiVersion": "2024-02-01",
+    "output": {
+      "$ref": "#/535"
+    },
+    "input": {
+      "$ref": "#/553"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SiteDeletePacketCore",
+    "properties": {
+      "packetCore": {
+        "type": {
+          "$ref": "#/582"
+        },
+        "flags": 0,
+        "description": "Reference to an packet core control plane resource."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PacketCoreControlPlaneResourceId",
+    "properties": {
+      "id": {
+        "type": {
+          "$ref": "#/583"
+        },
+        "flags": 1,
+        "description": "Packet core control plane resource ID."
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "pattern": "^/[sS][uU][bB][sS][cC][rR][iI][pP][tT][iI][oO][nN][sS]/[^/?#]+/[rR][eE][sS][oO][uU][rR][cC][eE][gG][rR][oO][uU][pP][sS]/[^/?#]+/[pP][rR][oO][vV][iI][dD][eE][rR][sS]/[mM][iI][cC][rR][oO][sS][oO][fF][tT]\\.[mM][oO][bB][iI][lL][eE][nN][eE][tT][wW][oO][rR][kK]/[pP][aA][cC][kK][eE][tT][cC][oO][rR][eE][cC][oO][nN][tT][rR][oO][lL][pP][lL][aA][nN][eE][sS]/[^/?#]+$"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deletePacketCore",
+    "resourceType": "Microsoft.MobileNetwork/mobileNetworks/sites",
+    "apiVersion": "2024-02-01",
+    "input": {
+      "$ref": "#/581"
+    }
   }
 ]

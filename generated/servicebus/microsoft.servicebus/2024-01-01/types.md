@@ -146,6 +146,15 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system meta data relating to this resource.
 * **type**: 'Microsoft.ServiceBus/namespaces/topics/subscriptions/rules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function breakPairing (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2024-01-01
+
+## Function failover (Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+* **ApiVersion**: 2024-01-01
+* **Input**: [FailoverProperties](#failoverproperties)
+
 ## Function listKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2024-01-01)
 * **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
 * **ApiVersion**: 2024-01-01
@@ -165,6 +174,32 @@
 * **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
 * **ApiVersion**: 2024-01-01
 * **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/AuthorizationRules@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/AuthorizationRules
+* **ApiVersion**: 2024-01-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/queues/authorizationRules@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/queues/authorizationRules
+* **ApiVersion**: 2024-01-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function regenerateKeys (Microsoft.ServiceBus/namespaces/topics/authorizationRules@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/topics/authorizationRules
+* **ApiVersion**: 2024-01-01
+* **Input**: [RegenerateAccessKeyParameters](#regenerateaccesskeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function revert (Microsoft.ServiceBus/namespaces/migrationConfigurations@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2024-01-01
+
+## Function upgrade (Microsoft.ServiceBus/namespaces/migrationConfigurations@2024-01-01)
+* **Resource**: Microsoft.ServiceBus/namespaces/migrationConfigurations
+* **ApiVersion**: 2024-01-01
 
 ## AccessKeys
 ### Properties
@@ -218,6 +253,14 @@
 * **keySource**: 'Microsoft.KeyVault': Enumerates the possible value of keySource for Encryption
 * **keyVaultProperties**: [KeyVaultProperties](#keyvaultproperties)[]: Properties of KeyVault
 * **requireInfrastructureEncryption**: bool: Enable Infrastructure Encryption (Double Encryption)
+
+## FailoverProperties
+### Properties
+* **properties**: [FailoverPropertiesProperties](#failoverpropertiesproperties): Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
+
+## FailoverPropertiesProperties
+### Properties
+* **IsSafeFailover**: bool: Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary.
 
 ## Identity
 ### Properties
@@ -291,6 +334,11 @@
 * **privateLinkServiceConnectionState**: [ConnectionState](#connectionstate): Details about the state of the connection.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state of the Private Endpoint Connection.
 
+## RegenerateAccessKeyParameters
+### Properties
+* **key**: string: Optional, if the key value provided, is reset for KeyType value or autogenerate Key value set for keyType
+* **keyType**: 'PrimaryKey' | 'SecondaryKey' (Required): The access key to regenerate.
+
 ## Ruleproperties
 ### Properties
 * **action**: [Action](#action): Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression.
@@ -323,7 +371,7 @@
 * **serviceBusEndpoint**: string (ReadOnly): Endpoint you can use to perform Service Bus operations.
 * **status**: string (ReadOnly): Status of the namespace.
 * **updatedAt**: string (ReadOnly): The time the namespace was updated.
-* **zoneRedundant**: bool: Enabling this property creates a Premium Service Bus Namespace in regions supported availability zones.
+* **zoneRedundant**: bool: This property reflects if zone redundancy has been enabled for namespaces in regions that support availability zones.
 
 ## SBQueueProperties
 ### Properties

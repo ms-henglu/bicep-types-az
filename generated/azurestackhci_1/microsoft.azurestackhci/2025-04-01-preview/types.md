@@ -145,6 +145,32 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureStackHCI/virtualMachineInstances/hybridIdentityMetadata' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function pause (Microsoft.AzureStackHCI/virtualMachineInstances@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-04-01-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachineInstances@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-04-01-preview
+
+## Function save (Microsoft.AzureStackHCI/virtualMachineInstances@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-04-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachineInstances@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-04-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachineInstances@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-04-01-preview
+
+## Function upload (Microsoft.AzureStackHCI/virtualHardDisks@2025-04-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualHardDisks
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [VirtualHardDiskUploadRequest](#virtualharddiskuploadrequest)
+* **Output**: [VirtualHardDiskUploadResponse](#virtualharddiskuploadresponse)
+
 ## AttestationStatusProperties
 ### Properties
 * **attestationCertValidated**: 'Invalid' | 'Unknown' | 'Valid' | string (ReadOnly): The status of whether attestation certificate is validated.
@@ -593,6 +619,15 @@
 ### Properties
 * **operationId**: string: The ID of the operation performed on the virtual hard disk
 * **status**: 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The status of the operation performed on the virtual hard disk [Succeeded, Failed, InProgress]
+
+## VirtualHardDiskUploadRequest
+### Properties
+* **azureManagedDiskUploadUrl**: string {sensitive} (Required): The Azure managed disk SAS URL to upload the virtual hard disk to.
+
+## VirtualHardDiskUploadResponse
+### Properties
+* **uploadStatus**: [VirtualHardDiskUploadStatus](#virtualharddiskuploadstatus): The upload status of the virtual hard disk
+* **virtualHardDiskId**: string: The ARM ID for a Virtual Hard Disk.
 
 ## VirtualHardDiskUploadStatus
 ### Properties

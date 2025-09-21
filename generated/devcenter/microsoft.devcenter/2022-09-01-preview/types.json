@@ -2752,5 +2752,17 @@
       "$ref": "#/172"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "sync",
+    "resourceType": "Microsoft.DevCenter/devcenters/catalogs",
+    "apiVersion": "2022-09-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "runHealthChecks",
+    "resourceType": "Microsoft.DevCenter/networkConnections",
+    "apiVersion": "2022-09-01-preview"
   }
 ]

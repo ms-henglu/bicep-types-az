@@ -1625,11 +1625,82 @@
   },
   {
     "$type": "ObjectType",
+    "name": "CustomApiReference",
+    "properties": {
+      "swagger": {
+        "type": {
+          "$ref": "#/7"
+        },
+        "flags": 0,
+        "description": "The JSON representation of the swagger"
+      },
+      "brandColor": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Brand color"
+      },
+      "description": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The custom API description"
+      },
+      "displayName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The display name"
+      },
+      "iconUri": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The icon URI"
+      },
+      "name": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "The name of the API"
+      },
+      "id": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Resource reference id"
+      },
+      "type": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Resource reference type"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "move",
+    "resourceType": "Microsoft.Web/customApis",
+    "apiVersion": "2016-06-01",
+    "input": {
+      "$ref": "#/92"
+    }
+  },
+  {
+    "$type": "ObjectType",
     "name": "WsdlServiceCollection",
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/93"
+          "$ref": "#/95"
         },
         "flags": 0,
         "description": "Collection of WSDL interfaces"
@@ -1648,7 +1719,19 @@
     "resourceType": "Microsoft.Web/locations",
     "apiVersion": "2016-06-01",
     "output": {
-      "$ref": "#/92"
+      "$ref": "#/94"
+    },
+    "input": {
+      "$ref": "#/38"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "extractApiDefinitionFromWsdl",
+    "resourceType": "Microsoft.Web/locations",
+    "apiVersion": "2016-06-01",
+    "output": {
+      "$ref": "#/7"
     },
     "input": {
       "$ref": "#/38"
@@ -1660,7 +1743,7 @@
     "properties": {
       "parameters": {
         "type": {
-          "$ref": "#/97"
+          "$ref": "#/100"
         },
         "flags": 0,
         "description": "Collection of resources"
@@ -1704,7 +1787,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/96"
+      "$ref": "#/99"
     }
   },
   {
@@ -1713,7 +1796,7 @@
     "properties": {
       "value": {
         "type": {
-          "$ref": "#/104"
+          "$ref": "#/107"
         },
         "flags": 0,
         "description": "Collection of resources"
@@ -1747,7 +1830,7 @@
       },
       "status": {
         "type": {
-          "$ref": "#/103"
+          "$ref": "#/106"
         },
         "flags": 0,
         "description": "Status of the link"
@@ -1770,13 +1853,13 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/100"
+        "$ref": "#/103"
       },
       {
-        "$ref": "#/101"
+        "$ref": "#/104"
       },
       {
-        "$ref": "#/102"
+        "$ref": "#/105"
       },
       {
         "$ref": "#/0"
@@ -1786,7 +1869,7 @@
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/99"
+      "$ref": "#/102"
     }
   },
   {
@@ -1795,10 +1878,49 @@
     "resourceType": "Microsoft.Web/connections",
     "apiVersion": "2016-06-01",
     "output": {
-      "$ref": "#/98"
+      "$ref": "#/101"
     },
     "input": {
-      "$ref": "#/95"
+      "$ref": "#/98"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ConfirmConsentCodeDefinition",
+    "properties": {
+      "tenantId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Tenant Id"
+      },
+      "objectId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "AAD object ID. This is userId"
+      },
+      "code": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 0,
+        "description": "Code that was returned during consent flow"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "confirmConsentCode",
+    "resourceType": "Microsoft.Web/connections",
+    "apiVersion": "2016-06-01",
+    "output": {
+      "$ref": "#/109"
+    },
+    "input": {
+      "$ref": "#/109"
     }
   }
 ]
