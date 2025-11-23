@@ -145,6 +145,26 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureStackHCI/virtualMachineInstances/hybridIdentityMetadata' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function pause (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function save (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
 ## AttestationStatusProperties
 ### Properties
 * **attestationCertValidated**: 'Invalid' | 'Unknown' | 'Valid' | string (ReadOnly): The status of whether attestation certificate is validated.
@@ -268,7 +288,7 @@
 
 ## ImageArmReference
 ### Properties
-* **id**: string: The ARM ID for an image resource used by the virtual machine instance.
+* **id**: string: The Azure Resource ID for an image resource used by the virtual machine instance.
 
 ## InstanceViewStatus
 ### Properties
@@ -309,7 +329,7 @@
 
 ## LogicalNetworkArmReference
 ### Properties
-* **id**: string: The ARM ID for a Logical Network.
+* **id**: string: The Azure Resource ID for a Logical Network.
 
 ## LogicalNetworkProperties
 ### Properties
@@ -371,7 +391,7 @@
 
 ## NetworkInterfaceArmReference
 ### Properties
-* **id**: string: The ARM ID for a Network Interface.
+* **id**: string: The Azure Resource ID for a Network Interface.
 
 ## NetworkInterfaceProperties
 ### Properties
@@ -395,7 +415,7 @@
 
 ## NetworkSecurityGroupArmReference
 ### Properties
-* **id**: string: The ARM ID for a Network Security Group.
+* **id**: string: The Azure Resource ID for a Network Security Group.
 
 ## NetworkSecurityGroupProperties
 ### Properties
@@ -472,7 +492,7 @@
 
 ## SubnetIpConfigurationReference
 ### Properties
-* **ID**: string: The ARM ID for a Network Interface.
+* **ID**: string: The Azure Resource ID for a Network Interface.
 
 ## SubnetProperties
 ### Properties
@@ -541,7 +561,7 @@
 
 ## VirtualHardDiskArmReference
 ### Properties
-* **id**: string: The ARM ID for a Virtual Hard Disk.
+* **id**: string: The Azure Resource ID for a Virtual Hard Disk.
 
 ## VirtualHardDiskProperties
 ### Properties
@@ -646,7 +666,7 @@
 
 ## VirtualMachineInstancePropertiesStorageProfileOsDisk
 ### Properties
-* **id**: string: The ARM ID for a Virtual Hard Disk.
+* **id**: string: The Azure Resource ID for a Virtual Hard Disk.
 * **osType**: 'Linux' | 'Windows' | string: This property allows you to specify the type of the OS that is included in the disk if creating a VM from user-image or a specialized VHD. Possible values are: Windows, Linux.
 
 ## VirtualMachineInstanceStatus

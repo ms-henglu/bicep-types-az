@@ -493,19 +493,19 @@
     "$type": "ObjectType",
     "name": "UploadLimitWeeklyRecurrence",
     "properties": {
-      "days": {
+      "limitInMbps": {
         "type": {
-          "$ref": "#/45"
+          "$ref": "#/37"
         },
         "flags": 1,
-        "description": "The set of days of week for the schedule recurrence. A day must not be specified more than once in a recurrence."
+        "description": "The WAN-link upload bandwidth (maximum data transfer rate) in megabits per second. Value of 0 indicates no throughput is allowed and any running migration job is effectively paused for the duration of this recurrence. Only data plane operations are governed by this limit. Control plane operations ensure seamless functionality. The agent may exceed this limit with control messages, if necessary."
       },
-      "limitInMbps": {
+      "days": {
         "type": {
           "$ref": "#/46"
         },
         "flags": 1,
-        "description": "The WAN-link upload bandwidth (maximum data transfer rate) in megabits per second. Value of 0 indicates no throughput is allowed and any running migration job is effectively paused for the duration of this recurrence. Only data plane operations are governed by this limit. Control plane operations ensure seamless functionality. The agent may exceed this limit with control messages, if necessary."
+        "description": "The set of days of week for the schedule recurrence. A day must not be specified more than once in a recurrence."
       },
       "startTime": {
         "type": {
@@ -522,6 +522,10 @@
         "description": "The end time of the schedule recurrence. Full hour and 30-minute intervals are supported."
       }
     }
+  },
+  {
+    "$type": "IntegerType",
+    "maxValue": 2147483647
   },
   {
     "$type": "StringLiteralType",
@@ -555,9 +559,6 @@
     "$type": "UnionType",
     "elements": [
       {
-        "$ref": "#/37"
-      },
-      {
         "$ref": "#/38"
       },
       {
@@ -574,19 +575,17 @@
       },
       {
         "$ref": "#/43"
+      },
+      {
+        "$ref": "#/44"
       }
     ]
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/44"
+      "$ref": "#/45"
     }
-  },
-  {
-    "$type": "IntegerType",
-    "minValue": 0,
-    "maxValue": 2147483647
   },
   {
     "$type": "ObjectType",
@@ -1215,7 +1214,7 @@
           "$ref": "#/0"
         },
         "flags": 0,
-        "description": "A description for the Job Definition."
+        "description": "A description for the Job Definition. OnPremToCloud is for migrating data from on-premises to cloud. CloudToCloud is for migrating data between cloud to cloud."
       },
       "copyMode": {
         "type": {
@@ -1880,5 +1879,36 @@
       "$ref": "#/117"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "JobRunResourceId",
+    "properties": {
+      "jobRunResourceId": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 2,
+        "description": "Fully qualified resource id of the Job Run."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startJob",
+    "resourceType": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions",
+    "apiVersion": "2024-07-01",
+    "output": {
+      "$ref": "#/141"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stopJob",
+    "resourceType": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions",
+    "apiVersion": "2024-07-01",
+    "output": {
+      "$ref": "#/141"
+    }
   }
 ]

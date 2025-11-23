@@ -72,6 +72,21 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ConnectedCache/ispCustomers/ispCacheNodes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getBgpCidrs (Microsoft.ConnectedCache/ispCustomers/ispCacheNodes@2023-05-01-preview)
+* **Resource**: Microsoft.ConnectedCache/ispCustomers/ispCacheNodes
+* **ApiVersion**: 2023-05-01-preview
+* **Output**: [MccCacheNodeBgpCidrDetails](#mcccachenodebgpcidrdetails)
+
+## Function getCacheNodeInstallDetails (Microsoft.ConnectedCache/enterpriseMccCustomers/enterpriseMccCacheNodes@2023-05-01-preview)
+* **Resource**: Microsoft.ConnectedCache/enterpriseMccCustomers/enterpriseMccCacheNodes
+* **ApiVersion**: 2023-05-01-preview
+* **Output**: [MccCacheNodeInstallDetails](#mcccachenodeinstalldetails)
+
+## Function getCacheNodeInstallDetails (Microsoft.ConnectedCache/ispCustomers/ispCacheNodes@2023-05-01-preview)
+* **Resource**: Microsoft.ConnectedCache/ispCustomers/ispCacheNodes
+* **ApiVersion**: 2023-05-01-preview
+* **Output**: [MccCacheNodeInstallDetails](#mcccachenodeinstalldetails)
+
 ## AdditionalCacheNodeProperties
 ### Properties
 * **aggregatedStatusCode**: int (ReadOnly): Cache node resource aggregated status code.
@@ -140,6 +155,10 @@
 * **signupStatusCode**: int (ReadOnly): Customer resource signup status as integer code.
 * **signupStatusText**: string (ReadOnly): Customer resource signup status as string text.
 
+## BgpCidrsConfiguration
+### Properties
+* **bgpCidrs**: string[] (ReadOnly): Mcc cache node Bgp Cidr details.
+
 ## BgpConfiguration
 ### Properties
 * **asnToIpAddressMapping**: string: Asn to ip address mapping
@@ -154,9 +173,9 @@
 ## CacheNodeEntity
 ### Properties
 * **addressSpace**: int (ReadOnly): Cache node resource total addressable space defined by the Cidr Csv block.
-* **autoUpdateRequestedDay**: int {minValue: 1, maxValue: 7}: Customer requested day of week for mcc install of auto update cycle
+* **autoUpdateRequestedDay**: int {minValue: 0, maxValue: 7}: Customer requested day of week for mcc install of auto update cycle. 0 is default no selection. 1-7 are days of week, 1 is Sunday, 2 is Monday, etc.
 * **autoUpdateRequestedTime**: string {pattern: "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$"}: Customer requested time of the day for mcc install of auto update cycle, should be hh:mm
-* **autoUpdateRequestedWeek**: int {minValue: 1, maxValue: 5}: Customer requested week of month for mcc install of auto update cycle
+* **autoUpdateRequestedWeek**: int {minValue: 0, maxValue: 5}: Customer requested week of month for mcc install of auto update cycle. 0 is default no selection. 1-5 are valid weeks of month, 1 is first week, 2 is second week, etc.
 * **autoUpdateRingType**: 'Fast' | 'Preview' | 'Slow' | string: Auto Update Ring Type which is slow or fast etc.
 * **bgpAddressSpace**: int (ReadOnly): Cache node resource total addressable space defined by Bgp and Cidr Csv blocks.
 * **bgpCidrBlocksCount**: int (ReadOnly): Cache node resource Bgp block count.
@@ -205,6 +224,14 @@
 * **workerConnections**: int (ReadOnly): Cache node resource Mcc container deployment worker connection count.
 * **workerConnectionsLastUpdatedDateTime**: string (ReadOnly): Cache node resource last updated Mcc container deployment worker connection count timestamp.
 * **xCid**: string (ReadOnly): Cache node resource Azure XCid.
+
+## CacheNodeInstallProperties
+### Properties
+* **cacheNodeId**: string: Mcc cache node resource Id.
+* **customerId**: string: Mcc customer resource Id.
+* **primaryAccountKey**: string {sensitive} (ReadOnly): Mcc primary account key. Internal to Mcc.
+* **registrationKey**: string {sensitive} (ReadOnly): Mcc Iot Central temporary device registration key, used once.
+* **secondaryAccountKey**: string {sensitive} (ReadOnly): Mcc secondary account key. Internal to Mcc.
 
 ## CacheNodeOldResponse
 ### Properties
@@ -271,6 +298,26 @@
 * **message**: string (ReadOnly): The error message.
 * **target**: string (ReadOnly): The error target.
 
+## MccCacheNodeBgpCidrDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BgpCidrsConfiguration](#bgpcidrsconfiguration): Mcc cache node resource Bgp Cidr properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## MccCacheNodeInstallDetails
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CacheNodeInstallProperties](#cachenodeinstallproperties): Mcc cache node resource install script details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ProxyUrlConfiguration
 ### Properties
 * **proxyUrl**: string: Host Proxy Address configuration along with port number. This can be a proxy or ip address. ex: xx.xx.xx.xxxx:80 or host name http://exampleproxy.com:80
@@ -283,6 +330,16 @@
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

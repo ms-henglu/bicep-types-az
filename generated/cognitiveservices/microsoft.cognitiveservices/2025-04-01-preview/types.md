@@ -127,7 +127,7 @@
 * **apiVersion**: '2025-04-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {pattern: "^[a-zA-Z0-9][a-zA-Z0-9\-_]{0,254}$"} (Required, DeployTimeConstant): The resource name
-* **properties**: [CapabilityHostProperties](#capabilityhostproperties) (Required): [Required] Additional attributes of the entity.
+* **properties**: [ProjectCapabilityHostProperties](#projectcapabilityhostproperties) (Required): [Required] Additional attributes of the entity.
 * **type**: 'Microsoft.CognitiveServices/accounts/projects/capabilityHosts' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CognitiveServices/accounts/projects/connections@2025-04-01-preview
@@ -227,9 +227,37 @@
 * **tags**: [AccountTags](#accounttags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.CognitiveServices/locations/resourceGroups/deletedAccounts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addRaiBlocklistItems (Microsoft.CognitiveServices/accounts/raiBlocklists@2025-04-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/raiBlocklists
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [RaiBlocklistItemBulkRequest](#raiblocklistitembulkrequest)[]
+* **Output**: [RaiBlocklist](#raiblocklist)
+
+## Function checkSkuAvailability (Microsoft.CognitiveServices/locations@2025-04-01-preview)
+* **Resource**: Microsoft.CognitiveServices/locations
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [CheckSkuAvailabilityParameter](#checkskuavailabilityparameter)
+* **Output**: [SkuAvailabilityListResult](#skuavailabilitylistresult)
+
+## Function deleteRaiBlocklistItems (Microsoft.CognitiveServices/accounts/raiBlocklists@2025-04-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/raiBlocklists
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: any
+
 ## Function listKeys (Microsoft.CognitiveServices/accounts@2025-04-01-preview)
 * **Resource**: Microsoft.CognitiveServices/accounts
 * **ApiVersion**: 2025-04-01-preview
+* **Output**: [ApiKeys](#apikeys)
+
+## Function reconcile (Microsoft.CognitiveServices/accounts/networkSecurityPerimeterConfigurations@2025-04-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2025-04-01-preview
+* **Output**: [NetworkSecurityPerimeterConfiguration](#networksecurityperimeterconfiguration)
+
+## Function regenerateKey (Microsoft.CognitiveServices/accounts@2025-04-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
 * **Output**: [ApiKeys](#apikeys)
 
 ## AbusePenalty
@@ -263,7 +291,7 @@
 * **locations**: [MultiRegionSettings](#multiregionsettings): The multiregion settings of Cognitive Services account.
 * **migrationToken**: string: Resource migration token.
 * **networkAcls**: [NetworkRuleSet](#networkruleset): A collection of rules governing the accessibility from specific network locations.
-* **networkInjections**: [NetworkInjections](#networkinjections): Specifies in AI Foundry where virtual network injection occurs to secure scenarios like Agents entirely within the user's private network, eliminating public internet exposure while maintaining control over network configurations and resources.
+* **networkInjections**: [NetworkInjection](#networkinjection)[]
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): The private endpoint connection associated with the Cognitive Services account.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'ResolvingDNS' | 'Succeeded' | string (ReadOnly): Gets the status of the cognitive services account at the time the operation was called.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this account.
@@ -327,6 +355,12 @@
 * **tags**: [ResourceBaseTags](#resourcebasetags): Tag dictionary. Tags can be added, removed, and updated.
 * **threadStorageConnections**: string[]: List of Thread storage connections.
 * **vectorStoreConnections**: string[]: List of VectorStore connections.
+
+## CheckSkuAvailabilityParameter
+### Properties
+* **kind**: string (Required): The kind (type) of cognitive service account.
+* **skus**: string[] (Required): The SKU of the resource.
+* **type**: string (Required): The Type of the resource.
 
 ## CommitmentPeriod
 ### Properties
@@ -562,6 +596,7 @@ depending on each OAuth2 provider's implementation.
 * **raiPolicyName**: string: The name of RAI policy.
 * **rateLimits**: [ThrottlingRule](#throttlingrule)[] (ReadOnly)
 * **scaleSettings**: [DeploymentScaleSettings](#deploymentscalesettings): Properties of Cognitive Services account deployment model. (Deprecated, please use Deployment.sku instead.)
+* **spilloverDeploymentName**: string: Specifies the deployment name that should serve requests when the request would have otherwise been throttled due to reaching current deployment throughput limit.
 * **versionUpgradeOption**: 'NoAutoUpgrade' | 'OnceCurrentVersionExpired' | 'OnceNewDefaultVersionAvailable' | string: Deployment model version upgrade option.
 
 ## DeploymentPropertiesCapabilities
@@ -625,7 +660,7 @@ depending on each OAuth2 provider's implementation.
 * **regions**: [RegionSetting](#regionsetting)[]
 * **routingMethod**: 'Performance' | 'Priority' | 'Weighted' | string: Multiregion routing methods.
 
-## NetworkInjections
+## NetworkInjection
 ### Properties
 * **scenario**: 'agent' | 'none' | string: Specifies what features in AI Foundry network injection applies to. Currently only supports 'agent' for agent scenarios. 'none' means no network injection.
 * **subnetArmId**: string: Specify the subnet for which your Agent Client is injected into.
@@ -660,6 +695,13 @@ depending on each OAuth2 provider's implementation.
 ## NetworkSecurityPerimeterAccessRulePropertiesSubscriptionsItem
 ### Properties
 * **id**: string: Fully qualified identifier of subscription
+
+## NetworkSecurityPerimeterConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [NetworkSecurityPerimeterConfigurationProperties](#networksecurityperimeterconfigurationproperties): NSP Configuration properties.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## NetworkSecurityPerimeterConfigurationAssociationInfo
 ### Properties
@@ -709,6 +751,14 @@ depending on each OAuth2 provider's implementation.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
 
+## ProjectCapabilityHostProperties
+### Properties
+* **aiServicesConnections**: string[]: List of AI services connections.
+* **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state for the CapabilityHost.
+* **storageConnections**: string[]: List of connection names from those available in the account or project to be used as a storage resource.
+* **threadStorageConnections**: string[]: List of connection names from those available in the account or project to be used for Thread storage.
+* **vectorStoreConnections**: string[]: List of connection names from those available in the account or project to be used for vector database (e.g. CosmosDB).
+
 ## ProjectProperties
 ### Properties
 * **description**: string: The description of the Cognitive Services Project.
@@ -746,6 +796,21 @@ depending on each OAuth2 provider's implementation.
 * **renewalPeriod**: int
 * **rules**: [ThrottlingRule](#throttlingrule)[]
 
+## RaiBlocklist
+### Properties
+* **etag**: string (ReadOnly): Resource Etag.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RaiBlocklistProperties](#raiblocklistproperties): Properties of Cognitive Services RaiBlocklist.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **tags**: [RaiBlocklistTags](#raiblocklisttags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## RaiBlocklistItemBulkRequest
+### Properties
+* **name**: string
+* **properties**: [RaiBlocklistItemProperties](#raiblocklistitemproperties): Properties of Cognitive Services RaiBlocklist Item.
+
 ## RaiBlocklistItemProperties
 ### Properties
 * **isRegex**: bool: If the pattern is a regex pattern.
@@ -759,6 +824,11 @@ depending on each OAuth2 provider's implementation.
 ## RaiBlocklistProperties
 ### Properties
 * **description**: string: Description of the block list.
+
+## RaiBlocklistTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## RaiBlocklistTags
 ### Properties
@@ -797,6 +867,10 @@ depending on each OAuth2 provider's implementation.
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## RegenerateKeyParameters
+### Properties
+* **keyName**: 'Key1' | 'Key2' (Required): key name to generate (Key1|Key2)
+
 ## RegionSetting
 ### Properties
 * **customsubdomain**: string: Maps the region to the regional custom subdomain.
@@ -820,6 +894,19 @@ depending on each OAuth2 provider's implementation.
 * **name**: string (Required): The name of the SKU. Ex - P3. It is typically a letter+number code
 * **size**: string: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code.
 * **tier**: 'Basic' | 'Enterprise' | 'Free' | 'Premium' | 'Standard' | string: This field is required to be implemented by the Resource Provider if the service has more than one tier, but is not required on a PUT.
+
+## SkuAvailability
+### Properties
+* **kind**: string: The Kind of the resource.
+* **message**: string: Additional error message.
+* **reason**: string: Reason why the SKU is not available.
+* **skuAvailable**: bool: Indicates the given SKU is available or not.
+* **skuName**: string: The SKU of Cognitive Services account.
+* **type**: string: The Type of the resource.
+
+## SkuAvailabilityListResult
+### Properties
+* **value**: [SkuAvailability](#skuavailability)[]: Check SKU availability result list.
 
 ## SkuCapability
 ### Properties

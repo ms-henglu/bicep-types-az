@@ -4,14 +4,14 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2025-02-01' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Optional ETag.
+* **etag**: string: etag for the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [IdentityData](#identitydata): Identity for the resource.
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [VaultProperties](#vaultproperties): Properties of the vault.
 * **sku**: [Sku](#sku): Identifies the unique system identifier for each Azure resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -28,26 +28,49 @@
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2025-02-01' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Optional ETag.
+* **etag**: string: etag for the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'vaultExtendedInfo' (Required, DeployTimeConstant): The resource name
 * **properties**: [VaultExtendedInfo](#vaultextendedinfo): Vault extended information.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.RecoveryServices/vaults/extendedInformation' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.RecoveryServices/vaults/operationResults@2025-02-01 (ReadOnly)
 * **Valid Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2025-02-01' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string (ReadOnly): Optional ETag.
+* **etag**: string (ReadOnly): etag for the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [IdentityData](#identitydata) (ReadOnly): Identity for the resource.
-* **location**: string (ReadOnly): Resource location.
+* **location**: string (ReadOnly): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [VaultProperties](#vaultproperties) (ReadOnly): Properties of the vault.
 * **sku**: [Sku](#sku) (ReadOnly): Identifies the unique system identifier for each Azure resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/operationResults' (ReadOnly, DeployTimeConstant): The resource type
+
+## Resource Microsoft.RecoveryServices/vaults/privateLinkResources@2025-02-01 (ReadOnly)
+* **Valid Scope(s)**: ResourceGroup
+### Properties
+* **apiVersion**: '2025-02-01' (ReadOnly, DeployTimeConstant): The resource api version
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string (Required, DeployTimeConstant): The resource name
+* **properties**: [PrivateLinkResourceProperties](#privatelinkresourceproperties) (ReadOnly): Resource properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: 'Microsoft.RecoveryServices/vaults/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function capabilities (Microsoft.RecoveryServices/locations@2025-02-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2025-02-01
+* **Input**: [ResourceCapabilities](#resourcecapabilities)
+* **Output**: [CapabilitiesResponse](#capabilitiesresponse)
+
+## Function checkNameAvailability (Microsoft.RecoveryServices/locations@2025-02-01)
+* **Resource**: Microsoft.RecoveryServices/locations
+* **ApiVersion**: 2025-02-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
 
 ## AssociatedIdentity
 ### Properties
@@ -59,6 +82,30 @@
 * **alertsForAllFailoverIssues**: 'Disabled' | 'Enabled' | string
 * **alertsForAllJobFailures**: 'Disabled' | 'Enabled' | string
 * **alertsForAllReplicationIssues**: 'Disabled' | 'Enabled' | string
+
+## CapabilitiesProperties
+### Properties
+* **dnsZones**: [DNSZone](#dnszone)[]
+
+## CapabilitiesResponse
+### Properties
+* **properties**: [CapabilitiesResponseProperties](#capabilitiesresponseproperties): Capabilities properties in response
+* **type**: string (Required): Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CapabilitiesResponseProperties
+### Properties
+* **dnsZones**: [DNSZoneResponse](#dnszoneresponse)[]
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string: Resource name for which availability needs to be checked
+* **type**: string: Describes the Resource type: Microsoft.RecoveryServices/Vaults
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string
+* **nameAvailable**: bool
+* **reason**: string
 
 ## ClassicAlertSettings
 ### Properties
@@ -77,6 +124,15 @@
 ## CrossSubscriptionRestoreSettings
 ### Properties
 * **crossSubscriptionRestoreState**: 'Disabled' | 'Enabled' | 'PermanentlyDisabled' | string
+
+## DNSZone
+### Properties
+* **subResource**: 'AzureBackup' | 'AzureBackup_secondary' | 'AzureSiteRecovery' | string: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery
+
+## DNSZoneResponse
+### Properties
+* **requiredZoneNames**: string[]: The private link resource Private link DNS zone names.
+* **subResource**: 'AzureBackup' | 'AzureBackup_secondary' | 'AzureSiteRecovery' | string: Subresource type for vault AzureBackup, AzureBackup_secondary or AzureSiteRecovery
 
 ## IdentityData
 ### Properties
@@ -118,6 +174,12 @@
 * **properties**: [PrivateEndpointConnection](#privateendpointconnection) (ReadOnly): Private Endpoint Connection Response Properties.
 * **type**: string (ReadOnly): The type, which will be of the format, Microsoft.RecoveryServices/vaults/privateEndpointConnections
 
+## PrivateLinkResourceProperties
+### Properties
+* **groupId**: string (ReadOnly): e.g. f9ad6492-33d4-4690-9999-6bfd52a0d081 (Backup) or f9ad6492-33d4-4690-9999-6bfd52a0d082 (SiteRecovery)
+* **requiredMembers**: string[] (ReadOnly): [backup-ecs1, backup-prot1, backup-prot1b, backup-prot1c, backup-id1]
+* **requiredZoneNames**: string[] (ReadOnly): The private link resource Private link DNS zone name.
+
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **actionsRequired**: string (ReadOnly): Gets or sets actions required.
@@ -128,6 +190,11 @@
 ### Properties
 * **authType**: 'AAD' | 'ACS' | 'AccessControlService' | 'AzureActiveDirectory' | 'Invalid' | string: Specifies the authentication type.
 * **certificate**: any: The base64 encoded certificate raw data string
+
+## ResourceCapabilities
+### Properties
+* **properties**: [CapabilitiesProperties](#capabilitiesproperties): Capabilities information
+* **type**: string (Required): Describes the Resource type: Microsoft.RecoveryServices/Vaults
 
 ## RestoreSettings
 ### Properties
@@ -164,7 +231,7 @@
 * **createdAt**: string: The timestamp of resource creation (UTC).
 * **createdBy**: string: The identity that created the resource.
 * **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
-* **lastModifiedAt**: string: The type of identity that last modified the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 

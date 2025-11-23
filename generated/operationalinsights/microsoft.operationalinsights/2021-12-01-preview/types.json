@@ -1332,5 +1332,11 @@
       "$ref": "#/59"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "migrate",
+    "resourceType": "Microsoft.OperationalInsights/workspaces/tables",
+    "apiVersion": "2021-12-01-preview"
   }
 ]

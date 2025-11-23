@@ -1305,6 +1305,27 @@ resource exampleResource 'Microsoft.ApiManagement/service/backends@2023-05-01-pr
 }
 ```
 
+ApiManagementCreateBackendWithSimpleLoadBalancer
+```bicep
+resource exampleResource 'Microsoft.ApiManagement/service/backends@2023-05-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    type: 'Pool'
+    pool: {
+      services: [
+        {
+          id: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.ApiManagement/service/apimService1/backends/backend-1'
+        }
+        {
+          id: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.ApiManagement/service/apimService1/backends/backend-2'
+        }
+      ]
+    }
+  }
+}
+```
+
 ## microsoft.apimanagement/service/caches
 
 ApiManagementCreateCache
@@ -1680,7 +1701,7 @@ resource exampleResource 'Microsoft.ApiManagement/service/openidConnectProviders
     clientId: 'oidprovidertemplate3'
     clientSecret: 'x'
     displayName: 'templateoidprovider3'
-    metadataEndpoint: 'https://oidprovider-template3.net'
+    metadataEndpoint: 'https://example.com'
     useInApiDocumentation: true
     useInTestConsole: false
   }
