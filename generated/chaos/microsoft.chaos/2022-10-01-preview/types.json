@@ -1138,5 +1138,17 @@
       "$ref": "#/79"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.Chaos/experiments",
+    "apiVersion": "2022-10-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.Chaos/experiments",
+    "apiVersion": "2022-10-01-preview"
   }
 ]

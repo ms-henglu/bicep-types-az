@@ -2163,7 +2163,7 @@
   },
   {
     "$type": "ObjectType",
-    "name": "UserAssignedIdentities",
+    "name": "ResourceIdentityUserAssignedIdentities",
     "properties": {},
     "additionalProperties": {
       "$ref": "#/161"
@@ -2318,5 +2318,70 @@
       "$ref": "#/168"
     },
     "flags": 1
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CancellationReason",
+    "properties": {
+      "reason": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Reason for cancellation."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.EdgeOrder/orderItems",
+    "apiVersion": "2024-02-01",
+    "input": {
+      "$ref": "#/176"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ReturnOrderItemDetails",
+    "properties": {
+      "returnAddress": {
+        "type": {
+          "$ref": "#/5"
+        },
+        "flags": 0,
+        "description": "Customer return address."
+      },
+      "returnReason": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Return Reason."
+      },
+      "serviceTag": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Service tag (located on the bottom-right corner of the device)."
+      },
+      "shippingBoxRequired": {
+        "type": {
+          "$ref": "#/117"
+        },
+        "flags": 0,
+        "description": "Shipping Box required."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "return",
+    "resourceType": "Microsoft.EdgeOrder/orderItems",
+    "apiVersion": "2024-02-01",
+    "input": {
+      "$ref": "#/178"
+    }
   }
 ]

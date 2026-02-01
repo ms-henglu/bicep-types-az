@@ -483,7 +483,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Network Interface."
+        "description": "The Azure Resource ID for a Network Interface."
       }
     }
   },
@@ -760,7 +760,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Virtual Hard Disk."
+        "description": "The Azure Resource ID for a Virtual Hard Disk."
       }
     }
   },
@@ -779,7 +779,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for an image resource used by the virtual machine instance."
+        "description": "The Azure Resource ID for an image resource used by the virtual machine instance."
       }
     }
   },
@@ -792,7 +792,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Virtual Hard Disk."
+        "description": "The Azure Resource ID for a Virtual Hard Disk."
       },
       "osType": {
         "type": {
@@ -2535,7 +2535,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Network Interface."
+        "description": "The Azure Resource ID for a Network Interface."
       }
     }
   },
@@ -2554,7 +2554,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Network Security Group."
+        "description": "The Azure Resource ID for a Network Security Group."
       }
     }
   },
@@ -3456,7 +3456,7 @@
           "$ref": "#/2"
         },
         "flags": 0,
-        "description": "The ARM ID for a Logical Network."
+        "description": "The Azure Resource ID for a Logical Network."
       }
     }
   },
@@ -5291,5 +5291,35 @@
       "$ref": "#/405"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "pause",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-05-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-05-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "save",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-05-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-05-01-preview"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.AzureStackHCI/virtualMachineInstances",
+    "apiVersion": "2024-05-01-preview"
   }
 ]

@@ -70,6 +70,19 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Advisor/triageRecommendations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function approve (Microsoft.Advisor/triageRecommendations@2023-09-01-preview)
+* **Resource**: Microsoft.Advisor/triageRecommendations
+* **ApiVersion**: 2023-09-01-preview
+
+## Function reject (Microsoft.Advisor/triageRecommendations@2023-09-01-preview)
+* **Resource**: Microsoft.Advisor/triageRecommendations
+* **ApiVersion**: 2023-09-01-preview
+* **Input**: [RecommendationRejectBody](#recommendationrejectbody)
+
+## Function reset (Microsoft.Advisor/triageRecommendations@2023-09-01-preview)
+* **Resource**: Microsoft.Advisor/triageRecommendations
+* **ApiVersion**: 2023-09-01-preview
+
 ## AdvisorScoreEntityProperties
 ### Properties
 * **lastRefreshedScore**: [ScoreEntity](#scoreentity): The details of latest available score.
@@ -166,6 +179,10 @@
 ### Properties
 * **id**: string: The ARM Resource Id of the Review
 * **name**: string: The Name of the Review
+
+## RecommendationRejectBody
+### Properties
+* **reasonForRejection**: 'NotARisk' | 'RiskAccepted' | string: Reason for rejecting recommendation.
 
 ## ResiliencyReviewProperties
 ### Properties

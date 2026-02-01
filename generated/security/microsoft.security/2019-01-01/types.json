@@ -520,5 +520,17 @@
       "$ref": "#/20"
     },
     "flags": 1
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "dismiss",
+    "resourceType": "Microsoft.Security/locations/alerts",
+    "apiVersion": "2019-01-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reactivate",
+    "resourceType": "Microsoft.Security/locations/alerts",
+    "apiVersion": "2019-01-01"
   }
 ]

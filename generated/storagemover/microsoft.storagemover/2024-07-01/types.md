@@ -6,7 +6,7 @@
 * **apiVersion**: '2024-07-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string (Required): The geo-location where the resource lives
-* **name**: string (Required, DeployTimeConstant): The resource name
+* **name**: string {pattern: "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [StorageMoverProperties](#storagemoverproperties): The resource specific properties for the Storage Mover resource.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
@@ -61,6 +61,16 @@
 * **properties**: [JobRunProperties](#jobrunproperties) (ReadOnly): Job run properties.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.StorageMover/storageMovers/projects/jobDefinitions/jobRuns' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function startJob (Microsoft.StorageMover/storageMovers/projects/jobDefinitions@2024-07-01)
+* **Resource**: Microsoft.StorageMover/storageMovers/projects/jobDefinitions
+* **ApiVersion**: 2024-07-01
+* **Output**: [JobRunResourceId](#jobrunresourceid)
+
+## Function stopJob (Microsoft.StorageMover/storageMovers/projects/jobDefinitions@2024-07-01)
+* **Resource**: Microsoft.StorageMover/storageMovers/projects/jobDefinitions
+* **ApiVersion**: 2024-07-01
+* **Output**: [JobRunResourceId](#jobrunresourceid)
 
 ## AgentProperties
 ### Properties
@@ -129,7 +139,7 @@
 * **agentName**: string: Name of the Agent to assign for new Job Runs of this Job Definition.
 * **agentResourceId**: string (ReadOnly): Fully qualified resource id of the Agent to assign for new Job Runs of this Job Definition.
 * **copyMode**: 'Additive' | 'Mirror' | string (Required): Strategy to use for copy.
-* **description**: string: A description for the Job Definition.
+* **description**: string: A description for the Job Definition. OnPremToCloud is for migrating data from on-premises to cloud. CloudToCloud is for migrating data between cloud to cloud.
 * **latestJobRunName**: string (ReadOnly): The name of the Job Run in a non-terminal state, if exists.
 * **latestJobRunResourceId**: string (ReadOnly): The fully qualified resource ID of the Job Run in a non-terminal state, if exists.
 * **latestJobRunStatus**: 'CancelRequested' | 'Canceled' | 'Canceling' | 'Failed' | 'PausedByBandwidthManagement' | 'Queued' | 'Running' | 'Started' | 'Succeeded' | string (ReadOnly): The current status of the Job Run in a non-terminal state, if exists.
@@ -178,6 +188,10 @@
 * **targetProperties**: any (ReadOnly): Copy of Endpoint resource's properties at time of Job Run creation.
 * **targetResourceId**: string (ReadOnly): Fully qualified resource id of of Endpoint. This id may no longer exist.
 
+## JobRunResourceId
+### Properties
+* **jobRunResourceId**: string (ReadOnly): Fully qualified resource id of the Job Run.
+
 ## ProjectProperties
 ### Properties
 * **description**: string: A description for the Project.
@@ -215,6 +229,6 @@
 ### Properties
 * **days**: ('Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday')[] (Required): The set of days of week for the schedule recurrence. A day must not be specified more than once in a recurrence.
 * **endTime**: [Time](#time) (Required): The end time of the schedule recurrence. Full hour and 30-minute intervals are supported.
-* **limitInMbps**: int {minValue: 0, maxValue: 2147483647} (Required): The WAN-link upload bandwidth (maximum data transfer rate) in megabits per second. Value of 0 indicates no throughput is allowed and any running migration job is effectively paused for the duration of this recurrence. Only data plane operations are governed by this limit. Control plane operations ensure seamless functionality. The agent may exceed this limit with control messages, if necessary.
+* **limitInMbps**: int {maxValue: 2147483647} (Required): The WAN-link upload bandwidth (maximum data transfer rate) in megabits per second. Value of 0 indicates no throughput is allowed and any running migration job is effectively paused for the duration of this recurrence. Only data plane operations are governed by this limit. Control plane operations ensure seamless functionality. The agent may exceed this limit with control messages, if necessary.
 * **startTime**: [Time](#time) (Required): The start time of the schedule recurrence. Full hour and 30-minute intervals are supported.
 

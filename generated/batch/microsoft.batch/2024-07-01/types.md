@@ -7,8 +7,9 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [BatchAccountIdentity](#batchaccountidentity): The identity of the Batch account.
 * **location**: string (Required): The region in which to create the account.
-* **name**: string {minLength: 3, maxLength: 24, pattern: "^[a-z0-9]+$"} (Required, DeployTimeConstant): The resource name
+* **name**: string {minLength: 3, maxLength: 24, pattern: "^[a-zA-Z0-9]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [BatchAccountCreatePropertiesOrBatchAccountProperties](#batchaccountcreatepropertiesorbatchaccountproperties): The properties of the Batch account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [BatchAccountCreateParametersTags](#batchaccountcreateparameterstags): The user-specified tags associated with the account.
 * **type**: 'Microsoft.Batch/batchAccounts' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -20,7 +21,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 64, pattern: "^[a-zA-Z0-9_-]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApplicationProperties](#applicationproperties): The properties associated with the Application.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ApplicationTags](#applicationtags): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/applications' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Batch/batchAccounts/applications/versions@2024-07-01
@@ -31,7 +33,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 64, pattern: "^[a-zA-Z0-9_-][a-zA-Z0-9_.-]*$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApplicationPackageProperties](#applicationpackageproperties): The properties associated with the Application Package.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ApplicationPackageTags](#applicationpackagetags): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/applications/versions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Batch/batchAccounts/certificates@2024-07-01
@@ -42,6 +45,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 5, maxLength: 45, pattern: "^[\w]+-[\w]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CertificateCreateOrUpdatePropertiesOrCertificateProperties](#certificatecreateorupdatepropertiesorcertificateproperties): The properties associated with the certificate.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -53,7 +57,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [DetectorResponseProperties](#detectorresponseproperties) (ReadOnly): The properties associated with the detector.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags) (ReadOnly): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [DetectorResponseTags](#detectorresponsetags) (ReadOnly): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/detectors' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations@2024-07-01 (ReadOnly)
@@ -61,7 +66,7 @@
 ### Properties
 * **apiVersion**: '2024-07-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: string {pattern: "^.*$"} (Required, DeployTimeConstant): The resource name
+* **name**: string {minLength: 1, maxLength: 512} (Required, DeployTimeConstant): The resource name
 * **properties**: [NetworkSecurityPerimeterConfigurationProperties](#networksecurityperimeterconfigurationproperties) (ReadOnly): Network security configuration properties.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations' (ReadOnly, DeployTimeConstant): The resource type
@@ -75,7 +80,8 @@
 * **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
 * **name**: string {minLength: 1, maxLength: 64, pattern: "^[a-zA-Z0-9_-]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [PoolTags](#pooltags): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/pools' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Batch/batchAccounts/privateEndpointConnections@2024-07-01 (ReadOnly)
@@ -86,7 +92,8 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 101, pattern: "^[a-zA-Z0-9_-]+\.?[a-fA-F0-9-]*$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties) (ReadOnly): The properties associated with the private endpoint connection.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags) (ReadOnly): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [PrivateEndpointConnectionTags](#privateendpointconnectiontags) (ReadOnly): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Batch/batchAccounts/privateLinkResources@2024-07-01 (ReadOnly)
@@ -97,13 +104,55 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 101, pattern: "^[a-zA-Z0-9_-]+\.?[a-fA-F0-9-]*$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateLinkResourceProperties](#privatelinkresourceproperties) (ReadOnly): The properties associated with the private link resource.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags) (ReadOnly): The tags of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [PrivateLinkResourceTags](#privatelinkresourcetags) (ReadOnly): The tags of the resource.
 * **type**: 'Microsoft.Batch/batchAccounts/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function activate (Microsoft.Batch/batchAccounts/applications/versions@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/applications/versions
+* **ApiVersion**: 2024-07-01
+* **Input**: [ActivateApplicationPackageParameters](#activateapplicationpackageparameters)
+* **Output**: [ApplicationPackage](#applicationpackage)
+
+## Function cancelDelete (Microsoft.Batch/batchAccounts/certificates@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/certificates
+* **ApiVersion**: 2024-07-01
+* **Output**: [Certificate](#certificate)
+
+## Function checkNameAvailability (Microsoft.Batch/locations@2024-07-01)
+* **Resource**: Microsoft.Batch/locations
+* **ApiVersion**: 2024-07-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function disableAutoScale (Microsoft.Batch/batchAccounts/pools@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2024-07-01
+* **Output**: [Pool](#pool)
 
 ## Function listKeys (Microsoft.Batch/batchAccounts@2024-07-01)
 * **Resource**: Microsoft.Batch/batchAccounts
 * **ApiVersion**: 2024-07-01
 * **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function reconcile (Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2024-07-01
+
+## Function regenerateKeys (Microsoft.Batch/batchAccounts@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2024-07-01
+* **Input**: [BatchAccountRegenerateKeyParameters](#batchaccountregeneratekeyparameters)
+* **Output**: [BatchAccountKeys](#batchaccountkeys)
+
+## Function stopResize (Microsoft.Batch/batchAccounts/pools@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts/pools
+* **ApiVersion**: 2024-07-01
+* **Output**: [Pool](#pool)
+
+## Function syncAutoStorageKeys (Microsoft.Batch/batchAccounts@2024-07-01)
+* **Resource**: Microsoft.Batch/batchAccounts
+* **ApiVersion**: 2024-07-01
 
 ## AccessRule
 ### Properties
@@ -124,6 +173,20 @@
 ### Properties
 * **id**: string: The fully qualified Azure resource ID of the subscription e.g. ('/subscriptions/00000000-0000-0000-0000-000000000000')
 
+## ActivateApplicationPackageParameters
+### Properties
+* **format**: string (Required): The format of the application package binary file.
+
+## ApplicationPackage
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ApplicationPackageProperties](#applicationpackageproperties): The properties associated with the Application Package.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [ApplicationPackageTags](#applicationpackagetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ApplicationPackageProperties
 ### Properties
 * **format**: string (ReadOnly): The format of the application package, if the package is active.
@@ -137,11 +200,26 @@
 * **id**: string (Required): The ID of the application package to install. This must be inside the same batch account as the pool. This can either be a reference to a specific version or the default version if one exists.
 * **version**: string: If this is omitted, and no default version is specified for this application, the request fails with the error code InvalidApplicationPackageReferences. If you are calling the REST API directly, the HTTP status code is 409.
 
+## ApplicationPackageTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ApplicationPackageTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ApplicationProperties
 ### Properties
 * **allowUpdates**: bool: A value indicating whether packages within the application may be overwritten using the same version string.
 * **defaultVersion**: string: The package to use if a client requests the application but does not specify a version. This property can only be set to the name of an existing package.
 * **displayName**: string: The display name for the application.
+
+## ApplicationTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## AutomaticOSUpgradePolicy
 ### Properties
@@ -202,41 +280,6 @@
 ### Additional Properties
 * **Additional Properties Type**: string
 
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## AzureProxyResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## BatchAccountCreateParametersTags
 ### Properties
 ### Additional Properties
@@ -260,7 +303,7 @@
 * **poolQuota**: int (ReadOnly): The pool quota for the Batch account.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connections associated with the Batch account
 * **provisioningState**: 'Cancelled' | 'Creating' | 'Deleting' | 'Failed' | 'Invalid' | 'Succeeded' (ReadOnly): The provisioned state of the resource
-* **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'SecuredByPerimeter': If not specified, the default value is 'enabled'.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'SecuredByPerimeter': The network access type for operating on the resources in the Batch account.
 
 ## BatchAccountIdentity
 ### Properties
@@ -280,6 +323,10 @@
 * **primary**: string (ReadOnly): The primary key associated with the account.
 * **secondary**: string (ReadOnly): The secondary key associated with the account.
 
+## BatchAccountRegenerateKeyParameters
+### Properties
+* **keyName**: 'Primary' | 'Secondary' (Required): The type of account key to regenerate.
+
 ## BatchPoolIdentity
 ### Properties
 * **type**: 'None' | 'UserAssigned' (Required): The type of identity used for the Batch Pool.
@@ -289,6 +336,16 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentities](#userassignedidentities)
+
+## Certificate
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CertificateProperties](#certificateproperties): The properties associated with the certificate.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [CertificateTags](#certificatetags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## CertificateCreateOrUpdatePropertiesOrCertificateProperties
 ### Properties
@@ -304,12 +361,40 @@
 * **thumbprint**: string: This must match the thumbprint from the name.
 * **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
 
+## CertificateProperties
+### Properties
+* **deleteCertificateError**: [DeleteCertificateError](#deletecertificateerror) (ReadOnly): This is only returned when the certificate provisioningState is 'Failed'.
+* **format**: 'Cer' | 'Pfx': The format of the certificate - either Pfx or Cer. If omitted, the default is Pfx.
+* **previousProvisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly): The previous provisioned state of the resource
+* **previousProvisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its previous state.
+* **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' (ReadOnly)
+* **provisioningStateTransitionTime**: string (ReadOnly): The time at which the certificate entered its current state.
+* **publicData**: string (ReadOnly): The public key of the certificate.
+* **thumbprint**: string: This must match the thumbprint from the name.
+* **thumbprintAlgorithm**: string: This must match the first portion of the certificate name. Currently required to be 'SHA1'.
+
 ## CertificateReference
 ### Properties
 * **id**: string (Required): The fully qualified ID of the certificate to install on the pool. This must be inside the same batch account as the pool.
 * **storeLocation**: 'CurrentUser' | 'LocalMachine': The default value is currentUser. This property is applicable only for pools configured with Windows compute nodes. For Linux compute nodes, the certificates are stored in a directory inside the task working directory and an environment variable AZ_BATCH_CERTIFICATES_DIR is supplied to the task to query for this location. For certificates with visibility of 'remoteUser', a 'certs' directory is created in the user's home directory (e.g., /home/{user-name}/certs) and certificates are placed in that directory.
 * **storeName**: string: This property is applicable only for pools configured with Windows compute nodes. Common store names include: My, Root, CA, Trust, Disallowed, TrustedPeople, TrustedPublisher, AuthRoot, AddressBook, but any custom store name can also be used. The default value is My.
 * **visibility**: ('RemoteUser' | 'StartTask' | 'Task')[]: Which user accounts on the compute node should have access to the private data of the certificate.
+
+## CertificateTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability
+* **type**: 'Microsoft.Batch/batchAccounts' (Required): The resource type.
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): Gets an error message explaining the Reason value in more detail.
+* **nameAvailable**: bool (ReadOnly): Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or invalid and cannot be used.
+* **reason**: 'AlreadyExists' | 'Invalid' (ReadOnly): Gets the reason that a Batch account name could not be used. The Reason element is only returned if NameAvailable is false.
 
 ## CifsMountConfiguration
 ### Properties
@@ -345,17 +430,17 @@
 ### Properties
 * **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Values are:
 
- none - The caching mode for the disk is not enabled.
- readOnly - The caching mode for the disk is read only.
- readWrite - The caching mode for the disk is read and write.
+none - The caching mode for the disk is not enabled.
+readOnly - The caching mode for the disk is read only.
+readWrite - The caching mode for the disk is read and write.
 
- The default value for caching is none. For information about the caching options see: https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/.
+The default value for caching is none. For information about the caching options see: https://blogs.msdn.microsoft.com/windowsazurestorage/2012/06/27/exploring-windows-azure-drives-disks-and-images/.
 * **diskSizeGB**: int (Required): The initial disk size in GB when creating new data disk.
 * **lun**: int (Required): The lun is used to uniquely identify each data disk. If attaching multiple disks, each should have a distinct lun. The value must be between 0 and 63, inclusive.
 * **storageAccountType**: 'Premium_LRS' | 'StandardSSD_LRS' | 'Standard_LRS': If omitted, the default is "Standard_LRS". Values are:
 
- Standard_LRS - The data disk should use standard locally redundant storage.
- Premium_LRS - The data disk should use premium locally redundant storage.
+Standard_LRS - The data disk should use standard locally redundant storage.
+Premium_LRS - The data disk should use premium locally redundant storage.
 
 ## DeleteCertificateError
 ### Properties
@@ -371,6 +456,11 @@
 ## DetectorResponseProperties
 ### Properties
 * **value**: string: A base64 encoded string that represents the content of a detector.
+
+## DetectorResponseTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## DiffDiskSettings
 ### Properties
@@ -430,9 +520,9 @@
 ### Properties
 * **keyIdentifier**: string: Full path to the secret with or without version. Example https://mykeyvault.vault.azure.net/keys/testkey/6e34a81fef704045975661e297a4c053. or https://mykeyvault.vault.azure.net/keys/testkey. To be usable the following prerequisites must be met:
 
- The Batch Account has a System Assigned identity
- The account identity has been granted Key/Get, Key/Unwrap and Key/Wrap permissions
- The KeyVault has soft-delete and purge protection enabled
+The Batch Account has a System Assigned identity
+The account identity has been granted Key/Get, Key/Unwrap and Key/Wrap permissions
+The KeyVault has soft-delete and purge protection enabled
 
 ## KeyVaultReference
 ### Properties
@@ -522,6 +612,17 @@
 * **managedDisk**: [ManagedDisk](#manageddisk)
 * **writeAcceleratorEnabled**: bool: Specifies whether writeAccelerator should be enabled or disabled on the disk.
 
+## Pool
+### Properties
+* **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **identity**: [BatchPoolIdentity](#batchpoolidentity): The type of identity used for the Batch Pool.
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [PoolProperties](#poolproperties): The properties associated with the pool.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [PoolTags](#pooltags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## PoolEndpointConfiguration
 ### Properties
 * **inboundNatPools**: [InboundNatPool](#inboundnatpool)[] (Required): The maximum number of inbound NAT pools per Batch pool is 5. If the maximum number of inbound NAT pools is exceeded the request fails with HTTP status code 400. This cannot be specified if the IPAddressProvisioningType is NoPublicIPAddresses.
@@ -565,6 +666,16 @@ Warning: This property is deprecated and will be removed after February, 2024. P
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## PoolTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## PoolTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## PrivateEndpoint
 ### Properties
 * **id**: string (ReadOnly): The ARM resource identifier of the private endpoint. This is of the form /subscriptions/{subscription}/resourceGroups/{group}/providers/Microsoft.Network/privateEndpoints/{privateEndpoint}.
@@ -572,24 +683,40 @@ Warning: This property is deprecated and will be removed after February, 2024. P
 ## PrivateEndpointConnection
 ### Properties
 * **etag**: string (ReadOnly): The ETag of the resource, used for concurrency statements.
-* **id**: string (ReadOnly): The ID of the resource.
-* **name**: string (ReadOnly): The name of the resource.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): The properties associated with the private endpoint connection.
-* **tags**: [AzureProxyResourceTags](#azureproxyresourcetags): The tags of the resource.
-* **type**: string (ReadOnly): The type of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [PrivateEndpointConnectionTags](#privateendpointconnectiontags): The tags of the resource.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## PrivateEndpointConnectionProperties
 ### Properties
 * **groupIds**: string[] (ReadOnly): The value has one and only one group id.
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint) (ReadOnly): The private endpoint of the private endpoint connection.
-* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): The private link service connection state of the private endpoint connection
+* **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): The private link service connection state of the private endpoint connection.
 * **provisioningState**: 'Cancelled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' (ReadOnly): The provisioning state of the private endpoint connection.
+
+## PrivateEndpointConnectionTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## PrivateEndpointConnectionTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## PrivateLinkResourceProperties
 ### Properties
 * **groupId**: string (ReadOnly): The group id is used to establish the private link connection.
 * **requiredMembers**: string[] (ReadOnly): The list of required members that are used to establish the private link connection.
 * **requiredZoneNames**: string[] (ReadOnly): The list of required zone names for the private DNS resource name
+
+## PrivateLinkResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## PrivateLinkServiceConnectionState
 ### Properties
@@ -739,8 +866,8 @@ Warning: This property is deprecated and will be removed after February, 2024. P
 * **imageReference**: [ImageReference](#imagereference) (Required): A reference to an Azure Virtual Machines Marketplace image or the Azure Image resource of a custom Virtual Machine. To get the list of all imageReferences verified by Azure Batch, see the 'List supported node agent SKUs' operation.
 * **licenseType**: string: This only applies to images that contain the Windows operating system, and should only be used when you hold valid on-premises licenses for the nodes which will be deployed. If omitted, no on-premises licensing discount is applied. Values are:
 
- Windows_Server - The on-premises license is for Windows Server.
- Windows_Client - The on-premises license is for Windows Client.
+Windows_Server - The on-premises license is for Windows Server.
+Windows_Client - The on-premises license is for Windows Client.
 * **nodeAgentSkuId**: string (Required): The Batch node agent is a program that runs on each node in the pool, and provides the command-and-control interface between the node and the Batch service. There are different implementations of the node agent, known as SKUs, for different operating systems. You must specify a node agent SKU which matches the selected image reference. To get the list of supported node agent SKUs along with their list of verified image references, see the 'List supported node agent SKUs' operation.
 * **nodePlacementConfiguration**: [NodePlacementConfiguration](#nodeplacementconfiguration): This configuration will specify rules on how nodes in the pool will be physically allocated.
 * **osDisk**: [OSDisk](#osdisk): Contains configuration for ephemeral OSDisk settings.

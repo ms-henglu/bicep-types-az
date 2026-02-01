@@ -35,6 +35,16 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.EdgeOrder/orderItems' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.EdgeOrder/orderItems@2024-02-01)
+* **Resource**: Microsoft.EdgeOrder/orderItems
+* **ApiVersion**: 2024-02-01
+* **Input**: [CancellationReason](#cancellationreason)
+
+## Function return (Microsoft.EdgeOrder/orderItems@2024-02-01)
+* **Resource**: Microsoft.EdgeOrder/orderItems
+* **ApiVersion**: 2024-02-01
+* **Input**: [ReturnOrderItemDetails](#returnorderitemdetails)
+
 ## AdditionalConfiguration
 ### Properties
 * **hierarchyInformation**: [HierarchyInformation](#hierarchyinformation) (Required): Hierarchy of the product which uniquely identifies the configuration.
@@ -53,6 +63,10 @@
 * **contactDetails**: [ContactDetails](#contactdetails): Contact details for the address.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Failed' | 'Succeeded' | string (ReadOnly): Provisioning state
 * **shippingAddress**: [ShippingAddress](#shippingaddress): Shipping details for the address.
+
+## CancellationReason
+### Properties
+* **reason**: string (Required): Reason for cancellation.
 
 ## ConfigurationDeviceDetails
 ### Properties
@@ -204,11 +218,23 @@
 * **principalId**: string (ReadOnly): Service Principal Id backing the Msi
 * **tenantId**: string (ReadOnly): Home Tenant Id
 * **type**: string: Identity type
-* **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): User Assigned Identities
+* **userAssignedIdentities**: [ResourceIdentityUserAssignedIdentities](#resourceidentityuserassignedidentities): User Assigned Identities
+
+## ResourceIdentityUserAssignedIdentities
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
 ## ResourceProviderDetails
 ### Properties
 * **resourceProviderNamespace**: string (ReadOnly): Resource provider namespace.
+
+## ReturnOrderItemDetails
+### Properties
+* **returnAddress**: [AddressProperties](#addressproperties): Customer return address.
+* **returnReason**: string (Required): Return Reason.
+* **serviceTag**: string: Service tag (located on the bottom-right corner of the device).
+* **shippingBoxRequired**: bool: Shipping Box required.
 
 ## ReverseShippingDetails
 ### Properties
@@ -275,11 +301,6 @@
 ## TransportPreferences
 ### Properties
 * **preferredShipmentType**: 'CustomerManaged' | 'MicrosoftManaged' | string (Required): Indicates Shipment Logistics type that the customer preferred.
-
-## UserAssignedIdentities
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
 ## UserAssignedIdentity
 ### Properties

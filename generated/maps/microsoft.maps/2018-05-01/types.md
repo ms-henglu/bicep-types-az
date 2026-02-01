@@ -17,6 +17,12 @@
 * **ApiVersion**: 2018-05-01
 * **Output**: [MapsAccountKeys](#mapsaccountkeys)
 
+## Function regenerateKey (Microsoft.Maps/accounts@2018-05-01)
+* **Resource**: Microsoft.Maps/accounts
+* **ApiVersion**: 2018-05-01
+* **Input**: [MapsKeySpecification](#mapskeyspecification)
+* **Output**: [MapsAccountKeys](#mapsaccountkeys)
+
 ## MapsAccountCreateParametersTags
 ### Properties
 ### Additional Properties
@@ -31,6 +37,10 @@
 ## MapsAccountProperties
 ### Properties
 * **x-ms-client-id**: string: A unique identifier for the maps account
+
+## MapsKeySpecification
+### Properties
+* **keyType**: 'primary' | 'secondary' | string (Required): Whether the operation refers to the primary or secondary key.
 
 ## Sku
 ### Properties

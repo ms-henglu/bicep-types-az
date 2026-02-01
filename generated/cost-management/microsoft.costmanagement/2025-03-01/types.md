@@ -8,6 +8,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AlertProperties](#alertproperties) (ReadOnly): Alert properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/alerts' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CostManagement/budgets@2025-03-01
@@ -18,6 +19,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 63, pattern: "^[a-zA-Z0-9_-]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [BudgetProperties](#budgetproperties): The properties of the budget.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/budgets' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CostManagement/costAllocationRules@2025-03-01
@@ -27,6 +29,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {pattern: "[A-Za-z0-9\-_]+"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CostAllocationRuleProperties](#costallocationruleproperties): Cost allocation rule properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/costAllocationRules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CostManagement/exports@2025-03-01
@@ -39,18 +42,43 @@
 * **location**: string: The location of the Export's managed identity. Only required when utilizing managed identity.
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ExportProperties](#exportproperties): The properties of the export.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/exports' (ReadOnly, DeployTimeConstant): The resource type
+
+## Resource Microsoft.CostManagement/operationResults@2025-03-01 (ReadOnly)
+* **Valid Scope(s)**: Unknown
+### Properties
+* **apiVersion**: '2025-03-01' (ReadOnly, DeployTimeConstant): The resource api version
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string (Required, DeployTimeConstant): The resource name
+* **properties**: [DownloadURL](#downloadurl) (ReadOnly): The properties of the resource generated.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: 'Microsoft.CostManagement/operationResults' (ReadOnly, DeployTimeConstant): The resource type
+
+## Resource Microsoft.CostManagement/operationStatus@2025-03-01 (ReadOnly)
+* **Valid Scope(s)**: Unknown
+### Properties
+* **apiVersion**: '2025-03-01' (ReadOnly, DeployTimeConstant): The resource api version
+* **endTime**: string (ReadOnly): The endTime of the operation.
+* **error**: [ErrorDetails](#errordetails) (ReadOnly): The details of the error.
+* **id**: string (ReadOnly, DeployTimeConstant): The resource id
+* **name**: string (Required, DeployTimeConstant): The resource name
+* **properties**: [DownloadURL](#downloadurl) (ReadOnly): The properties of the usage file generated.
+* **startTime**: string (ReadOnly): The startTime of the operation.
+* **status**: [Status](#status) (ReadOnly): The status of the long running operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: 'Microsoft.CostManagement/operationStatus' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CostManagement/scheduledActions@2025-03-01
 * **Valid Scope(s)**: Unknown
 ### Properties
 * **apiVersion**: '2025-03-01' (ReadOnly, DeployTimeConstant): The resource api version
-* **eTag**: string (ReadOnly): Resource Etag. For update calls, eTag is optional and can be specified to achieve optimistic concurrency. Fetch the resource's eTag by doing a 'GET' call first and then including the latest eTag as part of the request body or 'If-Match' header while performing the update. For create calls, eTag is not required.
+* **eTag**: string: Resource Etag. For update calls, eTag is optional and can be specified to achieve optimistic concurrency. Fetch the resource's eTag by doing a 'GET' call first and then including the latest eTag as part of the request body or 'If-Match' header while performing the update. For create calls, eTag is not required.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **kind**: 'Email' | 'InsightAlert' | string: Kind of the scheduled action.
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ScheduledActionProperties](#scheduledactionproperties): The properties of the scheduled action.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Kind of the scheduled action.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/scheduledActions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.CostManagement/settings@2025-03-01
@@ -61,11 +89,12 @@
 * **apiVersion**: '2025-03-01' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'taginheritance' | string (Required, DeployTimeConstant): The resource name
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/settings' (ReadOnly, DeployTimeConstant): The resource type
 
 ### TagInheritanceSetting
 #### Properties
-* **kind**: 'taginheritance' (Required): Specifies the kind of settings.
+* **kind**: 'taginheritance' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [TagInheritanceProperties](#taginheritanceproperties): The properties of the tag inheritance setting.
 
 
@@ -77,7 +106,46 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ViewProperties](#viewproperties): The properties of the view.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/views' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function download (Microsoft.CostManagement/pricesheets@2025-03-01)
+* **Resource**: Microsoft.CostManagement/pricesheets
+* **ApiVersion**: 2025-03-01
+* **Output**: [OperationStatus](#operationstatus)
+
+## Function execute (Microsoft.CostManagement/scheduledActions@2025-03-01)
+* **Resource**: Microsoft.CostManagement/scheduledActions
+* **ApiVersion**: 2025-03-01
+
+## Function forecast (Microsoft.CostManagement/externalSubscriptions@2025-03-01)
+* **Resource**: Microsoft.CostManagement/externalSubscriptions
+* **ApiVersion**: 2025-03-01
+* **Input**: [ForecastDefinition](#forecastdefinition)
+* **Output**: [ForecastResult](#forecastresult)
+
+## Function forecast (Microsoft.CostManagement/externalBillingAccounts@2025-03-01)
+* **Resource**: Microsoft.CostManagement/externalBillingAccounts
+* **ApiVersion**: 2025-03-01
+* **Input**: [ForecastDefinition](#forecastdefinition)
+* **Output**: [ForecastResult](#forecastresult)
+
+## Function query (Microsoft.CostManagement/externalSubscriptions@2025-03-01)
+* **Resource**: Microsoft.CostManagement/externalSubscriptions
+* **ApiVersion**: 2025-03-01
+* **Input**: [QueryDefinition](#querydefinition)
+* **Output**: [QueryResult](#queryresult)
+
+## Function query (Microsoft.CostManagement/externalBillingAccounts@2025-03-01)
+* **Resource**: Microsoft.CostManagement/externalBillingAccounts
+* **ApiVersion**: 2025-03-01
+* **Input**: [QueryDefinition](#querydefinition)
+* **Output**: [QueryResult](#queryresult)
+
+## Function run (Microsoft.CostManagement/exports@2025-03-01)
+* **Resource**: Microsoft.CostManagement/exports
+* **ApiVersion**: 2025-03-01
+* **Input**: [ExportRunRequest](#exportrunrequest)
 
 ## AlertProperties
 ### Properties
@@ -134,53 +202,53 @@
 ### Properties
 * **and**: [BudgetFilterProperties](#budgetfilterproperties)[]: The logical "AND" expression. Must have at least 2 items.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 * **dimensions**: [BudgetComparisonExpression](#budgetcomparisonexpression): Has comparison expression for a dimension.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
-Supported dimension names for **CategoryType: ReservationUtilization** 
+Supported dimension names for **CategoryType: ReservationUtilization**
 - ReservationId
 - ReservedResourceType
 * **tags**: [BudgetComparisonExpression](#budgetcomparisonexpression): Has comparison expression for a tag.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 
 ## BudgetFilterProperties
 ### Properties
 * **dimensions**: [BudgetComparisonExpression](#budgetcomparisonexpression): Has comparison expression for a dimension.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
-Supported dimension names for **CategoryType: ReservationUtilization** 
+Supported dimension names for **CategoryType: ReservationUtilization**
 - ReservationId
 - ReservedResourceType
 * **tags**: [BudgetComparisonExpression](#budgetcomparisonexpression): Has comparison expression for a tag.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 
 ## BudgetProperties
 ### Properties
 * **amount**: int: The total amount of cost to track with the budget.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 
- Required for CategoryType(s): Cost.
+Required for CategoryType(s): Cost.
 * **category**: 'Cost' | 'ReservationUtilization' | string (Required): The category of the budget.
 - 'Cost' defines a Budget.
 - 'ReservationUtilization' defines a Reservation Utilization Alert Rule.
 * **currentSpend**: [CurrentSpend](#currentspend) (ReadOnly): The current amount of cost which is being tracked for a budget.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 * **filter**: [BudgetFilter](#budgetfilter): May be used to filter budgets by user-specified dimensions and/or tags.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 * **forecastSpend**: [ForecastSpend](#forecastspend) (ReadOnly): The forecasted cost which is being tracked for a budget.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 * **notifications**: [BudgetPropertiesNotifications](#budgetpropertiesnotifications): Dictionary of notifications associated with the budget.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
 - Constraints for **CategoryType: Cost** - Budget can have up to 5 notifications with thresholdType: Actual and 5 notifications with thresholdType: Forecasted.
 - Constraints for **CategoryType: ReservationUtilization** - Only one notification allowed. thresholdType is not applicable.
@@ -188,7 +256,7 @@ Supported dimension names for **CategoryType: ReservationUtilization**
 
 Supported for CategoryType(s): Cost, ReservationUtilization.
 
- Supported timeGrainTypes for **CategoryType: Cost**
+Supported timeGrainTypes for **CategoryType: Cost**
 
 - Monthly
 - Quarterly
@@ -197,18 +265,18 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 - BillingQuarter*
 - BillingAnnual*
 
-  *only supported for Web Direct customers.
+*only supported for Web Direct customers.
 
- Supported timeGrainTypes for **CategoryType: ReservationUtilization**
+Supported timeGrainTypes for **CategoryType: ReservationUtilization**
 - Last7Days
 - Last30Days
 
- Required for CategoryType(s): Cost, ReservationUtilization.
+Required for CategoryType(s): Cost, ReservationUtilization.
 * **timePeriod**: [BudgetTimePeriod](#budgettimeperiod) (Required): The time period that defines the active period of the budget. The budget will evaluate data on or after the startDate and will expire on the endDate.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
- Required for CategoryType(s): Cost, ReservationUtilization.
+Required for CategoryType(s): Cost, ReservationUtilization.
 
 ## BudgetPropertiesNotifications
 ### Properties
@@ -259,10 +327,26 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **status**: 'Active' | 'NotActive' | 'Processing' | string (Required): Status of the rule
 * **updatedDate**: string (ReadOnly): Time at which the rule was last updated.
 
+## CostManagementResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## CostManagementResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## CurrentSpend
 ### Properties
 * **amount**: int (ReadOnly): The total amount of cost which is being tracked by the budget.
 * **unit**: string (ReadOnly): The unit of measure for the budget amount.
+
+## DownloadURL
+### Properties
+* **downloadUrl**: string: The URL to download the generated report.
+* **expiryTime**: string (ReadOnly): The time at which report URL becomes invalid/expires in UTC e.g. 2020-12-08T05:55:59.4394737Z.
+* **validTill**: string: The time at which report URL becomes invalid/expires in UTC e.g. 2020-12-08T05:55:59.4394737Z.
 
 ## ErrorDetails
 ### Properties
@@ -346,6 +430,10 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **submittedBy**: string: The identifier for the entity that triggered the export. For on-demand runs it is the user email. For scheduled runs it is 'System'.
 * **submittedTime**: string: The time when export was queued to be run.
 
+## ExportRunRequest
+### Properties
+* **timePeriod**: [ExportTimePeriod](#exporttimeperiod): Has time period for pulling data for the export.
+
 ## ExportSchedule
 ### Properties
 * **recurrence**: 'Annually' | 'Daily' | 'Monthly' | 'Weekly' | string: The schedule recurrence.
@@ -372,10 +460,80 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **name**: 'LookBackPeriod' | 'ReservationScope' | 'ResourceType' | string: The name of the filter. This is currently only supported for Export Definition type of ReservationRecommendations. Supported names are ['ReservationScope', 'LookBackPeriod', 'ResourceType']
 * **value**: string: Value to filter by. Currently values supported per name are, for 'ReservationScope' supported values are ['Single', 'Shared'], for 'LookBackPeriod' supported values are ['Last7Days', 'Last30Days', 'Last60Days'] and for 'ResourceType' supported values are ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'].
 
+## ForecastAggregation
+### Properties
+* **function**: 'Sum' | string (Required): The name of the aggregation function to use.
+* **name**: 'Cost' | 'CostUSD' | 'PreTaxCost' | 'PreTaxCostUSD' | string (Required): The name of the column to aggregate.
+
+## ForecastColumn
+### Properties
+* **name**: string: The name of column.
+* **type**: string: The type of column.
+
+## ForecastComparisonExpression
+### Properties
+* **name**: string (Required): The name of the column to use in comparison.
+* **operator**: 'In' | string (Required): The operator to use for comparison.
+* **values**: string[] {minLength: 1} (Required): Array of values to use for comparison
+
+## ForecastDataset
+### Properties
+* **aggregation**: [ForecastDatasetAggregation](#forecastdatasetaggregation) (Required): Dictionary of aggregation expression to use in the forecast. The key of each item in the dictionary is the alias for the aggregated column. forecast can have up to 2 aggregation clauses.
+* **configuration**: [ForecastDatasetConfiguration](#forecastdatasetconfiguration): Has configuration information for the data in the export. The configuration will be ignored if aggregation and grouping are provided.
+* **filter**: [ForecastFilter](#forecastfilter): Has filter expression to use in the forecast.
+* **granularity**: 'Daily' | 'Monthly' | string: The granularity of rows in the forecast.
+
+## ForecastDatasetAggregation
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ForecastAggregation](#forecastaggregation)
+
+## ForecastDatasetConfiguration
+### Properties
+* **columns**: string[]: Array of column names to be included in the forecast. Any valid forecast column name is allowed. If not provided, then forecast includes all columns.
+
+## ForecastDefinition
+### Properties
+* **dataset**: [ForecastDataset](#forecastdataset) (Required): Has definition for data in this forecast.
+* **includeActualCost**: bool: A boolean determining if actualCost will be included.
+* **includeFreshPartialCost**: bool: A boolean determining if FreshPartialCost will be included.
+* **timeframe**: 'Custom' | string (Required): The time frame for pulling data for the forecast. If custom, then a specific time period must be provided.
+* **timePeriod**: [ForecastTimePeriod](#forecasttimeperiod): Has time period for pulling data for the forecast.
+* **type**: 'ActualCost' | 'AmortizedCost' | 'Usage' | string (Required): The type of the forecast.
+
+## ForecastFilter
+### Properties
+* **and**: [ForecastFilter](#forecastfilter)[] {minLength: 2}: The logical "AND" expression. Must have at least 2 items.
+* **dimensions**: [ForecastComparisonExpression](#forecastcomparisonexpression): Has comparison expression for a dimension
+* **or**: [ForecastFilter](#forecastfilter)[] {minLength: 2}: The logical "OR" expression. Must have at least 2 items.
+* **tags**: [ForecastComparisonExpression](#forecastcomparisonexpression): Has comparison expression for a tag
+
+## ForecastProperties
+### Properties
+* **columns**: [ForecastColumn](#forecastcolumn)[]: Array of columns
+* **nextLink**: string: The link (url) to the next page of results.
+* **rows**: any[][]: Array of rows
+
+## ForecastResult
+### Properties
+* **eTag**: string (ReadOnly): ETag of the resource.
+* **id**: string (ReadOnly): Resource Id.
+* **location**: string (ReadOnly): Location of the resource.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [ForecastProperties](#forecastproperties): Forecast properties
+* **sku**: string (ReadOnly): SKU of the resource.
+* **tags**: [CostManagementResourceTags](#costmanagementresourcetags) (ReadOnly): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
 ## ForecastSpend
 ### Properties
 * **amount**: int (ReadOnly): The forecasted cost for the total time period which is being tracked by the budget. This value is only provided if the budget contains a forecast alert type.
 * **unit**: string (ReadOnly): The unit of measure for the budget amount.
+
+## ForecastTimePeriod
+### Properties
+* **from**: string (Required): The start date to pull data from.
+* **to**: string (Required): The end date to pull data to.
 
 ## KpiProperties
 ### Properties
@@ -387,42 +545,42 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 ### Properties
 * **contactEmails**: string[] {maxLength: 50} (Required): Email addresses to send the notification to when the threshold is breached. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 * **contactGroups**: string[] {maxLength: 50}: Subscription or Resource Group scopes only. Action groups to send the notification to when the threshold is exceeded. Must be provided as a fully qualified Azure resource id.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 * **contactRoles**: string[]: Subscription or Resource Group scopes only. Contact roles to send the notification to when the threshold is breached.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 * **enabled**: bool (Required): The notification is enabled or not.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 * **frequency**: 'Daily' | 'Monthly' | 'Weekly' | string: Frequency of a notification. Represents how long the notification will be silent after triggering an alert for a threshold breach. If not specified, the frequency will be set by default based on the timeGrain (Weekly when timeGrain: Last7Days, Monthly when timeGrain: Last30Days).
 
- Supported for CategoryType(s): ReservationUtilization.
-* **locale**: 'cs-cz' | 'da-dk' | 'de-de' | 'en-gb' | 'en-us' | 'es-es' | 'fr-fr' | 'hu-hu' | 'it-it' | 'ja-jp' | 'ko-kr' | 'nb-no' | 'nl-nl' | 'pl-pl' | 'pt-br' | 'pt-pt' | 'ru-ru' | 'sv-se' | 'tr-tr' | 'zh-cn' | 'zh-tw' | string: Language in which the recipient will receive the notification, 
+Supported for CategoryType(s): ReservationUtilization.
+* **locale**: 'cs-cz' | 'da-dk' | 'de-de' | 'en-gb' | 'en-us' | 'es-es' | 'fr-fr' | 'hu-hu' | 'it-it' | 'ja-jp' | 'ko-kr' | 'nb-no' | 'nl-nl' | 'pl-pl' | 'pt-br' | 'pt-pt' | 'ru-ru' | 'sv-se' | 'tr-tr' | 'zh-cn' | 'zh-tw' | string: Language in which the recipient will receive the notification,
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 * **operator**: 'EqualTo' | 'GreaterThan' | 'GreaterThanOrEqualTo' | 'LessThan' | string (Required): The comparison operator.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
- Supported operators for **CategoryType: Cost**
+Supported operators for **CategoryType: Cost**
 - GreaterThan
 - GreaterThanOrEqualTo
 
- Supported operators for **CategoryType: ReservationUtilization**
+Supported operators for **CategoryType: ReservationUtilization**
 - LessThan
 * **threshold**: int (Required): Threshold value associated with a notification. It is always percent with a maximum of 2 decimal places.
 
- Supported for CategoryType(s): Cost, ReservationUtilization.
+Supported for CategoryType(s): Cost, ReservationUtilization.
 
- **CategoryType: Cost** - Must be between 0 and 1000. Notification is sent when the cost exceeded the threshold.
+**CategoryType: Cost** - Must be between 0 and 1000. Notification is sent when the cost exceeded the threshold.
 
- **CategoryType: ReservationUtilization** - Must be between 0 and 100. Notification is sent when a reservation has a utilization percentage below the threshold.
+**CategoryType: ReservationUtilization** - Must be between 0 and 100. Notification is sent when a reservation has a utilization percentage below the threshold.
 * **thresholdType**: 'Actual' | 'Forecasted' | string: The type of threshold.
 
- Supported for CategoryType(s): Cost.
+Supported for CategoryType(s): Cost.
 
 ## NotificationProperties
 ### Properties
@@ -430,12 +588,91 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **message**: string: Optional message to be added in the email. Length is limited to 250 characters.
 * **regionalFormat**: string: Regional format used for formatting date/time and currency values in the email.
 * **subject**: string (Required): Subject of the email. Length is limited to 70 characters.
-* **to**: (string {pattern: "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}$"})[] {minLength: 1, maxLength: 20} (Required): Array of email addresses.
+* **to**: string[] {minLength: 1, maxLength: 20} (Required): Array of email addresses.
+
+## OperationStatus
+### Properties
+* **properties**: [ReportURL](#reporturl): The properties of the resource generated.
+* **status**: 'Completed' | 'Failed' | 'Running' | string: The status of the long running operation.
 
 ## PivotProperties
 ### Properties
 * **name**: string: Data field to show in view.
 * **type**: 'Dimension' | 'TagKey' | string: Data type to show in view.
+
+## QueryAggregation
+### Properties
+* **function**: 'Sum' | string (Required): The name of the aggregation function to use.
+* **name**: string (Required): The name of the column to aggregate.
+
+## QueryColumn
+### Properties
+* **name**: string: The name of column.
+* **type**: string: The type of column.
+
+## QueryComparisonExpression
+### Properties
+* **name**: string (Required): The name of the column to use in comparison.
+* **operator**: 'In' | string (Required): The operator to use for comparison.
+* **values**: string[] {minLength: 1} (Required): Array of values to use for comparison
+
+## QueryDataset
+### Properties
+* **aggregation**: [QueryDatasetAggregation](#querydatasetaggregation): Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
+* **configuration**: [QueryDatasetConfiguration](#querydatasetconfiguration): Has configuration information for the data in the export. The configuration will be ignored if aggregation and grouping are provided.
+* **filter**: [QueryFilter](#queryfilter): The filter expression to use in the query. Please reference our Query API REST documentation for how to properly format the filter.
+* **granularity**: 'Daily' | 'Monthly' | string: The granularity of rows in the query.
+* **grouping**: [QueryGrouping](#querygrouping)[] {maxLength: 2}: Array of group by expression to use in the query. Query can have up to 2 group by clauses.
+
+## QueryDatasetAggregation
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [QueryAggregation](#queryaggregation)
+
+## QueryDatasetConfiguration
+### Properties
+* **columns**: string[]: Array of column names to be included in the query. Any valid query column name is allowed. If not provided, then query includes all columns.
+
+## QueryDefinition
+### Properties
+* **dataset**: [QueryDataset](#querydataset) (Required): Has definition for data in this query.
+* **timeframe**: 'BillingMonthToDate' | 'Custom' | 'MonthToDate' | 'TheCurrentMonth' | 'TheLastBillingMonth' | 'TheLastMonth' | 'WeekToDate' | string (Required): The time frame for pulling data for the query. If custom, then a specific time period must be provided.
+* **timePeriod**: [QueryTimePeriod](#querytimeperiod): Has time period for pulling data for the query.
+* **type**: 'ActualCost' | 'AmortizedCost' | 'FocusCost' | 'PriceSheet' | 'ReservationDetails' | 'ReservationRecommendations' | 'ReservationTransactions' | 'Usage' | string (Required): The type of the query.
+
+## QueryFilter
+### Properties
+* **and**: [QueryFilter](#queryfilter)[] {minLength: 2}: The logical "AND" expression. Must have at least 2 items.
+* **dimensions**: [QueryComparisonExpression](#querycomparisonexpression): Has comparison expression for a dimension
+* **or**: [QueryFilter](#queryfilter)[] {minLength: 2}: The logical "OR" expression. Must have at least 2 items.
+* **tags**: [QueryComparisonExpression](#querycomparisonexpression): Has comparison expression for a tag
+
+## QueryGrouping
+### Properties
+* **name**: string (Required): The name of the column to group.
+* **type**: 'Dimension' | 'TagKey' | string (Required): Has type of the column to group.
+
+## QueryProperties
+### Properties
+* **columns**: [QueryColumn](#querycolumn)[]: Array of columns
+* **nextLink**: string: The link (url) to the next page of results.
+* **rows**: any[][]: Array of rows
+
+## QueryResult
+### Properties
+* **eTag**: string (ReadOnly): ETag of the resource.
+* **id**: string (ReadOnly): Resource Id.
+* **location**: string (ReadOnly): Location of the resource.
+* **name**: string (ReadOnly): Resource name.
+* **properties**: [QueryProperties](#queryproperties): Query properties
+* **sku**: string (ReadOnly): SKU of the resource.
+* **tags**: [CostManagementResourceTags](#costmanagementresourcetags) (ReadOnly): Resource tags.
+* **type**: string (ReadOnly): Resource type.
+
+## QueryTimePeriod
+### Properties
+* **from**: string (Required): The start date to pull data from.
+* **to**: string (Required): The end date to pull data to.
 
 ## ReportConfigAggregation
 ### Properties
@@ -496,6 +733,11 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **from**: string (Required): The start date to pull data from.
 * **to**: string (Required): The end date to pull data to.
 
+## ReportURL
+### Properties
+* **reportUrl**: 'InstanceFlexibilityGroup' | 'InstanceFlexibilityRatio' | 'InstanceId' | 'Kind' | 'ReservationId' | 'ReservationOrderId' | 'ReservedHours' | 'SkuName' | 'TotalReservedQuantity' | 'UsageDate' | 'UsedHours' | string: The CSV file from the reportUrl blob link consists of reservation usage data with the following schema at daily granularity
+* **validUntil**: string: The time at which report URL becomes invalid.
+
 ## ScheduledActionProperties
 ### Properties
 * **displayName**: string (Required): Scheduled action name.
@@ -522,6 +764,10 @@ Supported for CategoryType(s): Cost, ReservationUtilization.
 * **name**: string (Required): If resource type is dimension, this must be either ResourceGroupName or SubscriptionId. If resource type is tag, this must be a valid Azure tag
 * **resourceType**: 'Dimension' | 'Tag' | string (Required): Type of resources contained in this cost allocation rule
 * **values**: string[] (Required): Source Resources for cost allocation. This list cannot contain more than 25 values.
+
+## Status
+### Properties
+* **status**: 'Completed' | 'Failed' | 'InProgress' | 'NoDataFound' | 'Queued' | 'ReadyToDownload' | 'TimedOut' | string: The status of the long running operation.
 
 ## SystemAssignedServiceIdentity
 ### Properties

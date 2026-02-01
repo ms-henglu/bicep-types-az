@@ -9,6 +9,7 @@
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RedisCreatePropertiesOrRedisProperties](#rediscreatepropertiesorredisproperties) (Required): Redis cache properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [RedisCreateParametersTags](#rediscreateparameterstags): Resource tags.
 * **type**: 'Microsoft.Cache/redis' (ReadOnly, DeployTimeConstant): The resource type
 * **zones**: string[]: A list of availability zones denoting where the resource needs to come from.
@@ -20,6 +21,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 3, maxLength: 63, pattern: "^([a-zA-Z0-9][a-zA-Z0-9- ]*[a-zA-Z0-9]|[a-zA-Z0-9])$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [RedisCacheAccessPolicyProperties](#rediscacheaccesspolicyproperties): Properties of an access policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/accessPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/accessPolicyAssignments@2024-11-01
@@ -29,6 +31,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 3, maxLength: 63, pattern: "^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]|[a-zA-Z0-9])$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [RedisCacheAccessPolicyAssignmentProperties](#rediscacheaccesspolicyassignmentproperties): Properties of an access policy assignment
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/accessPolicyAssignments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/firewallRules@2024-11-01
@@ -38,6 +41,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RedisFirewallRuleProperties](#redisfirewallruleproperties) (Required): redis cache firewall rule properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/firewallRules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/linkedServers@2024-11-01
@@ -47,6 +51,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [RedisLinkedServerCreatePropertiesOrRedisLinkedServerProperties](#redislinkedservercreatepropertiesorredislinkedserverproperties) (Required): Properties required to create a linked server.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/linkedServers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/patchSchedules@2024-11-01
@@ -57,6 +62,7 @@
 * **location**: string (ReadOnly): The geo-location where the resource lives
 * **name**: 'default' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [ScheduleEntries](#scheduleentries) (Required): List of patch schedules for a Redis cache.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/patchSchedules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redis/privateEndpointConnections@2024-11-01
@@ -66,12 +72,68 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redis/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function export (Microsoft.Cache/redis@2024-11-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2024-11-01
+* **Input**: [ExportRDBParameters](#exportrdbparameters)
+
+## Function flush (Microsoft.Cache/redis@2024-11-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2024-11-01
+* **Output**: [OperationStatusResult](#operationstatusresult)
+
+## Function forceReboot (Microsoft.Cache/redis@2024-11-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2024-11-01
+* **Input**: [RedisRebootParameters](#redisrebootparameters)
+* **Output**: [RedisForceRebootResponse](#redisforcerebootresponse)
+
+## Function import (Microsoft.Cache/redis@2024-11-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2024-11-01
+* **Input**: [ImportRDBParameters](#importrdbparameters)
 
 ## Function listKeys (Microsoft.Cache/redis@2024-11-01)
 * **Resource**: Microsoft.Cache/redis
 * **ApiVersion**: 2024-11-01
 * **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## Function regenerateKey (Microsoft.Cache/redis@2024-11-01)
+* **Resource**: Microsoft.Cache/redis
+* **ApiVersion**: 2024-11-01
+* **Input**: [RedisRegenerateKeyParameters](#redisregeneratekeyparameters)
+* **Output**: [RedisAccessKeys](#redisaccesskeys)
+
+## ErrorAdditionalInfo
+### Properties
+* **info**: any (ReadOnly): The additional info.
+* **type**: string (ReadOnly): The additional info type.
+
+## ErrorDetail
+### Properties
+* **additionalInfo**: [ErrorAdditionalInfo](#erroradditionalinfo)[] (ReadOnly): The error additional info.
+* **code**: string (ReadOnly): The error code.
+* **details**: [ErrorDetail](#errordetail)[] (ReadOnly): The error details.
+* **message**: string (ReadOnly): The error message.
+* **target**: string (ReadOnly): The error target.
+
+## ExportRDBParameters
+### Properties
+* **container**: string (Required): Container name to export to.
+* **format**: string: File format.
+* **preferred-data-archive-auth-method**: string: Preferred auth method to communicate to storage account used for data archive, specify SAS or ManagedIdentity, default value is SAS
+* **prefix**: string (Required): Prefix to use for exported files.
+* **storage-subscription-id**: string: Subscription id of the storage container for data to be exported using ManagedIdentity.
+
+## ImportRDBParameters
+### Properties
+* **files**: string[] (Required): files to import.
+* **format**: string: File format.
+* **preferred-data-archive-auth-method**: string: Preferred auth method to communicate to storage account used for data archive, specify SAS or ManagedIdentity, default value is SAS
+* **storage-subscription-id**: string: Subscription id of the storage container containing files to import using Managed Identity.
 
 ## ManagedServiceIdentity
 ### Properties
@@ -80,20 +142,33 @@
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
 
+## OperationStatusResult
+### Properties
+* **endTime**: string: The end time of the operation.
+* **error**: [ErrorDetail](#errordetail): If present, details of the operation error.
+* **id**: string: Fully qualified ID for the async operation.
+* **name**: string: Name of the async operation.
+* **operations**: [OperationStatusResult](#operationstatusresult)[]: The operations list.
+* **percentComplete**: int {minValue: 0, maxValue: 100}: Percent of the operation that is complete.
+* **startTime**: string: The start time of the operation.
+* **status**: string (Required): Operation status.
+
 ## PrivateEndpoint
 ### Properties
-* **id**: string (ReadOnly): The ARM identifier for Private Endpoint
+* **id**: string (ReadOnly): The ARM identifier for private endpoint.
 
 ## PrivateEndpointConnection
 ### Properties
-* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
 * **name**: string (ReadOnly): The name of the resource
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## PrivateEndpointConnectionProperties
 ### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The resource of private end point.
+* **groupIds**: string[] (ReadOnly): The group ids for the private endpoint resource.
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The private endpoint resource.
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (Required): A collection of information about the state of the connection between service consumer and provider.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | string (ReadOnly): The provisioning state of the private endpoint connection resource.
 
@@ -127,7 +202,7 @@
 * **aof-backup-enabled**: string: Specifies whether the aof backup is enabled
 * **aof-storage-connection-string-0**: string: First storage account connection string
 * **aof-storage-connection-string-1**: string: Second storage account connection string
-* **authnotrequired**: string: Specifies whether the authentication is disabled. Setting this property is highly discouraged from security point of view.
+* **authnotrequired**: string: Specifies whether the authentication is disabled. Setting this property is highly discouraged from security point of view; you should never disable authentication using this property!
 * **maxclients**: string (ReadOnly): The max clients config
 * **maxfragmentationmemory-reserved**: string: Value in megabytes reserved for fragmentation per shard
 * **maxmemory-delta**: string: Value in megabytes reserved for non-cache usage per shard e.g. failover.
@@ -136,7 +211,7 @@
 * **notify-keyspace-events**: string: The keyspace events which should be monitored.
 * **preferred-data-archive-auth-method**: string (ReadOnly): Preferred auth method to communicate to storage account used for data archive, specify SAS or ManagedIdentity, default value is SAS
 * **preferred-data-persistence-auth-method**: string: Preferred auth method to communicate to storage account used for data persistence, specify SAS or ManagedIdentity, default value is SAS
-* **rdb-backup-enabled**: string: Specifies whether the rdb backup is enabled
+* **rdb-backup-enabled**: string: Specifies whether the RDB backup is enabled
 * **rdb-backup-frequency**: string: Specifies the frequency for creating rdb backup in minutes. Valid values: (15, 30, 60, 360, 720, 1440)
 * **rdb-backup-max-snapshot-count**: string: Specifies the maximum number of snapshots for rdb backup
 * **rdb-storage-connection-string**: string: The storage account connection string for storing rdb file
@@ -167,7 +242,7 @@
 * **port**: int (ReadOnly): Redis non-SSL port.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connection associated with the specified redis cache
 * **provisioningState**: 'ConfiguringAAD' | 'Creating' | 'Deleting' | 'Disabled' | 'Failed' | 'Linking' | 'Provisioning' | 'RecoveringScaleFailure' | 'Scaling' | 'Succeeded' | 'Unlinking' | 'Unprovisioning' | 'Updating' | string (ReadOnly): Redis instance provisioning status.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this cache.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'. If 'Disabled', private endpoints are the exclusive access method. Default value is 'Enabled'
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this cache.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'. If 'Disabled', private endpoints are the exclusive access method.
 * **redisConfiguration**: [RedisCommonPropertiesRedisConfiguration](#rediscommonpropertiesredisconfiguration): All Redis Settings. Few possible keys: rdb-backup-enabled,rdb-storage-connection-string,rdb-backup-frequency,maxmemory-delta, maxmemory-policy,notify-keyspace-events, aof-backup-enabled, aof-storage-connection-string-0, aof-storage-connection-string-1 etc.
 * **redisVersion**: string: Redis version. This should be in the form 'major[.minor]' (only 'major' is required) or the value 'latest' which refers to the latest stable Redis version that is available. Supported versions: 4.0, 6.0 (latest). Default value is 'latest'.
 * **replicasPerMaster**: int: The number of replicas to be created per primary.
@@ -185,6 +260,10 @@
 ### Properties
 * **endIP**: string (Required): highest IP address included in the range
 * **startIP**: string (Required): lowest IP address included in the range
+
+## RedisForceRebootResponse
+### Properties
+* **message**: string (ReadOnly): Status message
 
 ## RedisInstanceDetails
 ### Properties
@@ -208,6 +287,16 @@
 * **provisioningState**: string (ReadOnly): Terminal state of the link between primary and secondary redis cache.
 * **serverRole**: 'Primary' | 'Secondary' (Required): Role of the linked server.
 
+## RedisRebootParameters
+### Properties
+* **ports**: int[]: A list of redis instances to reboot, specified by per-instance SSL ports or non-SSL ports.
+* **rebootType**: 'AllNodes' | 'PrimaryNode' | 'SecondaryNode' | string: Which Redis node(s) to reboot. Depending on this value data loss is possible.
+* **shardId**: int: If clustering is enabled, the ID of the shard to be rebooted.
+
+## RedisRegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): The Redis access key to regenerate.
+
 ## ScheduleEntries
 ### Properties
 * **scheduleEntries**: [ScheduleEntry](#scheduleentry)[] (Required): List of patch schedules for a Redis cache.
@@ -223,6 +312,15 @@
 * **capacity**: int (Required): The size of the Redis cache to deploy. Valid values: for C (Basic/Standard) family (0, 1, 2, 3, 4, 5, 6), for P (Premium) family (1, 2, 3, 4).
 * **family**: 'C' | 'P' | string (Required): The SKU family to use. Valid values: (C, P). (C = Basic/Standard, P = Premium).
 * **name**: 'Basic' | 'Premium' | 'Standard' | string (Required): The type of Redis cache to deploy. Valid values: (Basic, Standard, Premium)
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 
 ## UserAssignedIdentities
 ### Properties

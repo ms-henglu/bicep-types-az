@@ -1016,5 +1016,11 @@
       "$ref": "#/97"
     },
     "flags": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "purge",
+    "resourceType": "Microsoft.KeyVault/locations/deletedVaults",
+    "apiVersion": "2016-10-01"
   }
 ]

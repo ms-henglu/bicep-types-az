@@ -218,6 +218,50 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DevCenter/projects/pools/schedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function connect (Microsoft.DevCenter/projects/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-02-01
+
+## Function connect (Microsoft.DevCenter/devcenters/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-02-01
+
+## Function getErrorDetails (Microsoft.DevCenter/devcenters/catalogs/environmentDefinitions@2024-02-01)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs/environmentDefinitions
+* **ApiVersion**: 2024-02-01
+* **Output**: [CatalogResourceValidationErrorDetails](#catalogresourcevalidationerrordetails)
+
+## Function getErrorDetails (Microsoft.DevCenter/projects/catalogs/environmentDefinitions@2024-02-01)
+* **Resource**: Microsoft.DevCenter/projects/catalogs/environmentDefinitions
+* **ApiVersion**: 2024-02-01
+* **Output**: [CatalogResourceValidationErrorDetails](#catalogresourcevalidationerrordetails)
+
+## Function getSyncErrorDetails (Microsoft.DevCenter/projects/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-02-01
+* **Output**: [SyncErrorDetails](#syncerrordetails)
+
+## Function getSyncErrorDetails (Microsoft.DevCenter/devcenters/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-02-01
+* **Output**: [SyncErrorDetails](#syncerrordetails)
+
+## Function runHealthChecks (Microsoft.DevCenter/projects/pools@2024-02-01)
+* **Resource**: Microsoft.DevCenter/projects/pools
+* **ApiVersion**: 2024-02-01
+
+## Function runHealthChecks (Microsoft.DevCenter/networkConnections@2024-02-01)
+* **Resource**: Microsoft.DevCenter/networkConnections
+* **ApiVersion**: 2024-02-01
+
+## Function sync (Microsoft.DevCenter/projects/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/projects/catalogs
+* **ApiVersion**: 2024-02-01
+
+## Function sync (Microsoft.DevCenter/devcenters/catalogs@2024-02-01)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2024-02-01
+
 ## AllowedEnvironmentTypeProperties
 ### Properties
 * **displayName**: string (ReadOnly): The display name of the allowed environment type.
@@ -231,6 +275,16 @@
 * **networkConnectionLocation**: string (ReadOnly): The geo-location where the NetworkConnection resource specified in 'networkConnectionResourceId' property lives.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Created' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'MovingResources' | 'NotSpecified' | 'RolloutInProgress' | 'Running' | 'StorageProvisioningFailed' | 'Succeeded' | 'TransientFailure' | 'Updated' | 'Updating' | string (ReadOnly): The provisioning state of the resource.
 
+## CatalogConflictError
+### Properties
+* **name**: string (ReadOnly): Name of the conflicting catalog item.
+* **path**: string (ReadOnly): The path of the file that has a conflicting name.
+
+## CatalogErrorDetails
+### Properties
+* **code**: string: An identifier for the error.
+* **message**: string: A message describing the error.
+
 ## CatalogProperties
 ### Properties
 * **adoGit**: [GitCatalog](#gitcatalog): Properties for an Azure DevOps catalog type.
@@ -243,6 +297,15 @@
 * **syncState**: 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The synchronization state of the catalog.
 * **syncType**: 'Manual' | 'Scheduled' | string: Indicates the type of sync that is configured for the catalog.
 * **tags**: [CatalogUpdatePropertiesTags](#catalogupdatepropertiestags): Resource tags.
+
+## CatalogResourceValidationErrorDetails
+### Properties
+* **errors**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with resources synchronized from the catalog.
+
+## CatalogSyncError
+### Properties
+* **errorDetails**: [CatalogErrorDetails](#catalogerrordetails)[] (ReadOnly): Errors associated with the file.
+* **path**: string (ReadOnly): The path of the file the error is associated with.
 
 ## CatalogUpdatePropertiesTags
 ### Properties
@@ -481,6 +544,12 @@
 ### Properties
 * **gracePeriodMinutes**: int: The specified time in minutes to wait before stopping a Dev Box once disconnect is detected.
 * **status**: 'Disabled' | 'Enabled' | string: Whether the feature to stop the Dev Box on disconnect once the grace period has lapsed is enabled.
+
+## SyncErrorDetails
+### Properties
+* **conflicts**: [CatalogConflictError](#catalogconflicterror)[] (ReadOnly): Catalog items that have conflicting names.
+* **errors**: [CatalogSyncError](#catalogsyncerror)[] (ReadOnly): Errors that occured during synchronization.
+* **operationError**: [CatalogErrorDetails](#catalogerrordetails) (ReadOnly): Error information for the overall synchronization operation.
 
 ## SyncStats
 ### Properties
