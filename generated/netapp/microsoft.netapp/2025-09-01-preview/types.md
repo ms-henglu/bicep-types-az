@@ -338,6 +338,105 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.NetApp/netAppAccounts/volumeGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function authorizeExternalReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Output**: [SvmPeerCommandResponse](#svmpeercommandresponse)
+
+## Function authorizeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [AuthorizeRequest](#authorizerequest)
+
+## Function breakFileLocks (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BreakFileLocksRequest](#breakfilelocksrequest)
+
+## Function breakReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BreakReplicationRequest](#breakreplicationrequest)
+
+## Function changeKeyVault (Microsoft.NetApp/netAppAccounts@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [ChangeKeyVault](#changekeyvault)
+
+## Function changeZone (Microsoft.NetApp/elasticAccounts/elasticCapacityPools@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/elasticAccounts/elasticCapacityPools
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [ChangeZoneRequest](#changezonerequest)
+* **Output**: [ElasticCapacityPool](#elasticcapacitypool)
+
+## Function checkFilePathAvailability (Microsoft.NetApp/locations@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [FilePathAvailabilityRequest](#filepathavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkNameAvailability (Microsoft.NetApp/locations@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [ResourceNameAvailabilityRequest](#resourcenameavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkQuotaAvailability (Microsoft.NetApp/locations@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [QuotaAvailabilityRequest](#quotaavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkVolumeFilePathAvailability (Microsoft.NetApp/elasticAccounts/elasticCapacityPools@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/elasticAccounts/elasticCapacityPools
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [CheckElasticVolumeFilePathAvailabilityRequest](#checkelasticvolumefilepathavailabilityrequest)
+* **Output**: [CheckElasticResourceAvailabilityResponse](#checkelasticresourceavailabilityresponse)
+
+## Function clearSuspects (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/ransomwareReports@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/ransomwareReports
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [RansomwareSuspectsClearRequest](#ransomwaresuspectsclearrequest)
+
+## Function deleteReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function finalizeExternalReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function finalizeRelocation (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function generateAkvCredentials (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BucketCredentialsExpiry](#bucketcredentialsexpiry)
+
+## Function generateCredentials (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BucketCredentialsExpiry](#bucketcredentialsexpiry)
+* **Output**: [BucketGenerateCredentials](#bucketgeneratecredentials)
+
+## Function getGroupIdListForLdapUser (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [GetGroupIdListForLdapUserRequest](#getgroupidlistforldapuserrequest)
+* **Output**: [GetGroupIdListForLdapUserResponse](#getgroupidlistforldapuserresponse)
+
+## Function getKeyVaultStatus (Microsoft.NetApp/netAppAccounts@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts
+* **ApiVersion**: 2025-09-01-preview
+* **Output**: [GetKeyVaultStatusResponse](#getkeyvaultstatusresponse)
+
+## Function getMetadata (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes
+* **ApiVersion**: 2025-09-01-preview
+* **Output**: [SubvolumeModel](#subvolumemodel)
+
 ## Function listPeeringPassphrases (Microsoft.NetApp/netAppAccounts/capacityPools/caches@2025-09-01-preview)
 * **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/caches
 * **ApiVersion**: 2025-09-01-preview
@@ -353,6 +452,119 @@
 * **ApiVersion**: 2025-09-01-preview
 * **Input**: [ListReplicationsRequest](#listreplicationsrequest)
 * **Output**: [ListReplications](#listreplications)
+
+## Function migrateBackups (Microsoft.NetApp/netAppAccounts@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BackupsMigrationRequest](#backupsmigrationrequest)
+
+## Function migrateBackups (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BackupsMigrationRequest](#backupsmigrationrequest)
+
+## Function peerExternalCluster (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [PeerClusterForVolumeMigrationRequest](#peerclusterforvolumemigrationrequest)
+* **Output**: [ClusterPeerCommandResponse](#clusterpeercommandresponse)
+
+## Function performReplicationTransfer (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function poolChange (Microsoft.NetApp/netAppAccounts/capacityPools/caches@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/caches
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [PoolChangeRequest](#poolchangerequest)
+* **Output**: [Cache](#cache)
+
+## Function poolChange (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [PoolChangeRequest](#poolchangerequest)
+
+## Function populateAvailabilityZone (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Output**: [Volume](#volume)
+
+## Function queryNetworkSiblingSet (Microsoft.NetApp/locations@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [QueryNetworkSiblingSetRequest](#querynetworksiblingsetrequest)
+* **Output**: [NetworkSiblingSet](#networksiblingset)
+
+## Function reestablishReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [ReestablishReplicationRequest](#reestablishreplicationrequest)
+
+## Function refreshCertificate (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets
+* **ApiVersion**: 2025-09-01-preview
+
+## Function reinitializeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function relocate (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [RelocateVolumeRequest](#relocatevolumerequest)
+
+## Function renewCredentials (Microsoft.NetApp/netAppAccounts@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts
+* **ApiVersion**: 2025-09-01-preview
+
+## Function resetCifsPassword (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function restoreFiles (Microsoft.NetApp/netAppAccounts/backupVaults/backups@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/backupVaults/backups
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [BackupRestoreFiles](#backuprestorefiles)
+
+## Function restoreFiles (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [SnapshotRestoreFiles](#snapshotrestorefiles)
+
+## Function resyncReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function revert (Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/elasticAccounts/elasticCapacityPools/elasticVolumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [ElasticVolumeRevert](#elasticvolumerevert)
+* **Output**: [ElasticVolume](#elasticvolume)
+
+## Function revert (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [VolumeRevert](#volumerevert)
+
+## Function revertRelocation (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+
+## Function splitCloneFromParent (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2025-09-01-preview
+* **Output**: [Volume](#volume)
+
+## Function transitiontocmk (Microsoft.NetApp/netAppAccounts@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/netAppAccounts
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [EncryptionTransitionRequest](#encryptiontransitionrequest)
+
+## Function updateNetworkSiblingSet (Microsoft.NetApp/locations@2025-09-01-preview)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [UpdateNetworkSiblingSetRequest](#updatenetworksiblingsetrequest)
+* **Output**: [NetworkSiblingSet](#networksiblingset)
 
 ## AccountEncryption
 ### Properties
@@ -411,6 +623,10 @@
 * **smbServerName**: string {maxLength: 10}: NetBIOS name of the SMB server. This name will be registered as a computer account in the AD and used to mount volumes
 * **userName**: string {maxLength: 255}: A domain user account with permission to create machine accounts
 
+## AuthorizeRequest
+### Properties
+* **remoteVolumeResourceId**: string: Resource id of the remote volume
+
 ## AzureKeyVaultDetails
 ### Properties
 * **certificateAkvDetails**: [CertificateAkvDetails](#certificateakvdetails): Specifies the Azure Key Vault settings for retrieving the bucket server certificate.
@@ -444,9 +660,38 @@
 * **useExistingSnapshot**: bool: Manual backup an already existing snapshot. This will always be false for scheduled backups and true/false for manual backups
 * **volumeResourceId**: string (Required): ResourceId used to identify the Volume
 
+## BackupRestoreFiles
+### Properties
+* **destinationVolumeId**: string (Required): Resource Id of the destination volume on which the files need to be restored
+* **fileList**: (string {minLength: 1, maxLength: 1024})[] {minLength: 1, maxLength: 8} (Required): List of files to be restored
+* **restoreFilePath**: string {pattern: "^\/.*$"}: Destination folder where the files will be restored. The path name should start with a forward slash. If it is omitted from request then restore is done at the root folder of the destination volume by default
+
+## BackupsMigrationRequest
+### Properties
+* **backupVaultId**: string (Required): The ResourceId of the Backup Vault
+
 ## BackupVaultProperties
 ### Properties
 * **provisioningState**: string (ReadOnly): Azure lifecycle management
+
+## BreakFileLocksRequest
+### Properties
+* **clientIp**: string {pattern: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"}: To clear file locks on a volume for a particular client
+* **confirmRunningDisruptiveOperation**: bool: Break File locks could be a disruptive operation for application as locks on the volume will be broken, if want to process, set to true.
+
+## BreakReplicationRequest
+### Properties
+* **forceBreakReplication**: bool: If replication is in status transferring and you want to force break the replication, set to true
+
+## BucketCredentialsExpiry
+### Properties
+* **keyPairExpiryDays**: int {minValue: 1}: The number of days from now until the newly generated Access and Secret key pair will expire.
+
+## BucketGenerateCredentials
+### Properties
+* **accessKey**: string (ReadOnly): The Access Key that is required along with the Secret Key to access the bucket.
+* **keyPairExpiry**: string (ReadOnly): The bucket's Access and Secret key pair expiry date and time (in UTC).
+* **secretKey**: string (ReadOnly): The Secret Key that is required along with the Access Key to access the bucket.
 
 ## BucketProperties
 ### Properties
@@ -479,6 +724,18 @@ Note: This is only used when Azure Key Vault is not configured. This property is
 * **ipAddress**: string (ReadOnly): The bucket server's IPv4 address
 * **onCertificateConflictAction**: 'Fail' | 'Update' | string: Action to take when there is a certificate conflict.
 Possible values include: 'Update', 'Fail'
+
+## Cache
+### Properties
+* **etag**: string (ReadOnly): "If etag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.")
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CacheProperties](#cacheproperties) (Required): Cache properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+* **zones**: string[]: The availability zones.
 
 ## CacheMountTargetProperties
 ### Properties
@@ -522,9 +779,40 @@ Possible values include: 'Update', 'Fail'
 * **certificateKeyVaultUri**: string: The base URI of the Azure Key Vault that is used when retrieving the bucket certificate.
 * **certificateName**: string {minLength: 1, maxLength: 127, pattern: "^[a-zA-Z0-9-]{1,127}$"}: The name of the bucket server certificate stored in the Azure Key Vault.
 
+## ChangeKeyVault
+### Properties
+* **keyName**: string (Required): The name of the key that should be used for encryption.
+* **keyVaultPrivateEndpoints**: [KeyVaultPrivateEndpoint](#keyvaultprivateendpoint)[] (Required): Pairs of virtual network ID and private endpoint ID. Every virtual network that has volumes encrypted with customer-managed keys needs its own key vault private endpoint.
+* **keyVaultResourceId**: string: Azure resource ID of the key vault/managed HSM that should be used for encryption.
+* **keyVaultUri**: string (Required): The URI of the key vault/managed HSM that should be used for encryption.
+
+## ChangeZoneRequest
+### Properties
+* **newZone**: string {minLength: 1, maxLength: 1} (Required): Availability zone to move Zone Redundant elastic capacity pool to
+
+## CheckAvailabilityResponse
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
+
+## CheckElasticResourceAvailabilityResponse
+### Properties
+* **isAvailable**: 'False' | 'True' | string: True indicates name is valid and available. False indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: Invalid indicates the name provided does not match Azure NetApp Files naming requirements. AlreadyExists indicates that the name is already in use and is therefore unavailable.
+
+## CheckElasticVolumeFilePathAvailabilityRequest
+### Properties
+* **filePath**: string {minLength: 1, maxLength: 80, pattern: "^[a-zA-Z][a-zA-Z0-9\-]{0,79}$"} (Required): A unique file path for the volume. Used when creating mount targets. This needs to be unique within the elastic capacity pool.
+
 ## CifsUser
 ### Properties
 * **username**: string: The CIFS user's username
+
+## ClusterPeerCommandResponse
+### Properties
+* **peerAcceptCommand**: string: A command that needs to be run on the external ONTAP to accept cluster peering.  Will only be present if <code>clusterPeeringStatus</code> is <code>pending</code>
 
 ## CredentialsAkvDetails
 ### Properties
@@ -583,6 +871,18 @@ Possible values include: 'Update', 'Fail'
 ## ElasticBackupVaultProperties
 ### Properties
 * **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Patching' | 'Succeeded' | 'Updating' | string (ReadOnly): Azure lifecycle management.
+
+## ElasticCapacityPool
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ElasticCapacityPoolProperties](#elasticcapacitypoolproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+* **zones**: string[]: The availability zones.
 
 ## ElasticCapacityPoolProperties
 ### Properties
@@ -679,6 +979,18 @@ Possible values include: 'Update', 'Fail'
 ### Properties
 * **provisioningState**: 'Accepted' | 'Creating' | 'Deleting' | 'Failed' | 'Moving' | 'Patching' | 'Succeeded' | 'Updating' | string (ReadOnly): Azure lifecycle management.
 
+## ElasticVolume
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ElasticVolumeProperties](#elasticvolumeproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+* **zones**: string[]: The availability zones.
+
 ## ElasticVolumeBackupProperties
 ### Properties
 * **elasticBackupPolicyResourceId**: string: ResourceId used to identify Elastic Backup Policy
@@ -706,6 +1018,10 @@ Possible values include: 'Update', 'Fail'
 * **snapshotDirectoryVisibility**: 'Hidden' | 'Visible' | string: Controls the visibility of the volume's read-only snapshot directory, which provides access to each of the volume's snapshots.
 * **snapshotResourceId**: string: Resource identifier used to identify the Elastic Snapshot.
 
+## ElasticVolumeRevert
+### Properties
+* **snapshotResourceId**: string: Resource identifier used to identify the Elastic Snapshot.
+
 ## ElasticVolumeSnapshotProperties
 ### Properties
 * **snapshotPolicyResourceId**: string: Snapshot Policy ResourceId
@@ -715,6 +1031,11 @@ Possible values include: 'Update', 'Fail'
 * **federatedClientId**: string: ClientId of the multi-tenant AAD Application. Used to access cross-tenant keyvaults.
 * **principalId**: string (ReadOnly): The principal ID (object ID) of the identity used to authenticate with key vault. Read-only.
 * **userAssignedIdentity**: string: The ARM resource identifier of the user assigned identity used to authenticate with key vault. Applicable if identity.type has 'UserAssigned'. It should match key of identity.userAssignedIdentities.
+
+## EncryptionTransitionRequest
+### Properties
+* **privateEndpointId**: string (Required): Identifier of the private endpoint to reach the Azure Key Vault
+* **virtualNetworkId**: string (Required): Identifier for the virtual network
 
 ## ExportPolicyRule
 ### Properties
@@ -734,16 +1055,46 @@ Possible values include: 'Update', 'Fail'
 * **unixReadOnly**: bool: Read only access
 * **unixReadWrite**: bool: Read and write access
 
+## FilePathAvailabilityRequest
+### Properties
+* **availabilityZone**: string: The Azure Resource logical availability zone which is used within zone mapping lookup for the subscription and region. The lookup will retrieve the physical zone where volume is placed.
+* **name**: string (Required): File path to verify.
+* **subnetId**: string (Required): The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes
+
 ## FileSystemUser
 ### Properties
 * **cifsUser**: [CifsUser](#cifsuser): The effective CIFS username when accessing the volume data.
 * **nfsUser**: [NfsUser](#nfsuser): The effective NFS User ID and Group ID when accessing the volume data.
+
+## GetGroupIdListForLdapUserRequest
+### Properties
+* **username**: string {minLength: 1, maxLength: 255} (Required): username is required to fetch the group to which user is part of
+
+## GetGroupIdListForLdapUserResponse
+### Properties
+* **groupIdsForLdapUser**: string[]: Group Id list
+
+## GetKeyVaultStatusResponse
+### Properties
+* **properties**: [GetKeyVaultStatusResponseProperties](#getkeyvaultstatusresponseproperties): Represents the properties of the getKeyVaultStatus.
+
+## GetKeyVaultStatusResponseProperties
+### Properties
+* **keyName**: string: The name of the key that should be used for encryption.
+* **keyVaultPrivateEndpoints**: [KeyVaultPrivateEndpoint](#keyvaultprivateendpoint)[]: Pairs of virtual network ID and private endpoint ID. Every virtual network that has volumes encrypted with customer-managed keys needs its own key vault private endpoint.
+* **keyVaultResourceId**: string: Azure resource ID of the key vault/managed HSM that should be used for encryption.
+* **keyVaultUri**: string: The URI of the key vault/managed HSM that should be used for encryption.
 
 ## HourlySchedule
 ### Properties
 * **minute**: int: Indicates which minute snapshot should be taken
 * **snapshotsToKeep**: int: Hourly snapshot count to keep
 * **usedBytes**: int: Resource size in bytes, current storage usage for the volume in bytes
+
+## KeyVaultPrivateEndpoint
+### Properties
+* **privateEndpointId**: string: Identifier of the private endpoint to reach the Azure Key Vault
+* **virtualNetworkId**: string: Identifier for the virtual network id
 
 ## KeyVaultProperties
 ### Properties
@@ -807,10 +1158,24 @@ Possible values include: 'Update', 'Fail'
 * **mountTargetId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"} (ReadOnly): UUID v4 used to identify the MountTarget
 * **smbServerFqdn**: string: The SMB server's Fully Qualified Domain Name, FQDN
 
+## NetworkSiblingSet
+### Properties
+* **networkFeatures**: 'Basic' | 'Basic_Standard' | 'Standard' | 'Standard_Basic' | string: Network features available to the volume, or current state of update.
+* **networkSiblingSetId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"}: Network Sibling Set ID for a group of volumes sharing networking resources in a subnet.
+* **networkSiblingSetStateId**: string: Network sibling set state Id identifying the current state of the sibling set.
+* **nicInfoList**: [NicInfo](#nicinfo)[]: List of NIC information
+* **provisioningState**: 'Canceled' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets the status of the NetworkSiblingSet at the time the operation was called.
+* **subnetId**: string: The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. Example /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Network/virtualNetworks/testVnet/subnets/{mySubnet}
+
 ## NfsUser
 ### Properties
 * **groupId**: int: The NFS user's GID
 * **userId**: int: The NFS user's UID
+
+## NicInfo
+### Properties
+* **ipAddress**: string (ReadOnly): IP Address
+* **volumeResourceIds**: string[]: Volume resource Ids
 
 ## OriginClusterInformation
 ### Properties
@@ -818,6 +1183,10 @@ Possible values include: 'Update', 'Fail'
 * **peerClusterName**: string (Required): ONTAP cluster name of external cluster hosting the origin volume
 * **peerVolumeName**: string (Required): External origin volume name associated to this cache
 * **peerVserverName**: string (Required): External Vserver (SVM) name  name of the SVM hosting the origin volume
+
+## PeerClusterForVolumeMigrationRequest
+### Properties
+* **peerIpAddresses**: string[] {minLength: 1} (Required): A list of IC-LIF IPs that can be used to connect to the On-prem cluster
 
 ## PeeringPassphrases
 ### Properties
@@ -829,6 +1198,10 @@ Possible values include: 'Update', 'Fail'
 ### Properties
 * **key**: string (Required): Key for an application specific parameter for the placement of volumes in the volume group
 * **value**: string (Required): Value for an application specific parameter for the placement of volumes in the volume group
+
+## PoolChangeRequest
+### Properties
+* **newPoolResourceId**: string (Required): Resource id of the pool to move volume to
 
 ## PoolProperties
 ### Properties
@@ -842,6 +1215,17 @@ Possible values include: 'Update', 'Fail'
 * **size**: int (Required): Provisioned size of the pool (in bytes). Allowed values are in 1TiB chunks (value must be multiple of 1099511627776).
 * **totalThroughputMibps**: int (ReadOnly): Total throughput of pool in MiB/s
 * **utilizedThroughputMibps**: int (ReadOnly): Utilized throughput of pool in MiB/s
+
+## QueryNetworkSiblingSetRequest
+### Properties
+* **networkSiblingSetId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"} (Required): Network Sibling Set ID for a group of volumes sharing networking resources in a subnet.
+* **subnetId**: string (Required): The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. Example /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Network/virtualNetworks/testVnet/subnets/{mySubnet}
+
+## QuotaAvailabilityRequest
+### Properties
+* **name**: string (Required): Name of the resource to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/backupVaults/backups' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
 
 ## QuotaItemProperties
 ### Properties
@@ -880,6 +1264,15 @@ Possible values include: 'Update', 'Fail'
 * **resolution**: 'FalsePositive' | 'PotentialThreat' | string (ReadOnly): ARP report suspect resolution
 * **suspectFiles**: [SuspectFile](#suspectfile)[] (ReadOnly): Suspect files
 
+## RansomwareSuspectsClearRequest
+### Properties
+* **extensions**: (string {minLength: 1, maxLength: 1024})[] {minLength: 1} (Required): List of file extensions resolved (PotentialThreat or FalsePositive)
+* **resolution**: 'FalsePositive' | 'PotentialThreat' | string (Required): ARP report suspect resolution
+
+## ReestablishReplicationRequest
+### Properties
+* **sourceVolumeId**: string: Resource id of the source volume for the replication
+
 ## RegionInfo
 ### Properties
 * **availabilityZoneMappings**: [RegionInfoAvailabilityZoneMappingsItem](#regioninfoavailabilityzonemappingsitem)[]: Provides logical availability zone mappings for the subscription for a region.
@@ -889,6 +1282,10 @@ Possible values include: 'Update', 'Fail'
 ### Properties
 * **availabilityZone**: string: Logical availability zone.
 * **isAvailable**: bool: Available availability zone
+
+## RelocateVolumeRequest
+### Properties
+* **creationToken**: string: New creation token for the volume that controls the mount point name
 
 ## RemotePath
 ### Properties
@@ -921,6 +1318,12 @@ Possible values include: 'Update', 'Fail'
 * **replicationId**: string (ReadOnly): Id
 * **replicationSchedule**: '_10minutely' | 'daily' | 'hourly' | string: Schedule
 
+## ResourceNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/backupVaults/backups' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
+
 ## SecretPassword
 ### Properties
 * **identity**: [SecretPasswordIdentity](#secretpasswordidentity): Identity used to authenticate to KeyVault. Applicable if keySource is 'Microsoft.KeyVault'.
@@ -938,7 +1341,7 @@ Possible values include: 'Update', 'Fail'
 
 ## SmbSettings
 ### Properties
-* **smbAccessBasedEnumerations**: 'Disabled' | 'Enabled' | string: Enables access-based enumeration share property for SMB Shares. Only applicable for SMB/DualProtocol volume
+* **smbAccessBasedEnumeration**: 'Disabled' | 'Enabled' | string: Enables access-based enumeration share property for SMB Shares. Only applicable for SMB/DualProtocol volume
 * **smbEncryption**: 'Disabled' | 'Enabled' | string: Enables encryption for in-flight smb3 data. Only applicable for SMB/DualProtocol cache.
 * **smbNonBrowsable**: 'Disabled' | 'Enabled' | string: Enables non-browsable property for SMB Shares. Only applicable for SMB/DualProtocol volume
 
@@ -957,6 +1360,31 @@ Possible values include: 'Update', 'Fail'
 * **provisioningState**: string (ReadOnly): Azure lifecycle management
 * **snapshotId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"} (ReadOnly): UUID v4 used to identify the Snapshot
 
+## SnapshotRestoreFiles
+### Properties
+* **destinationPath**: string: Destination folder where the files will be restored
+* **filePaths**: (string {minLength: 1, maxLength: 1024})[] {minLength: 1, maxLength: 10} (Required): List of files to be restored
+
+## SubvolumeModel
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string (ReadOnly): Resource name
+* **properties**: [SubvolumeModelProperties](#subvolumemodelproperties): It represents the minimal properties of the subvolume.
+* **type**: string (ReadOnly): Resource type
+
+## SubvolumeModelProperties
+### Properties
+* **accessedTimeStamp**: string: Most recent access time and date
+* **bytesUsed**: int: Bytes used
+* **changedTimeStamp**: string: Most recent change time and date
+* **creationTimeStamp**: string: Creation time and date
+* **modifiedTimeStamp**: string: Most recent modification time and date
+* **parentPath**: string: Path to the parent subvolume
+* **path**: string: Path to the subvolume
+* **permissions**: string: Permissions of the subvolume
+* **provisioningState**: string: Azure lifecycle management
+* **size**: int: Size of subvolume
+
 ## SubvolumeProperties
 ### Properties
 * **parentPath**: string: parent path to the subvolume
@@ -968,6 +1396,10 @@ Possible values include: 'Update', 'Fail'
 ### Properties
 * **fileTimestamp**: string (ReadOnly): The creation date and time of the file
 * **suspectFileName**: string (ReadOnly): Suspect filename
+
+## SvmPeerCommandResponse
+### Properties
+* **svmPeeringCommand**: string: A command that needs to be run on the external ONTAP to accept svm peering.  Will only be present if <code>svmPeeringStatus</code> is <code>pending</code>
 
 ## SystemData
 ### Properties
@@ -1053,10 +1485,49 @@ Possible values include: 'Update', 'Fail'
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## UpdateNetworkSiblingSetRequest
+### Properties
+* **networkFeatures**: 'Basic' | 'Basic_Standard' | 'Standard' | 'Standard_Basic' | string (Required): Network features available to the volume.
+* **networkSiblingSetId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"} (Required): Network Sibling Set ID for a group of volumes sharing networking resources in a subnet.
+* **networkSiblingSetStateId**: string (Required): Network sibling set state Id identifying the current state of the sibling set.
+* **subnetId**: string (Required): The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes. Example /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Network/virtualNetworks/testVnet/subnets/{mySubnet}
+
 ## UserAssignedIdentity
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client ID of the assigned identity.
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The principal ID of the assigned identity.
+
+## Volume
+### Properties
+* **etag**: string (ReadOnly): "If etag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.")
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [VolumeProperties](#volumeproperties) (Required): Volume properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+* **zones**: string[]: The availability zones.
 
 ## VolumeBackupProperties
 ### Properties
@@ -1194,6 +1665,10 @@ For extra large volumes, valid values are in the range 2400GiB to 7200TiB. Value
 ### Properties
 * **readyToBeFinalized**: bool (ReadOnly): Has relocation finished and is ready to be cleaned up
 * **relocationRequested**: bool: Has relocation been requested for this volume
+
+## VolumeRevert
+### Properties
+* **snapshotId**: string: Resource id of the snapshot
 
 ## VolumeSnapshotProperties
 ### Properties

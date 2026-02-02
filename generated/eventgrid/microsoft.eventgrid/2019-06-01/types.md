@@ -54,6 +54,11 @@
 * **properties**: [TopicTypeProperties](#topictypeproperties) (ReadOnly): Properties of the topic type info
 * **type**: 'Microsoft.EventGrid/topicTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2019-06-01)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2019-06-01
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2019-06-01)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2019-06-01
@@ -62,6 +67,18 @@
 ## Function listKeys (Microsoft.EventGrid/topics@2019-06-01)
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2019-06-01
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2019-06-01)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2019-06-01
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2019-06-01)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2019-06-01
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
 
 ## AdvancedFilter
@@ -147,6 +164,10 @@
 * **endpoint**: string (ReadOnly): Endpoint for the domain.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the domain.
 
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
+
 ## DomainSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the domain.
@@ -203,6 +224,10 @@ Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
 
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
 ## EventSubscriptionProperties
 ### Properties
 * **deadLetterDestination**: [DeadLetterDestination](#deadletterdestination): The DeadLetter destination of the event subscription.
@@ -241,6 +266,10 @@ Wildcard characters are not supported in this path.
 ### Properties
 * **endpoint**: string (ReadOnly): Endpoint for the topic.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the topic.
+
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
 
 ## TopicSharedAccessKeys
 ### Properties

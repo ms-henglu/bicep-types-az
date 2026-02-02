@@ -150,10 +150,91 @@
 * **properties**: [VolumeGroupProperties](#volumegroupproperties): Volume group properties
 * **type**: 'Microsoft.NetApp/netAppAccounts/volumeGroups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function authorizeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+* **Input**: [AuthorizeRequest](#authorizerequest)
+
+## Function breakReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+* **Input**: [BreakReplicationRequest](#breakreplicationrequest)
+
+## Function checkFilePathAvailability (Microsoft.NetApp/locations@2022-03-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2022-03-01
+* **Input**: [FilePathAvailabilityRequest](#filepathavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkNameAvailability (Microsoft.NetApp/locations@2022-03-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2022-03-01
+* **Input**: [ResourceNameAvailabilityRequest](#resourcenameavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function checkQuotaAvailability (Microsoft.NetApp/locations@2022-03-01)
+* **Resource**: Microsoft.NetApp/locations
+* **ApiVersion**: 2022-03-01
+* **Input**: [QuotaAvailabilityRequest](#quotaavailabilityrequest)
+* **Output**: [CheckAvailabilityResponse](#checkavailabilityresponse)
+
+## Function deleteReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function finalizeRelocation (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function getMetadata (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes
+* **ApiVersion**: 2022-03-01
+* **Output**: [SubvolumeModel](#subvolumemodel)
+
 ## Function listReplications (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
 * **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
 * **ApiVersion**: 2022-03-01
 * **Output**: [ListReplications](#listreplications)
+
+## Function poolChange (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+* **Input**: [PoolChangeRequest](#poolchangerequest)
+
+## Function reestablishReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+* **Input**: [ReestablishReplicationRequest](#reestablishreplicationrequest)
+
+## Function reinitializeReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function relocate (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function resetCifsPassword (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function restoreFiles (Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots
+* **ApiVersion**: 2022-03-01
+* **Input**: [SnapshotRestoreFiles](#snapshotrestorefiles)
+
+## Function resyncReplication (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+
+## Function revert (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
+* **Input**: [VolumeRevert](#volumerevert)
+
+## Function revertRelocation (Microsoft.NetApp/netAppAccounts/capacityPools/volumes@2022-03-01)
+* **Resource**: Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+* **ApiVersion**: 2022-03-01
 
 ## AccountEncryption
 ### Properties
@@ -190,6 +271,10 @@
 * **statusDetails**: string (ReadOnly): Any details in regards to the Status of the Active Directory
 * **username**: string: A domain user account with permission to create machine accounts
 
+## AuthorizeRequest
+### Properties
+* **remoteVolumeResourceId**: string: Resource id of the remote volume
+
 ## BackupPolicyProperties
 ### Properties
 * **backupPolicyId**: string (ReadOnly): Backup Policy Resource ID
@@ -212,6 +297,16 @@
 * **size**: int (ReadOnly): Size of backup
 * **useExistingSnapshot**: bool: Manual backup an already existing snapshot. This will always be false for scheduled backups and true/false for manual backups
 * **volumeName**: string (ReadOnly): Volume name
+
+## BreakReplicationRequest
+### Properties
+* **forceBreakReplication**: bool: If replication is in status transferring and you want to force break the replication, set to true
+
+## CheckAvailabilityResponse
+### Properties
+* **isAvailable**: bool: <code>true</code> indicates name is valid and available. <code>false</code> indicates the name is invalid, unavailable, or both.
+* **message**: string: If reason == invalid, provide the user with the reason why the given name is invalid, and provide the resource naming requirements so that the user can select a valid name. If reason == AlreadyExists, explain that resource name is already in use, and direct them to select a different name.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: <code>Invalid</code> indicates the name provided does not match Azure App Service naming requirements. <code>AlreadyExists</code> indicates that the name is already in use and is therefore unavailable.
 
 ## DailySchedule
 ### Properties
@@ -237,6 +332,11 @@
 * **ruleIndex**: int: Order index
 * **unixReadOnly**: bool: Read only access
 * **unixReadWrite**: bool: Read and write access
+
+## FilePathAvailabilityRequest
+### Properties
+* **name**: string (Required): File path to verify.
+* **subnetId**: string (Required): The Azure Resource URI for a delegated subnet. Must have the delegation Microsoft.NetApp/volumes
 
 ## HourlySchedule
 ### Properties
@@ -274,6 +374,10 @@
 * **key**: string (Required): Key for an application specific parameter for the placement of volumes in the volume group
 * **value**: string (Required): Value for an application specific parameter for the placement of volumes in the volume group
 
+## PoolChangeRequest
+### Properties
+* **newPoolResourceId**: string (Required): Resource id of the pool to move volume to
+
 ## PoolProperties
 ### Properties
 * **coolAccess**: bool: If enabled (true) the pool can contain cool Access enabled volumes.
@@ -285,6 +389,16 @@
 * **size**: int (Required): Provisioned size of the pool (in bytes). Allowed values are in 1TiB chunks (value must be multiply of 4398046511104).
 * **totalThroughputMibps**: int (ReadOnly): Total throughput of pool in MiB/s
 * **utilizedThroughputMibps**: int (ReadOnly): Utilized throughput of pool in MiB/s
+
+## QuotaAvailabilityRequest
+### Properties
+* **name**: string (Required): Name of the resource to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
+
+## ReestablishReplicationRequest
+### Properties
+* **sourceVolumeId**: string: Resource id of the source volume for the replication
 
 ## Replication
 ### Properties
@@ -300,6 +414,12 @@
 * **remoteVolumeResourceId**: string (Required): The resource ID of the remote volume.
 * **replicationId**: string: Id
 * **replicationSchedule**: '_10minutely' | 'daily' | 'hourly' | string: Schedule
+
+## ResourceNameAvailabilityRequest
+### Properties
+* **name**: string (Required): Resource name to verify.
+* **resourceGroup**: string (Required): Resource group name.
+* **type**: 'Microsoft.NetApp/netAppAccounts' | 'Microsoft.NetApp/netAppAccounts/capacityPools' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes' | 'Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots' | string (Required): Resource type used for verification.
 
 ## ResourceTags
 ### Properties
@@ -321,10 +441,35 @@
 * **provisioningState**: string (ReadOnly): Azure lifecycle management
 * **snapshotId**: string {minLength: 36, maxLength: 36, pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"} (ReadOnly): UUID v4 used to identify the Snapshot
 
+## SnapshotRestoreFiles
+### Properties
+* **destinationPath**: string: Destination folder where the files will be restored
+* **filePaths**: (string {minLength: 1, maxLength: 1024})[] {minLength: 1, maxLength: 10} (Required): List of files to be restored
+
 ## SubscriptionQuotaItemProperties
 ### Properties
 * **current**: int (ReadOnly): The current quota value.
 * **default**: int (ReadOnly): The default quota value.
+
+## SubvolumeModel
+### Properties
+* **id**: string (ReadOnly): Resource Id
+* **name**: string (ReadOnly): Resource name
+* **properties**: [SubvolumeModelProperties](#subvolumemodelproperties): It represents the minimal properties of the subvolume.
+* **type**: string (ReadOnly): Resource type
+
+## SubvolumeModelProperties
+### Properties
+* **accessedTimeStamp**: string: Most recent access time and date
+* **bytesUsed**: int: Bytes used
+* **changedTimeStamp**: string: Most recent change time and date
+* **creationTimeStamp**: string: Creation time and date
+* **modifiedTimeStamp**: string: Most recent modification time and date
+* **parentPath**: string: Path to the parent subvolume
+* **path**: string: Path to the subvolume
+* **permissions**: string: Permissions of the subvolume
+* **provisioningState**: string: Azure lifecycle management
+* **size**: int: Size of subvolume
 
 ## SubvolumeProperties
 ### Properties
@@ -471,6 +616,10 @@
 * **quotaSizeInKiBs**: int: Size of quota
 * **quotaTarget**: string: UserID/GroupID/SID based on the quota target type. UserID and groupID can be found by running ‘id’ or ‘getent’ command for the user or group and SID can be found by running <wmic useraccount where name='user-name' get sid>
 * **quotaType**: 'DefaultGroupQuota' | 'DefaultUserQuota' | 'IndividualGroupQuota' | 'IndividualUserQuota' | string: Type of quota
+
+## VolumeRevert
+### Properties
+* **snapshotId**: string: Resource id of the snapshot
 
 ## VolumeSnapshotProperties
 ### Properties

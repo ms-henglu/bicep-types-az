@@ -1,5 +1,5 @@
 Generating types for 'specification/newrelic/resource-manager/readme.md'
-AutoRest code generation utility [cli version: 3.7.2; node: v22.21.1]
+AutoRest code generation utility [cli version: 3.7.2; node: v22.22.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | SkippedSemanticValidation | Semantic validation was skipped.
@@ -56,3 +56,4 @@ warning | Skipping Accounts_List due to required query parameter "userEmail"
 warning | Skipping Accounts_List due to required query parameter "location"
 warning | Skipping Organizations_List due to required query parameter "userEmail"
 warning | Skipping Organizations_List due to required query parameter "location"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/NewRelic.Observability/activateSaaS': Unable to find type segments

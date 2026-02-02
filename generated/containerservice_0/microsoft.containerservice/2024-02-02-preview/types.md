@@ -139,6 +139,19 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ContainerService/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function abort (Microsoft.ContainerService/managedclusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters
+* **ApiVersion**: 2024-02-02-preview
+
+## Function abort (Microsoft.ContainerService/managedclusters/agentPools@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters/agentPools
+* **ApiVersion**: 2024-02-02-preview
+
+## Function deleteMachines (Microsoft.ContainerService/managedClusters/agentPools@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2024-02-02-preview
+* **Input**: [AgentPoolDeleteMachinesParameter](#agentpooldeletemachinesparameter)
+
 ## Function listClusterAdminCredential (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
 * **Resource**: Microsoft.ContainerService/managedClusters
 * **ApiVersion**: 2024-02-02-preview
@@ -159,6 +172,48 @@
 * **ApiVersion**: 2024-02-02-preview
 * **Output**: [ManagedClusterAccessProfile](#managedclusteraccessprofile)
 
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+
+## Function rotateServiceAccountSigningKeys (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+
+## Function stop (Microsoft.ContainerService/managedClusters@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2024-02-02-preview
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2024-02-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2024-02-02-preview
+
 ## AbsoluteMonthlySchedule
 ### Properties
 * **dayOfMonth**: int {minValue: 1, maxValue: 31} (Required): The date of the month.
@@ -171,6 +226,10 @@
 ## AgentPoolArtifactStreamingProfile
 ### Properties
 * **enabled**: bool: Artifact streaming speeds up the cold-start of containers on a node through on-demand image loading. To use this feature, container images must also enable artifact streaming on ACR. If not specified, the default is false.
+
+## AgentPoolDeleteMachinesParameter
+### Properties
+* **machineNames**: string[] (Required): The agent pool machine names.
 
 ## AgentPoolGatewayProfile
 ### Properties
@@ -212,6 +271,15 @@
 ## ClusterUpgradeSettings
 ### Properties
 * **overrideSettings**: [UpgradeOverrideSettings](#upgradeoverridesettings): Settings for overrides.
+
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): The exit code of the command
+* **finishedAt**: string (ReadOnly): The time when the command finished.
+* **logs**: string (ReadOnly): The command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): An explanation of why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): The time when the command started.
 
 ## CompatibleVersions
 ### Properties
@@ -1039,6 +1107,17 @@
 ## ResourceReference
 ### Properties
 * **id**: string: The fully qualified Azure resource id.
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): The command to run.
+* **context**: string: A base64 encoded zip file containing the files required by the command.
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): The command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## SafeguardsAvailableVersionsProperties
 ### Properties

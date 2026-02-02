@@ -1656,5 +1656,11 @@
     "output": {
       "$ref": "#/134"
     }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "reconcile",
+    "resourceType": "Microsoft.Search/searchServices/networkSecurityPerimeterConfigurations",
+    "apiVersion": "2024-03-01-preview"
   }
 ]

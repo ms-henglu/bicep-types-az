@@ -88,6 +88,11 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.Security/securityConnectors/devops/gitLabGroups/projects' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function issues (Microsoft.Security/securityConnectors/devops/gitHubOwners/repos@2025-11-01-preview)
+* **Resource**: Microsoft.Security/securityConnectors/devops/gitHubOwners/repos
+* **ApiVersion**: 2025-11-01-preview
+* **Input**: [IssueCreationRequest](#issuecreationrequest)
+
 ## Function listAvailableAzureDevOpsOrgs (Microsoft.Security/securityConnectors/devops@2025-11-01-preview)
 * **Resource**: Microsoft.Security/securityConnectors/devops
 * **ApiVersion**: 2025-11-01-preview
@@ -395,6 +400,10 @@ DeletionFailure - Deletion failure.
 ### Properties
 * **inventoryKind**: 'AzureDevOpsOrganization' | 'AzureDevOpsProject' | 'AzureDevOpsRepository' | 'GitHubOwner' | 'GitHubRepository' | string: Types for inventory kind.
 * **value**: string: Gets or sets the value for inventory type.
+
+## IssueCreationRequest
+### Properties
+* **securityAssessmentResourceId**: string: The security assessment resource id that the issue will be opened based on.
 
 ## SystemData
 ### Properties

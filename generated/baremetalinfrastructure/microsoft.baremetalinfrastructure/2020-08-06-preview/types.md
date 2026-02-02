@@ -12,6 +12,18 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags) (ReadOnly): Resource tags.
 * **type**: 'Microsoft.BareMetalInfrastructure/bareMetalInstances' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function restart (Microsoft.BareMetalInfrastructure/bareMetalInstances@2020-08-06-preview)
+* **Resource**: Microsoft.BareMetalInfrastructure/bareMetalInstances
+* **ApiVersion**: 2020-08-06-preview
+
+## Function shutdown (Microsoft.BareMetalInfrastructure/bareMetalInstances@2020-08-06-preview)
+* **Resource**: Microsoft.BareMetalInfrastructure/bareMetalInstances
+* **ApiVersion**: 2020-08-06-preview
+
+## Function start (Microsoft.BareMetalInfrastructure/bareMetalInstances@2020-08-06-preview)
+* **Resource**: Microsoft.BareMetalInfrastructure/bareMetalInstances
+* **ApiVersion**: 2020-08-06-preview
+
 ## AzureBareMetalInstanceProperties
 ### Properties
 * **azureBareMetalInstanceId**: string (ReadOnly): Specifies the AzureBareMetal instance unique ID.

@@ -149,6 +149,30 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DataReplication/replicationVaults/replicationPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.DataReplication/locations@2024-09-01)
+* **Resource**: Microsoft.DataReplication/locations
+* **ApiVersion**: 2024-09-01
+* **Input**: [CheckNameAvailabilityModel](#checknameavailabilitymodel)
+* **Output**: [CheckNameAvailabilityResponseModel](#checknameavailabilityresponsemodel)
+
+## Function plannedFailover (Microsoft.DataReplication/replicationVaults/protectedItems@2024-09-01)
+* **Resource**: Microsoft.DataReplication/replicationVaults/protectedItems
+* **ApiVersion**: 2024-09-01
+* **Input**: [PlannedFailoverModel](#plannedfailovermodel)
+* **Output**: [PlannedFailoverModel](#plannedfailovermodel)
+
+## Function preflight (Microsoft.DataReplication/deployments@2024-09-01)
+* **Resource**: Microsoft.DataReplication/deployments
+* **ApiVersion**: 2024-09-01
+* **Input**: [DeploymentPreflightModel](#deploymentpreflightmodel)
+* **Output**: [DeploymentPreflightModel](#deploymentpreflightmodel)
+
+## Function validate (Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies@2024-09-01)
+* **Resource**: Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies
+* **ApiVersion**: 2024-09-01
+* **Input**: [PrivateEndpointConnectionProxy](#privateendpointconnectionproxy)
+* **Output**: [PrivateEndpointConnectionProxy](#privateendpointconnectionproxy)
+
 ## AffectedObjectDetails
 ### Properties
 * **description**: string: Description of the affected object details.
@@ -161,6 +185,17 @@
 * **storageAccountName**: string {minLength: 1} (Required): Gets or sets the Storage account name.
 * **storageContainers**: [StorageContainerProperties](#storagecontainerproperties)[] (Required): Gets or sets the list of AzStackHCICluster Storage Container.
 
+## CheckNameAvailabilityModel
+### Properties
+* **name**: string: Gets or sets the resource name.
+* **type**: string: Gets or sets the resource type.
+
+## CheckNameAvailabilityResponseModel
+### Properties
+* **message**: string: Gets or sets the message for resource name unavailability.
+* **nameAvailable**: bool: Gets or sets a value indicating whether resource name is available or not.
+* **reason**: string: Gets or sets the reason for resource name unavailability.
+
 ## ConnectionDetails
 ### Properties
 * **groupId**: string: Gets or sets group id.
@@ -168,6 +203,18 @@
 * **linkIdentifier**: string: Gets or sets link identifier.
 * **memberName**: string: Gets or sets member name.
 * **privateIpAddress**: string: Gets or sets private IP address.
+
+## DeploymentPreflightModel
+### Properties
+* **resources**: [DeploymentPreflightResource](#deploymentpreflightresource)[]: Gets or sets the list of resources.
+
+## DeploymentPreflightResource
+### Properties
+* **apiVersion**: string: Gets or sets the Api version.
+* **location**: string: Gets or sets the location of the resource.
+* **name**: string: Gets or sets the resource name.
+* **properties**: any: Gets or sets the properties of the resource.
+* **type**: string: Gets or sets the resource type.
 
 ## DiskControllerInputs
 ### Properties
@@ -468,6 +515,30 @@
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
+## PlannedFailoverModel
+### Properties
+* **properties**: [PlannedFailoverModelProperties](#plannedfailovermodelproperties) (Required): Planned failover model properties.
+
+## PlannedFailoverModelCustomProperties
+* **Discriminator**: instanceType
+
+### Base Properties
+
+### HyperVToAzStackHCIPlannedFailoverModelCustomProperties
+#### Properties
+* **instanceType**: 'HyperVToAzStackHCI' (Required): Discriminator property for PlannedFailoverModelCustomProperties.
+* **shutdownSourceVM**: bool (Required): Gets or sets a value indicating whether VM needs to be shut down.
+
+### VMwareToAzStackHCIPlannedFailoverModelCustomProperties
+#### Properties
+* **instanceType**: 'VMwareToAzStackHCI' (Required): Discriminator property for PlannedFailoverModelCustomProperties.
+* **shutdownSourceVM**: bool (Required): Gets or sets a value indicating whether VM needs to be shut down.
+
+
+## PlannedFailoverModelProperties
+### Properties
+* **customProperties**: [PlannedFailoverModelCustomProperties](#plannedfailovermodelcustomproperties) (Required): Planned failover model custom properties.
+
 ## PolicyModelCustomProperties
 * **Discriminator**: instanceType
 
@@ -496,6 +567,15 @@
 ## PrivateEndpoint
 ### Properties
 * **id**: string: Gets or sets the id.
+
+## PrivateEndpointConnectionProxy
+### Properties
+* **etag**: string: Gets or sets ETag.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [PrivateEndpointConnectionProxyProperties](#privateendpointconnectionproxyproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## PrivateEndpointConnectionProxyProperties
 ### Properties

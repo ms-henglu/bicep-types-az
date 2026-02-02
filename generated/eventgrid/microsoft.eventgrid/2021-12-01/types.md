@@ -116,6 +116,26 @@
 * **properties**: [TopicTypeProperties](#topictypeproperties) (ReadOnly): Properties of the topic type info
 * **type**: 'Microsoft.EventGrid/topicTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getDeliveryAttributes (Microsoft.EventGrid/eventSubscriptions@2021-12-01)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2021-12-01
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/systemTopics/eventSubscriptions@2021-12-01)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2021-12-01
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2021-12-01)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2021-12-01
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/systemTopics/eventSubscriptions@2021-12-01)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2021-12-01
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2021-12-01)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2021-12-01
@@ -124,6 +144,18 @@
 ## Function listKeys (Microsoft.EventGrid/topics@2021-12-01)
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2021-12-01
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2021-12-01)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2021-12-01
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2021-12-01)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2021-12-01
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
 
 ## AdvancedFilter
@@ -256,6 +288,10 @@
 Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
 * **identity**: [EventSubscriptionIdentity](#eventsubscriptionidentity): The identity to use when dead-lettering events.
 
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
+
 ## DeliveryAttributeMapping
 * **Discriminator**: type
 
@@ -305,6 +341,10 @@ resources by the user.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Event Grid Domain Resource.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" />
+
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
 
 ## DomainSharedAccessKeys
 ### Properties
@@ -377,6 +417,10 @@ The format of this depends on the publisher of the events.
 Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
 
 ## EventSubscriptionIdentity
 ### Properties
@@ -534,6 +578,10 @@ This property is currently not used and reserved for future usage.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the topic.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" />
+
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
 
 ## TopicSharedAccessKeys
 ### Properties

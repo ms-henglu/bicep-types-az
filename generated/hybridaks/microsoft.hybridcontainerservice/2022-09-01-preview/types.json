@@ -3247,5 +3247,11 @@
     },
     "readableScopes": 8,
     "writableScopes": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "upgradeNodeImageVersionForEntireCluster",
+    "resourceType": "Microsoft.HybridContainerService/provisionedClusters",
+    "apiVersion": "2022-09-01-preview"
   }
 ]

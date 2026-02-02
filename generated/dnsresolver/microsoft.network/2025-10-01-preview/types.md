@@ -136,6 +136,12 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Network/dnsResolvers/outboundEndpoints' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function bulk (Microsoft.Network/dnsResolverDomainLists@2025-10-01-preview)
+* **Resource**: Microsoft.Network/dnsResolverDomainLists
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: [DnsResolverDomainListBulk](#dnsresolverdomainlistbulk)
+* **Output**: [DnsResolverDomainList](#dnsresolverdomainlist)
+
 ## Function listDnsForwardingRulesets (Microsoft.Network/virtualNetworks@2025-10-01-preview)
 * **Resource**: Microsoft.Network/virtualNetworks
 * **ApiVersion**: 2025-10-01-preview
@@ -156,6 +162,26 @@
 * **dnsResolverOutboundEndpoints**: [SubResource](#subresource)[] (Required): The reference to the DNS resolver outbound endpoints that are used to route DNS queries matching the forwarding rules in the ruleset to the target DNS servers.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The current provisioning state of the DNS forwarding ruleset. This is a read-only property and any attempt to set this value will be ignored.
 * **resourceGuid**: string (ReadOnly): The resourceGuid for the DNS forwarding ruleset.
+
+## DnsResolverDomainList
+### Properties
+* **etag**: string (ReadOnly): "If etag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.")
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [DnsResolverDomainListProperties](#dnsresolverdomainlistproperties): Properties of the DNS resolver domain list.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## DnsResolverDomainListBulk
+### Properties
+* **properties**: [DnsResolverDomainListBulkProperties](#dnsresolverdomainlistbulkproperties) (Required): Properties of the DNS resolver domain list upload or download request.
+
+## DnsResolverDomainListBulkProperties
+### Properties
+* **action**: 'Download' | 'Upload' | string (Required): The action to take in the request, Upload or Download.
+* **storageUrl**: string (Required): The storage account blob file URL to be used in the bulk upload or download request of DNS resolver domain list.
 
 ## DnsResolverDomainListProperties
 ### Properties
@@ -247,6 +273,11 @@
 ### Properties
 * **ipAddress**: string (Required): DNS server IP address.
 * **port**: int: DNS server port.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

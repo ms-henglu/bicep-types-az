@@ -35,10 +35,32 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DocumentDB/mongoClusters/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMongoClusterNameAvailability (Microsoft.DocumentDB/locations@2024-06-01-preview)
+* **Resource**: Microsoft.DocumentDB/locations
+* **ApiVersion**: 2024-06-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listConnectionStrings (Microsoft.DocumentDB/mongoClusters@2024-06-01-preview)
 * **Resource**: Microsoft.DocumentDB/mongoClusters
 * **ApiVersion**: 2024-06-01-preview
 * **Output**: [ListConnectionStringsResult](#listconnectionstringsresult)
+
+## Function promote (Microsoft.DocumentDB/mongoClusters@2024-06-01-preview)
+* **Resource**: Microsoft.DocumentDB/mongoClusters
+* **ApiVersion**: 2024-06-01-preview
+* **Input**: [PromoteReplicaRequest](#promotereplicarequest)
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## ConnectionString
 ### Properties
@@ -116,6 +138,11 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## PromoteReplicaRequest
+### Properties
+* **mode**: 'Switchover' | string: The mode to apply to the promote operation. Value is optional and default value is 'Switchover'.
+* **promoteOption**: 'Forced' | string (Required): The promote option to apply to the operation.
 
 ## ReplicationProperties
 ### Properties

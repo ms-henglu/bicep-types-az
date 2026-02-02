@@ -50,6 +50,10 @@
 * **tags**: [SummaryTags](#summarytags) (ReadOnly): Resource tags
 * **type**: 'Microsoft.MySQLDiscovery/MySQLSites/summaries' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function refresh (Microsoft.MySQLDiscovery/MySQLSites@2024-09-30-preview)
+* **Resource**: Microsoft.MySQLDiscovery/MySQLSites
+* **ApiVersion**: 2024-09-30-preview
+
 ## Error
 ### Properties
 * **code**: string: The error code.

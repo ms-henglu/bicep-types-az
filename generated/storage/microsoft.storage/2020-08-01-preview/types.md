@@ -172,6 +172,28 @@
 * **properties**: [TableProperties](#tableproperties) (ReadOnly): Table resource properties.
 * **type**: 'Microsoft.Storage/storageAccounts/tableServices/tables' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function clearLegalHold (Microsoft.Storage/storageAccounts/blobServices/containers@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/blobServices/containers
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [LegalHold](#legalhold)
+* **Output**: [LegalHold](#legalhold)
+
+## Function extend (Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [ImmutabilityPolicy](#immutabilitypolicy)
+* **Output**: [ImmutabilityPolicy](#immutabilitypolicy)
+
+## Function failover (Microsoft.Storage/storageAccounts@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2020-08-01-preview
+
+## Function lease (Microsoft.Storage/storageAccounts/blobServices/containers@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/blobServices/containers
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [LeaseContainerRequest](#leasecontainerrequest)
+* **Output**: [LeaseContainerResponse](#leasecontainerresponse)
+
 ## Function listAccountSas (Microsoft.Storage/storageAccounts@2020-08-01-preview)
 * **Resource**: Microsoft.Storage/storageAccounts
 * **ApiVersion**: 2020-08-01-preview
@@ -188,6 +210,38 @@
 * **ApiVersion**: 2020-08-01-preview
 * **Input**: [ServiceSasParameters](#servicesasparameters)
 * **Output**: [ListServiceSasResponse](#listservicesasresponse)
+
+## Function lock (Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies
+* **ApiVersion**: 2020-08-01-preview
+* **Output**: [ImmutabilityPolicy](#immutabilitypolicy)
+
+## Function regenerateKey (Microsoft.Storage/storageAccounts@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [StorageAccountRegenerateKeyParameters](#storageaccountregeneratekeyparameters)
+* **Output**: [StorageAccountListKeysResult](#storageaccountlistkeysresult)
+
+## Function restore (Microsoft.Storage/storageAccounts/fileServices/shares@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/fileServices/shares
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [DeletedShare](#deletedshare)
+
+## Function restoreBlobRanges (Microsoft.Storage/storageAccounts@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [BlobRestoreParameters](#blobrestoreparameters)
+* **Output**: [BlobRestoreStatus](#blobrestorestatus)
+
+## Function revokeUserDelegationKeys (Microsoft.Storage/storageAccounts@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts
+* **ApiVersion**: 2020-08-01-preview
+
+## Function setLegalHold (Microsoft.Storage/storageAccounts/blobServices/containers@2020-08-01-preview)
+* **Resource**: Microsoft.Storage/storageAccounts/blobServices/containers
+* **ApiVersion**: 2020-08-01-preview
+* **Input**: [LegalHold](#legalhold)
+* **Output**: [LegalHold](#legalhold)
 
 ## AccountSasParameters
 ### Properties
@@ -335,6 +389,11 @@
 * **restoreReference**: string (ReadOnly): Can be used to attempt recovering this deleted account via PutStorageAccount API.
 * **storageAccountResourceId**: string (ReadOnly): Full resource id of the original storage account.
 
+## DeletedShare
+### Properties
+* **deletedShareName**: string (Required): Required. Identify the name of the deleted share that will be restored.
+* **deletedShareVersion**: string (Required): Required. Identify the version of the deleted share that will be restored.
+
 ## DeleteRetentionPolicy
 ### Properties
 * **days**: int {minValue: 1, maxValue: 365}: Indicates the number of days that the deleted item should be retained. The minimum specified value can be 1 and the maximum value can be 365.
@@ -428,6 +487,14 @@
 * **tenantId**: string (ReadOnly): The tenant ID of resource.
 * **type**: 'SystemAssigned' (Required): The identity type.
 
+## ImmutabilityPolicy
+### Properties
+* **etag**: string (ReadOnly): Resource Etag.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ImmutabilityPolicyProperty](#immutabilitypolicyproperty) (Required): The properties of an ImmutabilityPolicy of a blob container.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ImmutabilityPolicyProperties
 ### Properties
 * **etag**: string (ReadOnly): ImmutabilityPolicy Etag.
@@ -459,6 +526,24 @@
 * **enable**: bool (Required): When set to true last access time based tracking is enabled.
 * **name**: 'AccessTimeTracking' | string: Name of the policy. The valid value is AccessTimeTracking. This field is currently read only
 * **trackingGranularityInDays**: int: The field specifies blob object tracking granularity in days, typically how often the blob object should be tracked.This field is currently read only with value as 1
+
+## LeaseContainerRequest
+### Properties
+* **action**: 'Acquire' | 'Break' | 'Change' | 'Release' | 'Renew' | string (Required): Specifies the lease action. Can be one of the available actions.
+* **breakPeriod**: int: Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
+* **leaseDuration**: int: Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
+* **leaseId**: string: Identifies the lease. Can be specified in any valid GUID string format.
+* **proposedLeaseId**: string: Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
+
+## LeaseContainerResponse
+### Properties
+* **leaseId**: string: Returned unique lease ID that must be included with any request to delete the container, or to renew, change, or release the lease.
+* **leaseTimeSeconds**: string: Approximate time remaining in the lease period, in seconds.
+
+## LegalHold
+### Properties
+* **hasLegalHold**: bool (ReadOnly): The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+* **tags**: (string {minLength: 3, maxLength: 23})[] (Required): Each tag should be 3 to 23 alphanumeric characters and is normalized to lower case at SRP.
 
 ## LegalHoldProperties
 ### Properties
@@ -704,6 +789,10 @@
 * **statusOfPrimary**: 'available' | 'unavailable' (ReadOnly): Gets the status indicating whether the primary location of the storage account is available or unavailable.
 * **statusOfSecondary**: 'available' | 'unavailable' (ReadOnly): Gets the status indicating whether the secondary location of the storage account is available or unavailable. Only available if the SKU name is Standard_GRS or Standard_RAGRS.
 * **supportsHttpsTrafficOnly**: bool: Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01.
+
+## StorageAccountRegenerateKeyParameters
+### Properties
+* **keyName**: string (Required): The name of storage keys that want to be regenerated, possible values are key1, key2, kerb1, kerb2.
 
 ## SystemData
 ### Properties

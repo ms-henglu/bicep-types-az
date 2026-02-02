@@ -4558,5 +4558,457 @@
     },
     "readableScopes": 8,
     "writableScopes": 0
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CheckNameAvailabilityRequest",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The name of the resource for which availability needs to be checked."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The resource type."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "NameAvailabilityModel",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Name for which validity and availability was checked."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Type of resource. It can be 'Microsoft.DBforPostgreSQL/flexibleServers' or 'Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints'."
+      },
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/329"
+        },
+        "flags": 0,
+        "description": "Indicates if the resource name is available."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/390"
+        },
+        "flags": 0,
+        "description": "The reason why the given name is not available."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Detailed reason why the given name is available."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Invalid"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AlreadyExists"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/388"
+      },
+      {
+        "$ref": "#/389"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkNameAvailability",
+    "resourceType": "Microsoft.DBforPostgreSQL/locations",
+    "apiVersion": "2025-08-01",
+    "output": {
+      "$ref": "#/387"
+    },
+    "input": {
+      "$ref": "#/386"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VirtualNetworkSubnetUsageParameter",
+    "properties": {
+      "virtualNetworkArmResourceId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Virtual network resource id."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "VirtualNetworkSubnetUsageModel",
+    "properties": {
+      "delegatedSubnetsUsage": {
+        "type": {
+          "$ref": "#/395"
+        },
+        "flags": 2
+      },
+      "location": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "location of the delegated subnet usage"
+      },
+      "subscriptionId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "subscriptionId of the delegated subnet usage"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DelegatedSubnetUsage",
+    "properties": {
+      "subnetName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Name of the delegated subnet for which IP addresses are in use"
+      },
+      "usage": {
+        "type": {
+          "$ref": "#/28"
+        },
+        "flags": 2,
+        "description": "Number of IP addresses used by the delegated subnet"
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/394"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkVirtualNetworkSubnetUsage",
+    "resourceType": "Microsoft.DBforPostgreSQL/locations",
+    "apiVersion": "2025-08-01",
+    "output": {
+      "$ref": "#/393"
+    },
+    "input": {
+      "$ref": "#/392"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RestartParameter",
+    "properties": {
+      "restartWithFailover": {
+        "type": {
+          "$ref": "#/329"
+        },
+        "flags": 0,
+        "description": "Indicates if restart the PostgreSQL database engine should failover or switch over from primary to standby. This only works if server has high availability enabled."
+      },
+      "failoverMode": {
+        "type": {
+          "$ref": "#/402"
+        },
+        "flags": 0,
+        "description": "Failover mode."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PlannedFailover"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "ForcedFailover"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PlannedSwitchover"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "ForcedSwitchover"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/398"
+      },
+      {
+        "$ref": "#/399"
+      },
+      {
+        "$ref": "#/400"
+      },
+      {
+        "$ref": "#/401"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "restart",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01",
+    "input": {
+      "$ref": "#/397"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "start",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01"
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "stop",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "MigrationNameAvailability",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Name of the migration to check for validity and availability."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Type of resource."
+      },
+      "nameAvailable": {
+        "type": {
+          "$ref": "#/329"
+        },
+        "flags": 2,
+        "description": "Indicates if the migration name is available."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/409"
+        },
+        "flags": 2,
+        "description": "Migration name availability reason."
+      },
+      "message": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 2,
+        "description": "Migration name availability message."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Invalid"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "AlreadyExists"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/407"
+      },
+      {
+        "$ref": "#/408"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "checkMigrationNameAvailability",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01",
+    "output": {
+      "$ref": "#/406"
+    },
+    "input": {
+      "$ref": "#/406"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "LtrPreBackupRequest",
+    "properties": {
+      "backupSettings": {
+        "type": {
+          "$ref": "#/412"
+        },
+        "flags": 1,
+        "description": "Backup Settings"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupSettings",
+    "properties": {
+      "backupName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Backup Name for the current backup"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "LtrPreBackupResponse",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/414"
+        },
+        "flags": 1,
+        "description": "Additional Properties for the pre backup response"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupsLongTermRetentionResponseProperties",
+    "properties": {
+      "numberOfContainers": {
+        "type": {
+          "$ref": "#/28"
+        },
+        "flags": 1,
+        "description": "Number of storage containers the plugin will use during backup. More than one containers may be used for size limitations, parallelism, or redundancy etc."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "ltrPreBackup",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01",
+    "output": {
+      "$ref": "#/413"
+    },
+    "input": {
+      "$ref": "#/411"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupsLongTermRetentionRequest",
+    "properties": {
+      "targetDetails": {
+        "type": {
+          "$ref": "#/417"
+        },
+        "flags": 1,
+        "description": "Backup store detail for target server"
+      },
+      "backupSettings": {
+        "type": {
+          "$ref": "#/412"
+        },
+        "flags": 1,
+        "description": "Backup Settings"
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupStoreDetails",
+    "properties": {
+      "sasUriList": {
+        "type": {
+          "$ref": "#/418"
+        },
+        "flags": 1,
+        "description": "List of SAS uri of storage containers where backup data is to be streamed/copied."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/6"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "BackupsLongTermRetentionResponse",
+    "properties": {
+      "properties": {
+        "type": {
+          "$ref": "#/363"
+        },
+        "flags": 0,
+        "description": "Long Term Retention Backup Operation Resource Properties"
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "startLtrBackup",
+    "resourceType": "Microsoft.DBforPostgreSQL/flexibleServers",
+    "apiVersion": "2025-08-01",
+    "output": {
+      "$ref": "#/419"
+    },
+    "input": {
+      "$ref": "#/416"
+    }
   }
 ]

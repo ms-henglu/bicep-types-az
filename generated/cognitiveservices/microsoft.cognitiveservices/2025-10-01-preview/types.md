@@ -372,6 +372,37 @@
 * **tags**: [RaiPolicyTags](#raipolicytags): Resource tags.
 * **type**: 'Microsoft.CognitiveServices/raiPolicy' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addRaiBlocklistItems (Microsoft.CognitiveServices/accounts/raiBlocklists@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/raiBlocklists
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: [RaiBlocklistItemBulkRequest](#raiblocklistitembulkrequest)[]
+* **Output**: [RaiBlocklist](#raiblocklist)
+
+## Function batchOutboundRules (Microsoft.CognitiveServices/accounts/managedNetworks@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/managedNetworks
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: [ManagedNetworkSettingsBasicResource](#managednetworksettingsbasicresource)
+* **Output**: [OutboundRuleListResult](#outboundrulelistresult)
+
+## Function checkSkuAvailability (Microsoft.CognitiveServices/locations@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/locations
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: [CheckSkuAvailabilityParameter](#checkskuavailabilityparameter)
+* **Output**: [SkuAvailabilityListResult](#skuavailabilitylistresult)
+
+## Function deleteRaiBlocklistItems (Microsoft.CognitiveServices/accounts/raiBlocklists@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/raiBlocklists
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: any
+
+## Function disable (Microsoft.CognitiveServices/accounts/projects/applications@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/projects/applications
+* **ApiVersion**: 2025-10-01-preview
+
+## Function enable (Microsoft.CognitiveServices/accounts/projects/applications@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/projects/applications
+* **ApiVersion**: 2025-10-01-preview
+
 ## Function listAgents (Microsoft.CognitiveServices/accounts/projects/applications@2025-10-01-preview)
 * **Resource**: Microsoft.CognitiveServices/accounts/projects/applications
 * **ApiVersion**: 2025-10-01-preview
@@ -381,6 +412,41 @@
 * **Resource**: Microsoft.CognitiveServices/accounts
 * **ApiVersion**: 2025-10-01-preview
 * **Output**: [ApiKeys](#apikeys)
+
+## Function pause (Microsoft.CognitiveServices/accounts/deployments@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/deployments
+* **ApiVersion**: 2025-10-01-preview
+* **Output**: [Deployment](#deployment)
+
+## Function provisionManagedNetwork (Microsoft.CognitiveServices/accounts@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: any
+* **Output**: [ManagedNetworkProvisionStatus](#managednetworkprovisionstatus)
+
+## Function reconcile (Microsoft.CognitiveServices/accounts/networkSecurityPerimeterConfigurations@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2025-10-01-preview
+* **Output**: [NetworkSecurityPerimeterConfiguration](#networksecurityperimeterconfiguration)
+
+## Function regenerateKey (Microsoft.CognitiveServices/accounts@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts
+* **ApiVersion**: 2025-10-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [ApiKeys](#apikeys)
+
+## Function resume (Microsoft.CognitiveServices/accounts/deployments@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/deployments
+* **ApiVersion**: 2025-10-01-preview
+* **Output**: [Deployment](#deployment)
+
+## Function start (Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments
+* **ApiVersion**: 2025-10-01-preview
+
+## Function stop (Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments@2025-10-01-preview)
+* **Resource**: Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments
+* **ApiVersion**: 2025-10-01-preview
 
 ## AbusePenalty
 ### Properties
@@ -573,6 +639,12 @@
 * **tags**: [ResourceBaseTags](#resourcebasetags): Tag dictionary. Tags can be added, removed, and updated.
 * **threadStorageConnections**: string[]: List of connection names from those available in the account or project to be used for Thread storage.
 * **vectorStoreConnections**: string[]: List of connection names from those available in the account or project to be used for vector database (e.g. CosmosDB).
+
+## CheckSkuAvailabilityParameter
+### Properties
+* **kind**: string (Required): The kind (type) of cognitive service account.
+* **skus**: string[] (Required): The SKU of the resource.
+* **type**: string (Required): The Type of the resource.
 
 ## CommitmentPeriod
 ### Properties
@@ -786,6 +858,17 @@ depending on each OAuth2 provider's implementation.
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## Deployment
+### Properties
+* **etag**: string (ReadOnly): Resource Etag.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [DeploymentProperties](#deploymentproperties): Properties of Cognitive Services account deployment.
+* **sku**: [Sku](#sku): The resource model definition representing SKU
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [DeploymentTags](#deploymenttags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## DeploymentCapacitySettings
 ### Properties
 * **designatedCapacity**: int {minValue: 0}: The designated capacity.
@@ -829,6 +912,11 @@ depending on each OAuth2 provider's implementation.
 * **activeCapacity**: int (ReadOnly): Deployment active capacity. This value might be different from `capacity` if customer recently updated `capacity`.
 * **capacity**: int: Deployment capacity.
 * **scaleType**: 'Manual' | 'Standard' | string: Deployment scale type.
+
+## DeploymentTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## DeploymentTags
 ### Properties
@@ -879,6 +967,24 @@ depending on each OAuth2 provider's implementation.
 ### Properties
 * **status**: 'Active' | 'Inactive' | string: Status for the managed network of a cognitive services account.
 
+## ManagedNetworkSettings
+### Properties
+* **egressIpAddress**: string (ReadOnly): Public IP address assigned to the Azure Firewall.
+* **firewallSku**: 'Basic' | 'Standard' | string: Firewall Sku used for FQDN Rules
+* **isolationMode**: 'AllowInternetOutbound' | 'AllowOnlyApprovedOutbound' | 'Disabled' | string: Isolation mode for the managed network of a cognitive services account.
+* **managedNetworkKind**: 'V1' | 'V2' | string: The Kind of the managed network. Users can switch from V1 to V2 for granular access controls, but cannot switch back to V1 once V2 is enabled.
+* **networkId**: string (ReadOnly)
+* **outboundRules**: [ManagedNetworkSettingsOutboundRules](#managednetworksettingsoutboundrules): Dictionary of <OutboundRule>
+* **status**: [ManagedNetworkProvisionStatus](#managednetworkprovisionstatus): Status of the Provisioning for the managed network of a cognitive services account.
+
+## ManagedNetworkSettingsBasicResource
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ManagedNetworkSettings](#managednetworksettings): Managed Network settings for a cognitive services account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ManagedNetworkSettingsEx
 ### Properties
 * **changeableIsolationModes**: ('AllowInternetOutbound' | 'AllowOnlyApprovedOutbound' | 'Disabled' | string)[] (ReadOnly)
@@ -889,6 +995,11 @@ depending on each OAuth2 provider's implementation.
 * **networkId**: string (ReadOnly)
 * **outboundRules**: [ManagedNetworkSettingsOutboundRules](#managednetworksettingsoutboundrules): Dictionary of <OutboundRule>
 * **status**: [ManagedNetworkProvisionStatus](#managednetworkprovisionstatus): Status of the Provisioning for the managed network of a cognitive services account.
+
+## ManagedNetworkSettingsOutboundRules
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [OutboundRule](#outboundrule)
 
 ## ManagedNetworkSettingsOutboundRules
 ### Properties
@@ -941,6 +1052,14 @@ depending on each OAuth2 provider's implementation.
 ### Properties
 * **id**: string: Fully qualified identifier of subscription
 
+## NetworkSecurityPerimeterConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [NetworkSecurityPerimeterConfigurationProperties](#networksecurityperimeterconfigurationproperties): NSP Configuration properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## NetworkSecurityPerimeterConfigurationAssociationInfo
 ### Properties
 * **accessMode**: string: Access Mode of the resource association
@@ -976,6 +1095,19 @@ depending on each OAuth2 provider's implementation.
 * **destination**: string
 * **type**: 'FQDN' (Required): Type of a managed network Outbound Rule of a cognitive services account.
 
+
+## OutboundRuleBasicResource
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [OutboundRule](#outboundrule) (Required): Outbound Rule for the managed network of a cognitive services account.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## OutboundRuleListResult
+### Properties
+* **nextLink**: string: The link to the next page constructed using the continuationToken.  If null, there are no additional pages.
+* **value**: [OutboundRuleBasicResource](#outboundrulebasicresource)[]: The list of cognitive services accounts. Since this list may be incomplete, the nextLink field should be used to request the next list of cognitive services accounts.
 
 ## PrivateEndpoint
 ### Properties
@@ -1063,6 +1195,21 @@ depending on each OAuth2 provider's implementation.
 * **upgradeAvailabilityStatus**: 'Available' | 'NotAvailable' | string: Specifies whether an upgrade to the next quota tier is available.
 * **upgradeUnavailabilityReason**: string: Reason in case the subscription is not eligible for upgrade to the next tier.
 
+## RaiBlocklist
+### Properties
+* **etag**: string (ReadOnly): Resource Etag.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [RaiBlocklistProperties](#raiblocklistproperties): Properties of Cognitive Services RaiBlocklist.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [RaiBlocklistTags](#raiblocklisttags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## RaiBlocklistItemBulkRequest
+### Properties
+* **name**: string
+* **properties**: [RaiBlocklistItemProperties](#raiblocklistitemproperties): Properties of Cognitive Services RaiBlocklist Item.
+
 ## RaiBlocklistItemProperties
 ### Properties
 * **isRegex**: bool: If the pattern is a regex pattern.
@@ -1076,6 +1223,11 @@ depending on each OAuth2 provider's implementation.
 ## RaiBlocklistProperties
 ### Properties
 * **description**: string: Description of the block list.
+
+## RaiBlocklistTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## RaiBlocklistTags
 ### Properties
@@ -1190,6 +1342,10 @@ depending on each OAuth2 provider's implementation.
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## RegenerateKeyParameters
+### Properties
+* **keyName**: 'Key1' | 'Key2' (Required): key name to generate (Key1|Key2)
+
 ## RegionSetting
 ### Properties
 * **customsubdomain**: string: Maps the region to the regional custom subdomain.
@@ -1229,6 +1385,19 @@ depending on each OAuth2 provider's implementation.
 * **name**: string (Required): The name of the SKU. Ex - P3. It is typically a letter+number code
 * **size**: string: The SKU size. When the name field is the combination of tier and some other value, this would be the standalone code.
 * **tier**: 'Basic' | 'Enterprise' | 'Free' | 'Premium' | 'Standard' | string: This field is required to be implemented by the Resource Provider if the service has more than one tier, but is not required on a PUT.
+
+## SkuAvailability
+### Properties
+* **kind**: string: The Kind of the resource.
+* **message**: string: Additional error message.
+* **reason**: string: Reason why the SKU is not available.
+* **skuAvailable**: bool: Indicates the given SKU is available or not.
+* **skuName**: string: The SKU of Cognitive Services account.
+* **type**: string: The Type of the resource.
+
+## SkuAvailabilityListResult
+### Properties
+* **value**: [SkuAvailability](#skuavailability)[]: Check SKU availability result list.
 
 ## SkuCapability
 ### Properties

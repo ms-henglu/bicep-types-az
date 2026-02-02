@@ -4230,5 +4230,11 @@
     },
     "readableScopes": 8,
     "writableScopes": 8
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "cancel",
+    "resourceType": "Microsoft.AzureFleet/fleets",
+    "apiVersion": "2025-07-01-preview"
   }
 ]

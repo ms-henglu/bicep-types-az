@@ -202,6 +202,23 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ContainerService/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function abort (Microsoft.ContainerService/managedclusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters
+* **ApiVersion**: 2025-09-02-preview
+
+## Function abort (Microsoft.ContainerService/managedclusters/agentPools@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedclusters/agentPools
+* **ApiVersion**: 2025-09-02-preview
+
+## Function completeUpgrade (Microsoft.ContainerService/managedClusters/agentPools@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2025-09-02-preview
+
+## Function deleteMachines (Microsoft.ContainerService/managedClusters/agentPools@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [AgentPoolDeleteMachinesParameter](#agentpooldeletemachinesparameter)
+
 ## Function listClusterAdminCredential (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
 * **Resource**: Microsoft.ContainerService/managedClusters
 * **ApiVersion**: 2025-09-02-preview
@@ -226,6 +243,53 @@
 * **Resource**: Microsoft.ContainerService/managedClusters/managedNamespaces
 * **ApiVersion**: 2025-09-02-preview
 * **Output**: [CredentialResults](#credentialresults)
+
+## Function rebalanceLoadBalancers (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [RebalanceLoadBalancersRequestBody](#rebalanceloadbalancersrequestbody)
+
+## Function resetAADProfile (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [ManagedClusterAADProfile](#managedclusteraadprofile)
+
+## Function resetServicePrincipalProfile (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [ManagedClusterServicePrincipalProfile](#managedclusterserviceprincipalprofile)
+
+## Function resolvePrivateLinkServiceId (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [PrivateLinkResource](#privatelinkresource)
+* **Output**: [PrivateLinkResource](#privatelinkresource)
+
+## Function rotateClusterCertificates (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+
+## Function rotateServiceAccountSigningKeys (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+
+## Function runCommand (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+* **Input**: [RunCommandRequest](#runcommandrequest)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function start (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+
+## Function stop (Microsoft.ContainerService/managedClusters@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters
+* **ApiVersion**: 2025-09-02-preview
+
+## Function upgradeNodeImageVersion (Microsoft.ContainerService/managedClusters/agentPools@2025-09-02-preview)
+* **Resource**: Microsoft.ContainerService/managedClusters/agentPools
+* **ApiVersion**: 2025-09-02-preview
 
 ## AbsoluteMonthlySchedule
 ### Properties
@@ -271,6 +335,10 @@
 * **drainBatchSize**: string: The number or percentage of nodes to drain in batch during blue-green upgrade. Must be a non-zero number. This can either be set to an integer (e.g. '5') or a percentage (e.g. '50%'). If a percentage is specified, it is the percentage of the total number of blue nodes of the initial upgrade operation. For percentages, fractional nodes are rounded up. If not specified, the default is 10%. For more information, including best practices, see: https://learn.microsoft.com/en-us/azure/aks/upgrade-cluster
 * **drainTimeoutInMinutes**: int {minValue: 1, maxValue: 1440}: The drain timeout for a node, i.e., the amount of time (in minutes) to wait on eviction of pods and graceful termination per node. This eviction wait time honors waiting on pod disruption budgets. If this time is exceeded, the upgrade fails. If not specified, the default is 30 minutes.
 * **finalSoakDurationInMinutes**: int {minValue: 0, maxValue: 10080}: The soak duration for a node pool, i.e., the amount of time (in minutes) to wait after all old nodes are drained before we remove the old nodes. If not specified, the default is 60 minutes. Only applicable for blue-green upgrade strategy.
+
+## AgentPoolDeleteMachinesParameter
+### Properties
+* **machineNames**: string[] (Required): The agent pool machine names.
 
 ## AgentPoolGatewayProfile
 ### Properties
@@ -322,6 +390,15 @@
 ## ClusterUpgradeSettings
 ### Properties
 * **overrideSettings**: [UpgradeOverrideSettings](#upgradeoverridesettings): Settings for overrides.
+
+## CommandResultProperties
+### Properties
+* **exitCode**: int (ReadOnly): The exit code of the command
+* **finishedAt**: string (ReadOnly): The time when the command finished.
+* **logs**: string (ReadOnly): The command output.
+* **provisioningState**: string (ReadOnly): provisioning State
+* **reason**: string (ReadOnly): An explanation of why provisioningState is set to failed (if so).
+* **startedAt**: string (ReadOnly): The time when the command started.
 
 ## CompatibleVersions
 ### Properties
@@ -1428,6 +1505,10 @@
 * **description**: string: The private link service connection description.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: The private link service connection status.
 
+## RebalanceLoadBalancersRequestBody
+### Properties
+* **loadBalancerNames**: string[]: The load balancer names list.
+
 ## RelativeMonthlySchedule
 ### Properties
 * **dayOfWeek**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday' | string (Required): Specifies on which day of the week the maintenance occurs.
@@ -1444,6 +1525,17 @@
 ## ResourceReference
 ### Properties
 * **id**: string: The fully qualified Azure resource id.
+
+## RunCommandRequest
+### Properties
+* **clusterToken**: string: AuthToken issued for AKS AAD Server App.
+* **command**: string (Required): The command to run.
+* **context**: string: A base64 encoded zip file containing the files required by the command.
+
+## RunCommandResult
+### Properties
+* **id**: string (ReadOnly): The command id.
+* **properties**: [CommandResultProperties](#commandresultproperties): Properties of command result.
 
 ## SafeguardsAvailableVersionsProperties
 ### Properties

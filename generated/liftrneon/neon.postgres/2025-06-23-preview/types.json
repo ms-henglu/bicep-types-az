@@ -1760,5 +1760,199 @@
     },
     "readableScopes": 0,
     "writableScopes": 8
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ConnectionUriProperties",
+    "properties": {
+      "projectId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Project Id associated with this connection"
+      },
+      "branchId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Branch Id associated with this connection"
+      },
+      "databaseName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Database name associated with this connection"
+      },
+      "roleName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The role name used for authentication"
+      },
+      "endpointId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "the endpoint Id with this connection"
+      },
+      "isPooled": {
+        "type": {
+          "$ref": "#/52"
+        },
+        "flags": 0,
+        "description": "Indicates if the connection is pooled"
+      },
+      "connectionStringUri": {
+        "type": {
+          "$ref": "#/114"
+        },
+        "flags": 2,
+        "description": "connection uri returned for the database"
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getConnectionUri",
+    "resourceType": "Neon.Postgres/organizations/projects",
+    "apiVersion": "2025-06-23-preview",
+    "output": {
+      "$ref": "#/113"
+    },
+    "input": {
+      "$ref": "#/113"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PreflightCheckParameters",
+    "properties": {
+      "projectId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Project Id associated with this connection"
+      },
+      "branchId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "Branch Id associated with this connection"
+      },
+      "entityType": {
+        "type": {
+          "$ref": "#/121"
+        },
+        "flags": 1,
+        "description": "Entity type to be validated for deletion."
+      },
+      "branchProperties": {
+        "type": {
+          "$ref": "#/39"
+        },
+        "flags": 0,
+        "description": "The branch properties - ONLY provided when entityType is 'branch'"
+      },
+      "roleProperties": {
+        "type": {
+          "$ref": "#/45"
+        },
+        "flags": 0,
+        "description": "The role properties - ONLY provided when entityType is 'role'"
+      },
+      "databaseProperties": {
+        "type": {
+          "$ref": "#/54"
+        },
+        "flags": 0,
+        "description": "The database properties - ONLY provided when entityType is 'database'"
+      },
+      "endpointProperties": {
+        "type": {
+          "$ref": "#/61"
+        },
+        "flags": 0,
+        "description": "The endpoint properties - ONLY provided when entityType is 'endpoint'"
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "branch"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "neonRole"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "neonDatabase"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "endpoint"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/117"
+      },
+      {
+        "$ref": "#/118"
+      },
+      {
+        "$ref": "#/119"
+      },
+      {
+        "$ref": "#/120"
+      },
+      {
+        "$ref": "#/2"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "PreflightCheckResult",
+    "properties": {
+      "isValid": {
+        "type": {
+          "$ref": "#/52"
+        },
+        "flags": 1,
+        "description": "Indicates whether action is allowed."
+      },
+      "reason": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Optional message in case action is not allowed."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "preflight",
+    "resourceType": "Neon.Postgres/organizations/projects/branches",
+    "apiVersion": "2025-06-23-preview",
+    "output": {
+      "$ref": "#/122"
+    },
+    "input": {
+      "$ref": "#/116"
+    }
   }
 ]

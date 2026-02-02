@@ -1,5 +1,5 @@
 Generating types for 'specification/peering/resource-manager/Microsoft.Peering/Peering/readme.md'
-AutoRest code generation utility [cli version: 3.7.2; node: v22.21.1]
+AutoRest code generation utility [cli version: 3.7.2; node: v22.22.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | SkippedSemanticValidation | Semantic validation was skipped.
@@ -7,60 +7,96 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
+warning | Skipping LookingGlass_Invoke due to required query parameter "command"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceType"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceLocation"
+warning | Skipping LookingGlass_Invoke due to required query parameter "destinationIP"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/checkServiceProviderAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/initializeConnectionMonitor': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "kind"
+warning | Skipping LookingGlass_Invoke due to required query parameter "command"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceType"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceLocation"
+warning | Skipping LookingGlass_Invoke due to required query parameter "destinationIP"
+warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/checkServiceProviderAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/initializeConnectionMonitor': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "kind"
+warning | Skipping LookingGlass_Invoke due to required query parameter "command"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceType"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceLocation"
+warning | Skipping LookingGlass_Invoke due to required query parameter "destinationIP"
+warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/checkServiceProviderAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/initializeConnectionMonitor': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "kind"
+warning | Skipping LookingGlass_Invoke due to required query parameter "command"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceType"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceLocation"
+warning | Skipping LookingGlass_Invoke due to required query parameter "destinationIP"
+warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/checkServiceProviderAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/initializeConnectionMonitor': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
+warning | Skipping LegacyPeerings_List due to required query parameter "kind"
+warning | Skipping LookingGlass_Invoke due to required query parameter "command"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceType"
+warning | Skipping LookingGlass_Invoke due to required query parameter "sourceLocation"
+warning | Skipping LookingGlass_Invoke due to required query parameter "destinationIP"
+warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/checkServiceProviderAvailability': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/initializeConnectionMonitor': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
-warning | SkippedSemanticValidation | Semantic validation was skipped.
-warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
-warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "kind"
-warning | Skipping PeeringLocations_List due to required query parameter "kind"
-warning | SkippedSemanticValidation | Semantic validation was skipped.
-warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
-warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "kind"
-warning | Skipping PeeringLocations_List due to required query parameter "kind"
-warning | SkippedSemanticValidation | Semantic validation was skipped.
-warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
-warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "kind"
-warning | Skipping PeeringLocations_List due to required query parameter "kind"
-warning | SkippedSemanticValidation | Semantic validation was skipped.
-warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
-warning | Skipping CdnPeeringPrefixes_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
-warning | Skipping LegacyPeerings_List due to required query parameter "kind"
-warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments
 warning | SkippedSemanticValidation | Semantic validation was skipped.
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping LegacyPeerings_List due to required query parameter "peeringLocation"
 warning | Skipping LegacyPeerings_List due to required query parameter "kind"
 warning | Skipping PeeringLocations_List due to required query parameter "kind"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Peering/CheckServiceProviderAvailability': Unable to find type segments

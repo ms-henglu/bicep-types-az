@@ -102,6 +102,23 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DBforPostgreSQL/serverGroupsv2/servers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function promote (Microsoft.DBforPostgreSQL/serverGroupsv2@2023-03-02-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2023-03-02-preview
+* **Input**: [PromoteRequest](#promoterequest)
+
+## Function restart (Microsoft.DBforPostgreSQL/serverGroupsv2@2023-03-02-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2023-03-02-preview
+
+## Function start (Microsoft.DBforPostgreSQL/serverGroupsv2@2023-03-02-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2023-03-02-preview
+
+## Function stop (Microsoft.DBforPostgreSQL/serverGroupsv2@2023-03-02-preview)
+* **Resource**: Microsoft.DBforPostgreSQL/serverGroupsv2
+* **ApiVersion**: 2023-03-02-preview
+
 ## AuthConfig
 ### Properties
 * **activeDirectoryAuth**: 'disabled' | 'enabled' | string
@@ -229,6 +246,10 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## PromoteRequest
+### Properties
+* **enableGeoBackup**: bool: Boolean property to enable geo-redundant replica promotion.
 
 ## RoleProperties
 ### Properties

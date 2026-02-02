@@ -37,6 +37,45 @@
 * **properties**: [DetectorResponseProperties](#detectorresponseproperties) (ReadOnly): DetectorResponse resource specific properties
 * **type**: 'Microsoft.CertificateRegistration/certificateOrders/detectors' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reissue (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Input**: [ReissueCertificateOrderRequest](#reissuecertificateorderrequest)
+
+## Function renew (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Input**: [RenewCertificateOrderRequest](#renewcertificateorderrequest)
+
+## Function resendEmail (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+
+## Function resendRequestEmails (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Input**: [NameIdentifier](#nameidentifier)
+
+## Function retrieveCertificateActions (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Output**: [CertificateOrderAction](#certificateorderaction)[]
+
+## Function retrieveEmailHistory (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Output**: [CertificateEmail](#certificateemail)[]
+
+## Function retrieveSiteSeal (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+* **Input**: [SiteSealRequest](#sitesealrequest)
+* **Output**: [SiteSeal](#siteseal)
+
+## Function verifyDomainOwnership (Microsoft.CertificateRegistration/certificateOrders@2022-03-01)
+* **Resource**: Microsoft.CertificateRegistration/certificateOrders
+* **ApiVersion**: 2022-03-01
+
 ## AppServiceCertificate
 ### Properties
 * **keyVaultId**: string: Key Vault resource Id.
@@ -82,6 +121,16 @@
 * **subject**: string (ReadOnly): Certificate Subject.
 * **thumbprint**: string (ReadOnly): Certificate Thumbprint.
 * **version**: int (ReadOnly): Certificate Version.
+
+## CertificateEmail
+### Properties
+* **emailId**: string: Email id.
+* **timeStamp**: string: Time stamp.
+
+## CertificateOrderAction
+### Properties
+* **actionType**: 'CertificateExpirationWarning' | 'CertificateExpired' | 'CertificateIssued' | 'CertificateOrderCanceled' | 'CertificateOrderCreated' | 'CertificateRevoked' | 'DomainValidationComplete' | 'FraudCleared' | 'FraudDetected' | 'FraudDocumentationRequired' | 'OrgNameChange' | 'OrgValidationComplete' | 'SanDrop' | 'Unknown' (ReadOnly): Action type.
+* **createdAt**: string (ReadOnly): Time at which the certificate action was performed.
 
 ## CertificateOrderContact
 ### Properties
@@ -137,6 +186,10 @@
 * **key**: string (ReadOnly)
 * **value**: any (ReadOnly): Any object
 
+## NameIdentifier
+### Properties
+* **name**: string: Name of the object.
+
 ## QueryUtterancesResult
 ### Properties
 * **sampleUtterance**: [SampleUtterance](#sampleutterance): A sample utterance.
@@ -147,11 +200,40 @@
 * **query**: string: Search Query.
 * **results**: [QueryUtterancesResult](#queryutterancesresult)[]: Array of utterance results for search query.
 
+## ReissueCertificateOrderRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [ReissueCertificateOrderRequestProperties](#reissuecertificateorderrequestproperties): ReissueCertificateOrderRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## ReissueCertificateOrderRequestProperties
+### Properties
+* **csr**: string: Csr to be used for re-key operation.
+* **delayExistingRevokeInHours**: int: Delay in hours to revoke existing certificate after the new certificate is issued.
+* **isPrivateKeyExternal**: bool: Should we change the ASC type (from managed private key to external private key and vice versa).
+* **keySize**: int: Certificate Key Size.
+
 ## Rendering
 ### Properties
 * **description**: string: Description of the data that will help it be interpreted
 * **title**: string: Title of data
 * **type**: 'AppInsight' | 'AppInsightEnablement' | 'Card' | 'ChangeAnalysisOnboarding' | 'ChangeSets' | 'ChangesView' | 'DataSummary' | 'DependencyGraph' | 'Detector' | 'DownTime' | 'DropDown' | 'DynamicInsight' | 'Email' | 'Form' | 'Guage' | 'Insights' | 'Markdown' | 'NoGraph' | 'PieChart' | 'SearchComponent' | 'Solution' | 'SummaryCard' | 'Table' | 'TimeSeries' | 'TimeSeriesPerInstance': Rendering Type
+
+## RenewCertificateOrderRequest
+### Properties
+* **id**: string (ReadOnly): Resource Id.
+* **kind**: string: Kind of resource.
+* **name**: string (ReadOnly): Resource Name.
+* **properties**: [RenewCertificateOrderRequestProperties](#renewcertificateorderrequestproperties): RenewCertificateOrderRequest resource specific properties
+* **type**: string (ReadOnly): Resource type.
+
+## RenewCertificateOrderRequestProperties
+### Properties
+* **csr**: string: Csr to be used for re-key operation.
+* **isPrivateKeyExternal**: bool: Should we change the ASC type (from managed private key to external private key and vice versa).
+* **keySize**: int: Certificate Key Size.
 
 ## ResourceTags
 ### Properties
@@ -168,6 +250,15 @@
 * **links**: string[]: Links attribute of sample utterance.
 * **qid**: string: Question id of sample utterance (for stackoverflow questions titles).
 * **text**: string: Text attribute of sample utterance.
+
+## SiteSeal
+### Properties
+* **html**: string (Required): HTML snippet
+
+## SiteSealRequest
+### Properties
+* **lightTheme**: bool: If <code>true</code> use the light color theme for site seal; otherwise, use the default color theme.
+* **locale**: string: Locale of site seal.
 
 ## Status
 ### Properties

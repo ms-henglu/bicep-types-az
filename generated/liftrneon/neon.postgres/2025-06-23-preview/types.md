@@ -68,6 +68,18 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Neon.Postgres/organizations/projects/branches/neonRoles' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getConnectionUri (Neon.Postgres/organizations/projects@2025-06-23-preview)
+* **Resource**: Neon.Postgres/organizations/projects
+* **ApiVersion**: 2025-06-23-preview
+* **Input**: [ConnectionUriProperties](#connectionuriproperties)
+* **Output**: [ConnectionUriProperties](#connectionuriproperties)
+
+## Function preflight (Neon.Postgres/organizations/projects/branches@2025-06-23-preview)
+* **Resource**: Neon.Postgres/organizations/projects/branches
+* **ApiVersion**: 2025-06-23-preview
+* **Input**: [PreflightCheckParameters](#preflightcheckparameters)
+* **Output**: [PreflightCheckResult](#preflightcheckresult)
+
 ## Attributes
 ### Properties
 * **name**: string (Required): Name of the attribute
@@ -99,6 +111,16 @@
 * **provisioningState**: 'Canceled' | 'Failed' | 'Succeeded' | string (ReadOnly): Provisioning state of the resource.
 * **roleName**: string: Role name associated with the branch
 * **roles**: [NeonRoleProperties](#neonroleproperties)[]: Roles associated with the branch
+
+## ConnectionUriProperties
+### Properties
+* **branchId**: string: Branch Id associated with this connection
+* **connectionStringUri**: string {sensitive} (ReadOnly): connection uri returned for the database
+* **databaseName**: string: Database name associated with this connection
+* **endpointId**: string: the endpoint Id with this connection
+* **isPooled**: bool: Indicates if the connection is pooled
+* **projectId**: string: Project Id associated with this connection
+* **roleName**: string: The role name used for authentication
 
 ## DefaultEndpointSettings
 ### Properties
@@ -200,6 +222,21 @@
 * **permissions**: string[]: Permissions assigned to the role
 * **provisioningState**: 'Canceled' | 'Failed' | 'Succeeded' | string (ReadOnly): Provisioning state of the resource.
 * **roleName**: string {pattern: "^\S.{0,62}\S$|^\S$"}: Name of the role
+
+## PreflightCheckParameters
+### Properties
+* **branchId**: string (Required): Branch Id associated with this connection
+* **branchProperties**: [BranchProperties](#branchproperties): The branch properties - ONLY provided when entityType is 'branch'
+* **databaseProperties**: [NeonDatabaseProperties](#neondatabaseproperties): The database properties - ONLY provided when entityType is 'database'
+* **endpointProperties**: [EndpointProperties](#endpointproperties): The endpoint properties - ONLY provided when entityType is 'endpoint'
+* **entityType**: 'branch' | 'endpoint' | 'neonDatabase' | 'neonRole' | string (Required): Entity type to be validated for deletion.
+* **projectId**: string (Required): Project Id associated with this connection
+* **roleProperties**: [NeonRoleProperties](#neonroleproperties): The role properties - ONLY provided when entityType is 'role'
+
+## PreflightCheckResult
+### Properties
+* **isValid**: bool (Required): Indicates whether action is allowed.
+* **reason**: string: Optional message in case action is not allowed.
 
 ## ProjectProperties
 ### Properties

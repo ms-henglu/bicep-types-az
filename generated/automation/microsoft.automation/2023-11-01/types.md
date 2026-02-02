@@ -259,10 +259,49 @@
 * **properties**: [VariableCreateOrUpdatePropertiesOrVariableProperties](#variablecreateorupdatepropertiesorvariableproperties) (Required): Gets or sets the properties of the variable.
 * **type**: 'Microsoft.Automation/automationAccounts/variables' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function convertGraphRunbookContent (Microsoft.Automation/automationAccounts@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts
+* **ApiVersion**: 2023-11-01
+* **Input**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+* **Output**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+
 ## Function listKeys (Microsoft.Automation/automationAccounts@2023-11-01)
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2023-11-01
 * **Output**: [KeyListResult](#keylistresult)
+
+## Function move (Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers
+* **ApiVersion**: 2023-11-01
+* **Input**: [HybridRunbookWorkerMoveParameters](#hybridrunbookworkermoveparameters)
+
+## Function publish (Microsoft.Automation/automationAccounts/runbooks@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks
+* **ApiVersion**: 2023-11-01
+
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-11-01
+
+## Function resume (Microsoft.Automation/automationAccounts/runbooks/draft@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-11-01
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-11-01
+
+## Function stop (Microsoft.Automation/automationAccounts/runbooks/draft@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-11-01
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2023-11-01
+
+## Function suspend (Microsoft.Automation/automationAccounts/runbooks/draft@2023-11-01)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2023-11-01
 
 ## AdvancedSchedule
 ### Properties
@@ -432,6 +471,11 @@
 * **isOptional**: bool: Gets or sets the isOptional flag of the connection field definition.
 * **type**: string (Required): Gets or sets the type of the connection field definition.
 
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
+
 ## HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties
 ### Properties
 * **ip**: string (ReadOnly): Gets or sets the assigned machine IP address.
@@ -445,6 +489,10 @@
 ### Properties
 * **credential**: [RunAsCredentialAssociationProperty](#runascredentialassociationproperty): Sets the credential of a worker group.
 * **groupType**: 'System' | 'User' | string (ReadOnly): Type of the HybridWorkerGroup.
+
+## HybridRunbookWorkerMoveParameters
+### Properties
+* **hybridRunbookWorkerGroupName**: string: Gets or sets the target hybrid runbook worker group.
 
 ## Identity
 ### Properties
@@ -584,6 +632,12 @@
 * **provisioningState**: 'ActivitiesStored' | 'Canceled' | 'ConnectionTypeImported' | 'ContentDownloaded' | 'ContentRetrieved' | 'ContentStored' | 'ContentValidated' | 'Created' | 'Creating' | 'Failed' | 'ModuleDataStored' | 'ModuleImportRunbookComplete' | 'RunningImportModuleRunbook' | 'StartingImportModuleRunbook' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets the provisioning state of the module.
 * **sizeInBytes**: int (ReadOnly): Gets the size in bytes of the module.
 * **version**: string (ReadOnly): Gets the version of the module.
+
+## RawGraphicalRunbookContent
+### Properties
+* **runbookDefinition**: string: Serialized Graphical runbook
+* **runbookType**: 'GraphPowerShell' | 'GraphPowerShellWorkflow' | string: Runbook Type
+* **schemaVersion**: string: Schema version of the serializer.
 
 ## RunAsCredentialAssociationProperty
 ### Properties

@@ -7,12 +7,12 @@
 * **apiVersion**: '2025-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **etag**: string (ReadOnly): ETag of the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string {minLength: 1, maxLength: 45, pattern: "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiManagementGatewayProperties](#apimanagementgatewayproperties) (Required): Properties of the API Management gateway.
 * **sku**: [ApiManagementGatewaySkuProperties](#apimanagementgatewayskuproperties) (Required): SKU properties of the API Management gateway.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
-* **tags**: [ApimResourceTags](#apimresourcetags): Resource tags.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ApiManagement/gateways' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/gateways/configConnections@2025-03-01-preview
@@ -24,6 +24,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 30, pattern: "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [GatewayConfigConnectionBaseProperties](#gatewayconfigconnectionbaseproperties) (Required): Properties of the API Management gateway config connection.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/gateways/configConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/gateways/hostnameBindings@2025-03-01-preview
@@ -31,10 +32,11 @@
 * **Writable Scope(s)**: ResourceGroup
 ### Properties
 * **apiVersion**: '2025-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string (ReadOnly): ETag of the resource.
+* **etag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 45, pattern: "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [GatewayHostnameBindingBaseProperties](#gatewayhostnamebindingbaseproperties) (Required): Properties of the API Management gateway hostname binding.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/gateways/hostnameBindings' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/locations/deletedservices@2025-03-01-preview
@@ -46,6 +48,7 @@
 * **location**: string (ReadOnly): API Management Service Master Location.
 * **name**: string {minLength: 1, maxLength: 50, pattern: "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DeletedServiceContractProperties](#deletedservicecontractproperties) (ReadOnly): Deleted API Management Service details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/locations/deletedservices' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service@2025-03-01-preview
@@ -56,14 +59,14 @@
 * **etag**: string (ReadOnly): ETag of the resource.
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **identity**: [ApiManagementServiceIdentity](#apimanagementserviceidentity): Managed service identity of the Api Management service.
-* **location**: string (Required): Resource location.
+* **location**: string (Required): The geo-location where the resource lives
 * **name**: string {minLength: 1, maxLength: 50, pattern: "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiManagementServiceProperties](#apimanagementserviceproperties) (Required): Properties of the API Management service.
 * **sku**: [ApiManagementServiceSkuProperties](#apimanagementserviceskuproperties) (Required): SKU properties of the API Management service.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
-* **tags**: [ApimResourceTags](#apimresourcetags): Resource tags.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ApiManagement/service' (ReadOnly, DeployTimeConstant): The resource type
-* **zones**: string[]: A list of availability zones denoting where the resource needs to come from.
+* **zones**: string[]: The availability zones.
 
 ## Resource Microsoft.ApiManagement/service/apis@2025-03-01-preview
 * **Readable Scope(s)**: ResourceGroup
@@ -71,8 +74,9 @@
 ### Properties
 * **apiVersion**: '2025-03-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
+* **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiCreateOrUpdatePropertiesOrApiContractProperties](#apicreateorupdatepropertiesorapicontractproperties): API entity create of update properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/diagnostics@2025-03-01-preview
@@ -83,6 +87,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DiagnosticContractProperties](#diagnosticcontractproperties): Diagnostic entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/diagnostics' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/issues@2025-03-01-preview
@@ -93,6 +98,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [IssueContractProperties](#issuecontractproperties): Properties of the Issue.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/issues' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/issues/attachments@2025-03-01-preview
@@ -103,6 +109,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [IssueAttachmentContractProperties](#issueattachmentcontractproperties): Properties of the Issue Attachment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/issues/attachments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/issues/comments@2025-03-01-preview
@@ -113,6 +120,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [IssueCommentContractProperties](#issuecommentcontractproperties): Properties of the Issue Comment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/issues/comments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/operations@2025-03-01-preview
@@ -123,6 +131,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [OperationContractProperties](#operationcontractproperties): Properties of the Operation Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/operations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/operations/policies@2025-03-01-preview
@@ -133,6 +142,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/operations/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/operations/tags@2025-03-01-preview
@@ -143,6 +153,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagContractProperties](#tagcontractproperties) (ReadOnly): Tag entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/operations/tags' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/policies@2025-03-01-preview
@@ -153,6 +164,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/releases@2025-03-01-preview
@@ -163,6 +175,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiReleaseContractProperties](#apireleasecontractproperties): ApiRelease entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/releases' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/resolvers@2025-03-01-preview
@@ -173,6 +186,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [ResolverEntityBaseContract](#resolverentitybasecontract): Properties of the Resolver Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/resolvers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/resolvers/policies@2025-03-01-preview
@@ -183,6 +197,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/resolvers/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/schemas@2025-03-01-preview
@@ -193,6 +208,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [SchemaContractProperties](#schemacontractproperties): Properties of the API Schema.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/schemas' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/tagDescriptions@2025-03-01-preview
@@ -203,6 +219,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagDescriptionBasePropertiesOrTagDescriptionContractProperties](#tagdescriptionbasepropertiesortagdescriptioncontractproperties): Properties supplied to Create TagDescription operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/tagDescriptions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/tags@2025-03-01-preview
@@ -213,6 +230,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagContractProperties](#tagcontractproperties) (ReadOnly): Tag entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/tags' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/tools@2025-03-01-preview
@@ -223,6 +241,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "(^[\w]+$)|(^[\w][\w\-]+[\w]$)"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ToolContractProperties](#toolcontractproperties): Properties of the Tool Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/tools' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apis/wikis@2025-03-01-preview
@@ -233,6 +252,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'default' (Required, DeployTimeConstant): The resource name
 * **properties**: [WikiContractProperties](#wikicontractproperties): Wiki details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apis/wikis' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/apiVersionSets@2025-03-01-preview
@@ -243,6 +263,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiVersionSetContractProperties](#apiversionsetcontractproperties): API VersionSet contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/apiVersionSets' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/authorizationProviders@2025-03-01-preview
@@ -253,6 +274,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [AuthorizationProviderContractProperties](#authorizationprovidercontractproperties): Properties of the Authorization Provider Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/authorizationProviders' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/authorizationProviders/authorizations@2025-03-01-preview
@@ -263,6 +285,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [AuthorizationContractProperties](#authorizationcontractproperties): Properties of the Authorization Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/authorizationProviders/authorizations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/authorizationProviders/authorizations/accessPolicies@2025-03-01-preview
@@ -273,6 +296,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [AuthorizationAccessPolicyContractProperties](#authorizationaccesspolicycontractproperties): Properties of the Authorization Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/authorizationProviders/authorizations/accessPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/authorizationServers@2025-03-01-preview
@@ -283,6 +307,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [AuthorizationServerContractProperties](#authorizationservercontractproperties): Properties of the External OAuth authorization server Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/authorizationServers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/backends@2025-03-01-preview
@@ -293,6 +318,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [BackendContractProperties](#backendcontractproperties): Backend entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/backends' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/caches@2025-03-01-preview
@@ -303,6 +329,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CacheContractProperties](#cachecontractproperties): Cache properties details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/caches' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/certificates@2025-03-01-preview
@@ -313,6 +340,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CertificateCreateOrUpdatePropertiesOrCertificateContractProperties](#certificatecreateorupdatepropertiesorcertificatecontractproperties): Certificate create or update properties details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/clientApplications@2025-03-01-preview
@@ -323,6 +351,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [ClientApplicationContractProperties](#clientapplicationcontractproperties): Client application entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/clientApplications' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/clientApplications/productLinks@2025-03-01-preview
@@ -333,6 +362,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [ClientApplicationProductLinkContractProperties](#clientapplicationproductlinkcontractproperties): Client application - product link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/clientApplications/productLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/contentTypes@2025-03-01-preview
@@ -343,6 +373,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [ContentTypeContractProperties](#contenttypecontractproperties): Properties of the content type.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/contentTypes' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/contentTypes/contentItems@2025-03-01-preview
@@ -353,6 +384,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [ContentItemContractProperties](#contentitemcontractproperties): Properties of the content item.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/contentTypes/contentItems' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/diagnostics@2025-03-01-preview
@@ -363,6 +395,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DiagnosticContractProperties](#diagnosticcontractproperties): Diagnostic entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/diagnostics' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/documentations@2025-03-01-preview
@@ -373,6 +406,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DocumentationContractProperties](#documentationcontractproperties): Markdown Documentation details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/documentations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/gateways@2025-03-01-preview
@@ -384,6 +418,7 @@
 * **identity**: [ManagedServiceIdentity](#managedserviceidentity): The managed service identities assigned to this resource.
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [GatewayContractProperties](#gatewaycontractproperties): Gateway details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/gateways' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/gateways/apis@2025-03-01-preview
@@ -394,6 +429,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [AssociationContractProperties](#associationcontractproperties): Association entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/gateways/apis' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/gateways/certificateAuthorities@2025-03-01-preview
@@ -404,6 +440,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [GatewayCertificateAuthorityContractProperties](#gatewaycertificateauthoritycontractproperties): Gateway certificate authority details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/gateways/certificateAuthorities' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/gateways/hostnameConfigurations@2025-03-01-preview
@@ -414,6 +451,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [GatewayHostnameConfigurationContractProperties](#gatewayhostnameconfigurationcontractproperties): Gateway hostname configuration details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/gateways/hostnameConfigurations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/groups@2025-03-01-preview
@@ -424,6 +462,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [GroupCreateParametersPropertiesOrGroupContractProperties](#groupcreateparameterspropertiesorgroupcontractproperties): Properties supplied to Create Group operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/groups' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/groups/users@2025-03-01-preview
@@ -443,6 +482,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'aad' | 'aadB2C' | 'facebook' | 'google' | 'microsoft' | 'twitter' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [IdentityProviderCreateContractPropertiesOrIdentityProviderContractProperties](#identityprovidercreatecontractpropertiesoridentityprovidercontractproperties): Identity Provider contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/identityProviders' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/issues@2025-03-01-preview
@@ -453,6 +493,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [IssueContractProperties](#issuecontractproperties) (ReadOnly): Properties of the Issue.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/issues' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/loggers@2025-03-01-preview
@@ -463,6 +504,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [LoggerContractProperties](#loggercontractproperties): Logger entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/loggers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/namedValues@2025-03-01-preview
@@ -473,6 +515,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [NamedValueCreateContractPropertiesOrNamedValueContractProperties](#namedvaluecreatecontractpropertiesornamedvaluecontractproperties): NamedValue entity contract properties for PUT operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/namedValues' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/notifications@2025-03-01-preview
@@ -483,6 +526,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'AccountClosedPublisher' | 'BCC' | 'NewApplicationNotificationMessage' | 'NewIssuePublisherNotificationMessage' | 'PurchasePublisherNotificationMessage' | 'QuotaLimitApproachingPublisherNotificationMessage' | 'RequestPublisherNotificationMessage' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [NotificationContractProperties](#notificationcontractproperties) (ReadOnly): Notification entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/notifications' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/notifications/recipientEmails@2025-03-01-preview
@@ -511,6 +555,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [OpenidConnectProviderContractProperties](#openidconnectprovidercontractproperties): OpenId Connect Provider contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/openidConnectProviders' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/policies@2025-03-01-preview
@@ -521,6 +566,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/policyFragments@2025-03-01-preview
@@ -531,6 +577,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "(^[\w]+$)|(^[\w][\w\-]+[\w]$)"} (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyFragmentContractProperties](#policyfragmentcontractproperties): Properties of the Policy Fragment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/policyFragments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/policyRestrictions@2025-03-01-preview
@@ -541,6 +588,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyRestrictionContractProperties](#policyrestrictioncontractproperties): Properties of the Policy Restriction.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/policyRestrictions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/portalconfigs@2025-03-01-preview
@@ -551,6 +599,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [PortalConfigProperties](#portalconfigproperties): The developer portal configuration contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/portalconfigs' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/portalRevisions@2025-03-01-preview
@@ -561,6 +610,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [PortalRevisionContractProperties](#portalrevisioncontractproperties): Properties of the portal revisions.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/portalRevisions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/portalsettings@2025-03-01-preview
@@ -576,6 +626,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'delegation' (Required, DeployTimeConstant): The resource name
 * **properties**: [PortalDelegationSettingsProperties](#portaldelegationsettingsproperties): Delegation settings contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/portalsettings' (ReadOnly, DeployTimeConstant): The resource type
 
 ### Microsoft.ApiManagement/service/portalsettings
@@ -584,6 +635,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'signin' (Required, DeployTimeConstant): The resource name
 * **properties**: [PortalSigninSettingProperties](#portalsigninsettingproperties): Sign-in settings contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/portalsettings' (ReadOnly, DeployTimeConstant): The resource type
 
 ### Microsoft.ApiManagement/service/portalsettings
@@ -592,6 +644,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'signup' (Required, DeployTimeConstant): The resource name
 * **properties**: [PortalSignupSettingsProperties](#portalsignupsettingsproperties): Sign-up settings contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/portalsettings' (ReadOnly, DeployTimeConstant): The resource type
 
 
@@ -603,6 +656,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateEndpointConnectionRequestPropertiesOrPrivateEndpointConnectionProperties](#privateendpointconnectionrequestpropertiesorprivateendpointconnectionproperties): The connection state of the private endpoint connection.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/privateLinkResources@2025-03-01-preview
@@ -613,6 +667,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateLinkResourceProperties](#privatelinkresourceproperties) (ReadOnly): Resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/privateLinkResources' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products@2025-03-01-preview
@@ -623,6 +678,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductContractProperties](#productcontractproperties): Product entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products/apiLinks@2025-03-01-preview
@@ -633,6 +689,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductApiLinkContractProperties](#productapilinkcontractproperties): Product-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products/apiLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products/apis@2025-03-01-preview
@@ -652,6 +709,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductGroupLinkContractProperties](#productgrouplinkcontractproperties): Product-group link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products/groupLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products/groups@2025-03-01-preview
@@ -671,6 +729,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products/tags@2025-03-01-preview
@@ -681,6 +740,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagContractProperties](#tagcontractproperties) (ReadOnly): Tag entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products/tags' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/products/wikis@2025-03-01-preview
@@ -691,6 +751,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'default' (Required, DeployTimeConstant): The resource name
 * **properties**: [WikiContractProperties](#wikicontractproperties): Wiki details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/products/wikis' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/schemas@2025-03-01-preview
@@ -701,6 +762,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [GlobalSchemaContractProperties](#globalschemacontractproperties): Properties of the Global Schema.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/schemas' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/settings@2025-03-01-preview
@@ -711,6 +773,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'public' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [TenantSettingsContractProperties](#tenantsettingscontractproperties) (ReadOnly): TenantSettings entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/settings' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/subscriptions@2025-03-01-preview
@@ -721,6 +784,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [SubscriptionCreateParameterPropertiesOrSubscriptionContractProperties](#subscriptioncreateparameterpropertiesorsubscriptioncontractproperties): Subscription contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/subscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/tags@2025-03-01-preview
@@ -731,6 +795,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagContractProperties](#tagcontractproperties): Properties supplied to Create Tag operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/tags' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/tags/apiLinks@2025-03-01-preview
@@ -741,6 +806,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagApiLinkContractProperties](#tagapilinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/tags/apiLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/tags/operationLinks@2025-03-01-preview
@@ -751,6 +817,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagOperationLinkContractProperties](#tagoperationlinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/tags/operationLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/tags/productLinks@2025-03-01-preview
@@ -761,6 +828,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagProductLinkContractProperties](#tagproductlinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/tags/productLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/templates@2025-03-01-preview
@@ -771,6 +839,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'accountClosedDeveloper' | 'applicationApprovedNotificationMessage' | 'confirmSignUpIdentityDefault' | 'emailChangeIdentityDefault' | 'inviteUserNotificationMessage' | 'newCommentNotificationMessage' | 'newDeveloperNotificationMessage' | 'newIssueNotificationMessage' | 'passwordResetByAdminNotificationMessage' | 'passwordResetIdentityDefault' | 'purchaseDeveloperNotificationMessage' | 'quotaLimitApproachingDeveloperNotificationMessage' | 'rejectDeveloperNotificationMessage' | 'requestDeveloperNotificationMessage' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [EmailTemplateUpdateParameterPropertiesOrEmailTemplateContractProperties](#emailtemplateupdateparameterpropertiesoremailtemplatecontractproperties): Email Template Update contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/templates' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/tenant@2025-03-01-preview
@@ -781,6 +850,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'access' | 'gitAccess' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [AccessInformationCreateParameterPropertiesOrAccessInformationContractProperties](#accessinformationcreateparameterpropertiesoraccessinformationcontractproperties): Tenant access information update parameter properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/tenant' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/users@2025-03-01-preview
@@ -791,6 +861,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [UserCreateParameterPropertiesOrUserContractProperties](#usercreateparameterpropertiesorusercontractproperties): User entity create contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/users' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/users/subscriptions@2025-03-01-preview
@@ -801,6 +872,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [SubscriptionContractProperties](#subscriptioncontractproperties) (ReadOnly): Subscription contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/users/subscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaceLinks@2025-03-01-preview
@@ -812,6 +884,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiManagementWorkspaceLinksProperties](#apimanagementworkspacelinksproperties) (ReadOnly): Properties of the API Management WorkspaceLinks.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaceLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces@2025-03-01-preview
@@ -822,6 +895,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [WorkspaceContractProperties](#workspacecontractproperties): Workspace entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis@2025-03-01-preview
@@ -832,6 +906,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiCreateOrUpdatePropertiesOrApiContractProperties](#apicreateorupdatepropertiesorapicontractproperties): API entity create of update properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/diagnostics@2025-03-01-preview
@@ -842,6 +917,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DiagnosticContractProperties](#diagnosticcontractproperties): Diagnostic entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/diagnostics' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/operations@2025-03-01-preview
@@ -852,6 +928,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [OperationContractProperties](#operationcontractproperties): Properties of the Operation Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/operations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/operations/policies@2025-03-01-preview
@@ -862,6 +939,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/operations/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/policies@2025-03-01-preview
@@ -872,6 +950,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/releases@2025-03-01-preview
@@ -882,6 +961,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiReleaseContractProperties](#apireleasecontractproperties): ApiRelease entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/releases' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apis/schemas@2025-03-01-preview
@@ -892,6 +972,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [SchemaContractProperties](#schemacontractproperties): Properties of the API Schema.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apis/schemas' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/apiVersionSets@2025-03-01-preview
@@ -902,6 +983,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ApiVersionSetContractProperties](#apiversionsetcontractproperties): API VersionSet contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/apiVersionSets' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/backends@2025-03-01-preview
@@ -912,6 +994,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [BackendContractProperties](#backendcontractproperties): Backend entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/backends' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/certificates@2025-03-01-preview
@@ -922,6 +1005,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CertificateCreateOrUpdatePropertiesOrCertificateContractProperties](#certificatecreateorupdatepropertiesorcertificatecontractproperties): Certificate create or update properties details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/certificates' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/diagnostics@2025-03-01-preview
@@ -932,6 +1016,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [DiagnosticContractProperties](#diagnosticcontractproperties): Diagnostic entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/diagnostics' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/groups@2025-03-01-preview
@@ -942,6 +1027,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [GroupCreateParametersPropertiesOrGroupContractProperties](#groupcreateparameterspropertiesorgroupcontractproperties): Properties supplied to Create Group operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/groups' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/groups/users@2025-03-01-preview
@@ -961,6 +1047,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [LoggerContractProperties](#loggercontractproperties): Logger entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/loggers' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/namedValues@2025-03-01-preview
@@ -971,6 +1058,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [NamedValueCreateContractPropertiesOrNamedValueContractProperties](#namedvaluecreatecontractpropertiesornamedvaluecontractproperties): NamedValue entity contract properties for PUT operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/namedValues' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/notifications@2025-03-01-preview
@@ -981,6 +1069,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'AccountClosedPublisher' | 'BCC' | 'NewApplicationNotificationMessage' | 'NewIssuePublisherNotificationMessage' | 'PurchasePublisherNotificationMessage' | 'QuotaLimitApproachingPublisherNotificationMessage' | 'RequestPublisherNotificationMessage' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [NotificationContractProperties](#notificationcontractproperties) (ReadOnly): Notification entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/notifications' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/notifications/recipientEmails@2025-03-01-preview
@@ -1009,6 +1098,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/policyFragments@2025-03-01-preview
@@ -1019,6 +1109,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "(^[\w]+$)|(^[\w][\w\-]+[\w]$)"} (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyFragmentContractProperties](#policyfragmentcontractproperties): Properties of the Policy Fragment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/policyFragments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/products@2025-03-01-preview
@@ -1029,6 +1120,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 256} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductContractProperties](#productcontractproperties): Product entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/products' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/products/apiLinks@2025-03-01-preview
@@ -1039,6 +1131,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductApiLinkContractProperties](#productapilinkcontractproperties): Product-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/products/apiLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/products/groupLinks@2025-03-01-preview
@@ -1049,6 +1142,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProductGroupLinkContractProperties](#productgrouplinkcontractproperties): Product-group link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/products/groupLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/products/policies@2025-03-01-preview
@@ -1059,6 +1153,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: 'policy' | string (Required, DeployTimeConstant): The resource name
 * **properties**: [PolicyContractProperties](#policycontractproperties): Properties of the Policy.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/products/policies' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/schemas@2025-03-01-preview
@@ -1069,6 +1164,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80} (Required, DeployTimeConstant): The resource name
 * **properties**: [GlobalSchemaContractProperties](#globalschemacontractproperties): Properties of the Global Schema.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/schemas' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/subscriptions@2025-03-01-preview
@@ -1079,6 +1175,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {maxLength: 256, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [SubscriptionCreateParameterPropertiesOrSubscriptionContractProperties](#subscriptioncreateparameterpropertiesorsubscriptioncontractproperties): Subscription contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/subscriptions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/tags@2025-03-01-preview
@@ -1089,6 +1186,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagContractProperties](#tagcontractproperties): Properties supplied to Create Tag operation.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/tags' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/tags/apiLinks@2025-03-01-preview
@@ -1099,6 +1197,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagApiLinkContractProperties](#tagapilinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/tags/apiLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/tags/operationLinks@2025-03-01-preview
@@ -1109,6 +1208,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagOperationLinkContractProperties](#tagoperationlinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/tags/operationLinks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.ApiManagement/service/workspaces/tags/productLinks@2025-03-01-preview
@@ -1119,7 +1219,63 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 1, maxLength: 80, pattern: "^[^*#&+:<>?]+$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [TagProductLinkContractProperties](#tagproductlinkcontractproperties): Tag-API link entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiManagement/service/workspaces/tags/productLinks' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function applynetworkconfigurationupdates (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [ApiManagementServiceApplyNetworkConfigurationParameters](#apimanagementserviceapplynetworkconfigurationparameters)
+* **Output**: [ApiManagementServiceResource](#apimanagementserviceresource)
+
+## Function backup (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [ApiManagementServiceBackupRestoreParameters](#apimanagementservicebackuprestoreparameters)
+* **Output**: [ApiManagementServiceResource](#apimanagementserviceresource)
+
+## Function confirmConsentCode (Microsoft.ApiManagement/service/authorizationProviders/authorizations@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/authorizationProviders/authorizations
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [AuthorizationConfirmConsentCodeRequestContract](#authorizationconfirmconsentcoderequestcontract)
+
+## Function connectivityCheck (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [ConnectivityCheckRequest](#connectivitycheckrequest)
+* **Output**: [ConnectivityCheckResponse](#connectivitycheckresponse)
+
+## Function deploy (Microsoft.ApiManagement/service/tenant@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/tenant
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [DeployConfigurationParameters](#deployconfigurationparameters)
+* **Output**: [OperationResultContract](#operationresultcontract)
+
+## Function generateSsoUrl (Microsoft.ApiManagement/service/users@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/users
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [GenerateSsoUrlResult](#generatessourlresult)
+
+## Function generateToken (Microsoft.ApiManagement/service/gateways@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/gateways
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [GatewayTokenRequestContract](#gatewaytokenrequestcontract)
+* **Output**: [GatewayTokenContract](#gatewaytokencontract)
+
+## Function getLoginLinks (Microsoft.ApiManagement/service/authorizationProviders/authorizations@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/authorizationProviders/authorizations
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [AuthorizationLoginRequestContract](#authorizationloginrequestcontract)
+* **Output**: [AuthorizationLoginResponseContract](#authorizationloginresponsecontract)
+
+## Function getssotoken (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [ApiManagementServiceGetSsoTokenResult](#apimanagementservicegetssotokenresult)
+
+## Function invalidateDebugCredentials (Microsoft.ApiManagement/service/gateways@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/gateways
+* **ApiVersion**: 2025-03-01-preview
 
 ## Function listDebugCredentials (Microsoft.ApiManagement/service/gateways@2025-03-01-preview)
 * **Resource**: Microsoft.ApiManagement/service/gateways
@@ -1186,7 +1342,7 @@
 * **Resource**: Microsoft.ApiManagement/service/gateways
 * **ApiVersion**: 2025-03-01-preview
 * **Input**: [GatewayListTraceContract](#gatewaylisttracecontract)
-* **Output**: [GatewayTraceContract](#gatewaytracecontract)
+* **Output**: [DictionaryOfany](#dictionaryofany)
 
 ## Function listValue (Microsoft.ApiManagement/service/namedValues@2025-03-01-preview)
 * **Resource**: Microsoft.ApiManagement/service/namedValues
@@ -1197,6 +1353,113 @@
 * **Resource**: Microsoft.ApiManagement/service/workspaces/namedValues
 * **ApiVersion**: 2025-03-01-preview
 * **Output**: [NamedValueSecretContract](#namedvaluesecretcontract)
+
+## Function migrateToStv2 (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [MigrateToStv2Contract](#migratetostv2contract)
+* **Output**: [ApiManagementServiceResource](#apimanagementserviceresource)
+
+## Function reconnect (Microsoft.ApiManagement/service/backends@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/backends
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [BackendReconnectContract](#backendreconnectcontract)
+
+## Function refreshHostnames (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [ApiManagementServiceResource](#apimanagementserviceresource)
+
+## Function refreshSecret (Microsoft.ApiManagement/gateways/hostnameBindings@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/gateways/hostnameBindings
+* **ApiVersion**: 2025-03-01-preview
+
+## Function refreshSecret (Microsoft.ApiManagement/service/authorizationProviders@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/authorizationProviders
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [AuthorizationProviderContract](#authorizationprovidercontract)
+
+## Function refreshSecret (Microsoft.ApiManagement/service/certificates@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/certificates
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [CertificateContract](#certificatecontract)
+
+## Function refreshSecret (Microsoft.ApiManagement/service/namedValues@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/namedValues
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [NamedValueContract](#namedvaluecontract)
+
+## Function refreshSecret (Microsoft.ApiManagement/service/workspaces/certificates@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/workspaces/certificates
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [CertificateContract](#certificatecontract)
+
+## Function refreshSecret (Microsoft.ApiManagement/service/workspaces/namedValues@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/workspaces/namedValues
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [NamedValueContract](#namedvaluecontract)
+
+## Function regenerateKey (Microsoft.ApiManagement/service/gateways@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/gateways
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [GatewayKeyRegenerationRequestContract](#gatewaykeyregenerationrequestcontract)
+
+## Function regeneratePrimaryKey (Microsoft.ApiManagement/service/subscriptions@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/subscriptions
+* **ApiVersion**: 2025-03-01-preview
+
+## Function regeneratePrimaryKey (Microsoft.ApiManagement/service/tenant@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/tenant
+* **ApiVersion**: 2025-03-01-preview
+
+## Function regeneratePrimaryKey (Microsoft.ApiManagement/service/workspaces/subscriptions@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/workspaces/subscriptions
+* **ApiVersion**: 2025-03-01-preview
+
+## Function regenerateSecondaryKey (Microsoft.ApiManagement/service/subscriptions@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/subscriptions
+* **ApiVersion**: 2025-03-01-preview
+
+## Function regenerateSecondaryKey (Microsoft.ApiManagement/service/tenant@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/tenant
+* **ApiVersion**: 2025-03-01-preview
+
+## Function regenerateSecondaryKey (Microsoft.ApiManagement/service/workspaces/subscriptions@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/workspaces/subscriptions
+* **ApiVersion**: 2025-03-01-preview
+
+## Function restore (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [ApiManagementServiceBackupRestoreParameters](#apimanagementservicebackuprestoreparameters)
+* **Output**: [ApiManagementServiceResource](#apimanagementserviceresource)
+
+## Function save (Microsoft.ApiManagement/service/tenant@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/tenant
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [SaveConfigurationParameter](#saveconfigurationparameter)
+* **Output**: [OperationResultContract](#operationresultcontract)
+
+## Function send (Microsoft.ApiManagement/service/users/confirmations@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/users/confirmations
+* **ApiVersion**: 2025-03-01-preview
+
+## Function token (Microsoft.ApiManagement/service/users@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/users
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [UserTokenParameters](#usertokenparameters)
+* **Output**: [UserTokenResult](#usertokenresult)
+
+## Function validate (Microsoft.ApiManagement/service/tenant@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service/tenant
+* **ApiVersion**: 2025-03-01-preview
+* **Input**: [DeployConfigurationParameters](#deployconfigurationparameters)
+* **Output**: [OperationResultContract](#operationresultcontract)
+
+## Function validatePolicies (Microsoft.ApiManagement/service@2025-03-01-preview)
+* **Resource**: Microsoft.ApiManagement/service
+* **ApiVersion**: 2025-03-01-preview
+* **Output**: [OperationResultContract](#operationresultcontract)
 
 ## AccessInformationCreateParameterPropertiesOrAccessInformationContractProperties
 ### Properties
@@ -1239,12 +1502,12 @@
 ### Properties
 * **apiRevision**: string {minLength: 1, maxLength: 100}: Describes the revision of the API. If no value is provided, default revision 1 is created
 * **apiRevisionDescription**: string {maxLength: 256}: Description of the API Revision.
-* **apiType**: 'graphql' | 'grpc' | 'http' | 'odata' | 'soap' | 'websocket' | string (WriteOnly): Type of API to create. 
- * `http` creates a REST API 
- * `soap` creates a SOAP pass-through API  
- * `websocket` creates websocket API 
- * `graphql` creates GraphQL API. 
- New types can be added in the future.
+* **apiType**: 'graphql' | 'grpc' | 'http' | 'odata' | 'soap' | 'websocket' | string (WriteOnly): Type of API to create.
+* `http` creates a REST API
+* `soap` creates a SOAP pass-through API
+* `websocket` creates websocket API
+* `graphql` creates GraphQL API.
+New types can be added in the future.
 * **apiVersion**: string {maxLength: 100}: Indicates the version identifier of the API if the API is versioned
 * **apiVersionDescription**: string {maxLength: 256}: Description of the API Version.
 * **apiVersionSet**: [ApiVersionSetContractDetails](#apiversionsetcontractdetails): Version set details
@@ -1295,20 +1558,37 @@
 * **capacity**: int: Capacity of the SKU (number of deployed units of the SKU)
 * **name**: 'Standard' | 'WorkspaceGatewayPremium' | 'WorkspaceGatewayStandard' | string (Required): Name of the Sku.
 
+## ApiManagementServiceApplyNetworkConfigurationParameters
+### Properties
+* **location**: string: Location of the Api Management service to update for a multi-region service. For a service deployed in a single region, this parameter is not required.
+
+## ApiManagementServiceBackupRestoreParameters
+### Properties
+* **accessKey**: string: Storage account access key. Required only if `accessType` is set to `AccessKey`.
+* **accessType**: 'AccessKey' | 'SystemAssignedManagedIdentity' | 'UserAssignedManagedIdentity' | string: The type of access to be used for the storage account.
+* **backupName**: string (Required): The name of the backup file to create/retrieve.
+* **clientId**: string: The Client ID of user assigned managed identity. Required only if `accessType` is set to `UserAssignedManagedIdentity`.
+* **containerName**: string (Required): The name of the blob container (used to place/retrieve the backup).
+* **storageAccount**: string (Required): The name of the Azure storage account (used to place/retrieve the backup).
+
 ## ApiManagementServiceBasePropertiesCustomProperties
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ApiManagementServiceGetSsoTokenResult
+### Properties
+* **redirectUri**: string: Redirect URL to the Publisher Portal containing the SSO token.
 
 ## ApiManagementServiceIdentity
 ### Properties
 * **principalId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The principal id of the identity.
 * **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client tenant id of the identity.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned, UserAssigned' | 'UserAssigned' | string (Required): The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the service.
-* **userAssignedIdentities**: [ApiManagementServiceIdentityUserAssignedIdentities](#apimanagementserviceidentityuserassignedidentities): The list of user identities associated with the resource. The user identity 
-dictionary key references will be ARM resource ids in the form: 
+* **userAssignedIdentities**: [ApiManagementServiceIdentityUserAssignedIdentities](#apimanagementserviceidentityuserassignedidentities): The list of user identities associated with the resource. The user identity
+dictionary key references will be ARM resource ids in the form:
 '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/
-    providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
 ## ApiManagementServiceIdentityUserAssignedIdentities
 ### Properties
@@ -1353,6 +1633,20 @@ dictionary key references will be ARM resource ids in the form:
 * **virtualNetworkType**: 'External' | 'Internal' | 'None' | string: The type of VPN in which API Management service needs to be configured in. None (Default Value) means the API Management service is not part of any Virtual Network, External means the API Management deployment is set up inside a Virtual Network having an Internet Facing Endpoint, and Internal means that API Management deployment is setup inside a Virtual Network having an Intranet Facing Endpoint only.
 * **zoneRedundant**: bool: Zone Redundant Requirement when creating StandardV2 and PremiumV2. If this flag is set to True, will return a APIM service with Zone redundant or fail the request if any underneath component cannot be zone redundant.
 
+## ApiManagementServiceResource
+### Properties
+* **etag**: string (ReadOnly): ETag of the resource.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **identity**: [ApiManagementServiceIdentity](#apimanagementserviceidentity): Managed service identity of the Api Management service.
+* **location**: string (Required): The geo-location where the resource lives
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ApiManagementServiceProperties](#apimanagementserviceproperties) (Required): Properties of the API Management service.
+* **sku**: [ApiManagementServiceSkuProperties](#apimanagementserviceskuproperties) (Required): SKU properties of the API Management service.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+* **zones**: string[]: The availability zones.
+
 ## ApiManagementServiceSkuProperties
 ### Properties
 * **capacity**: int (Required): Capacity of the SKU (number of deployed units of the SKU). For Consumption SKU capacity must be specified as 0.
@@ -1362,16 +1656,6 @@ dictionary key references will be ARM resource ids in the form:
 ### Properties
 * **gateways**: [WorkspaceLinksGateway](#workspacelinksgateway)[]: The array of linked gateways.
 * **workspaceId**: string: The link to the API Management service workspace.
-
-## ApimResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
-## ApimResourceTags
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
 
 ## ApiReleaseContractProperties
 ### Properties
@@ -1422,6 +1706,10 @@ dictionary key references will be ARM resource ids in the form:
 * **objectId**: string: The Object Id
 * **tenantId**: string: The Tenant Id
 
+## AuthorizationConfirmConsentCodeRequestContract
+### Properties
+* **consentCode**: string: The consent code from the authorization server after authorizing and consenting.
+
 ## AuthorizationContractProperties
 ### Properties
 * **authorizationType**: 'OAuth2' | string: Authorization type options
@@ -1439,6 +1727,22 @@ dictionary key references will be ARM resource ids in the form:
 ### Properties
 * **code**: string: Error code
 * **message**: string: Error message
+
+## AuthorizationLoginRequestContract
+### Properties
+* **postLoginRedirectUrl**: string: The redirect URL after login has completed.
+
+## AuthorizationLoginResponseContract
+### Properties
+* **loginLink**: string: The login link
+
+## AuthorizationProviderContract
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [AuthorizationProviderContractProperties](#authorizationprovidercontractproperties): Properties of the Authorization Provider Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## AuthorizationProviderContractProperties
 ### Properties
@@ -1513,7 +1817,7 @@ dictionary key references will be ARM resource ids in the form:
 
 ## BackendCircuitBreaker
 ### Properties
-* **rules**: [CircuitBreakerRule](#circuitbreakerrule)[] {maxLength: 15}: The rules for tripping the backend.
+* **rules**: [CircuitBreakerRule](#circuitbreakerrule)[]: The rules for tripping the backend.
 
 ## BackendConfiguration
 ### Properties
@@ -1525,7 +1829,7 @@ dictionary key references will be ARM resource ids in the form:
 * **circuitBreaker**: [BackendCircuitBreaker](#backendcircuitbreaker): Backend Circuit Breaker Configuration
 * **credentials**: [BackendCredentialsContract](#backendcredentialscontract): Backend Credentials Contract Properties
 * **description**: string {minLength: 1, maxLength: 2000}: Backend Description.
-* **pool**: [BackendBaseParametersPool](#backendbaseparameterspool)
+* **pool**: [BackendBaseParametersPool](#backendbaseparameterspool): Backend Pool Properties
 * **properties**: [BackendProperties](#backendproperties): Backend Properties contract
 * **protocol**: 'http' | 'soap' | string: Backend communication protocol. Required when backend type is 'Single'.
 * **proxy**: [BackendProxyContract](#backendproxycontract): Backend gateway Contract Properties
@@ -1574,6 +1878,18 @@ dictionary key references will be ARM resource ids in the form:
 * **url**: string {minLength: 1, maxLength: 2000} (Required): WebProxy Server AbsoluteUri property which includes the entire URI stored in the Uri instance, including all fragments and query strings.
 * **username**: string: Username to connect to the WebProxy server
 
+## BackendReconnectContract
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [BackendReconnectProperties](#backendreconnectproperties): Reconnect request properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## BackendReconnectProperties
+### Properties
+* **after**: string: Duration in ISO8601 format after which reconnect will be initiated. Minimum duration of the Reconnect is PT2M.
+
 ## BackendServiceFabricClusterProperties
 ### Properties
 * **clientCertificateId**: string: The client certificate id for the management endpoint.
@@ -1621,6 +1937,21 @@ dictionary key references will be ARM resource ids in the form:
 * **encodedCertificate**: string: Base64 Encoded certificate.
 * **storeName**: 'CertificateAuthority' | 'Root' | string (Required): The System.Security.Cryptography.x509certificates.StoreName certificate store location. Only Root and CertificateAuthority are valid locations.
 
+## CertificateContract
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [CertificateContractProperties](#certificatecontractproperties): Certificate properties details.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## CertificateContractProperties
+### Properties
+* **expirationDate**: string (Required): Expiration date of the certificate. The date conforms to the following format: `yyyy-MM-ddTHH:mm:ssZ` as specified by the ISO 8601 standard.
+* **keyVault**: [KeyVaultContractProperties](#keyvaultcontractproperties): KeyVault location details of the certificate.
+* **subject**: string (Required): Subject attribute of the certificate.
+* **thumbprint**: string (Required): Thumbprint of the certificate.
+
 ## CertificateCreateOrUpdatePropertiesOrCertificateContractProperties
 ### Properties
 * **data**: string (WriteOnly): Base 64 encoded certificate using the application/x-pkcs12 representation.
@@ -1639,7 +1970,7 @@ dictionary key references will be ARM resource ids in the form:
 ## CircuitBreakerFailureCondition
 ### Properties
 * **count**: int: The threshold for opening the circuit.
-* **errorReasons**: (string {maxLength: 200})[] {maxLength: 10}: The error reasons which are considered as failure.
+* **errorReasons**: string[] {maxLength: 10}: The error reasons which are considered as failure.
 * **interval**: string: The interval during which the failures are counted.
 * **percentage**: int: The threshold for opening the circuit.
 * **statusCodeRanges**: [FailureStatusCodeRange](#failurestatuscoderange)[] {maxLength: 10}: The status code ranges which are considered as failure.
@@ -1682,6 +2013,65 @@ dictionary key references will be ARM resource ids in the form:
 ### Properties
 * **legacyApi**: 'Disabled' | 'Enabled' | string: Indication whether or not the legacy Configuration API (v1) should be exposed on the API Management service. Value is optional but must be 'Enabled' or 'Disabled'. If 'Disabled', legacy Configuration API (v1) will not be available for self-hosted gateways. Default value is 'Enabled'
 
+## ConnectivityCheckRequest
+### Properties
+* **destination**: [ConnectivityCheckRequestDestination](#connectivitycheckrequestdestination) (Required): The connectivity check operation destination.
+* **preferredIPVersion**: 'IPv4' | string: The IP version to be used. Only IPv4 is supported for now.
+* **protocol**: 'HTTP' | 'HTTPS' | 'TCP' | string: The request's protocol. Specific protocol configuration can be available based on this selection. The specified destination address must be coherent with this value.
+* **protocolConfiguration**: [ConnectivityCheckRequestProtocolConfiguration](#connectivitycheckrequestprotocolconfiguration): Protocol-specific configuration.
+* **source**: [ConnectivityCheckRequestSource](#connectivitycheckrequestsource) (Required): Definitions about the connectivity check origin.
+
+## ConnectivityCheckRequestDestination
+### Properties
+* **address**: string (Required): Destination address. Can either be an IP address or a FQDN.
+* **port**: int (Required): Destination port.
+
+## ConnectivityCheckRequestProtocolConfiguration
+### Properties
+* **HTTPConfiguration**: [ConnectivityCheckRequestProtocolConfigurationHttpConfiguration](#connectivitycheckrequestprotocolconfigurationhttpconfiguration): Configuration for HTTP or HTTPS requests.
+
+## ConnectivityCheckRequestProtocolConfigurationHttpConfiguration
+### Properties
+* **headers**: [HttpHeader](#httpheader)[]: List of headers to be included in the request.
+* **method**: 'GET' | 'POST' | string: The HTTP method to be used.
+* **validStatusCodes**: int[]: List of HTTP status codes considered valid for the request response.
+
+## ConnectivityCheckRequestSource
+### Properties
+* **instance**: int: The particular VMSS instance from which to fire the request.
+* **region**: string (Required): The API Management service region from where to start the connectivity check operation.
+
+## ConnectivityCheckResponse
+### Properties
+* **avgLatencyInMs**: int (ReadOnly): Average latency in milliseconds.
+* **connectionStatus**: 'Connected' | 'Degraded' | 'Disconnected' | 'Unknown' | string (ReadOnly): The connection status.
+* **hops**: [ConnectivityHop](#connectivityhop)[] (ReadOnly): List of hops between the source and the destination.
+* **maxLatencyInMs**: int (ReadOnly): Maximum latency in milliseconds.
+* **minLatencyInMs**: int (ReadOnly): Minimum latency in milliseconds.
+* **probesFailed**: int (ReadOnly): Number of failed probes.
+* **probesSent**: int (ReadOnly): Total number of probes sent.
+
+## ConnectivityHop
+### Properties
+* **address**: string (ReadOnly): The IP address of the hop.
+* **id**: string (ReadOnly): The ID of the hop.
+* **issues**: [ConnectivityIssue](#connectivityissue)[] (ReadOnly): List of issues.
+* **nextHopIds**: string[] (ReadOnly): List of next hop identifiers.
+* **resourceId**: string (ReadOnly): The ID of the resource corresponding to this hop.
+* **type**: string (ReadOnly): The type of the hop.
+
+## ConnectivityIssue
+### Properties
+* **context**: [ConnectivityIssueContextItem](#connectivityissuecontextitem)[] (ReadOnly): Provides additional context on the issue.
+* **origin**: 'Inbound' | 'Local' | 'Outbound' | string (ReadOnly): The origin of the issue.
+* **severity**: 'Error' | 'Warning' | string (ReadOnly): The severity of the issue.
+* **type**: 'AgentStopped' | 'DnsResolution' | 'GuestFirewall' | 'NetworkSecurityRule' | 'Platform' | 'PortThrottled' | 'SocketBind' | 'Unknown' | 'UserDefinedRoute' | string (ReadOnly): The type of issue.
+
+## ConnectivityIssueContextItem
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## ContentItemContractProperties
 ### Properties
 ### Additional Properties
@@ -1711,6 +2101,15 @@ dictionary key references will be ARM resource ids in the form:
 * **scheduledPurgeDate**: string: UTC Date and Time when the service will be automatically purged. The date conforms to the following format: yyyy-MM-ddTHH:mm:ssZ as specified by the ISO 8601 standard.
 * **serviceId**: string: Fully-qualified API Management Service Resource ID
 
+## DeployConfigurationParameterProperties
+### Properties
+* **branch**: string (Required): The name of the Git branch from which the configuration is to be deployed to the configuration database.
+* **force**: bool: The value enforcing deleting subscriptions to products that are deleted in this update.
+
+## DeployConfigurationParameters
+### Properties
+* **properties**: [DeployConfigurationParameterProperties](#deployconfigurationparameterproperties): Deploy Configuration Parameter contract properties.
+
 ## DiagnosticContractProperties
 ### Properties
 * **alwaysLog**: 'allErrors' | string: Specifies for what type of messages sampling settings should not apply.
@@ -1724,6 +2123,11 @@ dictionary key references will be ARM resource ids in the form:
 * **operationNameFormat**: 'Name' | 'Url' | string: The format of the Operation Name for Application Insights telemetries. Default is Name.
 * **sampling**: [SamplingSettings](#samplingsettings): Sampling settings for Diagnostic.
 * **verbosity**: 'error' | 'information' | 'verbose' | string: The verbosity level applied to traces emitted by trace policies.
+
+## DictionaryOfany
+### Properties
+### Additional Properties
+* **Additional Properties Type**: any
 
 ## DocumentationContractProperties
 ### Properties
@@ -1744,6 +2148,18 @@ dictionary key references will be ARM resource ids in the form:
 * **parameters**: [EmailTemplateParametersContractProperties](#emailtemplateparameterscontractproperties)[]: Email Template Parameter values.
 * **subject**: string {minLength: 1, maxLength: 1000}: Subject of the Template.
 * **title**: string: Title of the Template.
+
+## ErrorFieldContract
+### Properties
+* **code**: string: Property level error code.
+* **message**: string: Human-readable representation of property-level error.
+* **target**: string: Property name.
+
+## ErrorResponseBody
+### Properties
+* **code**: string: Service-defined error code. This code serves as a sub-status for the HTTP error code specified in the response.
+* **details**: [ErrorFieldContract](#errorfieldcontract)[]: The list of invalid fields send in request, in case of validation error.
+* **message**: string: Human-readable representation of the error.
 
 ## FailureStatusCodeRange
 ### Properties
@@ -1812,6 +2228,10 @@ dictionary key references will be ARM resource ids in the form:
 * **tls10Enabled**: bool: Specifies if TLS 1.0 is supported
 * **tls11Enabled**: bool: Specifies if TLS 1.1 is supported
 
+## GatewayKeyRegenerationRequestContract
+### Properties
+* **keyType**: 'primary' | 'secondary' (Required): The Key being regenerated.
+
 ## GatewayKeysContract
 ### Properties
 * **primary**: string: Primary gateway key.
@@ -1827,10 +2247,18 @@ dictionary key references will be ARM resource ids in the form:
 ### Properties
 * **traceId**: string: Trace id.
 
-## GatewayTraceContract
+## GatewayTokenContract
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: any
+* **value**: string: Shared Access Authentication token value for the Gateway.
+
+## GatewayTokenRequestContract
+### Properties
+* **expiry**: string (Required): The Expiry time of the Token. Maximum token expiry time is set to 30 days. The date conforms to the following format: `yyyy-MM-ddTHH:mm:ssZ` as specified by the ISO 8601 standard.
+* **keyType**: 'primary' | 'secondary' (Required): The Key to be used to generate gateway token.
+
+## GenerateSsoUrlResult
+### Properties
+* **value**: string: Redirect Url containing the SSO URL value.
 
 ## GlobalSchemaContractProperties
 ### Properties
@@ -1869,6 +2297,11 @@ dictionary key references will be ARM resource ids in the form:
 * **keyVaultId**: string: Url to the KeyVault Secret containing the Ssl Certificate. If absolute Url containing version is provided, auto-update of ssl certificate will not work. This requires Api Management service to be configured with aka.ms/apimmsi. The secret should be of type *application/x-pkcs12*
 * **negotiateClientCertificate**: bool: Specify true to always negotiate client certificate on the hostname. Default Value is false.
 * **type**: 'ConfigurationApi' | 'DeveloperPortal' | 'Management' | 'Portal' | 'Proxy' | 'Scm' | string (Required): Hostname type.
+
+## HttpHeader
+### Properties
+* **name**: string (Required): Header name.
+* **value**: string (Required): Header value.
 
 ## HttpMessageDiagnostic
 ### Properties
@@ -1918,6 +2351,12 @@ dictionary key references will be ARM resource ids in the form:
 * **lastStatus**: [KeyVaultLastAccessStatusContractProperties](#keyvaultlastaccessstatuscontractproperties) (ReadOnly): Last time sync and refresh status of secret from key vault.
 * **secretIdentifier**: string: Key vault secret identifier for fetching secret. Providing a versioned secret will prevent auto-refresh. This requires API Management service to be configured with aka.ms/apimmsi
 
+## KeyVaultContractProperties
+### Properties
+* **identityClientId**: string: Null for SystemAssignedIdentity or Client Id for UserAssignedIdentity , which will be used to access key vault secret.
+* **lastStatus**: [KeyVaultLastAccessStatusContractProperties](#keyvaultlastaccessstatuscontractproperties): Last time sync and refresh status of secret from key vault.
+* **secretIdentifier**: string: Key vault secret identifier for fetching secret. Providing a versioned secret will prevent auto-refresh. This requires API Management service to be configured with aka.ms/apimmsi
+
 ## KeyVaultLastAccessStatusContractProperties
 ### Properties
 * **code**: string: Last status code for sync and refresh of secret from key vault.
@@ -1955,6 +2394,27 @@ Instrumentation key for applicationInsights logger.
 * **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
 * **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned' | string (Required): Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
 * **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+
+## MigrateToStv2Contract
+### Properties
+* **mode**: 'NewIP' | 'PreserveIp' | string: Mode of Migration to stv2. Default is PreserveIp.
+
+## NamedValueContract
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [NamedValueContractProperties](#namedvaluecontractproperties): NamedValue entity contract properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## NamedValueContractProperties
+### Properties
+* **displayName**: string {minLength: 1, maxLength: 256, pattern: "^[A-Za-z0-9-._]+$"} (Required): Unique name of NamedValue. It may contain only letters, digits, period, dash, and underscore characters.
+* **keyVault**: [KeyVaultContractProperties](#keyvaultcontractproperties): KeyVault location details of the namedValue.
+* **provisioningState**: string (ReadOnly): The provisioning state
+* **secret**: bool: Determines whether the value is a secret and should be encrypted or not. Default value is false.
+* **tags**: string[] {maxLength: 32}: Optional tags that when provided can be used to filter the NamedValue list.
+* **value**: string {maxLength: 4096}: Value of the NamedValue. Can contain policy expressions. It may not be empty or consist only of whitespace. This property will not be filled on 'GET' operations! Use '/listSecrets' POST request to get the value.
 
 ## NamedValueCreateContractPropertiesOrNamedValueContractProperties
 ### Properties
@@ -2006,11 +2466,35 @@ Instrumentation key for applicationInsights logger.
 * **templateParameters**: [ParameterContract](#parametercontract)[]: Collection of URL template parameters.
 * **urlTemplate**: string {minLength: 1, maxLength: 1000} (Required): Relative URL template identifying the target resource for this operation. May include parameters. Example: /customers/{cid}/orders/{oid}/?date={date}
 
+## OperationResultContract
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [OperationResultContractProperties](#operationresultcontractproperties): Properties of the Operation Contract.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+## OperationResultContractProperties
+### Properties
+* **actionLog**: [OperationResultLogItemContract](#operationresultlogitemcontract)[] (ReadOnly): This property if only provided as part of the TenantConfiguration_Validate operation. It contains the log the entities which will be updated/created/deleted as part of the TenantConfiguration_Deploy operation.
+* **error**: [ErrorResponseBody](#errorresponsebody): Error Body Contract
+* **id**: string: Operation result identifier.
+* **resultInfo**: string: Optional result info.
+* **started**: string: Start time of an async operation. The date conforms to the following format: `yyyy-MM-ddTHH:mm:ssZ` as specified by the ISO 8601 standard.
+* **status**: 'Failed' | 'InProgress' | 'Started' | 'Succeeded': Status of an async operation.
+* **updated**: string: Last update time of an async operation. The date conforms to the following format: `yyyy-MM-ddTHH:mm:ssZ` as specified by the ISO 8601 standard.
+
+## OperationResultLogItemContract
+### Properties
+* **action**: string: Action like create/update/delete.
+* **objectKey**: string: Identifier of the entity being created/updated/deleted.
+* **objectType**: string: The type of entity contract.
+
 ## ParameterContract
 ### Properties
 * **defaultValue**: string: Default parameter value.
 * **description**: string: Parameter description.
-* **examples**: [ParameterExamplesContract](#parameterexamplescontract): Exampled defined for the parameter.
+* **examples**: [ParameterContractExamples](#parametercontractexamples): Exampled defined for the parameter.
 * **name**: string (Required): Parameter name.
 * **required**: bool: Specifies whether parameter is required or not.
 * **schemaId**: string: Schema identifier.
@@ -2018,22 +2502,17 @@ Instrumentation key for applicationInsights logger.
 * **typeName**: string: Type name defined by the schema.
 * **values**: string[]: Parameter values.
 
+## ParameterContractExamples
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ParameterExampleContract](#parameterexamplecontract)
+
 ## ParameterExampleContract
 ### Properties
 * **description**: string: Long description for the example
 * **externalValue**: string: A URL that points to the literal example
 * **summary**: string: Short description for the example
 * **value**: any: Example value. May be a primitive value, or an object.
-
-## ParameterExamplesContract
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [ParameterExampleContract](#parameterexamplecontract)
-
-## ParameterExamplesContract
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [ParameterExampleContract](#parameterexamplecontract)
 
 ## PipelineDiagnosticSettings
 ### Properties
@@ -2203,10 +2682,15 @@ Instrumentation key for applicationInsights logger.
 ## RepresentationContract
 ### Properties
 * **contentType**: string (Required): Specifies a registered or custom content type for this representation, e.g. application/xml.
-* **examples**: [ParameterExamplesContract](#parameterexamplescontract): Exampled defined for the representation.
+* **examples**: [RepresentationContractExamples](#representationcontractexamples): Exampled defined for the representation.
 * **formParameters**: [ParameterContract](#parametercontract)[]: Collection of form parameters. Required if 'contentType' value is either 'application/x-www-form-urlencoded' or 'multipart/form-data'..
 * **schemaId**: string: Schema identifier. Applicable only if 'contentType' value is neither 'application/x-www-form-urlencoded' nor 'multipart/form-data'.
 * **typeName**: string: Type name defined by the schema. Applicable only if 'contentType' value is neither 'application/x-www-form-urlencoded' nor 'multipart/form-data'.
+
+## RepresentationContractExamples
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ParameterExampleContract](#parameterexamplecontract)
 
 ## RequestContract
 ### Properties
@@ -2231,6 +2715,7 @@ Instrumentation key for applicationInsights logger.
 ### Properties
 * **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 * **name**: string (ReadOnly): The name of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## ResourceLocationDataContract
@@ -2251,6 +2736,15 @@ Instrumentation key for applicationInsights logger.
 ### Properties
 * **percentage**: int {minValue: 0, maxValue: 100}: Rate of sampling for fixed-rate sampling.
 * **samplingType**: 'fixed' | string: Sampling type.
+
+## SaveConfigurationParameter
+### Properties
+* **properties**: [SaveConfigurationParameterProperties](#saveconfigurationparameterproperties): Properties of the Save Configuration Parameters.
+
+## SaveConfigurationParameterProperties
+### Properties
+* **branch**: string (Required): The name of the Git branch in which to commit the current configuration snapshot.
+* **force**: bool: The value if true, the current configuration database is committed to the Git repository, even if the Git repository has newer changes that would be overwritten.
 
 ## SchemaContractProperties
 ### Properties
@@ -2369,6 +2863,21 @@ Instrumentation key for applicationInsights logger.
 * **displayName**: string {minLength: 1, maxLength: 300}: Tool Name. MCP tool name must contain only letters, numbers, underscores, and hyphens.
 * **operationId**: string: Identifier of the operation this MCP tool is associated with in the form of /apis/{apiId}/operations/{operationId}.
 
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
 ## UserAssignedIdentities
 ### Properties
 ### Additional Properties
@@ -2402,6 +2911,19 @@ Instrumentation key for applicationInsights logger.
 ### Properties
 * **clientId**: string: The client id of user assigned identity.
 * **principalId**: string: The principal id of user assigned identity.
+
+## UserTokenParameterProperties
+### Properties
+* **expiry**: string (Required): The Expiry time of the Token. Maximum token expiry time is set to 30 days. The date conforms to the following format: `yyyy-MM-ddTHH:mm:ssZ` as specified by the ISO 8601 standard.
+* **keyType**: 'primary' | 'secondary' (Required): The Key to be used to generate token for user.
+
+## UserTokenParameters
+### Properties
+* **properties**: [UserTokenParameterProperties](#usertokenparameterproperties): User Token Parameter contract properties.
+
+## UserTokenResult
+### Properties
+* **value**: string: Shared Access Authorization token for the User.
 
 ## VirtualNetworkConfiguration
 ### Properties
