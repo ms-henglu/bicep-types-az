@@ -56,7 +56,7 @@
 * **location**: string: Resource location.
 * **name**: string {pattern: "^[a-zA-Z0-9_\-\(\)\.]*[^\.]$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ProfileProperties](#profileproperties): The properties of a Profile
-* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **tags**: [ResourcewithSettableNameTags](#resourcewithsettablenametags): Resource tags.
 * **type**: 'Microsoft.Network/NetworkExperimentProfiles' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Network/NetworkExperimentProfiles/Experiments@2025-10-01
@@ -70,6 +70,26 @@
 * **properties**: [ExperimentProperties](#experimentproperties): The properties of an Experiment
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/NetworkExperimentProfiles/Experiments' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function disableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2025-10-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2025-10-01
+
+## Function enableHttps (Microsoft.Network/frontDoors/frontendEndpoints@2025-10-01)
+* **Resource**: Microsoft.Network/frontDoors/frontendEndpoints
+* **ApiVersion**: 2025-10-01
+* **Input**: [CustomHttpsConfiguration](#customhttpsconfiguration)
+
+## Function purge (Microsoft.Network/frontDoors@2025-10-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2025-10-01
+* **Input**: [PurgeParameters](#purgeparameters)
+
+## Function validateCustomDomain (Microsoft.Network/frontDoors@2025-10-01)
+* **Resource**: Microsoft.Network/frontDoors
+* **ApiVersion**: 2025-10-01
+* **Input**: [ValidateCustomDomainInput](#validatecustomdomaininput)
+* **Output**: [ValidateCustomDomainOutput](#validatecustomdomainoutput)
 
 ## Backend
 ### Properties
@@ -316,10 +336,9 @@
 * **enabledState**: 'Disabled' | 'Enabled' | string: The state of the Experiment
 * **resourceState**: 'Creating' | 'Deleting' | 'Disabled' | 'Disabling' | 'Enabled' | 'Enabling' | string (ReadOnly): Resource status.
 
-## ResourceTags
+## PurgeParameters
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **contentPaths**: string[] (Required): The path to the content to be purged. Can describe a file path or a wild card directory.
 
 ## ResourceTags
 ### Properties
@@ -332,6 +351,11 @@
 * **Additional Properties Type**: string
 
 ## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourcewithSettableNameTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
@@ -432,6 +456,16 @@
 ## SubResource
 ### Properties
 * **id**: string: Resource ID.
+
+## ValidateCustomDomainInput
+### Properties
+* **hostName**: string (Required): The host name of the custom domain. Must be a domain name.
+
+## ValidateCustomDomainOutput
+### Properties
+* **customDomainValidated**: bool (ReadOnly): Indicates whether the custom domain is valid or not.
+* **message**: string (ReadOnly): Error message describing why the custom domain is not valid.
+* **reason**: string (ReadOnly): The reason why the custom domain is not valid.
 
 ## WebApplicationFirewallPolicyProperties
 ### Properties

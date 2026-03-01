@@ -271,6 +271,101 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Edge/targets/solutions/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function bulkDeploySolution (Microsoft.Edge/solutionTemplates/versions@2025-08-01)
+* **Resource**: Microsoft.Edge/solutionTemplates/versions
+* **ApiVersion**: 2025-08-01
+* **Input**: [BulkDeploySolutionParameter](#bulkdeploysolutionparameter)
+
+## Function bulkPublishSolution (Microsoft.Edge/solutionTemplates/versions@2025-08-01)
+* **Resource**: Microsoft.Edge/solutionTemplates/versions
+* **ApiVersion**: 2025-08-01
+* **Input**: [BulkPublishSolutionParameter](#bulkpublishsolutionparameter)
+
+## Function bulkReviewSolution (Microsoft.Edge/solutionTemplates/versions@2025-08-01)
+* **Resource**: Microsoft.Edge/solutionTemplates/versions
+* **ApiVersion**: 2025-08-01
+* **Input**: [BulkReviewSolutionParameter](#bulkreviewsolutionparameter)
+
+## Function createVersion (Microsoft.Edge/configTemplates@2025-08-01)
+* **Resource**: Microsoft.Edge/configTemplates
+* **ApiVersion**: 2025-08-01
+* **Input**: [ConfigTemplateVersionWithUpdateType](#configtemplateversionwithupdatetype)
+* **Output**: [ConfigTemplateVersion](#configtemplateversion)
+
+## Function createVersion (Microsoft.Edge/schemas@2025-08-01)
+* **Resource**: Microsoft.Edge/schemas
+* **ApiVersion**: 2025-08-01
+* **Input**: [SchemaVersionWithUpdateType](#schemaversionwithupdatetype)
+* **Output**: [SchemaVersion](#schemaversion)
+
+## Function createVersion (Microsoft.Edge/solutionTemplates@2025-08-01)
+* **Resource**: Microsoft.Edge/solutionTemplates
+* **ApiVersion**: 2025-08-01
+* **Input**: [SolutionTemplateVersionWithUpdateType](#solutiontemplateversionwithupdatetype)
+* **Output**: [SolutionTemplateVersion](#solutiontemplateversion)
+
+## Function installSolution (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [InstallSolutionParameter](#installsolutionparameter)
+
+## Function publishSolutionVersion (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [SolutionVersionParameter](#solutionversionparameter)
+* **Output**: [SolutionVersion](#solutionversion)
+
+## Function removeRevision (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [RemoveRevisionParameter](#removerevisionparameter)
+
+## Function removeVersion (Microsoft.Edge/configTemplates@2025-08-01)
+* **Resource**: Microsoft.Edge/configTemplates
+* **ApiVersion**: 2025-08-01
+* **Input**: [VersionParameter](#versionparameter)
+* **Output**: [RemoveVersionResponse](#removeversionresponse)
+
+## Function removeVersion (Microsoft.Edge/schemas@2025-08-01)
+* **Resource**: Microsoft.Edge/schemas
+* **ApiVersion**: 2025-08-01
+* **Input**: [VersionParameter](#versionparameter)
+* **Output**: [RemoveVersionResponse](#removeversionresponse)
+
+## Function removeVersion (Microsoft.Edge/solutionTemplates@2025-08-01)
+* **Resource**: Microsoft.Edge/solutionTemplates
+* **ApiVersion**: 2025-08-01
+* **Input**: [VersionParameter](#versionparameter)
+
+## Function resolveConfiguration (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [SolutionTemplateParameter](#solutiontemplateparameter)
+* **Output**: [ResolvedConfiguration](#resolvedconfiguration)
+
+## Function reviewSolutionVersion (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [SolutionTemplateParameter](#solutiontemplateparameter)
+* **Output**: [SolutionVersion](#solutionversion)
+
+## Function uninstallSolution (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [UninstallSolutionParameter](#uninstallsolutionparameter)
+
+## Function unstageSolutionVersion (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [SolutionVersionParameter](#solutionversionparameter)
+* **Output**: [SolutionVersion](#solutionversion)
+
+## Function updateExternalValidationStatus (Microsoft.Edge/targets@2025-08-01)
+* **Resource**: Microsoft.Edge/targets
+* **ApiVersion**: 2025-08-01
+* **Input**: [UpdateExternalValidationStatusParameter](#updateexternalvalidationstatusparameter)
+* **Output**: [SolutionVersion](#solutionversion)
+
 ## AdditionalData
 ### Properties
 * **workflowId**: string: Id of the workflow.
@@ -285,6 +380,41 @@
 ### Properties
 * **name**: string (Required): The name of the extended location.
 * **type**: 'CustomLocation' | 'EdgeZone' | string (Required): The type of the extended location.
+
+## BulkDeploySolutionParameter
+### Properties
+* **targets**: [BulkDeployTargetDetails](#bulkdeploytargetdetails)[] (Required): Targets to which solution needs to be deployed
+
+## BulkDeployTargetDetails
+### Properties
+* **solutionVersionId**: string (Required): ArmId of Target Solution Version
+
+## BulkPublishSolutionParameter
+### Properties
+* **solutionConfiguration**: string: Configuration of solution
+* **solutionDependencies**: [SolutionDependencyParameter](#solutiondependencyparameter)[]: Solution dependencies
+* **solutionInstanceName**: string {pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Name of the solution instance
+* **targets**: [BulkPublishTargetDetails](#bulkpublishtargetdetails)[] (Required): Targets to which solution needs to be published
+
+## BulkPublishTargetDetails
+### Properties
+* **solutionConfiguration**: string: Configuration of solution
+* **solutionInstanceName**: string {pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Name of the solution instance
+* **solutionVersionId**: string: ArmId of Target Solution Version
+* **targetId**: string (Required): ArmId of Target
+
+## BulkReviewSolutionParameter
+### Properties
+* **solutionConfiguration**: string: Configuration of solution
+* **solutionDependencies**: [SolutionDependencyParameter](#solutiondependencyparameter)[]: Solution dependencies
+* **solutionInstanceName**: string {pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Name of the solution instance
+* **targets**: [BulkReviewTargetDetails](#bulkreviewtargetdetails)[] (Required): Targets to which solution needs to be published
+
+## BulkReviewTargetDetails
+### Properties
+* **solutionConfiguration**: string: Configuration of solution
+* **solutionInstanceName**: string {pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Name of the solution instance
+* **targetId**: string (Required): ArmId of Target
 
 ## Capability
 ### Properties
@@ -304,10 +434,25 @@
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
 * **uniqueIdentifier**: string (ReadOnly): A unique identifier for the config template, generated by the system
 
+## ConfigTemplateVersion
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ConfigTemplateVersionProperties](#configtemplateversionproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## ConfigTemplateVersionProperties
 ### Properties
 * **configurations**: string (Required): Configuration values
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
+
+## ConfigTemplateVersionWithUpdateType
+### Properties
+* **configTemplateVersion**: [ConfigTemplateVersion](#configtemplateversion) (Required): Config Template Version
+* **updateType**: 'Major' | 'Minor' | 'Patch' | string: Update type
+* **version**: string {pattern: "^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$"}: Version to create
 
 ## ContextProperties
 ### Properties
@@ -470,6 +615,19 @@
 * **interval**: string (Required): Policy interval
 * **state**: 'active' | 'inactive' | string (Required): The state of the ReconciliationPolicy
 
+## RemoveRevisionParameter
+### Properties
+* **solutionTemplateId**: string (Required): Solution Template ARM Id
+* **solutionVersion**: string (Required): Solution Version Name
+
+## RemoveVersionResponse
+### Properties
+* **status**: string (Required): Status for remove version response
+
+## ResolvedConfiguration
+### Properties
+* **configuration**: string (Required): Resolved Configuration as string
+
 ## SchemaProperties
 ### Properties
 * **currentVersion**: string (ReadOnly): Current Version of schema
@@ -480,10 +638,25 @@
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
 * **schemaId**: string (Required): Schema Id of schema reference
 
+## SchemaVersion
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [SchemaVersionProperties](#schemaversionproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
 ## SchemaVersionProperties
 ### Properties
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
 * **value**: string (Required): Value of schema version
+
+## SchemaVersionWithUpdateType
+### Properties
+* **schemaVersion**: [SchemaVersion](#schemaversion) (Required): Schema Version
+* **updateType**: 'Major' | 'Minor' | 'Patch' | string: Update type
+* **version**: string {pattern: "^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$"}: Version to create
 
 ## SiteReferenceProperties
 ### Properties
@@ -498,12 +671,27 @@
 * **solutionVersionId**: string (Required): Solution Version Id
 * **targetId**: string (Required): Target Id
 
+## SolutionDependencyParameter
+### Properties
+* **dependencies**: [SolutionDependencyParameter](#solutiondependencyparameter)[]: Solution dependencies
+* **solutionInstanceName**: string {maxLength: 24, pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Solution Instance Name
+* **solutionTemplateId**: string: Solution Template Id
+* **solutionTemplateVersion**: string: Solution Template Version
+* **solutionVersionId**: string: Solution Version Id
+* **targetId**: string: Target Id
+
 ## SolutionProperties
 ### Properties
 * **availableSolutionTemplateVersions**: [AvailableSolutionTemplateVersion](#availablesolutiontemplateversion)[] (ReadOnly): List of latest revisions for available solution template versions
 * **displayName**: string (ReadOnly): Display name of the solution
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
 * **solutionTemplateId**: string (ReadOnly): Solution template Id
+
+## SolutionTemplateParameter
+### Properties
+* **solutionDependencies**: [SolutionDependencyParameter](#solutiondependencyparameter)[]: Solution Dependencies
+* **solutionInstanceName**: string {pattern: "^(?!v-)(?!.*-v-)[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*$"}: Solution Instance Name
+* **solutionTemplateVersionId**: string (Required): Solution Template Version ARM Id
 
 ## SolutionTemplateProperties
 ### Properties
@@ -514,6 +702,15 @@
 * **provisioningState**: 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Initialized' | 'Succeeded' | string (ReadOnly): Provisioning state of resource
 * **state**: 'active' | 'inactive' | string: State of resource
 * **uniqueIdentifier**: string (ReadOnly): A unique identifier for the solution template, generated by the system
+
+## SolutionTemplateVersion
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [SolutionTemplateVersionProperties](#solutiontemplateversionproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## SolutionTemplateVersionProperties
 ### Properties
@@ -526,6 +723,22 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: any
+
+## SolutionTemplateVersionWithUpdateType
+### Properties
+* **solutionTemplateVersion**: [SolutionTemplateVersion](#solutiontemplateversion) (Required): Solution Template Version
+* **updateType**: 'Major' | 'Minor' | 'Patch' | string: Update type
+* **version**: string {pattern: "^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$"}: Version to create
+
+## SolutionVersion
+### Properties
+* **eTag**: string (ReadOnly): If eTag is provided in the response body, it may also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+* **extendedLocation**: [AzureResourceManagerCommonTypesExtendedLocation](#azureresourcemanagercommontypesextendedlocation): The complex type of the extended location.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [SolutionVersionProperties](#solutionversionproperties): The resource-specific properties for this resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## SolutionVersionParameter
 ### Properties
@@ -698,6 +911,22 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## UninstallSolutionParameter
+### Properties
+* **solutionInstanceName**: string: Solution Instance Name
+* **solutionTemplateId**: string (Required): Solution Template ARM Id
+
+## UpdateExternalValidationStatusParameter
+### Properties
+* **errorDetails**: [ErrorDetail](#errordetail): Error Details if any failure is there
+* **externalValidationId**: string (Required): External validation id
+* **solutionVersionId**: string (Required): Solution Version Id
+* **validationStatus**: 'Invalid' | 'Valid' | string (Required): Validation Status of external validation
+
+## VersionParameter
+### Properties
+* **version**: string (Required): Version of the Resource
 
 ## WorkflowProperties
 ### Properties

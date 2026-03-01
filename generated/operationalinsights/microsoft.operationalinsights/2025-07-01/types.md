@@ -153,6 +153,67 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **type**: 'Microsoft.OperationalInsights/workspaces/tables' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancelSearch (Microsoft.OperationalInsights/workspaces/tables@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2025-07-01
+
+## Function Disable (Microsoft.OperationalInsights/workspaces/intelligencePacks@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/intelligencePacks
+* **ApiVersion**: 2025-07-01
+
+## Function Enable (Microsoft.OperationalInsights/workspaces/intelligencePacks@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/intelligencePacks
+* **ApiVersion**: 2025-07-01
+
+## Function failback (Microsoft.OperationalInsights/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-07-01
+
+## Function failover (Microsoft.OperationalInsights/locations/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/locations/workspaces
+* **ApiVersion**: 2025-07-01
+
+## Function migrate (Microsoft.OperationalInsights/workspaces/tables@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/tables
+* **ApiVersion**: 2025-07-01
+
+## Function purge (Microsoft.OperationalInsights/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-07-01
+* **Input**: [WorkspacePurgeBody](#workspacepurgebody)
+
+## Function reconcile (Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2025-07-01
+
+## Function regenerateSharedKey (Microsoft.OperationalInsights/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-07-01
+* **Output**: [SharedKeys](#sharedkeys)
+
+## Function retrybin (Microsoft.OperationalInsights/workspaces/summaryLogs@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/summaryLogs
+* **ApiVersion**: 2025-07-01
+* **Input**: [SummaryLogsRetryBin](#summarylogsretrybin)
+
+## Function schema (Microsoft.OperationalInsights/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-07-01
+* **Output**: [SearchGetSchemaResponse](#searchgetschemaresponse)
+
+## Function sharedKeys (Microsoft.OperationalInsights/workspaces@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces
+* **ApiVersion**: 2025-07-01
+* **Output**: [SharedKeys](#sharedkeys)
+
+## Function start (Microsoft.OperationalInsights/workspaces/summaryLogs@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/summaryLogs
+* **ApiVersion**: 2025-07-01
+
+## Function stop (Microsoft.OperationalInsights/workspaces/summaryLogs@2025-07-01)
+* **Resource**: Microsoft.OperationalInsights/workspaces/summaryLogs
+* **ApiVersion**: 2025-07-01
+
 ## AccessRule
 ### Properties
 * **name**: string: Name of the access rule
@@ -221,6 +282,11 @@
 * **isHidden**: bool (ReadOnly): Is column hidden.
 * **name**: string: Column name.
 * **type**: 'boolean' | 'dateTime' | 'dynamic' | 'guid' | 'int' | 'long' | 'real' | 'string' | string: Column data type.
+
+## CoreSummary
+### Properties
+* **numberOfDocuments**: int (Required): The number of documents of a core summary.
+* **status**: string: The status of a core summary.
 
 ## DataExportProperties
 ### Properties
@@ -410,6 +476,36 @@
 * **tableSubType**: 'Any' | 'Classic' | 'DataCollectionRuleBased' | string (ReadOnly): The subtype describes what APIs can be used to interact with the table, and what features are available against it.
 * **tableType**: 'CustomLog' | 'Microsoft' | 'RestoredLogs' | 'SearchResults' | string (ReadOnly): Table's creator.
 
+## SearchGetSchemaResponse
+### Properties
+* **metadata**: [SearchMetadata](#searchmetadata): The metadata from search results.
+* **value**: [SearchSchemaValue](#searchschemavalue)[]: The array of result values.
+
+## SearchMetadata
+### Properties
+* **aggregatedGroupingFields**: string: The aggregated grouping fields.
+* **aggregatedValueField**: string: The aggregated value field.
+* **coreSummaries**: [CoreSummary](#coresummary)[]: The core summaries.
+* **eTag**: string: The ETag of the search results.
+* **id**: string: The id of the search results request.
+* **lastUpdated**: string: The time of last update.
+* **max**: int: The max of all aggregates returned in the result set.
+* **requestId**: string: The request id of the search.
+* **requestTime**: int: The request time.
+* **resultType**: string: The search result type.
+* **schema**: [SearchMetadataSchema](#searchmetadataschema): The schema.
+* **sort**: [SearchSort](#searchsort)[]: How the results are sorted.
+* **startTime**: string: The start time for the search.
+* **status**: string: The status of the search results.
+* **sum**: int: The sum of all aggregates returned in the result set.
+* **top**: int: The number of top search results.
+* **total**: int: The total number of search results.
+
+## SearchMetadataSchema
+### Properties
+* **name**: string: The name of the metadata schema.
+* **version**: int: The version of the metadata schema.
+
 ## SearchResults
 ### Properties
 * **azureAsyncOperationId**: string (ReadOnly): Search results table async operation id.
@@ -419,6 +515,26 @@
 * **query**: string: Search job query.
 * **sourceTable**: string (ReadOnly): The table used in the search job.
 * **startSearchTime**: string: The timestamp to start the search from (UTC)
+
+## SearchSchemaValue
+### Properties
+* **displayName**: string: The display name of the schema.
+* **facet**: bool (Required): The boolean that indicates whether or not the field is a facet.
+* **indexed**: bool (Required): The boolean that indicates the field is searchable as free text.
+* **name**: string: The name of the schema.
+* **ownerType**: string[]: The array of workflows containing the field.
+* **stored**: bool (Required): The boolean that indicates whether or not the field is stored.
+* **type**: string: The type.
+
+## SearchSort
+### Properties
+* **name**: string: The name of the field the search query is sorted on.
+* **order**: 'asc' | 'desc' | string: The sort order of the search.
+
+## SharedKeys
+### Properties
+* **primarySharedKey**: string: The primary shared key of a workspace.
+* **secondarySharedKey**: string: The secondary shared key of a workspace.
 
 ## StorageAccount
 ### Properties
@@ -451,6 +567,14 @@
 * **ruleDefinition**: [RuleDefinition](#ruledefinition): Rule definition parameters.
 * **ruleType**: 'User' | string: SummaryRules rule type: User.
 * **statusCode**: 'DataPlaneError' | 'UserAction' | string (ReadOnly): Indicates the reason for rule deactivation.
+
+## SummaryLogsRetryBin
+### Properties
+* **properties**: [SummaryLogsRetryBinProperties](#summarylogsretrybinproperties): Retry bin properties.
+
+## SummaryLogsRetryBinProperties
+### Properties
+* **retryBinStartTime**: string (Required): The time (UTC) of the bin to retry.
 
 ## SystemData
 ### Properties
@@ -551,6 +675,18 @@
 * **retentionInDays**: int: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
 * **sku**: [WorkspaceSku](#workspacesku): The SKU of the workspace.
 * **workspaceCapping**: [WorkspaceCapping](#workspacecapping): The daily volume cap for ingestion.
+
+## WorkspacePurgeBody
+### Properties
+* **filters**: [WorkspacePurgeBodyFilters](#workspacepurgebodyfilters)[] (Required): The set of columns and filters (queries) to run over them to purge the resulting data.
+* **table**: string (Required): Table from which to purge data.
+
+## WorkspacePurgeBodyFilters
+### Properties
+* **column**: string: The column of the table over which the given query should run
+* **key**: string: When filtering over custom dimensions, this key will be used as the name of the custom dimension.
+* **operator**: string: A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >, >=, <, <=, between, and have the same behavior as they would in a KQL query.
+* **value**: any: the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >= '2017-09-01') or array of values.
 
 ## WorkspaceReplicationProperties
 ### Properties

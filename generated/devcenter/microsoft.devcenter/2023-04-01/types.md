@@ -204,6 +204,18 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DevCenter/projects/pools/schedules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function runHealthChecks (Microsoft.DevCenter/projects/pools@2023-04-01)
+* **Resource**: Microsoft.DevCenter/projects/pools
+* **ApiVersion**: 2023-04-01
+
+## Function runHealthChecks (Microsoft.DevCenter/networkConnections@2023-04-01)
+* **Resource**: Microsoft.DevCenter/networkConnections
+* **ApiVersion**: 2023-04-01
+
+## Function sync (Microsoft.DevCenter/devcenters/catalogs@2023-04-01)
+* **Resource**: Microsoft.DevCenter/devcenters/catalogs
+* **ApiVersion**: 2023-04-01
+
 ## AllowedEnvironmentTypeProperties
 ### Properties
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Created' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'MovingResources' | 'NotSpecified' | 'RolloutInProgress' | 'Running' | 'StorageProvisioningFailed' | 'Succeeded' | 'TransientFailure' | 'Updated' | 'Updating' | string (ReadOnly): The provisioning state of the resource.

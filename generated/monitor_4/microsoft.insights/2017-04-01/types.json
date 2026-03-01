@@ -641,5 +641,27 @@
     },
     "readableScopes": 8,
     "writableScopes": 8
+  },
+  {
+    "$type": "ObjectType",
+    "name": "EnableRequest",
+    "properties": {
+      "receiverName": {
+        "type": {
+          "$ref": "#/0"
+        },
+        "flags": 1,
+        "description": "The name of the receiver to resubscribe."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "subscribe",
+    "resourceType": "microsoft.insights/actionGroups",
+    "apiVersion": "2017-04-01",
+    "input": {
+      "$ref": "#/43"
+    }
   }
 ]

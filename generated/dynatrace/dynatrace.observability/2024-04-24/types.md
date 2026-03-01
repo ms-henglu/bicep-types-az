@@ -47,6 +47,23 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Dynatrace.Observability/monitors/tagRules' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function getMetricStatus (Dynatrace.Observability/monitors@2024-04-24)
+* **Resource**: Dynatrace.Observability/monitors
+* **ApiVersion**: 2024-04-24
+* **Input**: [MetricStatusRequest](#metricstatusrequest)
+* **Output**: [MetricsStatusResponse](#metricsstatusresponse)
+
+## Function getSSODetails (Dynatrace.Observability/monitors@2024-04-24)
+* **Resource**: Dynatrace.Observability/monitors
+* **ApiVersion**: 2024-04-24
+* **Input**: [SSODetailsRequest](#ssodetailsrequest)
+* **Output**: [SSODetailsResponse](#ssodetailsresponse)
+
+## Function getVMHostPayload (Dynatrace.Observability/monitors@2024-04-24)
+* **Resource**: Dynatrace.Observability/monitors
+* **ApiVersion**: 2024-04-24
+* **Output**: [VMExtensionPayload](#vmextensionpayload)
+
 ## Function listAppServices (Dynatrace.Observability/monitors@2024-04-24)
 * **Resource**: Dynatrace.Observability/monitors
 * **ApiVersion**: 2024-04-24
@@ -68,6 +85,16 @@
 * **ApiVersion**: 2024-04-24
 * **Input**: [LogStatusRequest](#logstatusrequest)
 * **Output**: [MonitoredResourceListResponse](#monitoredresourcelistresponse)
+
+## Function manageAgentInstallation (Dynatrace.Observability/monitors@2024-04-24)
+* **Resource**: Dynatrace.Observability/monitors
+* **ApiVersion**: 2024-04-24
+* **Input**: [ManageAgentInstallationRequest](#manageagentinstallationrequest)
+
+## Function upgradePlan (Dynatrace.Observability/monitors@2024-04-24)
+* **Resource**: Dynatrace.Observability/monitors
+* **ApiVersion**: 2024-04-24
+* **Input**: [UpgradePlanRequest](#upgradeplanrequest)
 
 ## AccountInfo
 ### Properties
@@ -161,10 +188,27 @@ If only Exclude action is specified, the rules will apply to the list of all ava
 ### Properties
 * **monitoredResourceIds**: string[]: List of azure resource Id of monitored resources for which we get the log status
 
+## ManageAgentInstallationRequest
+### Properties
+* **action**: 'Install' | 'Uninstall' | string (Required): Install/Uninstall action.
+* **manageAgentInstallationList**: [ManageAgentList](#manageagentlist)[] (Required): The list of resources.
+
+## ManageAgentList
+### Properties
+* **id**: string: The ARM id of the resource to install/uninstall agent.
+
 ## MetricRules
 ### Properties
 * **filteringTags**: [FilteringTag](#filteringtag)[]: List of filtering tags to be used for capturing metrics. If empty, all resources will be captured. If only Exclude action is specified, the rules will apply to the list of all available resources. If Include actions are specified, the rules will only include resources with the associated tags.
 * **sendingMetrics**: 'Disabled' | 'Enabled' | string: Flag specifying if metrics from Azure resources should be sent for the Monitor resource.
+
+## MetricsStatusResponse
+### Properties
+* **azureResourceIds**: string[]: Azure resource IDs
+
+## MetricStatusRequest
+### Properties
+* **monitoredResourceIds**: string[]: List of azure resource Id of monitored resources for which we get the metric status
 
 ## MonitoredResource
 ### Properties
@@ -211,6 +255,18 @@ If only Exclude action is specified, the rules will apply to the list of all ava
 * **planDetails**: string: plan id as published by Dynatrace
 * **usageType**: string: different usage type like PAYG/COMMITTED. this could be enum
 
+## SSODetailsRequest
+### Properties
+* **userPrincipal**: string (Required): user principal id of the user
+
+## SSODetailsResponse
+### Properties
+* **aadDomains**: string[]: array of Aad(azure active directory) domains
+* **adminUsers**: string[]: Array of admin user emails.
+* **isSsoEnabled**: 'Disabled' | 'Enabled' | string: Whether the SSO is enabled for this resource or not.
+* **metadataUrl**: string: URL for Azure AD metadata
+* **singleSignOnUrl**: string: The login URL specific to this Dynatrace Environment
+
 ## SubscriptionList
 ### Properties
 * **monitoredSubscriptionList**: [MonitoredSubscription](#monitoredsubscription)[]: List of subscriptions and the state of the monitoring.
@@ -231,6 +287,10 @@ If only Exclude action is specified, the rules will apply to the list of all ava
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## UpgradePlanRequest
+### Properties
+* **planData**: [PlanData](#plandata): The new Billing plan information.
+
 ## UserAssignedIdentity
 ### Properties
 * **clientId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The client ID of the assigned identity.
@@ -243,6 +303,11 @@ If only Exclude action is specified, the rules will apply to the list of all ava
 * **firstName**: string: First Name of the user
 * **lastName**: string: Last Name of the user
 * **phoneNumber**: string {maxLength: 40}: Phone number of the user used by Dynatrace for contacting them if needed
+
+## VMExtensionPayload
+### Properties
+* **environmentId**: string: Id of the environment created
+* **ingestionKey**: string: Ingestion key of the environment
 
 ## VMHostsListResponse
 ### Properties

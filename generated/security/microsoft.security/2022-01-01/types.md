@@ -10,6 +10,27 @@
 * **properties**: [AlertProperties](#alertproperties) (ReadOnly): describes security alert properties.
 * **type**: 'Microsoft.Security/locations/alerts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Security/locations/alerts@2022-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2022-01-01
+
+## Function dismiss (Microsoft.Security/locations/alerts@2022-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2022-01-01
+
+## Function inProgress (Microsoft.Security/locations/alerts@2022-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2022-01-01
+
+## Function resolve (Microsoft.Security/locations/alerts@2022-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2022-01-01
+
+## Function simulate (Microsoft.Security/locations/alerts@2022-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2022-01-01
+* **Input**: [AlertSimulatorRequestBody](#alertsimulatorrequestbody)
+
 ## AlertEntity
 ### Properties
 * **type**: string (ReadOnly): Type of entity
@@ -61,6 +82,21 @@
 * **type**: string (ReadOnly): Type of the supportingEvidence
 ### Additional Properties
 * **Additional Properties Type**: any
+
+## AlertSimulatorRequestBody
+### Properties
+* **properties**: [AlertSimulatorRequestProperties](#alertsimulatorrequestproperties): Alert Simulator request body data.
+
+## AlertSimulatorRequestProperties
+* **Discriminator**: kind
+
+### Base Properties
+
+### AlertSimulatorBundlesRequestProperties
+#### Properties
+* **bundles**: ('AppServices' | 'CosmosDbs' | 'DNS' | 'KeyVaults' | 'KubernetesService' | 'ResourceManager' | 'SqlServers' | 'StorageAccounts' | 'VirtualMachines' | string)[]: Bundles list.
+* **kind**: 'Bundles' (Required): The kind of alert simulation.
+
 
 ## ResourceIdentifier
 * **Discriminator**: type

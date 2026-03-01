@@ -202,6 +202,60 @@
 * **tags**: [VirtualNetworkTags](#virtualnetworktags): Gets or sets the Resource tags.
 * **type**: 'Microsoft.ConnectedVMwarevSphere/virtualNetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function assessPatches (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+* **Output**: [VirtualMachineAssessPatchesResult](#virtualmachineassesspatchesresult)
+
+## Function installPatches (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [VirtualMachineInstallPatchesParameters](#virtualmachineinstallpatchesparameters)
+* **Output**: [VirtualMachineInstallPatchesResult](#virtualmachineinstallpatchesresult)
+
+## Function restart (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+
+## Function restart (Microsoft.ConnectedVMwarevSphere/virtualMachineInstances@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachineInstances
+* **ApiVersion**: 2023-03-01-preview
+
+## Function start (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+
+## Function start (Microsoft.ConnectedVMwarevSphere/virtualMachineInstances@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachineInstances
+* **ApiVersion**: 2023-03-01-preview
+
+## Function stop (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [StopVirtualMachineOptions](#stopvirtualmachineoptions)
+
+## Function stop (Microsoft.ConnectedVMwarevSphere/virtualMachineInstances@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachineInstances
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [StopVirtualMachineOptions](#stopvirtualmachineoptions)
+
+## Function upgradeExtensions (Microsoft.ConnectedVMwarevSphere/virtualMachines@2023-03-01-preview)
+* **Resource**: Microsoft.ConnectedVMwarevSphere/virtualMachines
+* **ApiVersion**: 2023-03-01-preview
+* **Input**: [MachineExtensionUpgrade](#machineextensionupgrade)
+
+## AvailablePatchCountByClassification
+### Properties
+* **critical**: int (ReadOnly): Number of critical patches available for installation.
+* **definition**: int (ReadOnly): Number of definition patches available for installation.
+* **featurePack**: int (ReadOnly): Number of feature pack patches available for installation.
+* **other**: int (ReadOnly): Number of other patches available for installation.
+* **security**: int (ReadOnly): Number of security patches available for installation.
+* **servicePack**: int (ReadOnly): Number of service pack patches available for installation.
+* **tools**: int (ReadOnly): Number of tools patches available for installation.
+* **updateRollup**: int (ReadOnly): Number of update Rollup patches available for installation.
+* **updates**: int (ReadOnly): Number of updates category patches available for installation.
+
 ## ClusterProperties
 ### Properties
 * **customResourceName**: string (ReadOnly): Gets the name of the corresponding resource in Kubernetes.
@@ -259,6 +313,15 @@
 ### Properties
 * **name**: string: The extended location name.
 * **type**: string: The extended location type.
+
+## ExtensionTarget
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [ExtensionTargetProperties](#extensiontargetproperties)
+
+## ExtensionTargetProperties
+### Properties
+* **targetVersion**: string: Properties for the specified Extension to Upgrade.
 
 ## GuestAgentProfile
 ### Properties
@@ -418,6 +481,12 @@ Defaults to 1 if unspecified.
 * **inventoryType**: 'VirtualNetwork' (Required): They inventory type.
 
 
+## LinuxParameters
+### Properties
+* **classificationsToInclude**: ('Critical' | 'Other' | 'Security' | string)[]: The update classifications to select when installing patches for Linux.
+* **packageNameMasksToExclude**: string[]: packages to exclude in the patch operation. Format: packageName_packageVersion
+* **packageNameMasksToInclude**: string[]: packages to include in the patch operation. Format: packageName_packageVersion
+
 ## MachineExtensionInstanceViewStatus
 ### Properties
 * **code**: string (ReadOnly): The status code.
@@ -450,6 +519,10 @@ Defaults to 1 if unspecified.
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## MachineExtensionUpgrade
+### Properties
+* **extensionTargets**: [ExtensionTarget](#extensiontarget): Describes the Extension Target Properties.
 
 ## NetworkInterface
 ### Properties
@@ -581,6 +654,10 @@ This property is used in relative allocation between resource consumers.
 ### Properties
 * **uefiSettings**: [UefiSettings](#uefisettings): Specifies the security settings like secure boot used while creating the virtual machine.
 
+## StopVirtualMachineOptions
+### Properties
+* **skipShutdown**: bool: Gets or sets a value indicating whether to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Defaults to false.
+
 ## StorageProfile
 ### Properties
 * **disks**: [VirtualDisk](#virtualdisk)[]: Gets or sets the list of virtual disks associated with the virtual machine.
@@ -634,6 +711,44 @@ This property is used in relative allocation between resource consumers.
 * **label**: string (ReadOnly): Gets or sets the label of the virtual disk in vCenter.
 * **name**: string: Gets or sets the name of the virtual disk.
 * **unitNumber**: int: Gets or sets the unit number of the disk on the controller.
+
+## VirtualMachineAssessPatchesResult
+### Properties
+* **assessmentActivityId**: string (ReadOnly): The activity ID of the operation that produced this result.
+* **availablePatchCountByClassification**: [AvailablePatchCountByClassification](#availablepatchcountbyclassification): Summarization of patches available for installation on the machine by classification.
+* **errorDetails**: [ErrorDetail](#errordetail) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **lastModifiedDateTime**: string (ReadOnly): The UTC timestamp when the operation finished.
+* **osType**: 'Linux' | 'Windows' | string (ReadOnly): The operating system type of the machine.
+* **patchServiceUsed**: 'APT' | 'Unknown' | 'WU' | 'WU_WSUS' | 'YUM' | 'Zypper' | string (ReadOnly): Specifies the patch service used for the operation.
+* **rebootPending**: bool (ReadOnly): The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **startedBy**: 'Platform' | 'User' | string (ReadOnly): Indicates if operation was triggered by user or by platform.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+
+## VirtualMachineInstallPatchesParameters
+### Properties
+* **linuxParameters**: [LinuxParameters](#linuxparameters): Input for InstallPatches on a Linux VM, as directly received by the API
+* **maximumDuration**: string (Required): Specifies the maximum amount of time that the operation will run. It must be an ISO 8601-compliant duration string such as PT4H (4 hours)
+* **rebootSetting**: 'Always' | 'IfRequired' | 'Never' | string (Required): Defines when it is acceptable to reboot a VM during a software update operation.
+* **windowsParameters**: [WindowsParameters](#windowsparameters): Input for InstallPatches on a Windows VM, as directly received by the API
+
+## VirtualMachineInstallPatchesResult
+### Properties
+* **errorDetails**: [ErrorDetail](#errordetail) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **excludedPatchCount**: int (ReadOnly): The number of patches that were not installed due to the user blocking their installation.
+* **failedPatchCount**: int (ReadOnly): The number of patches that could not be installed due to some issue. See errors for details.
+* **installationActivityId**: string (ReadOnly): The activity ID of the operation that produced this result.
+* **installedPatchCount**: int (ReadOnly): The number of patches successfully installed.
+* **lastModifiedDateTime**: string (ReadOnly): The UTC timestamp when the operation finished.
+* **maintenanceWindowExceeded**: bool (ReadOnly): Whether the operation ran out of time before it completed all its intended actions.
+* **notSelectedPatchCount**: int (ReadOnly): The number of patches that were detected as available for install, but did not meet the operation's criteria.
+* **osType**: 'Linux' | 'Windows' | string (ReadOnly): The operating system type of the machine.
+* **patchServiceUsed**: 'APT' | 'Unknown' | 'WU' | 'WU_WSUS' | 'YUM' | 'Zypper' | string (ReadOnly): Specifies the patch service used for the operation.
+* **pendingPatchCount**: int (ReadOnly): The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+* **rebootStatus**: 'Completed' | 'Failed' | 'NotNeeded' | 'Required' | 'Started' | 'Unknown' | string (ReadOnly): The reboot state of the VM following completion of the operation.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **startedBy**: 'Platform' | 'User' | string (ReadOnly): Indicates if operation was triggered by user or by platform.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings."
 
 ## VirtualMachineInstanceProperties
 ### Properties
@@ -739,4 +854,12 @@ Defaults to 1 if unspecified.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Created' | 'Deleting' | 'Failed' | 'Provisioning' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets the provisioning state.
 * **publicKey**: string: Gets or sets the Public Key.
 * **resourceUid**: string: The unique identifier for the resource.
+
+## WindowsParameters
+### Properties
+* **classificationsToInclude**: ('Critical' | 'Definition' | 'FeaturePack' | 'Security' | 'ServicePack' | 'Tools' | 'UpdateRollUp' | 'Updates' | string)[]: The update classifications to select when installing patches for Windows.
+* **excludeKbsRequiringReboot**: bool: Filters out Kbs that don't have an InstallationRebootBehavior of 'NeverReboots' when this is set to true.
+* **kbNumbersToExclude**: string[]: Kbs to exclude in the patch operation
+* **kbNumbersToInclude**: string[]: Kbs to include in the patch operation
+* **maxPatchPublishDate**: string: This is used to install patches that were published on or before this given max published date.
 

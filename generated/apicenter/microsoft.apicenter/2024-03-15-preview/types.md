@@ -102,6 +102,22 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ApiCenter/services/workspaces/environments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function exportMetadataSchema (Microsoft.ApiCenter/services@2024-03-15-preview)
+* **Resource**: Microsoft.ApiCenter/services
+* **ApiVersion**: 2024-03-15-preview
+* **Input**: [MetadataSchemaExportRequest](#metadataschemaexportrequest)
+* **Output**: [MetadataSchemaExportResult](#metadataschemaexportresult)
+
+## Function exportSpecification (Microsoft.ApiCenter/services/workspaces/apis/versions/definitions@2024-03-15-preview)
+* **Resource**: Microsoft.ApiCenter/services/workspaces/apis/versions/definitions
+* **ApiVersion**: 2024-03-15-preview
+* **Output**: [ApiSpecExportResult](#apispecexportresult)
+
+## Function importSpecification (Microsoft.ApiCenter/services/workspaces/apis/versions/definitions@2024-03-15-preview)
+* **Resource**: Microsoft.ApiCenter/services/workspaces/apis/versions/definitions
+* **ApiVersion**: 2024-03-15-preview
+* **Input**: [ApiSpecImportRequest](#apispecimportrequest)
+
 ## ApiDefinitionProperties
 ### Properties
 * **description**: string: API definition description.
@@ -125,6 +141,22 @@
 * **summary**: string {maxLength: 200}: Short description of the API.
 * **termsOfService**: [TermsOfService](#termsofservice): Terms of service for the API.
 * **title**: string {minLength: 1, maxLength: 50} (Required): API title.
+
+## ApiSpecExportResult
+### Properties
+* **format**: 'inline' | 'link' | string: The format of exported result
+* **value**: string: The result of the export operation.
+
+## ApiSpecImportRequest
+### Properties
+* **format**: 'inline' | 'link' | string: Format of the API specification source.
+* **specification**: [ApiSpecImportRequestSpecification](#apispecimportrequestspecification): API specification details.
+* **value**: string: Value of the API specification source.
+
+## ApiSpecImportRequestSpecification
+### Properties
+* **name**: string: Specification name.
+* **version**: string: Specification version.
 
 ## ApiVersionProperties
 ### Properties
@@ -196,6 +228,15 @@ identifier field.
 * **deprecated**: bool: Deprecated assignment
 * **entity**: 'api' | 'deployment' | 'environment' | string: The entities this metadata schema component gets applied to.
 * **required**: bool: Required assignment
+
+## MetadataSchemaExportRequest
+### Properties
+* **assignedTo**: 'api' | 'deployment' | 'environment' | string: An entity the metadata schema is requested for.
+
+## MetadataSchemaExportResult
+### Properties
+* **format**: 'inline' | 'link' | string: The export format for the schema
+* **value**: string: The result of the export operation.
 
 ## MetadataSchemaProperties
 ### Properties

@@ -13,6 +13,10 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.CostManagement/scheduledActions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function execute (Microsoft.CostManagement/scheduledActions@2022-04-01-preview)
+* **Resource**: Microsoft.CostManagement/scheduledActions
+* **ApiVersion**: 2022-04-01-preview
+
 ## FileDestination
 ### Properties
 * **fileFormats**: ('Csv' | string)[]: Destination of the view data. Currently only csv format is supported.

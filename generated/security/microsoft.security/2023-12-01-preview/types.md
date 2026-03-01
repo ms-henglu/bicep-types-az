@@ -24,6 +24,23 @@
 * **properties**: [SecurityContactProperties](#securitycontactproperties): Security contact data
 * **type**: 'Microsoft.Security/securityContacts' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function validate (Microsoft.Security/automations@2023-12-01-preview)
+* **Resource**: Microsoft.Security/automations
+* **ApiVersion**: 2023-12-01-preview
+* **Input**: [Automation](#automation)
+* **Output**: [AutomationValidationStatus](#automationvalidationstatus)
+
+## Automation
+### Properties
+* **etag**: string: Entity tag is used for comparing two or more entities from the same requested resource.
+* **id**: string (ReadOnly): Resource Id
+* **kind**: string: Kind of the resource
+* **location**: string: Location where the resource is stored
+* **name**: string (ReadOnly): Resource name
+* **properties**: [AutomationProperties](#automationproperties): Security automation data
+* **tags**: [Tags](#tags): A list of key value pairs that describe the resource.
+* **type**: string (ReadOnly): Resource type
+
 ## AutomationAction
 * **Discriminator**: actionType
 
@@ -78,6 +95,11 @@
 * **propertyJPath**: string: The JPath of the entity model property that should be checked.
 * **propertyType**: 'Boolean' | 'Integer' | 'Number' | 'String' | string: The data type of the compared operands (string, integer, floating point number or a boolean [true/false]]
 
+## AutomationValidationStatus
+### Properties
+* **isValid**: bool: Indicates whether the model is valid or not.
+* **message**: string: The validation message.
+
 ## NotificationsSource
 * **Discriminator**: sourceType
 
@@ -106,6 +128,11 @@
 ### Properties
 * **roles**: ('AccountAdmin' | 'Contributor' | 'Owner' | 'ServiceAdmin' | string)[]: Defines which RBAC roles will get email notifications from Microsoft Defender for Cloud. List of allowed RBAC roles:
 * **state**: 'Off' | 'On' | string: Defines whether to send email notifications from AMicrosoft Defender for Cloud to persons with specific RBAC roles on the subscription.
+
+## Tags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## Tags
 ### Properties

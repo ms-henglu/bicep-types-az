@@ -1,5 +1,5 @@
 Generating types for 'specification/resources/resource-manager/Microsoft.Resources/resources/readme.md'
-AutoRest code generation utility [cli version: 3.7.2; node: v22.21.1]
+AutoRest code generation utility [cli version: 3.7.2; node: v22.22.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
@@ -220,6 +220,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -370,6 +373,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -520,6 +526,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -670,6 +679,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -820,6 +832,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -970,6 +985,83 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.3.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.4.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.5.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.6.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.7.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.8.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.9.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.10.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.11.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.12.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.13.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.14.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.15.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.16.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.17.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.18.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.19.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.20.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.21.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.22.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.23.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.24.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.25.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.26.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.27.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.28.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.29.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.30.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.31.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.32.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.33.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.34.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.35.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.36.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.37.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.38.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.39.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.40.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.41.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.42.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.43.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.44.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.45.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.46.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.47.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.48.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.49.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.50.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.51.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.52.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.53.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.54.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.55.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.56.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.57.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.58.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.59.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.60.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.61.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.62.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.63.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.64.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.65.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.66.suppress which is deprecated and will be removed in the future.
+warning | DeprecatedConfig | Using directive.67.suppress which is deprecated and will be removed in the future.
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/SchemaMissingType | The schema 'BatchResponseStatus-result' with an undefined type and 'allOf'/'anyOf'/'oneOf' is a bit ambiguous. This has been auto-corrected to 'type:object'
+    - file:///home/runner/work/bicep-types-az/bicep-types-az/workflow-temp/azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Resources/resources/preview/2025-08-01-preview/batch.json:240:9
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Resources/batch': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Resources/batch': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1120,6 +1212,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1270,6 +1365,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1418,6 +1516,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1566,6 +1667,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1714,6 +1818,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1858,6 +1964,9 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/providers/Microsoft.Management/managementGroups/{groupId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -1998,6 +2107,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2134,6 +2245,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2270,6 +2383,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2406,6 +2521,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2542,6 +2659,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2678,6 +2797,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2814,6 +2935,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -2946,6 +3069,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -3078,6 +3203,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -3208,6 +3335,8 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/{resourceId}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -3337,6 +3466,8 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -3464,6 +3595,8 @@ warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this 
 warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}': Unable to process parameterized provider namespace "{resourceProviderNamespace}"
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | DeprecatedConfig | Using directive.0.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.1.suppress which is deprecated and will be removed in the future.
 warning | DeprecatedConfig | Using directive.2.suppress which is deprecated and will be removed in the future.
@@ -3592,4 +3725,6 @@ warning | Skipping path '/subscriptions/{subscriptionId}/resourcegroups/{resourc
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}/tagValues/{tagValue}': Unable to locate "/providers/" segment
 warning | Skipping path '/subscriptions/{subscriptionId}/tagNames/{tagName}': Unable to locate "/providers/" segment
 warning | Skipping path '/{policyAssignmentId}': Unable to locate "/providers/" segment
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister': Unable to find type segments
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register': Unable to find type segments
 warning | Unrecognized property type: any-object. Returning 'any'.

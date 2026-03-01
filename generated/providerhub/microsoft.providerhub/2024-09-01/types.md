@@ -147,6 +147,45 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations/skus' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkinManifest (Microsoft.ProviderHub/providerRegistrations@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations
+* **ApiVersion**: 2024-09-01
+* **Input**: [CheckinManifestParams](#checkinmanifestparams)
+* **Output**: [CheckinManifestInfo](#checkinmanifestinfo)
+
+## Function deleteResources (Microsoft.ProviderHub/providerRegistrations/resourceActions@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations/resourceActions
+* **ApiVersion**: 2024-09-01
+* **Input**: [ResourceManagementAction](#resourcemanagementaction)
+
+## Function generateManifest (Microsoft.ProviderHub/providerRegistrations@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations
+* **ApiVersion**: 2024-09-01
+* **Output**: [ResourceProviderManifest](#resourceprovidermanifest)
+
+## Function generateNewRegionFrontloadManifest (Microsoft.ProviderHub/providerRegistrations@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations
+* **ApiVersion**: 2024-09-01
+* **Input**: [FrontloadPayload](#frontloadpayload)
+* **Output**: [ResourceProviderManifest](#resourceprovidermanifest)
+
+## Function generateOperations (Microsoft.ProviderHub/providerRegistrations@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations
+* **ApiVersion**: 2024-09-01
+* **Output**: [OperationsDefinition](#operationsdefinition)[]
+
+## Function stop (Microsoft.ProviderHub/providerRegistrations/customRollouts@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations/customRollouts
+* **ApiVersion**: 2024-09-01
+
+## Function stop (Microsoft.ProviderHub/providerRegistrations/defaultRollouts@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations/defaultRollouts
+* **ApiVersion**: 2024-09-01
+
+## Function stop (Microsoft.ProviderHub/providerRegistrations/newRegionFrontloadRelease@2024-09-01)
+* **Resource**: Microsoft.ProviderHub/providerRegistrations/newRegionFrontloadRelease
+* **ApiVersion**: 2024-09-01
+
 ## AdditionalAuthorization
 ### Properties
 * **applicationId**: string
@@ -197,6 +236,18 @@
 * **dataAuthorizations**: [ApplicationDataAuthorization](#applicationdataauthorization)[]: The authorizations that determine the level of data access permissions on the specified resource types.
 * **providerAuthorization**: [ApplicationProviderAuthorization](#applicationproviderauthorization)
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Created' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'MovingResources' | 'NotSpecified' | 'RolloutInProgress' | 'Running' | 'Succeeded' | 'TransientFailure' | string (ReadOnly): The provisioning state.
+
+## CheckinManifestInfo
+### Properties
+* **commitId**: string: The commit id.
+* **isCheckedIn**: bool (Required): Whether the manifest is checked in.
+* **pullRequest**: string: The pull request.
+* **statusMessage**: string (Required): The status message.
+
+## CheckinManifestParams
+### Properties
+* **baselineArmManifestLocation**: string (Required): The baseline ARM manifest location supplied to the checkin manifest operation.
+* **environment**: string (Required): The environment supplied to the checkin manifest operation.
 
 ## CustomRolloutProperties
 ### Properties
@@ -374,6 +425,24 @@
 ### Properties
 * **endpointInformation**: [EndpointInformation](#endpointinformation)[]: The endpoint information.
 * **filterQuery**: string: The filter query.
+
+## FrontloadPayload
+### Properties
+* **properties**: [FrontloadPayloadProperties](#frontloadpayloadproperties) (Required): Properties of the frontload payload.
+
+## FrontloadPayloadProperties
+### Properties
+* **copyFromLocation**: string (Required): The copy from location.
+* **environmentType**: 'All' | 'Canary' | 'Fairfax' | 'Mooncake' | 'NotSpecified' | 'Prod' | string (Required): The environment type.
+* **excludeResourceTypes**: string[] (Required): The resource types to exclude.
+* **frontloadLocation**: string (Required): The frontload location.
+* **ignoreFields**: string[] (Required): The fields to ignore.
+* **includeResourceTypes**: string[] (Required): The resource types to include.
+* **operationType**: string (Required): The operation type.
+* **overrideEndpointLevelFields**: [FrontloadPayloadPropertiesOverrideEndpointLevelFields](#frontloadpayloadpropertiesoverrideendpointlevelfields) (Required): The endpoint level fields to override.
+* **overrideManifestLevelFields**: [FrontloadPayloadPropertiesOverrideManifestLevelFields](#frontloadpayloadpropertiesoverridemanifestlevelfields) (Required): The manifest level fields to override.
+* **providerNamespace**: string (Required): The provider namespace.
+* **serviceFeatureFlag**: 'Create' | 'DoNotCreate' | string (Required): The service feature flag.
 
 ## FrontloadPayloadPropertiesOrDefaultRolloutProperties
 ### Properties
@@ -642,6 +711,22 @@
 ### Properties
 * **allowNoncompliantCollectionResponse**: bool: Indicates whether a non compliance response is allowed for a LIST call
 
+## OperationsDefinition
+### Properties
+* **actionType**: 'Internal' | 'NotSpecified': The action type.
+* **display**: [OperationsDefinitionDisplay](#operationsdefinitiondisplay) (Required): Display information of the operation.
+* **isDataAction**: bool: Indicates whether the operation applies to data-plane.
+* **name**: string (Required): Name of the operation.
+* **origin**: 'NotSpecified' | 'System' | 'User': The origin.
+* **properties**: any: Anything
+
+## OperationsDefinitionDisplay
+### Properties
+* **description**: string (Required): The description.
+* **operation**: string (Required): The operation.
+* **provider**: string (Required): The provider.
+* **resource**: string (Required): The resource.
+
 ## OperationsPutContentProperties
 ### Properties
 * **contents**: [LocalizedOperationDefinition](#localizedoperationdefinition)[]: Operations content.
@@ -738,6 +823,17 @@
 * **maxChildResourceConsistencyJobLimit**: int: The max child resource consistency job limit.
 * **subscriptionId**: string: The subscription id.
 
+## ResourceManagementAction
+### Properties
+* **resources**: [ResourceManagementEntity](#resourcemanagemententity)[]: resource management action content.
+
+## ResourceManagementEntity
+### Properties
+* **homeTenantId**: string: The home tenant id.
+* **location**: string: The location.
+* **resourceId**: string (Required): The resource id.
+* **status**: string (ReadOnly): The operation status.
+
 ## ResourceProviderAuthorization
 ### Properties
 * **allowedThirdPartyExtensions**: [ThirdPartyExtension](#thirdpartyextension)[]: The allowed third party extensions.
@@ -787,6 +883,52 @@
 ### Properties
 * **enabled**: bool: Expedited rollout enabled?
 * **expeditedRolloutIntent**: 'Hotfix' | 'NotSpecified' | string: Expedited rollout intent.
+
+## ResourceProviderManifest
+### Properties
+* **capabilities**: [ResourceProviderCapabilities](#resourceprovidercapabilities)[]: The capabilities.
+* **crossTenantTokenValidation**: 'EnsureSecureValidation' | 'PassthroughInsecureToken' | string: The cross tenant token validation.
+* **enableTenantLinkedNotification**: bool: Whether tenant linked notification is enabled.
+* **featuresRule**: [ResourceProviderManifestFeaturesRule](#resourceprovidermanifestfeaturesrule): The features rule.
+* **globalNotificationEndpoints**: [ResourceProviderEndpoint](#resourceproviderendpoint)[]: The global notification endpoints.
+* **linkedNotificationRules**: [FanoutLinkedNotificationRule](#fanoutlinkednotificationrule)[]: The linked notification rules.
+* **management**: [ResourceProviderManifestManagement](#resourceprovidermanifestmanagement): The resource provider management.
+* **metadata**: any: The metadata.
+* **namespace**: string: The namespace.
+* **notifications**: [Notification](#notification)[]: The notifications.
+* **providerAuthentication**: [ResourceProviderManifestProviderAuthentication](#resourceprovidermanifestproviderauthentication): The provider authentication.
+* **providerAuthorizations**: [ResourceProviderAuthorization](#resourceproviderauthorization)[]: The provider authorizations.
+* **providerType**: 'AuthorizationFree' | 'External' | 'Hidden' | 'Internal' | 'LegacyRegistrationRequired' | 'NotSpecified' | 'RegistrationFree' | 'TenantOnly' | string: The provider type.
+* **providerVersion**: string: The provider version.
+* **requestHeaderOptions**: [ResourceProviderManifestRequestHeaderOptions](#resourceprovidermanifestrequestheaderoptions): The request header options.
+* **requiredFeatures**: string[]: The required features.
+* **reRegisterSubscriptionMetadata**: [ResourceProviderManifestReRegisterSubscriptionMetadata](#resourceprovidermanifestreregistersubscriptionmetadata): The re-register subscription metadata.
+* **resourceProviderAuthorizationRules**: [ResourceProviderAuthorizationRules](#resourceproviderauthorizationrules): The resource provider authorization rules.
+* **resourceTypes**: [ResourceType](#resourcetype)[]: The resource types.
+* **serviceName**: string: The service name.
+* **services**: [ResourceProviderService](#resourceproviderservice)[]: The services.
+
+## ResourceProviderManifestFeaturesRule
+### Properties
+* **requiredFeaturesPolicy**: 'All' | 'Any' | string (Required): The required feature policy.
+
+## ResourceProviderManifestManagement
+### Properties
+* **authorizationOwners**: string[]: The authorization owners.
+* **canaryManifestOwners**: string[]: List of manifest owners for canary.
+* **errorResponseMessageOptions**: [ResourceProviderManagementErrorResponseMessageOptions](#resourceprovidermanagementerrorresponsemessageoptions): Options for error response messages.
+* **expeditedRolloutMetadata**: [ResourceProviderManagementExpeditedRolloutMetadata](#resourceprovidermanagementexpeditedrolloutmetadata): Metadata for expedited rollout.
+* **expeditedRolloutSubmitters**: string[]: List of expedited rollout submitters.
+* **incidentContactEmail**: string: The incident contact email.
+* **incidentRoutingService**: string: The incident routing service.
+* **incidentRoutingTeam**: string: The incident routing team.
+* **manifestOwners**: string[]: The manifest owners.
+* **pcCode**: string: The profit center code for the subscription.
+* **profitCenterProgramId**: string: The profit center program id for the subscription.
+* **resourceAccessPolicy**: 'AcisActionAllowed' | 'AcisReadAllowed' | 'NotSpecified': The resource access policy.
+* **resourceAccessRoles**: [ResourceAccessRole](#resourceaccessrole)[]: The resource access roles.
+* **schemaOwners**: string[]: The schema owners.
+* **serviceTreeInfos**: [ServiceTreeInfo](#servicetreeinfo)[]: The service tree infos.
 
 ## ResourceProviderManifestPropertiesDstsConfiguration
 ### Properties
@@ -841,10 +983,58 @@
 * **preflightOptions**: ('ContinueDeploymentOnFailure' | 'DefaultValidationOnly' | 'None' | string)[]: The preflight options.
 * **preflightSupported**: bool: Whether preflight is supported.
 
+## ResourceProviderManifestProviderAuthentication
+### Properties
+* **allowedAudiences**: string[] (Required): The allowed audiences.
+
+## ResourceProviderManifestRequestHeaderOptions
+### Properties
+* **optInHeaders**: 'ClientGroupMembership' | 'ClientPrincipalNameEncoded' | 'MSIResourceIdEncoded' | 'ManagementGroupAncestorsEncoded' | 'NotSpecified' | 'PrivateLinkId' | 'PrivateLinkResourceId' | 'PrivateLinkVnetTrafficTag' | 'ResourceGroupLocation' | 'SignedAuxiliaryTokens' | 'SignedUserToken' | 'UnboundedClientGroupMembership' | string: The opt in headers.
+* **optOutHeaders**: 'NotSpecified' | 'SystemDataCreatedByLastModifiedBy' | string: The opt out headers.
+
+## ResourceProviderManifestReRegisterSubscriptionMetadata
+### Properties
+* **concurrencyLimit**: int: The concurrency limit.
+* **enabled**: bool (Required): Whether it's enabled or not.
+
 ## ResourceProviderService
 ### Properties
 * **serviceName**: string: The service name.
 * **status**: 'Active' | 'Inactive' | string: The status.
+
+## ResourceType
+### Properties
+* **additionalOptions**: 'ProtectedAsyncOperationPolling' | 'ProtectedAsyncOperationPollingAuditOnly' | string: The additional options.
+* **allowedUnauthorizedActions**: string[]: The allowed unauthorized actions.
+* **allowedUnauthorizedActionsExtensions**: [AllowedUnauthorizedActionsExtension](#allowedunauthorizedactionsextension)[]: The allowed unauthorized actions extensions.
+* **authorizationActionMappings**: [AuthorizationActionMapping](#authorizationactionmapping)[]: The authorization action mappings.
+* **crossTenantTokenValidation**: 'EnsureSecureValidation' | 'PassthroughInsecureToken' | string: The cross tenant token validation.
+* **defaultApiVersion**: string: The default api version.
+* **disallowedActionVerbs**: string[]: The disallowed action verbs.
+* **endpoints**: [ResourceProviderEndpoint](#resourceproviderendpoint)[]: The endpoints.
+* **extendedLocations**: [ExtendedLocationOptions](#extendedlocationoptions)[]: The extended locations.
+* **featuresRule**: [ResourceTypeFeaturesRule](#resourcetypefeaturesrule): The features rule.
+* **identityManagement**: [ResourceTypeIdentityManagement](#resourcetypeidentitymanagement): The identity management.
+* **linkedAccessChecks**: [LinkedAccessCheck](#linkedaccesscheck)[]: The linked access checks.
+* **linkedNotificationRules**: [LinkedNotificationRule](#linkednotificationrule)[]: The linked notification rules.
+* **linkedOperationRules**: [LinkedOperationRule](#linkedoperationrule)[]: The linked operation rules.
+* **loggingRules**: [LoggingRule](#loggingrule)[]: The logging rules.
+* **marketplaceType**: 'AddOn' | 'Bypass' | 'NotSpecified' | 'Store': The marketplace type.
+* **metadata**: any: The metadata.
+* **name**: string: The resource type name.
+* **notifications**: [Notification](#notification)[]: The notifications.
+* **quotaRule**: [QuotaRule](#quotarule): The quota rule.
+* **requestHeaderOptions**: [ResourceTypeRequestHeaderOptions](#resourcetyperequestheaderoptions): The request header options.
+* **requiredFeatures**: string[]: The required features.
+* **resourceDeletionPolicy**: 'Cascade' | 'Force' | 'NotSpecified' | string: The resource deletion policy.
+* **resourceProviderAuthorizationRules**: [ResourceProviderAuthorizationRules](#resourceproviderauthorizationrules): The resource provider authorization rules.
+* **resourceValidation**: 'NotSpecified' | 'ProfaneWords' | 'ReservedWords' | string: The resource validation.
+* **routingType**: 'BypassEndpointSelectionOptimization' | 'CascadeAuthorizedExtension' | 'CascadeExtension' | 'ChildFanout' | 'Default' | 'Extension' | 'Failover' | 'Fanout' | 'HostBased' | 'LocationBased' | 'LocationMapping' | 'ProxyOnly' | 'ServiceFanout' | 'Tenant' | string: The resource routing type.
+* **serviceTreeInfos**: [ServiceTreeInfo](#servicetreeinfo)[]: The service tree infos.
+* **skuLink**: string: The sku link.
+* **subscriptionStateRules**: [SubscriptionStateRule](#subscriptionstaterule)[]: The subscription state rules.
+* **templateDeploymentPolicy**: [ResourceTypeTemplateDeploymentPolicy](#resourcetypetemplatedeploymentpolicy): The template deployment policy.
+* **throttlingRules**: [ThrottlingRule](#throttlingrule)[]: The throttling rules.
 
 ## ResourceTypeEndpoint
 ### Properties
@@ -893,6 +1083,14 @@
 ### Properties
 * **request**: ('DoNotMergeExistingReadOnlyAndSecretProperties' | 'IncludeInternalMetadata' | 'NotSpecified' | string)[]: The request.
 * **response**: ('DoNotMergeExistingReadOnlyAndSecretProperties' | 'IncludeInternalMetadata' | 'NotSpecified' | string)[]: The response.
+
+## ResourceTypeFeaturesRule
+### Properties
+* **requiredFeaturesPolicy**: 'All' | 'Any' | string (Required): The required feature policy.
+
+## ResourceTypeIdentityManagement
+### Properties
+* **type**: 'Actor' | 'DelegatedResourceIdentity' | 'NotSpecified' | 'SystemAssigned' | 'UserAssigned' | string: The type.
 
 ## ResourceTypeOnBehalfOfToken
 ### Properties
@@ -1115,6 +1313,17 @@
 * **preflightSupported**: bool: Whether preflight is supported.
 
 ## ResourceTypeRegistrationPropertiesTemplateDeploymentPolicy
+### Properties
+* **capabilities**: 'Default' | 'Preflight' | string (Required): The capabilities.
+* **preflightNotifications**: 'None' | 'UnregisteredSubscriptions' | string: The preflight notifications.
+* **preflightOptions**: 'DeploymentRequests' | 'None' | 'RegisteredOnly' | 'TestOnly' | 'ValidationRequests' | string (Required): The preflight options.
+
+## ResourceTypeRequestHeaderOptions
+### Properties
+* **optInHeaders**: 'ClientGroupMembership' | 'ClientPrincipalNameEncoded' | 'MSIResourceIdEncoded' | 'ManagementGroupAncestorsEncoded' | 'NotSpecified' | 'PrivateLinkId' | 'PrivateLinkResourceId' | 'PrivateLinkVnetTrafficTag' | 'ResourceGroupLocation' | 'SignedAuxiliaryTokens' | 'SignedUserToken' | 'UnboundedClientGroupMembership' | string: The opt in headers.
+* **optOutHeaders**: 'NotSpecified' | 'SystemDataCreatedByLastModifiedBy' | string: The opt out headers.
+
+## ResourceTypeTemplateDeploymentPolicy
 ### Properties
 * **capabilities**: 'Default' | 'Preflight' | string (Required): The capabilities.
 * **preflightNotifications**: 'None' | 'UnregisteredSubscriptions' | string: The preflight notifications.

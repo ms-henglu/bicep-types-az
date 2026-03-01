@@ -77,10 +77,44 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Support/supportTickets/communications' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.Support/supportTickets@2025-06-01-preview)
+* **Resource**: Microsoft.Support/supportTickets
+* **ApiVersion**: 2025-06-01-preview
+* **Input**: [CheckNameAvailabilityInput](#checknameavailabilityinput)
+* **Output**: [CheckNameAvailabilityOutput](#checknameavailabilityoutput)
+
+## Function classifyProblems (Microsoft.Support/services@2025-06-01-preview)
+* **Resource**: Microsoft.Support/services
+* **ApiVersion**: 2025-06-01-preview
+* **Input**: [ProblemClassificationsClassificationInput](#problemclassificationsclassificationinput)
+* **Output**: [ProblemClassificationsClassificationOutput](#problemclassificationsclassificationoutput)
+
+## Function upload (Microsoft.Support/fileWorkspaces/files@2025-06-01-preview)
+* **Resource**: Microsoft.Support/fileWorkspaces/files
+* **ApiVersion**: 2025-06-01-preview
+* **Input**: [UploadFile](#uploadfile)
+
 ## ChatTranscriptDetailsProperties
 ### Properties
 * **messages**: [MessageProperties](#messageproperties)[]: List of chat transcript communication resources.
 * **startTime**: string (ReadOnly): Time in UTC (ISO 8601 format) when the chat began.
+
+## CheckNameAvailabilityInput
+### Properties
+* **name**: string (Required): The resource name to validate.
+* **type**: 'Microsoft.Support/communications' | 'Microsoft.Support/supportTickets' (Required): The type of resource.
+
+## CheckNameAvailabilityOutput
+### Properties
+* **message**: string (ReadOnly): The detailed error message describing why the name is not available.
+* **nameAvailable**: bool (ReadOnly): Indicates whether the name is available.
+* **reason**: string (ReadOnly): The reason why the name is not available.
+
+## ClassificationService
+### Properties
+* **displayName**: string (ReadOnly): Localized name of the azure service.
+* **resourceTypes**: string[]: List of applicable ARM resource types for this service.
+* **serviceId**: string (ReadOnly): Azure resource Id of the service.
 
 ## CommunicationDetailsProperties
 ### Properties
@@ -133,6 +167,24 @@
 ### Properties
 * **displayName**: string: Localized name of problem classification.
 * **secondaryConsentEnabled**: [SecondaryConsentEnabled](#secondaryconsentenabled)[]: This property indicates whether secondary consent is present for problem classification
+
+## ProblemClassificationsClassificationInput
+### Properties
+* **issueSummary**: string (Required): Natural language description of the customer’s issue.
+* **resourceId**: string: ARM resource Id of the resource that is having the issue.
+
+## ProblemClassificationsClassificationOutput
+### Properties
+* **problemClassificationResults**: [ProblemClassificationsClassificationResult](#problemclassificationsclassificationresult)[]: Set of problem classification objects classified.
+
+## ProblemClassificationsClassificationResult
+### Properties
+* **description**: string (ReadOnly): Description of the problem classification result.
+* **problemClassificationId**: string (ReadOnly): Identifier that may be used for support ticket creation.
+* **problemId**: string (ReadOnly): Identifier that may be used for solution discovery or some other purposes.
+* **relatedService**: [ClassificationService](#classificationservice): Related service.
+* **serviceId**: string (ReadOnly): Identifier of the service associated with this problem classification result.
+* **title**: string (ReadOnly): Title of the problem classification result.
 
 ## QuotaChangeRequest
 ### Properties
@@ -214,4 +266,9 @@
 ## TechnicalTicketDetails
 ### Properties
 * **resourceId**: string: This is the resource Id of the Azure service resource (For example: A virtual machine resource or an HDInsight resource) for which the support ticket is created.
+
+## UploadFile
+### Properties
+* **chunkIndex**: int: Index of the uploaded chunk (Index starts at 0)
+* **content**: string: File Content in base64 encoded format
 

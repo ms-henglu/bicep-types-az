@@ -1393,5 +1393,76 @@
     },
     "readableScopes": 8,
     "writableScopes": 8
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ConnectionUriProperties",
+    "properties": {
+      "projectId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Project Id associated with this connection"
+      },
+      "branchId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Branch Id associated with this connection"
+      },
+      "databaseName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "Database name associated with this connection"
+      },
+      "roleName": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "The role name used for authentication"
+      },
+      "endpointId": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 0,
+        "description": "the endpoint Id with this connection"
+      },
+      "isPooled": {
+        "type": {
+          "$ref": "#/52"
+        },
+        "flags": 0,
+        "description": "Indicates if the connection is pooled"
+      },
+      "connectionStringUri": {
+        "type": {
+          "$ref": "#/96"
+        },
+        "flags": 2,
+        "description": "connection uri returned for the database"
+      }
+    }
+  },
+  {
+    "$type": "StringType",
+    "sensitive": true
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getConnectionUri",
+    "resourceType": "Neon.Postgres/organizations/projects",
+    "apiVersion": "2025-03-01-preview",
+    "output": {
+      "$ref": "#/95"
+    },
+    "input": {
+      "$ref": "#/95"
+    }
   }
 ]

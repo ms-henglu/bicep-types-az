@@ -28,11 +28,28 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.VoiceServices/communicationsGateways/testLines' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.VoiceServices/locations@2023-09-01)
+* **Resource**: Microsoft.VoiceServices/locations
+* **ApiVersion**: 2023-09-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## ApiBridgeProperties
 ### Properties
 * **allowedAddressPrefixes**: string[]: The allowed source IP addresses or CIDR ranges for accessing the API Bridge
 * **configureApiBridge**: 'disabled' | 'enabled' | string: The activation state of the API Bridge for this Communications Gateway
 * **endpointFqdns**: string[] (ReadOnly): FQDNs for sending requests to the API Bridge endpoint
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is not available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## CommunicationsGatewayProperties
 ### Properties

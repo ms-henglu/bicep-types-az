@@ -172,6 +172,26 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.HybridNetwork/sites' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function addNetworkFabricControllerEndPoints (Microsoft.HybridNetwork/publishers/artifactStores@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/artifactStores
+* **ApiVersion**: 2024-04-15
+* **Input**: [ArtifactStoreNetworkFabricControllerEndPoints](#artifactstorenetworkfabriccontrollerendpoints)
+
+## Function approvePrivateEndPoints (Microsoft.HybridNetwork/publishers/artifactStores@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/artifactStores
+* **ApiVersion**: 2024-04-15
+* **Input**: [ArtifactStorePrivateEndPointsFormat](#artifactstoreprivateendpointsformat)
+
+## Function deleteNetworkFabricControllerEndPoints (Microsoft.HybridNetwork/publishers/artifactStores@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/artifactStores
+* **ApiVersion**: 2024-04-15
+* **Input**: [ArtifactStoreNetworkFabricControllerEndPoints](#artifactstorenetworkfabriccontrollerendpoints)
+
+## Function executeRequest (Microsoft.HybridNetwork/networkFunctions@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/networkFunctions
+* **ApiVersion**: 2024-04-15
+* **Input**: [ExecuteRequestParameters](#executerequestparameters)
+
 ## Function listCredential (Microsoft.HybridNetwork/publishers/artifactStores/artifactManifests@2024-04-15)
 * **Resource**: Microsoft.HybridNetwork/publishers/artifactStores/artifactManifests
 * **ApiVersion**: 2024-04-15
@@ -186,6 +206,35 @@
 * **Resource**: Microsoft.HybridNetwork/publishers/artifactStores
 * **ApiVersion**: 2024-04-15
 * **Output**: [ArtifactStorePrivateEndPointsListResult](#artifactstoreprivateendpointslistresult)
+
+## Function removePrivateEndPoints (Microsoft.HybridNetwork/publishers/artifactStores@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/artifactStores
+* **ApiVersion**: 2024-04-15
+* **Input**: [ArtifactStorePrivateEndPointsFormat](#artifactstoreprivateendpointsformat)
+
+## Function updateState (Microsoft.HybridNetwork/publishers/configurationGroupSchemas@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/configurationGroupSchemas
+* **ApiVersion**: 2024-04-15
+* **Input**: [ConfigurationGroupSchemaVersionUpdateState](#configurationgroupschemaversionupdatestate)
+* **Output**: [ConfigurationGroupSchemaVersionUpdateState](#configurationgroupschemaversionupdatestate)
+
+## Function updateState (Microsoft.HybridNetwork/publishers/networkFunctionDefinitionGroups/networkFunctionDefinitionVersions@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/networkFunctionDefinitionGroups/networkFunctionDefinitionVersions
+* **ApiVersion**: 2024-04-15
+* **Input**: [NetworkFunctionDefinitionVersionUpdateState](#networkfunctiondefinitionversionupdatestate)
+* **Output**: [NetworkFunctionDefinitionVersionUpdateState](#networkfunctiondefinitionversionupdatestate)
+
+## Function updateState (Microsoft.HybridNetwork/publishers/networkServiceDesignGroups/networkServiceDesignVersions@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/networkServiceDesignGroups/networkServiceDesignVersions
+* **ApiVersion**: 2024-04-15
+* **Input**: [NetworkServiceDesignVersionUpdateState](#networkservicedesignversionupdatestate)
+* **Output**: [NetworkServiceDesignVersionUpdateState](#networkservicedesignversionupdatestate)
+
+## Function updateState (Microsoft.HybridNetwork/publishers/artifactStores/artifactManifests@2024-04-15)
+* **Resource**: Microsoft.HybridNetwork/publishers/artifactStores/artifactManifests
+* **ApiVersion**: 2024-04-15
+* **Input**: [ArtifactManifestUpdateState](#artifactmanifestupdatestate)
+* **Output**: [ArtifactManifestUpdateState](#artifactmanifestupdatestate)
 
 ## ArmResourceDefinitionResourceElementTemplate
 ### Properties
@@ -229,6 +278,10 @@
 * **artifactManifestState**: 'Succeeded' | 'Unknown' | 'Uploaded' | 'Uploading' | 'Validating' | 'ValidationFailed' | string (ReadOnly): The artifact manifest state.
 * **artifacts**: [ManifestArtifactFormat](#manifestartifactformat)[]: The artifacts list.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Converging' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | string (ReadOnly): The provisioning state of the ArtifactManifest resource.
+
+## ArtifactManifestUpdateState
+### Properties
+* **artifactManifestState**: 'Succeeded' | 'Unknown' | 'Uploaded' | 'Uploading' | 'Validating' | 'ValidationFailed' | string: The artifact manifest state.
 
 ## ArtifactStoreNetworkFabricControllerEndPoints
 ### Properties
@@ -384,6 +437,10 @@
 * **schemaDefinition**: string: Name and value pairs that define the configuration value. It can be a well formed escaped JSON string.
 * **versionState**: 'Active' | 'Deprecated' | 'Preview' | 'Unknown' | 'Validating' | 'ValidationFailed' | string (ReadOnly): The configuration group schema version state.
 
+## ConfigurationGroupSchemaVersionUpdateState
+### Properties
+* **versionState**: 'Active' | 'Deprecated' | 'Preview' | 'Unknown' | 'Validating' | 'ValidationFailed' | string: The configuration group schema state.
+
 ## ConfigurationGroupValuePropertiesFormat
 * **Discriminator**: configurationType
 
@@ -465,6 +522,11 @@
 * **nextExpectedUpdateAt**: string: The next expected update of deployment status.
 * **resources**: [Resources](#resources): The resource related to the component resource.
 * **status**: 'Deployed' | 'Downloading' | 'Failed' | 'Installing' | 'Pending-Install' | 'Pending-Rollback' | 'Pending-Upgrade' | 'Reinstalling' | 'Rollingback' | 'Superseded' | 'Uninstalled' | 'Uninstalling' | 'Unknown' | 'Upgrading' | string: The status of the component resource.
+
+## ExecuteRequestParameters
+### Properties
+* **requestMetadata**: [RequestMetadata](#requestmetadata) (Required): The request metadata.
+* **serviceEndpoint**: string (Required): The endpoint of service to call.
 
 ## HelmArtifactProfile
 ### Properties
@@ -550,6 +612,10 @@
 * **networkFunctionType**: 'VirtualNetworkFunction' (Required): The network function type.
 
 
+## NetworkFunctionDefinitionVersionUpdateState
+### Properties
+* **versionState**: 'Active' | 'Deprecated' | 'Preview' | 'Unknown' | 'Validating' | 'ValidationFailed' | string: The network function definition version state. Only the 'Active' and 'Deprecated' states are allowed for updates. Other states are used for internal state transitioning.
+
 ## NetworkFunctionPropertiesFormat
 * **Discriminator**: configurationType
 
@@ -600,6 +666,10 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [NfviDetails](#nfvidetails)
+
+## NetworkServiceDesignVersionUpdateState
+### Properties
+* **versionState**: 'Active' | 'Deprecated' | 'Preview' | 'Unknown' | 'Validating' | 'ValidationFailed' | string: The network service design version state.
 
 ## NfviDetails
 ### Properties
@@ -668,6 +738,13 @@
 * **name**: string: The name of the replicaSet.
 * **namespace**: string: The namespace of the replicaSet.
 * **ready**: int: Number of ready pods.
+
+## RequestMetadata
+### Properties
+* **apiVersion**: string: The api version of the request.
+* **httpMethod**: 'Delete' | 'Get' | 'Patch' | 'Post' | 'Put' | 'Unknown' | string (Required): The http method of the request.
+* **relativePath**: string (Required): The relative path of the request.
+* **serializedBody**: string (Required): The serialized body of the request.
 
 ## ResourceElementTemplate
 * **Discriminator**: type

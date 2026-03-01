@@ -16,6 +16,10 @@
 * **type**: 'Microsoft.AzureFleet/fleets' (ReadOnly, DeployTimeConstant): The resource type
 * **zones**: string[]: Zones in which the Compute Fleet is available
 
+## Function cancel (Microsoft.AzureFleet/fleets@2025-07-01-preview)
+* **Resource**: Microsoft.AzureFleet/fleets
+* **ApiVersion**: 2025-07-01-preview
+
 ## AdditionalCapabilities
 ### Properties
 * **hibernationEnabled**: bool: The flag that enables or disables hibernation capability on the VM.

@@ -52,6 +52,33 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.RecoveryServices/vaults/backupstorageconfig' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function backup (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems
+* **ApiVersion**: 2016-12-01
+* **Input**: [BackupRequestResource](#backuprequestresource)
+
+## Function backupSecurityPIN (Microsoft.RecoveryServices/vaults@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults
+* **ApiVersion**: 2016-12-01
+* **Output**: [TokenInformation](#tokeninformation)
+
+## Function inquire (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers
+* **ApiVersion**: 2016-12-01
+
+## Function provisionInstantItemRecovery (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints
+* **ApiVersion**: 2016-12-01
+* **Input**: [ILRRequestResource](#ilrrequestresource)
+
+## Function refreshContainers (Microsoft.RecoveryServices/vaults/backupFabrics@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics
+* **ApiVersion**: 2016-12-01
+
+## Function revokeInstantItemRecovery (Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints@2016-12-01)
+* **Resource**: Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints
+* **ApiVersion**: 2016-12-01
+
 ## AzureWorkloadContainerExtendedInfo
 ### Properties
 * **hostServerName**: string: Host Os Name in case of Stand Alone and Cluster Name in case of distributed container.
@@ -95,6 +122,39 @@
 * **refreshedAt**: string: Last refresh time in the backup engine.
 * **usedDiskSpace**: int: Disk space used in the backup engine.
 
+## BackupRequest
+* **Discriminator**: objectType
+
+### Base Properties
+
+### AzureFileShareBackupRequest
+#### Properties
+* **objectType**: 'AzureFileShareBackupRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointExpiryTimeInUTC**: string: Backup copy will expire after the time specified (UTC).
+
+### AzureWorkloadBackupRequest
+#### Properties
+* **backupType**: 'CopyOnlyFull' | 'Differential' | 'Full' | 'Invalid' | 'Log' | string: Type of backup, viz. Full, Differential, Log or CopyOnlyFull
+* **enableCompression**: bool: Bool for Compression setting
+* **objectType**: 'AzureWorkloadBackupRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointExpiryTimeInUTC**: string: Backup copy will expire after the time specified (UTC).
+
+### IaasVMBackupRequest
+#### Properties
+* **objectType**: 'IaasVMBackupRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointExpiryTimeInUTC**: string: Backup copy will expire after the time specified (UTC).
+
+
+## BackupRequestResource
+### Properties
+* **eTag**: string: Optional ETag.
+* **id**: string (ReadOnly): Resource Id represents the complete path to the resource.
+* **location**: string: Resource location.
+* **name**: string (ReadOnly): Resource name associated with the resource.
+* **properties**: [BackupRequest](#backuprequest): BackupRequestResource properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
+
 ## BackupResourceConfig
 ### Properties
 * **storageModelType**: 'GeoRedundant' | 'Invalid' | 'LocallyRedundant' | string: Storage type
@@ -135,6 +195,36 @@ Failed | Succeeded
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ILRRequest
+* **Discriminator**: objectType
+
+### Base Properties
+
+### AzureFileShareProvisionILRRequest
+#### Properties
+* **objectType**: 'AzureFileShareProvisionILRRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointId**: string: Recovery point ID.
+* **sourceResourceId**: string: Source Storage account ARM Id
+
+### IaasVmilrRegistrationRequest
+#### Properties
+* **initiatorName**: string: iSCSI initiator name.
+* **objectType**: 'IaasVMILRRegistrationRequest' (Required): This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+* **recoveryPointId**: string: ID of the IaaS VM backup copy from where the files/folders have to be restored.
+* **renewExistingRegistration**: bool: Whether to renew existing registration with the iSCSI server.
+* **virtualMachineId**: string: Fully qualified ARM ID of the virtual machine whose the files / folders have to be restored.
+
+
+## ILRRequestResource
+### Properties
+* **eTag**: string: Optional ETag.
+* **id**: string (ReadOnly): Resource Id represents the complete path to the resource.
+* **location**: string: Resource location.
+* **name**: string (ReadOnly): Resource name associated with the resource.
+* **properties**: [ILRRequest](#ilrrequest): ILRRequestResource properties
+* **tags**: [ResourceTags](#resourcetags): Resource tags.
+* **type**: string (ReadOnly): Resource type represents the complete path of the form Namespace/ResourceType/ResourceType/...
 
 ## InquiryInfo
 ### Properties
@@ -294,6 +384,22 @@ Backup is VMAppContainer
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TokenInformation
+### Properties
+* **expiryTimeInUtcTicks**: int: Expiry time of token.
+* **securityPIN**: string: Security PIN
+* **token**: string: Token value.
 
 ## WorkloadInquiryDetails
 ### Properties

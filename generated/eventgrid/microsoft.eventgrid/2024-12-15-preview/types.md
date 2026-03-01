@@ -364,6 +364,102 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to the Event Grid resource.
 * **type**: 'Microsoft.EventGrid/verifiedPartners' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.EventGrid/partnerDestinations@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerDestinations
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [PartnerDestination](#partnerdestination)
+
+## Function activate (Microsoft.EventGrid/partnerTopics@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function authorizePartner (Microsoft.EventGrid/partnerConfigurations@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerConfigurations
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [Partner](#partner)
+* **Output**: [PartnerConfiguration](#partnerconfiguration)
+
+## Function deactivate (Microsoft.EventGrid/partnerTopics@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [PartnerTopic](#partnertopic)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/domains/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/domains/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/systemTopics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/namespaces/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/namespaces/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getDeliveryAttributes (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [DeliveryAttributeListResult](#deliveryattributelistresult)
+
+## Function getFullUrl (Microsoft.EventGrid/partnerNamespaces/channels@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerNamespaces/channels
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/domains/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/domains/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/systemTopics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/systemTopics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/namespaces/topics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/namespaces/topics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [SubscriptionFullUrl](#subscriptionfullurl)
+
+## Function getFullUrl (Microsoft.EventGrid/partnerTopics/eventSubscriptions@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerTopics/eventSubscriptions
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [EventSubscriptionFullUrl](#eventsubscriptionfullurl)
+
 ## Function listKeys (Microsoft.EventGrid/domains@2024-12-15-preview)
 * **Resource**: Microsoft.EventGrid/domains
 * **ApiVersion**: 2024-12-15-preview
@@ -388,6 +484,57 @@
 * **Resource**: Microsoft.EventGrid/topics
 * **ApiVersion**: 2024-12-15-preview
 * **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function reconcile (Microsoft.EventGrid/topics/networkSecurityPerimeterConfigurations@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/topics/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [NetworkSecurityPerimeterConfiguration](#networksecurityperimeterconfiguration)
+
+## Function reconcile (Microsoft.EventGrid/domains/networkSecurityPerimeterConfigurations@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains/networkSecurityPerimeterConfigurations
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [NetworkSecurityPerimeterConfiguration](#networksecurityperimeterconfiguration)
+
+## Function regenerateKey (Microsoft.EventGrid/domains@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/domains
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [DomainRegenerateKeyRequest](#domainregeneratekeyrequest)
+* **Output**: [DomainSharedAccessKeys](#domainsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/namespaces@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/namespaces
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [NamespaceRegenerateKeyRequest](#namespaceregeneratekeyrequest)
+* **Output**: [NamespaceSharedAccessKeys](#namespacesharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/namespaces/topics@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/namespaces/topics
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/partnerNamespaces@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerNamespaces
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [PartnerNamespaceRegenerateKeyRequest](#partnernamespaceregeneratekeyrequest)
+* **Output**: [PartnerNamespaceSharedAccessKeys](#partnernamespacesharedaccesskeys)
+
+## Function regenerateKey (Microsoft.EventGrid/topics@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/topics
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [TopicRegenerateKeyRequest](#topicregeneratekeyrequest)
+* **Output**: [TopicSharedAccessKeys](#topicsharedaccesskeys)
+
+## Function unauthorizePartner (Microsoft.EventGrid/partnerConfigurations@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/partnerConfigurations
+* **ApiVersion**: 2024-12-15-preview
+* **Input**: [Partner](#partner)
+* **Output**: [PartnerConfiguration](#partnerconfiguration)
+
+## Function validateCustomDomainOwnership (Microsoft.EventGrid/namespaces@2024-12-15-preview)
+* **Resource**: Microsoft.EventGrid/namespaces
+* **ApiVersion**: 2024-12-15-preview
+* **Output**: [CustomDomainOwnershipValidationResult](#customdomainownershipvalidationresult)
 
 ## AdvancedFilter
 * **Discriminator**: operatorType
@@ -576,6 +723,11 @@ The values under this TXT record must contain the expected TXT record value.
 * **type**: 'SystemAssigned' | 'UserAssigned' | string: The type of managed identity used. Can be either 'SystemAssigned' or 'UserAssigned'.
 * **userAssignedIdentity**: string: The user identity associated with the resource.
 
+## CustomDomainOwnershipValidationResult
+### Properties
+* **customDomainsForTopicsConfiguration**: [CustomDomainConfiguration](#customdomainconfiguration)[]: List of custom domain configurations for the namespace under topics configuration.
+* **customDomainsForTopicSpacesConfiguration**: [CustomDomainConfiguration](#customdomainconfiguration)[]: List of custom domain configurations for the namespace under topic spaces configuration.
+
 ## CustomJwtAuthenticationManagedIdentity
 ### Properties
 * **type**: 'SystemAssigned' | 'UserAssigned' | string (Required): The type of managed identity used. Can be either 'SystemAssigned' or 'UserAssigned'.
@@ -603,6 +755,10 @@ The values under this TXT record must contain the expected TXT record value.
 * **deadLetterDestination**: [DeadLetterDestination](#deadletterdestination): Information about the destination where events have to be delivered for the event subscription.
 Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during dead-lettering.
 * **identity**: [EventSubscriptionIdentity](#eventsubscriptionidentity): The identity to use when dead-lettering events.
+
+## DeliveryAttributeListResult
+### Properties
+* **value**: [DeliveryAttributeMapping](#deliveryattributemapping)[]: A collection of DeliveryAttributeMapping
 
 ## DeliveryAttributeMapping
 * **Discriminator**: type
@@ -663,6 +819,10 @@ subscriber to view different types of events that are published.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the Event Grid Domain Resource.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'SecuredByPerimeter' | string: This determines if traffic is allowed over public network. By default it is enabled.
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" />
+
+## DomainRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
 
 ## DomainSharedAccessKeys
 ### Properties
@@ -760,6 +920,10 @@ The format of this depends on the publisher of the events.
 Wildcard characters are not supported in this path.
 * **subjectEndsWith**: string: An optional string to filter events for an event subscription based on a resource path suffix.
 Wildcard characters are not supported in this path.
+
+## EventSubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
 
 ## EventSubscriptionIdentity
 ### Properties
@@ -1005,6 +1169,10 @@ You can further restrict to specific IPs by configuring <seealso cref="P:Microso
 * **topicsConfiguration**: [TopicsConfiguration](#topicsconfiguration): Topics configuration information for the namespace resource
 * **topicSpacesConfiguration**: [TopicSpacesConfiguration](#topicspacesconfiguration): Topic spaces configuration information for the namespace resource
 
+## NamespaceRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2.
+
 ## NamespaceSharedAccessKeys
 ### Properties
 * **key1**: string {sensitive}: Shared access key1 for the namespace.
@@ -1031,6 +1199,69 @@ Min event retention duration value is 1 day and max event retention duration val
 * **provisioningState**: 'Canceled' | 'CreateFailed' | 'Creating' | 'DeleteFailed' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'UpdatedFailed' | 'Updating' | string (ReadOnly): Provisioning state of the namespace topic.
 * **publisherType**: 'Custom' | string: Publisher type of the namespace topic.
 
+## NetworkSecurityPerimeterConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [NetworkSecurityPerimeterConfigurationProperties](#networksecurityperimeterconfigurationproperties): Properties of the network security perimeter configuration.
+* **type**: string (ReadOnly): Type of the resource.
+
+## NetworkSecurityPerimeterConfigurationIssues
+### Properties
+* **name**: string: Provisioning issue name.
+* **properties**: [NetworkSecurityPerimeterConfigurationIssuesProperties](#networksecurityperimeterconfigurationissuesproperties): Provisioning issue properties.
+
+## NetworkSecurityPerimeterConfigurationIssuesProperties
+### Properties
+* **description**: string: Provisioning issue description.
+* **issueType**: 'ConfigurationPropagationFailure' | 'MissingIdentityConfiguration' | 'MissingPerimeterConfiguration' | 'Other' | string: Provisioning issue type.
+* **severity**: 'Error' | 'Warning' | string: Provisioning issue severity.
+* **suggestedAccessRules**: string[]: Access rules that can be added to the same profile to remediate the issue.
+* **suggestedResourceIds**: string[]: ARM IDs of resources that can be associated to the same perimeter to remediate the issue.
+
+## NetworkSecurityPerimeterConfigurationProfile
+### Properties
+* **accessRules**: [NetworkSecurityPerimeterProfileAccessRule](#networksecurityperimeterprofileaccessrule)[]: List of inbound or outbound access rule setup on the nsp profile.
+* **accessRulesVersion**: string: Access rules version number for nsp profile.
+* **diagnosticSettingsVersion**: string: Diagnostic settings version number for nsp profile.
+* **enabledLogCategories**: string[]: Enabled log categories for nsp profile.
+* **name**: string: Nsp configuration profile name.
+
+## NetworkSecurityPerimeterConfigurationProperties
+### Properties
+* **networkSecurityPerimeter**: [NetworkSecurityPerimeterInfo](#networksecurityperimeterinfo): Perimeter info for nsp association.
+* **profile**: [NetworkSecurityPerimeterConfigurationProfile](#networksecurityperimeterconfigurationprofile): Nsp profile configuration, access rules and diagnostic settings.
+* **provisioningIssues**: [NetworkSecurityPerimeterConfigurationIssues](#networksecurityperimeterconfigurationissues)[]: Provisioning issues to reflect status when attempting to retrieve nsp profile configuration.
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string: Provisioning state to reflect configuration state and indicate status of nsp profile configuration retrieval.
+* **resourceAssociation**: [ResourceAssociation](#resourceassociation): Nsp association name and access mode of association.
+
+## NetworkSecurityPerimeterInfo
+### Properties
+* **id**: string: Arm id for network security perimeter.
+* **location**: string: Network security perimeter location.
+* **perimeterGuid**: string: Network security perimeter guid.
+
+## NetworkSecurityPerimeterProfileAccessRule
+### Properties
+* **fullyQualifiedArmId**: string: Fully Qualified Arm id for network security perimeter profile access rule.
+* **name**: string: Name for nsp access rule.
+* **properties**: [NetworkSecurityPerimeterProfileAccessRuleProperties](#networksecurityperimeterprofileaccessruleproperties): NSP access rule properties.
+* **type**: string: nsp access rule type.
+
+## NetworkSecurityPerimeterProfileAccessRuleProperties
+### Properties
+* **addressPrefixes**: string[]: Address prefixes.
+* **direction**: 'Inbound' | 'Outbound' | string: NSP access rule direction.
+* **emailAddresses**: string[]: List of email addresses.
+* **fullyQualifiedDomainNames**: string[]: Fully qualified domain names.
+* **networkSecurityPerimeters**: [NetworkSecurityPerimeterInfo](#networksecurityperimeterinfo)[]: Network security perimeters.
+* **phoneNumbers**: string[]: List of phone numbers.
+* **subscriptions**: [NetworkSecurityPerimeterSubscription](#networksecurityperimetersubscription)[]: List of subscriptions.
+
+## NetworkSecurityPerimeterSubscription
+### Properties
+* **id**: string: Subscription id.
+
 ## Partner
 ### Properties
 * **authorizationExpirationTimeInUtc**: string: Expiration time of the partner authorization. If this timer expires, any request from this partner to create, update or delete resources in subscriber's
@@ -1056,6 +1287,16 @@ not specified, the default is 7 days. Otherwise, allowed values are between 1 an
 * **properties**: [AzureADPartnerClientAuthenticationProperties](#azureadpartnerclientauthenticationproperties): AzureAD ClientAuthentication Properties
 
 
+## PartnerConfiguration
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **location**: string: Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerConfigurationProperties](#partnerconfigurationproperties): Properties of the partner configuration.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to the Event Grid resource.
+* **tags**: [PartnerConfigurationTags](#partnerconfigurationtags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
+
 ## PartnerConfigurationProperties
 ### Properties
 * **partnerAuthorization**: [PartnerAuthorization](#partnerauthorization): The details of authorized partners.
@@ -1065,6 +1306,21 @@ not specified, the default is 7 days. Otherwise, allowed values are between 1 an
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## PartnerConfigurationTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## PartnerDestination
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **location**: string (Required): Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerDestinationProperties](#partnerdestinationproperties): Properties of the Partner Destination.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to the Event Grid resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
 
 ## PartnerDestinationInfo
 * **Discriminator**: endpointType
@@ -1121,6 +1377,10 @@ or use the channel name in the header when matching to the partner topic. If non
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'SecuredByPerimeter' | string: This determines if traffic is allowed over public network. By default it is enabled.
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PartnerNamespaceProperties.InboundIpRules" />
 
+## PartnerNamespaceRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate (key1 or key2).
+
 ## PartnerNamespaceSharedAccessKeys
 ### Properties
 * **key1**: string: Shared access key1 for the partner namespace.
@@ -1131,6 +1391,17 @@ You can further restrict to specific IPs by configuring <seealso cref="P:Microso
 * **partnerRegistrationImmutableId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The immutableId of the corresponding partner registration.
 Note: This property is marked for deprecation and is not supported in any future GA API version
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the partner registration.
+
+## PartnerTopic
+### Properties
+* **id**: string (ReadOnly): Fully qualified identifier of the resource.
+* **identity**: [IdentityInfo](#identityinfo): Identity information for the Partner Topic resource.
+* **location**: string (Required): Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [PartnerTopicProperties](#partnertopicproperties): Properties of the Partner Topic.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to the Event Grid resource.
+* **tags**: [TrackedResourceTags](#trackedresourcetags): Tags of the resource.
+* **type**: string (ReadOnly): Type of the resource.
 
 ## PartnerTopicInfo
 ### Properties
@@ -1237,6 +1508,11 @@ by topic’s EventRetentionInDays value. The followings are examples of valid va
 If this time elapsed after a message has been received by the client and not transitioned into accepted (not processed), released or rejected,
 the message is available for redelivery. This is an optional field, where default is 60 seconds, minimum is 60 seconds and maximum is 300 seconds.
 
+## ResourceAssociation
+### Properties
+* **accessMode**: 'Audit' | 'Enforced' | 'Learning' | string: Network security perimeter access mode.
+* **name**: string: Association name
+
 ## ResourceMoveChangeHistory
 ### Properties
 * **azureSubscriptionId**: string: Azure subscription ID of the resource.
@@ -1300,6 +1576,10 @@ the message is available for redelivery. This is an optional field, where defaul
 * **queueName**: string: The name of the Storage queue under a storage account that is the destination of an event subscription.
 * **resourceId**: string: The Azure Resource ID of the storage account that contains the queue that is the destination of an event subscription.
 
+## SubscriptionFullUrl
+### Properties
+* **endpointUrl**: string: The URL that represents the endpoint of the destination of an event subscription.
+
 ## SubscriptionProperties
 ### Properties
 * **deliveryConfiguration**: [DeliveryConfiguration](#deliveryconfiguration): Information about the delivery configuration of the event subscription.
@@ -1346,6 +1626,10 @@ subscriber to view different types of events that are published.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Provisioning state of the topic.
 * **publicNetworkAccess**: 'Disabled' | 'Enabled' | 'SecuredByPerimeter' | string: This determines if traffic is allowed over public network. By default it is enabled. 
 You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" />
+
+## TopicRegenerateKeyRequest
+### Properties
+* **keyName**: string (Required): Key name to regenerate key1 or key2
 
 ## TopicsConfiguration
 ### Properties
@@ -1400,6 +1684,16 @@ This topic should reside in the same region where namespace is located.
 * **sourceResourceFormat**: string: Source resource format.
 * **supportedLocations**: string[]: List of locations supported by this topic type.
 * **supportedScopesForSource**: ('AzureSubscription' | 'ManagementGroup' | 'Resource' | 'ResourceGroup' | string)[]: Supported source scopes.
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## TrackedResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## TrackedResourceTags
 ### Properties

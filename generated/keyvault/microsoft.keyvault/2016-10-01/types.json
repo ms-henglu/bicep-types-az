@@ -1016,5 +1016,11 @@
     },
     "readableScopes": 0,
     "writableScopes": 8
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "purge",
+    "resourceType": "Microsoft.KeyVault/locations/deletedVaults",
+    "apiVersion": "2016-10-01"
   }
 ]

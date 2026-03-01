@@ -240,15 +240,97 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): List of key-value pairs.
 * **type**: 'Microsoft.Fabric.Admin/fabricLocations/storageSubSystems/storagePools/volumes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function createFromJson (Microsoft.Fabric.Admin/fabricLocations/scaleUnits@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnits
+* **ApiVersion**: 2016-05-01
+* **Input**: [CreateFromJsonScaleUnitParametersList](#createfromjsonscaleunitparameterslist)
+
+## Function PowerOff (Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances
+* **ApiVersion**: 2016-05-01
+
+## Function PowerOff (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+
+## Function PowerOn (Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances
+* **ApiVersion**: 2016-05-01
+
+## Function PowerOn (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+
+## Function Reboot (Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances
+* **ApiVersion**: 2016-05-01
+
+## Function Repair (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+* **Input**: [BareMetalNodeDescription](#baremetalnodedescription)
+
+## Function Restart (Microsoft.Fabric.Admin/fabricLocations/infraRoles@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/infraRoles
+* **ApiVersion**: 2016-05-01
+
+## Function scaleOut (Microsoft.Fabric.Admin/fabricLocations/scaleUnits@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnits
+* **ApiVersion**: 2016-05-01
+* **Input**: [ScaleOutScaleUnitParametersList](#scaleoutscaleunitparameterslist)
+
+## Function Shutdown (Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances
+* **ApiVersion**: 2016-05-01
+
+## Function Shutdown (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+
+## Function StartMaintenanceMode (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+
+## Function StopMaintenanceMode (Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes@2016-05-01)
+* **Resource**: Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes
+* **ApiVersion**: 2016-05-01
+
 ## ApplicationOperationResultModel
 ### Properties
 * **instances**: string[]: List of operation result instances.
 * **provisioningState**: string: Success or failure of operation.
 
+## BareMetalNodeDescription
+### Properties
+* **biosVersion**: string: Bios version of the physical machine.
+* **bmcIpv4Address**: string: BMC address of the physical machine.
+* **clusterName**: string: Name of the cluster.
+* **computerName**: string: Name of the computer.
+* **macAddress**: string: Name of the MAC address of the bare metal node.
+* **model**: string: Model of the physical machine.
+* **serialNumber**: string: Serial number of the physical machine.
+* **vendor**: string: Vendor of the physical machine.
+
 ## ComputeOperationResultModel
 ### Properties
 * **instances**: string[]: List of operation result instances.
 * **provisioningState**: string: Success or failure of operation.
+
+## CreateFromJsonScaleUnitParametersList
+### Properties
+* **clusterName**: string: Cluster name for the new scale unit.
+* **infrastructureNetwork**: [NetworkDefinitionParameter](#networkdefinitionparameter): The information associated with the infrastructure network that will be subdivided into subnets.
+* **netQosPriority**: int: The network QOS priority setting.
+* **physicalNodes**: [DeploymentJsonPhysicalNodeParameters](#deploymentjsonphysicalnodeparameters)[]: List of nodes in the scale unit.
+* **softwareBgpAsn**: string: The software ASN for the cluster's rack.
+* **storageNetwork**: [NetworkDefinitionParameter](#networkdefinitionparameter): The information associated with the storage network that will be subdivided into subnets.
+* **torSwitchBgpAsn**: string: The ASN for the cluster's rack TOR.
+* **torSwitchBgpPeerIp**: string[]: The list of IP addresses used for TOR communication.
+
+## DeploymentJsonPhysicalNodeParameters
+### Properties
+* **bmcIpAddress**: string: BMC address of the physical machine.
+* **name**: string: Computer name of the physical machine.
 
 ## EdgeGatewayModel
 ### Properties
@@ -347,6 +429,11 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## NetworkDefinitionParameter
+### Properties
+* **subnet**: string[]: The subnet IP mask in the example format 10.0.0.0/25.
+* **vlanId**: string[]: The Vlan ID of the subnet.
 
 ## NetworkOperationResultModel
 ### Properties
@@ -452,6 +539,16 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ScaleOutScaleUnitParameters
+### Properties
+* **bmcIpv4Address**: string: BMC address of the physical machine.
+* **computerName**: string: Computer name of the physical machine.
+
+## ScaleOutScaleUnitParametersList
+### Properties
+* **awaitStorageConvergence**: bool: Flag indicates if the operation should wait for storage to converge before returning.
+* **nodeList**: [ScaleOutScaleUnitParameters](#scaleoutscaleunitparameters)[]: List of nodes in the scale unit.
 
 ## ScaleUnitCapacity
 ### Properties

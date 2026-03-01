@@ -1170,15 +1170,24 @@
   },
   {
     "$type": "ObjectType",
-    "name": "ListBusinessProcessDevelopmentArtifactsResponse",
+    "name": "GetOrDeleteBusinessProcessDevelopmentArtifactRequest",
     "properties": {
-      "value": {
+      "name": {
         "type": {
-          "$ref": "#/108"
+          "$ref": "#/2"
         },
         "flags": 1,
-        "description": "The list of the business process development artifact."
+        "description": "The name of the business process development artifact."
       }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "deleteBusinessProcessDevelopmentArtifact",
+    "resourceType": "Microsoft.IntegrationSpaces/spaces/applications",
+    "apiVersion": "2023-11-14-preview",
+    "input": {
+      "$ref": "#/93"
     }
   },
   {
@@ -1201,7 +1210,7 @@
       },
       "properties": {
         "type": {
-          "$ref": "#/95"
+          "$ref": "#/96"
         },
         "flags": 0,
         "description": "The properties of the business process development artifact."
@@ -1228,21 +1237,21 @@
       },
       "businessProcessStages": {
         "type": {
-          "$ref": "#/96"
+          "$ref": "#/97"
         },
         "flags": 0,
         "description": "The business process stages."
       },
       "businessProcessMapping": {
         "type": {
-          "$ref": "#/97"
+          "$ref": "#/98"
         },
         "flags": 0,
         "description": "The business process mapping."
       },
       "trackingProfiles": {
         "type": {
-          "$ref": "#/107"
+          "$ref": "#/108"
         },
         "flags": 0,
         "description": "The tracking profile for the business process."
@@ -1278,14 +1287,14 @@
       },
       "businessProcess": {
         "type": {
-          "$ref": "#/99"
+          "$ref": "#/100"
         },
         "flags": 0,
         "description": "The business process reference."
       },
       "trackingDefinitions": {
         "type": {
-          "$ref": "#/106"
+          "$ref": "#/107"
         },
         "flags": 0,
         "description": "The tracking definitions."
@@ -1318,14 +1327,14 @@
     "properties": {
       "correlationContext": {
         "type": {
-          "$ref": "#/101"
+          "$ref": "#/102"
         },
         "flags": 0,
         "description": "The tracking correlation context."
       },
       "events": {
         "type": {
-          "$ref": "#/105"
+          "$ref": "#/106"
         },
         "flags": 0,
         "description": "The tracking events."
@@ -1386,7 +1395,7 @@
       },
       "properties": {
         "type": {
-          "$ref": "#/104"
+          "$ref": "#/105"
         },
         "flags": 0,
         "description": "The properties to be collected for event."
@@ -1401,7 +1410,7 @@
     "name": "TrackingEventDefinitionProperties",
     "properties": {},
     "additionalProperties": {
-      "$ref": "#/103"
+      "$ref": "#/104"
     }
   },
   {
@@ -1409,7 +1418,7 @@
     "name": "FlowTrackingDefinitionEvents",
     "properties": {},
     "additionalProperties": {
-      "$ref": "#/102"
+      "$ref": "#/103"
     }
   },
   {
@@ -1417,7 +1426,7 @@
     "name": "TrackingProfileDefinitionTrackingDefinitions",
     "properties": {},
     "additionalProperties": {
-      "$ref": "#/100"
+      "$ref": "#/101"
     }
   },
   {
@@ -1425,13 +1434,38 @@
     "name": "BusinessProcessDevelopmentArtifactPropertiesTrackingProfiles",
     "properties": {},
     "additionalProperties": {
-      "$ref": "#/98"
+      "$ref": "#/99"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "getBusinessProcessDevelopmentArtifact",
+    "resourceType": "Microsoft.IntegrationSpaces/spaces/applications",
+    "apiVersion": "2023-11-14-preview",
+    "output": {
+      "$ref": "#/95"
+    },
+    "input": {
+      "$ref": "#/93"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ListBusinessProcessDevelopmentArtifactsResponse",
+    "properties": {
+      "value": {
+        "type": {
+          "$ref": "#/111"
+        },
+        "flags": 1,
+        "description": "The list of the business process development artifact."
+      }
     }
   },
   {
     "$type": "ArrayType",
     "itemType": {
-      "$ref": "#/94"
+      "$ref": "#/95"
     }
   },
   {
@@ -1440,7 +1474,48 @@
     "resourceType": "Microsoft.IntegrationSpaces/spaces/applications",
     "apiVersion": "2023-11-14-preview",
     "output": {
-      "$ref": "#/93"
+      "$ref": "#/110"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "SaveOrValidateBusinessProcessDevelopmentArtifactRequest",
+    "properties": {
+      "name": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The name of the business process development artifact."
+      },
+      "properties": {
+        "type": {
+          "$ref": "#/96"
+        },
+        "flags": 0,
+        "description": "The properties of the business process development artifact."
+      }
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "saveBusinessProcessDevelopmentArtifact",
+    "resourceType": "Microsoft.IntegrationSpaces/spaces/applications",
+    "apiVersion": "2023-11-14-preview",
+    "output": {
+      "$ref": "#/95"
+    },
+    "input": {
+      "$ref": "#/113"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "validateBusinessProcessDevelopmentArtifact",
+    "resourceType": "Microsoft.IntegrationSpaces/spaces/applications",
+    "apiVersion": "2023-11-14-preview",
+    "input": {
+      "$ref": "#/113"
     }
   }
 ]

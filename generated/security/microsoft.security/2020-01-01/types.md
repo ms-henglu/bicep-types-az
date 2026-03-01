@@ -117,6 +117,23 @@
 * **properties**: [ServerVulnerabilityAssessmentProperties](#servervulnerabilityassessmentproperties) (ReadOnly): describes ServerVulnerabilityAssessment properties.
 * **type**: 'Microsoft.Security/serverVulnerabilityAssessments' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function activate (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function dismiss (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function resolve (Microsoft.Security/locations/alerts@2020-01-01)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2020-01-01
+
+## Function {jitNetworkAccessPolicyInitiateType} (Microsoft.Security/locations/jitNetworkAccessPolicies@2020-01-01)
+* **Resource**: Microsoft.Security/locations/jitNetworkAccessPolicies
+* **ApiVersion**: 2020-01-01
+* **Input**: [JitNetworkAccessPolicyInitiateRequest](#jitnetworkaccesspolicyinitiaterequest)
+
 ## AlertEntity
 ### Properties
 * **type**: string (ReadOnly): Type of entity
@@ -192,6 +209,22 @@
 * **publisher**: string (Required): The security solutions' image publisher
 * **securityFamily**: 'Ngfw' | 'SaasWaf' | 'Va' | 'Waf' | string (Required): The security family of the discovered solution
 * **sku**: string (Required): The security solutions' image sku
+
+## JitNetworkAccessPolicyInitiatePort
+### Properties
+* **allowedSourceAddressPrefix**: string: Source of the allowed traffic. If omitted, the request will be for the source IP address of the initiate request.
+* **endTimeUtc**: string (Required): The time to close the request in UTC
+* **number**: int {minValue: 0, maxValue: 65535} (Required)
+
+## JitNetworkAccessPolicyInitiateRequest
+### Properties
+* **justification**: string: The justification for making the initiate request
+* **virtualMachines**: [JitNetworkAccessPolicyInitiateVirtualMachine](#jitnetworkaccesspolicyinitiatevirtualmachine)[] (Required): A list of virtual machines & ports to open access for
+
+## JitNetworkAccessPolicyInitiateVirtualMachine
+### Properties
+* **id**: string (Required): Resource ID of the virtual machine that is linked to this policy
+* **ports**: [JitNetworkAccessPolicyInitiatePort](#jitnetworkaccesspolicyinitiateport)[] (Required): The ports to open for the resource with the `id`
 
 ## JitNetworkAccessPolicyProperties
 ### Properties

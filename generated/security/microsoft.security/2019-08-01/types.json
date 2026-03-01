@@ -3310,5 +3310,11 @@
     },
     "readableScopes": 8,
     "writableScopes": 0
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "dismiss",
+    "resourceType": "Microsoft.Security/iotSecuritySolutions/analyticsModels/aggregatedAlerts",
+    "apiVersion": "2019-08-01"
   }
 ]

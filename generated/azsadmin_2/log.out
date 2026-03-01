@@ -1,5 +1,5 @@
 Generating types for 'specification/azsadmin/resource-manager/commerce/readme.md'
-AutoRest code generation utility [cli version: 3.7.2; node: v22.21.1]
+AutoRest code generation utility [cli version: 3.7.2; node: v22.22.0]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
 warning | SkippedSemanticValidation | Semantic validation was skipped.
@@ -12,3 +12,4 @@ warning | PreCheck/SchemaMissingType | The schema 'OperationList' with an undefi
 warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
 warning | Skipping SubscriberUsageAggregates_List due to required query parameter "reportedStartTime"
 warning | Skipping SubscriberUsageAggregates_List due to required query parameter "reportedEndTime"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/Microsoft.Commerce.Admin/updateEncryption': Unable to find type segments
