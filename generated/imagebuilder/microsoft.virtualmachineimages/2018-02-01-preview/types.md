@@ -12,6 +12,10 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.VirtualMachineImages/imageTemplates' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function run (Microsoft.VirtualMachineImages/imageTemplates@2018-02-01-preview)
+* **Resource**: Microsoft.VirtualMachineImages/imageTemplates
+* **ApiVersion**: 2018-02-01-preview
+
 ## ImageTemplateCustomizer
 * **Discriminator**: type
 

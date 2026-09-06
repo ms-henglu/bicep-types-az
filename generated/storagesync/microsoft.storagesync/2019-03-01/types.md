@@ -62,6 +62,71 @@
 * **properties**: [WorkflowProperties](#workflowproperties) (ReadOnly): Workflow properties.
 * **type**: 'Microsoft.StorageSync/storageSyncServices/workflows' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function abort (Microsoft.StorageSync/storageSyncServices/workflows@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/workflows
+* **ApiVersion**: 2019-03-01
+
+## Function checkNameAvailability (Microsoft.StorageSync/locations@2019-03-01)
+* **Resource**: Microsoft.StorageSync/locations
+* **ApiVersion**: 2019-03-01
+* **Input**: [CheckNameAvailabilityParameters](#checknameavailabilityparameters)
+* **Output**: [CheckNameAvailabilityResult](#checknameavailabilityresult)
+
+## Function postbackup (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [BackupRequest](#backuprequest)
+* **Output**: [PostBackupResponse](#postbackupresponse)
+
+## Function postrestore (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [PostRestoreRequest](#postrestorerequest)
+
+## Function prebackup (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [BackupRequest](#backuprequest)
+
+## Function prerestore (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [PreRestoreRequest](#prerestorerequest)
+
+## Function recallAction (Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [RecallActionParameters](#recallactionparameters)
+
+## Function restoreheartbeat (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+
+## Function triggerChangeDetection (Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints
+* **ApiVersion**: 2019-03-01
+* **Input**: [TriggerChangeDetectionParameters](#triggerchangedetectionparameters)
+
+## Function triggerRollover (Microsoft.StorageSync/storageSyncServices/registeredServers@2019-03-01)
+* **Resource**: Microsoft.StorageSync/storageSyncServices/registeredServers
+* **ApiVersion**: 2019-03-01
+* **Input**: [TriggerRolloverRequest](#triggerrolloverrequest)
+
+## BackupRequest
+### Properties
+* **azureFileShare**: string: Azure File Share.
+
+## CheckNameAvailabilityParameters
+### Properties
+* **name**: string (Required): The name to check for availability
+* **type**: 'Microsoft.StorageSync/storageSyncServices' (Required): The resource type. Must be set to Microsoft.StorageSync/storageSyncServices
+
+## CheckNameAvailabilityResult
+### Properties
+* **message**: string (ReadOnly): Gets an error message explaining the Reason value in more detail.
+* **nameAvailable**: bool (ReadOnly): Gets a boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or invalid and cannot be used.
+* **reason**: 'AlreadyExists' | 'Invalid' (ReadOnly): Gets the reason that a Storage Sync Service name could not be used. The Reason element is only returned if NameAvailable is false.
+
 ## CloudEndpointCreateParametersPropertiesOrCloudEndpointProperties
 ### Properties
 * **azureFileShareName**: string: Azure file share name
@@ -79,6 +144,42 @@
 * **errorCode**: int (ReadOnly): Error code (HResult)
 * **persistentCount**: int (ReadOnly): Count of persistent files not syncing with the specified error code
 * **transientCount**: int (ReadOnly): Count of transient files not syncing with the specified error code
+
+## PostBackupResponse
+### Properties
+* **backupMetadata**: [PostBackupResponseProperties](#postbackupresponseproperties): Post Backup Response Properties
+
+## PostBackupResponseProperties
+### Properties
+* **cloudEndpointName**: string (ReadOnly): cloud endpoint Name.
+
+## PostRestoreRequest
+### Properties
+* **azureFileShareUri**: string: Post Restore Azure file share uri.
+* **failedFileList**: string: Post Restore Azure failed file list.
+* **partition**: string: Post Restore partition.
+* **replicaGroup**: string: Post Restore replica group.
+* **requestId**: string: Post Restore request id.
+* **restoreFileSpec**: [RestoreFileSpec](#restorefilespec)[]: Post Restore restore file spec array.
+* **sourceAzureFileShareUri**: string: Post Restore Azure source azure file share uri.
+* **status**: string: Post Restore Azure status.
+
+## PreRestoreRequest
+### Properties
+* **azureFileShareUri**: string: Pre Restore Azure file share uri.
+* **backupMetadataPropertyBag**: string: Pre Restore backup metadata property bag.
+* **partition**: string: Pre Restore partition.
+* **pauseWaitForSyncDrainTimePeriodInSeconds**: int: Pre Restore pause wait for sync drain time period in seconds.
+* **replicaGroup**: string: Pre Restore replica group.
+* **requestId**: string: Pre Restore request id.
+* **restoreFileSpec**: [RestoreFileSpec](#restorefilespec)[]: Pre Restore restore file spec array.
+* **sourceAzureFileShareUri**: string: Pre Restore Azure source azure file share uri.
+* **status**: string: Pre Restore Azure status.
+
+## RecallActionParameters
+### Properties
+* **pattern**: string: Pattern of the files.
+* **recallPath**: string: Recall path.
 
 ## RegisteredServerCreateParametersPropertiesOrRegisteredServerProperties
 ### Properties
@@ -101,6 +202,11 @@
 * **serverRole**: string: Registered Server serverRole
 * **serviceLocation**: string (ReadOnly): Service Location
 * **storageSyncServiceUid**: string (ReadOnly): Registered Server storageSyncServiceUid
+
+## RestoreFileSpec
+### Properties
+* **isdir**: bool (ReadOnly): Restore file spec isdir
+* **path**: string: Restore file spec path
 
 ## ServerEndpointCreateParametersPropertiesOrServerEndpointProperties
 ### Properties
@@ -156,6 +262,16 @@
 * **lastSyncTimestamp**: string (ReadOnly): Last sync timestamp
 * **persistentFilesNotSyncingCount**: int (ReadOnly): Count of persistent files not syncing. Reserved for future use.
 * **transientFilesNotSyncingCount**: int (ReadOnly): Count of transient files not syncing. Reserved for future use.
+
+## TriggerChangeDetectionParameters
+### Properties
+* **changeDetectionMode**: 'Default' | 'Recursive' | string: Change Detection Mode. Applies to a directory specified in directoryPath parameter.
+* **directoryPath**: string: Relative path to a directory Azure File share for which change detection is to be performed.
+* **paths**: string[]: Array of relative paths on the Azure File share to be included in the change detection. Can be files and directories.
+
+## TriggerRolloverRequest
+### Properties
+* **serverCertificate**: string: Certificate Data
 
 ## WorkflowProperties
 ### Properties

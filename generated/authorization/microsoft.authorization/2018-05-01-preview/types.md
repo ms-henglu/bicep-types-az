@@ -59,6 +59,30 @@
 * **reminderNotificationsEnabled**: bool (WriteOnly): Flag to indicate whether sending reminder emails to reviewers are enabled.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleSettings' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function acceptRecommendations (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2018-05-01-preview
+
+## Function applyDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2018-05-01-preview
+
+## Function resetDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2018-05-01-preview
+
+## Function sendReminders (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2018-05-01-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions
+* **ApiVersion**: 2018-05-01-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2018-05-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2018-05-01-preview
+
 ## AccessReviewActorIdentity
 ### Properties
 * **principalId**: string (ReadOnly): The identity id

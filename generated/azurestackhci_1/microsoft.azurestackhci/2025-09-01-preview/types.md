@@ -225,6 +225,32 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureStackHCI/virtualNetworks/subnets' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function pause (Microsoft.AzureStackHCI/virtualMachineInstances@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-09-01-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachineInstances@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-09-01-preview
+
+## Function save (Microsoft.AzureStackHCI/virtualMachineInstances@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-09-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachineInstances@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-09-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachineInstances@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2025-09-01-preview
+
+## Function upload (Microsoft.AzureStackHCI/virtualHardDisks@2025-09-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualHardDisks
+* **ApiVersion**: 2025-09-01-preview
+* **Input**: [VirtualHardDiskUploadRequest](#virtualharddiskuploadrequest)
+* **Output**: [VirtualHardDiskUploadResponse](#virtualharddiskuploadresponse)
+
 ## AttestationStatusProperties
 ### Properties
 * **attestationCertValidated**: 'Invalid' | 'Unknown' | 'Valid' | string (ReadOnly): The status of whether attestation certificate is validated.
@@ -583,7 +609,7 @@
 
 ## NatGatewayProperties
 ### Properties
-* **inboundNATRules**: [InboundNATRule](#inboundnatrule)[]: List of inbound NAT rules. InboundNATRules can only be set after the NAT Gateway has been associated with a vnet
+* **inboundNATRules**: [InboundNATRule](#inboundnatrule)[]: List of inbound NAT rules. InboundNATRules can only be set after the NAT Gateway has been associated with a vnet. Removed in 2026-04-01-preview; use InboundRule Child resource instead.
 * **provisioningState**: 'Accepted' | 'Canceled' | 'Deleting' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): Provisioning state of the public IP
 * **publicIPAddresses**: [PublicIPAddressArmReference](#publicipaddressarmreference)[]: List of public ip addresses that the gateway can use for NAT.
 * **status**: [NatGatewayStatus](#natgatewaystatus) (ReadOnly): The observed state of Nat Gateway
@@ -872,6 +898,15 @@
 ### Properties
 * **operationId**: string: The ID of the operation performed on the virtual hard disk
 * **status**: 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): The status of the operation performed on the virtual hard disk [Succeeded, Failed, InProgress]
+
+## VirtualHardDiskUploadRequest
+### Properties
+* **azureManagedDiskUploadUrl**: string {sensitive} (Required): The Azure managed disk SAS URL to upload the virtual hard disk to.
+
+## VirtualHardDiskUploadResponse
+### Properties
+* **uploadStatus**: [VirtualHardDiskUploadStatus](#virtualharddiskuploadstatus): The upload status of the virtual hard disk
+* **virtualHardDiskId**: string: The Azure Resource ID for a Virtual Hard Disk.
 
 ## VirtualHardDiskUploadStatus
 ### Properties

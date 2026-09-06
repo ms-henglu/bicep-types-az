@@ -75,7 +75,7 @@ resource exampleResource 'Microsoft.Automation/automationAccounts/connections@20
     }
     fieldDefinitionValues: {
       AutomationCertificateName: 'mysCertificateName'
-      SubscriptionID: 'subid'
+      SubscriptionID: 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
     }
   }
 }
@@ -356,10 +356,10 @@ resource exampleResource 'Microsoft.Automation/automationAccounts/runtimeEnviron
   location: 'East US 2'
   properties: {
     defaultPackages: {
-      Az: '8.3.0'
+      Az: '12.3.0'
     }
     runtime: {
-      version: '7.1'
+      version: '7.4'
       language: 'PowerShell'
     }
   }

@@ -1,0 +1,508 @@
+# Oracle.Database
+  
+> [!NOTE]
+> The code samples in this document are generated from API usage examples contributed by Resource Providers in their [Azure Rest API specifications](https://github.com/Azure/azure-rest-api-specs). Any issues should be reported and addressed in the source.
+
+
+## oracle.database/autonomousdatabases
+
+Create Autonomous Database
+```bicep
+resource exampleResource 'Oracle.Database/autonomousDatabases@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    adminPassword: '********'
+    characterSet: 'AL32UTF8'
+    computeCount: 2
+    computeModel: 'ECPU'
+    dataBaseType: 'Regular'
+    dataStorageSizeInTbs: 1
+    dbVersion: '18.4.0.0'
+    displayName: 'example_autonomous_databasedb1'
+    ncharacterSet: 'AL16UTF16'
+    subnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1'
+    vnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1'
+  }
+  tags: {
+    tagK1: 'tagV1'
+  }
+}
+```
+
+Create clone Autonomous Database
+```bicep
+resource exampleResource 'Oracle.Database/autonomousDatabases@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    adminPassword: '********'
+    characterSet: 'AL32UTF8'
+    cloneType: 'Full'
+    computeCount: 2
+    computeModel: 'ECPU'
+    dataBaseType: 'Clone'
+    dataStorageSizeInTbs: 1
+    displayName: 'example_autonomous_databasedb1_clone'
+    ncharacterSet: 'AL16UTF16'
+    sourceId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/autonomousDatabases/databasedb1'
+    subnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1'
+    vnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1'
+  }
+  tags: {
+    tagK1: 'tagV1'
+  }
+}
+```
+
+## oracle.database/autonomousdatabases/autonomousdatabasebackups
+
+Create Autonomous Database Backup.
+```bicep
+resource exampleResource 'Oracle.Database/autonomousDatabases/autonomousDatabaseBackups@2026-06-01' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    autonomousDatabaseOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    displayName: 'Nightly Backup'
+    retentionPeriodInDays: 365
+  }
+}
+```
+
+## oracle.database/cloudexadatainfrastructures
+
+Create Exadata Infrastructure
+```bicep
+resource exampleResource 'Oracle.Database/cloudExadataInfrastructures@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    computeCount: 100
+    displayName: 'infra 1'
+    shape: 'EXADATA.X9M'
+    storageCount: 10
+  }
+  tags: {
+    tagK1: 'tagV1'
+  }
+  zones: [
+    '1'
+  ]
+}
+```
+
+## oracle.database/cloudvmclusters
+
+Create VM Cluster
+```bicep
+resource exampleResource 'Oracle.Database/cloudVmClusters@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    backupSubnetCidr: '172.17.5.0/24'
+    cloudExadataInfrastructureId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/cloudExadataInfrastructures/infra1'
+    clusterName: 'cluster1'
+    cpuCoreCount: 2
+    dataCollectionOptions: {
+      isDiagnosticsEventsEnabled: false
+      isHealthMonitoringEnabled: false
+      isIncidentLogsEnabled: false
+    }
+    dataStoragePercentage: 100
+    dataStorageSizeInTbs: 1000
+    dbNodeStorageSizeInGbs: 1000
+    dbServers: [
+      'ocid1..aaaa'
+    ]
+    displayName: 'cluster 1'
+    domain: 'domain1'
+    giVersion: '19.0.0.0'
+    hostname: 'hostname1'
+    isLocalBackupEnabled: false
+    isSparseDiskgroupEnabled: false
+    licenseModel: 'LicenseIncluded'
+    memorySizeInGbs: 1000
+    nsgCidrs: [
+      {
+        destinationPortRange: {
+          max: 1522
+          min: 1520
+        }
+        source: '10.0.0.0/16'
+      }
+      {
+        source: '10.10.0.0/24'
+      }
+    ]
+    ocpuCount: 3
+    scanListenerPortTcp: 1050
+    scanListenerPortTcpSsl: 1025
+    sshPublicKeys: [
+      'ssh-key 1'
+    ]
+    subnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1'
+    timeZone: '2026-04-01T10:00:00Z'
+    vnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1'
+  }
+  tags: {
+    tagK1: 'tagV1'
+  }
+}
+```
+
+## oracle.database/cloudvmclusters/virtualnetworkaddresses
+
+Create Virtual Network Address
+```bicep
+resource exampleResource 'Oracle.Database/cloudVmClusters/virtualNetworkAddresses@2026-06-01' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    ipAddress: '192.168.0.1'
+    vmOcid: 'ocid1..aaaa'
+  }
+}
+```
+
+## oracle.database/dbsystems
+
+DbSystems_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/dbSystems@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    adminPassword: '********'
+    characterSet: 'example'
+    clusterName: 'puw'
+    computeCount: 10
+    computeModel: 'ECPU'
+    dataCollectionOptions: {
+      isDiagnosticsEventsEnabled: true
+      isHealthMonitoringEnabled: true
+      isIncidentLogsEnabled: true
+    }
+    databaseEdition: 'StandardEdition'
+    dbSystemOptions: {
+      storageManagement: 'LVM'
+    }
+    dbVersion: 'example'
+    diskRedundancy: 'High'
+    displayName: 'resource1'
+    domain: 'l'
+    gridImageOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    hostname: 'b'
+    initialDataStorageSizeInGb: 40
+    licenseModel: 'LicenseIncluded'
+    lifecycleState: 'Provisioning'
+    ncharacterSet: 'fkdieg'
+    networkAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/networkAnchors/networkanchor1'
+    nodeCount: 11
+    ocid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    pdbName: 'resource1'
+    resourceAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/resourceAnchors/anchor1'
+    shape: 'example'
+    source: 'None'
+    sshPublicKeys: [
+      'example'
+    ]
+    storageVolumePerformanceMode: 'Balanced'
+    timeZone: '2026-06-01T00:00:00Z'
+  }
+  tags: {
+    key1855: 'hczjcgfrxqk'
+  }
+  zones: [
+    'example'
+  ]
+}
+```
+
+## oracle.database/exadbvmclusters
+
+ExadbVmClusters_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/exadbVmClusters@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    backupSubnetCidr: 'example'
+    backupSubnetOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    clusterName: 'lnmm'
+    dataCollectionOptions: {
+      isDiagnosticsEventsEnabled: true
+      isHealthMonitoringEnabled: true
+      isIncidentLogsEnabled: true
+    }
+    displayName: 'resource1'
+    domain: 'tzc'
+    enabledEcpuCount: 0
+    exascaleDbStorageVaultId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/exascaleDbStorageVaults/vault1'
+    gridImageOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    gridImageType: 'ReleaseUpdate'
+    hostname: 'resource1'
+    iormConfigCache: {
+      dbPlans: [
+        {
+          dbName: 'db1'
+          flashCacheLimit: 'none'
+          share: 32
+        }
+      ]
+      lifecycleDetails: 'Disabled'
+      lifecycleState: 'Disabled'
+      objective: 'LowLatency'
+    }
+    licenseModel: 'LicenseIncluded'
+    lifecycleState: 'Provisioning'
+    nodeCount: 5
+    nsgCidrs: [
+      {
+        destinationPortRange: {
+          max: 1522
+          min: 1520
+        }
+        source: '10.0.0.0/16'
+      }
+    ]
+    ocid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    privateZoneOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    scanDnsRecordId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    scanListenerPortTcp: 29
+    scanListenerPortTcpSsl: 6
+    shape: 'kwxhzzn'
+    shapeAttribute: 'SMART_STORAGE'
+    snapshotFileSystemStorage: {
+      totalSizeInGbs: 27
+    }
+    sshPublicKeys: [
+      'ocw'
+    ]
+    subnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1'
+    subnetOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    systemVersion: 'example'
+    timeZone: '2026-06-01T00:00:00Z'
+    totalEcpuCount: 33
+    totalFileSystemStorage: {
+      totalSizeInGbs: 27
+    }
+    vmFileSystemStorage: {
+      totalSizeInGbs: 27
+    }
+    vnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1'
+    zoneOcid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+  }
+  tags: {
+    key9568: 'fwg'
+  }
+  zones: [
+    'uwwf'
+  ]
+}
+```
+
+## oracle.database/exascaledbstoragevaults
+
+ExascaleDbStorageVaults_Create_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/exascaleDbStorageVaults@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    description: 'example'
+    additionalFlashCacheInPercent: 0
+    autoscaleLimitInGbs: 10
+    displayName: 'resource1'
+    exadataInfrastructureId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/cloudExadataInfrastructures/infra1'
+    highCapacityDatabaseStorage: {
+      availableSizeInGbs: 26
+      totalSizeInGbs: 18
+    }
+    highCapacityDatabaseStorageInput: {
+      totalSizeInGbs: 24
+    }
+    isAutoscaleEnabled: true
+    lifecycleState: 'Provisioning'
+    ocid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    timeZone: '2026-06-01T00:00:00Z'
+  }
+  tags: {
+    key4308: 'example'
+  }
+  zones: [
+    'zsw'
+  ]
+}
+```
+
+## oracle.database/goldengateconnections
+
+GoldenGateConnections_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/goldenGateConnections@2026-06-01' = {
+  name: 'example'
+  location: 'rtnrfzgdo'
+  properties: {
+    compartmentId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    connectionType: 'ConnectionBaseProperties'
+    displayName: 'resource1'
+    doesUseSecretIds: true
+    keyId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    lifecycleState: 'CREATING'
+    networkAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/networkAnchors/networkanchor1'
+    ocid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    resourceAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/resourceAnchors/anchor1'
+    routingMethod: 'SHARED_SERVICE_ENDPOINT'
+    vaultId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+  }
+  tags: {
+    key7255: 'example'
+  }
+  zones: [
+    'example'
+  ]
+}
+```
+
+## oracle.database/goldengatedeployments
+
+GoldenGateDeployments_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/goldenGateDeployments@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    backupSchedule: {
+      bucketName: 'resource1'
+      compartmentId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+      frequencyBackupScheduled: 'Daily'
+      isMetadataOnly: true
+      namespaceName: 'qif'
+      timeBackupScheduled: '2026-06-01T00:00:00Z'
+    }
+    category: 'DataReplication'
+    compartment: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    cpuCoreCount: 18
+    deploymentType: 'Ogg'
+    displayName: 'vo'
+    environmentType: 'Production'
+    isAutoScalingEnabled: true
+    isPublic: true
+    licenseModel: 'LicenseIncluded'
+    maintenanceConfiguration: {
+      bundleReleaseUpgradePeriodInDays: 21
+      interimReleaseUpgradePeriodInDays: 28
+      isInterimReleaseAutoUpgradeEnabled: true
+      majorReleaseUpgradePeriodInDays: 5
+      securityPatchUpgradePeriodInDays: 10
+    }
+    maintenanceWindow: {
+      day: 'resource1'
+      startHour: 25
+    }
+    networkAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/networkAnchors/networkanchor1'
+    ocid: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    oggData: {
+      adminPassword: '<a-password-goes-here>'
+      adminUsername: 'resource1'
+      certificate: 'example'
+      credentialStore: 'GoldenGate'
+      deploymentName: 'uzyxba'
+      groupToRolesMapping: {
+        administratorGroupId: 'example'
+        identityDomainId: 'example'
+        key: 'example'
+        operatorGroupId: 'example'
+        securityGroupId: 'example'
+        userGroupId: 'example'
+      }
+      oggVersion: 'example'
+      passwordSecretId: 'example'
+    }
+    resourceAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/resourceAnchors/anchor1'
+    timeZone: '2026-06-01T00:00:00Z'
+    version: 'zhvgen'
+  }
+  tags: {
+    key4445: 'zasewagrwgc'
+  }
+  zones: [
+    'example'
+  ]
+}
+```
+
+## oracle.database/networkanchors
+
+NetworkAnchors_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/networkAnchors@2026-06-01' = {
+  name: 'example'
+  location: 'eastus'
+  properties: {
+    dnsForwardingRules: [
+      {
+        domainNames: 'ghs'
+        forwardingIpAddress: 'example'
+      }
+    ]
+    dnsListeningEndpointAllowedCidrs: 'toqgyp'
+    isOracleDnsForwardingEndpointEnabled: true
+    isOracleDnsListeningEndpointEnabled: true
+    isOracleToAzureDnsZoneSyncEnabled: true
+    ociBackupCidrBlock: 'example'
+    ociSubnetId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    ociVcnDnsLabel: 'example'
+    ociVcnId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+    proximityPlacementGroup: {
+      entityTypeIntendedToUse: 'CloudExadataInfrastructure'
+      proximityAnchorId: 'example'
+      proximityPlacementGroupId: 'example'
+    }
+    resourceAnchorId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Oracle.Database/resourceAnchors/anchor1'
+    subnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/subnet1'
+    vnetId: '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg000/providers/Microsoft.Network/virtualNetworks/vnet1'
+  }
+  tags: {
+    key6589: 'mcg'
+  }
+  zones: [
+    'zznbkklaih'
+  ]
+}
+```
+
+## oracle.database/oraclesubscriptions
+
+Create or Update Oracle Subscription
+```bicep
+resource exampleResource 'Oracle.Database/oracleSubscriptions@2026-06-01' = {
+  name: 'example'
+  plan: {
+    name: 'resource1'
+    product: 'product1'
+    promotionCode: 'none'
+    publisher: 'publisher1'
+    version: 'alpha'
+  }
+  properties: {
+  }
+}
+```
+
+## oracle.database/resourceanchors
+
+ResourceAnchors_CreateOrUpdate_MaximumSet_Gen - generated by [MaximumSet] rule
+```bicep
+resource exampleResource 'Oracle.Database/resourceAnchors@2026-06-01' = {
+  name: 'example'
+  location: 'qbkti'
+  properties: {
+    linkedCompartmentId: 'ocid1.autonomousdatabase.oc1..aaaaa3klq'
+  }
+  tags: {
+    key2309: 'example'
+  }
+}
+```

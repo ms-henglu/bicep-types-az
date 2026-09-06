@@ -15,32 +15,32 @@
 
 ### FusionAlertRule
 #### Properties
-* **kind**: 'Fusion' (Required): The kind of the alert rule
+* **kind**: 'Fusion' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [FusionAlertRuleProperties](#fusionalertruleproperties): Fusion alert rule properties
 
 ### MicrosoftSecurityIncidentCreationAlertRule
 #### Properties
-* **kind**: 'MicrosoftSecurityIncidentCreation' (Required): The kind of the alert rule
+* **kind**: 'MicrosoftSecurityIncidentCreation' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MicrosoftSecurityIncidentCreationAlertRuleProperties](#microsoftsecurityincidentcreationalertruleproperties): MicrosoftSecurityIncidentCreation rule properties
 
 ### MLBehaviorAnalyticsAlertRule
 #### Properties
-* **kind**: 'MLBehaviorAnalytics' (Required): The kind of the alert rule
+* **kind**: 'MLBehaviorAnalytics' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MLBehaviorAnalyticsAlertRuleProperties](#mlbehavioranalyticsalertruleproperties): MLBehaviorAnalytics alert rule properties
 
 ### NrtAlertRule
 #### Properties
-* **kind**: 'NRT' (Required): The kind of the alert rule
+* **kind**: 'NRT' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [NrtAlertRuleProperties](#nrtalertruleproperties): NRT alert rule properties
 
 ### ScheduledAlertRule
 #### Properties
-* **kind**: 'Scheduled' (Required): The kind of the alert rule
+* **kind**: 'Scheduled' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ScheduledAlertRuleProperties](#scheduledalertruleproperties): Scheduled alert rule properties
 
 ### ThreatIntelligenceAlertRule
 #### Properties
-* **kind**: 'ThreatIntelligence' (Required): The kind of the alert rule
+* **kind**: 'ThreatIntelligence' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ThreatIntelligenceAlertRuleProperties](#threatintelligencealertruleproperties): Threat Intelligence alert rule properties
 
 
@@ -70,32 +70,32 @@
 
 ### FusionAlertRuleTemplate
 #### Properties
-* **kind**: 'Fusion' (Required): The kind of the alert rule
+* **kind**: 'Fusion' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [FusionAlertRuleTemplateProperties](#fusionalertruletemplateproperties) (ReadOnly): Fusion alert rule template properties
 
 ### MicrosoftSecurityIncidentCreationAlertRuleTemplate
 #### Properties
-* **kind**: 'MicrosoftSecurityIncidentCreation' (Required): The kind of the alert rule
+* **kind**: 'MicrosoftSecurityIncidentCreation' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MicrosoftSecurityIncidentCreationAlertRuleTemplateProperties](#microsoftsecurityincidentcreationalertruletemplateproperties) (ReadOnly): MicrosoftSecurityIncidentCreation rule template properties
 
 ### MLBehaviorAnalyticsAlertRuleTemplate
 #### Properties
-* **kind**: 'MLBehaviorAnalytics' (Required): The kind of the alert rule
+* **kind**: 'MLBehaviorAnalytics' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MLBehaviorAnalyticsAlertRuleTemplateProperties](#mlbehavioranalyticsalertruletemplateproperties) (ReadOnly): MLBehaviorAnalytics alert rule template properties.
 
 ### NrtAlertRuleTemplate
 #### Properties
-* **kind**: 'NRT' (Required): The kind of the alert rule
+* **kind**: 'NRT' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [NrtAlertRuleTemplateProperties](#nrtalertruletemplateproperties) (ReadOnly): NRT alert rule template properties
 
 ### ScheduledAlertRuleTemplate
 #### Properties
-* **kind**: 'Scheduled' (Required): The kind of the alert rule
+* **kind**: 'Scheduled' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ScheduledAlertRuleTemplateProperties](#scheduledalertruletemplateproperties) (ReadOnly): Scheduled alert rule template properties
 
 ### ThreatIntelligenceAlertRuleTemplate
 #### Properties
-* **kind**: 'ThreatIntelligence' (Required): The kind of the alert rule
+* **kind**: 'ThreatIntelligence' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ThreatIntelligenceAlertRuleTemplateProperties](#threatintelligencealertruletemplateproperties) (ReadOnly): Threat Intelligence alert rule template properties
 
 
@@ -126,7 +126,7 @@
 
 ### SapSolutionUsageStatistic
 #### Properties
-* **kind**: 'SapSolutionUsage' (Required): The kind of the billing statistic
+* **kind**: 'SapSolutionUsage' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [SapSolutionUsageStatisticProperties](#sapsolutionusagestatisticproperties) (ReadOnly): The SAP solution usage object
 
 
@@ -217,7 +217,7 @@
 
 ### CustomizableConnectorDefinition
 #### Properties
-* **kind**: 'Customizable' (Required): The data connector kind
+* **kind**: 'Customizable' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [CustomizableConnectorDefinitionProperties](#customizableconnectordefinitionproperties): Customizable properties.
 
 
@@ -236,127 +236,127 @@
 
 ### AwsCloudTrailDataConnector
 #### Properties
-* **kind**: 'AmazonWebServicesCloudTrail' (Required): The data connector kind
+* **kind**: 'AmazonWebServicesCloudTrail' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AwsCloudTrailDataConnectorProperties](#awscloudtraildataconnectorproperties): Amazon Web Services CloudTrail data connector properties.
 
 ### AwsS3DataConnector
 #### Properties
-* **kind**: 'AmazonWebServicesS3' (Required): The data connector kind
+* **kind**: 'AmazonWebServicesS3' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AwsS3DataConnectorProperties](#awss3dataconnectorproperties): Amazon Web Services S3 data connector properties.
 
 ### CodelessApiPollingDataConnector
 #### Properties
-* **kind**: 'APIPolling' (Required): The data connector kind
+* **kind**: 'APIPolling' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ApiPollingParameters](#apipollingparameters): Codeless poling data connector properties
 
 ### AADDataConnector
 #### Properties
-* **kind**: 'AzureActiveDirectory' (Required): The data connector kind
+* **kind**: 'AzureActiveDirectory' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AADDataConnectorProperties](#aaddataconnectorproperties): AADIP (Azure Active Directory Identity Protection) data connector properties.
 
 ### AatpDataConnector
 #### Properties
-* **kind**: 'AzureAdvancedThreatProtection' (Required): The data connector kind
+* **kind**: 'AzureAdvancedThreatProtection' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AatpDataConnectorProperties](#aatpdataconnectorproperties): AATP (Azure Advanced Threat Protection) data connector properties.
 
 ### ASCDataConnector
 #### Properties
-* **kind**: 'AzureSecurityCenter' (Required): The data connector kind
+* **kind**: 'AzureSecurityCenter' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ASCDataConnectorProperties](#ascdataconnectorproperties): ASC (Azure Security Center) data connector properties.
 
 ### Dynamics365DataConnector
 #### Properties
-* **kind**: 'Dynamics365' (Required): The data connector kind
+* **kind**: 'Dynamics365' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [Dynamics365DataConnectorProperties](#dynamics365dataconnectorproperties): Dynamics365 data connector properties.
 
 ### GCPDataConnector
 #### Properties
-* **kind**: 'GCP' (Required): The data connector kind
+* **kind**: 'GCP' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [GCPDataConnectorProperties](#gcpdataconnectorproperties): Google Cloud Platform data connector properties.
 
 ### CodelessUiDataConnector
 #### Properties
-* **kind**: 'GenericUI' (Required): The data connector kind
+* **kind**: 'GenericUI' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [CodelessParameters](#codelessparameters): Codeless UI data connector properties
 
 ### IoTDataConnector
 #### Properties
-* **kind**: 'IOT' (Required): The data connector kind
+* **kind**: 'IOT' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [IoTDataConnectorProperties](#iotdataconnectorproperties): IoT data connector properties.
 
 ### McasDataConnector
 #### Properties
-* **kind**: 'MicrosoftCloudAppSecurity' (Required): The data connector kind
+* **kind**: 'MicrosoftCloudAppSecurity' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [McasDataConnectorProperties](#mcasdataconnectorproperties): MCAS (Microsoft Cloud App Security) data connector properties.
 
 ### MdatpDataConnector
 #### Properties
-* **kind**: 'MicrosoftDefenderAdvancedThreatProtection' (Required): The data connector kind
+* **kind**: 'MicrosoftDefenderAdvancedThreatProtection' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MdatpDataConnectorProperties](#mdatpdataconnectorproperties): MDATP (Microsoft Defender Advanced Threat Protection) data connector properties.
 
 ### MicrosoftPurviewInformationProtectionDataConnector
 #### Properties
-* **kind**: 'MicrosoftPurviewInformationProtection' (Required): The data connector kind
+* **kind**: 'MicrosoftPurviewInformationProtection' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MicrosoftPurviewInformationProtectionDataConnectorProperties](#microsoftpurviewinformationprotectiondataconnectorproperties): Microsoft Purview Information Protection data connector properties.
 
 ### MstiDataConnector
 #### Properties
-* **kind**: 'MicrosoftThreatIntelligence' (Required): The data connector kind
+* **kind**: 'MicrosoftThreatIntelligence' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MstiDataConnectorProperties](#mstidataconnectorproperties): Microsoft Threat Intelligence data connector properties.
 
 ### MTPDataConnector
 #### Properties
-* **kind**: 'MicrosoftThreatProtection' (Required): The data connector kind
+* **kind**: 'MicrosoftThreatProtection' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MTPDataConnectorProperties](#mtpdataconnectorproperties): MTP (Microsoft Threat Protection) data connector properties.
 
 ### OfficeDataConnector
 #### Properties
-* **kind**: 'Office365' (Required): The data connector kind
+* **kind**: 'Office365' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [OfficeDataConnectorProperties](#officedataconnectorproperties): Office data connector properties.
 
 ### Office365ProjectDataConnector
 #### Properties
-* **kind**: 'Office365Project' (Required): The data connector kind
+* **kind**: 'Office365Project' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [Office365ProjectDataConnectorProperties](#office365projectdataconnectorproperties): Office Microsoft Project data connector properties.
 
 ### OfficeATPDataConnector
 #### Properties
-* **kind**: 'OfficeATP' (Required): The data connector kind
+* **kind**: 'OfficeATP' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [OfficeATPDataConnectorProperties](#officeatpdataconnectorproperties): OfficeATP (Office 365 Advanced Threat Protection) data connector properties.
 
 ### OfficeIRMDataConnector
 #### Properties
-* **kind**: 'OfficeIRM' (Required): The data connector kind
+* **kind**: 'OfficeIRM' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [OfficeIRMDataConnectorProperties](#officeirmdataconnectorproperties): OfficeIRM (Microsoft Insider Risk Management) data connector properties.
 
 ### OfficePowerBIDataConnector
 #### Properties
-* **kind**: 'OfficePowerBI' (Required): The data connector kind
+* **kind**: 'OfficePowerBI' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [OfficePowerBIDataConnectorProperties](#officepowerbidataconnectorproperties): Office Microsoft PowerBI data connector properties.
 
 ### PremiumMicrosoftDefenderForThreatIntelligence
 #### Properties
-* **kind**: 'PremiumMicrosoftDefenderForThreatIntelligence' (Required): The data connector kind
+* **kind**: 'PremiumMicrosoftDefenderForThreatIntelligence' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [PremiumMdtiDataConnectorProperties](#premiummdtidataconnectorproperties): Microsoft Defender for Threat Intelligence Premium data connector properties.
 
 ### PurviewAuditDataConnector
 #### Properties
-* **kind**: 'PurviewAudit' (Required): The data connector kind
+* **kind**: 'PurviewAudit' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [PurviewAuditDataConnectorProperties](#purviewauditdataconnectorproperties): PurviewAudit data connector properties.
 
 ### RestApiPollerDataConnector
 #### Properties
-* **kind**: 'RestApiPoller' (Required): The data connector kind
+* **kind**: 'RestApiPoller' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [RestApiPollerDataConnectorProperties](#restapipollerdataconnectorproperties): Rest Api Poller data connector properties.
 
 ### TIDataConnector
 #### Properties
-* **kind**: 'ThreatIntelligence' (Required): The data connector kind
+* **kind**: 'ThreatIntelligence' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [TIDataConnectorProperties](#tidataconnectorproperties): TI (Threat Intelligence) data connector properties.
 
 ### TiTaxiiDataConnector
 #### Properties
-* **kind**: 'ThreatIntelligenceTaxii' (Required): The data connector kind
+* **kind**: 'ThreatIntelligenceTaxii' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [TiTaxiiDataConnectorProperties](#titaxiidataconnectorproperties): Threat intelligence TAXII data connector properties.
 
 
@@ -374,112 +374,112 @@
 
 ### AccountEntity
 #### Properties
-* **kind**: 'Account' (Required): The kind of the entity.
+* **kind**: 'Account' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AccountEntityProperties](#accountentityproperties) (ReadOnly): Account entity properties
 
 ### AzureResourceEntity
 #### Properties
-* **kind**: 'AzureResource' (Required): The kind of the entity.
+* **kind**: 'AzureResource' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AzureResourceEntityProperties](#azureresourceentityproperties) (ReadOnly): AzureResource entity properties
 
 ### HuntingBookmark
 #### Properties
-* **kind**: 'Bookmark' (Required): The kind of the entity.
+* **kind**: 'Bookmark' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [HuntingBookmarkProperties](#huntingbookmarkproperties) (ReadOnly): HuntingBookmark entity properties
 
 ### CloudApplicationEntity
 #### Properties
-* **kind**: 'CloudApplication' (Required): The kind of the entity.
+* **kind**: 'CloudApplication' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [CloudApplicationEntityProperties](#cloudapplicationentityproperties) (ReadOnly): CloudApplication entity properties
 
 ### DnsEntity
 #### Properties
-* **kind**: 'DnsResolution' (Required): The kind of the entity.
+* **kind**: 'DnsResolution' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [DnsEntityProperties](#dnsentityproperties) (ReadOnly): Dns entity properties
 
 ### FileEntity
 #### Properties
-* **kind**: 'File' (Required): The kind of the entity.
+* **kind**: 'File' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [FileEntityProperties](#fileentityproperties) (ReadOnly): File entity properties
 
 ### FileHashEntity
 #### Properties
-* **kind**: 'FileHash' (Required): The kind of the entity.
+* **kind**: 'FileHash' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [FileHashEntityProperties](#filehashentityproperties) (ReadOnly): FileHash entity properties
 
 ### HostEntity
 #### Properties
-* **kind**: 'Host' (Required): The kind of the entity.
+* **kind**: 'Host' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [HostEntityProperties](#hostentityproperties) (ReadOnly): Host entity properties
 
 ### IoTDeviceEntity
 #### Properties
-* **kind**: 'IoTDevice' (Required): The kind of the entity.
+* **kind**: 'IoTDevice' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [IoTDeviceEntityProperties](#iotdeviceentityproperties) (ReadOnly): IoTDevice entity properties
 
 ### IpEntity
 #### Properties
-* **kind**: 'Ip' (Required): The kind of the entity.
+* **kind**: 'Ip' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [IpEntityProperties](#ipentityproperties) (ReadOnly): Ip entity properties
 
 ### MailboxEntity
 #### Properties
-* **kind**: 'Mailbox' (Required): The kind of the entity.
+* **kind**: 'Mailbox' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MailboxEntityProperties](#mailboxentityproperties) (ReadOnly): Mailbox entity properties
 
 ### MailClusterEntity
 #### Properties
-* **kind**: 'MailCluster' (Required): The kind of the entity.
+* **kind**: 'MailCluster' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MailClusterEntityProperties](#mailclusterentityproperties) (ReadOnly): Mail cluster entity properties
 
 ### MailMessageEntity
 #### Properties
-* **kind**: 'MailMessage' (Required): The kind of the entity.
+* **kind**: 'MailMessage' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MailMessageEntityProperties](#mailmessageentityproperties) (ReadOnly): Mail message entity properties
 
 ### MalwareEntity
 #### Properties
-* **kind**: 'Malware' (Required): The kind of the entity.
+* **kind**: 'Malware' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [MalwareEntityProperties](#malwareentityproperties) (ReadOnly): File entity properties
 
 ### NicEntity
 #### Properties
-* **kind**: 'Nic' (Required): The kind of the entity.
+* **kind**: 'Nic' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [NicEntityProperties](#nicentityproperties) (ReadOnly): Network interface entity properties
 
 ### ProcessEntity
 #### Properties
-* **kind**: 'Process' (Required): The kind of the entity.
+* **kind**: 'Process' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [ProcessEntityProperties](#processentityproperties) (ReadOnly): Process entity properties
 
 ### RegistryKeyEntity
 #### Properties
-* **kind**: 'RegistryKey' (Required): The kind of the entity.
+* **kind**: 'RegistryKey' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [RegistryKeyEntityProperties](#registrykeyentityproperties) (ReadOnly): RegistryKey entity properties
 
 ### RegistryValueEntity
 #### Properties
-* **kind**: 'RegistryValue' (Required): The kind of the entity.
+* **kind**: 'RegistryValue' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [RegistryValueEntityProperties](#registryvalueentityproperties) (ReadOnly): RegistryKey entity properties
 
 ### SecurityAlert
 #### Properties
-* **kind**: 'SecurityAlert' (Required): The kind of the entity.
+* **kind**: 'SecurityAlert' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [SecurityAlertProperties](#securityalertproperties) (ReadOnly): SecurityAlert entity properties
 
 ### SecurityGroupEntity
 #### Properties
-* **kind**: 'SecurityGroup' (Required): The kind of the entity.
+* **kind**: 'SecurityGroup' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [SecurityGroupEntityProperties](#securitygroupentityproperties) (ReadOnly): SecurityGroup entity properties
 
 ### SubmissionMailEntity
 #### Properties
-* **kind**: 'SubmissionMail' (Required): The kind of the entity.
+* **kind**: 'SubmissionMail' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [SubmissionMailEntityProperties](#submissionmailentityproperties) (ReadOnly): Submission mail entity properties
 
 ### UrlEntity
 #### Properties
-* **kind**: 'Url' (Required): The kind of the entity.
+* **kind**: 'Url' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [UrlEntityProperties](#urlentityproperties) (ReadOnly): Url entity properties
 
 
@@ -533,7 +533,7 @@
 
 ### ActivityEntityQueryTemplate
 #### Properties
-* **kind**: 'Activity' (Required): the entity query template kind
+* **kind**: 'Activity' (Required): The kind of the entity query template.
 * **properties**: [ActivityEntityQueryTemplateProperties](#activityentityquerytemplateproperties) (ReadOnly): Activity entity query properties
 
 
@@ -577,7 +577,6 @@
 * **Writable Scope(s)**: Extension
 ### Properties
 * **apiVersion**: '2025-07-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Etag of the azure resource
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [HuntRelationProperties](#huntrelationproperties): Hunt Relation properties
@@ -694,7 +693,7 @@
 
 ### AnomalySecurityMLAnalyticsSettings
 #### Properties
-* **kind**: 'Anomaly' (Required): The kind of security ML Analytics Settings
+* **kind**: 'Anomaly' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AnomalySecurityMLAnalyticsSettingsProperties](#anomalysecuritymlanalyticssettingsproperties): Anomaly Security ML Analytics Settings properties
 
 
@@ -713,22 +712,22 @@
 
 ### Anomalies
 #### Properties
-* **kind**: 'Anomalies' (Required): The kind of the setting
+* **kind**: 'Anomalies' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [AnomaliesSettingsProperties](#anomaliessettingsproperties): Anomalies properties
 
 ### EntityAnalytics
 #### Properties
-* **kind**: 'EntityAnalytics' (Required): The kind of the setting
+* **kind**: 'EntityAnalytics' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [EntityAnalyticsProperties](#entityanalyticsproperties): EntityAnalytics properties
 
 ### EyesOn
 #### Properties
-* **kind**: 'EyesOn' (Required): The kind of the setting
+* **kind**: 'EyesOn' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [EyesOnSettingsProperties](#eyesonsettingsproperties): EyesOn properties
 
 ### Ueba
 #### Properties
-* **kind**: 'Ueba' (Required): The kind of the setting
+* **kind**: 'Ueba' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
 * **properties**: [UebaProperties](#uebaproperties): Ueba properties
 
 
@@ -852,6 +851,82 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.SecurityInsights/workspaceManagerMembers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function alerts (Microsoft.SecurityInsights/incidents@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/incidents
+* **ApiVersion**: 2025-07-01-preview
+* **Output**: [IncidentAlertList](#incidentalertlist)
+
+## Function appendTags (Microsoft.SecurityInsights/threatIntelligence/indicators@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence/indicators
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [ThreatIntelligenceAppendTags](#threatintelligenceappendtags)
+
+## Function bookmarks (Microsoft.SecurityInsights/incidents@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/incidents
+* **ApiVersion**: 2025-07-01-preview
+* **Output**: [IncidentBookmarkList](#incidentbookmarklist)
+
+## Function connect (Microsoft.SecurityInsights/dataConnectors@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/dataConnectors
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [DataConnectorConnectBody](#dataconnectorconnectbody)
+
+## Function count (Microsoft.SecurityInsights/threatIntelligence@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [CountQuery](#countquery)
+* **Output**: [ThreatIntelligenceCount](#threatintelligencecount)
+
+## Function createIndicator (Microsoft.SecurityInsights/threatIntelligence@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [ThreatIntelligenceIndicatorModel](#threatintelligenceindicatormodel)
+* **Output**: [ThreatIntelligenceInformation](#threatintelligenceinformation)
+
+## Function delete (Microsoft.SecurityInsights/sourcecontrols@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/sourcecontrols
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [RepositoryAccessProperties](#repositoryaccessproperties)
+* **Output**: [Warning](#warning)
+
+## Function disconnect (Microsoft.SecurityInsights/dataConnectors@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/dataConnectors
+* **ApiVersion**: 2025-07-01-preview
+
+## Function entities (Microsoft.SecurityInsights/incidents@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/incidents
+* **ApiVersion**: 2025-07-01-preview
+* **Output**: [IncidentEntitiesResponse](#incidententitiesresponse)
+
+## Function expand (Microsoft.SecurityInsights/bookmarks@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/bookmarks
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [BookmarkExpandParameters](#bookmarkexpandparameters)
+* **Output**: [BookmarkExpandResponse](#bookmarkexpandresponse)
+
+## Function expand (Microsoft.SecurityInsights/entities@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/entities
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [EntityExpandParameters](#entityexpandparameters)
+* **Output**: [EntityExpandResponse](#entityexpandresponse)
+
+## Function getInsights (Microsoft.SecurityInsights/entities@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/entities
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [EntityGetInsightsParameters](#entitygetinsightsparameters)
+* **Output**: [EntityGetInsightsResponse](#entitygetinsightsresponse)
+
+## Function getTimeline (Microsoft.SecurityInsights/entities@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/entities
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [EntityTimelineParameters](#entitytimelineparameters)
+* **Output**: [EntityTimelineResponse](#entitytimelineresponse)
+
+## Function jobs (Microsoft.SecurityInsights/workspaceManagerAssignments@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/workspaceManagerAssignments
+* **ApiVersion**: 2025-07-01-preview
+* **Output**: [Job](#job)
+
 ## Function listGeodataByIp (Microsoft.SecurityInsights/enrichment@2025-07-01-preview)
 * **Resource**: Microsoft.SecurityInsights/enrichment
 * **ApiVersion**: 2025-07-01-preview
@@ -863,6 +938,44 @@
 * **ApiVersion**: 2025-07-01-preview
 * **Input**: [EnrichmentDomainBody](#enrichmentdomainbody)
 * **Output**: [EnrichmentDomainWhois](#enrichmentdomainwhois)
+
+## Function query (Microsoft.SecurityInsights/threatIntelligence@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [Query](#query)
+* **Output**: [ThreatIntelligenceList](#threatintelligencelist)
+
+## Function queryIndicators (Microsoft.SecurityInsights/threatIntelligence@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [ThreatIntelligenceFilteringCriteria](#threatintelligencefilteringcriteria)
+* **Output**: [ThreatIntelligenceInformationList](#threatintelligenceinformationlist)
+
+## Function replaceTags (Microsoft.SecurityInsights/threatIntelligence/indicators@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/threatIntelligence/indicators
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [ThreatIntelligenceIndicatorModel](#threatintelligenceindicatormodel)
+* **Output**: [ThreatIntelligenceInformation](#threatintelligenceinformation)
+
+## Function runPlaybook (Microsoft.SecurityInsights/entities@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/entities
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [EntityManualTriggerRequestBody](#entitymanualtriggerrequestbody)
+
+## Function runPlaybook (Microsoft.SecurityInsights/incidents@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/incidents
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [ManualTriggerRequestBody](#manualtriggerrequestbody)
+
+## Function triggerEvaluation (Microsoft.SecurityInsights/recommendations@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/recommendations
+* **ApiVersion**: 2025-07-01-preview
+* **Output**: [ReevaluateResponse](#reevaluateresponse)
+
+## Function triggerRuleRun (Microsoft.SecurityInsights/alertRules@2025-07-01-preview)
+* **Resource**: Microsoft.SecurityInsights/alertRules
+* **ApiVersion**: 2025-07-01-preview
+* **Input**: [AnalyticsRuleRunTrigger](#analyticsruleruntrigger)
 
 ## AADDataConnectorProperties
 ### Properties
@@ -967,6 +1080,14 @@
 ## AlertsDataTypeOfDataConnector
 ### Properties
 * **alerts**: [DataConnectorDataTypeCommon](#dataconnectordatatypecommon) (Required): Alerts data type connection.
+
+## AnalyticsRuleRunTrigger
+### Properties
+* **properties**: [AnalyticsRuleRunTriggerProperties](#analyticsruleruntriggerproperties) (Required): The analytics Rule Run Trigger request
+
+## AnalyticsRuleRunTriggerProperties
+### Properties
+* **executionTimeUtc**: string (Required)
 
 ## AnomaliesSettingsProperties
 ### Properties
@@ -1107,7 +1228,7 @@
 ## Availability
 ### Properties
 * **isPreview**: bool: Set connector as preview
-* **status**: '1': The connector Availability Status
+* **status**: int: The connector Availability Status
 
 ## AwsCloudTrailDataConnectorDataTypes
 ### Properties
@@ -1154,6 +1275,22 @@
 * **entityType**: string: The entity type
 * **fieldMappings**: [EntityFieldMapping](#entityfieldmapping)[]: Array of fields mapping for that entity type
 
+## BookmarkExpandParameters
+### Properties
+* **endTime**: string: The end date filter, so the only expansion results returned are before this date.
+* **expansionId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The Id of the expansion to perform.
+* **startTime**: string: The start date filter, so the only expansion results returned are after this date.
+
+## BookmarkExpandResponse
+### Properties
+* **metaData**: [ExpansionResultsMetadata](#expansionresultsmetadata): The metadata from the expansion operation results.
+* **value**: [BookmarkExpandResponseValue](#bookmarkexpandresponsevalue): The expansion result values.
+
+## BookmarkExpandResponseValue
+### Properties
+* **edges**: [ConnectedEntity](#connectedentity)[]: Array of expansion result connected entities
+* **entities**: [Entity](#entity)[]: Array of the expansion result entities.
+
 ## BookmarkProperties
 ### Properties
 * **created**: string: The time the bookmark was created
@@ -1194,7 +1331,7 @@
 
 ### BasicAuthModel
 #### Properties
-* **password**: string (Required): The password
+* **password**: string {sensitive} (Required): The password
 * **type**: 'Basic' (Required): The auth type
 * **userName**: string (Required): The user name.
 
@@ -1229,12 +1366,12 @@
 ### OAuthModel
 #### Properties
 * **accessTokenPrepend**: string: Access token prepend. Default is 'Bearer'.
-* **authorizationCode**: string: The user's authorization code.
+* **authorizationCode**: string {sensitive}: The user's authorization code.
 * **authorizationEndpoint**: string: The authorization endpoint.
 * **authorizationEndpointHeaders**: [OAuthModelAuthorizationEndpointHeaders](#oauthmodelauthorizationendpointheaders): The authorization endpoint headers.
 * **authorizationEndpointQueryParameters**: [OAuthModelAuthorizationEndpointQueryParameters](#oauthmodelauthorizationendpointqueryparameters): The authorization endpoint query parameters.
 * **clientId**: string (Required): The Application (client) ID that the OAuth provider assigned to your app.
-* **clientSecret**: string (Required): The Application (client) secret that the OAuth provider assigned to your app.
+* **clientSecret**: string {sensitive} (Required): The Application (client) secret that the OAuth provider assigned to your app.
 * **grantType**: string (Required): The grant type, usually will be 'authorization code'.
 * **isCredentialsInHeaders**: bool: Indicating whether we want to send the clientId and clientSecret to token endpoint in the headers.
 * **isJwtBearerFlow**: bool: A value indicating whether it's a JWT flow.
@@ -1405,6 +1542,24 @@
 * **description**: string: The sample query description
 * **query**: string: the sample query
 
+## ConditionClause
+### Properties
+* **clauseConnective**: 'And' | 'Or' | string (ReadOnly): The connective used to join all values in this ConditionClause
+* **field**: string (Required): The name of the field that is evaluated.
+* **operator**: 'AfterAbsolute' | 'AfterRelative' | 'ArrayContains' | 'ArrayNotContains' | 'BeforeAbsolute' | 'BeforeRelative' | 'Equals' | 'GreaterThan' | 'GreaterThanEqual' | 'IsFalse' | 'IsNull' | 'IsTrue' | 'LessThan' | 'LessThanEqual' | 'NotEquals' | 'OnOrAfterAbsolute' | 'OnOrAfterRelative' | 'OnOrBeforeAbsolute' | 'OnOrBeforeRelative' | 'StringContains' | 'StringEndsWith' | 'StringIsEmpty' | 'StringNotContains' | 'StringNotEndsWith' | 'StringNotStartsWith' | 'StringStartsWith' | string (Required): Represents an operator in a ConditionClause.
+* **values**: string[] (Required): The top level connective operator for this condition.
+
+## ConditionProperties
+### Properties
+* **clauses**: [ConditionClause](#conditionclause)[] (Required): The list of clauses to be evaluated in disjunction or conjunction base on the specified top level connective operator.
+* **conditionConnective**: 'And' | 'Or' | string (ReadOnly): The top level connective operator for this condition.
+* **stixObjectType**: string (ReadOnly): The STIX type for the objects returned by this query.
+
+## ConnectedEntity
+### Properties
+* **additionalData**: any: key-value pairs for a connected entity mapping
+* **targetEntityId**: string: Entity Id of the connected entity
+
 ## ConnectivityCriterion
 ### Properties
 * **type**: string (Required): Gets or sets the type of connectivity.
@@ -1435,6 +1590,10 @@
 * **requiredPermissions**: [ResourceProviderRequiredPermissions](#resourceproviderrequiredpermissions) (Required): Required permissions for the connector resource provider that define in ResourceProviders.
 For more information about the permissions see <see href="https://docs.microsoft.com/en-us/azure/role-based-access-control/role-definitions#actions-format">here</see>.
 * **scope**: 'ResourceGroup' | 'Subscription' | 'Workspace' | string (Required): The scope on which the user should have permissions, in order to be able to create connections.
+
+## CountQuery
+### Properties
+* **properties**: [QueryProperties](#queryproperties): Query properties
 
 ## CustomizableConnectionsConfig
 ### Properties
@@ -1468,6 +1627,20 @@ The logo value should be in SVG format.
 ### Properties
 * **description**: string (Required): Gets or sets the custom permissions description.
 * **name**: string (Required): Gets or sets the custom permissions name.
+
+## DataConnectorConnectBody
+### Properties
+* **apiKey**: string {sensitive}: The API key of the audit server.
+* **authorizationCode**: string: The authorization code used in OAuth 2.0 code flow to issue a token.
+* **clientId**: string: The client id of the OAuth 2.0 application.
+* **clientSecret**: string: The client secret of the OAuth 2.0 application.
+* **dataCollectionEndpoint**: string: Used in v2 logs connector. Represents the data collection ingestion endpoint in log analytics.
+* **dataCollectionRuleImmutableId**: string: Used in v2 logs connector. The data collection rule immutable id, the rule defines the transformation and data destination.
+* **kind**: 'APIKey' | 'Basic' | 'OAuth2' | string: The authentication kind used to poll the data
+* **outputStream**: string: Used in v2 logs connector. The stream we are sending the data to, this is the name of the streamDeclarations defined in the DCR.
+* **password**: string {sensitive}: The user password in the audit log server.
+* **requestConfigUserInputValues**: any[]
+* **userName**: string: The user name in the audit log server.
 
 ## DataConnectorDataTypeCommon
 ### Properties
@@ -1592,6 +1765,126 @@ The logo value should be in SVG format.
 * **stateCode**: string: The abbreviated name for the state this IP address is located in
 * **stateConfidenceFactor**: int {minValue: 0, maxValue: 100}: A numeric rating of confidence that the value in the 'state' field is correct on a scale of 0-100
 
+## Entity
+* **Discriminator**: kind
+
+### Base Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+### AccountEntity
+#### Properties
+* **kind**: 'Account' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [AccountEntityProperties](#accountentityproperties): Account entity properties
+
+### AzureResourceEntity
+#### Properties
+* **kind**: 'AzureResource' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [AzureResourceEntityProperties](#azureresourceentityproperties): AzureResource entity properties
+
+### HuntingBookmark
+#### Properties
+* **kind**: 'Bookmark' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [HuntingBookmarkProperties](#huntingbookmarkproperties): HuntingBookmark entity properties
+
+### CloudApplicationEntity
+#### Properties
+* **kind**: 'CloudApplication' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [CloudApplicationEntityProperties](#cloudapplicationentityproperties): CloudApplication entity properties
+
+### DnsEntity
+#### Properties
+* **kind**: 'DnsResolution' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [DnsEntityProperties](#dnsentityproperties): Dns entity properties
+
+### FileEntity
+#### Properties
+* **kind**: 'File' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [FileEntityProperties](#fileentityproperties): File entity properties
+
+### FileHashEntity
+#### Properties
+* **kind**: 'FileHash' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [FileHashEntityProperties](#filehashentityproperties): FileHash entity properties
+
+### HostEntity
+#### Properties
+* **kind**: 'Host' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [HostEntityProperties](#hostentityproperties): Host entity properties
+
+### IoTDeviceEntity
+#### Properties
+* **kind**: 'IoTDevice' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [IoTDeviceEntityProperties](#iotdeviceentityproperties): IoTDevice entity properties
+
+### IpEntity
+#### Properties
+* **kind**: 'Ip' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [IpEntityProperties](#ipentityproperties): Ip entity properties
+
+### MailboxEntity
+#### Properties
+* **kind**: 'Mailbox' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [MailboxEntityProperties](#mailboxentityproperties): Mailbox entity properties
+
+### MailClusterEntity
+#### Properties
+* **kind**: 'MailCluster' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [MailClusterEntityProperties](#mailclusterentityproperties): Mail cluster entity properties
+
+### MailMessageEntity
+#### Properties
+* **kind**: 'MailMessage' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [MailMessageEntityProperties](#mailmessageentityproperties): Mail message entity properties
+
+### MalwareEntity
+#### Properties
+* **kind**: 'Malware' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [MalwareEntityProperties](#malwareentityproperties): File entity properties
+
+### NicEntity
+#### Properties
+* **kind**: 'Nic' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [NicEntityProperties](#nicentityproperties): Network interface entity properties
+
+### ProcessEntity
+#### Properties
+* **kind**: 'Process' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [ProcessEntityProperties](#processentityproperties): Process entity properties
+
+### RegistryKeyEntity
+#### Properties
+* **kind**: 'RegistryKey' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [RegistryKeyEntityProperties](#registrykeyentityproperties): RegistryKey entity properties
+
+### RegistryValueEntity
+#### Properties
+* **kind**: 'RegistryValue' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [RegistryValueEntityProperties](#registryvalueentityproperties): RegistryKey entity properties
+
+### SecurityAlert
+#### Properties
+* **kind**: 'SecurityAlert' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [SecurityAlertProperties](#securityalertproperties): SecurityAlert entity properties
+
+### SecurityGroupEntity
+#### Properties
+* **kind**: 'SecurityGroup' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [SecurityGroupEntityProperties](#securitygroupentityproperties): SecurityGroup entity properties
+
+### SubmissionMailEntity
+#### Properties
+* **kind**: 'SubmissionMail' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [SubmissionMailEntityProperties](#submissionmailentityproperties): Submission mail entity properties
+
+### UrlEntity
+#### Properties
+* **kind**: 'Url' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [UrlEntityProperties](#urlentityproperties): Url entity properties
+
+
 ## EntityAnalyticsProperties
 ### Properties
 * **entityProviders**: ('ActiveDirectory' | 'AzureActiveDirectory' | string)[]: The relevant entity providers that are synced
@@ -1711,15 +2004,142 @@ The logo value should be in SVG format.
 ### Additional Properties
 * **Additional Properties Type**: any
 
+## EntityEdges
+### Properties
+* **additionalData**: [EntityEdgesAdditionalData](#entityedgesadditionaldata): A bag of custom fields that should be part of the entity and will be presented to the user.
+* **targetEntityId**: string: The target entity Id.
+
+## EntityEdgesAdditionalData
+### Properties
+### Additional Properties
+* **Additional Properties Type**: any
+
+## EntityExpandParameters
+### Properties
+* **endTime**: string: The end date filter, so the only expansion results returned are before this date.
+* **expansionId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The Id of the expansion to perform.
+* **startTime**: string: The start date filter, so the only expansion results returned are after this date.
+
+## EntityExpandResponse
+### Properties
+* **metaData**: [ExpansionResultsMetadata](#expansionresultsmetadata): The metadata from the expansion operation results.
+* **value**: [EntityExpandResponseValue](#entityexpandresponsevalue): The expansion result values.
+
+## EntityExpandResponseValue
+### Properties
+* **edges**: [EntityEdges](#entityedges)[]: Array of edges that connects the entity to the list of entities.
+* **entities**: [Entity](#entity)[]: Array of the expansion result entities.
+
 ## EntityFieldMapping
 ### Properties
 * **identifier**: string: Alert V3 identifier
 * **value**: string: The value of the identifier
 
+## EntityGetInsightsParameters
+### Properties
+* **addDefaultExtendedTimeRange**: bool: Indicates if query time range should be extended with default time range of the query. Default value is false
+* **endTime**: string (Required): The end timeline date, so the results returned are before this date.
+* **insightQueryIds**: (string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"})[]: List of Insights Query Id. If empty, default value is all insights of this entity
+* **startTime**: string (Required): The start timeline date, so the results returned are after this date.
+
+## EntityGetInsightsResponse
+### Properties
+* **metaData**: [GetInsightsResultsMetadata](#getinsightsresultsmetadata): The metadata from the get insights operation results.
+* **value**: [EntityInsightItem](#entityinsightitem)[]: The insights result values.
+
+## EntityInsightItem
+### Properties
+* **chartQueryResults**: [InsightsTableResult](#insightstableresult)[]: Query results for table insights query.
+* **queryId**: string: The query id of the insight
+* **queryTimeInterval**: [EntityInsightItemQueryTimeInterval](#entityinsightitemquerytimeinterval): The Time interval that the query actually executed on.
+* **tableQueryResults**: [InsightsTableResult](#insightstableresult): Query results for table insights query.
+
+## EntityInsightItemQueryTimeInterval
+### Properties
+* **endTime**: string: Insight query end time
+* **startTime**: string: Insight query start time
+
+## EntityManualTriggerRequestBody
+### Properties
+* **incidentArmId**: string: Incident ARM id.
+* **logicAppsResourceId**: string (Required): The resource id of the playbook resource.
+* **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: The tenant id of the playbook resource.
+
 ## EntityMapping
 ### Properties
 * **entityType**: 'Account' | 'AzureResource' | 'CloudApplication' | 'DNS' | 'File' | 'FileHash' | 'Host' | 'IP' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityGroup' | 'SubmissionMail' | 'URL' | string: The V3 type of the mapped entity
 * **fieldMappings**: [FieldMapping](#fieldmapping)[]: array of field mappings for the given entity mapping
+
+## EntityTimelineItem
+* **Discriminator**: kind
+
+### Base Properties
+
+### ActivityTimelineItem
+#### Properties
+* **bucketEndTimeUTC**: string (Required): The grouping bucket end time.
+* **bucketStartTimeUTC**: string (Required): The grouping bucket start time.
+* **content**: string (Required): The activity timeline content.
+* **firstActivityTimeUTC**: string (Required): The time of the first activity in the grouping bucket.
+* **kind**: 'Activity' (Required): The entity query kind type.
+* **lastActivityTimeUTC**: string (Required): The time of the last activity in the grouping bucket.
+* **queryId**: string (Required): The activity query id.
+* **title**: string (Required): The activity timeline title.
+
+### AnomalyTimelineItem
+#### Properties
+* **azureResourceId**: string (Required): The anomaly azure resource id.
+* **description**: string: The anomaly description.
+* **displayName**: string (Required): The anomaly name.
+* **endTimeUtc**: string (Required): The anomaly end time.
+* **intent**: string: The intent of the anomaly.
+* **kind**: 'Anomaly' (Required): The entity query kind type.
+* **productName**: string: The anomaly product name.
+* **reasons**: string[]: The reasons that cause the anomaly.
+* **startTimeUtc**: string (Required): The anomaly start time.
+* **techniques**: string[]: The techniques of the anomaly.
+* **timeGenerated**: string (Required): The anomaly generated time.
+* **vendor**: string: The name of the anomaly vendor.
+
+### BookmarkTimelineItem
+#### Properties
+* **azureResourceId**: string (Required): The bookmark azure resource id.
+* **createdBy**: [UserInfo](#userinfo): Describes a user that created the bookmark
+* **displayName**: string: The bookmark display name.
+* **endTimeUtc**: string: The bookmark end time.
+* **eventTime**: string: The bookmark event time.
+* **kind**: 'Bookmark' (Required): The entity query kind type.
+* **labels**: string[]: List of labels relevant to this bookmark
+* **notes**: string: The notes of the bookmark
+* **startTimeUtc**: string: The bookmark start time.
+
+### SecurityAlertTimelineItem
+#### Properties
+* **alertType**: string (Required): The name of the alert type.
+* **azureResourceId**: string (Required): The alert azure resource id.
+* **description**: string: The alert description.
+* **displayName**: string (Required): The alert name.
+* **endTimeUtc**: string (Required): The alert end time.
+* **intent**: 'Collection' | 'CommandAndControl' | 'CredentialAccess' | 'DefenseEvasion' | 'Discovery' | 'Execution' | 'Exfiltration' | 'Exploitation' | 'Impact' | 'LateralMovement' | 'Persistence' | 'PrivilegeEscalation' | 'Probing' | 'Unknown' | string (ReadOnly): The intent of the alert.
+* **kind**: 'SecurityAlert' (Required): The entity query kind type.
+* **productName**: string: The alert product name.
+* **severity**: 'High' | 'Informational' | 'Low' | 'Medium' | string (Required): The alert severity.
+* **startTimeUtc**: string (Required): The alert start time.
+* **techniques**: string[]: The techniques of the alert.
+* **timeGenerated**: string (Required): The alert generated time.
+
+
+## EntityTimelineParameters
+### Properties
+* **endTime**: string (Required): The end timeline date, so the results returned are before this date.
+* **kinds**: ('Activity' | 'Anomaly' | 'Bookmark' | 'SecurityAlert' | string)[]: Array of timeline Item kinds.
+* **numberOfBucket**: int: The number of bucket for timeline queries aggregation.
+* **startTime**: string (Required): The start timeline date, so the results returned are after this date.
+
+## EntityTimelineResponse
+### Properties
+* **metaData**: [TimelineResultsMetadata](#timelineresultsmetadata): The metadata from the timeline operation results.
+* **value**: [EntityTimelineItem](#entitytimelineitem)[]: The timeline result values.
 
 ## Error
 ### Properties
@@ -1738,6 +2158,17 @@ The logo value should be in SVG format.
 * **inputFields**: string[]: List of the fields of the source entity that are required to run the query
 * **outputEntityTypes**: ('Account' | 'AzureResource' | 'CloudApplication' | 'DNS' | 'File' | 'FileHash' | 'Host' | 'HuntingBookmark' | 'IP' | 'IoTDevice' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Nic' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityAlert' | 'SecurityGroup' | 'SubmissionMail' | 'URL' | string)[]: List of the desired output types to be constructed from the result
 * **queryTemplate**: string: The template query string to be parsed and formatted
+
+## ExpansionResultAggregation
+### Properties
+* **aggregationType**: string: The common type of the aggregation. (for e.g. entity field name)
+* **count**: int (Required): Total number of aggregations of the given kind (and aggregationType if given) in the expansion result.
+* **displayName**: string: The display name of the aggregation by type.
+* **entityKind**: 'Account' | 'AzureResource' | 'Bookmark' | 'CloudApplication' | 'DnsResolution' | 'File' | 'FileHash' | 'Host' | 'IoTDevice' | 'Ip' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Nic' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityAlert' | 'SecurityGroup' | 'SubmissionMail' | 'Url' | string (Required): The kind of the aggregated entity.
+
+## ExpansionResultsMetadata
+### Properties
+* **aggregations**: [ExpansionResultAggregation](#expansionresultaggregation)[]: Information of the aggregated nodes in the expansion result.
 
 ## EyesOnSettingsProperties
 ### Properties
@@ -1899,6 +2330,17 @@ The logo value should be in SVG format.
 * **longitude**: int (ReadOnly): The longitude of the identified location, expressed as a floating point number with range of -180 to 180. Latitude and longitude are derived from the city or postal code.
 * **state**: string (ReadOnly): State name
 
+## GetInsightsErrorKind
+### Properties
+* **errorMessage**: string (Required): the error message
+* **kind**: 'Insight' | string (Required): the query kind
+* **queryId**: string: the query id
+
+## GetInsightsResultsMetadata
+### Properties
+* **errors**: [GetInsightsErrorKind](#getinsightserrorkind)[]: information about the failed queries
+* **totalCount**: int (Required): the total items found for the insights request
+
 ## GitHubResourceInfo
 ### Properties
 * **appInstallationId**: string: GitHub application installation id.
@@ -1937,6 +2379,15 @@ The base query is wrapped by Sentinel UI infra with a KQL query, that measures t
 ## HuntCommentProperties
 ### Properties
 * **message**: string (Required): The message for the comment
+
+## HuntingBookmark
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **kind**: 'Account' | 'AzureResource' | 'Bookmark' | 'CloudApplication' | 'DnsResolution' | 'File' | 'FileHash' | 'Host' | 'IoTDevice' | 'Ip' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Nic' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityAlert' | 'SecurityGroup' | 'SubmissionMail' | 'Url' | string (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [HuntingBookmarkProperties](#huntingbookmarkproperties): HuntingBookmark entity properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## HuntingBookmarkProperties
 ### Properties
@@ -1993,6 +2444,14 @@ The base query is wrapped by Sentinel UI infra with a KQL query, that measures t
 * **tactics**: ('Collection' | 'CommandAndControl' | 'CredentialAccess' | 'DefenseEvasion' | 'Discovery' | 'Execution' | 'Exfiltration' | 'Impact' | 'ImpairProcessControl' | 'InhibitResponseFunction' | 'InitialAccess' | 'LateralMovement' | 'Persistence' | 'PreAttack' | 'PrivilegeEscalation' | 'Reconnaissance' | 'ResourceDevelopment' | string)[] (ReadOnly): The tactics associated with incident
 * **techniques**: string[] (ReadOnly): The techniques associated with incident's tactics
 
+## IncidentAlertList
+### Properties
+* **value**: [SecurityAlert](#securityalert)[] (Required): Array of incident alerts.
+
+## IncidentBookmarkList
+### Properties
+* **value**: [HuntingBookmark](#huntingbookmark)[] (Required): Array of incident bookmarks.
+
 ## IncidentCommentProperties
 ### Properties
 * **author**: [ClientInfo](#clientinfo) (ReadOnly): Describes the client that created the comment
@@ -2004,6 +2463,16 @@ The base query is wrapped by Sentinel UI infra with a KQL query, that measures t
 ### Properties
 * **createIncident**: bool (Required): Create incidents from alerts triggered by this analytics rule
 * **groupingConfiguration**: [GroupingConfiguration](#groupingconfiguration): Set how the alerts that are triggered by this analytics rule, are grouped into incidents
+
+## IncidentEntitiesResponse
+### Properties
+* **entities**: [Entity](#entity)[]: Array of the incident related entities.
+* **metaData**: [IncidentEntitiesResultsMetadata](#incidententitiesresultsmetadata)[]: The metadata from the incident related entities results.
+
+## IncidentEntitiesResultsMetadata
+### Properties
+* **count**: int (Required): Total number of aggregations of the given kind in the incident related entities result.
+* **entityKind**: 'Account' | 'AzureResource' | 'Bookmark' | 'CloudApplication' | 'DnsResolution' | 'File' | 'FileHash' | 'Host' | 'IoTDevice' | 'Ip' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Nic' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityAlert' | 'SecurityGroup' | 'SubmissionMail' | 'Url' | string (Required): The kind of the aggregated entity.
 
 ## IncidentInfo
 ### Properties
@@ -2068,6 +2537,21 @@ The base query is wrapped by Sentinel UI infra with a KQL query, that measures t
 * **status**: 'Completed' | 'New' | string (Required): The status of the task
 * **title**: string (Required): The title of the task
 
+## IndicatorObservablesItem
+### Properties
+* **type**: string: The type of the observable of this indicator
+* **value**: string: The value of the observable of this indicator
+
+## InsightsTableResult
+### Properties
+* **columns**: [InsightsTableResultColumnsItem](#insightstableresultcolumnsitem)[]: Columns Metadata of the table
+* **rows**: string[][]: Rows data of the table
+
+## InsightsTableResultColumnsItem
+### Properties
+* **name**: string: the name of the column
+* **type**: string: the type of the column
+
 ## InstructionStep
 ### Properties
 * **description**: string: Gets or sets the instruction step description.
@@ -2131,6 +2615,15 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **friendlyName**: string (ReadOnly): The graph item display name which is a short humanly readable description of the graph item instance. This property is optional and might be system generated.
 * **location**: [GeoLocation](#geolocation) (ReadOnly): The geo-location context attached to the ip entity
 * **threatIntelligence**: [ThreatIntelligence](#threatintelligence)[] (ReadOnly): A list of TI contexts attached to the ip entity.
+
+## Job
+### Properties
+* **etag**: string: Etag of the azure resource
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [JobProperties](#jobproperties): The job object
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## JobItem
 ### Properties
@@ -2235,6 +2728,11 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **malwareName**: string (ReadOnly): The malware name by the vendor, e.g. Win32/Toga!rfn
 * **processEntityIds**: string[] (ReadOnly): List of linked process entity identifiers on which the malware was found.
 
+## ManualTriggerRequestBody
+### Properties
+* **logicAppsResourceId**: string (Required): Related Analytic rule resource id
+* **tenantId**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"}: Universally Unique Identifier
+
 ## McasDataConnectorDataTypes
 ### Properties
 * **alerts**: [DataConnectorDataTypeCommon](#dataconnectordatatypecommon) (Required): Alerts data type connection.
@@ -2274,14 +2772,14 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Properties
 * **author**: [MetadataAuthor](#metadataauthor): The creator of the content item.
 * **categories**: [MetadataCategories](#metadatacategories): Categories for the solution content item
-* **contentId**: string: Static ID for the content.  Used to identify dependencies and content from solutions or community.  Hard-coded/static for out of the box content and solutions. Dynamic for user-created.  This is the resource name
+* **contentId**: string: Static ID for the content.  Used to identify dependencies and content from solutions or community.  Hard-coded/static for out of the box content and solutions. Can be optionally set for user created content to define dependencies.  If an active content item is made from a template, both will have the same contentId.
 * **contentSchemaVersion**: string: Schema version of the content. Can be used to distinguish between different flow based on the schema version
 * **customVersion**: string: The custom version of the content. A optional free text
 * **dependencies**: [MetadataDependencies](#metadatadependencies): Dependencies for the content item, what other content items it requires to work.  Can describe more complex dependencies using a recursive/nested structure. For a single dependency an id/kind/version can be supplied or operator/criteria for complex formats.
-* **firstPublishDate**: string: first publish date solution content item
+* **firstPublishDate**: string: first publish date of solution content item
 * **icon**: string: the icon identifier. this id can later be fetched from the solution template
 * **kind**: string (Required): The kind of content the metadata is for.
-* **lastPublishDate**: string: last publish date for the solution content item
+* **lastPublishDate**: string: last publish date of solution content item
 * **parentId**: string (Required): Full parent resource ID of the content item the metadata is for.  This is the full resource ID including the scope (subscription and resource group)
 * **previewImages**: string[]: preview image file names. These will be taken from the solution artifacts
 * **previewImagesDark**: string[]: preview image file names. These will be taken from the solution artifacts. used for dark theme support
@@ -2446,7 +2944,7 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **alertDetailsOverride**: [AlertDetailsOverride](#alertdetailsoverride): The alert details override settings
 * **alertRulesCreatedByTemplateCount**: int: The number of alert rules that were created by this template
 * **createdDateUTC**: string (ReadOnly): The time that this alert rule template has been added.
-* **customDetails**: [QueryBasedAlertRuleTemplatePropertiesCustomDetails](#querybasedalertruletemplatepropertiescustomdetails): Dictionary of string key-value pairs of columns to be attached to the alert
+* **customDetails**: [NrtAlertRuleTemplatePropertiesCustomDetails](#nrtalertruletemplatepropertiescustomdetails): Dictionary of string key-value pairs of columns to be attached to the alert
 * **description**: string: The description of the alert rule template.
 * **displayName**: string: The display name for alert rule template.
 * **entityMappings**: [EntityMapping](#entitymapping)[]: Array of the entity mappings of the alert rule
@@ -2460,6 +2958,11 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **tactics**: ('Collection' | 'CommandAndControl' | 'CredentialAccess' | 'DefenseEvasion' | 'Discovery' | 'Execution' | 'Exfiltration' | 'Impact' | 'ImpairProcessControl' | 'InhibitResponseFunction' | 'InitialAccess' | 'LateralMovement' | 'Persistence' | 'PreAttack' | 'PrivilegeEscalation' | 'Reconnaissance' | 'ResourceDevelopment' | string)[]: The tactics of the alert rule
 * **techniques**: string[]: The techniques of the alert rule
 * **version**: string: The version of this template - in format <a.b.c>, where all are numbers. For example <1.0.2>.
+
+## NrtAlertRuleTemplatePropertiesCustomDetails
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## OAuthModelAuthorizationEndpointHeaders
 ### Properties
@@ -2702,10 +3205,27 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **sourceType**: string: The source type indicates which kind of data is relevant for this connector.
 * **tenantId**: string (Required): The tenant id to connect to, and get the data from.
 
-## QueryBasedAlertRuleTemplatePropertiesCustomDetails
+## Query
 ### Properties
-### Additional Properties
-* **Additional Properties Type**: string
+* **condition**: [QueryCondition](#querycondition): Represents a condition used to query for TI objects.
+* **maxPageSize**: int: Represents the maximum size of the page that will be returned from the query API.
+* **minPageSize**: int: Represents the minimum size of the page that will be returned from the query API.
+* **sortBy**: [QuerySortBy](#querysortby): Specifies how to sort the query results.
+
+## QueryCondition
+### Properties
+* **clauses**: [ConditionClause](#conditionclause)[] (Required): The list of clauses to be evaluated in disjunction or conjunction base on the specified top level connective operator.
+* **conditionConnective**: 'And' | 'Or' | string: The top level connective operator for this condition.
+* **stixObjectType**: string: The STIX type for the objects returned by this query.
+
+## QueryProperties
+### Properties
+* **condition**: [ConditionProperties](#conditionproperties): Represents a condition used to query for TI objects.
+
+## QuerySortBy
+### Properties
+* **direction**: 'ASC' | 'DESC' | string: The direction to sort the results by.
+* **field**: string: Represents the field to sort the results by.
 
 ## RecommendationProperties
 ### Properties
@@ -2738,6 +3258,10 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ReevaluateResponse
+### Properties
+* **lastEvaluatedTimeUtc**: string: The time stamp (UTC) when the recommendation was last evaluated.
+
 ## RegistryKeyEntityProperties
 ### Properties
 * **additionalData**: [EntityCommonPropertiesAdditionalData](#entitycommonpropertiesadditionaldata) (ReadOnly): A bag of custom fields that should be part of the entity and will be presented to the user.
@@ -2761,6 +3285,11 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **relatedResourceName**: string (ReadOnly): The name of the related resource
 * **relatedResourceType**: string (ReadOnly): The resource type of the related resource
 
+## RelationshipHint
+### Properties
+* **fieldName**: string
+* **source**: string
+
 ## Repository
 ### Properties
 * **branch**: string (Required): Branch name of repository.
@@ -2776,6 +3305,14 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **kind**: 'App' | 'OAuth' | 'PAT' | string (Required): The kind of repository access credentials
 * **state**: string {sensitive}: OAuth State. Required when `kind` is `OAuth`
 * **token**: string {sensitive}: Personal Access Token. Required when `kind` is `PAT`
+
+## RepositoryAccessObject
+### Properties
+* **repositoryAccess**: [RepositoryAccess](#repositoryaccess) (Required): RepositoryAccess properties
+
+## RepositoryAccessProperties
+### Properties
+* **properties**: [RepositoryAccessObject](#repositoryaccessobject) (Required): RepositoryAccess properties
 
 ## RepositoryResourceInfo
 ### Properties
@@ -2913,6 +3450,15 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## SecurityAlert
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **kind**: 'Account' | 'AzureResource' | 'Bookmark' | 'CloudApplication' | 'DnsResolution' | 'File' | 'FileHash' | 'Host' | 'IoTDevice' | 'Ip' | 'MailCluster' | 'MailMessage' | 'Mailbox' | 'Malware' | 'Nic' | 'Process' | 'RegistryKey' | 'RegistryValue' | 'SecurityAlert' | 'SecurityGroup' | 'SubmissionMail' | 'Url' | string (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [SecurityAlertProperties](#securityalertproperties): SecurityAlert entity properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## SecurityAlertProperties
 ### Properties
@@ -3109,6 +3655,14 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **tactics**: ('Collection' | 'CommandAndControl' | 'CredentialAccess' | 'DefenseEvasion' | 'Discovery' | 'Execution' | 'Exfiltration' | 'Impact' | 'ImpairProcessControl' | 'InhibitResponseFunction' | 'InitialAccess' | 'LateralMovement' | 'Persistence' | 'PreAttack' | 'PrivilegeEscalation' | 'Reconnaissance' | 'ResourceDevelopment' | string)[]: The tactics of the alert rule
 * **techniques**: string[]: The techniques of the alert rule
 
+## ThreatIntelligenceAppendTags
+### Properties
+* **threatIntelligenceTags**: string[]: List of tags to be appended.
+
+## ThreatIntelligenceCount
+### Properties
+* **count**: int (Required, ReadOnly): Count of all the threat intelligence objects on the workspace that match the provided query.
+
 ## ThreatIntelligenceExternalReference
 ### Properties
 * **description**: string: External reference description
@@ -3122,11 +3676,37 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Additional Properties
 * **Additional Properties Type**: string
 
+## ThreatIntelligenceFilteringCriteria
+### Properties
+* **ids**: string[]: Ids of threat intelligence indicators
+* **includeDisabled**: bool: Parameter to include/exclude disabled indicators.
+* **keywords**: string[]: Keywords for searching threat intelligence indicators
+* **maxConfidence**: int: Maximum confidence.
+* **maxValidUntil**: string: End time for ValidUntil filter.
+* **minConfidence**: int: Minimum confidence.
+* **minValidUntil**: string: Start time for ValidUntil filter.
+* **pageSize**: int: Page size
+* **patternTypes**: string[]: Pattern types
+* **skipToken**: string: Skip token.
+* **sortBy**: [ThreatIntelligenceSortingCriteria](#threatintelligencesortingcriteria)[]: Columns to sort by and sorting order
+* **sources**: string[]: Sources of threat intelligence indicators
+* **threatTypes**: string[]: Threat types of threat intelligence indicators
+
 ## ThreatIntelligenceGranularMarkingModel
 ### Properties
 * **language**: string: Language granular marking model
 * **markingRef**: int: marking reference granular marking model
 * **selectors**: string[]: granular marking model selectors
+
+## ThreatIntelligenceIndicatorModel
+### Properties
+* **etag**: string: Etag of the azure resource
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **kind**: 'indicator' | string (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ThreatIntelligenceIndicatorProperties](#threatintelligenceindicatorproperties): Threat Intelligence Entity properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## ThreatIntelligenceIndicatorProperties
 ### Properties
@@ -3166,10 +3746,36 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Additional Properties
 * **Additional Properties Type**: any
 
+## ThreatIntelligenceInformation
+* **Discriminator**: kind
+
+### Base Properties
+* **etag**: string: Etag of the azure resource
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+### ThreatIntelligenceIndicatorModel
+#### Properties
+* **kind**: 'indicator' (Required): Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+* **properties**: [ThreatIntelligenceIndicatorProperties](#threatintelligenceindicatorproperties): Threat Intelligence Entity properties
+
+
+## ThreatIntelligenceInformationList
+### Properties
+* **nextLink**: string: The link to the next page of items
+* **value**: [ThreatIntelligenceInformation](#threatintelligenceinformation)[] (Required): The ThreatIntelligenceInformation items on this page
+
 ## ThreatIntelligenceKillChainPhase
 ### Properties
 * **killChainName**: string: Kill chainName name
 * **phaseName**: string: Phase name
+
+## ThreatIntelligenceList
+### Properties
+* **nextLink**: string: The link to the next page of items
+* **value**: [TIObject](#tiobject)[] (Required): The TIObject items on this page
 
 ## ThreatIntelligenceParsedPattern
 ### Properties
@@ -3180,6 +3786,11 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ### Properties
 * **value**: string: Value of parsed pattern
 * **valueType**: string: Type of the value
+
+## ThreatIntelligenceSortingCriteria
+### Properties
+* **itemKey**: string: Column name
+* **sortOrder**: 'ascending' | 'descending' | 'unsorted' | string: Sorting order (ascending/descending/unsorted).
 
 ## TIDataConnectorDataTypes
 ### Properties
@@ -3194,6 +3805,73 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **dataTypes**: [TIDataConnectorDataTypes](#tidataconnectordatatypes) (Required): The available data types for the connector.
 * **tenantId**: string (Required): The tenant id to connect to, and get the data from.
 * **tipLookbackPeriod**: string: The lookback period for the feed to be imported.
+
+## TimelineAggregation
+### Properties
+* **count**: int (Required): the total items found for a kind
+* **kind**: 'Activity' | 'Anomaly' | 'Bookmark' | 'SecurityAlert' | string (Required): the query kind
+
+## TimelineError
+### Properties
+* **errorMessage**: string (Required): the error message
+* **kind**: 'Activity' | 'Anomaly' | 'Bookmark' | 'SecurityAlert' | string (Required): the query kind
+* **queryId**: string: the query id
+
+## TimelineResultsMetadata
+### Properties
+* **aggregations**: [TimelineAggregation](#timelineaggregation)[] (Required): timeline aggregation per kind
+* **errors**: [TimelineError](#timelineerror)[]: information about the failure queries
+* **totalCount**: int (Required): the total items found for the timeline request
+
+## TIObject
+* **Discriminator**: kind
+
+### Base Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [TIObjectCommonProperties](#tiobjectcommonproperties): The properties of the TI object
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+
+### AttackPattern
+#### Properties
+* **kind**: 'AttackPattern' (Required): The kind of the TI object
+
+### Identity
+#### Properties
+* **kind**: 'Identity' (Required): The kind of the TI object
+
+### Indicator
+#### Properties
+* **kind**: 'Indicator' (Required): The kind of the TI object
+* **observables**: [IndicatorObservablesItem](#indicatorobservablesitem)[]: The observables of this indicator
+
+### Relationship
+#### Properties
+* **kind**: 'Relationship' (Required): The kind of the TI object
+
+### ThreatActor
+#### Properties
+* **kind**: 'ThreatActor' (Required): The kind of the TI object
+
+
+## TIObjectCommonProperties
+### Properties
+* **createdBy**: [UserInfo](#userinfo) (ReadOnly): The UserInfo of the user/entity which originally created this TI object.
+* **data**: [TIObjectCommonPropertiesData](#tiobjectcommonpropertiesdata) (ReadOnly): The core STIX object that this TI object represents.
+* **firstIngestedTimeUtc**: string (ReadOnly): The timestamp for the first time this object was ingested.
+* **ingestionRulesVersion**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (ReadOnly): The ID of the rules version that was active when this TI object was last ingested.
+* **lastIngestedTimeUtc**: string (ReadOnly): The timestamp for the last time this object was ingested.
+* **lastModifiedBy**: [UserInfo](#userinfo) (ReadOnly): The UserInfo of the user/entity which last modified this TI object.
+* **lastUpdatedDateTimeUtc**: string (ReadOnly): The timestamp for the last time this TI object was updated.
+* **lastUpdateMethod**: string (ReadOnly): The name of the method/application that initiated the last write to this TI object.
+* **relationshipHints**: [RelationshipHint](#relationshiphint)[] (ReadOnly): A dictionary used to help follow relationships from this object to other STIX objects. The keys are field names from the STIX object (in the 'data' field), and the values are lists of sources that can be prepended to the object ID in order to efficiently locate the target TI object.
+* **source**: string (ReadOnly): The source name for this TI object.
+
+## TIObjectCommonPropertiesData
+### Properties
+### Additional Properties
+* **Additional Properties Type**: any
 
 ## TiTaxiiDataConnectorDataTypes
 ### Properties
@@ -3219,7 +3897,7 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 ## TriggeredAnalyticsRuleRunProperties
 ### Properties
 * **executionTimeUtc**: string (Required)
-* **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string (Required): The triggered analytics rule run provisioning state
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string (Required, ReadOnly): The triggered analytics rule run provisioning state
 * **ruleId**: string (Required)
 * **ruleRunAdditionalData**: [TriggeredAnalyticsRuleRunPropertiesRuleRunAdditionalData](#triggeredanalyticsrulerunpropertiesrulerunadditionaldata): Dictionary of <any>
 * **triggeredAnalyticsRuleRunId**: string (Required)
@@ -3250,6 +3928,16 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **errorMessages**: string[] (ReadOnly): A list of descriptions of the error.
 * **recordIndex**: int: The number of the record that has the error.
 
+## Warning
+### Properties
+* **warning**: [WarningBody](#warningbody) (ReadOnly): Warning data.
+
+## WarningBody
+### Properties
+* **code**: 'SourceControlWarning_DeletePipelineFromAzureDevOps' | 'SourceControlWarning_DeleteRoleAssignment' | 'SourceControlWarning_DeleteServicePrincipal' | 'SourceControlWarning_DeleteWorkflowAndSecretFromGitHub' | 'SourceControl_DeletedWithWarnings' | string (ReadOnly): An identifier for the warning. Codes are invariant and are intended to be consumed programmatically.
+* **details**: [WarningBody](#warningbody)[] (ReadOnly)
+* **message**: string (ReadOnly): A message describing the warning, intended to be suitable for display in a user interface.
+
 ## WatchlistItemProperties
 ### Properties
 * **created**: string: The time the watchlist item was created
@@ -3276,7 +3964,7 @@ For Example: instruction step 1 might contain inner instruction steps: [instruct
 * **labels**: string[]: List of labels relevant to this watchlist
 * **numberOfLinesToSkip**: int: The number of lines in a csv/tsv content to skip before the header
 * **provider**: string (Required): The provider of the watchlist
-* **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string: The triggered analytics rule run provisioning state
+* **provisioningState**: 'Accepted' | 'Canceled' | 'Failed' | 'InProgress' | 'Succeeded' | string (ReadOnly): Describes provisioning state
 * **rawContent**: string: The raw content that represents to watchlist items to create. In case of csv/tsv content type, it's the content of the file that will parsed by the endpoint
 * **source**: string: The filename of the watchlist, called 'source'
 * **sourceType**: 'AzureStorage' | 'Local' | string: The sourceType of the watchlist

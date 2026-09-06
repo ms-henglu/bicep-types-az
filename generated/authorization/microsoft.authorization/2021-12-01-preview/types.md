@@ -18,6 +18,7 @@
 * **scopes**: [AccessReviewScope](#accessreviewscope)[] (WriteOnly): A collection of scopes used when selecting review history data
 * **settings**: [AccessReviewHistoryScheduleSettings](#accessreviewhistoryschedulesettings) (WriteOnly): Recurrence settings for recurring history reports, skip for one-time reports.
 * **status**: 'Done' | 'Error' | 'InProgress' | 'Requested' | string (ReadOnly, WriteOnly): This read-only field specifies the of the requested review history data. This is either requested, in-progress, done or error.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Authorization/accessReviewHistoryDefinitions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Authorization/accessReviewScheduleDefinitions@2021-12-01-preview
@@ -39,6 +40,7 @@
 * **scope**: [AccessReviewScope](#accessreviewscope) (ReadOnly, WriteOnly): This is used to define what to include in scope of the review. The scope definition includes the resourceId and roleDefinitionId.
 * **settings**: [AccessReviewScheduleSettings](#accessreviewschedulesettings) (WriteOnly): Access Review Settings.
 * **status**: 'Applied' | 'Applying' | 'AutoReviewed' | 'AutoReviewing' | 'Completed' | 'Completing' | 'InProgress' | 'Initializing' | 'NotStarted' | 'Scheduled' | 'Starting' | string (ReadOnly, WriteOnly): This read-only field specifies the status of an accessReview.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleDefinitions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview
@@ -55,6 +57,7 @@
 * **reviewersType**: 'Assigned' | 'Managers' | 'Self' | string (ReadOnly, WriteOnly): This field specifies the type of reviewers for a review. Usually for a review, reviewers are explicitly assigned. However, in some cases, the reviewers may not be assigned and instead be chosen dynamically. For example managers review or self review.
 * **startDateTime**: string (WriteOnly): The DateTime when the review instance is scheduled to be start.
 * **status**: 'Applied' | 'Applying' | 'AutoReviewed' | 'AutoReviewing' | 'Completed' | 'Completing' | 'InProgress' | 'Initializing' | 'NotStarted' | 'Scheduled' | 'Starting' | string (ReadOnly, WriteOnly): This read-only field specifies the status of an access review instance.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleDefinitions/instances' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Authorization/accessReviewScheduleDefinitions/instances/decisions@2021-12-01-preview
@@ -65,6 +68,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [AccessReviewDecisionProperties](#accessreviewdecisionproperties) (ReadOnly): Access Review Decision properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleDefinitions/instances/decisions' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Authorization/accessReviewScheduleSettings@2021-12-01-preview
@@ -85,7 +89,42 @@
 * **recommendationsEnabled**: bool (WriteOnly): Flag to indicate whether showing recommendations to reviewers is enabled.
 * **recurrence**: [AccessReviewRecurrenceSettings](#accessreviewrecurrencesettings) (WriteOnly): Access Review Settings.
 * **reminderNotificationsEnabled**: bool (WriteOnly): Flag to indicate whether sending reminder emails to reviewers are enabled.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Authorization/accessReviewScheduleSettings' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function acceptRecommendations (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+
+## Function applyDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+
+## Function generateDownloadUri (Microsoft.Authorization/accessReviewHistoryDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewHistoryDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+* **Output**: [AccessReviewHistoryInstance](#accessreviewhistoryinstance)
+
+## Function recordAllDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+* **Input**: [RecordAllDecisionsProperties](#recordalldecisionsproperties)
+
+## Function resetDecisions (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+
+## Function sendReminders (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions
+* **ApiVersion**: 2021-12-01-preview
+
+## Function stop (Microsoft.Authorization/accessReviewScheduleDefinitions/instances@2021-12-01-preview)
+* **Resource**: Microsoft.Authorization/accessReviewScheduleDefinitions/instances
+* **ApiVersion**: 2021-12-01-preview
 
 ## AccessReviewActorIdentity
 ### Properties
@@ -123,11 +162,11 @@
 * **Discriminator**: type
 
 ### Base Properties
-* **insightCreatedDateTime**: any (ReadOnly): Date Time when the insight was created.
+* **insightCreatedDateTime**: string (ReadOnly): Date Time when the insight was created.
 
 ### AccessReviewDecisionUserSignInInsightProperties
 #### Properties
-* **lastSignInDateTime**: any (ReadOnly): Date Time when the user signed into the tenant.
+* **lastSignInDateTime**: string (ReadOnly): Date Time when the user signed into the tenant.
 * **type**: 'userSignInInsight' (Required): The type of insight
 
 
@@ -194,10 +233,11 @@
 
 ## AccessReviewInstance
 ### Properties
-* **id**: string (ReadOnly): The access review instance id.
-* **name**: string (ReadOnly): The access review instance name.
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
 * **properties**: [AccessReviewInstanceProperties](#accessreviewinstanceproperties): Access Review properties.
-* **type**: string (ReadOnly): The resource type.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## AccessReviewInstanceProperties
 ### Properties
@@ -269,4 +309,20 @@
 * **principalType**: 'guestUser' | 'redeemedGuestUser' | 'servicePrincipal' | 'user' | 'user,group' | string (ReadOnly): The identity type user/servicePrincipal to review
 * **resourceId**: string (ReadOnly): ResourceId in which this review is getting created
 * **roleDefinitionId**: string (ReadOnly): This is used to indicate the role being reviewed
+
+## RecordAllDecisionsProperties
+### Properties
+* **decision**: 'Approve' | 'Deny' | string: The decision to make. Approvers can take action of Approve/Deny
+* **justification**: string: Justification provided by approvers for their action
+* **principalId**: string (ReadOnly): The id of principal which needs to be approved/denied.
+* **resourceId**: string (ReadOnly): The id of resource which needs to be approved/denied.
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 

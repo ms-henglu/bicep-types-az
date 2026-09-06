@@ -40,7 +40,7 @@
 * **apiVersion**: '2023-12-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **location**: string: Resource location
-* **name**: string (Required, DeployTimeConstant): The resource name
+* **name**: string {minLength: 2, maxLength: 10} (Required, DeployTimeConstant): The resource name
 * **properties**: [JitRequestProperties](#jitrequestproperties): The JIT request properties.
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
 * **tags**: [ResourceTags](#resourcetags): Resource tags
@@ -56,6 +56,15 @@
 * **ApiVersion**: 2023-12-01-preview
 * **Input**: [ListTokenRequest](#listtokenrequest)
 * **Output**: [ManagedIdentityTokenResult](#managedidentitytokenresult)
+
+## Function refreshPermissions (Microsoft.Solutions/applications@2023-12-01-preview)
+* **Resource**: Microsoft.Solutions/applications
+* **ApiVersion**: 2023-12-01-preview
+
+## Function updateAccess (Microsoft.Solutions/applications@2023-12-01-preview)
+* **Resource**: Microsoft.Solutions/applications
+* **ApiVersion**: 2023-12-01-preview
+* **Input**: [UpdateAccessDefinition](#updateaccessdefinition)
 
 ## AllowedUpgradePlansResult
 ### Properties
@@ -98,7 +107,7 @@
 * **displayName**: string: The managed application definition display name.
 * **isEnabled**: bool: A value indicating whether the package is enabled or not.
 * **lockingPolicy**: [ApplicationPackageLockingPolicyDefinition](#applicationpackagelockingpolicydefinition): The managed application locking policy.
-* **lockLevel**: 'CanNotDelete' | 'None' | 'ReadOnly' (Required): The managed application lock level.
+* **lockLevel**: 'CanNotDelete' | 'None' | 'ReadOnly' | string (Required): The managed application lock level.
 * **mainTemplate**: any: The inline main template json which has resources to be provisioned. It can be a JObject or well-formed JSON string.
 * **managementPolicy**: [ApplicationManagementPolicy](#applicationmanagementpolicy): The managed application management policy that determines publisher's access to the managed resource group.
 * **notificationPolicy**: [ApplicationNotificationPolicy](#applicationnotificationpolicy): The managed application notification policy.
@@ -192,6 +201,13 @@
 * **principalId**: string (Required): The the principal id that will be granted JIT access.
 * **roleDefinitionId**: string (Required): The role definition id that will be granted to the Principal.
 
+## JitRequestMetadata
+### Properties
+* **originRequestId**: string: The origin request id.
+* **requestorId**: string: The requestor id.
+* **subjectDisplayName**: string: The subject display name.
+* **tenantDisplayName**: string: The publisher's tenant name.
+
 ## JitRequestProperties
 ### Properties
 * **applicationResourceId**: string (Required): The parent application id.
@@ -268,6 +284,13 @@
 * **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
 * **lastModifiedBy**: string: The identity that last modified the resource.
 * **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
+
+## UpdateAccessDefinition
+### Properties
+* **Approver**: string: The approver name.
+* **Metadata**: [JitRequestMetadata](#jitrequestmetadata) (Required): The JIT request metadata.
+* **Status**: 'Elevate' | 'NotSpecified' | 'Remove' | string (Required): The JIT status.
+* **SubStatus**: 'Approved' | 'Denied' | 'Expired' | 'Failed' | 'NotSpecified' | 'Timeout' | string (Required): The JIT status.
 
 ## UserAssignedResourceIdentity
 ### Properties

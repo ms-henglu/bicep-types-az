@@ -1,0 +1,66 @@
+Generating types for 'specification/newrelic/resource-manager/NewRelic.Observability/NewRelicObservability/readme.md'
+AutoRest code generation utility [cli version: 3.7.2; node: v22.23.2]
+(C) 2018 Microsoft Corporation.
+https://aka.ms/autorest
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/NewRelic.Observability/activateSaaS': Unable to find type segments
+warning | SkippedSemanticValidation | Semantic validation was skipped.
+warning | PreCheck/CheckDuplicateSchemas | Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+warning | Skipping Accounts_List due to required query parameter "userEmail"
+warning | Skipping Accounts_List due to required query parameter "location"
+warning | Skipping Organizations_List due to required query parameter "userEmail"
+warning | Skipping Organizations_List due to required query parameter "location"
+warning | Skipping resource POST action path '/subscriptions/{subscriptionId}/providers/NewRelic.Observability/activateSaaS': Unable to find type segments

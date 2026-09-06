@@ -10,8 +10,8 @@
 * **location**: string: The location of the resource
 * **name**: string {pattern: "^[^<>&:\?]*$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [GraphQueryProperties](#graphqueryproperties): Metadata describing a graph query for an Azure resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): The system metadata relating to this resource.
-* **tags**: [ResourceTags](#resourcetags): Resource tags
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **tags**: [GraphQueryResourceTags](#graphqueryresourcetags): Resource tags.
 * **type**: 'Microsoft.ResourceGraph/queries' (ReadOnly, DeployTimeConstant): The resource type
 
 ## GraphQueryProperties
@@ -21,7 +21,7 @@
 * **resultKind**: 'basic' | string (ReadOnly): Enum indicating a type of graph query.
 * **timeModified**: string (ReadOnly): Date and time in UTC of the last modification that was made to this graph query definition.
 
-## ResourceTags
+## GraphQueryResourceTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
