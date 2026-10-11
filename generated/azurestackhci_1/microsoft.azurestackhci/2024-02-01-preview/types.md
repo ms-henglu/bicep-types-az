@@ -157,6 +157,26 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureStackHCI/virtualMachineInstances/hybridIdentityMetadata' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function pause (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function save (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachineInstances@2024-02-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-02-01-preview
+
 ## AttestationStatusProperties
 ### Properties
 * **attestationCertValidated**: 'Invalid' | 'Unknown' | 'Valid' | string (ReadOnly): The status of whether attestation certificate is validated.

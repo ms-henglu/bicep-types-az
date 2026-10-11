@@ -61,6 +61,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): The standard system metadata of a resource type.
 * **type**: 'Microsoft.Chaos/targets/capabilities' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.Chaos/experiments@2023-04-15-preview)
+* **Resource**: Microsoft.Chaos/experiments
+* **ApiVersion**: 2023-04-15-preview
+
+## Function start (Microsoft.Chaos/experiments@2023-04-15-preview)
+* **Resource**: Microsoft.Chaos/experiments
+* **ApiVersion**: 2023-04-15-preview
+
 ## Action
 * **Discriminator**: type
 

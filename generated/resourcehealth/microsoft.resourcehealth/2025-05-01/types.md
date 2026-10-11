@@ -44,6 +44,16 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.ResourceHealth/metadata' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function fetchBillingCommunicationDetails (Microsoft.ResourceHealth/events@2025-05-01)
+* **Resource**: Microsoft.ResourceHealth/events
+* **ApiVersion**: 2025-05-01
+* **Output**: [Event](#event)
+
+## Function fetchEventDetails (Microsoft.ResourceHealth/events@2025-05-01)
+* **Resource**: Microsoft.ResourceHealth/events
+* **ApiVersion**: 2025-05-01
+* **Output**: [Event](#event)
+
 ## Function listSecurityAdvisoryImpactedResources (Microsoft.ResourceHealth/events@2025-05-01)
 * **Resource**: Microsoft.ResourceHealth/events
 * **ApiVersion**: 2025-05-01
@@ -60,6 +70,14 @@
 * **id**: string: The impacted service id.
 * **name**: string: The impacted service name.
 * **regions**: [ImpactedRegion](#impactedregion)[]: The list of impacted regions for corresponding emerging issues.
+
+## Event
+### Properties
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [EventProperties](#eventproperties): Properties of event.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## EventImpactedResource
 ### Properties
@@ -95,7 +113,7 @@
 * **eventSource**: 'ResourceHealth' | 'ServiceHealth' | string: Source of event.
 * **eventSubType**: 'ForeignExchangeRateChange' | 'MeterIDChanges' | 'Overbilling' | 'PriceChanges' | 'Retirement' | 'TaxChanges' | 'UnauthorizedPartyAbuse' | 'Underbilling' | string: Sub-type of event.
 * **eventTags**: string[]: A list of metadata tags associated with the event. Possible values include:
- -Action Recommended: Action may be required by you to avoid possible disruptions or mitigate risks for your services. It is recommended to evaluate these actions and the potential impact on your services. 
+-Action Recommended: Action may be required by you to avoid possible disruptions or mitigate risks for your services. It is recommended to evaluate these actions and the potential impact on your services.
 - False Positive: After investigation, we've determined your service is healthy and service issues did not impact your services as originally communicated.
 - Preliminary PIR: For our largest, most impactful service issues a Preliminary Post Incident Review (PIR) is published generally within 72 hours of mitigation, to summarize what we have learned so far from the still-in-progress investigation.
 - Final PIR: For service issues, a Final Post Incident Review (PIR) may be published to provide additional details or learnings. Sometimes this requires us to complete an internal retrospective, generally within 14 days of mitigation.
@@ -199,7 +217,7 @@
 ### Properties
 * **displayName**: string: The display name.
 * **id**: string: The id of the metadata value
-* **previousId**: string: The previous value of the id field incase the data has changed.
+* **previousId**: string: The previous value of the id field in case the data has changed.
 * **priority**: int: Priority of this metadata supported value. Lower number is given higher preference.
 * **resourceTypes**: string[]: The list of associated resource types.
 * **serviceGuid**: string: The permanent guid for the service. Used when the id is a service name.
@@ -236,7 +254,7 @@
 ## Update
 ### Properties
 * **eventTags**: string[]: A list of metadata tags associated with the event. Possible values include:
- -Action Recommended: Action may be required by you to avoid possible disruptions or mitigate risks for your services. It is recommended to evaluate these actions and the potential impact on your services. 
+-Action Recommended: Action may be required by you to avoid possible disruptions or mitigate risks for your services. It is recommended to evaluate these actions and the potential impact on your services.
 - False Positive: After investigation, we've determined your service is healthy and service issues did not impact your services as originally communicated.
 - Preliminary PIR: For our largest, most impactful service issues a Preliminary Post Incident Review (PIR) is published generally within 72 hours of mitigation, to summarize what we have learned so far from the still-in-progress investigation.
 - Final PIR: For service issues, a Final Post Incident Review (PIR) may be published to provide additional details or learnings. Sometimes this requires us to complete an internal retrospective, generally within 14 days of mitigation.

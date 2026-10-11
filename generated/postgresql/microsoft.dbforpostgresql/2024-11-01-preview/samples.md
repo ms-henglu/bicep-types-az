@@ -33,7 +33,7 @@ resource exampleResource 'Microsoft.DBforPostgreSQL/flexibleServers@2024-11-01-p
       storageSizeGB: 256
       tier: 'P15'
     }
-    version: '16'
+    version: '17'
   }
   sku: {
     name: 'Standard_D4s_v3'
@@ -110,7 +110,7 @@ resource exampleResource 'Microsoft.DBforPostgreSQL/flexibleServers@2024-11-01-p
       storageSizeGB: 512
       tier: 'P20'
     }
-    version: '16'
+    version: '18'
   }
   sku: {
     name: 'Standard_D4s_v3'
@@ -189,7 +189,6 @@ resource exampleResource 'Microsoft.DBforPostgreSQL/flexibleServers@2024-11-01-p
       primaryKeyURI: 'https://test-kv.vault.azure.net/keys/test-key1/77f57315bab34b0189daa113fbc78787'
       primaryUserAssignedIdentityId: '/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/testresourcegroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/test-usermanagedidentity'
     }
-    pointInTimeUTC: '2021-06-27T00:04:59.4078005+00:00'
     sourceServerResourceId: '/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/testrg/providers/Microsoft.DBforPostgreSQL/flexibleServers/sourcepgservername'
   }
 }
