@@ -81,6 +81,46 @@
 * **tags**: [NodeTypeTags](#nodetypetags): Resource tags.
 * **type**: 'Microsoft.ServiceFabric/managedClusters/nodeTypes' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function applyMaintenanceWindow (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+
+## Function deallocate (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function deleteNode (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function fetchUpgradeStatus (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+
+## Function getazresiliencystatus (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Output**: [ManagedAzResiliencyStatus](#managedazresiliencystatus)
+
+## Function getFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function getFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function getMaintenanceWindowStatus (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Output**: [ManagedMaintenanceWindowStatus](#managedmaintenancewindowstatus)
+
 ## Function listFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
 * **Resource**: Microsoft.ServiceFabric/managedClusters
 * **ApiVersion**: 2024-11-01-preview
@@ -90,6 +130,64 @@
 * **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
 * **ApiVersion**: 2024-11-01-preview
 * **Output**: [FaultSimulationListResult](#faultsimulationlistresult)
+
+## Function redeploy (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function reimage (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function restart (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function resumeUpgrade (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [RuntimeResumeApplicationUpgradeParameters](#runtimeresumeapplicationupgradeparameters)
+
+## Function start (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [NodeTypeActionParameters](#nodetypeactionparameters)
+
+## Function startFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationContentWrapper](#faultsimulationcontentwrapper)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function startFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationContentWrapper](#faultsimulationcontentwrapper)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function startRollback (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+
+## Function stopFaultSimulation (Microsoft.ServiceFabric/managedClusters@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function stopFaultSimulation (Microsoft.ServiceFabric/managedClusters/nodeTypes@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/nodeTypes
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [FaultSimulationIdContent](#faultsimulationidcontent)
+* **Output**: [FaultSimulation](#faultsimulation)
+
+## Function updateUpgrade (Microsoft.ServiceFabric/managedClusters/applications@2024-11-01-preview)
+* **Resource**: Microsoft.ServiceFabric/managedClusters/applications
+* **ApiVersion**: 2024-11-01-preview
+* **Input**: [RuntimeUpdateApplicationUpgradeParameters](#runtimeupdateapplicationupgradeparameters)
 
 ## AdditionalNetworkInterfaceConfiguration
 ### Properties
@@ -262,12 +360,20 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **zones**: string[]: Indicates the zones of the fault simulation.
 
 
+## FaultSimulationContentWrapper
+### Properties
+* **parameters**: [FaultSimulationContent](#faultsimulationcontent) (Required): Parameters for Fault Simulation start action.
+
 ## FaultSimulationDetails
 ### Properties
 * **clusterId**: string: unique identifier for the cluster resource.
 * **nodeTypeFaultSimulation**: [NodeTypeFaultSimulation](#nodetypefaultsimulation)[]: List of node type simulations associated with the cluster fault simulation.
 * **operationId**: string: unique identifier for the operation associated with the fault simulation.
 * **parameters**: [FaultSimulationContent](#faultsimulationcontent): Fault simulation parameters.
+
+## FaultSimulationIdContent
+### Properties
+* **simulationId**: string (Required): unique identifier for the fault simulation.
 
 ## FaultSimulationListResult
 ### Properties
@@ -305,6 +411,11 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **probeProtocol**: 'http' | 'https' | 'tcp' | string (Required): the reference to the load balancer probe used by the load balancing rule.
 * **probeRequestPath**: string: The probe request path. Only supported for HTTP/HTTPS probes.
 * **protocol**: 'tcp' | 'udp' | string (Required): The reference to the transport protocol used by the load balancing rule.
+
+## ManagedAzResiliencyStatus
+### Properties
+* **baseResourceStatus**: [ResourceAzStatus](#resourceazstatus)[]: List of Managed VM Sizes for Service Fabric Managed Clusters.
+* **isClusterZoneResilient**: bool (ReadOnly): URL to get the next set of Managed VM Sizes if there are any.
 
 ## ManagedClusterProperties
 ### Properties
@@ -363,6 +474,16 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
+## ManagedMaintenanceWindowStatus
+### Properties
+* **canApplyUpdates**: bool (ReadOnly): If updates can be applied.
+* **isRegionReady**: bool (ReadOnly): Indicates if the region is ready to configure maintenance windows.
+* **isWindowActive**: bool (ReadOnly): If maintenance window is active.
+* **isWindowEnabled**: bool (ReadOnly): If maintenance window is enabled on this cluster.
+* **lastWindowEndTimeUTC**: string (ReadOnly): Last window end time in UTC.
+* **lastWindowStartTimeUTC**: string (ReadOnly): Last window start time in UTC.
+* **lastWindowStatusUpdateAtUTC**: string (ReadOnly): Last window update time in UTC.
+
 ## NetworkSecurityRule
 ### Properties
 * **access**: 'allow' | 'deny' | string (Required): The network traffic is allowed or denied.
@@ -379,6 +500,12 @@ This value must be between 00:00:00 and 49710.06:28:15 (unsigned 32 bit integer 
 * **sourceAddressPrefixes**: string[]: The CIDR or source IP ranges.
 * **sourcePortRange**: string: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
 * **sourcePortRanges**: string[]: The source port ranges.
+
+## NodeTypeActionParameters
+### Properties
+* **force**: bool: Force the action to go through.
+* **nodes**: string[]: List of node names from the node type.
+* **updateType**: 'ByUpgradeDomain' | 'Default' | string: Specifies the way the operation will be performed.
 
 ## NodeTypeFaultSimulation
 ### Properties
@@ -498,6 +625,13 @@ should be split between the partition ‘Count’
 * **name**: string (Required): Name of the network interface.
 * **publicIPAddressVersion**: 'IPv4' | 'IPv6' | string: Specifies whether the IP configuration's public IP is IPv4 or IPv6. Default is IPv4.
 
+## ResourceAzStatus
+### Properties
+* **details**: string (ReadOnly): Zone resiliency status details for the resource.
+* **isZoneResilient**: bool (ReadOnly): VM Size name.
+* **resourceName**: string (ReadOnly): VM Size properties.
+* **resourceType**: string (ReadOnly): VM Size id.
+
 ## RollingUpgradeMonitoringPolicy
 ### Properties
 * **failureAction**: 'Manual' | 'Rollback' | string (Required): The compensating action to perform when a Monitored upgrade encounters monitoring policy or health policy violations. Invalid indicates the failure action is invalid. Rollback specifies that the upgrade will start rolling back automatically. Manual indicates that the upgrade will switch to UnmonitoredManual upgrade mode.
@@ -506,6 +640,66 @@ should be split between the partition ‘Count’
 * **healthCheckWaitDuration**: string (Required): The amount of time to wait after completing an upgrade domain before applying health policies. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeDomainTimeout**: string (Required): The amount of time each upgrade domain has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
 * **upgradeTimeout**: string (Required): The amount of time the overall upgrade has to complete before FailureAction is executed. Cannot be larger than 12 hours. It is interpreted as a string representing an ISO 8601 duration with following format "hh:mm:ss.fff".
+
+## RuntimeApplicationHealthPolicy
+### Properties
+* **considerWarningAsError**: bool (Required): Indicates whether warnings are treated with the same severity as errors.
+* **defaultServiceTypeHealthPolicy**: [RuntimeServiceTypeHealthPolicy](#runtimeservicetypehealthpolicy): The health policy used by default to evaluate the health of a service type.
+* **maxPercentUnhealthyDeployedApplications**: int (Required): The maximum allowed percentage of unhealthy deployed applications. Allowed values are Byte values from zero to 100.
+The percentage represents the maximum tolerated percentage of deployed applications that can be unhealthy before the application is considered in error.
+This is calculated by dividing the number of unhealthy deployed applications over the number of nodes where the application is currently deployed on in the cluster.
+The computation rounds up to tolerate one failure on small numbers of nodes. Default percentage is zero.
+* **serviceTypeHealthPolicyMap**: [RuntimeApplicationHealthPolicyServiceTypeHealthPolicyMap](#runtimeapplicationhealthpolicyservicetypehealthpolicymap): The map with service type health policy per service type name. The map is empty by default.
+
+## RuntimeApplicationHealthPolicyServiceTypeHealthPolicyMap
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [RuntimeServiceTypeHealthPolicy](#runtimeservicetypehealthpolicy)
+
+## RuntimeResumeApplicationUpgradeParameters
+### Properties
+* **upgradeDomainName**: string: The upgrade domain name. Expected to be the next upgrade domain if the application is upgrading.
+
+## RuntimeRollingUpgradeUpdateMonitoringPolicy
+### Properties
+* **failureAction**: 'Manual' | 'Rollback' | string: The compensating action to perform when a Monitored upgrade encounters monitoring policy or health policy violations. Invalid indicates the failure action is invalid. Rollback specifies that the upgrade will start rolling back automatically. Manual indicates that the upgrade will switch to UnmonitoredManual upgrade mode
+* **forceRestart**: bool: If true, then processes are forcefully restarted during upgrade even when the code version has not changed (the upgrade only changes configuration or data).
+* **healthCheckRetryTimeoutInMilliseconds**: string: The amount of time to retry health evaluation when the application or cluster is unhealthy before FailureAction is executed. It is first interpreted as a string representing an ISO 8601 duration. If that fails, then it is interpreted as a number representing the total number of milliseconds.
+* **healthCheckStableDurationInMilliseconds**: string: The amount of time that the application or cluster must remain healthy before the upgrade proceeds to the next upgrade domain. It is first interpreted as a string representing an ISO 8601 duration. If that fails, then it is interpreted as a number representing the total number of milliseconds.
+* **healthCheckWaitDurationInMilliseconds**: string: The amount of time to wait after completing an upgrade domain before applying health policies. It is first interpreted as a string representing an ISO 8601 duration. If that fails, then it is interpreted as a number representing the total number of milliseconds.
+* **instanceCloseDelayDurationInSeconds**: int: Duration in seconds, to wait before a stateless instance is closed, to allow the active requests to drain gracefully. This would be effective when the instance is closing during the application/cluster upgrade, only for those instances which have a non-zero delay duration configured in the service description.
+* **replicaSetCheckTimeoutInMilliseconds**: int: The maximum amount of time to block processing of an upgrade domain and prevent loss of availability when there are unexpected issues. When this timeout expires, processing of the upgrade domain will proceed regardless of availability loss issues. The timeout is reset at the start of each upgrade domain. Valid values are between 0 and 42949672925 inclusive. (unsigned 32-bit integer).
+* **rollingUpgradeMode**: 'Monitored' | 'UnmonitoredAuto' | 'UnmonitoredManual' | string (Required): The mode used to monitor health during a rolling upgrade.
+* **upgradeDomainTimeoutInMilliseconds**: string: The amount of time each upgrade domain has to complete before FailureAction is executed. It is first interpreted as a string representing an ISO 8601 duration. If that fails, then it is interpreted as a number representing the total number of milliseconds.
+* **upgradeTimeoutInMilliseconds**: string: The amount of time the overall upgrade has to complete before FailureAction is executed. It is first interpreted as a string representing an ISO 8601 duration. If that fails, then it is interpreted as a number representing the total number of milliseconds.
+
+## RuntimeServiceTypeHealthPolicy
+### Properties
+* **maxPercentUnhealthyPartitionsPerService**: int {minValue: 0, maxValue: 100} (Required): The maximum allowed percentage of unhealthy partitions per service.
+
+The percentage represents the maximum tolerated percentage of partitions that can be unhealthy before the service is considered in error.
+If the percentage is respected but there is at least one unhealthy partition, the health is evaluated as Warning.
+The percentage is calculated by dividing the number of unhealthy partitions over the total number of partitions in the service.
+The computation rounds up to tolerate one failure on small numbers of partitions.
+* **maxPercentUnhealthyReplicasPerPartition**: int {minValue: 0, maxValue: 100} (Required): The maximum allowed percentage of unhealthy replicas per partition.
+
+The percentage represents the maximum tolerated percentage of replicas that can be unhealthy before the partition is considered in error.
+If the percentage is respected but there is at least one unhealthy replica, the health is evaluated as Warning.
+The percentage is calculated by dividing the number of unhealthy replicas over the total number of replicas in the partition.
+The computation rounds up to tolerate one failure on small numbers of replicas.
+* **maxPercentUnhealthyServices**: int {minValue: 0, maxValue: 100} (Required): The maximum allowed percentage of unhealthy services.
+
+The percentage represents the maximum tolerated percentage of services that can be unhealthy before the application is considered in error.
+If the percentage is respected but there is at least one unhealthy service, the health is evaluated as Warning.
+This is calculated by dividing the number of unhealthy services of the specific service type over the total number of services of the specific service type.
+The computation rounds up to tolerate one failure on small numbers of services.
+
+## RuntimeUpdateApplicationUpgradeParameters
+### Properties
+* **applicationHealthPolicy**: [RuntimeApplicationHealthPolicy](#runtimeapplicationhealthpolicy): Defines a health policy used to evaluate the health of an application or one of its children entities.
+* **name**: string (Required): The name of the application, including the 'fabric:' URI scheme.
+* **updateDescription**: [RuntimeRollingUpgradeUpdateMonitoringPolicy](#runtimerollingupgradeupdatemonitoringpolicy): Describes the parameters for updating a rolling upgrade of application or cluster and a monitoring policy.
+* **upgradeKind**: 'Rolling' | string (Required): The kind of the upgrade.
 
 ## ScalingMechanism
 * **Discriminator**: kind

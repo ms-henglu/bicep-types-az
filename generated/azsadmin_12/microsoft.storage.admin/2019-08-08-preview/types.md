@@ -35,6 +35,14 @@
 * **properties**: [ServiceNameProperties](#servicenameproperties) (ReadOnly): Properties for service name.
 * **type**: 'Microsoft.Storage.Admin/storageServices' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function reclaimStorageCapacity (Microsoft.Storage.Admin/locations@2019-08-08-preview)
+* **Resource**: Microsoft.Storage.Admin/locations
+* **ApiVersion**: 2019-08-08-preview
+
+## Function undelete (Microsoft.Storage.Admin/locations/storageAccounts@2019-08-08-preview)
+* **Resource**: Microsoft.Storage.Admin/locations/storageAccounts
+* **ApiVersion**: 2019-08-08-preview
+
 ## ServiceNameProperties
 ### Properties
 * **serviceName**: string (ReadOnly): Service Name for Storage Service.

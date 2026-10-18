@@ -8,6 +8,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: any (ReadOnly): An empty set of properties
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Security/locations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Security/locations/alerts@2015-06-01-preview
@@ -73,6 +74,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SecurityTaskProperties](#securitytaskproperties) (ReadOnly): Describes properties of a task.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Security/locations/tasks' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Security/locations/topologies@2015-06-01-preview
@@ -85,6 +87,23 @@
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [TopologyResourceProperties](#topologyresourceproperties) (ReadOnly)
 * **type**: 'Microsoft.Security/locations/topologies' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function dismiss (Microsoft.Security/locations/alerts@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2015-06-01-preview
+
+## Function reactivate (Microsoft.Security/locations/alerts@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/alerts
+* **ApiVersion**: 2015-06-01-preview
+
+## Function {jitNetworkAccessPolicyInitiateType} (Microsoft.Security/locations/jitNetworkAccessPolicies@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/jitNetworkAccessPolicies
+* **ApiVersion**: 2015-06-01-preview
+* **Input**: [JitNetworkAccessPolicyInitiateRequest](#jitnetworkaccesspolicyinitiaterequest)
+
+## Function {taskUpdateActionType} (Microsoft.Security/locations/tasks@2015-06-01-preview)
+* **Resource**: Microsoft.Security/locations/tasks
+* **ApiVersion**: 2015-06-01-preview
 
 ## AlertConfidenceReason
 ### Properties
@@ -152,6 +171,22 @@
 * **securityFamily**: 'Ngfw' | 'SaasWaf' | 'Va' | 'Waf' | string (Required): The security family of the discovered solution
 * **sku**: string (Required): The security solutions' image sku
 
+## JitNetworkAccessPolicyInitiatePort
+### Properties
+* **allowedSourceAddressPrefix**: string: Source of the allowed traffic. If omitted, the request will be for the source IP address of the initiate request.
+* **endTimeUtc**: string (Required): The time to close the request in UTC
+* **number**: int {minValue: 0, maxValue: 65535} (Required)
+
+## JitNetworkAccessPolicyInitiateRequest
+### Properties
+* **justification**: string: The justification for making the initiate request
+* **virtualMachines**: [JitNetworkAccessPolicyInitiateVirtualMachine](#jitnetworkaccesspolicyinitiatevirtualmachine)[] (Required): A list of virtual machines & ports to open access for
+
+## JitNetworkAccessPolicyInitiateVirtualMachine
+### Properties
+* **id**: string (Required): Resource ID of the virtual machine that is linked to this policy
+* **ports**: [JitNetworkAccessPolicyInitiatePort](#jitnetworkaccesspolicyinitiateport)[] (Required): The ports to open for the resource with the `id`
+
 ## JitNetworkAccessPolicyProperties
 ### Properties
 * **provisioningState**: string (ReadOnly): Gets the provisioning state of the Just-in-Time policy.
@@ -207,6 +242,15 @@
 * **securityTaskParameters**: [SecurityTaskParameters](#securitytaskparameters): Changing set of properties, depending on the task type that is derived from the name field
 * **state**: string (ReadOnly): State of the task (Active, Resolved etc.)
 * **subState**: string (ReadOnly): Additional data on the state of the task
+
+## SystemData
+### Properties
+* **createdAt**: string: The timestamp of resource creation (UTC).
+* **createdBy**: string: The identity that created the resource.
+* **createdByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that created the resource.
+* **lastModifiedAt**: string: The timestamp of resource last modification (UTC)
+* **lastModifiedBy**: string: The identity that last modified the resource.
+* **lastModifiedByType**: 'Application' | 'Key' | 'ManagedIdentity' | 'User' | string: The type of identity that last modified the resource.
 
 ## TopologyResourceProperties
 ### Properties

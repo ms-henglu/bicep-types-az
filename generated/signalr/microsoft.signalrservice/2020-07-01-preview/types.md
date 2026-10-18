@@ -25,10 +25,25 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Properties of the private endpoint connection
 * **type**: 'Microsoft.SignalRService/signalR/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.SignalRService/locations@2020-07-01-preview)
+* **Resource**: Microsoft.SignalRService/locations
+* **ApiVersion**: 2020-07-01-preview
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailability](#nameavailability)
+
 ## Function listKeys (Microsoft.SignalRService/signalR@2020-07-01-preview)
 * **Resource**: Microsoft.SignalRService/signalR
 * **ApiVersion**: 2020-07-01-preview
 * **Output**: [SignalRKeys](#signalrkeys)
+
+## Function regenerateKey (Microsoft.SignalRService/signalR@2020-07-01-preview)
+* **Resource**: Microsoft.SignalRService/signalR
+* **ApiVersion**: 2020-07-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+
+## Function restart (Microsoft.SignalRService/signalR@2020-07-01-preview)
+* **Resource**: Microsoft.SignalRService/signalR
+* **ApiVersion**: 2020-07-01-preview
 
 ## ManagedIdentity
 ### Properties
@@ -48,6 +63,17 @@ It also appears in the aud (audience) claim of the issued token.
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentityProperty](#userassignedidentityproperty)
+
+## NameAvailability
+### Properties
+* **message**: string: The message of the operation.
+* **nameAvailable**: bool: Indicates whether the name is available or not.
+* **reason**: string: The reason of the availability. Required if name is not available.
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string (Required): The SignalR service name to validate. e.g."my-signalR-name-here"
+* **type**: string (Required): The resource type. Can be "Microsoft.SignalRService/SignalR" or "Microsoft.SignalRService/webPubSub"
 
 ## NetworkACL
 ### Properties
@@ -82,6 +108,10 @@ It also appears in the aud (audience) claim of the issued token.
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' | string: The keyType to regenerate. Must be either 'primary' or 'secondary'(case-insensitive).
 
 ## ResourceSku
 ### Properties

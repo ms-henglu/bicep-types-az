@@ -10,7 +10,7 @@
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string {minLength: 1, maxLength: 63, pattern: "^[a-zA-Z0-9]$|^[a-zA-Z0-9][-_a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [CustomLocationProperties](#customlocationproperties): The set of properties specific to a Custom Location
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ExtendedLocation/customLocations' (ReadOnly, DeployTimeConstant): The resource type
 
@@ -23,9 +23,29 @@
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string {minLength: 1, maxLength: 63, pattern: "^[a-zA-Z0-9]$|^[a-zA-Z0-9][-_a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ResourceSyncRuleProperties](#resourcesyncruleproperties): The set of properties specific to a Resource Sync Rule
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.ExtendedLocation/customLocations/resourceSyncRules' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function findTargetResourceGroup (Microsoft.ExtendedLocation/customLocations@2021-08-31-preview)
+* **Resource**: Microsoft.ExtendedLocation/customLocations
+* **ApiVersion**: 2021-08-31-preview
+* **Input**: [CustomLocationFindTargetResourceGroupProperties](#customlocationfindtargetresourcegroupproperties)
+* **Output**: [CustomLocationFindTargetResourceGroupResult](#customlocationfindtargetresourcegroupresult)
+
+## CustomLocationFindTargetResourceGroupProperties
+### Properties
+* **labels**: [CustomLocationFindTargetResourceGroupPropertiesLabels](#customlocationfindtargetresourcegrouppropertieslabels): Labels of the custom resource, this is a map of {key,value} pairs.
+
+## CustomLocationFindTargetResourceGroupPropertiesLabels
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## CustomLocationFindTargetResourceGroupResult
+### Properties
+* **matchedResourceSyncRule**: string (ReadOnly): The matching resource sync rule is the particular resource sync rule that matched the match expressions and labels and had lowest priority. This is the rule responsible for mapping the target resource to the target resource group.
+* **targetResourceGroup**: string (ReadOnly): The target resource group of matching resource sync rule. The labels from the request will be used to find out matching resource sync rule against the selector property of the resource sync rule. The one with highest priority will be returned if there are multiple matching rules.
 
 ## CustomLocationProperties
 ### Properties
