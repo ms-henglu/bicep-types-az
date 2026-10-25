@@ -92,6 +92,12 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Compute/galleries/inVMAccessControlProfiles/versions' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function share (Microsoft.Compute/galleries@2024-03-03)
+* **Resource**: Microsoft.Compute/galleries
+* **ApiVersion**: 2024-03-03
+* **Input**: [SharingUpdate](#sharingupdate)
+* **Output**: [SharingUpdate](#sharingupdate)
+
 ## AccessControlRules
 ### Properties
 * **identities**: [AccessControlRulesIdentity](#accesscontrolrulesidentity)[]: A list of identities.
@@ -132,6 +138,11 @@
 ### Properties
 * **regionalReplicaCount**: int: The number of direct drive replicas of the Image Version to be created.This Property is updatable
 * **storageAccountType**: 'PremiumV2_LRS' | 'Premium_LRS' | 'Standard_LRS' | 'Standard_ZRS' | string: Specifies the storage account type to be used to create the direct drive replicas
+
+## CommonUserAssignedIdentitiesValue
+### Properties
+* **clientId**: string (ReadOnly): The client id of user assigned identity.
+* **principalId**: string (ReadOnly): The principal id of user assigned identity.
 
 ## CommunityGalleryInfo
 ### Properties
@@ -259,7 +270,7 @@
 ## GalleryIdentityUserAssignedIdentities
 ### Properties
 ### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentitiesValue](#userassignedidentitiesvalue)
+* **Additional Properties Type**: [CommonUserAssignedIdentitiesValue](#commonuserassignedidentitiesvalue)
 
 ## GalleryImageFeature
 ### Properties
@@ -447,6 +458,11 @@
 * **aggregatedState**: 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): Aggregated sharing state of current gallery.
 * **summary**: [RegionalSharingStatus](#regionalsharingstatus)[]: Summary of all regional sharing status.
 
+## SharingUpdate
+### Properties
+* **groups**: [SharingProfileGroup](#sharingprofilegroup)[]: A list of sharing profile groups.
+* **operationType**: 'Add' | 'EnableCommunity' | 'Remove' | 'Reset' | string (Required): This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**
+
 ## SoftDeletePolicy
 ### Properties
 * **isSoftDeleteEnabled**: bool: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
@@ -532,11 +548,6 @@
 ### Properties
 * **defaultConfigurationLink**: string: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
 * **mediaLink**: string (Required): Required. The mediaLink of the artifact, must be a readable storage page blob.
-
-## UserAssignedIdentitiesValue
-### Properties
-* **clientId**: string (ReadOnly): The client id of user assigned identity.
-* **principalId**: string (ReadOnly): The principal id of user assigned identity.
 
 ## ValidationsProfile
 ### Properties

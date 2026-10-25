@@ -28,6 +28,34 @@ resource exampleResource 'Microsoft.Cache/redisEnterprise@2025-08-01-preview' = 
         keyEncryptionKeyUrl: 'https://your-kv.vault.azure.net/keys/your-key/your-key-version'
       }
     }
+    maintenanceConfiguration: {
+      maintenanceWindows: [
+        {
+          type: 'Weekly'
+          duration: 'PT6H'
+          schedule: {
+            dayOfWeek: 'Monday'
+          }
+          startHourUtc: 3
+        }
+        {
+          type: 'Weekly'
+          duration: 'PT6H'
+          schedule: {
+            dayOfWeek: 'Tuesday'
+          }
+          startHourUtc: 3
+        }
+        {
+          type: 'Weekly'
+          duration: 'PT6H'
+          schedule: {
+            dayOfWeek: 'Wednesday'
+          }
+          startHourUtc: 3
+        }
+      ]
+    }
     minimumTlsVersion: '1.2'
     publicNetworkAccess: 'Disabled'
   }
@@ -145,6 +173,7 @@ resource exampleResource 'Microsoft.Cache/redisEnterprise/migrations@2025-08-01-
   parent: parentResource 
   name: 'example'
   properties: {
+    forceMigrate: true
     skipDataMigration: true
     sourceResourceId: '/subscriptions/e7b5a9d2-6b6a-4d2f-9143-20d9a10f5b8f/resourceGroups/rg1/providers/Microsoft.Cache/redis/cache1'
     sourceType: 'AzureCacheForRedis'

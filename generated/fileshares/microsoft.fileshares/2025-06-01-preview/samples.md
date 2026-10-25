@@ -10,7 +10,7 @@ FileShares_CreateOrUpdate_MaximumSet
 ```bicep
 resource exampleResource 'Microsoft.FileShares/fileShares@2025-06-01-preview' = {
   name: 'example'
-  location: 'gdsuixfhrgfbbbfjtgocmlzyuonrr'
+  location: 'westus'
   properties: {
     mediaTier: 'SSD'
     mountName: 'fileshare'
@@ -43,6 +43,7 @@ resource exampleResource 'Microsoft.FileShares/fileShares/fileShareSnapshots@202
   parent: parentResource 
   name: 'example'
   properties: {
+    initiatorId: 'backup-vault-001'
     metadata: {
       key9372: 'jtc'
     }
