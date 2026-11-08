@@ -71,18 +71,6 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DataReplication/replicationVaults/jobs' (ReadOnly, DeployTimeConstant): The resource type
 
-## Resource Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies@2024-09-01
-* **Readable Scope(s)**: ResourceGroup
-* **Writable Scope(s)**: ResourceGroup
-### Properties
-* **apiVersion**: '2024-09-01' (ReadOnly, DeployTimeConstant): The resource api version
-* **etag**: string: Gets or sets ETag.
-* **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **name**: string {pattern: "^[a-zA-Z0-9-.]*$"} (Required, DeployTimeConstant): The resource name
-* **properties**: [PrivateEndpointConnectionProxyProperties](#privateendpointconnectionproxyproperties): The resource-specific properties for this resource.
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
-* **type**: 'Microsoft.DataReplication/replicationVaults/privateEndpointConnectionProxies' (ReadOnly, DeployTimeConstant): The resource type
-
 ## Resource Microsoft.DataReplication/replicationVaults/privateEndpointConnections@2024-09-01
 * **Readable Scope(s)**: ResourceGroup
 * **Writable Scope(s)**: ResourceGroup
@@ -149,6 +137,24 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DataReplication/replicationVaults/replicationPolicies' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.DataReplication/locations@2024-09-01)
+* **Resource**: Microsoft.DataReplication/locations
+* **ApiVersion**: 2024-09-01
+* **Input**: [CheckNameAvailabilityModel](#checknameavailabilitymodel)
+* **Output**: [CheckNameAvailabilityResponseModel](#checknameavailabilityresponsemodel)
+
+## Function plannedFailover (Microsoft.DataReplication/replicationVaults/protectedItems@2024-09-01)
+* **Resource**: Microsoft.DataReplication/replicationVaults/protectedItems
+* **ApiVersion**: 2024-09-01
+* **Input**: [PlannedFailoverModel](#plannedfailovermodel)
+* **Output**: [PlannedFailoverModel](#plannedfailovermodel)
+
+## Function preflight (Microsoft.DataReplication/deployments@2024-09-01)
+* **Resource**: Microsoft.DataReplication/deployments
+* **ApiVersion**: 2024-09-01
+* **Input**: [DeploymentPreflightModel](#deploymentpreflightmodel)
+* **Output**: [DeploymentPreflightModel](#deploymentpreflightmodel)
+
 ## AffectedObjectDetails
 ### Properties
 * **description**: string: Description of the affected object details.
@@ -161,13 +167,28 @@
 * **storageAccountName**: string {minLength: 1} (Required): Gets or sets the Storage account name.
 * **storageContainers**: [StorageContainerProperties](#storagecontainerproperties)[] (Required): Gets or sets the list of AzStackHCICluster Storage Container.
 
-## ConnectionDetails
+## CheckNameAvailabilityModel
 ### Properties
-* **groupId**: string: Gets or sets group id.
-* **id**: string: Gets or sets id.
-* **linkIdentifier**: string: Gets or sets link identifier.
-* **memberName**: string: Gets or sets member name.
-* **privateIpAddress**: string: Gets or sets private IP address.
+* **name**: string: Gets or sets the resource name.
+* **type**: string: Gets or sets the resource type.
+
+## CheckNameAvailabilityResponseModel
+### Properties
+* **message**: string: Gets or sets the message for resource name unavailability.
+* **nameAvailable**: bool: Gets or sets a value indicating whether resource name is available or not.
+* **reason**: string: Gets or sets the reason for resource name unavailability.
+
+## DeploymentPreflightModel
+### Properties
+* **resources**: [DeploymentPreflightResource](#deploymentpreflightresource)[]: Gets or sets the list of resources.
+
+## DeploymentPreflightResource
+### Properties
+* **apiVersion**: string: Gets or sets the Api version.
+* **location**: string: Gets or sets the location of the resource.
+* **name**: string: Gets or sets the resource name.
+* **properties**: any: Gets or sets the properties of the resource.
+* **type**: string: Gets or sets the resource type.
 
 ## DiskControllerInputs
 ### Properties
@@ -306,15 +327,6 @@
 * **subnet**: string (ReadOnly): Gets or sets the network subnet.
 * **testVmName**: string (ReadOnly): Gets or sets the test VM name.
 * **vmName**: string (ReadOnly): Gets or sets the VM name.
-
-## GroupConnectivityInformation
-### Properties
-* **customerVisibleFqdns**: string[]: Gets or sets customer visible FQDNs.
-* **groupId**: string: Gets or sets group id.
-* **internalFqdn**: string: Gets or sets Internal Fqdn.
-* **memberName**: string: Gets or sets member name.
-* **privateLinkServiceArmRegion**: string: Gets or sets the private link service arm region.
-* **redirectMapId**: string: Gets or sets the redirect map id.
 
 ## HealthErrorModel
 ### Properties
@@ -468,6 +480,30 @@
 ### Additional Properties
 * **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
 
+## PlannedFailoverModel
+### Properties
+* **properties**: [PlannedFailoverModelProperties](#plannedfailovermodelproperties) (Required): Planned failover model properties.
+
+## PlannedFailoverModelCustomProperties
+* **Discriminator**: instanceType
+
+### Base Properties
+
+### HyperVToAzStackHCIPlannedFailoverModelCustomProperties
+#### Properties
+* **instanceType**: 'HyperVToAzStackHCI' (Required): Discriminator property for PlannedFailoverModelCustomProperties.
+* **shutdownSourceVM**: bool (Required): Gets or sets a value indicating whether VM needs to be shut down.
+
+### VMwareToAzStackHCIPlannedFailoverModelCustomProperties
+#### Properties
+* **instanceType**: 'VMwareToAzStackHCI' (Required): Discriminator property for PlannedFailoverModelCustomProperties.
+* **shutdownSourceVM**: bool (Required): Gets or sets a value indicating whether VM needs to be shut down.
+
+
+## PlannedFailoverModelProperties
+### Properties
+* **customProperties**: [PlannedFailoverModelCustomProperties](#plannedfailovermodelcustomproperties) (Required): Planned failover model custom properties.
+
 ## PolicyModelCustomProperties
 * **Discriminator**: instanceType
 
@@ -497,11 +533,6 @@
 ### Properties
 * **id**: string: Gets or sets the id.
 
-## PrivateEndpointConnectionProxyProperties
-### Properties
-* **provisioningState**: 'Canceled' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets or sets the provisioning state of the private endpoint connection proxy.
-* **remotePrivateEndpoint**: [RemotePrivateEndpoint](#remoteprivateendpoint): Represent remote private endpoint information for the private endpoint connection proxy.
-
 ## PrivateEndpointConnectionResponseProperties
 ### Properties
 * **privateEndpoint**: [PrivateEndpoint](#privateendpoint): Represent private Endpoint network resource that is linked to the Private Endpoint connection.
@@ -515,24 +546,11 @@
 * **requiredMembers**: string[]: Gets or sets the required member. This translates to how many Private IPs should be created for each privately linkable resource.
 * **requiredZoneNames**: string[]: Gets or sets the private DNS zone names.
 
-## PrivateLinkServiceConnection
-### Properties
-* **groupIds**: string[]: Gets or sets group ids.
-* **name**: string: Gets or sets private link service connection name.
-* **requestMessage**: string: Gets or sets the request message for the private link service connection.
-
 ## PrivateLinkServiceConnectionState
 ### Properties
 * **actionsRequired**: string: Gets or sets actions required.
 * **description**: string: Gets or sets description.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Gets or sets the status.
-
-## PrivateLinkServiceProxy
-### Properties
-* **groupConnectivityInformation**: [GroupConnectivityInformation](#groupconnectivityinformation)[]: Gets or sets group connectivity information.
-* **id**: string: Gets or sets private link service proxy id.
-* **remotePrivateEndpointConnection**: [RemotePrivateEndpointConnection](#remoteprivateendpointconnection): Represent remote private endpoint connection.
-* **remotePrivateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate): Represents Private link service connection state.
 
 ## ProtectedItemDynamicMemoryConfig
 ### Properties
@@ -703,18 +721,6 @@
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleted' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Gets or sets the provisioning state of the recovery point item.
 * **recoveryPointTime**: string (Required): Gets or sets the recovery point time.
 * **recoveryPointType**: 'ApplicationConsistent' | 'CrashConsistent' | string (Required): Gets or sets the recovery point type.
-
-## RemotePrivateEndpoint
-### Properties
-* **connectionDetails**: [ConnectionDetails](#connectiondetails)[]: Gets or sets the list of Connection Details. This is the connection details for private endpoint.
-* **id**: string {minLength: 1} (Required): Gets or sets private link service proxy id.
-* **manualPrivateLinkServiceConnections**: [PrivateLinkServiceConnection](#privatelinkserviceconnection)[]: Gets or sets the list of Manual Private Link Service Connections and gets populated for Manual approval flow.
-* **privateLinkServiceConnections**: [PrivateLinkServiceConnection](#privatelinkserviceconnection)[]: Gets or sets the list of Private Link Service Connections and gets populated for Auto approval flow.
-* **privateLinkServiceProxies**: [PrivateLinkServiceProxy](#privatelinkserviceproxy)[]: Gets or sets the list of private link service proxies.
-
-## RemotePrivateEndpointConnection
-### Properties
-* **id**: string: Gets or sets the remote private endpoint connection id.
 
 ## ReplicationExtensionModelCustomProperties
 * **Discriminator**: instanceType

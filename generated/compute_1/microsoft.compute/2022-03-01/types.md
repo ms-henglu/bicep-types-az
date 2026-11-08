@@ -284,6 +284,216 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags
 * **type**: 'Microsoft.Compute/virtualMachineScaleSets/virtualMachines/runCommands' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function assessPatches (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Output**: [VirtualMachineAssessPatchesResult](#virtualmachineassesspatchesresult)
+
+## Function capture (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineCaptureParameters](#virtualmachinecaptureparameters)
+* **Output**: [VirtualMachineCaptureResult](#virtualmachinecaptureresult)
+
+## Function convertToManagedDisks (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function convertToSinglePlacementGroup (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VMScaleSetConvertToSinglePlacementGroupInput](#vmscalesetconverttosingleplacementgroupinput)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function deallocate (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function deallocate (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function delete (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+
+## Function extensionRollingUpgrade (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+
+## Function generalize (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function generateKeyPair (Microsoft.Compute/sshPublicKeys@2022-03-01)
+* **Resource**: Microsoft.Compute/sshPublicKeys
+* **ApiVersion**: 2022-03-01
+* **Output**: [SshPublicKeyGenerateKeyPairResult](#sshpublickeygeneratekeypairresult)
+
+## Function getRequestRateByInterval (Microsoft.Compute/locations/logAnalytics@2022-03-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2022-03-01
+* **Input**: [RequestRateByIntervalInput](#requestratebyintervalinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function getThrottledRequests (Microsoft.Compute/locations/logAnalytics@2022-03-01)
+* **Resource**: Microsoft.Compute/locations/logAnalytics
+* **ApiVersion**: 2022-03-01
+* **Input**: [ThrottledRequestsInput](#throttledrequestsinput)
+* **Output**: [LogAnalyticsOperationResult](#loganalyticsoperationresult)
+
+## Function installPatches (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineInstallPatchesParameters](#virtualmachineinstallpatchesparameters)
+* **Output**: [VirtualMachineInstallPatchesResult](#virtualmachineinstallpatchesresult)
+
+## Function manualupgrade (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceRequiredIDs](#virtualmachinescalesetvminstancerequiredids)
+
+## Function osRollingUpgrade (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function performMaintenance (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+
+## Function performMaintenance (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function poweroff (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+
+## Function powerOff (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function reapply (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function redeploy (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+
+## Function redeploy (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetReimageParameters](#virtualmachinescalesetreimageparameters)
+
+## Function reimage (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMReimageParameters](#virtualmachinescalesetvmreimageparameters)
+
+## Function reimage (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineReimageParameters](#virtualmachinereimageparameters)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function reimageall (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function restart (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+
+## Function restart (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function restart (Microsoft.Compute/hostGroups/hosts@2022-03-01)
+* **Resource**: Microsoft.Compute/hostGroups/hosts
+* **ApiVersion**: 2022-03-01
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function retrieveBootDiagnosticsData (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Output**: [RetrieveBootDiagnosticsDataResult](#retrievebootdiagnosticsdataresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function runCommand (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+* **Input**: [RunCommandInput](#runcommandinput)
+* **Output**: [RunCommandResult](#runcommandresult)
+
+## Function setOrchestrationServiceState (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [OrchestrationServiceStateInput](#orchestrationservicestateinput)
+
+## Function simulateEviction (Microsoft.Compute/virtualMachineScaleSets/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function simulateEviction (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets
+* **ApiVersion**: 2022-03-01
+* **Input**: [VirtualMachineScaleSetVMInstanceIDs](#virtualmachinescalesetvminstanceids)
+
+## Function start (Microsoft.Compute/virtualMachineScaleSets/virtualmachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+* **ApiVersion**: 2022-03-01
+
+## Function start (Microsoft.Compute/virtualMachines@2022-03-01)
+* **Resource**: Microsoft.Compute/virtualMachines
+* **ApiVersion**: 2022-03-01
+
 ## AdditionalCapabilities
 ### Properties
 * **hibernationEnabled**: bool: The flag that enables or disables hibernation capability on the VM.
@@ -617,6 +827,13 @@
 * **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. <br><br> When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
 * **ssh**: [SshConfiguration](#sshconfiguration): Specifies the ssh key configuration for a Linux OS.
 
+## LinuxParameters
+### Properties
+* **classificationsToInclude**: ('Critical' | 'Other' | 'Security' | string)[]: The update classifications to select when installing patches for Linux.
+* **maintenanceRunId**: string: This is used as a maintenance run identifier for Auto VM Guest Patching in Linux.
+* **packageNameMasksToExclude**: string[]: packages to exclude in the patch operation. Format: packageName_packageVersion
+* **packageNameMasksToInclude**: string[]: packages to include in the patch operation. Format: packageName_packageVersion
+
 ## LinuxPatchSettings
 ### Properties
 * **assessmentMode**: 'AutomaticByPlatform' | 'ImageDefault' | string: Specifies the mode of VM Guest Patch Assessment for the IaaS virtual machine.<br /><br /> Possible values are:<br /><br /> **ImageDefault** - You control the timing of patch assessments on a virtual machine. <br /><br /> **AutomaticByPlatform** - The platform will trigger periodic patch assessments. The property provisionVMAgent must be true.
@@ -626,6 +843,14 @@
 ## LinuxVMGuestPatchAutomaticByPlatformSettings
 ### Properties
 * **rebootSetting**: 'Always' | 'IfRequired' | 'Never' | 'Unknown' | string: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+
+## LogAnalyticsOperationResult
+### Properties
+* **properties**: [LogAnalyticsOutput](#loganalyticsoutput) (ReadOnly): LogAnalyticsOutput
+
+## LogAnalyticsOutput
+### Properties
+* **output**: string (ReadOnly): Output file Uri path to blob container.
 
 ## MaintenanceRedeployStatus
 ### Properties
@@ -660,6 +885,11 @@
 * **networkInterfaceConfigurations**: [VirtualMachineNetworkInterfaceConfiguration](#virtualmachinenetworkinterfaceconfiguration)[]: Specifies the networking configurations that will be used to create the virtual machine networking resources.
 * **networkInterfaces**: [NetworkInterfaceReference](#networkinterfacereference)[]: Specifies the list of resource Ids for the network interfaces associated with the virtual machine.
 
+## OrchestrationServiceStateInput
+### Properties
+* **action**: 'Resume' | 'Suspend' | string (Required): The action to be performed.
+* **serviceName**: 'AutomaticRepairs' | string (Required): The name of the service.
+
 ## OSDisk
 ### Properties
 * **caching**: 'None' | 'ReadOnly' | 'ReadWrite': Specifies the caching requirements. <br><br> Possible values are: <br><br> **None** <br><br> **ReadOnly** <br><br> **ReadWrite** <br><br> Default: **None** for Standard storage. **ReadOnly** for Premium storage.
@@ -690,6 +920,15 @@
 * **requireGuestProvisionSignal**: bool: Optional property which must either be set to True or omitted.
 * **secrets**: [VaultSecretGroup](#vaultsecretgroup)[]: Specifies set of certificates that should be installed onto the virtual machine. To install certificates on a virtual machine it is recommended to use the [Azure Key Vault virtual machine extension for Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux) or the [Azure Key Vault virtual machine extension for Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
 * **windowsConfiguration**: [WindowsConfiguration](#windowsconfiguration): Specifies Windows operating system settings on the virtual machine.
+
+## PatchInstallationDetail
+### Properties
+* **classifications**: string[] (ReadOnly): The classification(s) of the patch as provided by the patch publisher.
+* **installationState**: 'Excluded' | 'Failed' | 'Installed' | 'NotSelected' | 'Pending' | 'Unknown' | string (ReadOnly): The state of the patch after the installation operation completed.
+* **kbId**: string (ReadOnly): The KBID of the patch. Only applies to Windows patches.
+* **name**: string (ReadOnly): The friendly name of the patch.
+* **patchId**: string (ReadOnly): A unique identifier for the patch.
+* **version**: string (ReadOnly): The version string of the package. It may conform to Semantic Versioning. Only applies to Linux.
 
 ## PatchSettings
 ### Properties
@@ -728,6 +967,18 @@
 * **name**: string (Required): The plan ID.
 * **product**: string (Required): Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
 * **publisher**: string (Required): The publisher ID.
+
+## RequestRateByIntervalInput
+### Properties
+* **blobContainerSasUri**: string (Required): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required): From time of the query
+* **groupByClientApplicationId**: bool: Group query result by Client Application ID.
+* **groupByOperationName**: bool: Group query result by Operation Name.
+* **groupByResourceName**: bool: Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool: Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool: Group query result by User Agent.
+* **intervalLength**: 'FiveMins' | 'SixtyMins' | 'ThirtyMins' | 'ThreeMins' (Required): Interval value in minutes used to create LogAnalytics call rate logs.
+* **toTime**: string (Required): To time of the query
 
 ## ResourceTags
 ### Properties
@@ -888,6 +1139,11 @@
 * **dataDisks**: [RestorePointSourceVMDataDisk](#restorepointsourcevmdatadisk)[]: Gets the data disks of the VM captured at the time of the restore point creation.
 * **osDisk**: [RestorePointSourceVmosDisk](#restorepointsourcevmosdisk): Gets the OS disk of the VM captured at the time of the restore point creation.
 
+## RetrieveBootDiagnosticsDataResult
+### Properties
+* **consoleScreenshotBlobUri**: string (ReadOnly): The console screenshot blob URI
+* **serialConsoleLogBlobUri**: string (ReadOnly): The serial console log blob URI.
+
 ## RollingUpgradePolicy
 ### Properties
 * **enableCrossZoneUpgrade**: bool: Allow VMSS to ignore AZ boundaries when constructing upgrade batches. Take into consideration the Update Domain and maxBatchInstancePercent to determine the batch size.
@@ -918,10 +1174,20 @@
 * **progress**: [RollingUpgradeProgressInfo](#rollingupgradeprogressinfo) (ReadOnly): Information about the number of virtual machine instances in each upgrade state.
 * **runningStatus**: [RollingUpgradeRunningStatus](#rollingupgraderunningstatus) (ReadOnly): Information about the current running state of the overall upgrade.
 
+## RunCommandInput
+### Properties
+* **commandId**: string (Required): The run command id.
+* **parameters**: [RunCommandInputParameter](#runcommandinputparameter)[]: The run command parameters.
+* **script**: string[]: Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+
 ## RunCommandInputParameter
 ### Properties
 * **name**: string (Required): The run command parameter name.
 * **value**: string (Required): The run command parameter value.
+
+## RunCommandResult
+### Properties
+* **value**: [InstanceViewStatus](#instanceviewstatus)[]: Run command operation response.
 
 ## ScaleInPolicy
 ### Properties
@@ -958,6 +1224,12 @@
 * **keyData**: string: SSH public key certificate used to authenticate with the VM through ssh. The key needs to be at least 2048-bit and in ssh-rsa format. <br><br> For creating ssh keys, see [Create SSH keys on Linux and Mac for Linux VMs in Azure]https://docs.microsoft.com/azure/virtual-machines/linux/create-ssh-keys-detailed).
 * **path**: string: Specifies the full path on the created VM where ssh public key is stored. If the file already exists, the specified key is appended to the file. Example: /home/user/.ssh/authorized_keys
 
+## SshPublicKeyGenerateKeyPairResult
+### Properties
+* **id**: string (Required): The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/sshPublicKeys/{SshPublicKeyName}
+* **privateKey**: string (Required): Private key portion of the key pair used to authenticate to a virtual machine through ssh. The private key is returned in RFC3447 format and should be treated as a secret.
+* **publicKey**: string (Required): Public key portion of the key pair used to authenticate to a virtual machine through ssh. The public key is in ssh-rsa format.
+
 ## SshPublicKeyResourceProperties
 ### Properties
 * **publicKey**: string: SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.
@@ -985,6 +1257,17 @@
 ### Properties
 * **enable**: bool: Specifies whether the Terminate Scheduled event is enabled or disabled.
 * **notBeforeTimeout**: string: Configurable length of time a Virtual Machine being deleted will have to potentially approve the Terminate Scheduled Event before the event is auto approved (timed out). The configuration must be specified in ISO 8601 format, the default value is 5 minutes (PT5M)
+
+## ThrottledRequestsInput
+### Properties
+* **blobContainerSasUri**: string (Required): SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+* **fromTime**: string (Required): From time of the query
+* **groupByClientApplicationId**: bool: Group query result by Client Application ID.
+* **groupByOperationName**: bool: Group query result by Operation Name.
+* **groupByResourceName**: bool: Group query result by Resource Name.
+* **groupByThrottlePolicy**: bool: Group query result by Throttle Policy applied.
+* **groupByUserAgent**: bool: Group query result by User Agent.
+* **toTime**: string (Required): To time of the query
 
 ## UefiSettings
 ### Properties
@@ -1031,6 +1314,31 @@
 * **extensionHandlers**: [VirtualMachineExtensionHandlerInstanceView](#virtualmachineextensionhandlerinstanceview)[]: The virtual machine extension handler instance view.
 * **statuses**: [InstanceViewStatus](#instanceviewstatus)[]: The resource status information.
 * **vmAgentVersion**: string: The VM Agent full version.
+
+## VirtualMachineAssessPatchesResult
+### Properties
+* **assessmentActivityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **availablePatches**: [VirtualMachineSoftwarePatchProperties](#virtualmachinesoftwarepatchproperties)[] (ReadOnly): The list of patches that have been detected as available for installation.
+* **criticalAndSecurityPatchCount**: int (ReadOnly): The number of critical or security patches that have been detected as available and not yet installed.
+* **error**: [ApiError](#apierror) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **otherPatchCount**: int (ReadOnly): The number of all available patches excluding critical and security.
+* **rebootPending**: bool (ReadOnly): The overall reboot status of the VM. It will be true when partially installed patches require a reboot to complete installation but the reboot has not yet occurred.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+
+## VirtualMachineCaptureParameters
+### Properties
+* **destinationContainerName**: string (Required): The destination container name.
+* **overwriteVhds**: bool (Required): Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+* **vhdPrefix**: string (Required): The captured virtual hard disk's name prefix.
+
+## VirtualMachineCaptureResult
+### Properties
+* **$schema**: string (ReadOnly): the schema of the captured virtual machine
+* **contentVersion**: string (ReadOnly): the version of the content
+* **id**: string: Resource Id
+* **parameters**: any (ReadOnly): parameters of the captured virtual machine
+* **resources**: any[] (ReadOnly): a list of resource items of the captured virtual machine
 
 ## VirtualMachineExtension
 ### Properties
@@ -1114,6 +1422,28 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## VirtualMachineInstallPatchesParameters
+### Properties
+* **linuxParameters**: [LinuxParameters](#linuxparameters): Input for InstallPatches on a Linux VM, as directly received by the API
+* **maximumDuration**: string: Specifies the maximum amount of time that the operation will run. It must be an ISO 8601-compliant duration string such as PT4H (4 hours)
+* **rebootSetting**: 'Always' | 'IfRequired' | 'Never' | string (Required): Defines when it is acceptable to reboot a VM during a software update operation.
+* **windowsParameters**: [WindowsParameters](#windowsparameters): Input for InstallPatches on a Windows VM, as directly received by the API
+
+## VirtualMachineInstallPatchesResult
+### Properties
+* **error**: [ApiError](#apierror) (ReadOnly): The errors that were encountered during execution of the operation. The details array contains the list of them.
+* **excludedPatchCount**: int (ReadOnly): The number of patches that were not installed due to the user blocking their installation.
+* **failedPatchCount**: int (ReadOnly): The number of patches that could not be installed due to some issue. See errors for details.
+* **installationActivityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **installedPatchCount**: int (ReadOnly): The number of patches successfully installed.
+* **maintenanceWindowExceeded**: bool (ReadOnly): Whether the operation ran out of time before it completed all its intended actions.
+* **notSelectedPatchCount**: int (ReadOnly): The number of patches that were detected as available for install, but did not meet the operation's criteria.
+* **patches**: [PatchInstallationDetail](#patchinstallationdetail)[] (ReadOnly): The patches that were installed during the operation.
+* **pendingPatchCount**: int (ReadOnly): The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+* **rebootStatus**: 'Completed' | 'Failed' | 'NotNeeded' | 'Required' | 'Started' | 'Unknown' | string (ReadOnly): The reboot state of the VM following completion of the operation.
+* **startDateTime**: string (ReadOnly): The UTC timestamp when the operation began.
+* **status**: 'CompletedWithWarnings' | 'Failed' | 'InProgress' | 'Succeeded' | 'Unknown' | string (ReadOnly): The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings."
 
 ## VirtualMachineInstanceView
 ### Properties
@@ -1229,6 +1559,10 @@
 ## VirtualMachinePublicIPAddressDnsSettingsConfiguration
 ### Properties
 * **domainNameLabel**: string (Required): The Domain name label prefix of the PublicIPAddress resources that will be created. The generated name label is the concatenation of the domain name label and vm network profile unique ID.
+
+## VirtualMachineReimageParameters
+### Properties
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
 
 ## VirtualMachineRunCommandInstanceView
 ### Properties
@@ -1431,11 +1765,24 @@
 * **publicIPAddressVersion**: 'IPv4' | 'IPv6' | string: Available from Api-Version 2019-07-01 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
 * **publicIPPrefix**: [SubResource](#subresource): The PublicIPPrefix from which to allocate publicIP addresses.
 
+## VirtualMachineScaleSetReimageParameters
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+
 ## VirtualMachineScaleSetStorageProfile
 ### Properties
 * **dataDisks**: [VirtualMachineScaleSetDataDisk](#virtualmachinescalesetdatadisk)[]: Specifies the parameters that are used to add data disks to the virtual machines in the scale set. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
 * **imageReference**: [ImageReference](#imagereference): Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations.
 * **osDisk**: [VirtualMachineScaleSetOSDisk](#virtualmachinescalesetosdisk): Specifies information about the operating system disk used by the virtual machines in the scale set. <br><br> For more information about disks, see [About disks and VHDs for Azure virtual machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+
+## VirtualMachineScaleSetVMInstanceIDs
+### Properties
+* **instanceIds**: string[]: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+
+## VirtualMachineScaleSetVMInstanceRequiredIDs
+### Properties
+* **instanceIds**: string[] (Required): The virtual machine scale set instance ids.
 
 ## VirtualMachineScaleSetVMInstanceView
 ### Properties
@@ -1499,6 +1846,23 @@
 * **protectFromScaleIn**: bool: Indicates that the virtual machine scale set VM shouldn't be considered for deletion during a scale-in operation.
 * **protectFromScaleSetActions**: bool: Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
 
+## VirtualMachineScaleSetVMReimageParameters
+### Properties
+* **tempDisk**: bool: Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.
+
+## VirtualMachineSoftwarePatchProperties
+### Properties
+* **activityId**: string (ReadOnly): The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+* **assessmentState**: 'Available' | 'Unknown' | string (ReadOnly): Describes the availability of a given patch.
+* **classifications**: string[] (ReadOnly): The classification(s) of the patch as provided by the patch publisher.
+* **kbId**: string (ReadOnly): The KBID of the patch. Only applies to Windows patches.
+* **lastModifiedDateTime**: string (ReadOnly): The UTC timestamp of the last update to this patch record.
+* **name**: string (ReadOnly): The friendly name of the patch.
+* **patchId**: string (ReadOnly): A unique identifier for the patch.
+* **publishedDate**: string (ReadOnly): The UTC timestamp when the repository published this patch.
+* **rebootBehavior**: 'AlwaysRequiresReboot' | 'CanRequestReboot' | 'NeverReboots' | 'Unknown' | string (ReadOnly): Describes the reboot requirements of the patch.
+* **version**: string (ReadOnly): The version number of the patch. This property applies only to Linux patches.
+
 ## VMDiskSecurityProfile
 ### Properties
 * **diskEncryptionSet**: [DiskEncryptionSetParameters](#diskencryptionsetparameters): Specifies the customer managed disk encryption set resource id for the managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
@@ -1513,6 +1877,10 @@
 * **tags**: string: Optional, Specifies a passthrough value for more generic context.
 * **treatFailureAsDeploymentFailure**: bool: Optional, If true, any failure for any operation in the VmApplication will fail the deployment
 
+## VMScaleSetConvertToSinglePlacementGroupInput
+### Properties
+* **activePlacementGroupId**: string: Id of the placement group in which you want future virtual machine instances to be placed. To query placement group Id, please use Virtual Machine Scale Set VMs - Get API. If not provided, the platform will choose one with maximum number of virtual machine instances.
+
 ## VMSizeProperties
 ### Properties
 * **vCPUsAvailable**: int: Specifies the number of vCPUs available for the VM. <br><br> When this property is not specified in the request body the default behavior is to set it to the value of vCPUs available for that VM size exposed in api response of [List all available virtual machine sizes in a region](https://docs.microsoft.com/en-us/rest/api/compute/resource-skus/list) .
@@ -1526,6 +1894,14 @@
 * **provisionVMAgent**: bool: Indicates whether virtual machine agent should be provisioned on the virtual machine. <br><br> When this property is not specified in the request body, default behavior is to set it to true.  This will ensure that VM Agent is installed on the VM so that extensions can be added to the VM later.
 * **timeZone**: string: Specifies the time zone of the virtual machine. e.g. "Pacific Standard Time". <br><br> Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.getsystemtimezones).
 * **winRM**: [WinRMConfiguration](#winrmconfiguration): Specifies the Windows Remote Management listeners. This enables remote Windows PowerShell.
+
+## WindowsParameters
+### Properties
+* **classificationsToInclude**: ('Critical' | 'Definition' | 'FeaturePack' | 'Security' | 'ServicePack' | 'Tools' | 'UpdateRollUp' | 'Updates' | string)[]: The update classifications to select when installing patches for Windows.
+* **excludeKbsRequiringReboot**: bool: Filters out Kbs that don't have an InstallationRebootBehavior of 'NeverReboots' when this is set to true.
+* **kbNumbersToExclude**: string[]: Kbs to exclude in the patch operation
+* **kbNumbersToInclude**: string[]: Kbs to include in the patch operation
+* **maxPatchPublishDate**: string: This is used to install patches that were published on or before this given max published date.
 
 ## WindowsVMGuestPatchAutomaticByPlatformSettings
 ### Properties

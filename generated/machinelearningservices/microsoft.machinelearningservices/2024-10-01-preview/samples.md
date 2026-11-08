@@ -487,7 +487,22 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/capabilit
   parent: parentResource 
   name: 'example'
   properties: {
+    acaEnvironmentConnections: [
+      'sampleAcaEnvironmentConnection'
+    ]
+    aiServicesConnections: [
+      'sampleAIServiceConnection'
+    ]
     customerSubnet: 'subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/myResourceGroups/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/mySubnet'
+    storageConnections: [
+      'sampleStorageConnection'
+    ]
+    threadStorageConnections: [
+      'sampleThreadStorageConnection'
+    ]
+    vectorStoreConnections: [
+      'sampleVectorStoreConnection'
+    ]
   }
 }
 ```
@@ -1647,6 +1662,7 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/jobs@2024
         uri: 'string'
       }
     }
+    parentJobName: 'ParentRun'
     properties: {
       string: 'string'
     }
@@ -1672,6 +1688,58 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/jobs@2024
     }
     tags: {
       string: 'string'
+    }
+  }
+}
+```
+
+CreateOrUpdate Distillation Job.
+```bicep
+resource exampleResource 'Microsoft.MachineLearningServices/workspaces/jobs@2024-10-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    computeId: 'gpu-compute'
+    dataGenerationDetails: {
+      dataGenerationTaskType: 'Conversation'
+      dataGenerationType: 'LabelGeneration'
+      teacherModelEndpoint: {
+        endpointName: 'newfinetuneinttesting-jbuob'
+      }
+      trainingData: {
+        description: {
+        }
+        jobInputType: 'uri_file'
+        mode: 'ReadOnlyMount'
+        uri: 'azureml://registries/azureml-meta/models/Llama-2-7b/versions/11'
+      }
+    }
+    experimentName: 'llm-finetuning'
+    finetuningDetails: {
+      studentModel: {
+        description: {
+        }
+        jobInputType: 'mlflow_model'
+        mode: 'ReadOnlyMount'
+        uri: 'azureml://registries/azureml-meta/models/Meta-Llama-3.1-8B-Instruct/versions/1'
+      }
+    }
+    jobType: 'Distillation'
+    outputs: {
+      string: {
+        description: 'string'
+        jobOutputType: 'mlflow_model'
+        mode: 'ReadWriteMount'
+        uri: 'string'
+      }
+    }
+    queueSettings: {
+      jobTier: 'Standard'
+    }
+    resources: {
+      instanceTypes: [
+        'Standard_NC6'
+      ]
     }
   }
 }
@@ -1843,6 +1911,46 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/jobs@2024
         }
       }
     }
+  }
+}
+```
+
+## microsoft.machinelearningservices/workspaces/managednetworks
+
+Put ManagedNetworkSettings
+```bicep
+resource exampleResource 'Microsoft.MachineLearningServices/workspaces/managedNetworks@2024-10-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    managedNetwork: {
+      enableNetworkMonitor: true
+      firewallSku: 'Standard'
+      isolationMode: 'AllowOnlyApprovedOutbound'
+      outboundRules: {
+        rule_name_1: {
+          type: 'FQDN'
+          category: 'UserDefined'
+          destination: 'destination_endpoint'
+        }
+      }
+    }
+  }
+}
+```
+
+## microsoft.machinelearningservices/workspaces/managednetworks/outboundrules
+
+CreateOrUpdate OutboundRule
+```bicep
+resource exampleResource 'Microsoft.MachineLearningServices/workspaces/managedNetworks/outboundRules@2024-10-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    type: 'FQDN'
+    category: 'UserDefined'
+    destination: 'destination_endpoint'
+    status: 'Active'
   }
 }
 ```
@@ -2172,6 +2280,7 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/serverles
   properties: {
     authMode: 'Key'
     contentSafety: {
+      contentSafetyLevel: 'Blocking'
       contentSafetyStatus: 'Enabled'
     }
     modelSettings: {

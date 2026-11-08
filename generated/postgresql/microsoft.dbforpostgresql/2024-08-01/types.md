@@ -138,6 +138,49 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMigrationNameAvailability (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+* **Input**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+* **Output**: [MigrationNameAvailabilityResource](#migrationnameavailabilityresource)
+
+## Function checkNameAvailability (Microsoft.DBforPostgreSQL/locations@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2024-08-01
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [NameAvailability](#nameavailability)
+
+## Function checkVirtualNetworkSubnetUsage (Microsoft.DBforPostgreSQL/locations@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/locations
+* **ApiVersion**: 2024-08-01
+* **Input**: [VirtualNetworkSubnetUsageParameter](#virtualnetworksubnetusageparameter)
+* **Output**: [VirtualNetworkSubnetUsageResult](#virtualnetworksubnetusageresult)
+
+## Function ltrPreBackup (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+* **Input**: [LtrPreBackupRequest](#ltrprebackuprequest)
+* **Output**: [LtrPreBackupResponse](#ltrprebackupresponse)
+
+## Function restart (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+* **Input**: [RestartParameter](#restartparameter)
+
+## Function start (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+
+## Function startLtrBackup (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+* **Input**: [LtrBackupRequest](#ltrbackuprequest)
+* **Output**: [LtrBackupResponse](#ltrbackupresponse)
+
+## Function stop (Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01)
+* **Resource**: Microsoft.DBforPostgreSQL/flexibleServers
+* **ApiVersion**: 2024-08-01
+
 ## AdminCredentials
 ### Properties
 * **sourceServerPassword**: string {sensitive} (Required, WriteOnly): Password for the user of the source server.
@@ -161,6 +204,19 @@
 * **backupRetentionDays**: int: Backup retention days for the flexible server.
 * **earliestRestoreDate**: string (ReadOnly): Earliest restore point time (ISO8601 format) for a flexible server.
 * **geoRedundantBackup**: 'Disabled' | 'Enabled' | string: Indicates if the server is configured to create geographically redundant backups.
+
+## BackupSettings
+### Properties
+* **backupName**: string (Required): Backup Name for the current backup
+
+## BackupStoreDetails
+### Properties
+* **sasUriList**: (string {sensitive})[] (Required): List of SAS uri of storage containers where backup data is to be streamed/copied.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
 
 ## ConfigurationProperties
 ### Properties
@@ -224,6 +280,11 @@
 * **storageMb**: int: Storage size (in MB) for database server.
 * **version**: string: Major version of PostgreSQL database engine.
 
+## DelegatedSubnetUsage
+### Properties
+* **subnetName**: string (ReadOnly): Name of the delegated subnet for which IP addresses are in use
+* **usage**: int (ReadOnly): Number of IP addresses used by the delegated subnet
+
 ## FirewallRuleProperties
 ### Properties
 * **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): IP address defining the end of the range of addresses of a firewall rule. Must be expressed in IPv4 format.
@@ -248,12 +309,41 @@
 * **startTime**: string (Required): Start time of the operation.
 * **status**: 'Cancelled' | 'Failed' | 'Running' | 'Succeeded' | string (Required): Service-set extensible enum indicating the status of operation
 
+## LtrBackupRequest
+### Properties
+* **backupSettings**: [BackupSettings](#backupsettings) (Required): Backup Settings
+* **targetDetails**: [BackupStoreDetails](#backupstoredetails) (Required): Backup store detail for target server
+
+## LtrBackupResponse
+### Properties
+* **properties**: [LtrBackupOperationResponseProperties](#ltrbackupoperationresponseproperties): Long Term Retention Backup Operation Resource Properties
+
+## LtrPreBackupRequest
+### Properties
+* **backupSettings**: [BackupSettings](#backupsettings) (Required): Backup Settings
+
+## LtrPreBackupResponse
+### Properties
+* **properties**: [LtrPreBackupResponseProperties](#ltrprebackupresponseproperties) (Required): Additional Properties for the pre backup response
+
+## LtrPreBackupResponseProperties
+### Properties
+* **numberOfContainers**: int (Required): Number of storage containers the plugin will use during backup. More than one containers may be used for size limitations, parallelism, or redundancy etc.
+
 ## MaintenanceWindow
 ### Properties
 * **customWindow**: string: Indicates whether custom window is enabled or disabled.
 * **dayOfWeek**: int: Day of the week to be used for maintenance window.
 * **startHour**: int: Start hour to be used for maintenance window.
 * **startMinute**: int: Start minute to be used for maintenance window.
+
+## MigrationNameAvailabilityResource
+### Properties
+* **message**: string (ReadOnly): Migration name availability message.
+* **name**: string (Required): Name of the migration to check for validity and availability.
+* **nameAvailable**: bool (ReadOnly): Indicates if the migration name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string (ReadOnly): Migration name availability reason.
+* **type**: string (Required): Type of resource.
 
 ## MigrationResourceProperties
 ### Properties
@@ -306,6 +396,14 @@
 ### Additional Properties
 * **Additional Properties Type**: [DbMigrationStatus](#dbmigrationstatus)
 
+## NameAvailability
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **name**: string (ReadOnly): Name of the PostgreSQL flexible server.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
+* **type**: string (ReadOnly): Type of the server.
+
 ## Network
 ### Properties
 * **delegatedSubnetResourceId**: string: Resource identifier of the delegated subnet. Required during creation of a new server, in case you want the server to be integrated into your own virtual network. For an update operation, you only have to provide this property if you want to change the value assigned for the private DNS zone.
@@ -350,6 +448,11 @@
 * **promoteOption**: 'forced' | 'planned' | string (WriteOnly): Data synchronization option to use when processing the operation specified in the promoteMode property This property is write only. Planned means that the operation will wait for data in the read replica to be fully synchronized with its source server before it initiates the operation. Forced means that the operation will not wait for data in the read replica to be synchronized with its source server before it initiates the operation.
 * **replicationState**: 'Active' | 'Broken' | 'Catchup' | 'Provisioning' | 'Reconfiguring' | 'Updating' | string (ReadOnly): Indicates the replication state of a read replica. This property is returned only when the target flexible server is a read replica. Possible  values are Active, Broken, Catchup, Provisioning, Reconfiguring, and Updating
 * **role**: 'AsyncReplica' | 'GeoAsyncReplica' | 'None' | 'Primary' | string: Role of the server in a replication set.
+
+## RestartParameter
+### Properties
+* **failoverMode**: 'ForcedFailover' | 'ForcedSwitchover' | 'PlannedFailover' | 'PlannedSwitchover' | string: Failover mode.
+* **restartWithFailover**: bool: Indicates if restart the PostgreSQL database engine should failover or switch over from primary to standby. This only works if flexible server has high availability enabled.
 
 ## ServerBackupProperties
 ### Properties
@@ -465,4 +568,14 @@
 * **endpointType**: 'ReadWrite' | string: Type of endpoint for the virtual endpoints.
 * **members**: string[]: List of flexible servers that one of the virtual endpoints can refer to.
 * **virtualEndpoints**: string[] (ReadOnly): List of virtual endpoints for a flexible server.
+
+## VirtualNetworkSubnetUsageParameter
+### Properties
+* **virtualNetworkArmResourceId**: string: Virtual network resource id.
+
+## VirtualNetworkSubnetUsageResult
+### Properties
+* **delegatedSubnetsUsage**: [DelegatedSubnetUsage](#delegatedsubnetusage)[] (ReadOnly)
+* **location**: string (ReadOnly): location of the delegated subnet usage
+* **subscriptionId**: string (ReadOnly): subscriptionId of the delegated subnet usage
 

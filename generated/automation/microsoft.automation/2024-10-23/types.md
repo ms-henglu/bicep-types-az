@@ -59,6 +59,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [ConnectionTypeCreateOrUpdatePropertiesOrConnectionTypeProperties](#connectiontypecreateorupdatepropertiesorconnectiontypeproperties) (Required): Gets or sets the value of the connection type.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Automation/automationAccounts/connectionTypes' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Automation/automationAccounts/credentials@2024-10-23
@@ -117,6 +118,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {minLength: 36, maxLength: 36, pattern: "^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [JobScheduleCreatePropertiesOrJobScheduleProperties](#jobschedulecreatepropertiesorjobscheduleproperties) (Required): Gets or sets the list of job schedule properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Automation/automationAccounts/jobSchedules' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Automation/automationAccounts/modules@2024-10-23
@@ -289,6 +291,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [SoftwareUpdateConfigurationProperties](#softwareupdateconfigurationproperties) (Required): Software update configuration properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Automation/automationAccounts/softwareUpdateConfigurations' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Automation/automationAccounts/sourceControls@2024-10-23
@@ -348,6 +351,12 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Automation/automationAccounts/webhooks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function convertGraphRunbookContent (Microsoft.Automation/automationAccounts@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts
+* **ApiVersion**: 2024-10-23
+* **Input**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+* **Output**: [GraphicalRunbookContent](#graphicalrunbookcontent)
+
 ## Function listDeletedRunbooks (Microsoft.Automation/automationAccounts@2024-10-23)
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2024-10-23
@@ -357,6 +366,47 @@
 * **Resource**: Microsoft.Automation/automationAccounts
 * **ApiVersion**: 2024-10-23
 * **Output**: [KeyListResult](#keylistresult)
+
+## Function move (Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers
+* **ApiVersion**: 2024-10-23
+* **Input**: [HybridRunbookWorkerMoveParameters](#hybridrunbookworkermoveparameters)
+
+## Function publish (Microsoft.Automation/automationAccounts/runbooks@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks
+* **ApiVersion**: 2024-10-23
+
+## Function resume (Microsoft.Automation/automationAccounts/jobs@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2024-10-23
+
+## Function resume (Microsoft.Automation/automationAccounts/runbooks/draft@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2024-10-23
+
+## Function start (Microsoft.Automation/automationAccounts/watchers@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2024-10-23
+
+## Function stop (Microsoft.Automation/automationAccounts/jobs@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2024-10-23
+
+## Function stop (Microsoft.Automation/automationAccounts/runbooks/draft@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2024-10-23
+
+## Function stop (Microsoft.Automation/automationAccounts/watchers@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/watchers
+* **ApiVersion**: 2024-10-23
+
+## Function suspend (Microsoft.Automation/automationAccounts/jobs@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/jobs
+* **ApiVersion**: 2024-10-23
+
+## Function suspend (Microsoft.Automation/automationAccounts/runbooks/draft@2024-10-23)
+* **Resource**: Microsoft.Automation/automationAccounts/runbooks/draft
+* **ApiVersion**: 2024-10-23
 
 ## AdvancedSchedule
 ### Properties
@@ -387,6 +437,11 @@
 * **publicNetworkAccess**: bool: Indicates whether traffic on the non-ARM endpoint (Webhook/Agent) is allowed from the public internet
 * **sku**: [Sku](#sku): Gets or sets account SKU.
 * **state**: 'Ok' | 'Suspended' | 'Unavailable' | string (ReadOnly): Gets status of account.
+
+## AutomationErrorResponse
+### Properties
+* **code**: string: Error code
+* **message**: string: Error message indicating why the operation failed.
 
 ## AzureQueryProperties
 ### Properties
@@ -467,11 +522,6 @@
 * **password**: string (Required, WriteOnly): Gets or sets the password of the credential.
 * **userName**: string (Required): Gets or sets the user name of the credential.
 
-## DefaultPackages
-### Properties
-### Additional Properties
-* **Additional Properties Type**: string
-
 ## DeletedRunbook
 ### Properties
 * **id**: string: The resource id.
@@ -481,8 +531,8 @@
 
 ## DeletedRunbookListResult
 ### Properties
-* **nextLink**: string: Gets or sets the next link.
-* **value**: [DeletedRunbook](#deletedrunbook)[]: List of deleted runbooks in automation account.
+* **nextLink**: string: The link to the next page of items
+* **value**: [DeletedRunbook](#deletedrunbook)[] (Required): The DeletedRunbook items on this page
 
 ## DeletedRunbookProperties
 ### Properties
@@ -574,16 +624,16 @@
 ### Properties
 * **userAssignedIdentity**: any: The user identity used for CMK. It will be an ARM resource id in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
 
-## ErrorResponse
-### Properties
-* **code**: string: Error code
-* **message**: string: Error message indicating why the operation failed.
-
 ## FieldDefinition
 ### Properties
 * **isEncrypted**: bool: Gets or sets the isEncrypted flag of the connection field definition.
 * **isOptional**: bool: Gets or sets the isOptional flag of the connection field definition.
 * **type**: string (Required): Gets or sets the type of the connection field definition.
+
+## GraphicalRunbookContent
+### Properties
+* **graphRunbookJson**: string: Graphical Runbook content as JSON
+* **rawContent**: [RawGraphicalRunbookContent](#rawgraphicalrunbookcontent): Raw graphical Runbook content.
 
 ## HybridRunbookWorkerCreateOrUpdateParametersOrHybridRunbookWorkerProperties
 ### Properties
@@ -598,6 +648,10 @@
 ### Properties
 * **credential**: [RunAsCredentialAssociationProperty](#runascredentialassociationproperty): Sets the credential of a worker group.
 * **groupType**: 'System' | 'User' | string (ReadOnly): Type of the HybridWorkerGroup.
+
+## HybridRunbookWorkerMoveParameters
+### Properties
+* **hybridRunbookWorkerGroupName**: string: Gets or sets the target hybrid runbook worker group.
 
 ## Identity
 ### Properties
@@ -766,6 +820,12 @@
 * **sizeInBytes**: int (ReadOnly): Gets or sets the size in bytes of the module.
 * **version**: string (ReadOnly): Gets or sets the version of the module.
 
+## RawGraphicalRunbookContent
+### Properties
+* **runbookDefinition**: string: Serialized Graphical runbook
+* **runbookType**: 'GraphPowerShell' | 'GraphPowerShellWorkflow' | string: Runbook Type
+* **schemaVersion**: string: Schema version of the serializer.
+
 ## RunAsCredentialAssociationProperty
 ### Properties
 * **name**: string: Gets or sets the name of the credential.
@@ -826,9 +886,14 @@
 
 ## RuntimeEnvironmentProperties
 ### Properties
-* **defaultPackages**: [DefaultPackages](#defaultpackages): List of Default packages for Environment
+* **defaultPackages**: [RuntimeEnvironmentPropertiesDefaultPackages](#runtimeenvironmentpropertiesdefaultpackages): List of Default packages for Environment
 * **description**: string: Gets or sets the description.
 * **runtime**: [RuntimeProperties](#runtimeproperties): Runtime properties.
+
+## RuntimeEnvironmentPropertiesDefaultPackages
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
 
 ## RuntimeProperties
 ### Properties
@@ -866,7 +931,7 @@
 ### Properties
 * **createdBy**: string (ReadOnly): CreatedBy property, which only appears in the response.
 * **creationTime**: string (ReadOnly): Creation time of the resource, which only appears in the response.
-* **error**: [ErrorResponse](#errorresponse): Details of provisioning error
+* **error**: [AutomationErrorResponse](#automationerrorresponse): Details of provisioning error
 * **lastModifiedBy**: string (ReadOnly): LastModifiedBy property, which only appears in the response.
 * **lastModifiedTime**: string (ReadOnly): Last time resource was modified, which only appears in the response.
 * **provisioningState**: string (ReadOnly): Provisioning state for the software update configuration, which only appears in the response.

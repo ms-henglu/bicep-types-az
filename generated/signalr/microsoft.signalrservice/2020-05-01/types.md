@@ -24,10 +24,36 @@
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Properties of the private endpoint connection
 * **type**: 'Microsoft.SignalRService/signalR/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkNameAvailability (Microsoft.SignalRService/locations@2020-05-01)
+* **Resource**: Microsoft.SignalRService/locations
+* **ApiVersion**: 2020-05-01
+* **Input**: [NameAvailabilityParameters](#nameavailabilityparameters)
+* **Output**: [NameAvailability](#nameavailability)
+
 ## Function listKeys (Microsoft.SignalRService/signalR@2020-05-01)
 * **Resource**: Microsoft.SignalRService/signalR
 * **ApiVersion**: 2020-05-01
 * **Output**: [SignalRKeys](#signalrkeys)
+
+## Function regenerateKey (Microsoft.SignalRService/signalR@2020-05-01)
+* **Resource**: Microsoft.SignalRService/signalR
+* **ApiVersion**: 2020-05-01
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+
+## Function restart (Microsoft.SignalRService/signalR@2020-05-01)
+* **Resource**: Microsoft.SignalRService/signalR
+* **ApiVersion**: 2020-05-01
+
+## NameAvailability
+### Properties
+* **message**: string: The message of the operation.
+* **nameAvailable**: bool: Indicates whether the name is available or not.
+* **reason**: string: The reason of the availability. Required if name is not available.
+
+## NameAvailabilityParameters
+### Properties
+* **name**: string (Required): The SignalR service name to validate. e.g."my-signalR-name-here"
+* **type**: string (Required): The resource type. Should be always "Microsoft.SignalRService/SignalR".
 
 ## NetworkACL
 ### Properties
@@ -62,6 +88,10 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' | string: The keyType to regenerate. Must be either 'primary' or 'secondary'(case-insensitive).
 
 ## ResourceSku
 ### Properties

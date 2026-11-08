@@ -57,6 +57,21 @@
 * **ApiVersion**: 2020-03-01
 * **Output**: [AmlComputeNodesInformation](#amlcomputenodesinformation)
 
+## Function prepareNotebook (Microsoft.MachineLearningServices/workspaces@2020-03-01)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2020-03-01
+* **Output**: [NotebookResourceInfo](#notebookresourceinfo)
+
+## Function resyncKeys (Microsoft.MachineLearningServices/workspaces@2020-03-01)
+* **Resource**: Microsoft.MachineLearningServices/workspaces
+* **ApiVersion**: 2020-03-01
+
+## Function updateQuotas (Microsoft.MachineLearningServices/locations@2020-03-01)
+* **Resource**: Microsoft.MachineLearningServices/locations
+* **ApiVersion**: 2020-03-01
+* **Input**: [QuotaUpdateParameters](#quotaupdateparameters)
+* **Output**: [UpdateWorkspaceQuotasResult](#updateworkspacequotasresult)
+
 ## AksNetworkingConfiguration
 ### Properties
 * **dnsServiceIP**: string {pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"}: An IP address assigned to the Kubernetes DNS service. It must be within the Kubernetes service address range specified in serviceCidr.
@@ -208,8 +223,7 @@
 ### Properties
 * **principalId**: string (ReadOnly): The principal ID of resource identity.
 * **tenantId**: string (ReadOnly): The tenant ID of resource.
-* **type**: 'None' | 'SystemAssigned' | 'SystemAssigned,UserAssigned' | 'UserAssigned': The identity type.
-* **userAssignedIdentities**: [UserAssignedIdentities](#userassignedidentities): The user assigned identities associated with the resource.
+* **type**: 'SystemAssigned': The identity type.
 
 ## KeyVaultProperties
 ### Properties
@@ -221,6 +235,7 @@
 ### Properties
 * **appInsightsInstrumentationKey**: string (ReadOnly)
 * **containerRegistryCredentials**: [RegistryListCredentialsResult](#registrylistcredentialsresult) (ReadOnly)
+* **notebookAccessKeys**: [NotebookListCredentialsResult](#notebooklistcredentialsresult)
 * **userStorageKey**: string (ReadOnly)
 * **userStorageResourceId**: string (ReadOnly)
 
@@ -236,6 +251,22 @@
 * **preparingNodeCount**: int (ReadOnly): Number of compute nodes which are being prepared.
 * **runningNodeCount**: int (ReadOnly): Number of compute nodes which are running jobs.
 * **unusableNodeCount**: int (ReadOnly): Number of compute nodes which are in unusable state.
+
+## NotebookListCredentialsResult
+### Properties
+* **primaryAccessKey**: string
+* **secondaryAccessKey**: string
+
+## NotebookPreparationError
+### Properties
+* **errorMessage**: string
+* **statusCode**: int
+
+## NotebookResourceInfo
+### Properties
+* **fqdn**: string
+* **notebookPreparationError**: [NotebookPreparationError](#notebookpreparationerror): The error that occurs when preparing notebook.
+* **resourceId**: string: the data plane resourceId that used to initialize notebook component
 
 ## Password
 ### Properties
@@ -268,6 +299,17 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Disconnected' | 'Pending' | 'Rejected' | 'Timeout' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## QuotaBaseProperties
+### Properties
+* **id**: string: Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **type**: string: Specifies the resource type.
+* **unit**: 'Count' | string: An enum describing the unit of quota measurement.
+
+## QuotaUpdateParameters
+### Properties
+* **value**: [QuotaBaseProperties](#quotabaseproperties)[]: The list for update quota.
 
 ## RegistryListCredentialsResult
 ### Properties
@@ -335,22 +377,24 @@
 * **systemServiceType**: string (ReadOnly): The type of this system service.
 * **version**: string (ReadOnly): The version for this type.
 
+## UpdateWorkspaceQuotas
+### Properties
+* **id**: string (ReadOnly): Specifies the resource ID.
+* **limit**: int: The maximum permitted quota of the resource.
+* **status**: 'Failure' | 'InvalidQuotaBelowClusterMinimum' | 'InvalidQuotaExceedsSubscriptionLimit' | 'InvalidVMFamilyName' | 'OperationNotEnabledForRegion' | 'OperationNotSupportedForSku' | 'Success' | 'Undefined' | string: Status of update workspace quota.
+* **type**: string (ReadOnly): Specifies the resource type.
+* **unit**: 'Count' | string (ReadOnly): An enum describing the unit of quota measurement.
+
+## UpdateWorkspaceQuotasResult
+### Properties
+* **nextLink**: string (ReadOnly): The URI to fetch the next page of workspace quota update result. Call ListNext() with this to fetch the next page of Workspace Quota update result.
+* **value**: [UpdateWorkspaceQuotas](#updateworkspacequotas)[] (ReadOnly): The list of workspace quota update result.
+
 ## UserAccountCredentials
 ### Properties
 * **adminUserName**: string (Required): Name of the administrator user account which can be used to SSH to nodes.
 * **adminUserPassword**: string: Password of the administrator user account.
 * **adminUserSshPublicKey**: string: SSH public key of the administrator user account.
-
-## UserAssignedIdentities
-### Properties
-### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentity](#userassignedidentity)
-
-## UserAssignedIdentity
-### Properties
-* **clientId**: string (ReadOnly): The clientId(aka appId) of the user assigned identity.
-* **principalId**: string (ReadOnly): The principal ID of the user assigned identity.
-* **tenantId**: string (ReadOnly): The tenant ID of the user assigned identity.
 
 ## VirtualMachineProperties
 ### Properties
@@ -379,6 +423,7 @@
 * **hbiWorkspace**: bool: The flag to signal HBI data in the workspace and reduce diagnostic data collected by the service
 * **imageBuildCompute**: string: The compute name for image build
 * **keyVault**: string: ARM id of the key vault associated with this workspace. This cannot be changed once the workspace has been created
+* **notebookInfo**: [NotebookResourceInfo](#notebookresourceinfo) (ReadOnly): The notebook info of Azure ML workspace.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): The list of private endpoint connections in the workspace.
 * **privateLinkCount**: int (ReadOnly): Count of private connections in the workspace
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Unknown' | 'Updating' | string (ReadOnly): The current deployment state of workspace resource. The provisioningState is to indicate states for resource provisioning.

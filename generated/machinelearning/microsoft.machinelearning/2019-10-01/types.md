@@ -18,6 +18,10 @@
 * **ApiVersion**: 2019-10-01
 * **Output**: [WorkspaceKeysResponse](#workspacekeysresponse)
 
+## Function resyncStorageKeys (Microsoft.MachineLearning/workspaces@2019-10-01)
+* **Resource**: Microsoft.MachineLearning/workspaces
+* **ApiVersion**: 2019-10-01
+
 ## ResourceTags
 ### Properties
 ### Additional Properties

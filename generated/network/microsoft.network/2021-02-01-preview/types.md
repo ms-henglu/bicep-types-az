@@ -204,6 +204,11 @@
 * **tags**: [ResourceTags](#resourcetags): Resource tags.
 * **type**: 'Microsoft.Network/networkSecurityPerimeters/resourceAssociations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function commit (Microsoft.Network/networkManagers@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkManagers
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: [NetworkManagerCommit](#networkmanagercommit)
+
 ## Function listActiveConnectivityConfigurations (Microsoft.Network/networkManagers@2021-02-01-preview)
 * **Resource**: Microsoft.Network/networkManagers
 * **ApiVersion**: 2021-02-01-preview
@@ -251,6 +256,18 @@
 * **ApiVersion**: 2021-02-01-preview
 * **Input**: [QueryRequestOptions](#queryrequestoptions)
 * **Output**: [NetworkManagerEffectiveSecurityAdminRulesListResult](#networkmanagereffectivesecurityadminruleslistresult)
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/resourceAssociations@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/resourceAssociations
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: any
+* **Output**: any
+
+## Function reconcile (Microsoft.Network/networkSecurityPerimeters/profiles/accessRules@2021-02-01-preview)
+* **Resource**: Microsoft.Network/networkSecurityPerimeters/profiles/accessRules
+* **ApiVersion**: 2021-02-01-preview
+* **Input**: any
+* **Output**: any
 
 ## ActiveBaseSecurityAdminRule
 * **Discriminator**: kind
@@ -462,6 +479,13 @@
 * **groupMembers**: [GroupMembersItem](#groupmembersitem)[]: Group members of network group.
 * **memberType**: string: Group member type.
 * **provisioningState**: 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the scope assignment resource.
+
+## NetworkManagerCommit
+### Properties
+* **commitId**: string (ReadOnly): Commit Id.
+* **commitType**: 'Connectivity' | 'SecurityAdmin' | 'SecurityUser' | string: Commit Type.
+* **configurationIds**: string[]: List of configuration ids.
+* **targetLocations**: string[]: List of target locations.
 
 ## NetworkManagerDeploymentStatus
 ### Properties

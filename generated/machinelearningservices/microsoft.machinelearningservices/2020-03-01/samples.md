@@ -121,12 +121,11 @@ resource exampleResource 'Microsoft.MachineLearningServices/workspaces/computes@
   name: 'example'
   location: 'eastus'
   properties: {
-    description: 'some compute'
     computeType: 'AmlCompute'
     properties: {
       scaleSettings: {
-        maxNodeCount: 4
-        minNodeCount: 4
+        maxNodeCount: 1
+        minNodeCount: 0
         nodeIdleTimeBeforeScaleDown: 'PT5M'
       }
     }
