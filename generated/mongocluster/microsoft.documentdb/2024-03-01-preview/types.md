@@ -35,10 +35,27 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DocumentDB/mongoClusters/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMongoClusterNameAvailability (Microsoft.DocumentDB/locations@2024-03-01-preview)
+* **Resource**: Microsoft.DocumentDB/locations
+* **ApiVersion**: 2024-03-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listConnectionStrings (Microsoft.DocumentDB/mongoClusters@2024-03-01-preview)
 * **Resource**: Microsoft.DocumentDB/mongoClusters
 * **ApiVersion**: 2024-03-01-preview
 * **Output**: [ListConnectionStringsResult](#listconnectionstringsresult)
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## ConnectionString
 ### Properties
@@ -47,32 +64,32 @@
 
 ## FirewallRuleProperties
 ### Properties
-* **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The end IP address of the mongo cluster firewall rule. Must be IPv4 format.
+* **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The end IP address of the DocumentDB cluster firewall rule. Must be IPv4 format.
 * **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the firewall rule.
-* **startIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The start IP address of the mongo cluster firewall rule. Must be IPv4 format.
+* **startIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The start IP address of the DocumentDB cluster firewall rule. Must be IPv4 format.
 
 ## ListConnectionStringsResult
 ### Properties
-* **connectionStrings**: [ConnectionString](#connectionstring)[] (ReadOnly): An array that contains the connection strings for a mongo cluster.
+* **connectionStrings**: [ConnectionString](#connectionstring)[] (ReadOnly): An array that contains the connection strings for a DocumentDB cluster.
 
 ## MongoClusterProperties
 ### Properties
-* **administratorLogin**: string: The administrator's login for the mongo cluster.
+* **administratorLogin**: string: The administrator's login for the DocumentDB cluster.
 * **administratorLoginPassword**: string {sensitive} (WriteOnly): The password of the administrator login.
-* **clusterStatus**: 'Dropping' | 'Provisioning' | 'Ready' | 'Starting' | 'Stopped' | 'Stopping' | 'Updating' | string (ReadOnly): The status of the mongo cluster.
+* **clusterStatus**: 'Dropping' | 'Provisioning' | 'Ready' | 'Starting' | 'Stopped' | 'Stopping' | 'Updating' | string (ReadOnly): The status of the DocumentDB cluster.
 * **connectionString**: string (ReadOnly): The default mongo connection string for the cluster.
-* **createMode**: 'Default' | 'PointInTimeRestore' | string (WriteOnly): The mode to create a mongo cluster.
+* **createMode**: 'Default' | 'PointInTimeRestore' | string (WriteOnly): The mode to create a DocumentDB cluster.
 * **earliestRestoreTime**: string (ReadOnly): Earliest restore timestamp in UTC ISO8601 format.
 * **nodeGroupSpecs**: [NodeGroupSpec](#nodegroupspec)[]: The list of node group specs in the cluster.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connections.
-* **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the mongo cluster.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this mongo cluster.
-* **restoreParameters**: [MongoClusterRestoreParameters](#mongoclusterrestoreparameters) (WriteOnly): The parameters to create a point-in-time restore mongo cluster.
+* **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the DocumentDB cluster.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this DocumentDB cluster.
+* **restoreParameters**: [MongoClusterRestoreParameters](#mongoclusterrestoreparameters) (WriteOnly): The parameters to create a point-in-time restore DocumentDB cluster.
 * **serverVersion**: string: The Mongo DB server version. Defaults to the latest available version if not specified.
 
 ## MongoClusterRestoreParameters
 ### Properties
-* **pointInTimeUTC**: string: UTC point in time to restore a mongo cluster
+* **pointInTimeUTC**: string: UTC point in time to restore a DocumentDB cluster
 * **sourceResourceId**: string: Resource ID to locate the source cluster to restore
 
 ## NodeGroupSpec

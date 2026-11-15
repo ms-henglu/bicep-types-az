@@ -133,6 +133,38 @@
 * **properties**: [UserProperties](#userproperties) (Required): The storage account credential properties.
 * **type**: 'Microsoft.DataBoxEdge/dataBoxEdgeDevices/users' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function downloadUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2019-03-01
+
+## Function getExtendedInformation (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2019-03-01
+* **Output**: [DataBoxEdgeDeviceExtendedInfo](#databoxedgedeviceextendedinfo)
+
+## Function installUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2019-03-01
+
+## Function refresh (Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares
+* **ApiVersion**: 2019-03-01
+
+## Function scanForUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2019-03-01
+
+## Function update (Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings
+* **ApiVersion**: 2019-03-01
+* **Input**: [SecuritySettings](#securitysettings)
+
+## Function uploadCertificate (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2019-03-01)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2019-03-01
+* **Input**: [UploadCertificateRequest](#uploadcertificaterequest)
+* **Output**: [UploadCertificateResponse](#uploadcertificateresponse)
+
 ## Address
 ### Properties
 * **addressLine1**: string (Required): The address line1.
@@ -198,6 +230,19 @@
 * **contactPerson**: string (Required): The contact person name.
 * **emailList**: string[] (Required): The email list.
 * **phone**: string (Required): The phone number.
+
+## DataBoxEdgeDeviceExtendedInfo
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **name**: string (ReadOnly): The object name.
+* **properties**: [DataBoxEdgeDeviceExtendedInfoProperties](#databoxedgedeviceextendedinfoproperties): The extended info properties.
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## DataBoxEdgeDeviceExtendedInfoProperties
+### Properties
+* **encryptionKey**: string: The public part of the encryption certificate. Client uses this to encrypt any secret.
+* **encryptionKeyThumbprint**: string: The digital signature of encrypted certificate.
+* **resourceKey**: string (ReadOnly): The Resource ID of the Resource.
 
 ## DataBoxEdgeDeviceProperties
 ### Properties
@@ -318,6 +363,11 @@
 * **startTime**: string (Required): The time of the day that results in a valid trigger. Schedule is computed with reference to the time specified up to seconds. If timezone is not specified the time will considered to be in device timezone. The value will always be returned as UTC time.
 * **topic**: string: Topic where periodic events are published to IoT device.
 
+## RawCertificateData
+### Properties
+* **authenticationType**: 'AzureActiveDirectory' | 'Invalid' | string: The authentication type.
+* **certificate**: string (Required): The base64 encoded certificate raw data.
+
 ## RefreshDetails
 ### Properties
 * **errorManifestFile**: string: Indicates the relative path of the error xml for the last refresh job on this particular share, if any. This could be a failed job or a successful job.
@@ -328,6 +378,17 @@
 ## RoleSinkInfo
 ### Properties
 * **roleId**: string (Required): Compute role ID.
+
+## SecuritySettings
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **name**: string (ReadOnly): The object name.
+* **properties**: [SecuritySettingsProperties](#securitysettingsproperties) (Required): Properties of the security settings.
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## SecuritySettingsProperties
+### Properties
+* **deviceAdminPassword**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret) (Required): Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the  local web UI of the device. The Actual password should have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters.
 
 ## ShareAccessRight
 ### Properties
@@ -392,6 +453,20 @@
 * **totalNumberOfUpdatesPendingInstall**: int (ReadOnly): The total number of items pending install.
 * **totalUpdateSizeInBytes**: int (ReadOnly): The total size of updates available for download in bytes.
 * **updateTitles**: string[] (ReadOnly): The list of updates available for install.
+
+## UploadCertificateRequest
+### Properties
+* **properties**: [RawCertificateData](#rawcertificatedata) (Required): The Base 64 encoded certificate raw data.
+
+## UploadCertificateResponse
+### Properties
+* **aadAuthority**: string (Required): Azure Active Directory tenant authority.
+* **aadTenantId**: string (Required): Azure Active Directory tenant ID.
+* **authType**: 'AzureActiveDirectory' | 'Invalid' | string: Specifies authentication type.
+* **azureManagementEndpointAudience**: string (Required): The azure management endpoint audience.
+* **resourceId**: string (Required): The resource ID of the Data Box Edge/Gateway device.
+* **servicePrincipalClientId**: string (Required): Azure Active Directory service principal client ID.
+* **servicePrincipalObjectId**: string (Required): Azure Active Directory service principal object ID.
 
 ## UserAccessRight
 ### Properties

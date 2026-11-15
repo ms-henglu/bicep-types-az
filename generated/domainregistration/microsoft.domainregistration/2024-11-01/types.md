@@ -44,6 +44,10 @@
 * **Input**: [TopLevelDomainAgreementOption](#topleveldomainagreementoption)
 * **Output**: [TldLegalAgreementCollection](#tldlegalagreementcollection)
 
+## Function renew (Microsoft.DomainRegistration/domains@2024-11-01)
+* **Resource**: Microsoft.DomainRegistration/domains
+* **ApiVersion**: 2024-11-01
+
 ## Address
 ### Properties
 * **address1**: string (Required): First line of an Address.

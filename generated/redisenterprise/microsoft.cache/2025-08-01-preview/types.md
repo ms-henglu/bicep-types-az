@@ -6,15 +6,16 @@
 ### Properties
 * **apiVersion**: '2025-08-01-preview' (ReadOnly, DeployTimeConstant): The resource api version
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
-* **identity**: [ManagedServiceIdentity](#managedserviceidentity): The identity of the resource.
+* **identity**: [ManagedServiceIdentity](#managedserviceidentity): The managed service identities assigned to this resource.
 * **kind**: 'v1' | 'v2' | string (ReadOnly): Distinguishes the kind of cluster. Read-only.
 * **location**: string (Required): The geo-location where the resource lives
 * **name**: string {pattern: "^(?=.{1,60}$)[A-Za-z0-9]+(-[A-Za-z0-9]+)*$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [ClusterCreateProperties](#clustercreateproperties): Other properties of the cluster.
 * **sku**: [Sku](#sku) (Required): The SKU to create, which affects price, performance, and features.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Cache/redisEnterprise' (ReadOnly, DeployTimeConstant): The resource type
-* **zones**: string[]: The Availability Zones where this cluster will be deployed.
+* **zones**: string[]: The availability zones.
 
 ## Resource Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview
 * **Readable Scope(s)**: ResourceGroup
@@ -35,6 +36,7 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string {pattern: "^[A-Za-z0-9]{1,60}$"} (Required, DeployTimeConstant): The resource name
 * **properties**: [AccessPolicyAssignmentProperties](#accesspolicyassignmentproperties): Properties of the access policy assignment.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redisEnterprise/databases/accessPolicyAssignments' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Cache/redisEnterprise/migrations@2025-08-01-preview
@@ -56,7 +58,37 @@
 * **id**: string (ReadOnly, DeployTimeConstant): The resource id
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Cache/redisEnterprise/privateEndpointConnections' (ReadOnly, DeployTimeConstant): The resource type
+
+## Function cancel (Microsoft.Cache/redisEnterprise/migrations@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/migrations
+* **ApiVersion**: 2025-08-01-preview
+
+## Function export (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [ExportClusterParameters](#exportclusterparameters)
+
+## Function flush (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [FlushParameters](#flushparameters)
+
+## Function forceLinkToReplicationGroup (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [ForceLinkParameters](#forcelinkparameters)
+
+## Function forceUnlink (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [ForceUnlinkParameters](#forceunlinkparameters)
+
+## Function import (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [ImportClusterParameters](#importclusterparameters)
 
 ## Function listKeys (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
 * **Resource**: Microsoft.Cache/redisEnterprise/databases
@@ -68,6 +100,22 @@
 * **ApiVersion**: 2025-08-01-preview
 * **Output**: [SkuDetailsList](#skudetailslist)
 
+## Function regenerateKey (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [RegenerateKeyParameters](#regeneratekeyparameters)
+* **Output**: [AccessKeys](#accesskeys)
+
+## Function upgradeDBRedisVersion (Microsoft.Cache/redisEnterprise/databases@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/databases
+* **ApiVersion**: 2025-08-01-preview
+
+## Function validate (Microsoft.Cache/redisEnterprise/migrations@2025-08-01-preview)
+* **Resource**: Microsoft.Cache/redisEnterprise/migrations
+* **ApiVersion**: 2025-08-01-preview
+* **Input**: [MigrationValidationRequest](#migrationvalidationrequest)
+* **Output**: [MigrationValidationResponse](#migrationvalidationresponse)
+
 ## AccessKeys
 ### Properties
 * **primaryKey**: string (ReadOnly): The current primary key that clients can use to authenticate
@@ -75,7 +123,7 @@
 
 ## AccessPolicyAssignmentProperties
 ### Properties
-* **accessPolicyName**: string {pattern: "^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]|[a-zA-Z0-9])$"} (Required): Name of access policy under specific access policy assignment. Only "default" policy is supported for now.
+* **accessPolicyName**: string {pattern: "^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]|[a-zA-Z0-9])$"} (Required): **Deprecated.** This property always returns "default". Use `accessString` to configure custom Redis ACL permissions instead.
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Current provisioning status of the access policy assignment.
 * **user**: [AccessPolicyAssignmentPropertiesUser](#accesspolicyassignmentpropertiesuser) (Required): The user associated with the access policy.
 
@@ -88,6 +136,8 @@
 * **encryption**: [ClusterPropertiesEncryption](#clusterpropertiesencryption): Encryption-at-rest configuration for the cluster.
 * **highAvailability**: 'Disabled' | 'Enabled' | string: Enabled by default. If highAvailability is disabled, the data set is not replicated. This affects the availability SLA, and increases the risk of data loss.
 * **hostName**: string (ReadOnly): DNS name of the cluster endpoint
+* **maintenanceConfiguration**: [MaintenanceConfiguration](#maintenanceconfiguration): Cluster-level maintenance configuration.
+* **migratedEndpoint**: string (ReadOnly): The endpoint of the source resource that is currently pointing to this resource as a result of an ACR/ACRE to AMR migration.
 * **minimumTlsVersion**: '1.0' | '1.1' | '1.2' | string: The minimum TLS version for the cluster to support, e.g. '1.2'. Newer versions can be added in the future. Note that TLS 1.0 and TLS 1.1 are now completely obsolete -- you cannot use them. They are mentioned only for the sake of consistency with old API versions.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connections associated with the specified Redis Enterprise cluster
 * **provisioningState**: 'Canceled' | 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | 'Updating' | string (ReadOnly): Current provisioning status of the cluster
@@ -130,10 +180,50 @@
 * **groupNickname**: string: Name for the group of linked database resources
 * **linkedDatabases**: [LinkedDatabase](#linkeddatabase)[]: List of database resources to link with this database
 
+## ExportClusterParameters
+### Properties
+* **sasUri**: string {sensitive} (Required): SAS URI for the target directory to export to
+
+## FlushParameters
+### Properties
+* **ids**: string[]: The identifiers of all the other database resources in the georeplication group to be flushed.
+
+## ForceLinkParameters
+### Properties
+* **geoReplication**: [ForceLinkParametersGeoReplication](#forcelinkparametersgeoreplication) (Required): Properties to configure geo replication for this database.
+
+## ForceLinkParametersGeoReplication
+### Properties
+* **groupNickname**: string: The name of the group of linked database resources. This should match the existing replication group name.
+* **linkedDatabases**: [LinkedDatabase](#linkeddatabase)[]: The resource IDs of the databases that are expected to be linked and included in the replication group. This parameter is used to validate that the linking is to the expected (unlinked) part of the replication group, if it is splintered.
+
+## ForceUnlinkParameters
+### Properties
+* **ids**: string[] (Required): The resource IDs of the database resources to be unlinked.
+
+## ImportClusterParameters
+### Properties
+* **sasUris**: (string {sensitive})[] (Required): SAS URIs for the target blobs to import from
+
 ## LinkedDatabase
 ### Properties
 * **id**: string: Resource ID of a database resource to link with this database.
 * **state**: 'LinkFailed' | 'Linked' | 'Linking' | 'UnlinkFailed' | 'Unlinking' | string (ReadOnly): State of the link between the database resources.
+
+## MaintenanceConfiguration
+### Properties
+* **maintenanceWindows**: [MaintenanceWindow](#maintenancewindow)[]: Custom maintenance windows that apply to the cluster.
+
+## MaintenanceWindow
+### Properties
+* **duration**: string (Required): Duration in ISO-8601 format, for example 'PT5H'.
+* **schedule**: [MaintenanceWindowSchedule](#maintenancewindowschedule) (Required): Recurring schedule for the maintenance window.
+* **startHourUtc**: int {minValue: 0, maxValue: 23} (Required): Start hour (0-23) in UTC when the maintenance window begins.
+* **type**: 'Weekly' | string (Required): Maintenance window type.
+
+## MaintenanceWindowSchedule
+### Properties
+* **dayOfWeek**: 'Friday' | 'Monday' | 'Saturday' | 'Sunday' | 'Thursday' | 'Tuesday' | 'Wednesday' | string: Day of week. Required when the maintenance window type is 'Weekly'.
 
 ## ManagedServiceIdentity
 ### Properties
@@ -148,17 +238,43 @@
 ### Base Properties
 * **creationTime**: string (ReadOnly): The timestamp when the migration operation was created.
 * **lastModifiedTime**: string (ReadOnly): The timestamp when the migration operation was last updated.
-* **provisioningState**: 'Accepted' | 'Cancelled' | 'Cancelling' | 'Failed' | 'InProgress' | 'ReadyForDnsSwitch' | 'Succeeded' | string (ReadOnly): Current provisioning status of the migration
+* **provisioningState**: 'Accepted' | 'CancellationFailed' | 'Cancelled' | 'Cancelling' | 'Failed' | 'InProgress' | 'ReadyForDnsSwitch' | 'Succeeded' | string (ReadOnly): Current provisioning status of the migration
 * **statusDetails**: string (ReadOnly): Additional details about the migration operation's status in free text format.
 * **targetResourceId**: string (ReadOnly): The Azure resource ID of the Azure Managed Redis destination cache to migrate.
 
 ### AzureCacheForRedisMigrationProperties
 #### Properties
+* **forceMigrate**: bool: Sets whether to ignore warnings when performing validation of the migration request. If this property is true, warning-level disparities between the source and target resources will be ignored, and the request will only fail validation if there are error-level disparities. The default value is false.
 * **skipDataMigration**: bool (Required): Sets whether the data is migrated from source to target or not. This property must be true during the preview.
 * **sourceResourceId**: string (Required): The source resource ID to migrate from. This is the resource ID of the Azure Cache for Redis.
 * **sourceType**: 'AzureCacheForRedis' (Required): Describes the source of the migration operation.
 * **switchDns**: bool (Required): Sets whether the DNS is switched automatically after the data is transferred from the source cache to the target cache. This property must be true during the preview.
 
+
+## MigrationValidationDisparity
+### Properties
+* **category**: string (Required): A localized string denoting the category of the validation issue. Examples are "Region", "Data", "Identity", "Clustering Mode", and "TLS".
+* **message**: string (Required): Detailed message describing the validation issue.
+
+## MigrationValidationError
+### Properties
+* **disparities**: [MigrationValidationDisparity](#migrationvalidationdisparity)[] (Required): List of specific disparities that cause this error.
+
+## MigrationValidationRequest
+### Properties
+* **forceMigrate**: bool: Sets whether to ignore warnings when validating if the source cache can be migrated to the target cache. If this property is true, the isValid property in the response will ignore warning-level disparities between the source and target resource. The default value is false.
+* **skipDataMigration**: bool: Sets whether the data is migrated from source to target or not. The default value is true.
+* **sourceResourceId**: string (Required): The source resource ID to validate migration from. This is the resource ID of the Azure Cache for Redis.
+
+## MigrationValidationResponse
+### Properties
+* **errors**: [MigrationValidationError](#migrationvalidationerror)[]: List of validation errors that prevent migration.
+* **isValid**: bool (Required): Indicates whether the migration validation passed.
+* **warnings**: [MigrationValidationWarning](#migrationvalidationwarning)[]: List of validation warnings that may impact migration.
+
+## MigrationValidationWarning
+### Properties
+* **disparities**: [MigrationValidationDisparity](#migrationvalidationdisparity)[] (Required): List of specific disparities that cause this warning.
 
 ## Module
 ### Properties
@@ -175,18 +291,20 @@
 
 ## PrivateEndpoint
 ### Properties
-* **id**: string (ReadOnly): The ARM identifier for Private Endpoint
+* **id**: string (ReadOnly): The ARM identifier for private endpoint.
 
 ## PrivateEndpointConnection
 ### Properties
-* **id**: string (ReadOnly): Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
 * **name**: string (ReadOnly): The name of the resource
 * **properties**: [PrivateEndpointConnectionProperties](#privateendpointconnectionproperties): Resource properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## PrivateEndpointConnectionProperties
 ### Properties
-* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The resource of private end point.
+* **groupIds**: string[] (ReadOnly): The group ids for the private endpoint resource.
+* **privateEndpoint**: [PrivateEndpoint](#privateendpoint): The private endpoint resource.
 * **privateLinkServiceConnectionState**: [PrivateLinkServiceConnectionState](#privatelinkserviceconnectionstate) (Required): A collection of information about the state of the connection between service consumer and provider.
 * **provisioningState**: 'Creating' | 'Deleting' | 'Failed' | 'Succeeded' | string (ReadOnly): The provisioning state of the private endpoint connection resource.
 
@@ -195,6 +313,10 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## RegenerateKeyParameters
+### Properties
+* **keyType**: 'Primary' | 'Secondary' (Required): Which access key to regenerate.
 
 ## Sku
 ### Properties

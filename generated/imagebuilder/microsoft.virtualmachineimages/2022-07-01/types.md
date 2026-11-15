@@ -36,6 +36,14 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.VirtualMachineImages/imageTemplates/triggers' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function cancel (Microsoft.VirtualMachineImages/imageTemplates@2022-07-01)
+* **Resource**: Microsoft.VirtualMachineImages/imageTemplates
+* **ApiVersion**: 2022-07-01
+
+## Function run (Microsoft.VirtualMachineImages/imageTemplates@2022-07-01)
+* **Resource**: Microsoft.VirtualMachineImages/imageTemplates
+* **ApiVersion**: 2022-07-01
+
 ## DistributeVersioner
 * **Discriminator**: scheme
 

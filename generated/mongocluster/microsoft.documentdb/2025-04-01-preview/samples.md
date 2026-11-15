@@ -6,7 +6,7 @@
 
 ## microsoft.documentdb/mongoclusters
 
-Creates a Mongo Cluster resource from a point in time restore
+Creates a DocumentDB cluster resource from a point in time restore
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview' = {
   name: 'example'
@@ -21,7 +21,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview'
 }
 ```
 
-Creates a new Mongo Cluster resource with Premium SSDv2 storage.
+Creates a new DocumentDB cluster resource with Premium SSDv2 storage.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview' = {
   name: 'example'
@@ -56,7 +56,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview'
 }
 ```
 
-Creates a new Mongo Cluster resource.
+Creates a new DocumentDB cluster resource.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview' = {
   name: 'example'
@@ -88,7 +88,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview'
 }
 ```
 
-Creates a replica Mongo Cluster resource from a source resource.
+Creates a replica DocumentDB cluster resource from a source resource.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview' = {
   name: 'example'
@@ -105,7 +105,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters@2025-04-01-preview'
 
 ## microsoft.documentdb/mongoclusters/firewallrules
 
-Creates a firewall rule on a Mongo Cluster resource.
+Creates a firewall rule on a DocumentDB cluster resource.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters/firewallRules@2025-04-01-preview' = {
   parent: parentResource 
@@ -119,7 +119,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters/firewallRules@2025-
 
 ## microsoft.documentdb/mongoclusters/privateendpointconnections
 
-Approves a private endpoint connection on a Mongo Cluster resource.
+Approves a private endpoint connection on a DocumentDB cluster resource.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters/privateEndpointConnections@2025-04-01-preview' = {
   parent: parentResource 
@@ -135,7 +135,7 @@ resource exampleResource 'Microsoft.DocumentDB/mongoClusters/privateEndpointConn
 
 ## microsoft.documentdb/mongoclusters/users
 
-Creates a user on a Mongo Cluster resource.
+Creates a user on a DocumentDB cluster resource.
 ```bicep
 resource exampleResource 'Microsoft.DocumentDB/mongoClusters/users@2025-04-01-preview' = {
   parent: parentResource 

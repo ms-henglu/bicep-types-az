@@ -24,6 +24,31 @@
 * **tags**: [ResourceTags](#resourcetags) (ReadOnly): List of key value pairs.
 * **type**: 'Microsoft.Backup.Admin/backupLocations/backups' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function createBackup (Microsoft.Backup.Admin/backupLocations@2018-09-01)
+* **Resource**: Microsoft.Backup.Admin/backupLocations
+* **ApiVersion**: 2018-09-01
+* **Output**: [Backup](#backup)
+
+## Function pruneExternalStore (Microsoft.Backup.Admin/backupLocations@2018-09-01)
+* **Resource**: Microsoft.Backup.Admin/backupLocations
+* **ApiVersion**: 2018-09-01
+* **Input**: [PruneBackupStoreOperationOptionModel](#prunebackupstoreoperationoptionmodel)
+* **Output**: [PruneList](#prunelist)
+
+## Function restore (Microsoft.Backup.Admin/backupLocations/backups@2018-09-01)
+* **Resource**: Microsoft.Backup.Admin/backupLocations/backups
+* **ApiVersion**: 2018-09-01
+* **Input**: [RestoreOptions](#restoreoptions)
+
+## Backup
+### Properties
+* **id**: string (ReadOnly): URI of the resource.
+* **location**: string: Location of the resource.
+* **name**: string (ReadOnly): Name of the resource.
+* **properties**: [BackupModel](#backupmodel): Properties for a backup.
+* **tags**: [ResourceTags](#resourcetags): List of key value pairs.
+* **type**: string (ReadOnly): Type of resource.
+
 ## BackupInfo
 ### Properties
 * **backupDataVersion**: string (ReadOnly): Version of the backup data.
@@ -59,6 +84,18 @@
 * **path**: string: Path to the update location
 * **userName**: string: Username to access the location.
 
+## PruneBackupStoreOperationOptionModel
+### Properties
+* **operationType**: 'Default' | 'DryRun': Operation type.
+
+## PruneList
+### Properties
+* **properties**: [PruneModel](#prunemodel): Holds information for a backup.
+
+## PruneModel
+### Properties
+* **pathsToDelete**: string[]: Garbage file list.
+
 ## ResourceTags
 ### Properties
 ### Additional Properties
@@ -68,6 +105,17 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## ResourceTags
+### Properties
+### Additional Properties
+* **Additional Properties Type**: string
+
+## RestoreOptions
+### Properties
+* **decryptionCertBase64**: string: The certificate file raw data in Base64 string. This should be the .pfx file with the private key.
+* **decryptionCertPassword**: string: The password for the decryption certificate.
+* **roleName**: string: The Azure Stack role name for restore, set it to empty for all infrastructure role
 
 ## RoleOperationStatus
 ### Properties

@@ -1,0 +1,744 @@
+# Microsoft.ProviderHub
+  
+> [!NOTE]
+> The code samples in this document are generated from API usage examples contributed by Resource Providers in their [Azure Rest API specifications](https://github.com/Azure/azure-rest-api-specs). Any issues should be reported and addressed in the source.
+
+
+## microsoft.providerhub/providermonitorsettings
+
+ProviderMonitorSettings_Create
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerMonitorSettings@2026-02-01-preview' = {
+  name: 'example'
+  location: 'eastus'
+}
+```
+
+## microsoft.providerhub/providerregistrations
+
+DirectProviderRegistrations_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations@2026-02-01-preview' = {
+  name: 'example'
+  kind: 'Direct'
+  properties: {
+    capabilities: [
+      {
+        effect: 'Allow'
+        quotaId: 'CSP_2015-05-01'
+      }
+      {
+        effect: 'Allow'
+        quotaId: 'CSP_MG_2017-12-01'
+      }
+    ]
+    customManifestVersion: '2.0'
+    legacyNamespace: 'legacyNamespace'
+    legacyRegistrations: [
+      'legacyRegistration'
+    ]
+    management: {
+      incidentContactEmail: 'helpme@contoso.com'
+      incidentRoutingService: 'Contoso Resource Provider'
+      incidentRoutingTeam: 'Contoso Triage'
+    }
+    managementGroupGlobalNotificationEndpoints: [
+      {
+        endpointUri: '{your_management_group_notification_endpoint}'
+      }
+    ]
+    notificationOptions: 'EmitSpendingLimit'
+    notificationSettings: {
+      subscriberSettings: [
+        {
+          filterRules: [
+            {
+              endpointInformation: [
+                {
+                  endpoint: 'https://userrp.azure.com/arnnotify'
+                  endpointType: 'Webhook'
+                  schemaVersion: '3.0'
+                }
+                {
+                  endpoint: 'https://userrp.azure.com/arnnotify'
+                  endpointType: 'Eventhub'
+                  schemaVersion: '3.0'
+                }
+              ]
+              filterQuery: 'Resources | where event.eventType in (\'Microsoft.Network/IpAddresses/write\', \'Microsoft.KeyVault/vaults/move/action\')'
+            }
+          ]
+        }
+      ]
+    }
+    optionalFeatures: [
+      'Microsoft.Resources/PlatformSubscription'
+    ]
+    providerType: 'Internal'
+    providerVersion: '2.0'
+    resourceGroupLockOptionDuringMove: {
+      blockActionVerb: 'Action'
+    }
+    resourceHydrationAccounts: [
+      {
+        accountName: 'classichydrationprodsn01'
+        subscriptionId: 'e4eae963-2d15-43e6-a097-98bd75b33edd'
+      }
+      {
+        accountName: 'classichydrationprodch01'
+        subscriptionId: '69e69ecb-e69c-41d4-99b8-87dd12781067'
+      }
+    ]
+    responseOptions: {
+      serviceClientOptionsType: 'DisableAutomaticDecompression'
+    }
+    serviceName: 'root'
+    services: [
+      {
+        serviceName: 'tags'
+        status: 'Inactive'
+      }
+    ]
+  }
+}
+```
+
+ProviderRegistrations_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations@2026-02-01-preview' = {
+  name: 'example'
+  properties: {
+    capabilities: [
+      {
+        effect: 'Allow'
+        quotaId: 'CSP_2015-05-01'
+      }
+      {
+        effect: 'Allow'
+        quotaId: 'CSP_MG_2017-12-01'
+      }
+    ]
+    crossTenantTokenValidation: 'EnsureSecureValidation'
+    lifecycleInfo: {
+      allowedSubscriptions: [
+        '00000000-0000-0000-0000-000000000000'
+      ]
+      isolationType: 'Public'
+      lifecycleStage: 'InDevelopment'
+      partnerCategory: 'FirstParty'
+    }
+    management: {
+      canaryManifestOwners: [
+        'Contoso-PlatformServiceAdmin'
+      ]
+      errorResponseMessageOptions: {
+        serverFailureResponseMessageType: 'OutageReporting'
+      }
+      expeditedRolloutMetadata: {
+        enabled: false
+        expeditedRolloutIntent: 'Hotfix'
+      }
+      expeditedRolloutSubmitters: [
+        'Contoso-PlatformServiceOperator'
+      ]
+      incidentContactEmail: 'helpme@contoso.com'
+      incidentRoutingService: 'Contoso Resource Provider'
+      incidentRoutingTeam: 'Contoso Triage'
+      pcCode: 'P1234'
+      profitCenterProgramId: '1234'
+    }
+    providerType: 'Internal'
+    providerVersion: '2.0'
+    serviceName: 'root'
+    services: [
+      {
+        serviceName: 'tags'
+        status: 'Inactive'
+      }
+    ]
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/authorizedapplications
+
+AuthorizedApplications_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/authorizedApplications@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    dataAuthorizations: [
+      {
+        resourceTypes: [
+          '*'
+        ]
+        role: 'ServiceOwner'
+      }
+    ]
+    providerAuthorization: {
+      managedByRoleDefinitionId: '1a3b5c7d-8e9f-10g1-1h12-i13j14k1'
+      roleDefinitionId: '123456bf-gkur-2098-b890-98da392a00b2'
+    }
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/customrollouts
+
+CustomRollouts_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/customRollouts@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    specification: {
+      autoProvisionConfig: {
+        resourceGraph: true
+        storage: true
+      }
+      canary: {
+        regions: [
+          'brazilus'
+        ]
+      }
+      manifestCheckinSpecification: {
+        manifestCheckinOption: 'AttemptAutomaticManifestCheckin'
+        manifestCheckinParams: {
+          baselineArmManifestLocation: 'EastUS2EUAP'
+          environment: 'Prod'
+        }
+      }
+      refreshSubscriptionRegistration: true
+      rolloutId: 'Ev2RolloutIdGuid'
+    }
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/defaultrollouts
+
+DefaultRollouts_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/defaultRollouts@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    specification: {
+      canary: {
+        skipRegions: [
+          'eastus2euap'
+        ]
+      }
+      expeditedRollout: {
+        enabled: true
+      }
+      manifestCheckinSpecification: {
+        manifestCheckinOption: 'AttemptAutomaticManifestCheckin'
+        manifestCheckinParams: {
+          baselineArmManifestLocation: 'EastUS2EUAP'
+          environment: 'Prod'
+        }
+      }
+      restOfTheWorldGroupTwo: {
+        waitDuration: 'PT4H'
+      }
+    }
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/manifests
+
+Manifests_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/manifests@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    manifest: '<<Core RP manifest>>'
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/notificationregistrations
+
+NotificationRegistrations_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/notificationRegistrations@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    includedEvents: [
+      '*/write'
+      'Microsoft.Contoso/employees/delete'
+    ]
+    messageScope: 'RegisteredSubscriptions'
+    notificationEndpoints: [
+      {
+        locations: [
+          ''
+          'East US'
+        ]
+        notificationDestination: '/subscriptions/ac6bcfb5-3dc1-491f-95a6-646b89bf3e88/resourceGroups/mgmtexp-eastus/providers/Microsoft.EventHub/namespaces/unitedstates-mgmtexpint/eventhubs/armlinkednotifications'
+      }
+      {
+        locations: [
+          'North Europe'
+        ]
+        notificationDestination: '/subscriptions/ac6bcfb5-3dc1-491f-95a6-646b89bf3e88/resourceGroups/mgmtexp-northeurope/providers/Microsoft.EventHub/namespaces/europe-mgmtexpint/eventhubs/armlinkednotifications'
+      }
+    ]
+    notificationMode: 'EventHub'
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/resourcetyperegistrations
+
+DirectResourceTypeRegistrations_CreateOrUpdate.json
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    addResourceListTargetLocations: true
+    additionalOptions: 'ProtectedAsyncOperationPolling'
+    allowEmptyRoleAssignments: false
+    allowedResourceNames: [
+      {
+        name: 'name1'
+        getActionVerb: 'list'
+      }
+      {
+        name: 'name2'
+      }
+    ]
+    allowedTemplateDeploymentReferenceActions: [
+      'ListKeys'
+      'ListSAS'
+    ]
+    apiProfiles: [
+      {
+        apiVersion: '2018-02-01'
+        profileVersion: '2018-03-01-hybrid'
+      }
+      {
+        apiVersion: '2016-06-01'
+        profileVersion: '2019-03-01-hybrid'
+      }
+    ]
+    asyncTimeoutRules: [
+      {
+        actionName: 'Microsoft.ClassicCompute/domainNames/write'
+        timeout: 'PT12H'
+      }
+    ]
+    availabilityZoneRule: {
+      availabilityZonePolicy: 'MultiZoned'
+    }
+    capacityRule: {
+      capacityPolicy: 'Restricted'
+      skuAlias: 'incorrectAlias'
+    }
+    commonApiVersions: [
+      '2021-01-01'
+    ]
+    endpoints: [
+      {
+        apiVersions: [
+          '2020-06-01-preview'
+        ]
+        locations: [
+          'West US'
+          'East US'
+          'North Europe'
+        ]
+        requiredFeatures: [
+          '<feature flag>'
+        ]
+      }
+    ]
+    groupingTag: 'groupingTag'
+    legacyName: 'legacyName'
+    legacyNames: [
+      'legacyName'
+    ]
+    legacyPolicy: {
+      disallowedConditions: [
+        {
+          disallowedLegacyOperations: [
+            'Create'
+            'Delete'
+          ]
+          feature: 'Microsoft.RP/ArmOnlyJobCollections'
+        }
+      ]
+      disallowedLegacyOperations: [
+        'Create'
+      ]
+    }
+    linkedOperationRules: [
+      {
+        linkedAction: 'Blocked'
+        linkedOperation: 'CrossSubscriptionResourceMove'
+      }
+      {
+        linkedAction: 'Validate'
+        linkedOperation: 'CrossResourceGroupResourceMove'
+      }
+    ]
+    management: {
+      authorizationOwners: [
+        'RPAAS-PlatformServiceAdministrator'
+      ]
+      incidentContactEmail: 'helpme@contoso.com'
+      incidentRoutingService: ''
+      incidentRoutingTeam: ''
+      manifestOwners: [
+        'Contoso-PlatformServiceAdministrator'
+      ]
+      resourceAccessPolicy: 'NotSpecified'
+    }
+    manifestLink: 'https://azure.com'
+    marketplaceOptions: {
+      addOnPlanConversionAllowed: true
+    }
+    metadata: {
+    }
+    notifications: [
+      {
+        notificationType: 'SubscriptionNotification'
+        skipNotifications: 'Disabled'
+      }
+    ]
+    openApiConfiguration: {
+      validation: {
+        allowNoncompliantCollectionResponse: true
+      }
+    }
+    policyExecutionType: 'BypassPolicies'
+    privateEndpointConfiguration: {
+      groupConnectivityInformation: [
+        {
+          groupId: 'Sql'
+          redirectMapId: 'test'
+          requiredMembers: [
+            'Sql_Member'
+          ]
+          requiredZoneNames: [
+            'Zone'
+          ]
+        }
+      ]
+      minApiVersion: '2022-10-01'
+    }
+    regionality: 'Regional'
+    requestHeaderOptions: {
+      optOutHeaders: 'SystemDataCreatedByLastModifiedBy'
+    }
+    resourceCache: {
+      enableResourceCache: true
+      resourceCacheExpirationTimespan: 'PT2M'
+    }
+    resourceConcurrencyControlOptions: {
+      patch: {
+        policy: 'SynchronizeBeginExtension'
+      }
+      post: {
+        policy: 'SynchronizeBeginExtension'
+      }
+      put: {
+        policy: 'SynchronizeBeginExtension'
+      }
+    }
+    resourceGraphConfiguration: {
+      apiVersion: '2019-01-01'
+      enabled: true
+    }
+    resourceManagementOptions: {
+      batchProvisioningSupport: {
+        supportedOperations: 'Get, Delete'
+      }
+      deleteDependencies: [
+        {
+          linkedProperty: 'properties.edgeProfile.subscription.id'
+        }
+      ]
+    }
+    resourceQueryManagement: {
+      filterOption: 'EnableSubscriptionFilterOnTenant'
+    }
+    resourceTypeCommonAttributeManagement: {
+      commonApiVersionsMergeMode: 'Merge'
+    }
+    routingRule: {
+      hostResourceType: 'servers/databases'
+    }
+    routingType: 'Default'
+    supportsTags: true
+    swaggerSpecifications: [
+      {
+        apiVersions: [
+          '2020-06-01-preview'
+        ]
+        swaggerSpecFolderUri: 'https://github.com/Azure/azure-rest-api-specs/blob/feature/azure/contoso/specification/contoso/resource-manager/Microsoft.SampleRP/'
+      }
+    ]
+    templateDeploymentPolicy: {
+      capabilities: 'Preflight'
+      preflightNotifications: 'None'
+      preflightOptions: 'ValidationRequests, DeploymentRequests'
+    }
+  }
+}
+```
+
+ResourceTypeRegistrations_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    crossTenantTokenValidation: 'EnsureSecureValidation'
+    endpoints: [
+      {
+        apiVersions: [
+          '2020-06-01-preview'
+        ]
+        locations: [
+          'West US'
+          'East US'
+          'North Europe'
+        ]
+        requiredFeatures: [
+          '<feature flag>'
+        ]
+      }
+    ]
+    lifecycleInfo: {
+      lifecycleStage: 'InDevelopment'
+    }
+    management: {
+      authorizationOwners: [
+        'RPAAS-PlatformServiceAdministrator'
+      ]
+      incidentContactEmail: 'helpme@contoso.com'
+      incidentRoutingService: ''
+      incidentRoutingTeam: ''
+      manifestOwners: [
+        'Contoso-PlatformServiceAdministrator'
+      ]
+      resourceAccessPolicy: 'NotSpecified'
+    }
+    marketplaceType: 'ProviderHub'
+    metadata: {
+    }
+    notifications: [
+      {
+        notificationType: 'SubscriptionNotification'
+        skipNotifications: 'Disabled'
+      }
+    ]
+    openApiConfiguration: {
+      validation: {
+        allowNoncompliantCollectionResponse: true
+      }
+    }
+    privateEndpointConfiguration: {
+      groupConnectivityInformation: [
+        {
+          groupId: 'Sql'
+          redirectMapId: 'test'
+          requiredMembers: [
+            'Sql_Member'
+          ]
+          requiredZoneNames: [
+            'Zone'
+          ]
+        }
+      ]
+      minApiVersion: '2022-10-01'
+    }
+    regionality: 'Regional'
+    requestHeaderOptions: {
+      optOutHeaders: 'SystemDataCreatedByLastModifiedBy'
+    }
+    resourceConcurrencyControlOptions: {
+      patch: {
+        policy: 'SynchronizeBeginExtension'
+      }
+      post: {
+        policy: 'SynchronizeBeginExtension'
+      }
+      put: {
+        policy: 'SynchronizeBeginExtension'
+      }
+    }
+    resourceGraphConfiguration: {
+      apiVersion: '2019-01-01'
+      enabled: true
+    }
+    resourceManagementOptions: {
+      batchProvisioningSupport: {
+        actionConfigurations: [
+          {
+            authorizationAction: 'Microsoft.Contoso/authorize'
+            maxBatchSize: 5
+          }
+        ]
+        batchContractVersion: '2020-06-01-preview'
+        maxBatchSize: 10
+        maxNestedBatchSize: 5
+        requiredFeatures: [
+          'Microsoft.Contoso/feature1'
+        ]
+        supportedOperations: 'Get'
+      }
+    }
+    routingType: 'Default'
+    swaggerSpecifications: [
+      {
+        apiVersions: [
+          '2020-06-01-preview'
+        ]
+        lifecycleInfo: {
+          lifecycleStage: 'InDevelopment'
+        }
+        swaggerSpecFolderUri: 'https://github.com/Azure/azure-rest-api-specs/blob/feature/azure/contoso/specification/contoso/resource-manager/Microsoft.SampleRP/'
+      }
+    ]
+    throttlingRules: [
+      {
+        action: 'Microsoft.Foo/checkNameAvailability/write'
+        metrics: [
+          {
+            type: 'NumberOfRequests'
+            bucketSize: 'XLarge'
+            limit: 1
+          }
+        ]
+      }
+    ]
+    writeLock: {
+      state: 'Enabled'
+    }
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/resourcetyperegistrations/resourcetyperegistrations/resourcetyperegistrations/resourcetyperegistrations/skus
+
+Skus_CreateOrUpdateNestedResourceTypeThird
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/skus@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    skuSettings: [
+      {
+        name: 'freeSku'
+        kind: 'Standard'
+        tier: 'Tier1'
+      }
+      {
+        name: 'premiumSku'
+        costs: [
+          {
+            meterId: 'xxx'
+          }
+        ]
+        kind: 'Premium'
+        tier: 'Tier2'
+      }
+    ]
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/resourcetyperegistrations/resourcetyperegistrations/resourcetyperegistrations/skus
+
+Skus_CreateOrUpdateNestedResourceTypeSecond
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/skus@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    skuSettings: [
+      {
+        name: 'freeSku'
+        kind: 'Standard'
+        tier: 'Tier1'
+      }
+      {
+        name: 'premiumSku'
+        costs: [
+          {
+            meterId: 'xxx'
+          }
+        ]
+        kind: 'Premium'
+        tier: 'Tier2'
+      }
+    ]
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/resourcetyperegistrations/resourcetyperegistrations/skus
+
+Skus_CreateOrUpdateNestedResourceTypeFirst
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations/resourcetypeRegistrations/skus@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    skuSettings: [
+      {
+        name: 'freeSku'
+        kind: 'Standard'
+        tier: 'Tier1'
+      }
+      {
+        name: 'premiumSku'
+        costs: [
+          {
+            meterId: 'xxx'
+          }
+        ]
+        kind: 'Premium'
+        tier: 'Tier2'
+      }
+    ]
+  }
+}
+```
+
+## microsoft.providerhub/providerregistrations/resourcetyperegistrations/skus
+
+Skus_CreateOrUpdate
+```bicep
+resource exampleResource 'Microsoft.ProviderHub/providerRegistrations/resourcetypeRegistrations/skus@2026-02-01-preview' = {
+  parent: parentResource 
+  name: 'example'
+  properties: {
+    skuSettings: [
+      {
+        name: 'freeSku'
+        kind: 'Standard'
+        tier: 'Tier1'
+      }
+      {
+        name: 'premiumSku'
+        costs: [
+          {
+            meterId: 'xxx'
+          }
+        ]
+        kind: 'Premium'
+        tier: 'Tier2'
+      }
+    ]
+  }
+}
+```

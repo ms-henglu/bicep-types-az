@@ -256,10 +256,72 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of User
 * **type**: 'Microsoft.DataBoxEdge/dataBoxEdgeDevices/users' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function deviceCapacityCheck (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Input**: [DeviceCapacityRequestInfo](#devicecapacityrequestinfo)
+
+## Function downloadUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+
+## Function generateCertificate (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Output**: [GenerateCertResponse](#generatecertresponse)
+
+## Function generatesastoken (Microsoft.DataBoxEdge/dataBoxEdgeDevices/publishers/offers/skus/versions@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/publishers/offers/skus/versions
+* **ApiVersion**: 2022-12-01-preview
+* **Output**: [MarketplaceSasToken](#marketplacesastoken)
+
+## Function getExtendedInformation (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Output**: [DataBoxEdgeDeviceExtendedInfo](#databoxedgedeviceextendedinfo)
+
+## Function installUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+
 ## Function listDCAccessCode (Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders@2022-12-01-preview)
 * **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders
 * **ApiVersion**: 2022-12-01-preview
 * **Output**: [DCAccessCode](#dcaccesscode)
+
+## Function refresh (Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares
+* **ApiVersion**: 2022-12-01-preview
+
+## Function refresh (Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts/containers@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccounts/containers
+* **ApiVersion**: 2022-12-01-preview
+
+## Function scanForUpdates (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+
+## Function triggerSupportPackage (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Input**: [TriggerSupportPackageRequest](#triggersupportpackagerequest)
+
+## Function update (Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings
+* **ApiVersion**: 2022-12-01-preview
+* **Input**: [SecuritySettings](#securitysettings)
+
+## Function updateExtendedInformation (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Input**: [DataBoxEdgeDeviceExtendedInfoPatch](#databoxedgedeviceextendedinfopatch)
+* **Output**: [DataBoxEdgeDeviceExtendedInfo](#databoxedgedeviceextendedinfo)
+
+## Function uploadCertificate (Microsoft.DataBoxEdge/dataBoxEdgeDevices@2022-12-01-preview)
+* **Resource**: Microsoft.DataBoxEdge/dataBoxEdgeDevices
+* **ApiVersion**: 2022-12-01-preview
+* **Input**: [UploadCertificateRequest](#uploadcertificaterequest)
+* **Output**: [UploadCertificateResponse](#uploadcertificateresponse)
 
 ## Address
 ### Properties
@@ -403,6 +465,45 @@
 * **dataFormat**: 'AzureFile' | 'BlockBlob' | 'PageBlob' | string (Required): DataFormat for Container
 * **refreshDetails**: [RefreshDetails](#refreshdetails) (ReadOnly): Details of the refresh job on this container.
 
+## DataBoxEdgeDeviceExtendedInfo
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **name**: string (ReadOnly): The object name.
+* **properties**: [DataBoxEdgeDeviceExtendedInfoProperties](#databoxedgedeviceextendedinfoproperties): The extended info properties.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of DataBoxEdgeDevice
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## DataBoxEdgeDeviceExtendedInfoPatch
+### Properties
+* **channelIntegrityKeyName**: string: The name for Channel Integrity Key stored in the Client Key Vault
+* **channelIntegrityKeyVersion**: string: The version of Channel Integrity Key stored in the Client Key Vault
+* **clientSecretStoreId**: string: The Key Vault ARM Id for client secrets
+* **clientSecretStoreUrl**: string: The url to access the Client Key Vault
+* **syncStatus**: 'KeyVaultNotConfigured' | 'KeyVaultNotSynced' | 'KeyVaultSyncFailed' | 'KeyVaultSyncPending' | 'KeyVaultSynced' | 'KeyVaultSyncing' | string: For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status will not be applicable.
+
+## DataBoxEdgeDeviceExtendedInfoProperties
+### Properties
+* **channelIntegrityKeyName**: string: The name of Channel Integrity Key stored in the Client Key Vault
+* **channelIntegrityKeyVersion**: string: The version of Channel Integrity Key stored in the Client Key Vault
+* **clientSecretStoreId**: string: The Key Vault ARM Id for client secrets
+* **clientSecretStoreUrl**: string: The url to access the Client Key Vault
+* **cloudWitnessContainerName**: string (ReadOnly): The Container for cloud witness in the storage account.
+* **cloudWitnessStorageAccountName**: string (ReadOnly): The Cloud Witness Storage account name.
+* **cloudWitnessStorageEndpoint**: string (ReadOnly): The Azure service endpoint of the cloud witness storage account.
+* **clusterWitnessType**: 'Cloud' | 'FileShare' | 'None' | string (ReadOnly): Cluster Witness Type
+* **deviceSecrets**: [DataBoxEdgeDeviceExtendedInfoPropertiesDeviceSecrets](#databoxedgedeviceextendedinfopropertiesdevicesecrets) (ReadOnly): Device secrets, will be returned only with ODataFilter $expand=deviceSecrets
+* **encryptionKey**: string: The public part of the encryption certificate. Client uses this to encrypt any secret.
+* **encryptionKeyThumbprint**: string: The digital signature of encrypted certificate.
+* **fileShareWitnessLocation**: string (ReadOnly): The witness location of file share.
+* **fileShareWitnessUsername**: string (ReadOnly): The username of file share.
+* **keyVaultSyncStatus**: 'KeyVaultNotConfigured' | 'KeyVaultNotSynced' | 'KeyVaultSyncFailed' | 'KeyVaultSyncPending' | 'KeyVaultSynced' | 'KeyVaultSyncing' | string: Key vault sync status
+* **resourceKey**: string (ReadOnly): The Resource ID of the Resource.
+
+## DataBoxEdgeDeviceExtendedInfoPropertiesDeviceSecrets
+### Properties
+### Additional Properties
+* **Additional Properties Type**: [Secret](#secret)
+
 ## DataBoxEdgeDeviceProperties
 ### Properties
 * **computeVersionInformation**: [ComputeVersionInformation](#computeversioninformation) (ReadOnly): The details of compute version information
@@ -455,6 +556,15 @@
 ### Additional Properties
 * **Additional Properties Type**: [HostCapacity](#hostcapacity)
 
+## DeviceCapacityRequestInfo
+### Properties
+* **properties**: [DeviceCapacityRequestInfoProperties](#devicecapacityrequestinfoproperties) (Required): The properties of the Device Capacity Request.
+
+## DeviceCapacityRequestInfoProperties
+### Properties
+* **vmPlacementQuery**: string[][] (Required): Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
+* **vmPlacementResults**: [VmPlacementRequestResult](#vmplacementrequestresult)[]: Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
+
 ## DiagnosticRemoteSupportSettingsProperties
 ### Properties
 * **remoteSupportSettingsList**: [RemoteSupportSettings](#remotesupportsettings)[]: Remote support settings list according to the RemoteApplicationType
@@ -487,6 +597,14 @@
 * **customContextTag**: string {maxLength: 192}: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
 * **sinkInfo**: [RoleSinkInfo](#rolesinkinfo) (Required): Role sink info.
 * **sourceInfo**: [FileSourceInfo](#filesourceinfo) (Required): File event source details.
+
+## GenerateCertResponse
+### Properties
+* **expiryTimeInUTC**: string: Gets or sets expiry time in UTC
+* **privateKey**: string {sensitive}: Gets or sets base64 encoded private part of the certificate,
+needed to form the activation key
+* **publicKey**: string: Gets or sets base64 encoded certificate raw data,
+this is the public part needed to be uploaded to cert vault
 
 ## HostCapacity
 ### Properties
@@ -609,6 +727,11 @@
 * **provisioningState**: string
 * **publisherId**: string
 * **skuId**: string
+
+## MarketplaceSasToken
+### Properties
+* **sasUri**: string {sensitive}
+* **status**: string
 
 ## MECRoleProperties
 ### Properties
@@ -738,6 +861,11 @@ by the already existing properties
 ### Properties
 * **userConsent**: 'Disabled' | 'Enabled' | string (Required): Proactive diagnostic collection consent flag
 
+## RawCertificateData
+### Properties
+* **authenticationType**: 'AzureActiveDirectory' | 'Invalid' | string: The authentication type.
+* **certificate**: string (Required): The base64 encoded certificate raw data.
+
 ## RefreshDetails
 ### Properties
 * **errorManifestFile**: string: Indicates the relative path of the error xml for the last refresh job on this particular share or container, if any. This could be a failed job or a successful job.
@@ -765,6 +893,22 @@ by the already existing properties
 ## RoleSinkInfo
 ### Properties
 * **roleId**: string (Required): Compute role ID.
+
+## Secret
+### Properties
+* **encryptedSecret**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret): Encrypted (using device public key) secret value.
+* **keyVaultId**: string: Id of the Key-Vault where secret is stored (ex: secrets/AuthClientSecret/82ef4346187a4033a10d629cde07d740).
+
+## SecuritySettings
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **name**: string (ReadOnly): The object name.
+* **properties**: [SecuritySettingsProperties](#securitysettingsproperties) (Required): Properties of the security settings.
+* **type**: string (ReadOnly): The hierarchical type of the object.
+
+## SecuritySettingsProperties
+### Properties
+* **deviceAdminPassword**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret) (Required): Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the  local web UI of the device. The Actual password should have at least 8 characters that are a combination of  uppercase, lowercase, numeric, and special characters.
 
 ## ShareAccessRight
 ### Properties
@@ -822,6 +966,14 @@ by the already existing properties
 * **name**: string
 * **state**: string
 
+## SupportPackageRequestProperties
+### Properties
+* **include**: string: Type of files, which need to be included in the logs
+This will contain the type of logs (Default/DefaultWithDumps/None/All/DefaultWithArchived)
+or a comma separated list of log types that are required
+* **maximumTimeStamp**: string: Start of the timespan of the log collection
+* **minimumTimeStamp**: string: MinimumTimeStamp from where logs need to be collected
+
 ## SymmetricKey
 ### Properties
 * **connectionString**: [AsymmetricEncryptedSecret](#asymmetricencryptedsecret): Connection string based on the symmetric key.
@@ -841,6 +993,13 @@ by the already existing properties
 * **serialNumber**: string: Serial number of the device being tracked.
 * **trackingId**: string: Tracking ID of the shipment.
 * **trackingUrl**: string: Tracking URL of the shipment.
+
+## TriggerSupportPackageRequest
+### Properties
+* **id**: string (ReadOnly): The path ID that uniquely identifies the object.
+* **name**: string (ReadOnly): The object name.
+* **properties**: [SupportPackageRequestProperties](#supportpackagerequestproperties) (Required): The TriggerSupportPackageRequest properties.
+* **type**: string (ReadOnly): The hierarchical type of the object.
 
 ## UpdateDetails
 ### Properties
@@ -882,6 +1041,21 @@ by the already existing properties
 * **updates**: [UpdateDetails](#updatedetails)[] (ReadOnly): The list of updates available for install.
 * **updateTitles**: string[] (ReadOnly): The list of updates available for install.
 
+## UploadCertificateRequest
+### Properties
+* **properties**: [RawCertificateData](#rawcertificatedata) (Required): The Base 64 encoded certificate raw data.
+
+## UploadCertificateResponse
+### Properties
+* **aadAudience**: string (ReadOnly): Identifier of the target resource that is the recipient of the requested token.
+* **aadAuthority**: string (ReadOnly): Azure Active Directory tenant authority.
+* **aadTenantId**: string (ReadOnly): Azure Active Directory tenant ID.
+* **authType**: 'AzureActiveDirectory' | 'Invalid' | string: Specifies authentication type.
+* **azureManagementEndpointAudience**: string (ReadOnly): The azure management endpoint audience.
+* **resourceId**: string (ReadOnly): The resource ID of the Data Box Edge/Gateway device.
+* **servicePrincipalClientId**: string (ReadOnly): Azure Active Directory service principal client ID.
+* **servicePrincipalObjectId**: string (ReadOnly): Azure Active Directory service principal object ID.
+
 ## UserAccessRight
 ### Properties
 * **accessType**: 'Change' | 'Custom' | 'Read' | string (Required): Type of access to be allowed for the user.
@@ -897,4 +1071,11 @@ by the already existing properties
 ### Properties
 * **currentMemoryUsageMB**: int: The current memory used by the virtual machine.
 * **startupMemoryMB**: int: The total amount of RAM in the virtual machine, as seen by the guest  operating system. For a virtual machine with dynamic memory enabled, this represents the initial memory available at startup.
+
+## VmPlacementRequestResult
+### Properties
+* **isFeasible**: bool: Boolean value indicating if the VM(s) in VmSize can be created.
+* **message**: string: Localized message to be displayed to the user to explain the check result.
+* **messageCode**: string: MessageCode indicating reason for success or failure.
+* **vmSize**: string[]: List of VM sizes being checked.
 

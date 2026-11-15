@@ -132,10 +132,67 @@
 * **tags**: [VirtualNetworkTags](#virtualnetworktags): The tags of the resource.
 * **type**: 'Microsoft.DevTestLab/labs/virtualnetworks' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function applyArtifacts (Microsoft.DevTestLab/labs/virtualmachines@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2015-05-21-preview
+* **Input**: [ApplyArtifactsRequest](#applyartifactsrequest)
+
+## Function createEnvironment (Microsoft.DevTestLab/labs@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2015-05-21-preview
+* **Input**: [LabVirtualMachine](#labvirtualmachine)
+
+## Function evaluatePolicies (Microsoft.DevTestLab/labs/policysets@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/policysets
+* **ApiVersion**: 2015-05-21-preview
+* **Input**: [EvaluatePoliciesRequest](#evaluatepoliciesrequest)
+* **Output**: [EvaluatePoliciesResponse](#evaluatepoliciesresponse)
+
+## Function execute (Microsoft.DevTestLab/labs/schedules@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/schedules
+* **ApiVersion**: 2015-05-21-preview
+
+## Function generateArmTemplate (Microsoft.DevTestLab/labs/artifactsources/artifacts@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/artifactsources/artifacts
+* **ApiVersion**: 2015-05-21-preview
+* **Input**: [GenerateArmTemplateRequest](#generatearmtemplaterequest)
+* **Output**: [ArmTemplateInfo](#armtemplateinfo)
+
+## Function generateUploadUri (Microsoft.DevTestLab/labs@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs
+* **ApiVersion**: 2015-05-21-preview
+* **Input**: [GenerateUploadUriParameter](#generateuploaduriparameter)
+* **Output**: [GenerateUploadUriResponse](#generateuploaduriresponse)
+
 ## Function listVhds (Microsoft.DevTestLab/labs@2015-05-21-preview)
 * **Resource**: Microsoft.DevTestLab/labs
 * **ApiVersion**: 2015-05-21-preview
 * **Output**: [ResponseWithContinuationLabVhd](#responsewithcontinuationlabvhd)
+
+## Function refreshData (Microsoft.DevTestLab/labs/costinsights@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/costinsights
+* **ApiVersion**: 2015-05-21-preview
+
+## Function refreshData (Microsoft.DevTestLab/labs/costs@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/costs
+* **ApiVersion**: 2015-05-21-preview
+
+## Function start (Microsoft.DevTestLab/labs/virtualmachines@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2015-05-21-preview
+
+## Function stop (Microsoft.DevTestLab/labs/virtualmachines@2015-05-21-preview)
+* **Resource**: Microsoft.DevTestLab/labs/virtualmachines
+* **ApiVersion**: 2015-05-21-preview
+
+## ApplyArtifactsRequest
+### Properties
+* **artifacts**: [ArtifactInstallProperties](#artifactinstallproperties)[]: The list of artifacts to apply.
+
+## ArmTemplateInfo
+### Properties
+* **parameters**: any: The parameters of the ARM template.
+* **template**: any: The template's contents.
 
 ## ArtifactDeploymentStatusProperties
 ### Properties
@@ -241,6 +298,20 @@
 ### Properties
 * **time**: string
 
+## EvaluatePoliciesProperties
+### Properties
+* **factData**: string: The fact data.
+* **factName**: string: The fact name.
+* **valueOffset**: string: The value offset.
+
+## EvaluatePoliciesRequest
+### Properties
+* **policies**: [EvaluatePoliciesProperties](#evaluatepoliciesproperties)[]: Policies to evaluate.
+
+## EvaluatePoliciesResponse
+### Properties
+* **results**: [PolicySetResult](#policysetresult)[]: Results of evaluating a policy set.
+
 ## FormulaProperties
 ### Properties
 * **author**: string: The author of the formula.
@@ -267,6 +338,20 @@
 * **publisher**: string: The publisher of the gallery image.
 * **sku**: string: The SKU of the gallery image.
 * **version**: string: The version of the gallery image.
+
+## GenerateArmTemplateRequest
+### Properties
+* **location**: string: The location of the virtual machine.
+* **parameters**: [ParameterInfo](#parameterinfo)[]: The parameters of the ARM template.
+* **virtualMachineName**: string: The resource name of the virtual machine.
+
+## GenerateUploadUriParameter
+### Properties
+* **blobName**: string: The blob name of the upload URI.
+
+## GenerateUploadUriResponse
+### Properties
+* **uploadUri**: string: The upload URI for the VHD.
 
 ## HourDetails
 ### Properties
@@ -338,6 +423,11 @@
 ### Properties
 * **linuxOsState**: 'DeprovisionApplied' | 'DeprovisionRequested' | 'NonDeprovisioned' | string: The state of the Linux OS.
 
+## ParameterInfo
+### Properties
+* **name**: string
+* **value**: string
+
 ## PolicyProperties
 ### Properties
 * **description**: string: The description of the policy.
@@ -348,10 +438,20 @@
 * **status**: 'Disabled' | 'Enabled' | string: The status of the policy.
 * **threshold**: string: The threshold of the policy.
 
+## PolicySetResult
+### Properties
+* **hasError**: bool: A value indicating whether this policy set evaluation has discovered violations.
+* **policyViolations**: [PolicyViolation](#policyviolation)[]: The list of policy violations.
+
 ## PolicyTags
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
+
+## PolicyViolation
+### Properties
+* **code**: string: The code of the policy violation.
+* **message**: string: The message of the policy violation.
 
 ## ResponseWithContinuationLabVhd
 ### Properties

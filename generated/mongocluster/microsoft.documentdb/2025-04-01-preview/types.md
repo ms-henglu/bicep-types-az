@@ -46,10 +46,21 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.DocumentDB/mongoClusters/users' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function checkMongoClusterNameAvailability (Microsoft.DocumentDB/locations@2025-04-01-preview)
+* **Resource**: Microsoft.DocumentDB/locations
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [CheckNameAvailabilityRequest](#checknameavailabilityrequest)
+* **Output**: [CheckNameAvailabilityResponse](#checknameavailabilityresponse)
+
 ## Function listConnectionStrings (Microsoft.DocumentDB/mongoClusters@2025-04-01-preview)
 * **Resource**: Microsoft.DocumentDB/mongoClusters
 * **ApiVersion**: 2025-04-01-preview
 * **Output**: [ListConnectionStringsResult](#listconnectionstringsresult)
+
+## Function promote (Microsoft.DocumentDB/mongoClusters@2025-04-01-preview)
+* **Resource**: Microsoft.DocumentDB/mongoClusters
+* **ApiVersion**: 2025-04-01-preview
+* **Input**: [PromoteReplicaRequest](#promotereplicarequest)
 
 ## AdministratorProperties
 ### Properties
@@ -63,6 +74,17 @@
 ## BackupProperties
 ### Properties
 * **earliestRestoreTime**: string (ReadOnly): Earliest restore timestamp in UTC ISO8601 format.
+
+## CheckNameAvailabilityRequest
+### Properties
+* **name**: string: The name of the resource for which availability needs to be checked.
+* **type**: string: The resource type.
+
+## CheckNameAvailabilityResponse
+### Properties
+* **message**: string: Detailed reason why the given name is available.
+* **nameAvailable**: bool: Indicates if the resource name is available.
+* **reason**: 'AlreadyExists' | 'Invalid' | string: The reason why the given name is not available.
 
 ## ComputeProperties
 ### Properties
@@ -89,9 +111,9 @@
 
 ## FirewallRuleProperties
 ### Properties
-* **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The end IP address of the mongo cluster firewall rule. Must be IPv4 format.
+* **endIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The end IP address of the DocumentDB cluster firewall rule. Must be IPv4 format.
 * **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the firewall rule.
-* **startIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The start IP address of the mongo cluster firewall rule. Must be IPv4 format.
+* **startIpAddress**: string {pattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"} (Required): The start IP address of the DocumentDB cluster firewall rule. Must be IPv4 format.
 
 ## HighAvailabilityProperties
 ### Properties
@@ -110,30 +132,30 @@
 
 ## ListConnectionStringsResult
 ### Properties
-* **connectionStrings**: [ConnectionString](#connectionstring)[] (ReadOnly): An array that contains the connection strings for a mongo cluster.
+* **connectionStrings**: [ConnectionString](#connectionstring)[] (ReadOnly): An array that contains the connection strings for a DocumentDB cluster.
 
 ## MongoClusterProperties
 ### Properties
-* **administrator**: [AdministratorProperties](#administratorproperties): The local administrator properties for the mongo cluster.
+* **administrator**: [AdministratorProperties](#administratorproperties): The local administrator properties for the DocumentDB cluster.
 * **authConfig**: [AuthConfigProperties](#authconfigproperties): The authentication configuration for the cluster.
-* **backup**: [BackupProperties](#backupproperties): The backup properties of the mongo cluster.
-* **clusterStatus**: 'Dropping' | 'Provisioning' | 'Ready' | 'Starting' | 'Stopped' | 'Stopping' | 'Updating' | string (ReadOnly): The status of the mongo cluster.
-* **compute**: [ComputeProperties](#computeproperties): The compute properties of the mongo cluster.
+* **backup**: [BackupProperties](#backupproperties): The backup properties of the DocumentDB cluster.
+* **clusterStatus**: 'Dropping' | 'Provisioning' | 'Ready' | 'Starting' | 'Stopped' | 'Stopping' | 'Updating' | string (ReadOnly): The status of the DocumentDB cluster.
+* **compute**: [ComputeProperties](#computeproperties): The compute properties of the DocumentDB cluster.
 * **connectionString**: string (ReadOnly): The default mongo connection string for the cluster.
-* **createMode**: 'Default' | 'GeoReplica' | 'PointInTimeRestore' | 'Replica' | string: The mode to create a mongo cluster.
-* **dataApi**: [DataApiProperties](#dataapiproperties): The Data API properties of the mongo cluster.
-* **highAvailability**: [HighAvailabilityProperties](#highavailabilityproperties): The high availability properties of the mongo cluster.
+* **createMode**: 'Default' | 'GeoReplica' | 'PointInTimeRestore' | 'Replica' | string: The mode to create a DocumentDB cluster.
+* **dataApi**: [DataApiProperties](#dataapiproperties): The Data API properties of the DocumentDB cluster.
+* **highAvailability**: [HighAvailabilityProperties](#highavailabilityproperties): The high availability properties of the DocumentDB cluster.
 * **infrastructureVersion**: string (ReadOnly): The infrastructure version the cluster is provisioned on.
 * **previewFeatures**: ('GeoReplicas' | string)[]: List of private endpoint connections.
 * **privateEndpointConnections**: [PrivateEndpointConnection](#privateendpointconnection)[] (ReadOnly): List of private endpoint connections.
-* **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the mongo cluster.
-* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this mongo cluster.
-* **replica**: [ReplicationProperties](#replicationproperties) (ReadOnly): The replication properties for the mongo cluster
-* **replicaParameters**: [MongoClusterReplicaParameters](#mongoclusterreplicaparameters): The parameters to create a replica mongo cluster.
-* **restoreParameters**: [MongoClusterRestoreParameters](#mongoclusterrestoreparameters): The parameters to create a point-in-time restore mongo cluster.
+* **provisioningState**: 'Canceled' | 'Dropping' | 'Failed' | 'InProgress' | 'Succeeded' | 'Updating' | string (ReadOnly): The provisioning state of the DocumentDB cluster.
+* **publicNetworkAccess**: 'Disabled' | 'Enabled' | string: Whether or not public endpoint access is allowed for this DocumentDB cluster.
+* **replica**: [ReplicationProperties](#replicationproperties) (ReadOnly): The replication properties for the DocumentDB cluster
+* **replicaParameters**: [MongoClusterReplicaParameters](#mongoclusterreplicaparameters): The parameters to create a replica DocumentDB cluster.
+* **restoreParameters**: [MongoClusterRestoreParameters](#mongoclusterrestoreparameters): The parameters to create a point-in-time restore DocumentDB cluster.
 * **serverVersion**: string: The Mongo DB server version. Defaults to the latest available version if not specified.
-* **sharding**: [ShardingProperties](#shardingproperties): The sharding properties of the mongo cluster.
-* **storage**: [StorageProperties](#storageproperties): The storage properties of the mongo cluster.
+* **sharding**: [ShardingProperties](#shardingproperties): The sharding properties of the DocumentDB cluster.
+* **storage**: [StorageProperties](#storageproperties): The storage properties of the DocumentDB cluster.
 
 ## MongoClusterReplicaParameters
 ### Properties
@@ -142,7 +164,7 @@
 
 ## MongoClusterRestoreParameters
 ### Properties
-* **pointInTimeUTC**: string: UTC point in time to restore a mongo cluster
+* **pointInTimeUTC**: string: UTC point in time to restore a DocumentDB cluster
 * **sourceResourceId**: string: Resource ID to locate the source cluster to restore
 
 ## PrivateEndpoint
@@ -169,6 +191,11 @@
 * **actionsRequired**: string: A message indicating if changes on the service provider require any updates on the consumer.
 * **description**: string: The reason for approval/rejection of the connection.
 * **status**: 'Approved' | 'Pending' | 'Rejected' | string: Indicates whether the connection has been Approved/Rejected/Removed by the owner of the service.
+
+## PromoteReplicaRequest
+### Properties
+* **mode**: 'Switchover' | string: The mode to apply to the promote operation. Value is optional and default value is 'Switchover'.
+* **promoteOption**: 'Forced' | string (Required): The promote option to apply to the operation.
 
 ## ReplicationProperties
 ### Properties

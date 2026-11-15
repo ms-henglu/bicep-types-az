@@ -1,0 +1,886 @@
+[
+  {
+    "$type": "ObjectType",
+    "name": "CancelOperationsRequest",
+    "properties": {
+      "operationIds": {
+        "type": {
+          "$ref": "#/2"
+        },
+        "flags": 1,
+        "description": "The Bulk Action Operation Ids that identify the operations to cancel."
+      }
+    }
+  },
+  {
+    "$type": "StringType"
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "CancelOperationsResponse",
+    "properties": {
+      "results": {
+        "type": {
+          "$ref": "#/45"
+        },
+        "flags": 1,
+        "description": "The current result for each operation submitted for cancellation."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ResourceOperation",
+    "properties": {
+      "resourceId": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The virtual machine Azure resource ID."
+      },
+      "errorCode": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "A code that identifies the error for the virtual machine operation."
+      },
+      "errorDetails": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "A message that describes the error for the virtual machine operation."
+      },
+      "operation": {
+        "type": {
+          "$ref": "#/5"
+        },
+        "flags": 0,
+        "description": "The virtual machine operation details."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ResourceOperationDetails",
+    "properties": {
+      "operationId": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The operation ID used to track the action for this virtual machine."
+      },
+      "resourceId": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The virtual machine's Azure resource ID."
+      },
+      "opType": {
+        "type": {
+          "$ref": "#/12"
+        },
+        "flags": 0,
+        "description": "The type of operation performed on the virtual machine."
+      },
+      "subscriptionId": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The subscription ID associated with the bulk action."
+      },
+      "deadline": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The requested deadline for the operation."
+      },
+      "deadlineType": {
+        "type": {
+          "$ref": "#/16"
+        },
+        "flags": 0,
+        "description": "Specifies whether the deadline time indicates the time at which the operation should start or should be complete."
+      },
+      "state": {
+        "type": {
+          "$ref": "#/26"
+        },
+        "flags": 2,
+        "description": "The current state of the operation."
+      },
+      "timezone": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The time zone used to interpret the operation deadline."
+      },
+      "resourceOperationError": {
+        "type": {
+          "$ref": "#/27"
+        },
+        "flags": 0,
+        "description": "Contains error details if the operation does not succeed."
+      },
+      "fallbackOperationInfo": {
+        "type": {
+          "$ref": "#/28"
+        },
+        "flags": 0,
+        "description": "Information about the fallback operation attempted after the requested operation did not succeed."
+      },
+      "completedAt": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 0,
+        "description": "The date and time when the operation completed."
+      },
+      "retryPolicy": {
+        "type": {
+          "$ref": "#/36"
+        },
+        "flags": 0,
+        "description": "The retry settings for the bulk action."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Start"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deallocate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Hibernate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Create"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Delete"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/6"
+      },
+      {
+        "$ref": "#/7"
+      },
+      {
+        "$ref": "#/8"
+      },
+      {
+        "$ref": "#/9"
+      },
+      {
+        "$ref": "#/10"
+      },
+      {
+        "$ref": "#/11"
+      },
+      {
+        "$ref": "#/1"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "InitiateAt"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "CompleteBy"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/13"
+      },
+      {
+        "$ref": "#/14"
+      },
+      {
+        "$ref": "#/15"
+      },
+      {
+        "$ref": "#/1"
+      }
+    ]
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PendingScheduling"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Scheduled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "PendingExecution"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Executing"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Succeeded"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Failed"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Cancelled"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Blocked"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/17"
+      },
+      {
+        "$ref": "#/18"
+      },
+      {
+        "$ref": "#/19"
+      },
+      {
+        "$ref": "#/20"
+      },
+      {
+        "$ref": "#/21"
+      },
+      {
+        "$ref": "#/22"
+      },
+      {
+        "$ref": "#/23"
+      },
+      {
+        "$ref": "#/24"
+      },
+      {
+        "$ref": "#/25"
+      },
+      {
+        "$ref": "#/1"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ResourceOperationError",
+    "properties": {
+      "errorCode": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A code that identifies the error."
+      },
+      "errorDetails": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A message that describes the error."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "FallbackOperationInfo",
+    "properties": {
+      "lastOpType": {
+        "type": {
+          "$ref": "#/35"
+        },
+        "flags": 1,
+        "description": "The type of the additional operation."
+      },
+      "status": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The status of the additional operation."
+      },
+      "error": {
+        "type": {
+          "$ref": "#/27"
+        },
+        "flags": 0,
+        "description": "The error returned when the additional operation did not succeed."
+      }
+    }
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Start"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deallocate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Hibernate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Create"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Delete"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/29"
+      },
+      {
+        "$ref": "#/30"
+      },
+      {
+        "$ref": "#/31"
+      },
+      {
+        "$ref": "#/32"
+      },
+      {
+        "$ref": "#/33"
+      },
+      {
+        "$ref": "#/34"
+      },
+      {
+        "$ref": "#/1"
+      }
+    ]
+  },
+  {
+    "$type": "ObjectType",
+    "name": "RetryPolicy",
+    "properties": {
+      "retryCount": {
+        "type": {
+          "$ref": "#/37"
+        },
+        "flags": 0,
+        "description": "The maximum number of retry attempts."
+      },
+      "retryWindowInMinutes": {
+        "type": {
+          "$ref": "#/37"
+        },
+        "flags": 0,
+        "description": "The period, in minutes, during which Bulk Actions can retry the operation."
+      },
+      "onFailureAction": {
+        "type": {
+          "$ref": "#/44"
+        },
+        "flags": 0,
+        "description": "The operation that Bulk Actions attempts when the requested operation fails."
+      }
+    }
+  },
+  {
+    "$type": "IntegerType"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Unknown"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Start"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Deallocate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Hibernate"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Create"
+  },
+  {
+    "$type": "StringLiteralType",
+    "value": "Delete"
+  },
+  {
+    "$type": "UnionType",
+    "elements": [
+      {
+        "$ref": "#/38"
+      },
+      {
+        "$ref": "#/39"
+      },
+      {
+        "$ref": "#/40"
+      },
+      {
+        "$ref": "#/41"
+      },
+      {
+        "$ref": "#/42"
+      },
+      {
+        "$ref": "#/43"
+      },
+      {
+        "$ref": "#/1"
+      }
+    ]
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkCancel",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/3"
+    },
+    "input": {
+      "$ref": "#/0"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExecuteDeallocateRequest",
+    "properties": {
+      "executionParameters": {
+        "type": {
+          "$ref": "#/48"
+        },
+        "flags": 1,
+        "description": "The execution settings for the bulk action."
+      },
+      "resources": {
+        "type": {
+          "$ref": "#/49"
+        },
+        "flags": 1,
+        "description": "The target virtual machines."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExecutionParameters",
+    "properties": {
+      "retryPolicy": {
+        "type": {
+          "$ref": "#/36"
+        },
+        "flags": 0,
+        "description": "The retry settings for the bulk action."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "Resources",
+    "properties": {
+      "ids": {
+        "type": {
+          "$ref": "#/50"
+        },
+        "flags": 1,
+        "description": "The Azure resource IDs of the target virtual machines."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DeallocateResourceOperationResponse",
+    "properties": {
+      "description": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A description of the bulk action result."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The type of resources targeted by the bulk action."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The Azure region where Bulk Actions processes the request."
+      },
+      "results": {
+        "type": {
+          "$ref": "#/52"
+        },
+        "flags": 0,
+        "description": "The result for each virtual machine."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkDeallocate",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/51"
+    },
+    "input": {
+      "$ref": "#/47"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExecuteDeleteRequest",
+    "properties": {
+      "executionParameters": {
+        "type": {
+          "$ref": "#/48"
+        },
+        "flags": 1,
+        "description": "The execution settings for the bulk action."
+      },
+      "resources": {
+        "type": {
+          "$ref": "#/49"
+        },
+        "flags": 1,
+        "description": "The target virtual machines."
+      },
+      "forceDeletion": {
+        "type": {
+          "$ref": "#/55"
+        },
+        "flags": 0,
+        "description": "Indicates whether Bulk Actions uses forced deletion for the target virtual machines."
+      }
+    }
+  },
+  {
+    "$type": "BooleanType"
+  },
+  {
+    "$type": "ObjectType",
+    "name": "DeleteResourceOperationResponse",
+    "properties": {
+      "description": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A description of the bulk action result."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The type of resources targeted by the bulk action."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The Azure region where Bulk Actions processes the request."
+      },
+      "results": {
+        "type": {
+          "$ref": "#/57"
+        },
+        "flags": 0,
+        "description": "The result for each virtual machine."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkDelete",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/56"
+    },
+    "input": {
+      "$ref": "#/54"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GetOperationStatusRequest",
+    "properties": {
+      "operationIds": {
+        "type": {
+          "$ref": "#/60"
+        },
+        "flags": 1,
+        "description": "The Bulk Action Operation Ids that identify the operations for which current status should be returned."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/1"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "GetOperationStatusResponse",
+    "properties": {
+      "results": {
+        "type": {
+          "$ref": "#/62"
+        },
+        "flags": 1,
+        "description": "The current result for each requested operation."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkGetOperationStatus",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/61"
+    },
+    "input": {
+      "$ref": "#/59"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExecuteHibernateRequest",
+    "properties": {
+      "executionParameters": {
+        "type": {
+          "$ref": "#/48"
+        },
+        "flags": 1,
+        "description": "The execution settings for the bulk action."
+      },
+      "resources": {
+        "type": {
+          "$ref": "#/49"
+        },
+        "flags": 1,
+        "description": "The target virtual machines."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "HibernateResourceOperationResponse",
+    "properties": {
+      "description": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A description of the bulk action result."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The type of resources targeted by the bulk action."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The Azure region where Bulk Actions processes the request."
+      },
+      "results": {
+        "type": {
+          "$ref": "#/66"
+        },
+        "flags": 0,
+        "description": "The result for each virtual machine."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkHibernate",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/65"
+    },
+    "input": {
+      "$ref": "#/64"
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "ExecuteStartRequest",
+    "properties": {
+      "executionParameters": {
+        "type": {
+          "$ref": "#/48"
+        },
+        "flags": 1,
+        "description": "The execution settings for the bulk action."
+      },
+      "resources": {
+        "type": {
+          "$ref": "#/49"
+        },
+        "flags": 1,
+        "description": "The target virtual machines."
+      }
+    }
+  },
+  {
+    "$type": "ObjectType",
+    "name": "StartResourceOperationResponse",
+    "properties": {
+      "description": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "A description of the bulk action result."
+      },
+      "type": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The type of resources targeted by the bulk action."
+      },
+      "location": {
+        "type": {
+          "$ref": "#/1"
+        },
+        "flags": 1,
+        "description": "The Azure region where Bulk Actions processes the request."
+      },
+      "results": {
+        "type": {
+          "$ref": "#/70"
+        },
+        "flags": 0,
+        "description": "The result for each virtual machine."
+      }
+    }
+  },
+  {
+    "$type": "ArrayType",
+    "itemType": {
+      "$ref": "#/4"
+    }
+  },
+  {
+    "$type": "ResourceFunctionType",
+    "name": "virtualMachinesBulkStart",
+    "resourceType": "Microsoft.Compute/locations",
+    "apiVersion": "2026-06-06",
+    "output": {
+      "$ref": "#/69"
+    },
+    "input": {
+      "$ref": "#/68"
+    }
+  }
+]

@@ -22,6 +22,46 @@
 * **name**: int (Required, DeployTimeConstant): The resource name
 * **type**: 'Microsoft.Compute/cloudServices/updateDomains' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function delete (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function poweroff (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+
+## Function rebuild (Microsoft.Compute/cloudServices/roleInstances@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2022-04-04
+
+## Function rebuild (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function reimage (Microsoft.Compute/cloudServices/roleInstances@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2022-04-04
+
+## Function reimage (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function restart (Microsoft.Compute/cloudServices/roleInstances@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices/roleInstances
+* **ApiVersion**: 2022-04-04
+
+## Function restart (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+* **Input**: [RoleInstances](#roleinstances)
+
+## Function start (Microsoft.Compute/cloudServices@2022-04-04)
+* **Resource**: Microsoft.Compute/cloudServices
+* **ApiVersion**: 2022-04-04
+
 ## CloudServiceExtensionProfile
 ### Properties
 * **extensions**: [Extension](#extension)[]: List of extensions for the cloud service.
@@ -135,6 +175,10 @@ If not specified, the default value is Auto. If set to Manual, PUT UpdateDomain 
 * **privateIPAddress**: string: The virtual network private IP address of the IP configuration.
 * **publicIPAddress**: [SubResource](#subresource): The reference to the public ip address resource.
 * **subnet**: [SubResource](#subresource): The reference to the virtual network subnet resource.
+
+## RoleInstances
+### Properties
+* **roleInstances**: string[] (Required): List of cloud service role instance names. Value of '*' will signify all role instances of the cloud service.
 
 ## SubResource
 ### Properties

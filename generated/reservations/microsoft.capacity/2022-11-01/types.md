@@ -11,7 +11,7 @@
 * **name**: string (Required, DeployTimeConstant): The resource name
 * **properties**: [PurchaseRequestPropertiesOrReservationOrderProperties](#purchaserequestpropertiesorreservationorderproperties): Properties of reservation purchase request
 * **sku**: [SkuName](#skuname) (WriteOnly): The name of sku
-* **systemData**: [SystemData](#systemdata) (ReadOnly): Metadata pertaining to creation and last modification of the resource.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Capacity/reservationOrders' (ReadOnly, DeployTimeConstant): The resource type
 
 ## Resource Microsoft.Capacity/reservationOrders/reservations@2022-11-01
@@ -29,6 +29,50 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.Capacity/reservationOrders/reservations' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function archive (Microsoft.Capacity/reservationOrders/reservations@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders/reservations
+* **ApiVersion**: 2022-11-01
+
+## Function availableScopes (Microsoft.Capacity/reservationOrders/reservations@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders/reservations
+* **ApiVersion**: 2022-11-01
+* **Input**: [AvailableScopeRequest](#availablescoperequest)
+* **Output**: [AvailableScopeProperties](#availablescopeproperties)
+
+## Function calculateRefund (Microsoft.Capacity/reservationOrders@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders
+* **ApiVersion**: 2022-11-01
+* **Input**: [CalculateRefundRequest](#calculaterefundrequest)
+* **Output**: [CalculateRefundResponse](#calculaterefundresponse)
+
+## Function changeDirectory (Microsoft.Capacity/reservationOrders@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders
+* **ApiVersion**: 2022-11-01
+* **Input**: [ChangeDirectoryRequest](#changedirectoryrequest)
+* **Output**: [ChangeDirectoryResponse](#changedirectoryresponse)
+
+## Function merge (Microsoft.Capacity/reservationOrders@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders
+* **ApiVersion**: 2022-11-01
+* **Input**: [MergeRequest](#mergerequest)
+* **Output**: [ReservationResponse](#reservationresponse)[]
+
+## Function return (Microsoft.Capacity/reservationOrders@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders
+* **ApiVersion**: 2022-11-01
+* **Input**: [RefundRequest](#refundrequest)
+* **Output**: [ReservationOrderResponse](#reservationorderresponse)
+
+## Function split (Microsoft.Capacity/reservationOrders@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders
+* **ApiVersion**: 2022-11-01
+* **Input**: [SplitRequest](#splitrequest)
+* **Output**: [ReservationResponse](#reservationresponse)[]
+
+## Function unarchive (Microsoft.Capacity/reservationOrders/reservations@2022-11-01)
+* **Resource**: Microsoft.Capacity/reservationOrders/reservations
+* **ApiVersion**: 2022-11-01
+
 ## AppliedScopeProperties
 ### Properties
 * **displayName**: string: Display name
@@ -37,10 +81,61 @@
 * **subscriptionId**: string: Fully-qualified identifier of the subscription.
 * **tenantId**: string: Tenant ID where the savings plan should apply benefit.
 
+## AvailableScopeProperties
+### Properties
+* **properties**: [SubscriptionScopeProperties](#subscriptionscopeproperties): The scopes checked by the available scope api.
+
+## AvailableScopeRequest
+### Properties
+* **properties**: [AvailableScopeRequestProperties](#availablescoperequestproperties): Available scope request properties
+
+## AvailableScopeRequestProperties
+### Properties
+* **scopes**: string[]
+
+## CalculateRefundRequest
+### Properties
+* **id**: string: Fully qualified identifier of the reservation order being returned
+* **properties**: [CalculateRefundRequestProperties](#calculaterefundrequestproperties): Properties needed for calculate refund including the scope and the reservation to be returned.
+
+## CalculateRefundRequestProperties
+### Properties
+* **reservationToReturn**: [ReservationToReturn](#reservationtoreturn): Reservation to return
+* **scope**: string: The scope of the refund, e.g. Reservation
+
+## CalculateRefundResponse
+### Properties
+* **id**: string: Fully qualified identifier of the reservation being returned
+* **properties**: [RefundResponseProperties](#refundresponseproperties): The refund properties of reservation
+
+## ChangeDirectoryRequest
+### Properties
+* **destinationTenantId**: string: Tenant id GUID that reservation order is to be transferred to
+
+## ChangeDirectoryResponse
+### Properties
+* **reservationOrder**: [ChangeDirectoryResult](#changedirectoryresult): Change directory result for reservation order or reservation
+* **reservations**: [ChangeDirectoryResult](#changedirectoryresult)[]
+
+## ChangeDirectoryResult
+### Properties
+* **error**: string: Error reason if operation failed. Null otherwise
+* **id**: string: Identifier of the reservation order or reservation
+* **isSucceeded**: bool: True if change directory operation succeeded on this reservation order or reservation
+* **name**: string: Name of the reservation order or reservation
+
 ## ExtendedStatusInfo
 ### Properties
 * **message**: string: The message giving detailed information about the status code.
 * **statusCode**: 'Active' | 'Expired' | 'Merged' | 'None' | 'PaymentInstrumentError' | 'Pending' | 'Processing' | 'PurchaseError' | 'Split' | 'Succeeded' | string
+
+## MergeProperties
+### Properties
+* **sources**: string[]: Format of the resource id should be /providers/Microsoft.Capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}
+
+## MergeRequest
+### Properties
+* **properties**: [MergeProperties](#mergeproperties): Properties for reservation merge
 
 ## PaymentDetail
 ### Properties
@@ -106,6 +201,50 @@
 ### Properties
 * **instanceFlexibility**: 'Off' | 'On' | string: Turning this on will apply the reservation discount to other VMs in the same VM size group. Only specify for VirtualMachines reserved resource type.
 
+## RefundBillingInformation
+### Properties
+* **billingCurrencyProratedAmount**: [Price](#price): Pricing information containing the amount and the currency code
+* **billingCurrencyRemainingCommitmentAmount**: [Price](#price): Pricing information containing the amount and the currency code
+* **billingCurrencyTotalPaidAmount**: [Price](#price): Pricing information containing the amount and the currency code
+* **billingPlan**: 'Monthly' | 'Upfront' | string: Represent the billing plans.
+* **completedTransactions**: int: The number of completed transactions in this reservation's payment
+* **totalTransactions**: int: The number of total transactions in this reservation's payment
+
+## RefundPolicyError
+### Properties
+* **code**: 'ActivateQuoteFailed' | 'AppliedScopesNotAssociatedWithCommerceAccount' | 'AppliedScopesSameAsExisting' | 'AuthorizationFailed' | 'BadRequest' | 'BillingCustomerInputError' | 'BillingError' | 'BillingPaymentInstrumentHardError' | 'BillingPaymentInstrumentSoftError' | 'BillingScopeIdCannotBeChanged' | 'BillingTransientError' | 'CalculatePriceFailed' | 'CapacityUpdateScopesFailed' | 'ClientCertificateThumbprintNotSet' | 'CreateQuoteFailed' | 'Forbidden' | 'FulfillmentConfigurationError' | 'FulfillmentError' | 'FulfillmentOutOfStockError' | 'FulfillmentTransientError' | 'HttpMethodNotSupported' | 'InternalServerError' | 'InvalidAccessToken' | 'InvalidFulfillmentRequestParameters' | 'InvalidHealthCheckType' | 'InvalidLocationId' | 'InvalidRefundQuantity' | 'InvalidRequestContent' | 'InvalidRequestUri' | 'InvalidReservationId' | 'InvalidReservationOrderId' | 'InvalidSingleAppliedScopesCount' | 'InvalidSubscriptionId' | 'InvalidTenantId' | 'MissingAppliedScopesForSingle' | 'MissingTenantId' | 'NoValidReservationsToReRate' | 'NonsupportedAccountId' | 'NotSpecified' | 'NotSupportedCountry' | 'OperationCannotBePerformedInCurrentState' | 'OperationFailed' | 'PatchValuesSameAsExisting' | 'PaymentInstrumentNotFound' | 'PurchaseError' | 'ReRateOnlyAllowedForEA' | 'RefundLimitExceeded' | 'ReservationIdNotInReservationOrder' | 'ReservationOrderCreationFailed' | 'ReservationOrderIdAlreadyExists' | 'ReservationOrderNotEnabled' | 'ReservationOrderNotFound' | 'RiskCheckFailed' | 'RoleAssignmentCreationFailed' | 'SelfServiceRefundNotSupported' | 'ServerTimeout' | 'UnauthenticatedRequestsThrottled' | 'UnsupportedReservationTerm' | string: Error code describing the reason that service is not able to process the incoming request
+* **message**: string
+
+## RefundPolicyResult
+### Properties
+* **properties**: [RefundPolicyResultProperty](#refundpolicyresultproperty): Refund policy result property
+
+## RefundPolicyResultProperty
+### Properties
+* **consumedRefundsTotal**: [Price](#price): Pricing information containing the amount and the currency code
+* **maxRefundLimit**: [Price](#price): Pricing information containing the amount and the currency code
+* **policyErrors**: [RefundPolicyError](#refundpolicyerror)[]: Refund Policy errors
+
+## RefundRequest
+### Properties
+* **properties**: [RefundRequestProperties](#refundrequestproperties): Properties needed for refund request including the session id from calculate refund, the scope, the reservation to be returned and the return reason.
+
+## RefundRequestProperties
+### Properties
+* **reservationToReturn**: [ReservationToReturn](#reservationtoreturn): Reservation to return
+* **returnReason**: string: The reason of returning the reservation
+* **scope**: string: The scope of the refund, e.g. Reservation
+* **sessionId**: string: SessionId that was returned by CalculateRefund API.
+
+## RefundResponseProperties
+### Properties
+* **billingInformation**: [RefundBillingInformation](#refundbillinginformation): billing information
+* **billingRefundAmount**: [Price](#price): Pricing information containing the amount and the currency code
+* **policyResult**: [RefundPolicyResult](#refundpolicyresult): Refund policy result
+* **pricingRefundAmount**: [Price](#price): Pricing information containing the amount and the currency code
+* **quantity**: int: Quantity to be returned
+* **sessionId**: string: Refund session identifier
+
 ## RenewPropertiesResponse
 ### Properties
 * **billingCurrencyTotal**: [RenewPropertiesResponseBillingCurrencyTotal](#renewpropertiesresponsebillingcurrencytotal): Currency and amount that customer will be charged in customer's local currency for renewal purchase. Tax is not included.
@@ -133,6 +272,31 @@
 * **pricingCurrencyTotal**: [Price](#price): Amount of money to be paid for the Order. Tax is not included.
 * **startDate**: string: Date when the billing plan has started.
 * **transactions**: [PaymentDetail](#paymentdetail)[]
+
+## ReservationOrderProperties
+### Properties
+* **benefitStartTime**: string: This is the DateTime when the reservation benefit started.
+* **billingPlan**: 'Monthly' | 'Upfront' | string: Represent the billing plans.
+* **createdDateTime**: string: This is the DateTime when the reservation was created.
+* **displayName**: string: Friendly name for user to easily identified the reservation.
+* **expiryDate**: string: This is the date when the reservation will expire.
+* **expiryDateTime**: string: This is the date-time when the reservation will expire.
+* **originalQuantity**: int: Total Quantity of the skus purchased in the reservation.
+* **planInformation**: [ReservationOrderBillingPlanInformation](#reservationorderbillingplaninformation): Information describing the type of billing plan for this reservation.
+* **provisioningState**: 'BillingFailed' | 'Cancelled' | 'ConfirmedBilling' | 'ConfirmedResourceHold' | 'Created' | 'Creating' | 'Expired' | 'Failed' | 'Merged' | 'PendingBilling' | 'PendingResourceHold' | 'Split' | 'Succeeded' | string: Current state of the reservation.
+* **requestDateTime**: string: This is the DateTime when the reservation was initially requested for purchase.
+* **reservations**: [ReservationResponse](#reservationresponse)[]
+* **reviewDateTime**: string: This is the date-time when the Azure Hybrid Benefit needs to be reviewed.
+* **term**: 'P1Y' | 'P3Y' | 'P5Y' | string: Represent the term of reservation.
+
+## ReservationOrderResponse
+### Properties
+* **etag**: int
+* **id**: string (ReadOnly): Fully qualified resource ID for the resource. E.g. "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}"
+* **name**: string (ReadOnly): The name of the resource
+* **properties**: [ReservationOrderProperties](#reservationorderproperties): Properties of a reservation order.
+* **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
+* **type**: string (ReadOnly): The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
 
 ## ReservationResponse
 ### Properties
@@ -174,7 +338,7 @@
 * **provisioningSubState**: string (ReadOnly): The provisioning sub-state of the reservation, e.g. Succeeded
 * **purchaseDate**: string: This is the date when the reservation was purchased.
 * **purchaseDateTime**: string: This is the date-time when the reservation was purchased.
-* **quantity**: int: Quantity of the skus that are part of the reservation.
+* **quantity**: int: Quantity of the skus that are part of the reservation. Must be greater than zero.
 * **renew**: bool: Setting this to true will automatically purchase a new reservation on the expiration date time.
 * **renewDestination**: string: Reservation Id of the reservation which is purchased because of renew. Format of the resource Id is /providers/Microsoft.Capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}.
 * **renewProperties**: [RenewPropertiesResponse](#renewpropertiesresponse): The renew properties for a reservation.
@@ -199,6 +363,11 @@
 * **swapDestination**: string: Reservation resource id that the original resource gets swapped to. Format of the resource id is /providers/microsoft.capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}
 * **swapSource**: string: Resource id of the source reservation that gets swapped. Format of the resource id is /providers/microsoft.capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}
 
+## ReservationToReturn
+### Properties
+* **quantity**: int: Quantity to be returned. Must be greater than zero.
+* **reservationId**: string: Fully qualified identifier of the reservation being returned
+
 ## ReservationUtilizationAggregates
 ### Properties
 * **grain**: int (ReadOnly): The grain of the aggregate
@@ -206,9 +375,27 @@
 * **value**: int (ReadOnly): The aggregate value
 * **valueUnit**: string (ReadOnly): The aggregate value unit
 
+## ScopeProperties
+### Properties
+* **scope**: string
+* **valid**: bool
+
 ## SkuName
 ### Properties
 * **name**: string
+
+## SplitProperties
+### Properties
+* **quantities**: int[]: List of the quantities in the new reservations to create.
+* **reservationId**: string: Resource id of the reservation to be split. Format of the resource id should be /providers/Microsoft.Capacity/reservationOrders/{reservationOrderId}/reservations/{reservationId}
+
+## SplitRequest
+### Properties
+* **properties**: [SplitProperties](#splitproperties): Properties for reservation split
+
+## SubscriptionScopeProperties
+### Properties
+* **scopes**: [ScopeProperties](#scopeproperties)[]
 
 ## SystemData
 ### Properties

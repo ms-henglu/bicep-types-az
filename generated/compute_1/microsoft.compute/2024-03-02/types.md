@@ -84,6 +84,41 @@
 * **tags**: [TrackedResourceTags](#trackedresourcetags): Resource tags.
 * **type**: 'Microsoft.Compute/snapshots' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function beginGetAccess (Microsoft.Compute/disks@2024-03-02)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/snapshots@2024-03-02)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function beginGetAccess (Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints@2024-03-02)
+* **Resource**: Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints
+* **ApiVersion**: 2024-03-02
+* **Input**: [GrantAccessData](#grantaccessdata)
+* **Output**: [AccessUri](#accessuri)
+
+## Function endGetAccess (Microsoft.Compute/disks@2024-03-02)
+* **Resource**: Microsoft.Compute/disks
+* **ApiVersion**: 2024-03-02
+
+## Function endGetAccess (Microsoft.Compute/snapshots@2024-03-02)
+* **Resource**: Microsoft.Compute/snapshots
+* **ApiVersion**: 2024-03-02
+
+## Function endGetAccess (Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints@2024-03-02)
+* **Resource**: Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints
+* **ApiVersion**: 2024-03-02
+
+## AccessUri
+### Properties
+* **accessSAS**: string (ReadOnly): A SAS uri for accessing a disk.
+* **securityDataAccessSAS**: string (ReadOnly): A SAS uri for accessing a VM guest state.
+
 ## ApiError
 ### Properties
 * **code**: string: The error code.
@@ -97,6 +132,11 @@
 * **code**: string: The error code.
 * **message**: string: The error message.
 * **target**: string: The target of the particular error.
+
+## CommonUserAssignedIdentitiesValue
+### Properties
+* **clientId**: string (ReadOnly): The client id of user assigned identity.
+* **principalId**: string (ReadOnly): The principal id of user assigned identity.
 
 ## CopyCompletionError
 ### Properties
@@ -213,7 +253,7 @@
 ## EncryptionSetIdentityUserAssignedIdentities
 ### Properties
 ### Additional Properties
-* **Additional Properties Type**: [UserAssignedIdentitiesValue](#userassignedidentitiesvalue)
+* **Additional Properties Type**: [CommonUserAssignedIdentitiesValue](#commonuserassignedidentitiesvalue)
 
 ## EncryptionSetProperties
 ### Properties
@@ -241,6 +281,13 @@
 ### Properties
 * **name**: string: The name of the extended location.
 * **type**: 'EdgeZone' | string: The type of the extended location.
+
+## GrantAccessData
+### Properties
+* **access**: 'None' | 'Read' | 'Write' | string (Required): The Access Level, accepted values include None, Read, Write.
+* **durationInSeconds**: int (Required): Time duration in seconds until the SAS access expires.
+* **fileFormat**: 'VHD' | 'VHDX' | string: Used to specify the file format when making request for SAS on a VHDX file format snapshot
+* **getSecureVMGuestStateSAS**: bool: Set this flag to true to get additional SAS for VM guest state
 
 ## ImageDiskReference
 ### Properties
@@ -370,9 +417,4 @@
 ### Properties
 ### Additional Properties
 * **Additional Properties Type**: string
-
-## UserAssignedIdentitiesValue
-### Properties
-* **clientId**: string (ReadOnly): The client id of user assigned identity.
-* **principalId**: string (ReadOnly): The principal id of user assigned identity.
 

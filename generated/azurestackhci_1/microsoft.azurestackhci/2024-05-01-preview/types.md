@@ -157,6 +157,26 @@
 * **systemData**: [SystemData](#systemdata) (ReadOnly): Azure Resource Manager metadata containing createdBy and modifiedBy information.
 * **type**: 'Microsoft.AzureStackHCI/virtualMachineInstances/hybridIdentityMetadata' (ReadOnly, DeployTimeConstant): The resource type
 
+## Function pause (Microsoft.AzureStackHCI/virtualMachineInstances@2024-05-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-05-01-preview
+
+## Function restart (Microsoft.AzureStackHCI/virtualMachineInstances@2024-05-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-05-01-preview
+
+## Function save (Microsoft.AzureStackHCI/virtualMachineInstances@2024-05-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-05-01-preview
+
+## Function start (Microsoft.AzureStackHCI/virtualMachineInstances@2024-05-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-05-01-preview
+
+## Function stop (Microsoft.AzureStackHCI/virtualMachineInstances@2024-05-01-preview)
+* **Resource**: Microsoft.AzureStackHCI/virtualMachineInstances
+* **ApiVersion**: 2024-05-01-preview
+
 ## AttestationStatusProperties
 ### Properties
 * **attestationCertValidated**: 'Invalid' | 'Unknown' | 'Valid' | string (ReadOnly): The status of whether attestation certificate is validated.
@@ -610,7 +630,7 @@
 * **securityProfile**: [VirtualMachineInstancePropertiesSecurityProfile](#virtualmachineinstancepropertiessecurityprofile): SecurityProfile - Specifies the security settings for the virtual machine instance.
 * **status**: [VirtualMachineInstanceStatus](#virtualmachineinstancestatus) (ReadOnly): The observed state of virtual machine instances
 * **storageProfile**: [VirtualMachineInstancePropertiesStorageProfile](#virtualmachineinstancepropertiesstorageprofile): StorageProfile - contains information about the disks and storage information for the virtual machine instance
-* **vmId**: string (ReadOnly): Unique identifier for the vm resource.
+* **vmId**: string (ReadOnly): The SMBIOS GUID of the VM (hybrid compute identity). This is null for non-secure VMs and is populated for TrustedLaunch and ConfidentialVM VMs.
 
 ## VirtualMachineInstancePropertiesHardwareProfile
 ### Properties
